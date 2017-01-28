@@ -10,4 +10,7 @@
     <option name="languageVersion" value="1.1" />
     <option name="coroutinesWarn" value="true" />
   </component>
+  <component name="KotlinCompilerSettings">
+    <option name="copyJsLibraryFiles" value="false" />
+  </component>
 </project>
