@@ -1,17 +1,17 @@
 
 try {
     module.exports = () => {
-		console.log("--- TRY TO LOAD KOTLIN.JS ---")
-		Context.RunFile('lib/kotlin.js')
 		console.log("--- LOADING KOTLINUNREAL.JS ---")
-		Context.RunFile('KotlinUnreal.js')
-
+		Context.RunFile('kotlin-examples.js')
         let cleanup = null
-        //process.nextTick(() => cleanup = main());
+        process.nextTick(() => cleanup = this['kotlin-examples'].init());
         return () => cleanup()
     }
 }
 catch (e) {
-    require('bootstrap')('KotlinMain')
+    //require('bootstrap')('KotlinMain')
+	console.log("--- TRY TO LOAD KOTLIN.JS ---")
+	Context.RunFile('lib/kotlin.js')
+	require('bootstrap')('KotlinMain')
 }
 

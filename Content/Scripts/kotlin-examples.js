@@ -1,11 +1,11 @@
 if (typeof kotlin === 'undefined') {
-  throw new Error("Error loading module 'KotlinUnreal'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'KotlinUnreal'.");
+  throw new Error("Error loading module 'kotlin-examples'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'kotlin-examples'.");
 }
-var KotlinUnreal = function (_, Kotlin) {
+this['kotlin-examples'] = function (_, Kotlin) {
   'use strict';
-  function main(args) {
-    console.log('Main Kotlin');
-    new HelloKotlin();
+  function init() {
+    console.log('<<<INIT>>>');
+    return Kotlin.getBoundCallableRefForMemberFunction(new HelloKotlin(), 'cleanup');
   }
   function HelloKotlin() {
     this.yaw = 180.0;
@@ -22,7 +22,7 @@ var KotlinUnreal = function (_, Kotlin) {
     var rotator = $receiver_0;
     this.actor = new TextRenderActor(GWorld, pos, rotator);
     this.actor.TextRender.SetHorizontalAlignment('EHTA_Center');
-    this.actor.TextRender.SetText('Hello Kotlin!!');
+    this.actor.TextRender.SetText('Hello Kotlin');
     this.update_3p81yu$(0);
   }
   HelloKotlin.prototype.update_3p81yu$ = function (milliseconds) {
@@ -33,7 +33,12 @@ var KotlinUnreal = function (_, Kotlin) {
       $receiver.Yaw = this.yaw;
     }
     tmp$.SetActorRotation($receiver, false);
-    setTimeout(Kotlin.getBoundCallableRefForMemberFunction(this, 'update_3p81yu$'), 16);
+    this.timer = setTimeout(Kotlin.getBoundCallableRefForMemberFunction(this, 'update_3p81yu$'), 16);
+  };
+  HelloKotlin.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.DestroyActor();
+    clearTimeout(this.timer);
   };
   HelloKotlin.$metadata$ = {
     type: Kotlin.TYPE.CLASS,
@@ -41,9 +46,8 @@ var KotlinUnreal = function (_, Kotlin) {
     simpleName: 'HelloKotlin',
     baseClasses: []
   };
-  _.main_kand9s$ = main;
+  _.init = init;
   _.HelloKotlin = HelloKotlin;
-  Kotlin.defineModule('KotlinUnreal', _);
-  main([]);
+  Kotlin.defineModule('kotlin-examples', _);
   return _;
-}(typeof KotlinUnreal === 'undefined' ? {} : KotlinUnreal, kotlin);
+}(typeof this['kotlin-examples'] === 'undefined' ? {} : this['kotlin-examples'], kotlin);
