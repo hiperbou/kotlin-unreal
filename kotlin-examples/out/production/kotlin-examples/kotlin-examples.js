@@ -3,9 +3,6 @@ if (typeof kotlin === 'undefined') {
 }
 this['kotlin-examples'] = function (_, Kotlin) {
   'use strict';
-  function GenerateClass($receiver, world, position, rotation) {
-    return new $receiver.GeneratedClass(world, position, rotation);
-  }
   function HelloBlueprint() {
     this.yaw = 180.0;
     if (GWorld.IsServer()) {
@@ -20,10 +17,17 @@ this['kotlin-examples'] = function (_, Kotlin) {
         $receiver_0.Yaw = 180;
       }
       this.actor = GenerateClass(bp, tmp$, $receiver, $receiver_0);
-      this.update_3p81yu$(0);
+      process.nextTick(HelloBlueprint_init$lambda(this));
     }
   }
-  HelloBlueprint.prototype.update_3p81yu$ = function (milliseconds) {
+  function HelloBlueprint$update$lambda(this$HelloBlueprint) {
+    return function (it) {
+      {
+        this$HelloBlueprint.update();
+      }
+    };
+  }
+  HelloBlueprint.prototype.update = function () {
     this.yaw += 1.0;
     var tmp$ = this.actor;
     var $receiver = new Rotator();
@@ -31,13 +35,19 @@ this['kotlin-examples'] = function (_, Kotlin) {
       $receiver.Yaw = this.yaw;
     }
     tmp$.SetActorRotation($receiver, false);
-    this.timer = setTimeout(Kotlin.getBoundCallableRefForMemberFunction(this, 'update_3p81yu$'), 16);
+    process.nextTick(HelloBlueprint$update$lambda(this));
   };
   HelloBlueprint.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
     this.actor.DestroyActor();
-    clearTimeout(this.timer);
   };
+  function HelloBlueprint_init$lambda(this$HelloBlueprint) {
+    return function (it) {
+      {
+        this$HelloBlueprint.update();
+      }
+    };
+  }
   HelloBlueprint.$metadata$ = {
     type: Kotlin.TYPE.CLASS,
     classIndex: Kotlin.newClassIndex(),
@@ -87,10 +97,17 @@ this['kotlin-examples'] = function (_, Kotlin) {
     console.log('<<<INIT>>>');
     return Kotlin.getBoundCallableRefForMemberFunction(new HelloBlueprint(), 'cleanup');
   }
-  _.GenerateClass_1eyabd$ = GenerateClass;
+  function GenerateClass($receiver, world, position, rotation) {
+    return new $receiver.GeneratedClass(world, position, rotation);
+  }
+  function GenerateClass_0($receiver, world, position, rotation) {
+    return new $receiver.GeneratedClass(world, position, rotation);
+  }
   _.HelloBlueprint = HelloBlueprint;
   _.HelloKotlin = HelloKotlin;
   _.init = init;
+  _.GenerateClass_1eyabd$ = GenerateClass;
+  _.GenerateClass_b4xcpr$ = GenerateClass_0;
   Kotlin.defineModule('kotlin-examples', _);
   return _;
 }(typeof this['kotlin-examples'] === 'undefined' ? {} : this['kotlin-examples'], kotlin);

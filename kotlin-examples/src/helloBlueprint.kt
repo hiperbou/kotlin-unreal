@@ -3,15 +3,9 @@
  */
 import ue.*
 
-fun <T>Blueprint.GenerateClass(world:World, position:Vector, rotation:Rotator):T{
-    //return GeneratedClass(world,position,rotation) as T
-    return kotlin.js.js("new \$receiver.GeneratedClass(world, position, rotation)")
-}
-
 class HelloBlueprint {
     lateinit var actor:Actor
     var yaw = 180.0
-    lateinit var timer:Any
 
     init {
         if (GWorld.IsServer()) {
@@ -19,19 +13,18 @@ class HelloBlueprint {
             actor = bp.GenerateClass(GWorld,
                     Vector().apply{ X=1.0 },
                     Rotator().apply{ Yaw=180 })
-            update(0)
+            process.nextTick { update() }
         }
     }
-    fun update(milliseconds: Number) {
+    fun update() {
         yaw += 1.0
         actor.SetActorRotation(Rotator().apply {
             Yaw = yaw
         }, false)
-        timer = setTimeout(this::update,16)
+        process.nextTick { update() }
     }
     fun cleanup():Unit {
         console.log("<<<cleanup>>>")
         actor.DestroyActor()
-        clearTimeout(timer)
     }
 }
