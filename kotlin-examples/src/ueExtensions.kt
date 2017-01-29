@@ -1,4 +1,4 @@
-import ue.*
+package ue
 
 /**
  * Created by hiperbou on 29/01/2017.
