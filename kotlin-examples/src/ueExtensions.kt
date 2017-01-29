@@ -5,10 +5,10 @@ import ue.*
  */
 fun <T> Blueprint.GenerateClass(world: World, position: Vector, rotation: Rotator):T{
     //return GeneratedClass(world,position,rotation) as T
-    return kotlin.js.js("new \$receiver.GeneratedClass(world, position, rotation)")
+    return js("new \$receiver.GeneratedClass(world, position, rotation)")
 }
 
 fun <T> MovieSceneSpawnable.GenerateClass(world: World, position: Vector, rotation: Rotator):T{
     //return GeneratedClass(world,position,rotation) as T
-    return kotlin.js.js("new \$receiver.GeneratedClass(world, position, rotation)")
+    return js("new \$receiver.GeneratedClass(world, position, rotation)")
 }
