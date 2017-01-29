@@ -8,16 +8,13 @@ class HelloBlueprints {
     var yaw = 180.0
     val WIDTH = 400.0
 
+    val actorList = arrayListOf<Actor>()
+
     init {
         if (GWorld.IsServer()) {
-            createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0))
-            createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0))
-            createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0))
-            createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0))
-            createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0))
-            createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0))
-            createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0))
-            //process.nextTick { update() }
+            for (i in 0..10)
+                actorList.add(createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0)))
+            process.nextTick { update() }
         }
     }
 
@@ -33,9 +30,11 @@ class HelloBlueprints {
 
     fun update() {
         yaw += 1.0
-        actor.SetActorRotation(Rotator().apply {
-            Yaw = yaw
-        }, false)
+        actorList.forEach {
+            it.SetActorRotation(Rotator().apply {
+                Yaw = yaw
+            }, false)
+        }
         process.nextTick { update() }
     }
     fun cleanup():Unit {
