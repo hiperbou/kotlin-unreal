@@ -7,10 +7,7 @@ import ue.*
     console.log("Main Kotlin")
 }*/
 
-fun init() :Function<Unit>{
-    console.log("<<<INIT>>>")
-    return HelloKotlin()::cleanup
-}
+
 
 class HelloKotlin {
     var yaw = 180.0
@@ -18,8 +15,8 @@ class HelloKotlin {
     lateinit var timer:Any
     init {
         val pos = Vector().apply{
-            X = 100
-            Z = 100
+            X = 100.0
+            Z = 100.0
         }
         val rotator = Rotator().apply {
             Yaw = yaw

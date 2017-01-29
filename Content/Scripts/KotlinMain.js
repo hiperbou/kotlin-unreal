@@ -1,7 +1,7 @@
 
 try {
     module.exports = () => {
-		console.log("--- LOADING KOTLINUNREAL.JS ---")
+		console.log("--- LOADING kotlin-examples.JS ---")
 		Context.RunFile('kotlin-examples.js')
         let cleanup = null
         process.nextTick(() => cleanup = this['kotlin-examples'].init());
