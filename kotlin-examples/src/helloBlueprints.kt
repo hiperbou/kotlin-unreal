@@ -4,7 +4,6 @@
 import ue.*
 
 class HelloBlueprints {
-    lateinit var actor:Actor
     var yaw = 180.0
     val WIDTH = 400.0
 
@@ -39,6 +38,6 @@ class HelloBlueprints {
     }
     fun cleanup():Unit {
         console.log("<<<cleanup>>>")
-        actor.DestroyActor()
+        actorList.forEach { it.DestroyActor() }
     }
 }
