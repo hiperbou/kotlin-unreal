@@ -7,6 +7,10 @@ Hello World example:
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/helloWorld.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/helloworld.jpg)
 
+Scene Lights example:
+https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/SceneLights.kt
+![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/scenelights.jpg)
+
 Hello Blueprints example:
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/helloBlueprints.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/helloblueprints.jpeg)
