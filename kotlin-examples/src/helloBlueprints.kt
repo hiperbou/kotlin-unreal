@@ -21,13 +21,13 @@ class HelloBlueprints {
 
     fun createActor(x:Double, y:Double, yaw:Number):Actor {
         return Blueprint.Load("/Game/ExampleBlueprint").GenerateClass(GWorld,
-                Vector().apply{ X=x; Y=y},
-                Rotator().apply{ Yaw=yaw })
+                Vector( X=x, Y=y),
+                Rotator( Yaw=yaw ))
     }
 
     fun update() {
         actorList.forEach {
-            it.AddActorLocalRotation(Rotator().apply {Yaw = 1.0},false)
+            it.AddActorLocalRotation(Rotator(Yaw = 1),false)
         }
         process.nextTick { update() }
     }

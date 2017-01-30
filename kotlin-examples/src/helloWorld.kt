@@ -14,13 +14,8 @@ class HelloKotlin {
     val actor:TextRenderActor
     lateinit var timer:Any
     init {
-        val pos = Vector().apply{
-            X = 100.0
-            Z = 100.0
-        }
-        val rotator = Rotator().apply {
-            Yaw = yaw
-        }
+        val pos = Vector(X = 100, Z = 100)
+        val rotator = Rotator(Yaw = yaw)
 
         actor = TextRenderActor(GWorld, pos, rotator)
 
@@ -32,9 +27,7 @@ class HelloKotlin {
 
     fun update(milliseconds: Number) {
         yaw += 1.0
-        actor.SetActorRotation(Rotator().apply {
-            Yaw = yaw
-        }, false)
+        actor.SetActorRotation(Rotator(Yaw = yaw), false)
         timer = setTimeout(this::update,16)
 
     }

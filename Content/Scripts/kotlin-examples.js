@@ -8,16 +8,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     this.yaw = 180.0;
     if (GWorld.IsServer()) {
       var bp = Blueprint.Load('/Game/ExampleBlueprint');
-      var tmp$ = GWorld;
-      var $receiver = new Vector();
-      {
-        $receiver.X = 1.0;
-      }
-      var $receiver_0 = new Rotator();
-      {
-        $receiver_0.Yaw = 180;
-      }
-      this.actor = GenerateClass(bp, tmp$, $receiver, $receiver_0);
+      this.actor = GenerateClass(bp, GWorld, Vector_0(1.0), Rotator_0(void 0, void 0, 180));
       process.nextTick(HelloBlueprint_init$lambda(this));
     }
   }
@@ -30,12 +21,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   }
   HelloBlueprint.prototype.update = function () {
     this.yaw += 1.0;
-    var tmp$ = this.actor;
-    var $receiver = new Rotator();
-    {
-      $receiver.Yaw = this.yaw;
-    }
-    tmp$.SetActorRotation($receiver, false);
+    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
     process.nextTick(HelloBlueprint$update$lambda(this));
   };
   HelloBlueprint.prototype.cleanup = function () {
@@ -127,18 +113,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     return min + Math.random() * (max - min);
   };
   HelloBlueprints.prototype.createActor_u22e3q$ = function (x, y, yaw) {
-    var tmp$ = Blueprint.Load('/Game/ExampleBlueprint');
-    var tmp$_0 = GWorld;
-    var $receiver = new Vector();
-    {
-      $receiver.X = x;
-      $receiver.Y = y;
-    }
-    var $receiver_0 = new Rotator();
-    {
-      $receiver_0.Yaw = yaw;
-    }
-    return GenerateClass(tmp$, tmp$_0, $receiver, $receiver_0);
+    return GenerateClass(Blueprint.Load('/Game/ExampleBlueprint'), GWorld, Vector_0(x, y), Rotator_0(void 0, void 0, yaw));
   };
   function HelloBlueprints$update$lambda(this$HelloBlueprints) {
     return function (it) {
@@ -153,11 +128,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     while (tmp$.hasNext()) {
       var element = tmp$.next();
       {
-        var $receiver_0 = new Rotator();
-        {
-          $receiver_0.Yaw = 1.0;
-        }
-        element.AddActorLocalRotation($receiver_0, false);
+        element.AddActorLocalRotation(Rotator_0(void 0, void 0, 1.0), false);
       }
     }
     process.nextTick(HelloBlueprints$update$lambda(this));
@@ -188,17 +159,8 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function HelloKotlin() {
     this.yaw = 180.0;
-    var $receiver = new Vector();
-    {
-      $receiver.X = 100.0;
-      $receiver.Z = 100.0;
-    }
-    var pos = $receiver;
-    var $receiver_0 = new Rotator();
-    {
-      $receiver_0.Yaw = this.yaw;
-    }
-    var rotator = $receiver_0;
+    var pos = Vector_0(100, void 0, 100);
+    var rotator = Rotator_0(void 0, void 0, this.yaw);
     this.actor = new TextRenderActor(GWorld, pos, rotator);
     this.actor.TextRender.SetHorizontalAlignment('EHTA_Center');
     this.actor.TextRender.SetText('Hello Kotlin');
@@ -206,12 +168,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   }
   HelloKotlin.prototype.update_3p81yu$ = function (milliseconds) {
     this.yaw += 1.0;
-    var tmp$ = this.actor;
-    var $receiver = new Rotator();
-    {
-      $receiver.Yaw = this.yaw;
-    }
-    tmp$.SetActorRotation($receiver, false);
+    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
     this.timer = setTimeout(Kotlin.getBoundCallableRefForMemberFunction(this, 'update_3p81yu$'), 16);
   };
   HelloKotlin.prototype.cleanup = function () {
@@ -231,50 +188,18 @@ this['kotlin-examples'] = function (_, Kotlin) {
   }
   function SceneLights() {
     var $receiver = GWorld.GetAllActorsOfClass(Light).OutActors;
-    var tmp$_7;
-    for (tmp$_7 = 0; tmp$_7 !== $receiver.length; ++tmp$_7) {
-      var element = $receiver[tmp$_7];
+    var tmp$;
+    for (tmp$ = 0; tmp$ !== $receiver.length; ++tmp$) {
+      var element = $receiver[tmp$];
       {
         element.DestroyActor();
       }
     }
-    var tmp$ = this.rotate_ot2g50$.bind(this);
-    var tmp$_0 = this.light_qxwhts$.bind(this);
-    var $receiver_0 = new LinearColor();
-    {
-      $receiver_0.R = 1;
-    }
-    tmp$(tmp$_0($receiver_0), new SceneLights_init$ObjectLiteral());
-    var tmp$_1 = this.rotate_ot2g50$.bind(this);
-    var tmp$_2 = this.light_qxwhts$.bind(this);
-    var $receiver_1 = new LinearColor();
-    {
-      $receiver_1.G = 1;
-    }
-    tmp$_1(tmp$_2($receiver_1), new SceneLights_init$ObjectLiteral_0());
-    var tmp$_3 = this.rotate_ot2g50$.bind(this);
-    var tmp$_4 = this.light_qxwhts$.bind(this);
-    var $receiver_2 = new LinearColor();
-    {
-      $receiver_2.B = 1;
-    }
-    tmp$_3(tmp$_4($receiver_2), new SceneLights_init$ObjectLiteral_1());
-    var tmp$_5 = this.bg_atrclb$.bind(this);
-    var $receiver_3 = new Vector();
-    {
-      $receiver_3.X = 400.0;
-      $receiver_3.Z = -150.0;
-      $receiver_3.Y = -100.0;
-    }
-    tmp$_5($receiver_3);
-    var tmp$_6 = this.skel_atrclb$.bind(this);
-    var $receiver_4 = new Vector();
-    {
-      $receiver_4.X = 400.0;
-      var Z = -150.0;
-      var Y = -100.0;
-    }
-    tmp$_6($receiver_4);
+    this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(1)), new SceneLights_init$ObjectLiteral());
+    this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, 1)), new SceneLights_init$ObjectLiteral_0());
+    this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, void 0, 1)), new SceneLights_init$ObjectLiteral_1());
+    this.bg_atrclb$(Vector_0(400.0, -100.0, -150.0));
+    this.skel_atrclb$(Vector_0(400.0, -150, 0.0));
   }
   SceneLights.prototype.light_qxwhts$ = function (color) {
     var actor = new PointLight(GWorld);
@@ -296,105 +221,28 @@ this['kotlin-examples'] = function (_, Kotlin) {
     return actor;
   };
   SceneLights.prototype.bg_atrclb$ = function (p) {
+    var tmp$;
     var size = 1000.0;
     var boxsize = 100.0;
     var scale = size / boxsize;
-    var tmp$ = this.box_bzru3a$.bind(this);
-    var $receiver = new Vector();
-    {
-      $receiver.X = size / 2;
-      $receiver.Z = size / 2;
-    }
-    var tmp$_0 = p.Add_VectorVector($receiver);
-    var $receiver_0 = new Vector();
-    {
-      $receiver_0.X = 1.0;
-      $receiver_0.Y = scale;
-      $receiver_0.Z = scale;
-    }
-    var $receiver_1 = new LinearColor();
-    {
-      $receiver_1.R = 0.5;
-      $receiver_1.G = 0.7;
-    }
-    tmp$(tmp$_0, $receiver_0, $receiver_1);
-    var tmp$_1 = this.box_bzru3a$.bind(this);
-    var $receiver_2 = new Vector();
-    {
-      $receiver_2.Y = -size / 2;
-      $receiver_2.Z = size / 2;
-    }
-    var tmp$_2 = p.Add_VectorVector($receiver_2);
-    var $receiver_3 = new Vector();
-    {
-      $receiver_3.X = scale;
-      $receiver_3.Y = 1.0;
-      $receiver_3.Z = scale;
-    }
-    var $receiver_4 = new LinearColor();
-    {
-      $receiver_4.B = 1;
-    }
-    tmp$_1(tmp$_2, $receiver_3, $receiver_4);
-    var tmp$_3 = this.box_bzru3a$.bind(this);
-    var $receiver_5 = new Vector();
-    {
-      $receiver_5.X = scale;
-      $receiver_5.Y = scale;
-      $receiver_5.Z = 1.0;
-    }
-    var $receiver_6 = new LinearColor();
-    {
-      $receiver_6.R = 1;
-    }
-    tmp$_3(p, $receiver_5, $receiver_6);
+    this.box_bzru3a$(p.Add_VectorVector(Vector_0(size / 2, void 0, size / 2)), Vector_0(1.0, scale, scale), LinearColor_0(0.5, 0.7));
+    this.box_bzru3a$(p.Add_VectorVector(Vector_0(void 0, -size / 2, size / 2)), Vector_0(scale, 1.0, scale), LinearColor_0(void 0, void 0, 1));
+    this.box_bzru3a$(p, Vector_0(scale, scale, 1.0), LinearColor_0(1));
     var N = 10;
     var s = 0.04;
     for (var y = 0; y <= N; y++) {
       for (var x = 0; x <= N; x++) {
-        var tmp$_4 = this.box_bzru3a$.bind(this);
-        var $receiver_7 = new Vector();
-        {
-          $receiver_7.Y = (y - (N / 2 | 0)) * 50;
-          $receiver_7.Z = x * 50;
-        }
-        var tmp$_5 = p.Add_VectorVector($receiver_7);
-        var $receiver_8 = new Vector();
-        {
-          $receiver_8.X = s;
-          $receiver_8.Y = s;
-          $receiver_8.Z = s;
-        }
-        var $receiver_9 = new LinearColor();
-        {
-          $receiver_9.R = 1;
-          $receiver_9.G = 1;
-          $receiver_9.B = 1;
-        }
-        var a = tmp$_4(tmp$_5, $receiver_8, $receiver_9);
-        var $receiver_10 = new Rotator();
-        {
-          $receiver_10.Yaw = Math.random() * 360;
-          $receiver_10.Pitch = Math.random() * 180;
-        }
-        a.SetActorRotation($receiver_10, false);
+        var a = this.box_bzru3a$(p.Add_VectorVector(Vector_0(void 0, (y - (N / 2 | 0)) * 50, x * 50)), Vector_0(s, s, s), LinearColor_0(1, 1, 1));
+        tmp$ = Math.random() * 360;
+        a.SetActorRotation(Rotator_0(void 0, Math.random() * 180, tmp$), false);
       }
     }
   };
   SceneLights.prototype.skel_atrclb$ = function (p) {
     var resource = SkeletalMesh.Load('/Game/Mannequin/Character/Mesh/SK_Mannequin');
-    var tmp$ = GWorld;
-    var $receiver = new Vector();
-    {
-      $receiver.Z = 50.0;
-    }
-    var actor = new SkeletalMeshActor(tmp$, p.Add_VectorVector($receiver));
+    var actor = new SkeletalMeshActor(GWorld, p.Add_VectorVector(Vector_0(void 0, void 0, 50.0)));
     actor.SkeletalMeshComponent.SetSkeletalMesh(resource, false);
-    var $receiver_0 = new Rotator();
-    {
-      $receiver_0.Yaw = 90;
-    }
-    actor.SetActorRotation($receiver_0, false);
+    actor.SetActorRotation(Rotator_0(void 0, void 0, 90), false);
   };
   function SceneLights$rotate$tick$lambda(closure$tick) {
     return function (it) {
@@ -412,12 +260,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
         closure$time.v += 0.016;
         var rad = closure$time.v * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : Kotlin.throwCCE());
         var r = closure$opts.r;
-        var $receiver = new Vector();
-        {
-          $receiver.Y = Math.cos(rad) * r;
-          $receiver.Z = Math.sin(rad) * r;
-        }
-        var p = $receiver.Add_VectorVector(closure$opts.p);
+        var p = Vector_0(void 0, Math.cos(rad) * r, Math.sin(rad) * r).Add_VectorVector(closure$opts.p);
         closure$actor.SetActorLocation(p, false);
         process.nextTick(SceneLights$rotate$tick$lambda(closure$tick));
       }
@@ -441,13 +284,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   function SceneLights_init$ObjectLiteral() {
     this.k = 1.8;
     this.r = 150;
-    var $receiver = new Vector();
-    {
-      $receiver.X = 400.0;
-      $receiver.Y = -100.0;
-      $receiver.Z = 100.0;
-    }
-    this.p = $receiver;
+    this.p = Vector_0(400.0, -100.0, 100.0);
   }
   SceneLights_init$ObjectLiteral.$metadata$ = {
     type: Kotlin.TYPE.CLASS,
@@ -457,12 +294,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   function SceneLights_init$ObjectLiteral_0() {
     this.k = 1.5;
     this.r = 30;
-    var $receiver = new Vector();
-    {
-      $receiver.X = 400.0;
-      $receiver.Z = 150.0;
-    }
-    this.p = $receiver;
+    this.p = Vector_0(400.0, void 0, 150.0);
   }
   SceneLights_init$ObjectLiteral_0.$metadata$ = {
     type: Kotlin.TYPE.CLASS,
@@ -472,12 +304,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   function SceneLights_init$ObjectLiteral_1() {
     this.k = 0.1;
     this.r = 230;
-    var $receiver = new Vector();
-    {
-      $receiver.X = 400.0;
-      $receiver.Z = 250.0;
-    }
-    this.p = $receiver;
+    this.p = Vector_0(400.0, void 0, 250.0);
   }
   SceneLights_init$ObjectLiteral_1.$metadata$ = {
     type: Kotlin.TYPE.CLASS,
@@ -496,6 +323,64 @@ this['kotlin-examples'] = function (_, Kotlin) {
   function GenerateClass_0($receiver, world, position, rotation) {
     return new $receiver.GeneratedClass(world, position, rotation);
   }
+  function Vector_0(X, Y, Z) {
+    if (X === void 0)
+      X = 0.0;
+    if (Y === void 0)
+      Y = 0.0;
+    if (Z === void 0)
+      Z = 0.0;
+    var $receiver = new Vector();
+    var closure$X = X;
+    var closure$Y = Y;
+    var closure$Z = Z;
+    {
+      $receiver.X = Kotlin.numberToDouble(closure$X);
+      $receiver.Y = Kotlin.numberToDouble(closure$Y);
+      $receiver.Z = Kotlin.numberToDouble(closure$Z);
+    }
+    return $receiver;
+  }
+  function LinearColor_0(R, G, B, A) {
+    if (R === void 0)
+      R = 0.0;
+    if (G === void 0)
+      G = 0.0;
+    if (B === void 0)
+      B = 0.0;
+    if (A === void 0)
+      A = 1.0;
+    var $receiver = new LinearColor();
+    var closure$R = R;
+    var closure$G = G;
+    var closure$B = B;
+    var closure$A = A;
+    {
+      $receiver.R = closure$R;
+      $receiver.G = closure$G;
+      $receiver.B = closure$B;
+      $receiver.A = closure$A;
+    }
+    return $receiver;
+  }
+  function Rotator_0(Roll, Pitch, Yaw) {
+    if (Roll === void 0)
+      Roll = 0.0;
+    if (Pitch === void 0)
+      Pitch = 0.0;
+    if (Yaw === void 0)
+      Yaw = 0.0;
+    var $receiver = new Rotator();
+    var closure$Pitch = Pitch;
+    var closure$Roll = Roll;
+    var closure$Yaw = Yaw;
+    {
+      $receiver.Pitch = closure$Pitch;
+      $receiver.Roll = closure$Roll;
+      $receiver.Yaw = closure$Yaw;
+    }
+    return $receiver;
+  }
   _.HelloBlueprint = HelloBlueprint;
   _.newInstance_8vojts$ = newInstance;
   _.baseClass = baseClass;
@@ -507,6 +392,9 @@ this['kotlin-examples'] = function (_, Kotlin) {
   var package$ue = _.ue || (_.ue = {});
   package$ue.GenerateClass_1eyabd$ = GenerateClass;
   package$ue.GenerateClass_b4xcpr$ = GenerateClass_0;
+  package$ue.Vector_a2j3zq$ = Vector_0;
+  package$ue.LinearColor_1ugm5o$ = LinearColor_0;
+  package$ue.Rotator_a2j3zq$ = Rotator_0;
   Kotlin.defineModule('kotlin-examples', _);
   return _;
 }(typeof this['kotlin-examples'] === 'undefined' ? {} : this['kotlin-examples'], kotlin);

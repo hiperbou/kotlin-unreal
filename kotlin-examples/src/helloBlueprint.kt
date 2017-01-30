@@ -11,16 +11,14 @@ class HelloBlueprint {
         if (GWorld.IsServer()) {
             val bp = Blueprint.Load("/Game/ExampleBlueprint")
             actor = bp.GenerateClass(GWorld,
-                    Vector().apply{ X=1.0 },
-                    Rotator().apply{ Yaw=180 })
+                    Vector( X=1 ),
+                    Rotator( Yaw=180 ))
             process.nextTick { update() }
         }
     }
     fun update() {
         yaw += 1.0
-        actor.SetActorRotation(Rotator().apply {
-            Yaw = yaw
-        }, false)
+        actor.SetActorRotation(Rotator(Yaw = yaw), false)
         process.nextTick { update() }
     }
     fun cleanup():Unit {
