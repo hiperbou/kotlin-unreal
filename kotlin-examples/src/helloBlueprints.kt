@@ -4,9 +4,7 @@
 import ue.*
 
 class HelloBlueprints {
-    var yaw = 180.0
     val WIDTH = 400.0
-
     val actorList = arrayListOf<Actor>()
 
     init {
@@ -28,11 +26,8 @@ class HelloBlueprints {
     }
 
     fun update() {
-        yaw += 1.0
         actorList.forEach {
-            it.SetActorRotation(Rotator().apply {
-                Yaw = yaw
-            }, false)
+            it.AddActorLocalRotation(Rotator().apply {Yaw = 1.0},false)
         }
         process.nextTick { update() }
     }
