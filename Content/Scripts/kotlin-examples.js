@@ -8,7 +8,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     this.yaw = 180.0;
     if (GWorld.IsServer()) {
       var bp = Blueprint.Load('/Game/ExampleBlueprint');
-      this.actor = GenerateClass(bp, GWorld, Vector_0(1.0), Rotator_0(void 0, void 0, 180));
+      this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
       process.nextTick(HelloBlueprint_init$lambda(this));
     }
   }
@@ -128,7 +128,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     while (tmp$.hasNext()) {
       var element = tmp$.next();
       {
-        element.AddActorLocalRotation(Rotator_0(void 0, void 0, 1.0), false);
+        element.AddActorLocalRotation(Rotator_0(void 0, void 0, 1), false);
       }
     }
     process.nextTick(HelloBlueprints$update$lambda(this));
@@ -184,8 +184,80 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function init() {
     console.log('<<<INIT>>>');
-    return Kotlin.getBoundCallableRefForMemberFunction(new SceneLights(), 'cleanup');
+    return Kotlin.getBoundCallableRefForMemberFunction(new KeyboardInput(), 'cleanup');
   }
+  function KeyboardInput() {
+    this.yaw = 180.0;
+    var $receiver = new Key();
+    {
+      $receiver.KeyName = 'F';
+    }
+    this.keyLeft = $receiver;
+    var $receiver_0 = new Key();
+    {
+      $receiver_0.KeyName = 'H';
+    }
+    this.keyRight = $receiver_0;
+    var $receiver_1 = new Key();
+    {
+      $receiver_1.KeyName = 'T';
+    }
+    this.keyUp = $receiver_1;
+    var $receiver_2 = new Key();
+    {
+      $receiver_2.KeyName = 'G';
+    }
+    this.keyDown = $receiver_2;
+    if (GWorld.IsServer()) {
+      var bp = Blueprint.Load('/Game/ExampleBlueprint');
+      this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
+      process.nextTick(KeyboardInput_init$lambda(this));
+    }
+  }
+  function KeyboardInput$update$lambda(this$KeyboardInput) {
+    return function (it) {
+      {
+        this$KeyboardInput.update();
+      }
+    };
+  }
+  KeyboardInput.prototype.update = function () {
+    this.yaw += 1.0;
+    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
+    if (this.key_e2g2e7$(this.keyLeft)) {
+      this.actor.AddActorWorldOffset(Vector_0(void 0, -1), false);
+    }
+    if (this.key_e2g2e7$(this.keyRight)) {
+      this.actor.AddActorWorldOffset(Vector_0(void 0, 1), false);
+    }
+    if (this.key_e2g2e7$(this.keyUp)) {
+      this.actor.AddActorWorldOffset(Vector_0(1), false);
+    }
+    if (this.key_e2g2e7$(this.keyDown)) {
+      this.actor.AddActorWorldOffset(Vector_0(-1), false);
+    }
+    process.nextTick(KeyboardInput$update$lambda(this));
+  };
+  KeyboardInput.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.DestroyActor();
+  };
+  KeyboardInput.prototype.key_e2g2e7$ = function (k) {
+    return GWorld.GetPlayerController(0).IsInputKeyDown(k);
+  };
+  function KeyboardInput_init$lambda(this$KeyboardInput) {
+    return function (it) {
+      {
+        this$KeyboardInput.update();
+      }
+    };
+  }
+  KeyboardInput.$metadata$ = {
+    type: Kotlin.TYPE.CLASS,
+    classIndex: Kotlin.newClassIndex(),
+    simpleName: 'KeyboardInput',
+    baseClasses: []
+  };
   function SceneLights() {
     var $receiver = GWorld.GetAllActorsOfClass(Light).OutActors;
     var tmp$;
@@ -198,8 +270,8 @@ this['kotlin-examples'] = function (_, Kotlin) {
     this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(1)), new SceneLights_init$ObjectLiteral());
     this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, 1)), new SceneLights_init$ObjectLiteral_0());
     this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, void 0, 1)), new SceneLights_init$ObjectLiteral_1());
-    this.bg_atrclb$(Vector_0(400.0, -100.0, -150.0));
-    this.skel_atrclb$(Vector_0(400.0, -150, 0.0));
+    this.bg_atrclb$(Vector_0(400, -100, -150));
+    this.skel_atrclb$(Vector_0(400, -150, 0));
   }
   SceneLights.prototype.light_qxwhts$ = function (color) {
     var actor = new PointLight(GWorld);
@@ -222,12 +294,12 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   SceneLights.prototype.bg_atrclb$ = function (p) {
     var tmp$;
-    var size = 1000.0;
-    var boxsize = 100.0;
-    var scale = size / boxsize;
-    this.box_bzru3a$(p.Add_VectorVector(Vector_0(size / 2, void 0, size / 2)), Vector_0(1.0, scale, scale), LinearColor_0(0.5, 0.7));
-    this.box_bzru3a$(p.Add_VectorVector(Vector_0(void 0, -size / 2, size / 2)), Vector_0(scale, 1.0, scale), LinearColor_0(void 0, void 0, 1));
-    this.box_bzru3a$(p, Vector_0(scale, scale, 1.0), LinearColor_0(1));
+    var size = 1000;
+    var boxsize = 100;
+    var scale = size / boxsize | 0;
+    this.box_bzru3a$(p.Add_VectorVector(Vector_0(size / 2 | 0, void 0, size / 2 | 0)), Vector_0(1, scale, scale), LinearColor_0(0.5, 0.7));
+    this.box_bzru3a$(p.Add_VectorVector(Vector_0(void 0, -1000 / 2 | 0, size / 2 | 0)), Vector_0(scale, 1, scale), LinearColor_0(void 0, void 0, 1));
+    this.box_bzru3a$(p, Vector_0(scale, scale, 1), LinearColor_0(1));
     var N = 10;
     var s = 0.04;
     for (var y = 0; y <= N; y++) {
@@ -240,7 +312,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   SceneLights.prototype.skel_atrclb$ = function (p) {
     var resource = SkeletalMesh.Load('/Game/Mannequin/Character/Mesh/SK_Mannequin');
-    var actor = new SkeletalMeshActor(GWorld, p.Add_VectorVector(Vector_0(void 0, void 0, 50.0)));
+    var actor = new SkeletalMeshActor(GWorld, p.Add_VectorVector(Vector_0(void 0, void 0, 50)));
     actor.SkeletalMeshComponent.SetSkeletalMesh(resource, false);
     actor.SetActorRotation(Rotator_0(void 0, void 0, 90), false);
   };
@@ -251,14 +323,14 @@ this['kotlin-examples'] = function (_, Kotlin) {
       }
     };
   }
-  function SceneLights$rotate$tick(closure$actor, closure$time, closure$opts) {
+  function SceneLights$rotate$tick(closure$actor, closure$opts) {
     return function closure$tick() {
       var tmp$;
       {
         if (!closure$actor.IsValid())
           return;
-        closure$time.v += 0.016;
-        var rad = closure$time.v * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : Kotlin.throwCCE());
+        var time = Kotlin.numberToDouble(GWorld.GetTimeSeconds());
+        var rad = time * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : Kotlin.throwCCE());
         var r = closure$opts.r;
         var p = Vector_0(void 0, Math.cos(rad) * r, Math.sin(rad) * r).Add_VectorVector(closure$opts.p);
         closure$actor.SetActorLocation(p, false);
@@ -267,8 +339,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     };
   }
   SceneLights.prototype.rotate_ot2g50$ = function (actor, opts) {
-    var time = {v: 0.0};
-    var tick = SceneLights$rotate$tick(actor, time, opts);
+    var tick = SceneLights$rotate$tick(actor, opts);
     tick();
   };
   SceneLights.prototype.cleanup = function () {
@@ -284,7 +355,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   function SceneLights_init$ObjectLiteral() {
     this.k = 1.8;
     this.r = 150;
-    this.p = Vector_0(400.0, -100.0, 100.0);
+    this.p = Vector_0(400, -100, 100);
   }
   SceneLights_init$ObjectLiteral.$metadata$ = {
     type: Kotlin.TYPE.CLASS,
@@ -294,7 +365,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   function SceneLights_init$ObjectLiteral_0() {
     this.k = 1.5;
     this.r = 30;
-    this.p = Vector_0(400.0, void 0, 150.0);
+    this.p = Vector_0(400, void 0, 150);
   }
   SceneLights_init$ObjectLiteral_0.$metadata$ = {
     type: Kotlin.TYPE.CLASS,
@@ -304,7 +375,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   function SceneLights_init$ObjectLiteral_1() {
     this.k = 0.1;
     this.r = 230;
-    this.p = Vector_0(400.0, void 0, 250.0);
+    this.p = Vector_0(400, void 0, 250);
   }
   SceneLights_init$ObjectLiteral_1.$metadata$ = {
     type: Kotlin.TYPE.CLASS,
@@ -388,6 +459,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   _.HelloBlueprints = HelloBlueprints;
   _.HelloKotlin = HelloKotlin;
   _.init = init;
+  _.KeyboardInput = KeyboardInput;
   _.SceneLights = SceneLights;
   var package$ue = _.ue || (_.ue = {});
   package$ue.GenerateClass_1eyabd$ = GenerateClass;

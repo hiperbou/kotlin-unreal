@@ -63,10 +63,9 @@ class SceneLights() {
     }
 
     fun rotate(actor:Actor, opts:dynamic) {
-        var time:Double = 0.0
         fun tick () {
             if (!actor.IsValid()) return
-            time += 0.016
+            val time = GWorld.GetTimeSeconds().toDouble()
             val rad:Double = time * opts.k as Double
             val r:Double = opts.r
             val p = Vector( Y = Math.cos(rad) * r, Z = Math.sin(rad) * r )

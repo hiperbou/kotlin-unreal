@@ -8,5 +8,6 @@ fun init() :Function<Unit>{
     //return HelloBlueprint()::cleanup
     //return HelloBlueprints()::cleanup
     //return HelloBlueprintEvent()::cleanup
-    return SceneLights()::cleanup
+    //return SceneLights()::cleanup
+    return KeyboardInput()::cleanup
 }
