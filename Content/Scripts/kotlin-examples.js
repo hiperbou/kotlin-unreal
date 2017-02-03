@@ -1,10 +1,10 @@
-if (typeof kotlin === 'undefined') {
-  throw new Error("Error loading module 'kotlin-examples'. Its dependency 'kotlin' was not found. Please, check whether 'kotlin' is loaded prior to 'kotlin-examples'.");
-}
-this['kotlin-examples'] = function (_, Kotlin) {
+(function (_, Kotlin) {
   'use strict';
   var Any = Object;
+  MyActor.prototype = Object.create(Actor.prototype);
+  MyActor.prototype.constructor = MyActor;
   function HelloBlueprint() {
+    this.actor = void 0;
     this.yaw = 180.0;
     var bp = Blueprint.Load('/Game/ExampleBlueprint');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
@@ -12,9 +12,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   }
   function HelloBlueprint$update$lambda(this$HelloBlueprint) {
     return function (it) {
-      {
-        this$HelloBlueprint.update();
-      }
+      this$HelloBlueprint.update();
     };
   }
   HelloBlueprint.prototype.update = function () {
@@ -28,22 +26,17 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function HelloBlueprint_init$lambda(this$HelloBlueprint) {
     return function (it) {
-      {
-        this$HelloBlueprint.update();
-      }
+      this$HelloBlueprint.update();
     };
   }
   HelloBlueprint.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
+    kind: Kotlin.Kind.CLASS,
     simpleName: 'HelloBlueprint',
-    baseClasses: []
+    interfaces: []
   };
-  function newInstance($receiver_0, world) {
+  function newInstance($receiver, world) {
     var tmp$;
-    {
-    }
-    return (tmp$ = new $receiver_0(world)) == null || Kotlin.isType(tmp$, Any) ? tmp$ : Kotlin.throwCCE();
+    return (tmp$ = new $receiver(world)) == null || Kotlin.isType(tmp$, Any) ? tmp$ : Kotlin.throwCCE();
   }
   function baseClass() {
     var clazz = Blueprint.Load('/Game/ExampleBlueprint').GeneratedClass;
@@ -57,6 +50,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     return new MyActor_C(GWorld, {X: 1});
   }
   function HelloBlueprintEvent() {
+    this.actor = void 0;
     this.yaw = 180.0;
     console.log('HelloBlueprintEvent');
     if (GWorld.IsServer()) {
@@ -66,18 +60,14 @@ this['kotlin-examples'] = function (_, Kotlin) {
   }
   function HelloBlueprintEvent$update$lambda(this$HelloBlueprintEvent) {
     return function (it) {
-      {
-        this$HelloBlueprintEvent.update();
-      }
+      this$HelloBlueprintEvent.update();
     };
   }
   HelloBlueprintEvent.prototype.update = function () {
     this.yaw += 1.0;
     var tmp$ = this.actor;
     var $receiver = new Rotator();
-    {
-      $receiver.Yaw = this.yaw;
-    }
+    $receiver.Yaw = this.yaw;
     tmp$.SetActorRotation($receiver, false);
     process.nextTick(HelloBlueprintEvent$update$lambda(this));
   };
@@ -87,22 +77,19 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function HelloBlueprintEvent_init$lambda(this$HelloBlueprintEvent) {
     return function (it) {
-      {
-        this$HelloBlueprintEvent.update();
-      }
+      this$HelloBlueprintEvent.update();
     };
   }
   HelloBlueprintEvent.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
+    kind: Kotlin.Kind.CLASS,
     simpleName: 'HelloBlueprintEvent',
-    baseClasses: []
+    interfaces: []
   };
   function HelloBlueprints() {
     this.WIDTH = 400.0;
-    this.actorList = Kotlin.kotlin.collections.ArrayList_init_za3lpa$();
+    this.actorList = Kotlin.kotlin.collections.ArrayList_init_ww73n8$();
     for (var i = 0; i <= 10; i++)
-      this.actorList.add_za3rmp$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
+      this.actorList.add_11rb$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
     process.nextTick(HelloBlueprints_init$lambda(this));
   }
   HelloBlueprints.prototype.rnd_lu1900$ = function (min, max) {
@@ -113,9 +100,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function HelloBlueprints$update$lambda(this$HelloBlueprints) {
     return function (it) {
-      {
-        this$HelloBlueprints.update();
-      }
+      this$HelloBlueprints.update();
     };
   }
   HelloBlueprints.prototype.update = function () {
@@ -123,9 +108,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     tmp$ = this.actorList.iterator();
     while (tmp$.hasNext()) {
       var element = tmp$.next();
-      {
-        element.AddActorLocalRotation(Rotator_0(void 0, void 0, 1), false);
-      }
+      element.AddActorLocalRotation(Rotator_0(void 0, void 0, 1), false);
     }
     process.nextTick(HelloBlueprints$update$lambda(this));
   };
@@ -135,26 +118,23 @@ this['kotlin-examples'] = function (_, Kotlin) {
     tmp$ = this.actorList.iterator();
     while (tmp$.hasNext()) {
       var element = tmp$.next();
-      {
-        element.DestroyActor();
-      }
+      element.DestroyActor();
     }
   };
   function HelloBlueprints_init$lambda(this$HelloBlueprints) {
     return function (it) {
-      {
-        this$HelloBlueprints.update();
-      }
+      this$HelloBlueprints.update();
     };
   }
   HelloBlueprints.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
+    kind: Kotlin.Kind.CLASS,
     simpleName: 'HelloBlueprints',
-    baseClasses: []
+    interfaces: []
   };
   function HelloKotlin() {
     this.yaw = 180.0;
+    this.actor = null;
+    this.timer = void 0;
     var pos = Vector_0(100, void 0, 100);
     var rotator = Rotator_0(void 0, void 0, this.yaw);
     this.actor = new TextRenderActor(GWorld, pos, rotator);
@@ -165,7 +145,9 @@ this['kotlin-examples'] = function (_, Kotlin) {
   HelloKotlin.prototype.update_3p81yu$ = function (milliseconds) {
     this.yaw += 1.0;
     this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
-    this.timer = setTimeout(Kotlin.getBoundCallableRefForMemberFunction(this, 'update_3p81yu$'), 16);
+    this.timer = setTimeout(Kotlin.getCallableRef('update', function ($receiver, milliseconds_0) {
+      return $receiver.update_3p81yu$(milliseconds_0);
+    }.bind(null, this)), 16);
   };
   HelloKotlin.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
@@ -173,36 +155,30 @@ this['kotlin-examples'] = function (_, Kotlin) {
     clearTimeout(this.timer);
   };
   HelloKotlin.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
+    kind: Kotlin.Kind.CLASS,
     simpleName: 'HelloKotlin',
-    baseClasses: []
+    interfaces: []
   };
   function init() {
     console.log('<<<INIT>>>');
-    return Kotlin.getBoundCallableRefForMemberFunction(new ThirdPerson(), 'cleanup');
+    return Kotlin.getCallableRef('cleanup', function ($receiver) {
+      return $receiver.cleanup();
+    }.bind(null, new ThirdPerson()));
   }
   function KeyboardInput() {
+    this.actor = void 0;
     this.yaw = 180.0;
     var $receiver = new Key();
-    {
-      $receiver.KeyName = 'F';
-    }
+    $receiver.KeyName = 'F';
     this.keyLeft = $receiver;
     var $receiver_0 = new Key();
-    {
-      $receiver_0.KeyName = 'H';
-    }
+    $receiver_0.KeyName = 'H';
     this.keyRight = $receiver_0;
     var $receiver_1 = new Key();
-    {
-      $receiver_1.KeyName = 'T';
-    }
+    $receiver_1.KeyName = 'T';
     this.keyUp = $receiver_1;
     var $receiver_2 = new Key();
-    {
-      $receiver_2.KeyName = 'G';
-    }
+    $receiver_2.KeyName = 'G';
     this.keyDown = $receiver_2;
     var bp = Blueprint.Load('/Game/ExampleBlueprint');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
@@ -210,9 +186,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   }
   function KeyboardInput$update$lambda(this$KeyboardInput) {
     return function (it) {
-      {
-        this$KeyboardInput.update();
-      }
+      this$KeyboardInput.update();
     };
   }
   KeyboardInput.prototype.update = function () {
@@ -241,25 +215,20 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function KeyboardInput_init$lambda(this$KeyboardInput) {
     return function (it) {
-      {
-        this$KeyboardInput.update();
-      }
+      this$KeyboardInput.update();
     };
   }
   KeyboardInput.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
+    kind: Kotlin.Kind.CLASS,
     simpleName: 'KeyboardInput',
-    baseClasses: []
+    interfaces: []
   };
   function SceneLights() {
     var $receiver = GWorld.GetAllActorsOfClass(Light).OutActors;
     var tmp$;
     for (tmp$ = 0; tmp$ !== $receiver.length; ++tmp$) {
       var element = $receiver[tmp$];
-      {
-        element.DestroyActor();
-      }
+      element.DestroyActor();
     }
     this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(1)), new SceneLights_init$ObjectLiteral());
     this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, 1)), new SceneLights_init$ObjectLiteral_0());
@@ -312,24 +281,20 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function SceneLights$rotate$tick$lambda(closure$tick) {
     return function (it) {
-      {
-        closure$tick();
-      }
+      closure$tick();
     };
   }
   function SceneLights$rotate$tick(closure$actor, closure$opts) {
     return function closure$tick() {
       var tmp$;
-      {
-        if (!closure$actor.IsValid())
-          return;
-        var time = Kotlin.numberToDouble(GWorld.GetTimeSeconds());
-        var rad = time * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : Kotlin.throwCCE());
-        var r = closure$opts.r;
-        var p = Vector_0(void 0, Math.cos(rad) * r, Math.sin(rad) * r).Add_VectorVector(closure$opts.p);
-        closure$actor.SetActorLocation(p, false);
-        process.nextTick(SceneLights$rotate$tick$lambda(closure$tick));
-      }
+      if (!closure$actor.IsValid())
+        return;
+      var time = Kotlin.numberToDouble(GWorld.GetTimeSeconds());
+      var rad = time * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : Kotlin.throwCCE());
+      var r = closure$opts.r;
+      var p = Vector_0(void 0, Math.cos(rad) * r, Math.sin(rad) * r).Add_VectorVector(closure$opts.p);
+      closure$actor.SetActorLocation(p, false);
+      process.nextTick(SceneLights$rotate$tick$lambda(closure$tick));
     };
   }
   SceneLights.prototype.rotate_ot2g50$ = function (actor, opts) {
@@ -341,9 +306,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
     var tmp$;
     for (tmp$ = 0; tmp$ !== $receiver.length; ++tmp$) {
       var element = $receiver[tmp$];
-      {
-        element.DestroyActor();
-      }
+      element.DestroyActor();
     }
   };
   function SceneLights_init$ObjectLiteral() {
@@ -352,9 +315,8 @@ this['kotlin-examples'] = function (_, Kotlin) {
     this.p = Vector_0(400, -100, 100);
   }
   SceneLights_init$ObjectLiteral.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
-    baseClasses: []
+    kind: Kotlin.Kind.CLASS,
+    interfaces: []
   };
   function SceneLights_init$ObjectLiteral_0() {
     this.k = 1.5;
@@ -362,9 +324,8 @@ this['kotlin-examples'] = function (_, Kotlin) {
     this.p = Vector_0(400, void 0, 150);
   }
   SceneLights_init$ObjectLiteral_0.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
-    baseClasses: []
+    kind: Kotlin.Kind.CLASS,
+    interfaces: []
   };
   function SceneLights_init$ObjectLiteral_1() {
     this.k = 0.1;
@@ -372,42 +333,39 @@ this['kotlin-examples'] = function (_, Kotlin) {
     this.p = Vector_0(400, void 0, 250);
   }
   SceneLights_init$ObjectLiteral_1.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
-    baseClasses: []
+    kind: Kotlin.Kind.CLASS,
+    interfaces: []
   };
   SceneLights.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
+    kind: Kotlin.Kind.CLASS,
     simpleName: 'SceneLights',
-    baseClasses: []
+    interfaces: []
+  };
+  function MyActor() {
+    Actor.call(this, GWorld, new Vector(), new Rotator());
+  }
+  MyActor.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: 'MyActor',
+    interfaces: []
   };
   function ThirdPerson() {
+    this.actor = null;
     this.yaw = 180.0;
     var $receiver = new Key();
-    {
-      $receiver.KeyName = 'A';
-    }
+    $receiver.KeyName = 'A';
     this.keyLeft = $receiver;
     var $receiver_0 = new Key();
-    {
-      $receiver_0.KeyName = 'D';
-    }
+    $receiver_0.KeyName = 'D';
     this.keyRight = $receiver_0;
     var $receiver_1 = new Key();
-    {
-      $receiver_1.KeyName = 'W';
-    }
+    $receiver_1.KeyName = 'W';
     this.keyUp = $receiver_1;
     var $receiver_2 = new Key();
-    {
-      $receiver_2.KeyName = 'S';
-    }
+    $receiver_2.KeyName = 'S';
     this.keyDown = $receiver_2;
     var $receiver_3 = new Key();
-    {
-      $receiver_3.KeyName = 'SpaceBar';
-    }
+    $receiver_3.KeyName = 'SpaceBar';
     this.keyJump = $receiver_3;
     var bp = Blueprint.Load('/Game/ThirdPersonBP');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
@@ -428,9 +386,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   }
   function ThirdPerson$update$lambda(this$ThirdPerson) {
     return function (it) {
-      {
-        this$ThirdPerson.update();
-      }
+      this$ThirdPerson.update();
     };
   }
   ThirdPerson.prototype.update = function () {
@@ -503,18 +459,15 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function ThirdPerson_init$lambda(this$ThirdPerson) {
     return function (it) {
-      {
-        var myPlayerController = GWorld.GetPlayerController(0);
-        myPlayerController.Possess(this$ThirdPerson.actor);
-        this$ThirdPerson.update();
-      }
+      var myPlayerController = GWorld.GetPlayerController(0);
+      myPlayerController.Possess(this$ThirdPerson.actor);
+      this$ThirdPerson.update();
     };
   }
   ThirdPerson.$metadata$ = {
-    type: Kotlin.TYPE.CLASS,
-    classIndex: Kotlin.newClassIndex(),
+    kind: Kotlin.Kind.CLASS,
     simpleName: 'ThirdPerson',
-    baseClasses: []
+    interfaces: []
   };
   function GenerateClass($receiver, world, position, rotation) {
     return new $receiver.GeneratedClass(world, position, rotation);
@@ -533,11 +486,9 @@ this['kotlin-examples'] = function (_, Kotlin) {
     var closure$X = X;
     var closure$Y = Y;
     var closure$Z = Z;
-    {
-      $receiver.X = Kotlin.numberToDouble(closure$X);
-      $receiver.Y = Kotlin.numberToDouble(closure$Y);
-      $receiver.Z = Kotlin.numberToDouble(closure$Z);
-    }
+    $receiver.X = Kotlin.numberToDouble(closure$X);
+    $receiver.Y = Kotlin.numberToDouble(closure$Y);
+    $receiver.Z = Kotlin.numberToDouble(closure$Z);
     return $receiver;
   }
   function LinearColor_0(R, G, B, A) {
@@ -554,12 +505,10 @@ this['kotlin-examples'] = function (_, Kotlin) {
     var closure$G = G;
     var closure$B = B;
     var closure$A = A;
-    {
-      $receiver.R = closure$R;
-      $receiver.G = closure$G;
-      $receiver.B = closure$B;
-      $receiver.A = closure$A;
-    }
+    $receiver.R = closure$R;
+    $receiver.G = closure$G;
+    $receiver.B = closure$B;
+    $receiver.A = closure$A;
     return $receiver;
   }
   function Rotator_0(Roll, Pitch, Yaw) {
@@ -573,15 +522,13 @@ this['kotlin-examples'] = function (_, Kotlin) {
     var closure$Pitch = Pitch;
     var closure$Roll = Roll;
     var closure$Yaw = Yaw;
-    {
-      $receiver.Pitch = closure$Pitch;
-      $receiver.Roll = closure$Roll;
-      $receiver.Yaw = closure$Yaw;
-    }
+    $receiver.Pitch = closure$Pitch;
+    $receiver.Roll = closure$Roll;
+    $receiver.Yaw = closure$Yaw;
     return $receiver;
   }
   _.HelloBlueprint = HelloBlueprint;
-  _.newInstance_8vojts$ = newInstance;
+  _.newInstance_w8i5yt$ = newInstance;
   _.baseClass = baseClass;
   _.HelloBlueprintEvent = HelloBlueprintEvent;
   _.HelloBlueprints = HelloBlueprints;
@@ -589,13 +536,14 @@ this['kotlin-examples'] = function (_, Kotlin) {
   _.init = init;
   _.KeyboardInput = KeyboardInput;
   _.SceneLights = SceneLights;
+  _.MyActor = MyActor;
   _.ThirdPerson = ThirdPerson;
   var package$ue = _.ue || (_.ue = {});
-  package$ue.GenerateClass_1eyabd$ = GenerateClass;
-  package$ue.GenerateClass_b4xcpr$ = GenerateClass_0;
+  package$ue.GenerateClass_6p5t4y$ = GenerateClass;
+  package$ue.GenerateClass_4gucm0$ = GenerateClass_0;
   package$ue.Vector_a2j3zq$ = Vector_0;
   package$ue.LinearColor_1ugm5o$ = LinearColor_0;
   package$ue.Rotator_a2j3zq$ = Rotator_0;
   Kotlin.defineModule('kotlin-examples', _);
   return _;
-}(typeof this['kotlin-examples'] === 'undefined' ? {} : this['kotlin-examples'], kotlin);
+}(module.exports, require('kotlin')));
