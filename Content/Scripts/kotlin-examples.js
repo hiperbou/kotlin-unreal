@@ -6,11 +6,9 @@ this['kotlin-examples'] = function (_, Kotlin) {
   var Any = Object;
   function HelloBlueprint() {
     this.yaw = 180.0;
-    if (GWorld.IsServer()) {
-      var bp = Blueprint.Load('/Game/ExampleBlueprint');
-      this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
-      process.nextTick(HelloBlueprint_init$lambda(this));
-    }
+    var bp = Blueprint.Load('/Game/ExampleBlueprint');
+    this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
+    process.nextTick(HelloBlueprint_init$lambda(this));
   }
   function HelloBlueprint$update$lambda(this$HelloBlueprint) {
     return function (it) {
@@ -103,11 +101,9 @@ this['kotlin-examples'] = function (_, Kotlin) {
   function HelloBlueprints() {
     this.WIDTH = 400.0;
     this.actorList = Kotlin.kotlin.collections.ArrayList_init_za3lpa$();
-    if (GWorld.IsServer()) {
-      for (var i = 0; i <= 10; i++)
-        this.actorList.add_za3rmp$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
-      process.nextTick(HelloBlueprints_init$lambda(this));
-    }
+    for (var i = 0; i <= 10; i++)
+      this.actorList.add_za3rmp$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
+    process.nextTick(HelloBlueprints_init$lambda(this));
   }
   HelloBlueprints.prototype.rnd_lu1900$ = function (min, max) {
     return min + Math.random() * (max - min);
@@ -184,7 +180,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   };
   function init() {
     console.log('<<<INIT>>>');
-    return Kotlin.getBoundCallableRefForMemberFunction(new KeyboardInput(), 'cleanup');
+    return Kotlin.getBoundCallableRefForMemberFunction(new ThirdPerson(), 'cleanup');
   }
   function KeyboardInput() {
     this.yaw = 180.0;
@@ -208,11 +204,9 @@ this['kotlin-examples'] = function (_, Kotlin) {
       $receiver_2.KeyName = 'G';
     }
     this.keyDown = $receiver_2;
-    if (GWorld.IsServer()) {
-      var bp = Blueprint.Load('/Game/ExampleBlueprint');
-      this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
-      process.nextTick(KeyboardInput_init$lambda(this));
-    }
+    var bp = Blueprint.Load('/Game/ExampleBlueprint');
+    this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
+    process.nextTick(KeyboardInput_init$lambda(this));
   }
   function KeyboardInput$update$lambda(this$KeyboardInput) {
     return function (it) {
@@ -388,6 +382,140 @@ this['kotlin-examples'] = function (_, Kotlin) {
     simpleName: 'SceneLights',
     baseClasses: []
   };
+  function ThirdPerson() {
+    this.yaw = 180.0;
+    var $receiver = new Key();
+    {
+      $receiver.KeyName = 'A';
+    }
+    this.keyLeft = $receiver;
+    var $receiver_0 = new Key();
+    {
+      $receiver_0.KeyName = 'D';
+    }
+    this.keyRight = $receiver_0;
+    var $receiver_1 = new Key();
+    {
+      $receiver_1.KeyName = 'W';
+    }
+    this.keyUp = $receiver_1;
+    var $receiver_2 = new Key();
+    {
+      $receiver_2.KeyName = 'S';
+    }
+    this.keyDown = $receiver_2;
+    var $receiver_3 = new Key();
+    {
+      $receiver_3.KeyName = 'SpaceBar';
+    }
+    this.keyJump = $receiver_3;
+    var bp = Blueprint.Load('/Game/ThirdPersonBP');
+    this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
+    this.actor.CapsuleComponent.CapsuleRadius = 42.0;
+    this.actor.CapsuleComponent.CapsuleHalfHeight = 96.0;
+    this.actor.bUseControllerRotationPitch = false;
+    this.actor.bUseControllerRotationRoll = false;
+    this.actor.bUseControllerRotationYaw = false;
+    this.actor.CharacterMovement.bOrientRotationToMovement = true;
+    this.actor.CharacterMovement.RotationRate = Rotator.MakeRotator(0, 0, 540);
+    this.actor.CharacterMovement.JumpZVelocity = 600;
+    this.actor.CharacterMovement.AirControl = 0.2;
+    var ANI_AnimationBP = AnimBlueprint.Load('/Game/Mannequin/Animations/ThirdPerson_AnimBP.ThirdPerson_AnimBP').GeneratedClass;
+    this.actor.Mesh.SetAnimInstanceClass(ANI_AnimationBP);
+    this.actor.Mesh.RelativeRotation = Rotator.MakeRotator(0, 0, 270);
+    this.actor.Mesh.RelativeLocation = Vector.MakeVector(0, 0, -96);
+    process.nextTick(ThirdPerson_init$lambda(this));
+  }
+  function ThirdPerson$update$lambda(this$ThirdPerson) {
+    return function (it) {
+      {
+        this$ThirdPerson.update();
+      }
+    };
+  }
+  ThirdPerson.prototype.update = function () {
+    if (this.key_e2g2e7$(this.keyLeft)) {
+      this.MoveRight_14dthe$(-1.0);
+    }
+    if (this.key_e2g2e7$(this.keyRight)) {
+      this.MoveRight_14dthe$(1.0);
+    }
+    if (this.key_e2g2e7$(this.keyUp)) {
+      this.MoveForward_14dthe$(1.0);
+    }
+    if (this.key_e2g2e7$(this.keyDown)) {
+      this.MoveForward_14dthe$(-1.0);
+    }
+    if (this.keyPressed_e2g2e7$(this.keyJump)) {
+      this.startJump();
+    }
+    if (this.keyReleased_e2g2e7$(this.keyJump)) {
+      this.stopJump();
+    }
+    this.Turn_14dthe$(this.axisTurn());
+    this.LookUp_14dthe$(this.axisLookUp());
+    process.nextTick(ThirdPerson$update$lambda(this));
+  };
+  ThirdPerson.prototype.Turn_14dthe$ = function (value) {
+    this.actor.AddControllerYawInput(value);
+  };
+  ThirdPerson.prototype.LookUp_14dthe$ = function (value) {
+    this.actor.AddControllerPitchInput(value);
+  };
+  ThirdPerson.prototype.MoveForward_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tForwardVector = tPawnRotator.GetForwardVector();
+    this.actor.AddMovementInput(tForwardVector, value, false);
+  };
+  ThirdPerson.prototype.MoveRight_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tRightVector = tPawnRotator.GetRightVector();
+    this.actor.AddMovementInput(tRightVector, value, false);
+  };
+  ThirdPerson.prototype.startJump = function () {
+    this.actor.Jump();
+  };
+  ThirdPerson.prototype.stopJump = function () {
+    this.actor.StopJumping();
+  };
+  ThirdPerson.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.DestroyActor();
+  };
+  ThirdPerson.prototype.key_e2g2e7$ = function (k) {
+    return GWorld.GetPlayerController(0).IsInputKeyDown(k);
+  };
+  ThirdPerson.prototype.keyPressed_e2g2e7$ = function (k) {
+    return GWorld.GetPlayerController(0).WasInputKeyJustPressed(k);
+  };
+  ThirdPerson.prototype.keyReleased_e2g2e7$ = function (k) {
+    return GWorld.GetPlayerController(0).WasInputKeyJustReleased(k);
+  };
+  ThirdPerson.prototype.axisTurn = function () {
+    return Kotlin.numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
+  };
+  ThirdPerson.prototype.axisLookUp = function () {
+    return -Kotlin.numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
+  };
+  function ThirdPerson_init$lambda(this$ThirdPerson) {
+    return function (it) {
+      {
+        var myPlayerController = GWorld.GetPlayerController(0);
+        myPlayerController.Possess(this$ThirdPerson.actor);
+        this$ThirdPerson.update();
+      }
+    };
+  }
+  ThirdPerson.$metadata$ = {
+    type: Kotlin.TYPE.CLASS,
+    classIndex: Kotlin.newClassIndex(),
+    simpleName: 'ThirdPerson',
+    baseClasses: []
+  };
   function GenerateClass($receiver, world, position, rotation) {
     return new $receiver.GeneratedClass(world, position, rotation);
   }
@@ -461,6 +589,7 @@ this['kotlin-examples'] = function (_, Kotlin) {
   _.init = init;
   _.KeyboardInput = KeyboardInput;
   _.SceneLights = SceneLights;
+  _.ThirdPerson = ThirdPerson;
   var package$ue = _.ue || (_.ue = {});
   package$ue.GenerateClass_1eyabd$ = GenerateClass;
   package$ue.GenerateClass_b4xcpr$ = GenerateClass_0;

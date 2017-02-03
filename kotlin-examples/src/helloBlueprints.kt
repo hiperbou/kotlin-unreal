@@ -8,11 +8,9 @@ class HelloBlueprints {
     val actorList = arrayListOf<Actor>()
 
     init {
-        if (GWorld.IsServer()) {
-            for (i in 0..10)
-                actorList.add(createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0)))
-            process.nextTick { update() }
-        }
+        for (i in 0..10)
+            actorList.add(createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0)))
+        process.nextTick { update() }
     }
 
     fun rnd(min:Double, max:Double):Double{
