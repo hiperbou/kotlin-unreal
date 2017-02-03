@@ -11,6 +11,10 @@ Scene Lights example:
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/SceneLights.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/scenelights.jpg)
 
+Third Person example:
+https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/ThirdPerson.kt
+![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/thirdperson.jpg)
+
 Hello Blueprints example:
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/helloBlueprints.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/helloblueprints.jpeg)
