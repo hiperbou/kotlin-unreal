@@ -3,6 +3,10 @@
  */
 import ue.*
 
+class MyActor:Actor(GWorld,Vector(),Rotator()){
+
+}
+
 class ThirdPerson {
     var actor:Character
     //var myArm:SpringArmComponent /*EditAnywhere+SpringArmComponent*/

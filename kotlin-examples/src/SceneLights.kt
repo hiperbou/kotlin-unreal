@@ -2,6 +2,8 @@
  * Created by hiperbou on 30/01/2017.
  */
 import ue.*
+import kotlin.js.Math
+
 class SceneLights() {
     init {
         GWorld.GetAllActorsOfClass(Light).OutActors.forEach { it.DestroyActor() }
@@ -50,7 +52,7 @@ class SceneLights() {
         for(y in 0..N){
             for(x in 0..N){
                 val a = box(p.Add_VectorVector(Vector(Y=(y.toDouble()-N/2) * 50, Z= x.toDouble() * 50 )), Vector( X= s, Y= s, Z= s ), LinearColor( R= 1, G= 1, B= 1 ))
-                a.SetActorRotation(Rotator( Yaw=Math.random() * 360, Pitch=Math.random() * 180 ), false)
+                a.SetActorRotation(Rotator( Yaw= Math.random() * 360, Pitch=Math.random() * 180 ), false)
             }
         }
     }

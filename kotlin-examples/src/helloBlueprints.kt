@@ -2,6 +2,7 @@
  * Created by hiperbou on 29/01/2017.
  */
 import ue.*
+import kotlin.js.Math
 
 class HelloBlueprints {
     val WIDTH = 400.0
@@ -14,7 +15,7 @@ class HelloBlueprints {
     }
 
     fun rnd(min:Double, max:Double):Double{
-        return min+Math.random()*(max-min)
+        return min+ Math.random()*(max-min)
     }
 
     fun createActor(x:Double, y:Double, yaw:Number):Actor {
