@@ -5,13 +5,13 @@ try {
 		let examples = require('kotlin-examples')
         let cleanup = null
         process.nextTick(() => cleanup = examples.init());
+        //process.nextTick(() => cleanup = new examples.ThirdPerson());
+        //process.nextTick(() => cleanup = new examples.SceneLights());
         return () => cleanup()
     }
 }
 catch (e) {
-    //require('bootstrap')('KotlinMain')
 	console.log("--- TRY TO LOAD KOTLIN.JS ---")
-	require('lib/kotlin.js')
 	require('bootstrap')('KotlinMain')
 }
 

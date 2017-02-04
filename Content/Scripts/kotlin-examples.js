@@ -1,8 +1,190 @@
 (function (_, Kotlin) {
   'use strict';
   var Any = Object;
-  MyActor.prototype = Object.create(Actor.prototype);
-  MyActor.prototype.constructor = MyActor;
+  var first = Kotlin.kotlin.collections.first_2p1efm$;
+  function FirstPerson() {
+    this.actor = null;
+    this.myCamera = null;
+    this.myFPMesh = null;
+    this.myFPGunMesh = null;
+    this.fireSound = null;
+    this.fireAnimation = null;
+    this.gunOffset = null;
+    this.weaponRange = 0;
+    this.weaponDamage = 0;
+    this.yaw = 180.0;
+    var $receiver = new Key();
+    $receiver.KeyName = 'A';
+    this.keyLeft = $receiver;
+    var $receiver_0 = new Key();
+    $receiver_0.KeyName = 'D';
+    this.keyRight = $receiver_0;
+    var $receiver_1 = new Key();
+    $receiver_1.KeyName = 'W';
+    this.keyUp = $receiver_1;
+    var $receiver_2 = new Key();
+    $receiver_2.KeyName = 'S';
+    this.keyDown = $receiver_2;
+    var $receiver_3 = new Key();
+    $receiver_3.KeyName = 'SpaceBar';
+    this.keyJump = $receiver_3;
+    var $receiver_4 = new Key();
+    $receiver_4.KeyName = 'LeftMouseButton';
+    this.keyFire = $receiver_4;
+    var tmp$;
+    var bp = Blueprint.Load('/Game/FirstPersonBP');
+    this.actor = GenerateClass(bp, GWorld, new Vector(), new Rotator());
+    this.actor.CapsuleComponent.CapsuleRadius = 42.0;
+    this.actor.CapsuleComponent.CapsuleHalfHeight = 96.0;
+    this.myCamera = Kotlin.isType(tmp$ = this.actor.GetComponentByClass(CameraComponent), CameraComponent) ? tmp$ : Kotlin.throwCCE();
+    this.myCamera.AttachParent = this.actor.CapsuleComponent;
+    this.myCamera.RelativeLocation = Vector_0(0, 0, 64);
+    this.myCamera.bUsePawnControlRotation = true;
+    this.myFPMesh = GetComponentByName(this.actor, SkeletalMeshComponent, 'Mesh2P');
+    this.myFPMesh.bOnlyOwnerSee = true;
+    this.myFPMesh.AttachParent = this.myCamera;
+    this.myFPMesh.bCastDynamicShadow = false;
+    this.myFPMesh.CastShadow = false;
+    this.myFPMesh.RelativeLocation = Vector_0(0, -4, -156);
+    this.myFPMesh.RelativeRotation = Rotator_0(5, 2, -20);
+    this.myFPGunMesh = GetComponentByName(this.actor, SkeletalMeshComponent, 'FP_Gun');
+    this.myFPGunMesh.bOnlyOwnerSee = true;
+    this.myFPGunMesh.bCastDynamicShadow = false;
+    this.myFPGunMesh.CastShadow = false;
+    this.myFPGunMesh.AttachParent = this.myFPMesh;
+    this.myFPGunMesh.AttachSocketName = 'GripPoint';
+    var FP_mesh = SkeletalMesh.Load('/Game/FirstPerson/Character/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms');
+    var FPGun_mesh = SkeletalMesh.Load('/Game/FirstPerson/FPWeapon/Mesh/SK_FPGun.SK_FPGun');
+    var ANI_AnimationBP = AnimBlueprint.Load('/Game/FirstPerson/Animations/FirstPerson_animBP.FirstPerson_AnimBP').GeneratedClass;
+    this.fireSound = SoundBase.Load('/Game/FirstPerson/Audio/FirstPersonTemplateWeaponFire02.FirstPersonTemplateWeaponFire02');
+    this.fireAnimation = AnimMontage.Load('/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage');
+    this.myFPMesh.SetSkeletalMesh(FP_mesh, false);
+    this.myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false);
+    this.myFPMesh.SetAnimInstanceClass(ANI_AnimationBP);
+    this.weaponRange = 5000.0;
+    this.weaponDamage = 500000.0;
+    this.gunOffset = Vector_0(100, 30, 10);
+    this.createWall();
+    process.nextTick(FirstPerson_init$lambda(this));
+  }
+  function FirstPerson$update$lambda(this$FirstPerson) {
+    return function (it) {
+      this$FirstPerson.update();
+    };
+  }
+  FirstPerson.prototype.update = function () {
+    if (this.key_e2g2e7$(this.keyLeft)) {
+      this.MoveRight_14dthe$(-1.0);
+    }
+    if (this.key_e2g2e7$(this.keyRight)) {
+      this.MoveRight_14dthe$(1.0);
+    }
+    if (this.key_e2g2e7$(this.keyUp)) {
+      this.MoveForward_14dthe$(1.0);
+    }
+    if (this.key_e2g2e7$(this.keyDown)) {
+      this.MoveForward_14dthe$(-1.0);
+    }
+    if (this.keyPressed_e2g2e7$(this.keyJump)) {
+      this.startJump();
+    }
+    if (this.keyReleased_e2g2e7$(this.keyJump)) {
+      this.stopJump();
+    }
+    if (this.keyPressed_e2g2e7$(this.keyFire)) {
+      this.onFire();
+    }
+    this.Turn_14dthe$(this.axisTurn());
+    this.LookUp_14dthe$(this.axisLookUp());
+    process.nextTick(FirstPerson$update$lambda(this));
+  };
+  FirstPerson.prototype.Turn_14dthe$ = function (value) {
+    this.actor.AddControllerYawInput(value);
+  };
+  FirstPerson.prototype.LookUp_14dthe$ = function (value) {
+    this.actor.AddControllerPitchInput(value);
+  };
+  FirstPerson.prototype.MoveForward_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tForwardVector = tPawnRotator.GetForwardVector();
+    this.actor.AddMovementInput(tForwardVector, value, false);
+  };
+  FirstPerson.prototype.MoveRight_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tRightVector = tPawnRotator.GetRightVector();
+    this.actor.AddMovementInput(tRightVector, value, false);
+  };
+  FirstPerson.prototype.startJump = function () {
+    this.actor.Jump();
+  };
+  FirstPerson.prototype.stopJump = function () {
+    this.actor.StopJumping();
+  };
+  FirstPerson.prototype.onFire = function () {
+    console.log('shooting projectile');
+    GWorld.PlaySoundAtLocation(this.fireSound, this.actor.GetActorLocation(), Rotator_0(0, 0, 0), 1, 1, 0, this.fireSound.AttenuationSettings, this.fireSound.SoundConcurrencySettings);
+    var tempAnimInstance = this.myFPMesh.GetAnimInstance();
+    tempAnimInstance.Montage_Play(this.fireAnimation, 1, 'MontageLength', 0);
+    var tempCamera = CameraComponent.C(this.myCamera);
+    var tempStartTrace = tempCamera.GetWorldLocation();
+    var tempForwardDirection = tempCamera.GetWorldRotation().GetForwardVector();
+    var tempOffset = tempForwardDirection.Multiply_VectorFloat(this.weaponRange);
+    var tempEndTrace = Vector.Add_VectorVector(tempStartTrace, tempOffset);
+    var tempHitResult = new HitResult();
+    GWorld.LineTraceByChannel(tempStartTrace, tempEndTrace, 'TraceTypeQuery2', false, [this.actor], 'ForDuration', tempHitResult, true, LinearColor_0(1, 0, 0), LinearColor_0(1, 0, 0), 3);
+    var damageActor = tempHitResult.Actor;
+    var damageComponent = tempHitResult.Component;
+    if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
+      var tempImpulseVector = tempForwardDirection.Multiply_VectorFloat(this.weaponDamage);
+      damageComponent.AddImpulseAtLocation(tempImpulseVector, tempHitResult.ImpactPoint, '');
+    }
+  };
+  FirstPerson.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.DestroyActor();
+  };
+  FirstPerson.prototype.key_e2g2e7$ = function (k) {
+    return GWorld.GetPlayerController(0).IsInputKeyDown(k);
+  };
+  FirstPerson.prototype.keyPressed_e2g2e7$ = function (k) {
+    return GWorld.GetPlayerController(0).WasInputKeyJustPressed(k);
+  };
+  FirstPerson.prototype.keyReleased_e2g2e7$ = function (k) {
+    return GWorld.GetPlayerController(0).WasInputKeyJustReleased(k);
+  };
+  FirstPerson.prototype.axisTurn = function () {
+    return Kotlin.numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
+  };
+  FirstPerson.prototype.axisLookUp = function () {
+    return -Kotlin.numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
+  };
+  FirstPerson.prototype.createWall = function () {
+    for (var y = 0; y <= 9; y++) {
+      for (var z = 0; z <= 3; z++) {
+        this.createCube_atrclb$(Vector_0(450.0, -450.0 + (y * 100 | 0), 70 + (z * 100 | 0) | 0));
+      }
+    }
+  };
+  FirstPerson.prototype.createCube_atrclb$ = function (position) {
+    var bp = Blueprint.Load('/Game/CubeBP');
+    return GenerateClass(bp, GWorld, position, new Rotator());
+  };
+  function FirstPerson_init$lambda(this$FirstPerson) {
+    return function (it) {
+      var myPlayerController = GWorld.GetPlayerController(0);
+      myPlayerController.Possess(this$FirstPerson.actor);
+      this$FirstPerson.update();
+    };
+  }
+  FirstPerson.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: 'FirstPerson',
+    interfaces: []
+  };
   function HelloBlueprint() {
     this.actor = void 0;
     this.yaw = 180.0;
@@ -163,7 +345,7 @@
     console.log('<<<INIT>>>');
     return Kotlin.getCallableRef('cleanup', function ($receiver) {
       return $receiver.cleanup();
-    }.bind(null, new ThirdPerson()));
+    }.bind(null, new FirstPerson()));
   }
   function KeyboardInput() {
     this.actor = void 0;
@@ -339,14 +521,6 @@
   SceneLights.$metadata$ = {
     kind: Kotlin.Kind.CLASS,
     simpleName: 'SceneLights',
-    interfaces: []
-  };
-  function MyActor() {
-    Actor.call(this, GWorld, new Vector(), new Rotator());
-  }
-  MyActor.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: 'MyActor',
     interfaces: []
   };
   function ThirdPerson() {
@@ -527,6 +701,21 @@
     $receiver.Yaw = closure$Yaw;
     return $receiver;
   }
+  function GetComponentByName($receiver, ComponentClass, Name) {
+    var tmp$;
+    var $receiver_0 = $receiver.GetComponentsByClass(ComponentClass);
+    var destination = Kotlin.kotlin.collections.ArrayList_init_ww73n8$();
+    var tmp$_0;
+    for (tmp$_0 = 0; tmp$_0 !== $receiver_0.length; ++tmp$_0) {
+      var element = $receiver_0[tmp$_0];
+      if (Kotlin.equals(element.GetName(), Name)) {
+        destination.add_11rb$(element);
+      }
+    }
+    var component = destination;
+    return (tmp$ = first(component)) == null || Kotlin.isType(tmp$, Any) ? tmp$ : Kotlin.throwCCE();
+  }
+  _.FirstPerson = FirstPerson;
   _.HelloBlueprint = HelloBlueprint;
   _.newInstance_w8i5yt$ = newInstance;
   _.baseClass = baseClass;
@@ -536,7 +725,6 @@
   _.init = init;
   _.KeyboardInput = KeyboardInput;
   _.SceneLights = SceneLights;
-  _.MyActor = MyActor;
   _.ThirdPerson = ThirdPerson;
   var package$ue = _.ue || (_.ue = {});
   package$ue.GenerateClass_6p5t4y$ = GenerateClass;
@@ -544,6 +732,7 @@
   package$ue.Vector_a2j3zq$ = Vector_0;
   package$ue.LinearColor_1ugm5o$ = LinearColor_0;
   package$ue.Rotator_a2j3zq$ = Rotator_0;
+  package$ue.GetComponentByName_4wsm31$ = GetComponentByName;
   Kotlin.defineModule('kotlin-examples', _);
   return _;
 }(module.exports, require('kotlin')));

@@ -11,6 +11,10 @@ Scene Lights example:
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/SceneLights.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/scenelights.jpg)
 
+First Person example:
+https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/FirstPerson.kt
+![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/firstperson.jpg)
+
 Third Person example:
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/ThirdPerson.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/thirdperson.jpg)

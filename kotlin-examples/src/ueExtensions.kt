@@ -25,3 +25,10 @@ fun LinearColor(R:Number=0.0, G:Number=0.0, B:Number=0.0, A:Number=1.0):LinearCo
 fun Rotator(Roll:Number=0.0,Pitch:Number=0.0,Yaw:Number=0.0):Rotator {
     return ue.Rotator().apply { this.Pitch=Pitch; this.Roll=Roll; this.Yaw=Yaw }
 }
+
+
+fun <T>Actor.GetComponentByName(ComponentClass:Any, Name:String):T
+{
+    val component = GetComponentsByClass(ComponentClass).filter { it.GetName()==Name }
+    return component.first() as T
+}

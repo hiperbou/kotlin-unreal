@@ -10,5 +10,6 @@ fun init() :Function<Unit>{
     //return HelloBlueprintEvent()::cleanup
     //return SceneLights()::cleanup
     //return KeyboardInput()::cleanup
-    return ThirdPerson()::cleanup
+    //return ThirdPerson()::cleanup
+    return FirstPerson()::cleanup
 }
