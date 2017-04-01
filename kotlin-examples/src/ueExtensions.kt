@@ -35,17 +35,17 @@ fun <T>Actor.GetComponentByName(ComponentClass:Any, Name:String):T
 
 fun Key(keyName:String):Key = Key().apply { KeyName=keyName }
 
-class KeyListener(keyName:String) {
+class KeyListener(keyName:String, val playerControllerIndex:Int = 0) {
     val k = Key(keyName)
     fun down(): Boolean {
-        return GWorld.GetPlayerController(0).IsInputKeyDown(k)
+        return GWorld.GetPlayerController(playerControllerIndex).IsInputKeyDown(k)
     }
 
     fun pressed(): Boolean {
-        return GWorld.GetPlayerController(0).WasInputKeyJustPressed(k)
+        return GWorld.GetPlayerController(playerControllerIndex).WasInputKeyJustPressed(k)
     }
 
     fun released(): Boolean {
-        return GWorld.GetPlayerController(0).WasInputKeyJustReleased(k)
+        return GWorld.GetPlayerController(playerControllerIndex).WasInputKeyJustReleased(k)
     }
 }
