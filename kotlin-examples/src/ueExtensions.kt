@@ -41,11 +41,11 @@ class KeyListener(keyName:String) {
         return GWorld.GetPlayerController(0).IsInputKeyDown(k)
     }
 
-    fun keyPressed(): Boolean {
+    fun pressed(): Boolean {
         return GWorld.GetPlayerController(0).WasInputKeyJustPressed(k)
     }
 
-    fun keyReleased(): Boolean {
+    fun released(): Boolean {
         return GWorld.GetPlayerController(0).WasInputKeyJustReleased(k)
     }
 }

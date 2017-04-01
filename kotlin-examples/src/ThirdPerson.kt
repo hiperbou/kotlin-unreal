@@ -98,10 +98,10 @@ class ThirdPerson {
         if(keyDown.down()) {
             MoveForward(-1.0)
         }
-        if(keyJump.keyPressed()) {
+        if(keyJump.pressed()) {
             startJump()
         }
-        if(keyJump.keyReleased()) {
+        if(keyJump.released()) {
             stopJump()
         }
         Turn(axisTurn())
