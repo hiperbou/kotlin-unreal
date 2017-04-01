@@ -7,10 +7,10 @@ class KeyboardInput {
     lateinit var actor:Actor
     var yaw = 180.0
 
-    val keyLeft = Key().apply { KeyName="F" }
-    val keyRight = Key().apply { KeyName="H" }
-    val keyUp = Key().apply { KeyName="T" }
-    val keyDown = Key().apply { KeyName="G" }
+    val keyLeft = KeyListener("F")
+    val keyRight = KeyListener("H")
+    val keyUp = KeyListener("T")
+    val keyDown = KeyListener("G")
 
     init {
         val bp = Blueprint.Load("/Game/ExampleBlueprint")
@@ -23,16 +23,16 @@ class KeyboardInput {
         yaw += 1.0
         actor.SetActorRotation(Rotator(Yaw = yaw), false)
 
-        if(key(keyLeft)) {
+        if(keyLeft.down()) {
             actor.AddActorWorldOffset(Vector(Y = -1),false)
         }
-        if(key(keyRight)) {
+        if(keyRight.down()) {
             actor.AddActorWorldOffset(Vector(Y = 1),false)
         }
-        if(key(keyUp)) {
+        if(keyUp.down()) {
             actor.AddActorWorldOffset(Vector(X = 1),false)
         }
-        if(key(keyDown)) {
+        if(keyDown.down()) {
             actor.AddActorWorldOffset(Vector(X = -1),false)
         }
 
@@ -41,9 +41,5 @@ class KeyboardInput {
     fun cleanup():Unit {
         console.log("<<<cleanup>>>")
         actor.DestroyActor()
-    }
-
-    fun key(k:Key):Boolean {
-        return GWorld.GetPlayerController(0).IsInputKeyDown(k)
     }
 }

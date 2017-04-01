@@ -19,12 +19,12 @@ class FirstPerson {
 
     var yaw = 180.0
 
-    val keyLeft = Key().apply { KeyName="A" }
-    val keyRight = Key().apply { KeyName="D" }
-    val keyUp = Key().apply { KeyName="W" }
-    val keyDown = Key().apply { KeyName="S" }
-    val keyJump = Key().apply { KeyName="SpaceBar" }
-    val keyFire = Key().apply { KeyName="LeftMouseButton" }
+    val keyLeft = KeyListener("A")
+    val keyRight = KeyListener("D")
+    val keyUp = KeyListener("W")
+    val keyDown = KeyListener("S")
+    val keyJump = KeyListener("SpaceBar")
+    val keyFire = KeyListener("LeftMouseButton")
 
 
     init {
@@ -102,25 +102,25 @@ class FirstPerson {
         }
     }
     fun update() {
-        if(key(keyLeft)) {
+        if(keyLeft.down()) {
             MoveRight(-1.0)
         }
-        if(key(keyRight)) {
+        if(keyRight.down()) {
             MoveRight(1.0)
         }
-        if(key(keyUp)) {
+        if(keyUp.down()) {
             MoveForward(1.0)
         }
-        if(key(keyDown)) {
+        if(keyDown.down()) {
             MoveForward(-1.0)
         }
-        if(keyPressed(keyJump)) {
+        if(keyJump.keyPressed()) {
             startJump()
         }
-        if(keyReleased(keyJump)) {
+        if(keyJump.keyReleased()) {
             stopJump()
         }
-        if(keyPressed(keyFire)) {
+        if(keyFire.keyPressed()) {
             onFire()
         }
         Turn(axisTurn())
@@ -245,18 +245,6 @@ class FirstPerson {
     fun cleanup():Unit {
         console.log("<<<cleanup>>>")
         actor.DestroyActor()
-    }
-
-    fun key(k:Key):Boolean {
-        return GWorld.GetPlayerController(0).IsInputKeyDown(k)
-    }
-
-    fun keyPressed(k:Key):Boolean {
-        return GWorld.GetPlayerController(0).WasInputKeyJustPressed(k)
-    }
-
-    fun keyReleased(k:Key):Boolean {
-        return GWorld.GetPlayerController(0).WasInputKeyJustReleased(k)
     }
 
     fun axisTurn():Double {
