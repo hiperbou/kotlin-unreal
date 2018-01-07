@@ -1,7 +1,21 @@
 (function (_, Kotlin) {
   'use strict';
+  var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
+  var Unit = Kotlin.kotlin.Unit;
+  var numberToDouble = Kotlin.numberToDouble;
+  var throwCCE = Kotlin.throwCCE;
+  var Kind_CLASS = Kotlin.Kind.CLASS;
+  var throwUPAE = Kotlin.throwUPAE;
+  var println = Kotlin.kotlin.io.println_s8jyv4$;
   var Any = Object;
+  var getKClass = Kotlin.getKClass;
+  var get_js = Kotlin.kotlin.js.get_js_1yb8b7$;
+  var Kind_OBJECT = Kotlin.Kind.OBJECT;
+  var getCallableRef = Kotlin.getCallableRef;
+  var equals = Kotlin.equals;
   var first = Kotlin.kotlin.collections.first_2p1efm$;
+  MyKotlinActorExtended.prototype = Object.create(AssetGameExampleBlueprint.prototype);
+  MyKotlinActorExtended.prototype.constructor = MyKotlinActorExtended;
   function FirstPerson() {
     this.actor = null;
     this.myCamera = null;
@@ -13,30 +27,18 @@
     this.weaponRange = 0;
     this.weaponDamage = 0;
     this.yaw = 180.0;
-    var $receiver = new Key();
-    $receiver.KeyName = 'A';
-    this.keyLeft = $receiver;
-    var $receiver_0 = new Key();
-    $receiver_0.KeyName = 'D';
-    this.keyRight = $receiver_0;
-    var $receiver_1 = new Key();
-    $receiver_1.KeyName = 'W';
-    this.keyUp = $receiver_1;
-    var $receiver_2 = new Key();
-    $receiver_2.KeyName = 'S';
-    this.keyDown = $receiver_2;
-    var $receiver_3 = new Key();
-    $receiver_3.KeyName = 'SpaceBar';
-    this.keyJump = $receiver_3;
-    var $receiver_4 = new Key();
-    $receiver_4.KeyName = 'LeftMouseButton';
-    this.keyFire = $receiver_4;
+    this.keyLeft = new KeyListener('A');
+    this.keyRight = new KeyListener('D');
+    this.keyUp = new KeyListener('W');
+    this.keyDown = new KeyListener('S');
+    this.keyJump = new KeyListener('SpaceBar');
+    this.keyFire = new KeyListener('LeftMouseButton');
     var tmp$;
     var bp = Blueprint.Load('/Game/FirstPersonBP');
     this.actor = GenerateClass(bp, GWorld, new Vector(), new Rotator());
     this.actor.CapsuleComponent.CapsuleRadius = 42.0;
     this.actor.CapsuleComponent.CapsuleHalfHeight = 96.0;
-    this.myCamera = Kotlin.isType(tmp$ = this.actor.GetComponentByClass(CameraComponent), CameraComponent) ? tmp$ : Kotlin.throwCCE();
+    this.myCamera = Kotlin.isType(tmp$ = this.actor.GetComponentByClass(CameraComponent), CameraComponent) ? tmp$ : throwCCE();
     this.myCamera.AttachParent = this.actor.CapsuleComponent;
     this.myCamera.RelativeLocation = Vector_0(0, 0, 64);
     this.myCamera.bUsePawnControlRotation = true;
@@ -70,28 +72,29 @@
   function FirstPerson$update$lambda(this$FirstPerson) {
     return function (it) {
       this$FirstPerson.update();
+      return Unit;
     };
   }
   FirstPerson.prototype.update = function () {
-    if (this.key_e2g2e7$(this.keyLeft)) {
+    if (this.keyLeft.down()) {
       this.MoveRight_14dthe$(-1.0);
     }
-    if (this.key_e2g2e7$(this.keyRight)) {
+    if (this.keyRight.down()) {
       this.MoveRight_14dthe$(1.0);
     }
-    if (this.key_e2g2e7$(this.keyUp)) {
+    if (this.keyUp.down()) {
       this.MoveForward_14dthe$(1.0);
     }
-    if (this.key_e2g2e7$(this.keyDown)) {
+    if (this.keyDown.down()) {
       this.MoveForward_14dthe$(-1.0);
     }
-    if (this.keyPressed_e2g2e7$(this.keyJump)) {
+    if (this.keyJump.pressed()) {
       this.startJump();
     }
-    if (this.keyReleased_e2g2e7$(this.keyJump)) {
+    if (this.keyJump.released()) {
       this.stopJump();
     }
-    if (this.keyPressed_e2g2e7$(this.keyFire)) {
+    if (this.keyFire.pressed()) {
       this.onFire();
     }
     this.Turn_14dthe$(this.axisTurn());
@@ -147,20 +150,11 @@
     console.log('<<<cleanup>>>');
     this.actor.DestroyActor();
   };
-  FirstPerson.prototype.key_e2g2e7$ = function (k) {
-    return GWorld.GetPlayerController(0).IsInputKeyDown(k);
-  };
-  FirstPerson.prototype.keyPressed_e2g2e7$ = function (k) {
-    return GWorld.GetPlayerController(0).WasInputKeyJustPressed(k);
-  };
-  FirstPerson.prototype.keyReleased_e2g2e7$ = function (k) {
-    return GWorld.GetPlayerController(0).WasInputKeyJustReleased(k);
-  };
   FirstPerson.prototype.axisTurn = function () {
-    return Kotlin.numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
+    return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
   };
   FirstPerson.prototype.axisLookUp = function () {
-    return -Kotlin.numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
+    return -numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
   };
   FirstPerson.prototype.createWall = function () {
     for (var y = 0; y <= 9; y++) {
@@ -178,212 +172,54 @@
       var myPlayerController = GWorld.GetPlayerController(0);
       myPlayerController.Possess(this$FirstPerson.actor);
       this$FirstPerson.update();
+      return Unit;
     };
   }
   FirstPerson.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
+    kind: Kind_CLASS,
     simpleName: 'FirstPerson',
     interfaces: []
   };
-  function HelloBlueprint() {
-    this.actor = void 0;
-    this.yaw = 180.0;
-    var bp = Blueprint.Load('/Game/ExampleBlueprint');
-    this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
-    process.nextTick(HelloBlueprint_init$lambda(this));
-  }
-  function HelloBlueprint$update$lambda(this$HelloBlueprint) {
-    return function (it) {
-      this$HelloBlueprint.update();
-    };
-  }
-  HelloBlueprint.prototype.update = function () {
-    this.yaw += 1.0;
-    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
-    process.nextTick(HelloBlueprint$update$lambda(this));
-  };
-  HelloBlueprint.prototype.cleanup = function () {
-    console.log('<<<cleanup>>>');
-    this.actor.DestroyActor();
-  };
-  function HelloBlueprint_init$lambda(this$HelloBlueprint) {
-    return function (it) {
-      this$HelloBlueprint.update();
-    };
-  }
-  HelloBlueprint.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: 'HelloBlueprint',
-    interfaces: []
-  };
-  function newInstance($receiver, world) {
-    var tmp$;
-    return (tmp$ = new $receiver(world)) == null || Kotlin.isType(tmp$, Any) ? tmp$ : Kotlin.throwCCE();
-  }
-  function baseClass() {
-    var clazz = Blueprint.Load('/Game/ExampleBlueprint').GeneratedClass;
-    console.log('clazz');
-    console.log(clazz);
-    var inst = newInstance(clazz, GWorld);
-    console.log('inst');
-    console.log(inst);
-    var MyActor_C = require('uclass')()(global, clazz);
-    console.log(MyActor_C);
-    return new MyActor_C(GWorld, {X: 1});
-  }
-  function HelloBlueprintEvent() {
-    this.actor = void 0;
-    this.yaw = 180.0;
-    console.log('HelloBlueprintEvent');
-    if (GWorld.IsServer()) {
-      this.actor = baseClass();
-      process.nextTick(HelloBlueprintEvent_init$lambda(this));
-    }
-  }
-  function HelloBlueprintEvent$update$lambda(this$HelloBlueprintEvent) {
-    return function (it) {
-      this$HelloBlueprintEvent.update();
-    };
-  }
-  HelloBlueprintEvent.prototype.update = function () {
-    this.yaw += 1.0;
-    var tmp$ = this.actor;
-    var $receiver = new Rotator();
-    $receiver.Yaw = this.yaw;
-    tmp$.SetActorRotation($receiver, false);
-    process.nextTick(HelloBlueprintEvent$update$lambda(this));
-  };
-  HelloBlueprintEvent.prototype.cleanup = function () {
-    console.log('<<<cleanup>>>');
-    this.actor.DestroyActor();
-  };
-  function HelloBlueprintEvent_init$lambda(this$HelloBlueprintEvent) {
-    return function (it) {
-      this$HelloBlueprintEvent.update();
-    };
-  }
-  HelloBlueprintEvent.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: 'HelloBlueprintEvent',
-    interfaces: []
-  };
-  function HelloBlueprints() {
-    this.WIDTH = 400.0;
-    this.actorList = Kotlin.kotlin.collections.ArrayList_init_ww73n8$();
-    for (var i = 0; i <= 10; i++)
-      this.actorList.add_11rb$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
-    process.nextTick(HelloBlueprints_init$lambda(this));
-  }
-  HelloBlueprints.prototype.rnd_lu1900$ = function (min, max) {
-    return min + Math.random() * (max - min);
-  };
-  HelloBlueprints.prototype.createActor_u22e3q$ = function (x, y, yaw) {
-    return GenerateClass(Blueprint.Load('/Game/ExampleBlueprint'), GWorld, Vector_0(x, y), Rotator_0(void 0, void 0, yaw));
-  };
-  function HelloBlueprints$update$lambda(this$HelloBlueprints) {
-    return function (it) {
-      this$HelloBlueprints.update();
-    };
-  }
-  HelloBlueprints.prototype.update = function () {
-    var tmp$;
-    tmp$ = this.actorList.iterator();
-    while (tmp$.hasNext()) {
-      var element = tmp$.next();
-      element.AddActorLocalRotation(Rotator_0(void 0, void 0, 1), false);
-    }
-    process.nextTick(HelloBlueprints$update$lambda(this));
-  };
-  HelloBlueprints.prototype.cleanup = function () {
-    console.log('<<<cleanup>>>');
-    var tmp$;
-    tmp$ = this.actorList.iterator();
-    while (tmp$.hasNext()) {
-      var element = tmp$.next();
-      element.DestroyActor();
-    }
-  };
-  function HelloBlueprints_init$lambda(this$HelloBlueprints) {
-    return function (it) {
-      this$HelloBlueprints.update();
-    };
-  }
-  HelloBlueprints.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: 'HelloBlueprints',
-    interfaces: []
-  };
-  function HelloKotlin() {
-    this.yaw = 180.0;
-    this.actor = null;
-    this.timer = void 0;
-    var pos = Vector_0(100, void 0, 100);
-    var rotator = Rotator_0(void 0, void 0, this.yaw);
-    this.actor = new TextRenderActor(GWorld, pos, rotator);
-    this.actor.TextRender.SetHorizontalAlignment('EHTA_Center');
-    this.actor.TextRender.SetText('Hello Kotlin');
-    this.update_3p81yu$(0);
-  }
-  HelloKotlin.prototype.update_3p81yu$ = function (milliseconds) {
-    this.yaw += 1.0;
-    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
-    this.timer = setTimeout(Kotlin.getCallableRef('update', function ($receiver, milliseconds_0) {
-      return $receiver.update_3p81yu$(milliseconds_0);
-    }.bind(null, this)), 16);
-  };
-  HelloKotlin.prototype.cleanup = function () {
-    console.log('<<<cleanup>>>');
-    this.actor.DestroyActor();
-    clearTimeout(this.timer);
-  };
-  HelloKotlin.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
-    simpleName: 'HelloKotlin',
-    interfaces: []
-  };
-  function init() {
-    console.log('<<<INIT>>>');
-    return Kotlin.getCallableRef('cleanup', function ($receiver) {
-      return $receiver.cleanup();
-    }.bind(null, new FirstPerson()));
-  }
   function KeyboardInput() {
-    this.actor = void 0;
+    this.actor_vvd834$_0 = this.actor_vvd834$_0;
     this.yaw = 180.0;
-    var $receiver = new Key();
-    $receiver.KeyName = 'F';
-    this.keyLeft = $receiver;
-    var $receiver_0 = new Key();
-    $receiver_0.KeyName = 'H';
-    this.keyRight = $receiver_0;
-    var $receiver_1 = new Key();
-    $receiver_1.KeyName = 'T';
-    this.keyUp = $receiver_1;
-    var $receiver_2 = new Key();
-    $receiver_2.KeyName = 'G';
-    this.keyDown = $receiver_2;
+    this.keyLeft = new KeyListener('F');
+    this.keyRight = new KeyListener('H');
+    this.keyUp = new KeyListener('T');
+    this.keyDown = new KeyListener('G');
     var bp = Blueprint.Load('/Game/ExampleBlueprint');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
     process.nextTick(KeyboardInput_init$lambda(this));
   }
+  Object.defineProperty(KeyboardInput.prototype, 'actor', {
+    get: function () {
+      if (this.actor_vvd834$_0 == null)
+        return throwUPAE('actor');
+      return this.actor_vvd834$_0;
+    },
+    set: function (actor) {
+      this.actor_vvd834$_0 = actor;
+    }
+  });
   function KeyboardInput$update$lambda(this$KeyboardInput) {
     return function (it) {
       this$KeyboardInput.update();
+      return Unit;
     };
   }
   KeyboardInput.prototype.update = function () {
     this.yaw += 1.0;
     this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
-    if (this.key_e2g2e7$(this.keyLeft)) {
+    if (this.keyLeft.down()) {
       this.actor.AddActorWorldOffset(Vector_0(void 0, -1), false);
     }
-    if (this.key_e2g2e7$(this.keyRight)) {
+    if (this.keyRight.down()) {
       this.actor.AddActorWorldOffset(Vector_0(void 0, 1), false);
     }
-    if (this.key_e2g2e7$(this.keyUp)) {
+    if (this.keyUp.down()) {
       this.actor.AddActorWorldOffset(Vector_0(1), false);
     }
-    if (this.key_e2g2e7$(this.keyDown)) {
+    if (this.keyDown.down()) {
       this.actor.AddActorWorldOffset(Vector_0(-1), false);
     }
     process.nextTick(KeyboardInput$update$lambda(this));
@@ -392,17 +228,150 @@
     console.log('<<<cleanup>>>');
     this.actor.DestroyActor();
   };
-  KeyboardInput.prototype.key_e2g2e7$ = function (k) {
-    return GWorld.GetPlayerController(0).IsInputKeyDown(k);
-  };
   function KeyboardInput_init$lambda(this$KeyboardInput) {
     return function (it) {
       this$KeyboardInput.update();
+      return Unit;
     };
   }
   KeyboardInput.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
+    kind: Kind_CLASS,
     simpleName: 'KeyboardInput',
+    interfaces: []
+  };
+  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_ww73n8$;
+  function PossesTest() {
+    this.zombies = null;
+    this.actor = null;
+    this.yaw = 180.0;
+    this.keyLeft = new KeyListener('A');
+    this.keyRight = new KeyListener('D');
+    this.keyUp = new KeyListener('W');
+    this.keyDown = new KeyListener('S');
+    this.keyJump = new KeyListener('SpaceBar');
+    var l = GWorld.GetAllActorsOfClass('/Game/CubePawn');
+    println(l.OutActors.length);
+    var $receiver = l.OutActors;
+    var destination = ArrayList_init($receiver.length);
+    var tmp$;
+    for (tmp$ = 0; tmp$ !== $receiver.length; ++tmp$) {
+      var item = $receiver[tmp$];
+      var tmp$_0;
+      destination.add_11rb$(new PossesTest$ZombieCube(Kotlin.isType(tmp$_0 = item, Pawn) ? tmp$_0 : throwCCE()));
+    }
+    this.zombies = destination;
+    var bp = Blueprint.Load('/Game/ThirdPersonBP');
+    this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
+    this.actor.CapsuleComponent.CapsuleRadius = 42.0;
+    this.actor.CapsuleComponent.CapsuleHalfHeight = 96.0;
+    this.actor.bUseControllerRotationPitch = false;
+    this.actor.bUseControllerRotationRoll = false;
+    this.actor.bUseControllerRotationYaw = false;
+    this.actor.CharacterMovement.bOrientRotationToMovement = true;
+    this.actor.CharacterMovement.RotationRate = Rotator.MakeRotator(0, 0, 540);
+    this.actor.CharacterMovement.JumpZVelocity = 600;
+    this.actor.CharacterMovement.AirControl = 0.2;
+    var ANI_AnimationBP = AnimBlueprint.Load('/Game/Mannequin/Animations/ThirdPerson_AnimBP.ThirdPerson_AnimBP').GeneratedClass;
+    this.actor.Mesh.SetAnimInstanceClass(ANI_AnimationBP);
+    this.actor.Mesh.RelativeRotation = Rotator.MakeRotator(0, 0, 270);
+    this.actor.Mesh.RelativeLocation = Vector.MakeVector(0, 0, -96);
+    process.nextTick(PossesTest_init$lambda(this));
+  }
+  function PossesTest$ZombieCube(actor) {
+    this.actor = actor;
+  }
+  PossesTest$ZombieCube.prototype.update = function () {
+    var location = this.actor.GetActorLocation();
+    location.X = location.X + 1 * numberToDouble(GWorld.GetWorldDeltaSeconds());
+    this.actor.SetActorLocation(location, true);
+  };
+  PossesTest$ZombieCube.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'ZombieCube',
+    interfaces: []
+  };
+  function PossesTest$update$lambda(this$PossesTest) {
+    return function (it) {
+      this$PossesTest.update();
+      return Unit;
+    };
+  }
+  PossesTest.prototype.update = function () {
+    var tmp$;
+    tmp$ = this.zombies.iterator();
+    while (tmp$.hasNext()) {
+      var element = tmp$.next();
+      element.update();
+    }
+    if (this.keyLeft.down()) {
+      this.MoveRight_14dthe$(-1.0);
+    }
+    if (this.keyRight.down()) {
+      this.MoveRight_14dthe$(1.0);
+    }
+    if (this.keyUp.down()) {
+      this.MoveForward_14dthe$(1.0);
+    }
+    if (this.keyDown.down()) {
+      this.MoveForward_14dthe$(-1.0);
+    }
+    if (this.keyJump.pressed()) {
+      this.startJump();
+    }
+    if (this.keyJump.released()) {
+      this.stopJump();
+    }
+    this.Turn_14dthe$(this.axisTurn());
+    this.LookUp_14dthe$(this.axisLookUp());
+    process.nextTick(PossesTest$update$lambda(this));
+  };
+  PossesTest.prototype.Turn_14dthe$ = function (value) {
+    this.actor.AddControllerYawInput(value);
+  };
+  PossesTest.prototype.LookUp_14dthe$ = function (value) {
+    this.actor.AddControllerPitchInput(value);
+  };
+  PossesTest.prototype.MoveForward_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tForwardVector = tPawnRotator.GetForwardVector();
+    this.actor.AddMovementInput(tForwardVector, value, false);
+  };
+  PossesTest.prototype.MoveRight_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tRightVector = tPawnRotator.GetRightVector();
+    this.actor.AddMovementInput(tRightVector, value, false);
+  };
+  PossesTest.prototype.startJump = function () {
+    this.actor.Jump();
+  };
+  PossesTest.prototype.stopJump = function () {
+    this.actor.StopJumping();
+  };
+  PossesTest.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.DestroyActor();
+  };
+  PossesTest.prototype.axisTurn = function () {
+    return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
+  };
+  PossesTest.prototype.axisLookUp = function () {
+    return -numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
+  };
+  function PossesTest_init$lambda(this$PossesTest) {
+    return function (it) {
+      var myPlayerController = GWorld.GetPlayerController(0);
+      myPlayerController.Possess(this$PossesTest.actor);
+      this$PossesTest.update();
+      return Unit;
+    };
+  }
+  PossesTest.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'PossesTest',
     interfaces: []
   };
   function SceneLights() {
@@ -464,6 +433,7 @@
   function SceneLights$rotate$tick$lambda(closure$tick) {
     return function (it) {
       closure$tick();
+      return Unit;
     };
   }
   function SceneLights$rotate$tick(closure$actor, closure$opts) {
@@ -471,8 +441,8 @@
       var tmp$;
       if (!closure$actor.IsValid())
         return;
-      var time = Kotlin.numberToDouble(GWorld.GetTimeSeconds());
-      var rad = time * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : Kotlin.throwCCE());
+      var time = numberToDouble(GWorld.GetTimeSeconds());
+      var rad = time * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : throwCCE());
       var r = closure$opts.r;
       var p = Vector_0(void 0, Math.cos(rad) * r, Math.sin(rad) * r).Add_VectorVector(closure$opts.p);
       closure$actor.SetActorLocation(p, false);
@@ -497,7 +467,7 @@
     this.p = Vector_0(400, -100, 100);
   }
   SceneLights_init$ObjectLiteral.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
+    kind: Kind_CLASS,
     interfaces: []
   };
   function SceneLights_init$ObjectLiteral_0() {
@@ -506,7 +476,7 @@
     this.p = Vector_0(400, void 0, 150);
   }
   SceneLights_init$ObjectLiteral_0.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
+    kind: Kind_CLASS,
     interfaces: []
   };
   function SceneLights_init$ObjectLiteral_1() {
@@ -515,32 +485,22 @@
     this.p = Vector_0(400, void 0, 250);
   }
   SceneLights_init$ObjectLiteral_1.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
+    kind: Kind_CLASS,
     interfaces: []
   };
   SceneLights.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
+    kind: Kind_CLASS,
     simpleName: 'SceneLights',
     interfaces: []
   };
   function ThirdPerson() {
     this.actor = null;
     this.yaw = 180.0;
-    var $receiver = new Key();
-    $receiver.KeyName = 'A';
-    this.keyLeft = $receiver;
-    var $receiver_0 = new Key();
-    $receiver_0.KeyName = 'D';
-    this.keyRight = $receiver_0;
-    var $receiver_1 = new Key();
-    $receiver_1.KeyName = 'W';
-    this.keyUp = $receiver_1;
-    var $receiver_2 = new Key();
-    $receiver_2.KeyName = 'S';
-    this.keyDown = $receiver_2;
-    var $receiver_3 = new Key();
-    $receiver_3.KeyName = 'SpaceBar';
-    this.keyJump = $receiver_3;
+    this.keyLeft = new KeyListener('A');
+    this.keyRight = new KeyListener('D');
+    this.keyUp = new KeyListener('W');
+    this.keyDown = new KeyListener('S');
+    this.keyJump = new KeyListener('SpaceBar');
     var bp = Blueprint.Load('/Game/ThirdPersonBP');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
     this.actor.CapsuleComponent.CapsuleRadius = 42.0;
@@ -561,25 +521,26 @@
   function ThirdPerson$update$lambda(this$ThirdPerson) {
     return function (it) {
       this$ThirdPerson.update();
+      return Unit;
     };
   }
   ThirdPerson.prototype.update = function () {
-    if (this.key_e2g2e7$(this.keyLeft)) {
+    if (this.keyLeft.down()) {
       this.MoveRight_14dthe$(-1.0);
     }
-    if (this.key_e2g2e7$(this.keyRight)) {
+    if (this.keyRight.down()) {
       this.MoveRight_14dthe$(1.0);
     }
-    if (this.key_e2g2e7$(this.keyUp)) {
+    if (this.keyUp.down()) {
       this.MoveForward_14dthe$(1.0);
     }
-    if (this.key_e2g2e7$(this.keyDown)) {
+    if (this.keyDown.down()) {
       this.MoveForward_14dthe$(-1.0);
     }
-    if (this.keyPressed_e2g2e7$(this.keyJump)) {
+    if (this.keyJump.pressed()) {
       this.startJump();
     }
-    if (this.keyReleased_e2g2e7$(this.keyJump)) {
+    if (this.keyJump.released()) {
       this.stopJump();
     }
     this.Turn_14dthe$(this.axisTurn());
@@ -616,38 +577,335 @@
     console.log('<<<cleanup>>>');
     this.actor.DestroyActor();
   };
-  ThirdPerson.prototype.key_e2g2e7$ = function (k) {
-    return GWorld.GetPlayerController(0).IsInputKeyDown(k);
-  };
-  ThirdPerson.prototype.keyPressed_e2g2e7$ = function (k) {
-    return GWorld.GetPlayerController(0).WasInputKeyJustPressed(k);
-  };
-  ThirdPerson.prototype.keyReleased_e2g2e7$ = function (k) {
-    return GWorld.GetPlayerController(0).WasInputKeyJustReleased(k);
-  };
   ThirdPerson.prototype.axisTurn = function () {
-    return Kotlin.numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
+    return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
   };
   ThirdPerson.prototype.axisLookUp = function () {
-    return -Kotlin.numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
+    return -numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
   };
   function ThirdPerson_init$lambda(this$ThirdPerson) {
     return function (it) {
       var myPlayerController = GWorld.GetPlayerController(0);
       myPlayerController.Possess(this$ThirdPerson.actor);
       this$ThirdPerson.update();
+      return Unit;
     };
   }
   ThirdPerson.$metadata$ = {
-    kind: Kotlin.Kind.CLASS,
+    kind: Kind_CLASS,
     simpleName: 'ThirdPerson',
     interfaces: []
   };
+  function HelloBlueprint() {
+    this.actor_dmw9la$_0 = this.actor_dmw9la$_0;
+    this.yaw = 180.0;
+    var bp = Blueprint.Load('/Game/ExampleBlueprint');
+    this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
+    process.nextTick(HelloBlueprint_init$lambda(this));
+  }
+  Object.defineProperty(HelloBlueprint.prototype, 'actor', {
+    get: function () {
+      if (this.actor_dmw9la$_0 == null)
+        return throwUPAE('actor');
+      return this.actor_dmw9la$_0;
+    },
+    set: function (actor) {
+      this.actor_dmw9la$_0 = actor;
+    }
+  });
+  function HelloBlueprint$update$lambda(this$HelloBlueprint) {
+    return function (it) {
+      this$HelloBlueprint.update();
+      return Unit;
+    };
+  }
+  HelloBlueprint.prototype.update = function () {
+    this.yaw += 1.0;
+    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
+    process.nextTick(HelloBlueprint$update$lambda(this));
+  };
+  HelloBlueprint.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.DestroyActor();
+  };
+  function HelloBlueprint_init$lambda(this$HelloBlueprint) {
+    return function (it) {
+      this$HelloBlueprint.update();
+      return Unit;
+    };
+  }
+  HelloBlueprint.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'HelloBlueprint',
+    interfaces: []
+  };
+  function newInstance($receiver, world_0) {
+    var tmp$;
+    return (tmp$ = new $receiver(world)) == null || Kotlin.isType(tmp$, Any) ? tmp$ : throwCCE();
+  }
+  function baseClass() {
+    var clazz = Blueprint.Load('/Game/ExampleBlueprint').GeneratedClass;
+    console.log('clazz');
+    console.log(clazz);
+    var inst = newInstance(clazz, GWorld);
+    console.log('inst');
+    console.log(inst);
+    var MyActor_C = require('uclass')()(global, clazz);
+    console.log(MyActor_C);
+    return new MyActor_C(GWorld, {X: 1});
+  }
+  function HelloBlueprintEvent() {
+    this.actor_7quw86$_0 = this.actor_7quw86$_0;
+    this.yaw = 180.0;
+    console.log('HelloBlueprintEvent');
+    if (GWorld.IsServer()) {
+      this.actor = baseClass();
+      process.nextTick(HelloBlueprintEvent_init$lambda(this));
+    }
+  }
+  Object.defineProperty(HelloBlueprintEvent.prototype, 'actor', {
+    get: function () {
+      if (this.actor_7quw86$_0 == null)
+        return throwUPAE('actor');
+      return this.actor_7quw86$_0;
+    },
+    set: function (actor) {
+      this.actor_7quw86$_0 = actor;
+    }
+  });
+  function HelloBlueprintEvent$update$lambda(this$HelloBlueprintEvent) {
+    return function (it) {
+      this$HelloBlueprintEvent.update();
+      return Unit;
+    };
+  }
+  HelloBlueprintEvent.prototype.update = function () {
+    this.yaw += 1.0;
+    var tmp$ = this.actor;
+    var $receiver = new Rotator();
+    $receiver.Yaw = this.yaw;
+    tmp$.SetActorRotation($receiver, false);
+    process.nextTick(HelloBlueprintEvent$update$lambda(this));
+  };
+  HelloBlueprintEvent.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.DestroyActor();
+  };
+  function HelloBlueprintEvent_init$lambda(this$HelloBlueprintEvent) {
+    return function (it) {
+      this$HelloBlueprintEvent.update();
+      return Unit;
+    };
+  }
+  HelloBlueprintEvent.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'HelloBlueprintEvent',
+    interfaces: []
+  };
+  function MyKotlinActorExtended(w, b, c) {
+    MyKotlinActorExtended$Companion_getInstance();
+    AssetGameExampleBlueprint.call(this, w, b, c);
+    this.MyTest = 0;
+    this.myArm_haksbb$_0 = this.myArm_haksbb$_0;
+    this.myCamera_y9bjto$_0 = this.myCamera_y9bjto$_0;
+    console.log('Hello, this is MyKotlinActorExtended.init :)');
+  }
+  Object.defineProperty(MyKotlinActorExtended.prototype, 'myArm', {
+    get: function () {
+      if (this.myArm_haksbb$_0 == null)
+        return throwUPAE('myArm');
+      return this.myArm_haksbb$_0;
+    },
+    set: function (myArm) {
+      this.myArm_haksbb$_0 = myArm;
+    }
+  });
+  Object.defineProperty(MyKotlinActorExtended.prototype, 'myCamera', {
+    get: function () {
+      if (this.myCamera_y9bjto$_0 == null)
+        return throwUPAE('myCamera');
+      return this.myCamera_y9bjto$_0;
+    },
+    set: function (myCamera) {
+      this.myCamera_y9bjto$_0 = myCamera;
+    }
+  });
+  MyKotlinActorExtended.prototype.ctor = function () {
+    console.log('Hello, this is MyKotlinActorExtended.ctor function :)');
+  };
+  MyKotlinActorExtended.prototype.properties = function () {
+    this.MyTest;
+    this.myArm;
+    this.myCamera;
+  };
+  MyKotlinActorExtended.prototype.ReceiveBeginPlay = function () {
+    console.log('Hello, this is MyKotlinActorExtended :)');
+    this.Entry();
+    console.log('variable value is ' + this.variable);
+    console.log('changing variable value');
+    this.variable = true;
+    console.log('variable value is ' + this.variable);
+    this.OverrideFun();
+  };
+  MyKotlinActorExtended.prototype.OverrideMe = function () {
+    AssetGameExampleBlueprint.prototype.OverrideMe.call(this);
+    console.log('This is Kotlin overriding a function on a Blueprint');
+  };
+  MyKotlinActorExtended.prototype.startJump = function () {
+    console.log('Start Jump!!');
+  };
+  function MyKotlinActorExtended$Companion() {
+    MyKotlinActorExtended$Companion_instance = this;
+  }
+  MyKotlinActorExtended$Companion.prototype.instance_2br51b$ = function (w, b, c) {
+    var p = require('uclass')()(global, get_js(getKClass(MyKotlinActorExtended)));
+    return new p(w, b, c);
+  };
+  MyKotlinActorExtended$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: []
+  };
+  var MyKotlinActorExtended$Companion_instance = null;
+  function MyKotlinActorExtended$Companion_getInstance() {
+    if (MyKotlinActorExtended$Companion_instance === null) {
+      new MyKotlinActorExtended$Companion();
+    }
+    return MyKotlinActorExtended$Companion_instance;
+  }
+  MyKotlinActorExtended.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'MyKotlinActorExtended',
+    interfaces: []
+  };
+  function HelloBlueprintExtends() {
+    this.yaw = 180.0;
+    console.log('YEPA');
+    console.log('AssetGameExampleBlueprint is');
+    console.log(AssetGameExampleBlueprint);
+    var k = MyKotlinActorExtended$Companion_getInstance().instance_2br51b$(GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
+    console.log('myActor');
+    console.log(k);
+    process.nextTick(HelloBlueprintExtends_init$lambda(this));
+  }
+  HelloBlueprintExtends.prototype.update = function () {
+  };
+  HelloBlueprintExtends.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+  };
+  function HelloBlueprintExtends_init$lambda(this$HelloBlueprintExtends) {
+    return function (it) {
+      this$HelloBlueprintExtends.update();
+      return Unit;
+    };
+  }
+  HelloBlueprintExtends.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'HelloBlueprintExtends',
+    interfaces: []
+  };
+  function HelloBlueprints() {
+    this.WIDTH = 400.0;
+    this.actorList = ArrayList_init();
+    for (var i = 0; i <= 10; i++)
+      this.actorList.add_11rb$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
+    process.nextTick(HelloBlueprints_init$lambda(this));
+  }
+  HelloBlueprints.prototype.rnd_lu1900$ = function (min, max) {
+    return min + Math.random() * (max - min);
+  };
+  HelloBlueprints.prototype.createActor_u22e3q$ = function (x, y, yaw) {
+    return GenerateClass(Blueprint.Load('/Game/ExampleBlueprint'), GWorld, Vector_0(x, y), Rotator_0(void 0, void 0, yaw));
+  };
+  function HelloBlueprints$update$lambda(this$HelloBlueprints) {
+    return function (it) {
+      this$HelloBlueprints.update();
+      return Unit;
+    };
+  }
+  HelloBlueprints.prototype.update = function () {
+    var tmp$;
+    tmp$ = this.actorList.iterator();
+    while (tmp$.hasNext()) {
+      var element = tmp$.next();
+      element.AddActorLocalRotation(Rotator_0(void 0, void 0, 1), false);
+    }
+    process.nextTick(HelloBlueprints$update$lambda(this));
+  };
+  HelloBlueprints.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    var tmp$;
+    tmp$ = this.actorList.iterator();
+    while (tmp$.hasNext()) {
+      var element = tmp$.next();
+      element.DestroyActor();
+    }
+  };
+  function HelloBlueprints_init$lambda(this$HelloBlueprints) {
+    return function (it) {
+      this$HelloBlueprints.update();
+      return Unit;
+    };
+  }
+  HelloBlueprints.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'HelloBlueprints',
+    interfaces: []
+  };
+  function HelloKotlin() {
+    this.yaw = 180.0;
+    this.actor = null;
+    this.timer_s6994g$_0 = this.timer_s6994g$_0;
+    var pos = Vector_0(100, void 0, 100);
+    var rotator = Rotator_0(void 0, void 0, this.yaw);
+    this.actor = new TextRenderActor(GWorld, pos, rotator);
+    this.actor.TextRender.SetHorizontalAlignment('EHTA_Center');
+    this.actor.TextRender.SetText('Hello Kotlin');
+    this.update_3p81yu$(0);
+  }
+  Object.defineProperty(HelloKotlin.prototype, 'timer', {
+    get: function () {
+      if (this.timer_s6994g$_0 == null)
+        return throwUPAE('timer');
+      return this.timer_s6994g$_0;
+    },
+    set: function (timer) {
+      this.timer_s6994g$_0 = timer;
+    }
+  });
+  HelloKotlin.prototype.update_3p81yu$ = function (milliseconds) {
+    this.yaw += 1.0;
+    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
+    this.timer = setTimeout(getCallableRef('update', function ($receiver, milliseconds) {
+      return $receiver.update_3p81yu$(milliseconds), Unit;
+    }.bind(null, this)), 16);
+  };
+  HelloKotlin.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.DestroyActor();
+    clearTimeout(this.timer);
+  };
+  HelloKotlin.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'HelloKotlin',
+    interfaces: []
+  };
+  function main(args) {
+    global.AssetGameExampleBlueprint = Blueprint.Load('/Game/ExampleBlueprint').GeneratedClass;
+  }
+  function init() {
+    console.log('<<<INIT>>>');
+    return getCallableRef('cleanup', function ($receiver) {
+      return $receiver.cleanup(), Unit;
+    }.bind(null, new HelloBlueprintExtends()));
+  }
   function GenerateClass($receiver, world, position, rotation) {
-    return new $receiver.GeneratedClass(world, position, rotation);
+    var clazz = $receiver.GeneratedClass;
+    return new clazz(world, position, rotation);
   }
   function GenerateClass_0($receiver, world, position, rotation) {
-    return new $receiver.GeneratedClass(world, position, rotation);
+    var clazz = $receiver.GeneratedClass;
+    return new clazz(world, position, rotation);
   }
   function Vector_0(X, Y, Z) {
     if (X === void 0)
@@ -657,12 +915,9 @@
     if (Z === void 0)
       Z = 0.0;
     var $receiver = new Vector();
-    var closure$X = X;
-    var closure$Y = Y;
-    var closure$Z = Z;
-    $receiver.X = Kotlin.numberToDouble(closure$X);
-    $receiver.Y = Kotlin.numberToDouble(closure$Y);
-    $receiver.Z = Kotlin.numberToDouble(closure$Z);
+    $receiver.X = numberToDouble(X);
+    $receiver.Y = numberToDouble(Y);
+    $receiver.Z = numberToDouble(Z);
     return $receiver;
   }
   function LinearColor_0(R, G, B, A) {
@@ -675,14 +930,10 @@
     if (A === void 0)
       A = 1.0;
     var $receiver = new LinearColor();
-    var closure$R = R;
-    var closure$G = G;
-    var closure$B = B;
-    var closure$A = A;
-    $receiver.R = closure$R;
-    $receiver.G = closure$G;
-    $receiver.B = closure$B;
-    $receiver.A = closure$A;
+    $receiver.R = R;
+    $receiver.G = G;
+    $receiver.B = B;
+    $receiver.A = A;
     return $receiver;
   }
   function Rotator_0(Roll, Pitch, Yaw) {
@@ -693,39 +944,69 @@
     if (Yaw === void 0)
       Yaw = 0.0;
     var $receiver = new Rotator();
-    var closure$Pitch = Pitch;
-    var closure$Roll = Roll;
-    var closure$Yaw = Yaw;
-    $receiver.Pitch = closure$Pitch;
-    $receiver.Roll = closure$Roll;
-    $receiver.Yaw = closure$Yaw;
+    $receiver.Pitch = Pitch;
+    $receiver.Roll = Roll;
+    $receiver.Yaw = Yaw;
     return $receiver;
   }
   function GetComponentByName($receiver, ComponentClass, Name) {
     var tmp$;
     var $receiver_0 = $receiver.GetComponentsByClass(ComponentClass);
-    var destination = Kotlin.kotlin.collections.ArrayList_init_ww73n8$();
+    var destination = ArrayList_init();
     var tmp$_0;
     for (tmp$_0 = 0; tmp$_0 !== $receiver_0.length; ++tmp$_0) {
       var element = $receiver_0[tmp$_0];
-      if (Kotlin.equals(element.GetName(), Name)) {
+      if (equals(element.GetName(), Name))
         destination.add_11rb$(element);
-      }
     }
     var component = destination;
-    return (tmp$ = first(component)) == null || Kotlin.isType(tmp$, Any) ? tmp$ : Kotlin.throwCCE();
+    return (tmp$ = first(component)) == null || Kotlin.isType(tmp$, Any) ? tmp$ : throwCCE();
   }
+  function Key_0(keyName) {
+    var $receiver = new Key();
+    $receiver.KeyName = keyName;
+    return $receiver;
+  }
+  function KeyListener(keyName, playerControllerIndex) {
+    if (playerControllerIndex === void 0)
+      playerControllerIndex = 0;
+    this.playerControllerIndex = playerControllerIndex;
+    this.k = Key_0(keyName);
+  }
+  KeyListener.prototype.down = function () {
+    return GWorld.GetPlayerController(this.playerControllerIndex).IsInputKeyDown(this.k);
+  };
+  KeyListener.prototype.pressed = function () {
+    return GWorld.GetPlayerController(this.playerControllerIndex).WasInputKeyJustPressed(this.k);
+  };
+  KeyListener.prototype.released = function () {
+    return GWorld.GetPlayerController(this.playerControllerIndex).WasInputKeyJustReleased(this.k);
+  };
+  KeyListener.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'KeyListener',
+    interfaces: []
+  };
   _.FirstPerson = FirstPerson;
+  _.KeyboardInput = KeyboardInput;
+  PossesTest.ZombieCube = PossesTest$ZombieCube;
+  _.PossesTest = PossesTest;
+  _.SceneLights = SceneLights;
+  _.ThirdPerson = ThirdPerson;
   _.HelloBlueprint = HelloBlueprint;
+  $$importsForInline$$['kotlin-examples'] = _;
   _.newInstance_w8i5yt$ = newInstance;
   _.baseClass = baseClass;
   _.HelloBlueprintEvent = HelloBlueprintEvent;
+  Object.defineProperty(MyKotlinActorExtended, 'Companion', {
+    get: MyKotlinActorExtended$Companion_getInstance
+  });
+  _.MyKotlinActorExtended = MyKotlinActorExtended;
+  _.HelloBlueprintExtends = HelloBlueprintExtends;
   _.HelloBlueprints = HelloBlueprints;
   _.HelloKotlin = HelloKotlin;
+  _.main_kand9s$ = main;
   _.init = init;
-  _.KeyboardInput = KeyboardInput;
-  _.SceneLights = SceneLights;
-  _.ThirdPerson = ThirdPerson;
   var package$ue = _.ue || (_.ue = {});
   package$ue.GenerateClass_6p5t4y$ = GenerateClass;
   package$ue.GenerateClass_4gucm0$ = GenerateClass_0;
@@ -733,6 +1014,9 @@
   package$ue.LinearColor_1ugm5o$ = LinearColor_0;
   package$ue.Rotator_a2j3zq$ = Rotator_0;
   package$ue.GetComponentByName_4wsm31$ = GetComponentByName;
+  package$ue.Key_61zpoe$ = Key_0;
+  package$ue.KeyListener = KeyListener;
+  main([]);
   Kotlin.defineModule('kotlin-examples', _);
   return _;
 }(module.exports, require('kotlin')));

@@ -2,27 +2,13 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="kotlin-language" name="KotlinUnreal">
-      <configuration version="1">
-        <option name="compilerInfo">
-          <KotlinCompilerInfo>
-            <option name="compilerSettings">
-              <CompilerSettings />
-            </option>
-            <option name="k2jsCompilerArguments">
-              <K2JSCompilerArguments />
-            </option>
-            <option name="_commonCompilerArguments">
-              <DummyImpl />
-            </option>
-          </KotlinCompilerInfo>
-        </option>
-        <option name="versionInfo">
-          <KotlinVersionInfo>
-            <option name="apiLevel" value="1.1" />
-            <option name="languageLevel" value="1.1" />
-            <option name="targetPlatformName" value="JavaScript " />
-          </KotlinVersionInfo>
-        </option>
+      <configuration version="2" platform="JavaScript " useProjectSettings="false">
+        <compilerSettings />
+        <compilerArguments>
+          <option name="languageVersion" value="1.1" />
+          <option name="apiVersion" value="1.1" />
+          <option name="coroutinesWarn" value="true" />
+        </compilerArguments>
       </configuration>
     </facet>
   </component>

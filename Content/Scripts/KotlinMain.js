@@ -1,4 +1,7 @@
 
+
+global.AssetGameExampleBlueprint = Blueprint.Load('/Game/ExampleBlueprint').GeneratedClass
+
 try {
     module.exports = () => {
 		console.log("--- LOADING kotlin-examples.JS ---")
