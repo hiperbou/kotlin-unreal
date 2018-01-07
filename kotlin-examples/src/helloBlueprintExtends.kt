@@ -5,9 +5,163 @@ import ue.*
 
 @JsName("require")
 external fun requireJs(module:String):dynamic
-//external var global:dynamic
+external var global:dynamic
 
-external open class AssetGameExampleBlueprint(w:dynamic,b:dynamic,c:dynamic):Actor{
+external interface ClassDeclaration{ val Parent:dynamic
+                                val Functions:dynamic
+                                val ClassFlags: dynamic
+                                val Outer: dynamic
+                                val Properties: Array<UPROPERTY>}
+
+enum class PropertyFlag {
+    Const,
+    Return,
+    Out,
+    Replicated,
+    NotReplicated,
+    ReplicatedUsing, //ReplicatedUsing:rep-notify-function-name
+    Transient,
+    DuplicateTransient,
+    EditFixedSize,
+    EditAnywhere,
+    EditDefaultsOnly,
+    EditInstanceOnly,
+    BlueprintReadOnly,
+    BlueprintReadWrite,
+    Instanced,
+    GlobalConfig,
+    Config,
+    TextExportTransient,
+    NonPIEDuplicateTransient,
+    Export,
+    NonTransactional,
+    BlueprintAssignable,
+    SimpleDisplay,
+    AdvancedDisplay,
+    SaveGame,
+    AssetRegistrySearchable,
+    Interp,
+    NoClear,
+    VisibleAnywhere,
+    VisibleInstanceOnly,
+    VisibleDefaultsOnly,
+    Category, //Category:your-category
+    DisplayName //DisplayName:your-nice-name
+}
+
+external interface UPROPERTY {
+    val Name:String
+    val Type:String //
+    val Decorators:PropertyFlag //Replicated,EditAnywhere
+    val IsSubclass:Boolean
+    val IsArray:Boolean
+    val IsMap:Boolean
+}
+external fun CreateClass(className:String, classDeclaration: dynamic)
+external val Object:dynamic
+class RegisterClass(){
+    init {
+        val className = getClassName("ORIGINALCLASSNAME")
+        val parentClass = getParentClass({"TEMPLATE"})
+        val proxy = getProxyFunctions()
+        val classFlags = getClassFlags()
+        val thePackage = getOuterPackage()
+        val properties = getProperties()
+        val klass = CreateClass(className, object {
+            val Parent =  parentClass
+            val Functions = proxy
+            val ClassFlags = classFlags
+            val Outer = thePackage
+            val Properties = properties
+        })
+    }
+
+    fun getClassName(orgClassName:String):String {
+        var className = ""
+        for (index in 0..100000) {
+            className = "${orgClassName}_C${index}"
+            if (!UObject.Find(null, className)) break
+        }
+        return className
+    }
+
+    fun getParentClass(template:dynamic):dynamic{
+        var parentClass = Object.getPrototypeOf(template.prototype).constructor
+        if (parentClass == Object) {
+            parentClass = null
+        }
+        return parentClass
+    }
+
+    fun getProxyFunctions():dynamic{
+        //Seems like a map of
+        //["functionName"] = function
+        return """
+            ctor ctor() {
+                // Subobject initialization, property initialization
+                this.bAlwaysRelevant = true
+            }
+            ReceiveBeginPlay ReceiveBeginPlay() {
+                super.ReceiveBeginPlay()
+                console.log("Hello, this is MyActor")
+            }
+            CustomEvent CustomEvent() {
+                console.log("This is javascript")
+            }
+            NewFunction NewFunction(x/*int*/,y/*int*/) /*NetMulticast*/ {
+                console.log(x+y);
+            }
+            """
+    }
+    fun getClassFlags():dynamic{
+        return 0
+    }
+
+    fun getOuterPackage():dynamic{
+        return JavascriptLibrary.CreatePackage(null,"/Script/Javascript")
+    }
+
+    fun getProperties():dynamic{
+        //map of index
+        //[0] = UPROPERTY
+        return """
+            0 [object Object]
+            1 [object Object]
+            2 [object Object]
+            3 [object Object]
+
+            < Name Hello
+            < Type int
+            < Decorators Replicated,EditAnywhere
+            < IsSubclass false
+            < IsArray false
+            < IsMap false
+
+            < Name World
+            < Type Actor
+            < Decorators Replicated,EditAnywhere
+            < IsSubclass false
+            < IsArray false
+            < IsMap false
+
+            < Name Position
+            < Type Vector
+            < Decorators EditAnywhere
+            < IsSubclass false
+            < IsArray true
+            < IsMap false
+
+            < Name Some
+            < Type DistanceDatum
+            < Decorators EditAnywhere
+            < IsSubclass false
+            < IsArray false
+            < IsMap false
+            """
+    }
+}
+
+external open class AssetGameExampleBlueprint(w:dynamic,b:dynamic,c:dynamic):Character{
     fun Entry()
     fun OverrideFun()
     open fun OverrideMe()
@@ -20,6 +174,10 @@ open class MyKotlinActorExtended(w:dynamic, b:dynamic, c:dynamic):AssetGameExamp
     lateinit var myCamera:CameraComponent
     init{
         console.log("Hello, this is MyKotlinActorExtended.init :)")
+    }
+    fun prector() {
+        //MyCMC_C.SetDefaultSubobjectClass("CharMoveComp")
+        console.log("Hello, this is MyKotlinActorExtended.prector function :)")
     }
     fun ctor(){
         console.log("Hello, this is MyKotlinActorExtended.ctor function :)")
@@ -50,7 +208,7 @@ open class MyKotlinActorExtended(w:dynamic, b:dynamic, c:dynamic):AssetGameExamp
 
     fun startJump() /*ActionBinding[Jump,IE_Pressed]*/
     {
-        //this.Jump()
+        this.Jump()
         console.log("Start Jump!!")
     }
     companion object {
