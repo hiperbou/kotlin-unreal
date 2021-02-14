@@ -1,0 +1,1 @@
+copy out\production\kotlin-examples\kotlin-examples.js ..\Content\Scripts

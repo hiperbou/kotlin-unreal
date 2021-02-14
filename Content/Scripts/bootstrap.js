@@ -9,6 +9,6 @@
         Context.RunFile('polyfill/unrealengine.js')
         Context.RunFile('polyfill/timers.js')
 
-        require('devrequire')(filename)
+        require('devrequire')(filename);
     }
 })(this)
