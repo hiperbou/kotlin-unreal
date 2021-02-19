@@ -8,7 +8,7 @@
 #include "JSGameInstance.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Regex.h"
-#include "JSObject.h"
+#include "KotlinObject.h"
 #include "MovieSceneSequenceID.h"
 
 UKotlinComponent::UKotlinComponent()
@@ -26,14 +26,29 @@ void UKotlinComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	LoadJSFile();
+	LoadKotlinObject();
 }
 
-void UKotlinComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction)
+/*void UKotlinComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction)
 {
-	if (JsObject != nullptr)
+	if (KotlinObject != nullptr)
 	{
-		return JsObject->Tick(DeltaTime);
+		return KotlinObject->Tick(DeltaTime);
+	}
+}*/
+void UKotlinComponent::OnTick(float DeltaTime)
+{
+	if (KotlinObject != nullptr)
+	{
+		return KotlinObject->Tick(DeltaTime);
+	}
+}
+
+void UKotlinComponent::OnDestroyed()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Begin destroy %s"), *(GetOwner()->GetName()));
+	if (KotlinObject != nullptr) {
+		KotlinObject->OnDestroyed();
 	}
 }
 
@@ -51,17 +66,17 @@ void UKotlinComponent::OnRegister()
 	Super::OnRegister();
 }
 
-void UKotlinComponent::SetJsObject(UJSObject* jsObject)
+void UKotlinComponent::SetKotlinObject(UKotlinObject* kotlinObject)
 {
-	JsObject = jsObject;
+	KotlinObject = kotlinObject;		
 }
 
-UJSObject* UKotlinComponent::GetJsObject()
+UKotlinObject* UKotlinComponent::GetKotlinObject()
 {
-	return JsObject;
+	return KotlinObject;
 }
 
-void UKotlinComponent::LoadJSFile()
+void UKotlinComponent::LoadKotlinObject()
 {
 	if (JavascriptContext == nullptr) return;
 	if (KotlinClass.IsEmpty())
@@ -78,11 +93,11 @@ void UKotlinComponent::LoadJSFile()
 	JavascriptContext->RunScript(script);
 }
 
-FString UKotlinComponent::NotifyTrigger()
+FString UKotlinComponent::BeginOverlap(AActor* other)
 {
-	if (JsObject != nullptr)
+	if (KotlinObject != nullptr)
 	{
-		return JsObject->NotifyTrigger();
+		return KotlinObject->BeginOverlap(other);
 	}
 
 	return FString();

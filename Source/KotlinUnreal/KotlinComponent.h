@@ -6,9 +6,11 @@
 #include "Components/ActorComponent.h"
 #include "JavascriptContext.h"
 
+
+
 #include "KotlinComponent.generated.h"
 
-class UJSObject;
+class UKotlinObject;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class KOTLINUNREAL_API UKotlinComponent : public UActorComponent
@@ -24,8 +26,8 @@ protected:
 public:
 	virtual void OnRegister() override;
 
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
+	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Kotlin")
 		FString KotlinClass;
 	
@@ -33,18 +35,22 @@ public:
 		UJavascriptContext* JavascriptContext;
 
 	UFUNCTION(BlueprintCallable, Category = "Kotlin")
-		void LoadJSFile();
+		void LoadKotlinObject();
 
 	UFUNCTION(BlueprintCallable, Category = "Kotlin")
-		void SetJsObject(UJSObject* jsObject);
+		void SetKotlinObject(UKotlinObject* kotlinObject);
 	UFUNCTION(BlueprintCallable, Category = "Kotlin")
-		UJSObject* GetJsObject();
+		UKotlinObject* GetKotlinObject();
 
 	UFUNCTION(BlueprintCallable, Category = "Kotlin")
-		FString NotifyTrigger();
-
+		void OnTick(float DeltaTime);
+	
+	UFUNCTION(BlueprintCallable, Category = "Kotlin")
+		FString BeginOverlap(AActor* other);
+	UFUNCTION(BlueprintCallable, Category = "Kotlin")
+        void OnDestroyed();
 
 private:
 	UPROPERTY()
-		UJSObject* JsObject;
+		UKotlinObject* KotlinObject;
 };

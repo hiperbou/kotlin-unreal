@@ -12,5 +12,5 @@ fun init() :Function<Unit>{
     //return KeyboardInput()::cleanup
     //return ThirdPerson()::cleanup
     //return FirstPerson()::cleanup
-    return MyUObject()::cleanup
+    return WhiteRotatingCube()::cleanup
 }

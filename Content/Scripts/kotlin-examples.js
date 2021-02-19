@@ -3,23 +3,23 @@
   var Unit = Kotlin.kotlin.Unit;
   var getCallableRef = Kotlin.getCallableRef;
   var Kind_CLASS = Kotlin.Kind.CLASS;
-  var println = Kotlin.kotlin.io.println_s8jyv4$;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
+  var println = Kotlin.kotlin.io.println_s8jyv4$;
   var ensureNotNull = Kotlin.ensureNotNull;
   var numberToDouble = Kotlin.numberToDouble;
   var equals = Kotlin.equals;
   var first = Kotlin.kotlin.collections.first_2p1efm$;
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
-  MyUObject.prototype = Object.create(JSObject.prototype);
-  MyUObject.prototype.constructor = MyUObject;
-  MyUObject2.prototype = Object.create(JSObject.prototype);
-  MyUObject2.prototype.constructor = MyUObject2;
+  RedRotatingCube.prototype = Object.create(KotlinObject.prototype);
+  RedRotatingCube.prototype.constructor = RedRotatingCube;
+  WhiteRotatingCube.prototype = Object.create(KotlinObject.prototype);
+  WhiteRotatingCube.prototype.constructor = WhiteRotatingCube;
   function init() {
     console.log('<<<INIT>>>');
     return getCallableRef('cleanup', function ($receiver) {
       return $receiver.cleanup(), Unit;
-    }.bind(null, new MyUObject()));
+    }.bind(null, new WhiteRotatingCube()));
   }
   function KeyboardInput() {
     this.actor = null;
@@ -66,36 +66,6 @@
     simpleName: 'KeyboardInput',
     interfaces: []
   };
-  function MyUObject() {
-    JSObject.call(this);
-    this.touched = 0;
-    this.myNewVar = 666.0;
-  }
-  MyUObject.prototype.NotifyTrigger = function () {
-    this.touched = this.touched + 1 | 0;
-    println('Me llaman desde un blueprint');
-    return 'touched ' + this.touched + ' times';
-  };
-  MyUObject.prototype.BeginPlay = function () {
-    println('BeginPlay');
-    this.myNewVar = 666.0;
-    this.touched = 0;
-    println(global);
-  };
-  MyUObject.prototype.Tick = function (deltaTime) {
-    this.myNewVar += deltaTime;
-    var actor = this.Root.GetOwner();
-    actor.Yaw = actor.Yaw + actor.Speed * deltaTime * 4;
-    actor.K2_SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
-  };
-  MyUObject.prototype.cleanup = function () {
-    console.log('<<<cleanup>>>');
-  };
-  MyUObject.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'MyUObject',
-    interfaces: []
-  };
   function KotlinUnrealClassCache() {
     KotlinUnrealClassCache_instance = this;
     this.cache = LinkedHashMap_init();
@@ -123,36 +93,40 @@
     var GeneratedClassDefinition = tmp$;
     var instance = new GeneratedClassDefinition();
     instance.Root = Root;
-    instance.Root.SetJsObject(instance);
+    instance.Root.SetKotlinObject(instance);
     if (!global.precious)
       global.precious = [];
     global.precious.push(instance);
     if (instance.BeginPlay)
       instance.BeginPlay();
   }
-  function MyUObject2() {
-    JSObject.call(this);
+  function RedRotatingCube() {
+    KotlinObject.call(this);
     this.touched = 0;
   }
-  MyUObject2.prototype.NotifyTrigger = function () {
-    this.touched = this.touched + 1 | 0;
-    println('Me llaman desde un blueprint');
-    return 'touched ' + this.touched + ' times';
-  };
-  MyUObject2.prototype.BeginPlay = function () {
+  RedRotatingCube.prototype.BeginPlay = function () {
     println('BeginPlay');
   };
-  MyUObject2.prototype.Tick = function (deltaTime) {
+  RedRotatingCube.prototype.Tick = function (deltaTime) {
     var actor = this.Root.GetOwner();
     if (actor.actorToCopy != null) {
       actor.K2_SetActorRotation(Rotator_0(void 0, void 0, ensureNotNull(actor.actorToCopy).Yaw), false);
     }};
-  MyUObject2.prototype.cleanup = function () {
+  RedRotatingCube.prototype.BeginOverlap = function (other) {
+    this.touched = this.touched + 1 | 0;
+    if (this.touched > 30) {
+      return 'die';
+    }return 'touched ' + this.touched + ' times by ' + other.GetName();
+  };
+  RedRotatingCube.prototype.OnDestroyed = function () {
+    println('OnDestroyed');
+  };
+  RedRotatingCube.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
   };
-  MyUObject2.$metadata$ = {
+  RedRotatingCube.$metadata$ = {
     kind: Kind_CLASS,
-    simpleName: 'MyUObject2',
+    simpleName: 'RedRotatingCube',
     interfaces: []
   };
   function GenerateClass($receiver, world, position, rotation) {
@@ -242,14 +216,42 @@
     simpleName: 'KeyListener',
     interfaces: []
   };
+  function WhiteRotatingCube() {
+    KotlinObject.call(this);
+    this.touched = 0;
+    this.acumulatedDeltaTime = 0.0;
+  }
+  WhiteRotatingCube.prototype.BeginPlay = function () {
+    println('BeginPlay');
+    this.acumulatedDeltaTime = 0.0;
+    this.touched = 0;
+    println(global);
+  };
+  WhiteRotatingCube.prototype.Tick = function (deltaTime) {
+    this.acumulatedDeltaTime += deltaTime;
+    var actor = this.Root.GetOwner();
+    actor.Yaw = actor.Yaw + actor.Speed * deltaTime * 4;
+    actor.K2_SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
+  };
+  WhiteRotatingCube.prototype.BeginOverlap = function (other) {
+    this.touched = this.touched + 1 | 0;
+    return 'touched ' + this.touched + ' times';
+  };
+  WhiteRotatingCube.prototype.OnDestroyed = function () {
+    println('OnDestroyed');
+  };
+  WhiteRotatingCube.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+  };
+  WhiteRotatingCube.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'WhiteRotatingCube',
+    interfaces: []
+  };
   _.init = init;
   _.KeyboardInput = KeyboardInput;
-  _.MyUObject = MyUObject;
-  Object.defineProperty(_, 'KotlinUnrealClassCache', {
-    get: KotlinUnrealClassCache_getInstance
-  });
   _.unrealProxyClass = unrealProxyClass;
-  _.MyUObject2 = MyUObject2;
+  _.RedRotatingCube = RedRotatingCube;
   var package$ue = _.ue || (_.ue = {});
   package$ue.GenerateClass_6p5t4y$ = GenerateClass;
   package$ue.GenerateClass_4gucm0$ = GenerateClass_0;
@@ -259,6 +261,7 @@
   package$ue.GetComponentByName_4wsm31$ = GetComponentByName;
   package$ue.Key_61zpoe$ = Key_0;
   package$ue.KeyListener = KeyListener;
+  _.WhiteRotatingCube = WhiteRotatingCube;
   Kotlin.defineModule('kotlin-examples', _);
   return _;
 }(module.exports, require('kotlin')));

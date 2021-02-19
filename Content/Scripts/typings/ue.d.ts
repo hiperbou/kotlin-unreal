@@ -1914,546 +1914,6 @@ declare class AnimNotifyState_TimedNiagaraEffect extends AnimNotifyState {
 	static C(Other: UObject | any): AnimNotifyState_TimedNiagaraEffect;
 }
 
-declare class MagicLeapPlanesComponent extends SceneComponent { 
-	QueryFlags: EMagicLeapPlaneQueryFlags[];
-	SearchVolume: BoxComponent;
-	MaxResults: number;
-	MinHolePerimeter: number;
-	MinPlaneArea: number;
-	QueryType: EMagicLeapPlaneQueryType;
-	SimilarityThreshold: number;
-	OnPlanesQueryResult: UnrealEngineMulticastDelegate<(bSuccess: boolean, planes: MagicLeapPlaneResult[], Polygons: MagicLeapPlaneBoundaries[]) => void>;
-	OnPersistentPlanesQueryResult: UnrealEngineMulticastDelegate<(bSuccess: boolean, QueryHandle: Guid, QueryType: EMagicLeapPlaneQueryType, NewPlanes: MagicLeapPlaneResult[], RemovedPlaneIDs: Guid[], NewPolygons: MagicLeapPlaneBoundaries[], RemovedPolygonIDs: Guid[]) => void>;
-	static Load(ResourceName: string): MagicLeapPlanesComponent;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapPlanesComponent;
-	static GetDefaultObject(): MagicLeapPlanesComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapPlanesComponent;
-	RequestPlanesAsync(): boolean;
-	static C(Other: UObject | any): MagicLeapPlanesComponent;
-}
-
-declare class MagicLeapPlanesFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapPlanesFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapPlanesFunctionLibrary;
-	static GetDefaultObject(): MagicLeapPlanesFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapPlanesFunctionLibrary;
-	static ReorderPlaneFlags(InPriority: EMagicLeapPlaneQueryFlags[],InFlagsToReorder: EMagicLeapPlaneQueryFlags[],OutReorderedFlags?: EMagicLeapPlaneQueryFlags[]): {OutReorderedFlags: EMagicLeapPlaneQueryFlags[]};
-	static RemovePersistentQuery(Handle: Guid): boolean;
-	static RemoveFlagsNotInQuery(InQueryFlags: EMagicLeapPlaneQueryFlags[],InResultFlags: EMagicLeapPlaneQueryFlags[],OutFlags?: EMagicLeapPlaneQueryFlags[]): {OutFlags: EMagicLeapPlaneQueryFlags[]};
-	static IsTrackerValid(): boolean;
-	static GetContentScale(ContentActor: Actor,PlaneResult: MagicLeapPlaneResult): Transform;
-	static DestroyTracker(): boolean;
-	static CreateTracker(): boolean;
-	static AddPersistentQuery(PersistentQueryType: EMagicLeapPlaneQueryType): Guid;
-	static C(Other: UObject | any): MagicLeapPlanesFunctionLibrary;
-}
-
-declare class MagicLeapLightingTrackingComponent extends ActorComponent { 
-	UseGlobalAmbience: boolean;
-	UseColorTemp: boolean;
-	static Load(ResourceName: string): MagicLeapLightingTrackingComponent;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapLightingTrackingComponent;
-	static GetDefaultObject(): MagicLeapLightingTrackingComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapLightingTrackingComponent;
-	static C(Other: UObject | any): MagicLeapLightingTrackingComponent;
-}
-
-declare class MagicLeapLightEstimationColorTemperatureState { 
-	ColorTemperatureKelvin: number;
-	AmbientColor: LinearColor;
-	Timestamp: Timespan;
-	clone() : MagicLeapLightEstimationColorTemperatureState;
-	static C(Other: UObject | any): MagicLeapLightEstimationColorTemperatureState;
-	GetColorTemperatureState(): {ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState, $: boolean};
-	static GetColorTemperatureState(ColorTemperatureState?: MagicLeapLightEstimationColorTemperatureState): {ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState, $: boolean};
-}
-
-declare class MagicLeapLightEstimationAmbientGlobalState { 
-	AmbientIntensityNits: number[];
-	Timestamp: Timespan;
-	clone() : MagicLeapLightEstimationAmbientGlobalState;
-	static C(Other: UObject | any): MagicLeapLightEstimationAmbientGlobalState;
-	GetAmbientGlobalState(): {GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState, $: boolean};
-	static GetAmbientGlobalState(GlobalAmbientState?: MagicLeapLightEstimationAmbientGlobalState): {GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState, $: boolean};
-}
-
-declare class MagicLeapLightEstimationFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapLightEstimationFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapLightEstimationFunctionLibrary;
-	static GetDefaultObject(): MagicLeapLightEstimationFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapLightEstimationFunctionLibrary;
-	static IsTrackerValid(): boolean;
-	static GetColorTemperatureState(ColorTemperatureState?: MagicLeapLightEstimationColorTemperatureState): {ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState, $: boolean};
-	static GetAmbientGlobalState(GlobalAmbientState?: MagicLeapLightEstimationAmbientGlobalState): {GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState, $: boolean};
-	static DestroyTracker(): void;
-	static CreateTracker(): boolean;
-	static C(Other: UObject | any): MagicLeapLightEstimationFunctionLibrary;
-}
-
-declare type EMagicLeapAutoPinType = 'OnlyOnDataRestoration' | 'Always' | 'Never' | 'EMagicLeapAutoPinType_MAX';
-declare var EMagicLeapAutoPinType : { OnlyOnDataRestoration:'OnlyOnDataRestoration',Always:'Always',Never:'Never',EMagicLeapAutoPinType_MAX:'EMagicLeapAutoPinType_MAX', };
-declare class MagicLeapARPinSaveGame extends SaveGame { 
-	PinnedID: Guid;
-	ComponentWorldTransform: Transform;
-	PinTransform: Transform;
-	bShouldPinActor: boolean;
-	static Load(ResourceName: string): MagicLeapARPinSaveGame;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinSaveGame;
-	static GetDefaultObject(): MagicLeapARPinSaveGame;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinSaveGame;
-	static C(Other: UObject | any): MagicLeapARPinSaveGame;
-}
-
-declare class MagicLeapARPinComponent extends SceneComponent { 
-	ObjectUID: string;
-	UserIndex: number;
-	AutoPinType: EMagicLeapAutoPinType;
-	bShouldPinActor: boolean;
-	PinDataClass: UnrealEngineClass;
-	SearchPinTypes: any;
-	SearchVolume: SphereComponent;
-	OnPersistentEntityPinned: UnrealEngineMulticastDelegate<(bRestoredOrSynced: boolean) => void>;
-	OnPersistentEntityPinLost: UnrealEngineMulticastDelegate<() => void>;
-	OnPinDataLoadAttemptCompleted: UnrealEngineMulticastDelegate<(bDataRestored: boolean) => void>;
-	PinnedCFUID: Guid;
-	PinnedSceneComponent: SceneComponent;
-	PinData: MagicLeapARPinSaveGame;
-	static Load(ResourceName: string): MagicLeapARPinComponent;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinComponent;
-	static GetDefaultObject(): MagicLeapARPinComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinComponent;
-	UnPin(): void;
-	TryGetPinData(InPinDataClass: UnrealEngineClass,OutPinDataValid?: boolean): {OutPinDataValid: boolean, $: MagicLeapARPinSaveGame};
-	PinToRestoredOrSyncedID(): boolean;
-	PinToID(PinId: Guid): boolean;
-	PinToBestFit(): void;
-	PinSceneComponent(ComponentToPin: SceneComponent): boolean;
-	PinRestoredOrSynced(): boolean;
-	PinActor(ActorToPin: Actor): boolean;
-	IsPinned(): boolean;
-	GetPinState(State?: MagicLeapARPinState): {State: MagicLeapARPinState, $: boolean};
-	GetPinnedPinID(PinId?: Guid): {PinId: Guid, $: boolean};
-	GetPinData(PinDataClass: UnrealEngineClass): MagicLeapARPinSaveGame;
-	AttemptPinDataRestorationAsync(): void;
-	AttemptPinDataRestoration(): boolean;
-	static C(Other: UObject | any): MagicLeapARPinComponent;
-}
-
-declare class MagicLeapARPinQuery { 
-	Types: any;
-	MaxResults: number;
-	TargetPoint: Vector;
-	Radius: number;
-	bSorted: boolean;
-	clone() : MagicLeapARPinQuery;
-	static C(Other: UObject | any): MagicLeapARPinQuery;
-	GetGlobalQueryFilter(): {CurrentGlobalFilter: MagicLeapARPinQuery, $: EMagicLeapPassableWorldError};
-	QueryARPins(Pins?: Guid[]): {Pins: Guid[], $: EMagicLeapPassableWorldError};
-	SetGlobalQueryFilter(): EMagicLeapPassableWorldError;
-	static GetGlobalQueryFilter(CurrentGlobalFilter?: MagicLeapARPinQuery): {CurrentGlobalFilter: MagicLeapARPinQuery, $: EMagicLeapPassableWorldError};
-	static QueryARPins(Query: MagicLeapARPinQuery,Pins?: Guid[]): {Pins: Guid[], $: EMagicLeapPassableWorldError};
-	static SetGlobalQueryFilter(InGlobalFilter: MagicLeapARPinQuery): EMagicLeapPassableWorldError;
-}
-
-declare class MagicLeapARPinFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapARPinFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinFunctionLibrary;
-	static GetDefaultObject(): MagicLeapARPinFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinFunctionLibrary;
-	static SetGlobalQueryFilter(InGlobalFilter: MagicLeapARPinQuery): EMagicLeapPassableWorldError;
-	static SetContentBindingSaveGameUserIndex(UserIndex: number): void;
-	static QueryARPins(Query: MagicLeapARPinQuery,Pins?: Guid[]): {Pins: Guid[], $: EMagicLeapPassableWorldError};
-	static ParseStringToARPinId(PinIdString: string,ARPinId?: Guid): {ARPinId: Guid, $: boolean};
-	static IsTrackerValid(): boolean;
-	static GetNumAvailableARPins(Count?: number): {Count: number, $: EMagicLeapPassableWorldError};
-	static GetGlobalQueryFilter(CurrentGlobalFilter?: MagicLeapARPinQuery): {CurrentGlobalFilter: MagicLeapARPinQuery, $: EMagicLeapPassableWorldError};
-	static GetContentBindingSaveGameUserIndex(): number;
-	static GetClosestARPin(SearchPoint: Vector,PinId?: Guid): {PinId: Guid, $: EMagicLeapPassableWorldError};
-	static GetAvailableARPins(NumRequested: number,Pins?: Guid[]): {Pins: Guid[], $: EMagicLeapPassableWorldError};
-	static GetARPinStateToString(State: MagicLeapARPinState): string;
-	static GetARPinState(PinId: Guid,State?: MagicLeapARPinState): {State: MagicLeapARPinState, $: EMagicLeapPassableWorldError};
-	static GetARPinPositionAndOrientation_TrackingSpace(PinId: Guid,Position?: Vector,Orientation?: Rotator,PinFoundInEnvironment?: boolean): {Position: Vector, Orientation: Rotator, PinFoundInEnvironment: boolean, $: boolean};
-	static GetARPinPositionAndOrientation(PinId: Guid,Position?: Vector,Orientation?: Rotator,PinFoundInEnvironment?: boolean): {Position: Vector, Orientation: Rotator, PinFoundInEnvironment: boolean, $: boolean};
-	static DestroyTracker(): EMagicLeapPassableWorldError;
-	static CreateTracker(): EMagicLeapPassableWorldError;
-	static ARPinIdToString(ARPinId: Guid): string;
-	static C(Other: UObject | any): MagicLeapARPinFunctionLibrary;
-}
-
-declare class MagicLeapARPinInfoActorBase extends Actor { 
-	PinId: Guid;
-	bVisibilityOverride: boolean;
-	static GetDefaultObject(): MagicLeapARPinInfoActorBase;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinInfoActorBase;
-	OnUpdateARPinState(): void;
-	static C(Other: UObject | any): MagicLeapARPinInfoActorBase;
-}
-
-declare class MagicLeapARPinRenderer extends Actor { 
-	bInfoActorsVisibilityOverride: boolean;
-	AllInfoActors: any;
-	ClassToSpawn: UnrealEngineClass;
-	static GetDefaultObject(): MagicLeapARPinRenderer;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinRenderer;
-	SetVisibilityOverride(InVisibilityOverride: boolean): void;
-	static C(Other: UObject | any): MagicLeapARPinRenderer;
-}
-
-declare class MagicLeapARPinSettings extends UObject { 
-	UpdateCheckFrequency: number;
-	OnUpdatedEventTriggerDelta: MagicLeapARPinState;
-	static Load(ResourceName: string): MagicLeapARPinSettings;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinSettings;
-	static GetDefaultObject(): MagicLeapARPinSettings;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinSettings;
-	static C(Other: UObject | any): MagicLeapARPinSettings;
-}
-
-declare class MagicLeapARPinContentBindings extends SaveGame { 
-	AllContentBindings: any;
-	static Load(ResourceName: string): MagicLeapARPinContentBindings;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinContentBindings;
-	static GetDefaultObject(): MagicLeapARPinContentBindings;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinContentBindings;
-	static C(Other: UObject | any): MagicLeapARPinContentBindings;
-}
-
-declare class MagicLeapImageTrackerComponent extends SceneComponent { 
-	TargetImageTexture: Texture2D;
-	Name: string;
-	LongerDimension: number;
-	bIsStationary: boolean;
-	bUseUnreliablePose: boolean;
-	AxisOrientation: EMagicLeapImageTargetOrientation;
-	OnSetImageTargetSucceeded: UnrealEngineMulticastDelegate<() => void>;
-	OnSetImageTargetFailed: UnrealEngineMulticastDelegate<() => void>;
-	OnImageTargetFound: UnrealEngineMulticastDelegate<() => void>;
-	OnImageTargetLost: UnrealEngineMulticastDelegate<() => void>;
-	OnImageTargetUnreliableTracking: UnrealEngineMulticastDelegate<(LastTrackedLocation: Vector, LastTrackedRotation: Rotator, NewUnreliableLocation: Vector, NewUnreliableRotation: Rotator) => void>;
-	static Load(ResourceName: string): MagicLeapImageTrackerComponent;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapImageTrackerComponent;
-	static GetDefaultObject(): MagicLeapImageTrackerComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapImageTrackerComponent;
-	SetTargetAsync(ImageTarget: Texture2D): boolean;
-	RemoveTargetAsync(): boolean;
-	static C(Other: UObject | any): MagicLeapImageTrackerComponent;
-}
-
-declare class MagicLeapImageTrackerFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapImageTrackerFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapImageTrackerFunctionLibrary;
-	static GetDefaultObject(): MagicLeapImageTrackerFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapImageTrackerFunctionLibrary;
-	static SetMaxSimultaneousTargets(MaxSimultaneousTargets: number): void;
-	static IsImageTrackingEnabled(): boolean;
-	static GetMaxSimultaneousTargets(): number;
-	static EnableImageTracking(bEnable: boolean): void;
-	static C(Other: UObject | any): MagicLeapImageTrackerFunctionLibrary;
-}
-
-declare class LuminARSessionFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): LuminARSessionFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): LuminARSessionFunctionLibrary;
-	static GetDefaultObject(): LuminARSessionFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminARSessionFunctionLibrary;
-	static StartLuminARSession(WorldContextObject: UObject,LatentInfo: LatentActionInfo,Configuration: LuminARSessionConfig): void;
-	static C(Other: UObject | any): LuminARSessionFunctionLibrary;
-}
-
-declare type ELuminARTrackingState = 'Tracking' | 'NotTracking' | 'StoppedTracking' | 'ELuminARTrackingState_MAX';
-declare var ELuminARTrackingState : { Tracking:'Tracking',NotTracking:'NotTracking',StoppedTracking:'StoppedTracking',ELuminARTrackingState_MAX:'ELuminARTrackingState_MAX', };
-declare class LuminARFrameFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): LuminARFrameFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): LuminARFrameFunctionLibrary;
-	static GetDefaultObject(): LuminARFrameFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminARFrameFunctionLibrary;
-	static LuminARLineTrace(WorldContextObject: UObject,ScreenPosition: Vector2D,TraceChannels: any,OutHitResults?: ARTraceResult[]): {OutHitResults: ARTraceResult[], $: boolean};
-	static GetTrackingState(): ELuminARTrackingState;
-	static C(Other: UObject | any): LuminARFrameFunctionLibrary;
-}
-
-declare class LuminARImageTrackingFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): LuminARImageTrackingFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): LuminARImageTrackingFunctionLibrary;
-	static GetDefaultObject(): LuminARImageTrackingFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminARImageTrackingFunctionLibrary;
-	static AddLuminRuntimeCandidateImageEx(SessionConfig: ARSessionConfig,CandidateTexture: Texture2D,FriendlyName: string,PhysicalWidth: number,bUseUnreliablePose: boolean,bImageIsStationary: boolean,InAxisOrientation: EMagicLeapImageTargetOrientation): LuminARCandidateImage;
-	static AddLuminRuntimeCandidateImage(SessionConfig: ARSessionConfig,CandidateTexture: Texture2D,FriendlyName: string,PhysicalWidth: number,bUseUnreliablePose: boolean,bImageIsStationary: boolean): LuminARCandidateImage;
-	static C(Other: UObject | any): LuminARImageTrackingFunctionLibrary;
-}
-
-declare class LuminAROrigin extends AROriginActor { 
-	MRMeshComponent: MRMeshComponent;
-	PlaneSurfaceMaterial: MaterialInterface;
-	WireframeMaterial: MaterialInterface;
-	static GetDefaultObject(): LuminAROrigin;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminAROrigin;
-	static C(Other: UObject | any): LuminAROrigin;
-}
-
-declare class LuminARLightEstimate extends ARBasicLightEstimate { 
-	AmbientIntensityNits: number[];
-	static Load(ResourceName: string): LuminARLightEstimate;
-	static Find(Outer: UObject, ResourceName: string): LuminARLightEstimate;
-	static GetDefaultObject(): LuminARLightEstimate;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminARLightEstimate;
-	GetAmbientIntensityNits(): number[];
-	static C(Other: UObject | any): LuminARLightEstimate;
-}
-
-declare type EMagicLeapControllerTrackingMode = 'InputService' | 'CoordinateFrameUID' | 'EMagicLeapControllerTrackingMode_MAX';
-declare var EMagicLeapControllerTrackingMode : { InputService:'InputService',CoordinateFrameUID:'CoordinateFrameUID',EMagicLeapControllerTrackingMode_MAX:'EMagicLeapControllerTrackingMode_MAX', };
-declare type EMagicLeapControllerLEDPattern = 'None' | 'Clock01' | 'Clock02' | 'Clock03' | 'Clock04' | 'Clock05' | 'Clock06' | 'Clock07' | 'Clock08' | 'Clock09' | 'Clock10' | 'Clock11' | 'Clock12' | 'Clock01_07' | 'Clock02_08' | 'Clock03_09' | 'Clock04_10' | 'Clock05_11' | 'Clock06_12' | 'EMagicLeapControllerLEDPattern_MAX';
-declare var EMagicLeapControllerLEDPattern : { None:'None',Clock01:'Clock01',Clock02:'Clock02',Clock03:'Clock03',Clock04:'Clock04',Clock05:'Clock05',Clock06:'Clock06',Clock07:'Clock07',Clock08:'Clock08',Clock09:'Clock09',Clock10:'Clock10',Clock11:'Clock11',Clock12:'Clock12',Clock01_07:'Clock01_07',Clock02_08:'Clock02_08',Clock03_09:'Clock03_09',Clock04_10:'Clock04_10',Clock05_11:'Clock05_11',Clock06_12:'Clock06_12',EMagicLeapControllerLEDPattern_MAX:'EMagicLeapControllerLEDPattern_MAX', };
-declare type EMagicLeapControllerLEDColor = 'BrightMissionRed' | 'PastelMissionRed' | 'BrightFloridaOrange' | 'PastelFloridaOrange' | 'BrightLunaYellow' | 'PastelLunaYellow' | 'BrightNebulaPink' | 'PastelNebulaPink' | 'BrightCosmicPurple' | 'PastelCosmicPurple' | 'BrightMysticBlue' | 'PastelMysticBlue' | 'BrightCelestialBlue' | 'PastelCelestialBlue' | 'BrightShaggleGreen' | 'PastelShaggleGreen' | 'EMagicLeapControllerLEDColor_MAX';
-declare var EMagicLeapControllerLEDColor : { BrightMissionRed:'BrightMissionRed',PastelMissionRed:'PastelMissionRed',BrightFloridaOrange:'BrightFloridaOrange',PastelFloridaOrange:'PastelFloridaOrange',BrightLunaYellow:'BrightLunaYellow',PastelLunaYellow:'PastelLunaYellow',BrightNebulaPink:'BrightNebulaPink',PastelNebulaPink:'PastelNebulaPink',BrightCosmicPurple:'BrightCosmicPurple',PastelCosmicPurple:'PastelCosmicPurple',BrightMysticBlue:'BrightMysticBlue',PastelMysticBlue:'PastelMysticBlue',BrightCelestialBlue:'BrightCelestialBlue',PastelCelestialBlue:'PastelCelestialBlue',BrightShaggleGreen:'BrightShaggleGreen',PastelShaggleGreen:'PastelShaggleGreen',EMagicLeapControllerLEDColor_MAX:'EMagicLeapControllerLEDColor_MAX', };
-declare type EMagicLeapControllerLEDEffect = 'RotateCW' | 'RotateCCW' | 'Pulse' | 'PaintCW' | 'PaintCCW' | 'Blink' | 'EMagicLeapControllerLEDEffect_MAX';
-declare var EMagicLeapControllerLEDEffect : { RotateCW:'RotateCW',RotateCCW:'RotateCCW',Pulse:'Pulse',PaintCW:'PaintCW',PaintCCW:'PaintCCW',Blink:'Blink',EMagicLeapControllerLEDEffect_MAX:'EMagicLeapControllerLEDEffect_MAX', };
-declare type EMagicLeapControllerLEDSpeed = 'Slow' | 'Medium' | 'Fast' | 'EMagicLeapControllerLEDSpeed_MAX';
-declare var EMagicLeapControllerLEDSpeed : { Slow:'Slow',Medium:'Medium',Fast:'Fast',EMagicLeapControllerLEDSpeed_MAX:'EMagicLeapControllerLEDSpeed_MAX', };
-declare type EMagicLeapControllerHapticPattern = 'None' | 'Click' | 'Bump' | 'DoubleClick' | 'Buzz' | 'Tick' | 'ForceDown' | 'ForceUp' | 'ForceDwell' | 'SecondForceDown' | 'EMagicLeapControllerHapticPattern_MAX';
-declare var EMagicLeapControllerHapticPattern : { None:'None',Click:'Click',Bump:'Bump',DoubleClick:'DoubleClick',Buzz:'Buzz',Tick:'Tick',ForceDown:'ForceDown',ForceUp:'ForceUp',ForceDwell:'ForceDwell',SecondForceDown:'SecondForceDown',EMagicLeapControllerHapticPattern_MAX:'EMagicLeapControllerHapticPattern_MAX', };
-declare type EMagicLeapControllerHapticIntensity = 'Low' | 'Medium' | 'High' | 'EMagicLeapControllerHapticIntensity_MAX';
-declare var EMagicLeapControllerHapticIntensity : { Low:'Low',Medium:'Medium',High:'High',EMagicLeapControllerHapticIntensity_MAX:'EMagicLeapControllerHapticIntensity_MAX', };
-declare type EMagicLeapControllerType = 'None' | 'Device' | 'MobileApp' | 'EMagicLeapControllerType_MAX';
-declare var EMagicLeapControllerType : { None:'None',Device:'Device',MobileApp:'MobileApp',EMagicLeapControllerType_MAX:'EMagicLeapControllerType_MAX', };
-declare class MagicLeapControllerFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapControllerFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapControllerFunctionLibrary;
-	static GetDefaultObject(): MagicLeapControllerFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapControllerFunctionLibrary;
-	static SetMotionSourceForHand(hand: EControllerHand,MotionSource: string): boolean;
-	static SetControllerTrackingMode(TrackingMode: EMagicLeapControllerTrackingMode): boolean;
-	static PlayLEDPattern(MotionSource: string,LEDPattern: EMagicLeapControllerLEDPattern,LEDColor: EMagicLeapControllerLEDColor,DurationInSec: number): boolean;
-	static PlayLEDEffect(MotionSource: string,LEDEffect: EMagicLeapControllerLEDEffect,LEDSpeed: EMagicLeapControllerLEDSpeed,LEDPattern: EMagicLeapControllerLEDPattern,LEDColor: EMagicLeapControllerLEDColor,DurationInSec: number): boolean;
-	static PlayHapticPattern(MotionSource: string,HapticPattern: EMagicLeapControllerHapticPattern,Intensity: EMagicLeapControllerHapticIntensity): boolean;
-	static PlayControllerLEDEffect(hand: EControllerHand,LEDEffect: EMagicLeapControllerLEDEffect,LEDSpeed: EMagicLeapControllerLEDSpeed,LEDPattern: EMagicLeapControllerLEDPattern,LEDColor: EMagicLeapControllerLEDColor,DurationInSec: number): boolean;
-	static PlayControllerLED(hand: EControllerHand,LEDPattern: EMagicLeapControllerLEDPattern,LEDColor: EMagicLeapControllerLEDColor,DurationInSec: number): boolean;
-	static PlayControllerHapticFeedback(hand: EControllerHand,HapticPattern: EMagicLeapControllerHapticPattern,Intensity: EMagicLeapControllerHapticIntensity): boolean;
-	static MaxSupportedMagicLeapControllers(): number;
-	static IsMLControllerConnected(MotionSource: string): boolean;
-	static InvertControllerMapping(): void;
-	static GetMotionSourceForHand(hand: EControllerHand): string;
-	static GetMLControllerType(hand: EControllerHand): EMagicLeapControllerType;
-	static GetHandForMotionSource(MotionSource: string): EControllerHand;
-	static GetControllerType(MotionSource: string): EMagicLeapControllerType;
-	static GetControllerTrackingMode(): EMagicLeapControllerTrackingMode;
-	static GetControllerMapping(ControllerIndex: number,hand?: EControllerHand): {hand: EControllerHand, $: boolean};
-	static C(Other: UObject | any): MagicLeapControllerFunctionLibrary;
-}
-
-declare type EMagicLeapTouchpadGestureType = 'None' | 'Tap' | 'ForceTapDown' | 'ForceTapUp' | 'ForceDwell' | 'SecondForceDown' | 'LongHold' | 'RadialScroll' | 'Swipe' | 'Scroll' | 'Pinch' | 'EMagicLeapTouchpadGestureType_MAX';
-declare var EMagicLeapTouchpadGestureType : { None:'None',Tap:'Tap',ForceTapDown:'ForceTapDown',ForceTapUp:'ForceTapUp',ForceDwell:'ForceDwell',SecondForceDown:'SecondForceDown',LongHold:'LongHold',RadialScroll:'RadialScroll',Swipe:'Swipe',Scroll:'Scroll',Pinch:'Pinch',EMagicLeapTouchpadGestureType_MAX:'EMagicLeapTouchpadGestureType_MAX', };
-declare type EMagicLeapTouchpadGestureDirection = 'None' | 'Up' | 'Down' | 'Left' | 'Right' | 'In' | 'Out' | 'Clockwise' | 'CounterClockwise' | 'EMagicLeapTouchpadGestureDirection_MAX';
-declare var EMagicLeapTouchpadGestureDirection : { None:'None',Up:'Up',Down:'Down',Left:'Left',Right:'Right',In:'In',Out:'Out',Clockwise:'Clockwise',CounterClockwise:'CounterClockwise',EMagicLeapTouchpadGestureDirection_MAX:'EMagicLeapTouchpadGestureDirection_MAX', };
-declare class MagicLeapTouchpadGesture { 
-	hand: EControllerHand;
-	MotionSource: string;
-	Type: EMagicLeapTouchpadGestureType;
-	Direction: EMagicLeapTouchpadGestureDirection;
-	PositionAndForce: Vector;
-	Speed: number;
-	Distance: number;
-	FingerGap: number;
-	Radius: number;
-	Angle: number;
-	clone() : MagicLeapTouchpadGesture;
-	static C(Other: UObject | any): MagicLeapTouchpadGesture;
-}
-
-declare class MagicLeapTouchpadGesturesComponent extends ActorComponent { 
-	OnTouchpadGestureStart: UnrealEngineMulticastDelegate<(GestureData: MagicLeapTouchpadGesture) => void>;
-	OnTouchpadGestureContinue: UnrealEngineMulticastDelegate<(GestureData: MagicLeapTouchpadGesture) => void>;
-	OnTouchpadGestureEnd: UnrealEngineMulticastDelegate<(GestureData: MagicLeapTouchpadGesture) => void>;
-	static Load(ResourceName: string): MagicLeapTouchpadGesturesComponent;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapTouchpadGesturesComponent;
-	static GetDefaultObject(): MagicLeapTouchpadGesturesComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapTouchpadGesturesComponent;
-	static C(Other: UObject | any): MagicLeapTouchpadGesturesComponent;
-}
-
-declare class EyeTrackerStereoGazeData { 
-	LeftEyeOrigin: Vector;
-	LeftEyeDirection: Vector;
-	RightEyeOrigin: Vector;
-	RightEyeDirection: Vector;
-	FixationPoint: Vector;
-	ConfidenceValue: number;
-	clone() : EyeTrackerStereoGazeData;
-	static C(Other: UObject | any): EyeTrackerStereoGazeData;
-	GetStereoGazeData(): {OutGazeData: EyeTrackerStereoGazeData, $: boolean};
-	static GetStereoGazeData(OutGazeData?: EyeTrackerStereoGazeData): {OutGazeData: EyeTrackerStereoGazeData, $: boolean};
-}
-
-declare class EyeTrackerGazeData { 
-	GazeOrigin: Vector;
-	GazeDirection: Vector;
-	FixationPoint: Vector;
-	ConfidenceValue: number;
-	clone() : EyeTrackerGazeData;
-	static C(Other: UObject | any): EyeTrackerGazeData;
-	GetGazeData(): {OutGazeData: EyeTrackerGazeData, $: boolean};
-	static GetGazeData(OutGazeData?: EyeTrackerGazeData): {OutGazeData: EyeTrackerGazeData, $: boolean};
-}
-
-declare class EyeTrackerFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): EyeTrackerFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): EyeTrackerFunctionLibrary;
-	static GetDefaultObject(): EyeTrackerFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): EyeTrackerFunctionLibrary;
-	static SetEyeTrackedPlayer(PlayerController: PlayerController): void;
-	static IsStereoGazeDataAvailable(): boolean;
-	static IsEyeTrackerConnected(): boolean;
-	static GetStereoGazeData(OutGazeData?: EyeTrackerStereoGazeData): {OutGazeData: EyeTrackerStereoGazeData, $: boolean};
-	static GetGazeData(OutGazeData?: EyeTrackerGazeData): {OutGazeData: EyeTrackerGazeData, $: boolean};
-	static C(Other: UObject | any): EyeTrackerFunctionLibrary;
-}
-
-declare class MagicLeapEyeBlinkState { 
-	LeftEyeBlinked: boolean;
-	RightEyeBlinked: boolean;
-	clone() : MagicLeapEyeBlinkState;
-	static C(Other: UObject | any): MagicLeapEyeBlinkState;
-	GetEyeBlinkState(): {BlinkState: MagicLeapEyeBlinkState, $: boolean};
-	static GetEyeBlinkState(BlinkState?: MagicLeapEyeBlinkState): {BlinkState: MagicLeapEyeBlinkState, $: boolean};
-}
-
-declare type EMagicLeapEyeTrackingCalibrationStatus = 'None' | 'Bad' | 'Good' | 'EMagicLeapEyeTrackingCalibrationStatus_MAX';
-declare var EMagicLeapEyeTrackingCalibrationStatus : { None:'None',Bad:'Bad',Good:'Good',EMagicLeapEyeTrackingCalibrationStatus_MAX:'EMagicLeapEyeTrackingCalibrationStatus_MAX', };
-declare class MagicLeapEyeTrackerFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapEyeTrackerFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapEyeTrackerFunctionLibrary;
-	static GetDefaultObject(): MagicLeapEyeTrackerFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapEyeTrackerFunctionLibrary;
-	static GetEyeBlinkState(BlinkState?: MagicLeapEyeBlinkState): {BlinkState: MagicLeapEyeBlinkState, $: boolean};
-	static GetCalibrationStatus(): EMagicLeapEyeTrackingCalibrationStatus;
-	static C(Other: UObject | any): MagicLeapEyeTrackerFunctionLibrary;
-}
-
-declare class LiveLinkMagicLeapHandTrackingSourceFactory extends LiveLinkSourceFactory { 
-	static Load(ResourceName: string): LiveLinkMagicLeapHandTrackingSourceFactory;
-	static Find(Outer: UObject, ResourceName: string): LiveLinkMagicLeapHandTrackingSourceFactory;
-	static GetDefaultObject(): LiveLinkMagicLeapHandTrackingSourceFactory;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LiveLinkMagicLeapHandTrackingSourceFactory;
-	static C(Other: UObject | any): LiveLinkMagicLeapHandTrackingSourceFactory;
-}
-
-declare type EMagicLeapHandTrackingGesture = 'Finger' | 'Fist' | 'Pinch' | 'Thumb' | 'L' | 'OpenHand' | 'OpenHandBack' | 'Ok' | 'C' | 'NoPose' | 'NoHand' | 'EMagicLeapHandTrackingGesture_MAX';
-declare var EMagicLeapHandTrackingGesture : { Finger:'Finger',Fist:'Fist',Pinch:'Pinch',Thumb:'Thumb',L:'L',OpenHand:'OpenHand',OpenHandBack:'OpenHandBack',Ok:'Ok',C:'C',NoPose:'NoPose',NoHand:'NoHand',EMagicLeapHandTrackingGesture_MAX:'EMagicLeapHandTrackingGesture_MAX', };
-declare type EMagicLeapHandTrackingKeypointFilterLevel = 'NoFilter' | 'SimpleSmoothing' | 'PredictiveSmoothing' | 'EMagicLeapHandTrackingKeypointFilterLevel_MAX';
-declare var EMagicLeapHandTrackingKeypointFilterLevel : { NoFilter:'NoFilter',SimpleSmoothing:'SimpleSmoothing',PredictiveSmoothing:'PredictiveSmoothing',EMagicLeapHandTrackingKeypointFilterLevel_MAX:'EMagicLeapHandTrackingKeypointFilterLevel_MAX', };
-declare type EMagicLeapHandTrackingGestureFilterLevel = 'NoFilter' | 'SlightRobustnessToFlicker' | 'MoreRobustnessToFlicker' | 'EMagicLeapHandTrackingGestureFilterLevel_MAX';
-declare var EMagicLeapHandTrackingGestureFilterLevel : { NoFilter:'NoFilter',SlightRobustnessToFlicker:'SlightRobustnessToFlicker',MoreRobustnessToFlicker:'MoreRobustnessToFlicker',EMagicLeapHandTrackingGestureFilterLevel_MAX:'EMagicLeapHandTrackingGestureFilterLevel_MAX', };
-declare type EMagicLeapHandTrackingKeypoint = 'Thumb_Tip' | 'Thumb_IP' | 'Thumb_MCP' | 'Thumb_CMC' | 'Index_Tip' | 'Index_DIP' | 'Index_PIP' | 'Index_MCP' | 'Middle_Tip' | 'Middle_DIP' | 'Middle_PIP' | 'Middle_MCP' | 'Ring_Tip' | 'Ring_DIP' | 'Ring_PIP' | 'Ring_MCP' | 'Pinky_Tip' | 'Pinky_DIP' | 'Pinky_PIP' | 'Pinky_MCP' | 'Wrist_Center' | 'Wrist_Ulnar' | 'Wrist_Radial' | 'Hand_Center' | 'EMagicLeapHandTrackingKeypoint_MAX';
-declare var EMagicLeapHandTrackingKeypoint : { Thumb_Tip:'Thumb_Tip',Thumb_IP:'Thumb_IP',Thumb_MCP:'Thumb_MCP',Thumb_CMC:'Thumb_CMC',Index_Tip:'Index_Tip',Index_DIP:'Index_DIP',Index_PIP:'Index_PIP',Index_MCP:'Index_MCP',Middle_Tip:'Middle_Tip',Middle_DIP:'Middle_DIP',Middle_PIP:'Middle_PIP',Middle_MCP:'Middle_MCP',Ring_Tip:'Ring_Tip',Ring_DIP:'Ring_DIP',Ring_PIP:'Ring_PIP',Ring_MCP:'Ring_MCP',Pinky_Tip:'Pinky_Tip',Pinky_DIP:'Pinky_DIP',Pinky_PIP:'Pinky_PIP',Pinky_MCP:'Pinky_MCP',Wrist_Center:'Wrist_Center',Wrist_Ulnar:'Wrist_Ulnar',Wrist_Radial:'Wrist_Radial',Hand_Center:'Hand_Center',EMagicLeapHandTrackingKeypoint_MAX:'EMagicLeapHandTrackingKeypoint_MAX', };
-declare class LiveLinkSourceHandle { 
-	clone() : LiveLinkSourceHandle;
-	static C(Other: UObject | any): LiveLinkSourceHandle;
-	GetMagicLeapHandTrackingLiveLinkSource(): {SourceHandle: LiveLinkSourceHandle, $: boolean};
-	static GetMagicLeapHandTrackingLiveLinkSource(SourceHandle?: LiveLinkSourceHandle): {SourceHandle: LiveLinkSourceHandle, $: boolean};
-}
-
-declare type EMagicLeapGestureTransformSpace = 'World' | 'Hand' | 'Tracking' | 'EMagicLeapGestureTransformSpace_MAX';
-declare var EMagicLeapGestureTransformSpace : { World:'World',Hand:'Hand',Tracking:'Tracking',EMagicLeapGestureTransformSpace_MAX:'EMagicLeapGestureTransformSpace_MAX', };
-declare class MagicLeapHandTrackingFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapHandTrackingFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapHandTrackingFunctionLibrary;
-	static GetDefaultObject(): MagicLeapHandTrackingFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapHandTrackingFunctionLibrary;
-	static SetStaticGestureConfidenceThreshold(Gesture: EMagicLeapHandTrackingGesture,Confidence: number): void;
-	static SetConfiguration(StaticGesturesToActivate: EMagicLeapHandTrackingGesture[],KeypointsFilterLevel: EMagicLeapHandTrackingKeypointFilterLevel,GestureFilterLevel: EMagicLeapHandTrackingGestureFilterLevel,bTrackingEnabled: boolean): boolean;
-	static IsHoldingControl(hand: EControllerHand): boolean;
-	static GetStaticGestureConfidenceThreshold(Gesture: EMagicLeapHandTrackingGesture): number;
-	static GetMotionSourceForHandKeypoint(hand: EControllerHand,Keypoint: EMagicLeapHandTrackingKeypoint,OutMotionSource?: string): {OutMotionSource: string, $: boolean};
-	static GetMagicLeapHandTrackingLiveLinkSource(SourceHandle?: LiveLinkSourceHandle): {SourceHandle: LiveLinkSourceHandle, $: boolean};
-	static GetHandThumbTip(hand: EControllerHand,TransformSpace: EMagicLeapGestureTransformSpace,Secondary?: Transform): {Secondary: Transform, $: boolean};
-	static GetHandKeypointForMotionSource(MotionSource: string,OutKeyPoint?: EMagicLeapHandTrackingKeypoint): {OutKeyPoint: EMagicLeapHandTrackingKeypoint, $: boolean};
-	static GetHandIndexFingerTip(hand: EControllerHand,TransformSpace: EMagicLeapGestureTransformSpace,Pointer?: Transform): {Pointer: Transform, $: boolean};
-	static GetHandCenterNormalized(hand: EControllerHand,HandCenterNormalized?: Vector): {HandCenterNormalized: Vector, $: boolean};
-	static GetHandCenter(hand: EControllerHand,HandCenter?: Transform): {HandCenter: Transform, $: boolean};
-	static GetGestureKeypointTransform(hand: EControllerHand,Keypoint: EMagicLeapHandTrackingKeypoint,TransformSpace: EMagicLeapGestureTransformSpace,Transform?: Transform): {Transform: Transform, $: boolean};
-	static GetGestureKeypoints(hand: EControllerHand,Keypoints?: Transform[]): {Keypoints: Transform[], $: boolean};
-	static GetCurrentGestureConfidence(hand: EControllerHand,Confidence?: number): {Confidence: number, $: boolean};
-	static GetCurrentGesture(hand: EControllerHand,Gesture?: EMagicLeapHandTrackingGesture): {Gesture: EMagicLeapHandTrackingGesture, $: boolean};
-	static GetConfiguration(ActiveStaticGestures?: EMagicLeapHandTrackingGesture[],KeypointsFilterLevel?: EMagicLeapHandTrackingKeypointFilterLevel,GestureFilterLevel?: EMagicLeapHandTrackingGestureFilterLevel,bTrackingEnabled?: boolean): {ActiveStaticGestures: EMagicLeapHandTrackingGesture[], KeypointsFilterLevel: EMagicLeapHandTrackingKeypointFilterLevel, GestureFilterLevel: EMagicLeapHandTrackingGestureFilterLevel, bTrackingEnabled: boolean, $: boolean};
-	static C(Other: UObject | any): MagicLeapHandTrackingFunctionLibrary;
-}
-
-declare type EMagicLeapIdentityKey = 'GivenName' | 'FamilyName' | 'Email' | 'Bio' | 'PhoneNumber' | 'Avatar2D' | 'Avatar3D' | 'Unknown' | 'EMagicLeapIdentityKey_MAX';
-declare var EMagicLeapIdentityKey : { GivenName:'GivenName',FamilyName:'FamilyName',Email:'Email',Bio:'Bio',PhoneNumber:'PhoneNumber',Avatar2D:'Avatar2D',Avatar3D:'Avatar3D',Unknown:'Unknown',EMagicLeapIdentityKey_MAX:'EMagicLeapIdentityKey_MAX', };
-declare class MagicLeapIdentityAttribute { 
-	Attribute: EMagicLeapIdentityKey;
-	Value: string;
-	clone() : MagicLeapIdentityAttribute;
-	static C(Other: UObject | any): MagicLeapIdentityAttribute;
-}
-
-declare type EMagicLeapIdentityError = 'Ok' | 'InvalidParam' | 'AllocFailed' | 'PrivilegeDenied' | 'FailedToConnectToLocalService' | 'FailedToConnectToCloudService' | 'CloudAuthentication' | 'InvalidInformationFromCloud' | 'NotLoggedIn' | 'ExpiredCredentials' | 'FailedToGetUserProfile' | 'Unauthorized' | 'CertificateError' | 'RejectedByCloud' | 'AlreadyLoggedIn' | 'ModifyIsNotSupported' | 'NetworkError' | 'UnspecifiedFailure' | 'EMagicLeapIdentityError_MAX';
-declare var EMagicLeapIdentityError : { Ok:'Ok',InvalidParam:'InvalidParam',AllocFailed:'AllocFailed',PrivilegeDenied:'PrivilegeDenied',FailedToConnectToLocalService:'FailedToConnectToLocalService',FailedToConnectToCloudService:'FailedToConnectToCloudService',CloudAuthentication:'CloudAuthentication',InvalidInformationFromCloud:'InvalidInformationFromCloud',NotLoggedIn:'NotLoggedIn',ExpiredCredentials:'ExpiredCredentials',FailedToGetUserProfile:'FailedToGetUserProfile',Unauthorized:'Unauthorized',CertificateError:'CertificateError',RejectedByCloud:'RejectedByCloud',AlreadyLoggedIn:'AlreadyLoggedIn',ModifyIsNotSupported:'ModifyIsNotSupported',NetworkError:'NetworkError',UnspecifiedFailure:'UnspecifiedFailure',EMagicLeapIdentityError_MAX:'EMagicLeapIdentityError_MAX', };
-declare class MagicLeapIdentity extends UObject { 
-	static Load(ResourceName: string): MagicLeapIdentity;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapIdentity;
-	static GetDefaultObject(): MagicLeapIdentity;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapIdentity;
-	RequestAttributeValue(RequestedAttributeList: EMagicLeapIdentityKey[],RequestedAttributeValues?: MagicLeapIdentityAttribute[]): {RequestedAttributeValues: MagicLeapIdentityAttribute[], $: EMagicLeapIdentityError};
-	GetAllAvailableAttributes(AvailableAttributes?: EMagicLeapIdentityKey[]): {AvailableAttributes: EMagicLeapIdentityKey[], $: EMagicLeapIdentityError};
-	static C(Other: UObject | any): MagicLeapIdentity;
-}
-
-declare class MagicLeapSecureStorage extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapSecureStorage;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapSecureStorage;
-	static GetDefaultObject(): MagicLeapSecureStorage;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapSecureStorage;
-	static PutSecureVector(Key: string,DataToStore: Vector): boolean;
-	static PutSecureTransform(Key: string,DataToStore: Transform): boolean;
-	static PutSecureString(Key: string,DataToStore: string): boolean;
-	static PutSecureSaveGame(Key: string,ObjectToStore: SaveGame): boolean;
-	static PutSecureRotator(Key: string,DataToStore: Rotator): boolean;
-	static PutSecureInt64(Key: string,DataToStore: any): boolean;
-	static PutSecureInt(Key: string,DataToStore: number): boolean;
-	static PutSecureFloat(Key: string,DataToStore: number): boolean;
-	static PutSecureByte(Key: string,DataToStore: number): boolean;
-	static PutSecureBool(Key: string,DataToStore: boolean): boolean;
-	static PutSecureArray(Key: string,DataToStore: number[]): boolean;
-	static GetSecureVector(Key: string,DataToRetrieve?: Vector): {DataToRetrieve: Vector, $: boolean};
-	static GetSecureTransform(Key: string,DataToRetrieve?: Transform): {DataToRetrieve: Transform, $: boolean};
-	static GetSecureString(Key: string,DataToRetrieve?: string): {DataToRetrieve: string, $: boolean};
-	static GetSecureSaveGame(Key: string,ObjectToRetrieve?: SaveGame): {ObjectToRetrieve: SaveGame, $: boolean};
-	static GetSecureRotator(Key: string,DataToRetrieve?: Rotator): {DataToRetrieve: Rotator, $: boolean};
-	static GetSecureInt64(Key: string,DataToRetrieve?: any): {DataToRetrieve: any, $: boolean};
-	static GetSecureInt(Key: string,DataToRetrieve?: number): {DataToRetrieve: number, $: boolean};
-	static GetSecureFloat(Key: string,DataToRetrieve?: number): {DataToRetrieve: number, $: boolean};
-	static GetSecureByte(Key: string,DataToRetrieve?: number): {DataToRetrieve: number, $: boolean};
-	static GetSecureBool(Key: string,DataToRetrieve?: boolean): {DataToRetrieve: boolean, $: boolean};
-	static GetSecureArray(Key: string,DataToRetrieve?: number[]): {DataToRetrieve: number[], $: boolean};
-	static DeleteSecureData(Key: string): boolean;
-	static C(Other: UObject | any): MagicLeapSecureStorage;
-}
-
-declare class MagicLeapHandMeshingComponent extends ActorComponent { 
-	static Load(ResourceName: string): MagicLeapHandMeshingComponent;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapHandMeshingComponent;
-	static GetDefaultObject(): MagicLeapHandMeshingComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapHandMeshingComponent;
-	SetUseWeightedNormals(bInUseWeightedNormals: boolean): void;
-	DisconnectMRMesh(InMRMeshPtr: MRMeshComponent): boolean;
-	ConnectMRMesh(InMRMeshPtr: MRMeshComponent): boolean;
-	static C(Other: UObject | any): MagicLeapHandMeshingComponent;
-}
-
-declare class MagicLeapHandMeshingFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapHandMeshingFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapHandMeshingFunctionLibrary;
-	static GetDefaultObject(): MagicLeapHandMeshingFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapHandMeshingFunctionLibrary;
-	static DisconnectMRMesh(InMRMeshPtr: MRMeshComponent): boolean;
-	static DestroyClient(): boolean;
-	static CreateClient(): boolean;
-	static ConnectMRMesh(InMRMeshPtr: MRMeshComponent): boolean;
-	static C(Other: UObject | any): MagicLeapHandMeshingFunctionLibrary;
-}
-
 declare class V8Config extends UObject { 
 	bGenAltPropAccessorForAllProp: boolean;
 	bGenGetStructRefArrayFunction: boolean;
@@ -3655,6 +3115,546 @@ declare class JavascriptWebSocketServer extends UObject {
 	static C(Other: UObject | any): JavascriptWebSocketServer;
 }
 
+declare class MagicLeapPlanesComponent extends SceneComponent { 
+	QueryFlags: EMagicLeapPlaneQueryFlags[];
+	SearchVolume: BoxComponent;
+	MaxResults: number;
+	MinHolePerimeter: number;
+	MinPlaneArea: number;
+	QueryType: EMagicLeapPlaneQueryType;
+	SimilarityThreshold: number;
+	OnPlanesQueryResult: UnrealEngineMulticastDelegate<(bSuccess: boolean, planes: MagicLeapPlaneResult[], Polygons: MagicLeapPlaneBoundaries[]) => void>;
+	OnPersistentPlanesQueryResult: UnrealEngineMulticastDelegate<(bSuccess: boolean, QueryHandle: Guid, QueryType: EMagicLeapPlaneQueryType, NewPlanes: MagicLeapPlaneResult[], RemovedPlaneIDs: Guid[], NewPolygons: MagicLeapPlaneBoundaries[], RemovedPolygonIDs: Guid[]) => void>;
+	static Load(ResourceName: string): MagicLeapPlanesComponent;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapPlanesComponent;
+	static GetDefaultObject(): MagicLeapPlanesComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapPlanesComponent;
+	RequestPlanesAsync(): boolean;
+	static C(Other: UObject | any): MagicLeapPlanesComponent;
+}
+
+declare class MagicLeapPlanesFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapPlanesFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapPlanesFunctionLibrary;
+	static GetDefaultObject(): MagicLeapPlanesFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapPlanesFunctionLibrary;
+	static ReorderPlaneFlags(InPriority: EMagicLeapPlaneQueryFlags[],InFlagsToReorder: EMagicLeapPlaneQueryFlags[],OutReorderedFlags?: EMagicLeapPlaneQueryFlags[]): {OutReorderedFlags: EMagicLeapPlaneQueryFlags[]};
+	static RemovePersistentQuery(Handle: Guid): boolean;
+	static RemoveFlagsNotInQuery(InQueryFlags: EMagicLeapPlaneQueryFlags[],InResultFlags: EMagicLeapPlaneQueryFlags[],OutFlags?: EMagicLeapPlaneQueryFlags[]): {OutFlags: EMagicLeapPlaneQueryFlags[]};
+	static IsTrackerValid(): boolean;
+	static GetContentScale(ContentActor: Actor,PlaneResult: MagicLeapPlaneResult): Transform;
+	static DestroyTracker(): boolean;
+	static CreateTracker(): boolean;
+	static AddPersistentQuery(PersistentQueryType: EMagicLeapPlaneQueryType): Guid;
+	static C(Other: UObject | any): MagicLeapPlanesFunctionLibrary;
+}
+
+declare class MagicLeapLightingTrackingComponent extends ActorComponent { 
+	UseGlobalAmbience: boolean;
+	UseColorTemp: boolean;
+	static Load(ResourceName: string): MagicLeapLightingTrackingComponent;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapLightingTrackingComponent;
+	static GetDefaultObject(): MagicLeapLightingTrackingComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapLightingTrackingComponent;
+	static C(Other: UObject | any): MagicLeapLightingTrackingComponent;
+}
+
+declare class MagicLeapLightEstimationColorTemperatureState { 
+	ColorTemperatureKelvin: number;
+	AmbientColor: LinearColor;
+	Timestamp: Timespan;
+	clone() : MagicLeapLightEstimationColorTemperatureState;
+	static C(Other: UObject | any): MagicLeapLightEstimationColorTemperatureState;
+	GetColorTemperatureState(): {ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState, $: boolean};
+	static GetColorTemperatureState(ColorTemperatureState?: MagicLeapLightEstimationColorTemperatureState): {ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState, $: boolean};
+}
+
+declare class MagicLeapLightEstimationAmbientGlobalState { 
+	AmbientIntensityNits: number[];
+	Timestamp: Timespan;
+	clone() : MagicLeapLightEstimationAmbientGlobalState;
+	static C(Other: UObject | any): MagicLeapLightEstimationAmbientGlobalState;
+	GetAmbientGlobalState(): {GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState, $: boolean};
+	static GetAmbientGlobalState(GlobalAmbientState?: MagicLeapLightEstimationAmbientGlobalState): {GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState, $: boolean};
+}
+
+declare class MagicLeapLightEstimationFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapLightEstimationFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapLightEstimationFunctionLibrary;
+	static GetDefaultObject(): MagicLeapLightEstimationFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapLightEstimationFunctionLibrary;
+	static IsTrackerValid(): boolean;
+	static GetColorTemperatureState(ColorTemperatureState?: MagicLeapLightEstimationColorTemperatureState): {ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState, $: boolean};
+	static GetAmbientGlobalState(GlobalAmbientState?: MagicLeapLightEstimationAmbientGlobalState): {GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState, $: boolean};
+	static DestroyTracker(): void;
+	static CreateTracker(): boolean;
+	static C(Other: UObject | any): MagicLeapLightEstimationFunctionLibrary;
+}
+
+declare type EMagicLeapAutoPinType = 'OnlyOnDataRestoration' | 'Always' | 'Never' | 'EMagicLeapAutoPinType_MAX';
+declare var EMagicLeapAutoPinType : { OnlyOnDataRestoration:'OnlyOnDataRestoration',Always:'Always',Never:'Never',EMagicLeapAutoPinType_MAX:'EMagicLeapAutoPinType_MAX', };
+declare class MagicLeapARPinSaveGame extends SaveGame { 
+	PinnedID: Guid;
+	ComponentWorldTransform: Transform;
+	PinTransform: Transform;
+	bShouldPinActor: boolean;
+	static Load(ResourceName: string): MagicLeapARPinSaveGame;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinSaveGame;
+	static GetDefaultObject(): MagicLeapARPinSaveGame;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinSaveGame;
+	static C(Other: UObject | any): MagicLeapARPinSaveGame;
+}
+
+declare class MagicLeapARPinComponent extends SceneComponent { 
+	ObjectUID: string;
+	UserIndex: number;
+	AutoPinType: EMagicLeapAutoPinType;
+	bShouldPinActor: boolean;
+	PinDataClass: UnrealEngineClass;
+	SearchPinTypes: any;
+	SearchVolume: SphereComponent;
+	OnPersistentEntityPinned: UnrealEngineMulticastDelegate<(bRestoredOrSynced: boolean) => void>;
+	OnPersistentEntityPinLost: UnrealEngineMulticastDelegate<() => void>;
+	OnPinDataLoadAttemptCompleted: UnrealEngineMulticastDelegate<(bDataRestored: boolean) => void>;
+	PinnedCFUID: Guid;
+	PinnedSceneComponent: SceneComponent;
+	PinData: MagicLeapARPinSaveGame;
+	static Load(ResourceName: string): MagicLeapARPinComponent;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinComponent;
+	static GetDefaultObject(): MagicLeapARPinComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinComponent;
+	UnPin(): void;
+	TryGetPinData(InPinDataClass: UnrealEngineClass,OutPinDataValid?: boolean): {OutPinDataValid: boolean, $: MagicLeapARPinSaveGame};
+	PinToRestoredOrSyncedID(): boolean;
+	PinToID(PinId: Guid): boolean;
+	PinToBestFit(): void;
+	PinSceneComponent(ComponentToPin: SceneComponent): boolean;
+	PinRestoredOrSynced(): boolean;
+	PinActor(ActorToPin: Actor): boolean;
+	IsPinned(): boolean;
+	GetPinState(State?: MagicLeapARPinState): {State: MagicLeapARPinState, $: boolean};
+	GetPinnedPinID(PinId?: Guid): {PinId: Guid, $: boolean};
+	GetPinData(PinDataClass: UnrealEngineClass): MagicLeapARPinSaveGame;
+	AttemptPinDataRestorationAsync(): void;
+	AttemptPinDataRestoration(): boolean;
+	static C(Other: UObject | any): MagicLeapARPinComponent;
+}
+
+declare class MagicLeapARPinQuery { 
+	Types: any;
+	MaxResults: number;
+	TargetPoint: Vector;
+	Radius: number;
+	bSorted: boolean;
+	clone() : MagicLeapARPinQuery;
+	static C(Other: UObject | any): MagicLeapARPinQuery;
+	GetGlobalQueryFilter(): {CurrentGlobalFilter: MagicLeapARPinQuery, $: EMagicLeapPassableWorldError};
+	QueryARPins(Pins?: Guid[]): {Pins: Guid[], $: EMagicLeapPassableWorldError};
+	SetGlobalQueryFilter(): EMagicLeapPassableWorldError;
+	static GetGlobalQueryFilter(CurrentGlobalFilter?: MagicLeapARPinQuery): {CurrentGlobalFilter: MagicLeapARPinQuery, $: EMagicLeapPassableWorldError};
+	static QueryARPins(Query: MagicLeapARPinQuery,Pins?: Guid[]): {Pins: Guid[], $: EMagicLeapPassableWorldError};
+	static SetGlobalQueryFilter(InGlobalFilter: MagicLeapARPinQuery): EMagicLeapPassableWorldError;
+}
+
+declare class MagicLeapARPinFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapARPinFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinFunctionLibrary;
+	static GetDefaultObject(): MagicLeapARPinFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinFunctionLibrary;
+	static SetGlobalQueryFilter(InGlobalFilter: MagicLeapARPinQuery): EMagicLeapPassableWorldError;
+	static SetContentBindingSaveGameUserIndex(UserIndex: number): void;
+	static QueryARPins(Query: MagicLeapARPinQuery,Pins?: Guid[]): {Pins: Guid[], $: EMagicLeapPassableWorldError};
+	static ParseStringToARPinId(PinIdString: string,ARPinId?: Guid): {ARPinId: Guid, $: boolean};
+	static IsTrackerValid(): boolean;
+	static GetNumAvailableARPins(Count?: number): {Count: number, $: EMagicLeapPassableWorldError};
+	static GetGlobalQueryFilter(CurrentGlobalFilter?: MagicLeapARPinQuery): {CurrentGlobalFilter: MagicLeapARPinQuery, $: EMagicLeapPassableWorldError};
+	static GetContentBindingSaveGameUserIndex(): number;
+	static GetClosestARPin(SearchPoint: Vector,PinId?: Guid): {PinId: Guid, $: EMagicLeapPassableWorldError};
+	static GetAvailableARPins(NumRequested: number,Pins?: Guid[]): {Pins: Guid[], $: EMagicLeapPassableWorldError};
+	static GetARPinStateToString(State: MagicLeapARPinState): string;
+	static GetARPinState(PinId: Guid,State?: MagicLeapARPinState): {State: MagicLeapARPinState, $: EMagicLeapPassableWorldError};
+	static GetARPinPositionAndOrientation_TrackingSpace(PinId: Guid,Position?: Vector,Orientation?: Rotator,PinFoundInEnvironment?: boolean): {Position: Vector, Orientation: Rotator, PinFoundInEnvironment: boolean, $: boolean};
+	static GetARPinPositionAndOrientation(PinId: Guid,Position?: Vector,Orientation?: Rotator,PinFoundInEnvironment?: boolean): {Position: Vector, Orientation: Rotator, PinFoundInEnvironment: boolean, $: boolean};
+	static DestroyTracker(): EMagicLeapPassableWorldError;
+	static CreateTracker(): EMagicLeapPassableWorldError;
+	static ARPinIdToString(ARPinId: Guid): string;
+	static C(Other: UObject | any): MagicLeapARPinFunctionLibrary;
+}
+
+declare class MagicLeapARPinInfoActorBase extends Actor { 
+	PinId: Guid;
+	bVisibilityOverride: boolean;
+	static GetDefaultObject(): MagicLeapARPinInfoActorBase;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinInfoActorBase;
+	OnUpdateARPinState(): void;
+	static C(Other: UObject | any): MagicLeapARPinInfoActorBase;
+}
+
+declare class MagicLeapARPinRenderer extends Actor { 
+	bInfoActorsVisibilityOverride: boolean;
+	AllInfoActors: any;
+	ClassToSpawn: UnrealEngineClass;
+	static GetDefaultObject(): MagicLeapARPinRenderer;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinRenderer;
+	SetVisibilityOverride(InVisibilityOverride: boolean): void;
+	static C(Other: UObject | any): MagicLeapARPinRenderer;
+}
+
+declare class MagicLeapARPinSettings extends UObject { 
+	UpdateCheckFrequency: number;
+	OnUpdatedEventTriggerDelta: MagicLeapARPinState;
+	static Load(ResourceName: string): MagicLeapARPinSettings;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinSettings;
+	static GetDefaultObject(): MagicLeapARPinSettings;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinSettings;
+	static C(Other: UObject | any): MagicLeapARPinSettings;
+}
+
+declare class MagicLeapARPinContentBindings extends SaveGame { 
+	AllContentBindings: any;
+	static Load(ResourceName: string): MagicLeapARPinContentBindings;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapARPinContentBindings;
+	static GetDefaultObject(): MagicLeapARPinContentBindings;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapARPinContentBindings;
+	static C(Other: UObject | any): MagicLeapARPinContentBindings;
+}
+
+declare class MagicLeapImageTrackerComponent extends SceneComponent { 
+	TargetImageTexture: Texture2D;
+	Name: string;
+	LongerDimension: number;
+	bIsStationary: boolean;
+	bUseUnreliablePose: boolean;
+	AxisOrientation: EMagicLeapImageTargetOrientation;
+	OnSetImageTargetSucceeded: UnrealEngineMulticastDelegate<() => void>;
+	OnSetImageTargetFailed: UnrealEngineMulticastDelegate<() => void>;
+	OnImageTargetFound: UnrealEngineMulticastDelegate<() => void>;
+	OnImageTargetLost: UnrealEngineMulticastDelegate<() => void>;
+	OnImageTargetUnreliableTracking: UnrealEngineMulticastDelegate<(LastTrackedLocation: Vector, LastTrackedRotation: Rotator, NewUnreliableLocation: Vector, NewUnreliableRotation: Rotator) => void>;
+	static Load(ResourceName: string): MagicLeapImageTrackerComponent;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapImageTrackerComponent;
+	static GetDefaultObject(): MagicLeapImageTrackerComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapImageTrackerComponent;
+	SetTargetAsync(ImageTarget: Texture2D): boolean;
+	RemoveTargetAsync(): boolean;
+	static C(Other: UObject | any): MagicLeapImageTrackerComponent;
+}
+
+declare class MagicLeapImageTrackerFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapImageTrackerFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapImageTrackerFunctionLibrary;
+	static GetDefaultObject(): MagicLeapImageTrackerFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapImageTrackerFunctionLibrary;
+	static SetMaxSimultaneousTargets(MaxSimultaneousTargets: number): void;
+	static IsImageTrackingEnabled(): boolean;
+	static GetMaxSimultaneousTargets(): number;
+	static EnableImageTracking(bEnable: boolean): void;
+	static C(Other: UObject | any): MagicLeapImageTrackerFunctionLibrary;
+}
+
+declare class LuminARSessionFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): LuminARSessionFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): LuminARSessionFunctionLibrary;
+	static GetDefaultObject(): LuminARSessionFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminARSessionFunctionLibrary;
+	static StartLuminARSession(WorldContextObject: UObject,LatentInfo: LatentActionInfo,Configuration: LuminARSessionConfig): void;
+	static C(Other: UObject | any): LuminARSessionFunctionLibrary;
+}
+
+declare type ELuminARTrackingState = 'Tracking' | 'NotTracking' | 'StoppedTracking' | 'ELuminARTrackingState_MAX';
+declare var ELuminARTrackingState : { Tracking:'Tracking',NotTracking:'NotTracking',StoppedTracking:'StoppedTracking',ELuminARTrackingState_MAX:'ELuminARTrackingState_MAX', };
+declare class LuminARFrameFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): LuminARFrameFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): LuminARFrameFunctionLibrary;
+	static GetDefaultObject(): LuminARFrameFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminARFrameFunctionLibrary;
+	static LuminARLineTrace(WorldContextObject: UObject,ScreenPosition: Vector2D,TraceChannels: any,OutHitResults?: ARTraceResult[]): {OutHitResults: ARTraceResult[], $: boolean};
+	static GetTrackingState(): ELuminARTrackingState;
+	static C(Other: UObject | any): LuminARFrameFunctionLibrary;
+}
+
+declare class LuminARImageTrackingFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): LuminARImageTrackingFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): LuminARImageTrackingFunctionLibrary;
+	static GetDefaultObject(): LuminARImageTrackingFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminARImageTrackingFunctionLibrary;
+	static AddLuminRuntimeCandidateImageEx(SessionConfig: ARSessionConfig,CandidateTexture: Texture2D,FriendlyName: string,PhysicalWidth: number,bUseUnreliablePose: boolean,bImageIsStationary: boolean,InAxisOrientation: EMagicLeapImageTargetOrientation): LuminARCandidateImage;
+	static AddLuminRuntimeCandidateImage(SessionConfig: ARSessionConfig,CandidateTexture: Texture2D,FriendlyName: string,PhysicalWidth: number,bUseUnreliablePose: boolean,bImageIsStationary: boolean): LuminARCandidateImage;
+	static C(Other: UObject | any): LuminARImageTrackingFunctionLibrary;
+}
+
+declare class LuminAROrigin extends AROriginActor { 
+	MRMeshComponent: MRMeshComponent;
+	PlaneSurfaceMaterial: MaterialInterface;
+	WireframeMaterial: MaterialInterface;
+	static GetDefaultObject(): LuminAROrigin;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminAROrigin;
+	static C(Other: UObject | any): LuminAROrigin;
+}
+
+declare class LuminARLightEstimate extends ARBasicLightEstimate { 
+	AmbientIntensityNits: number[];
+	static Load(ResourceName: string): LuminARLightEstimate;
+	static Find(Outer: UObject, ResourceName: string): LuminARLightEstimate;
+	static GetDefaultObject(): LuminARLightEstimate;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LuminARLightEstimate;
+	GetAmbientIntensityNits(): number[];
+	static C(Other: UObject | any): LuminARLightEstimate;
+}
+
+declare type EMagicLeapControllerTrackingMode = 'InputService' | 'CoordinateFrameUID' | 'EMagicLeapControllerTrackingMode_MAX';
+declare var EMagicLeapControllerTrackingMode : { InputService:'InputService',CoordinateFrameUID:'CoordinateFrameUID',EMagicLeapControllerTrackingMode_MAX:'EMagicLeapControllerTrackingMode_MAX', };
+declare type EMagicLeapControllerLEDPattern = 'None' | 'Clock01' | 'Clock02' | 'Clock03' | 'Clock04' | 'Clock05' | 'Clock06' | 'Clock07' | 'Clock08' | 'Clock09' | 'Clock10' | 'Clock11' | 'Clock12' | 'Clock01_07' | 'Clock02_08' | 'Clock03_09' | 'Clock04_10' | 'Clock05_11' | 'Clock06_12' | 'EMagicLeapControllerLEDPattern_MAX';
+declare var EMagicLeapControllerLEDPattern : { None:'None',Clock01:'Clock01',Clock02:'Clock02',Clock03:'Clock03',Clock04:'Clock04',Clock05:'Clock05',Clock06:'Clock06',Clock07:'Clock07',Clock08:'Clock08',Clock09:'Clock09',Clock10:'Clock10',Clock11:'Clock11',Clock12:'Clock12',Clock01_07:'Clock01_07',Clock02_08:'Clock02_08',Clock03_09:'Clock03_09',Clock04_10:'Clock04_10',Clock05_11:'Clock05_11',Clock06_12:'Clock06_12',EMagicLeapControllerLEDPattern_MAX:'EMagicLeapControllerLEDPattern_MAX', };
+declare type EMagicLeapControllerLEDColor = 'BrightMissionRed' | 'PastelMissionRed' | 'BrightFloridaOrange' | 'PastelFloridaOrange' | 'BrightLunaYellow' | 'PastelLunaYellow' | 'BrightNebulaPink' | 'PastelNebulaPink' | 'BrightCosmicPurple' | 'PastelCosmicPurple' | 'BrightMysticBlue' | 'PastelMysticBlue' | 'BrightCelestialBlue' | 'PastelCelestialBlue' | 'BrightShaggleGreen' | 'PastelShaggleGreen' | 'EMagicLeapControllerLEDColor_MAX';
+declare var EMagicLeapControllerLEDColor : { BrightMissionRed:'BrightMissionRed',PastelMissionRed:'PastelMissionRed',BrightFloridaOrange:'BrightFloridaOrange',PastelFloridaOrange:'PastelFloridaOrange',BrightLunaYellow:'BrightLunaYellow',PastelLunaYellow:'PastelLunaYellow',BrightNebulaPink:'BrightNebulaPink',PastelNebulaPink:'PastelNebulaPink',BrightCosmicPurple:'BrightCosmicPurple',PastelCosmicPurple:'PastelCosmicPurple',BrightMysticBlue:'BrightMysticBlue',PastelMysticBlue:'PastelMysticBlue',BrightCelestialBlue:'BrightCelestialBlue',PastelCelestialBlue:'PastelCelestialBlue',BrightShaggleGreen:'BrightShaggleGreen',PastelShaggleGreen:'PastelShaggleGreen',EMagicLeapControllerLEDColor_MAX:'EMagicLeapControllerLEDColor_MAX', };
+declare type EMagicLeapControllerLEDEffect = 'RotateCW' | 'RotateCCW' | 'Pulse' | 'PaintCW' | 'PaintCCW' | 'Blink' | 'EMagicLeapControllerLEDEffect_MAX';
+declare var EMagicLeapControllerLEDEffect : { RotateCW:'RotateCW',RotateCCW:'RotateCCW',Pulse:'Pulse',PaintCW:'PaintCW',PaintCCW:'PaintCCW',Blink:'Blink',EMagicLeapControllerLEDEffect_MAX:'EMagicLeapControllerLEDEffect_MAX', };
+declare type EMagicLeapControllerLEDSpeed = 'Slow' | 'Medium' | 'Fast' | 'EMagicLeapControllerLEDSpeed_MAX';
+declare var EMagicLeapControllerLEDSpeed : { Slow:'Slow',Medium:'Medium',Fast:'Fast',EMagicLeapControllerLEDSpeed_MAX:'EMagicLeapControllerLEDSpeed_MAX', };
+declare type EMagicLeapControllerHapticPattern = 'None' | 'Click' | 'Bump' | 'DoubleClick' | 'Buzz' | 'Tick' | 'ForceDown' | 'ForceUp' | 'ForceDwell' | 'SecondForceDown' | 'EMagicLeapControllerHapticPattern_MAX';
+declare var EMagicLeapControllerHapticPattern : { None:'None',Click:'Click',Bump:'Bump',DoubleClick:'DoubleClick',Buzz:'Buzz',Tick:'Tick',ForceDown:'ForceDown',ForceUp:'ForceUp',ForceDwell:'ForceDwell',SecondForceDown:'SecondForceDown',EMagicLeapControllerHapticPattern_MAX:'EMagicLeapControllerHapticPattern_MAX', };
+declare type EMagicLeapControllerHapticIntensity = 'Low' | 'Medium' | 'High' | 'EMagicLeapControllerHapticIntensity_MAX';
+declare var EMagicLeapControllerHapticIntensity : { Low:'Low',Medium:'Medium',High:'High',EMagicLeapControllerHapticIntensity_MAX:'EMagicLeapControllerHapticIntensity_MAX', };
+declare type EMagicLeapControllerType = 'None' | 'Device' | 'MobileApp' | 'EMagicLeapControllerType_MAX';
+declare var EMagicLeapControllerType : { None:'None',Device:'Device',MobileApp:'MobileApp',EMagicLeapControllerType_MAX:'EMagicLeapControllerType_MAX', };
+declare class MagicLeapControllerFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapControllerFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapControllerFunctionLibrary;
+	static GetDefaultObject(): MagicLeapControllerFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapControllerFunctionLibrary;
+	static SetMotionSourceForHand(hand: EControllerHand,MotionSource: string): boolean;
+	static SetControllerTrackingMode(TrackingMode: EMagicLeapControllerTrackingMode): boolean;
+	static PlayLEDPattern(MotionSource: string,LEDPattern: EMagicLeapControllerLEDPattern,LEDColor: EMagicLeapControllerLEDColor,DurationInSec: number): boolean;
+	static PlayLEDEffect(MotionSource: string,LEDEffect: EMagicLeapControllerLEDEffect,LEDSpeed: EMagicLeapControllerLEDSpeed,LEDPattern: EMagicLeapControllerLEDPattern,LEDColor: EMagicLeapControllerLEDColor,DurationInSec: number): boolean;
+	static PlayHapticPattern(MotionSource: string,HapticPattern: EMagicLeapControllerHapticPattern,Intensity: EMagicLeapControllerHapticIntensity): boolean;
+	static PlayControllerLEDEffect(hand: EControllerHand,LEDEffect: EMagicLeapControllerLEDEffect,LEDSpeed: EMagicLeapControllerLEDSpeed,LEDPattern: EMagicLeapControllerLEDPattern,LEDColor: EMagicLeapControllerLEDColor,DurationInSec: number): boolean;
+	static PlayControllerLED(hand: EControllerHand,LEDPattern: EMagicLeapControllerLEDPattern,LEDColor: EMagicLeapControllerLEDColor,DurationInSec: number): boolean;
+	static PlayControllerHapticFeedback(hand: EControllerHand,HapticPattern: EMagicLeapControllerHapticPattern,Intensity: EMagicLeapControllerHapticIntensity): boolean;
+	static MaxSupportedMagicLeapControllers(): number;
+	static IsMLControllerConnected(MotionSource: string): boolean;
+	static InvertControllerMapping(): void;
+	static GetMotionSourceForHand(hand: EControllerHand): string;
+	static GetMLControllerType(hand: EControllerHand): EMagicLeapControllerType;
+	static GetHandForMotionSource(MotionSource: string): EControllerHand;
+	static GetControllerType(MotionSource: string): EMagicLeapControllerType;
+	static GetControllerTrackingMode(): EMagicLeapControllerTrackingMode;
+	static GetControllerMapping(ControllerIndex: number,hand?: EControllerHand): {hand: EControllerHand, $: boolean};
+	static C(Other: UObject | any): MagicLeapControllerFunctionLibrary;
+}
+
+declare type EMagicLeapTouchpadGestureType = 'None' | 'Tap' | 'ForceTapDown' | 'ForceTapUp' | 'ForceDwell' | 'SecondForceDown' | 'LongHold' | 'RadialScroll' | 'Swipe' | 'Scroll' | 'Pinch' | 'EMagicLeapTouchpadGestureType_MAX';
+declare var EMagicLeapTouchpadGestureType : { None:'None',Tap:'Tap',ForceTapDown:'ForceTapDown',ForceTapUp:'ForceTapUp',ForceDwell:'ForceDwell',SecondForceDown:'SecondForceDown',LongHold:'LongHold',RadialScroll:'RadialScroll',Swipe:'Swipe',Scroll:'Scroll',Pinch:'Pinch',EMagicLeapTouchpadGestureType_MAX:'EMagicLeapTouchpadGestureType_MAX', };
+declare type EMagicLeapTouchpadGestureDirection = 'None' | 'Up' | 'Down' | 'Left' | 'Right' | 'In' | 'Out' | 'Clockwise' | 'CounterClockwise' | 'EMagicLeapTouchpadGestureDirection_MAX';
+declare var EMagicLeapTouchpadGestureDirection : { None:'None',Up:'Up',Down:'Down',Left:'Left',Right:'Right',In:'In',Out:'Out',Clockwise:'Clockwise',CounterClockwise:'CounterClockwise',EMagicLeapTouchpadGestureDirection_MAX:'EMagicLeapTouchpadGestureDirection_MAX', };
+declare class MagicLeapTouchpadGesture { 
+	hand: EControllerHand;
+	MotionSource: string;
+	Type: EMagicLeapTouchpadGestureType;
+	Direction: EMagicLeapTouchpadGestureDirection;
+	PositionAndForce: Vector;
+	Speed: number;
+	Distance: number;
+	FingerGap: number;
+	Radius: number;
+	Angle: number;
+	clone() : MagicLeapTouchpadGesture;
+	static C(Other: UObject | any): MagicLeapTouchpadGesture;
+}
+
+declare class MagicLeapTouchpadGesturesComponent extends ActorComponent { 
+	OnTouchpadGestureStart: UnrealEngineMulticastDelegate<(GestureData: MagicLeapTouchpadGesture) => void>;
+	OnTouchpadGestureContinue: UnrealEngineMulticastDelegate<(GestureData: MagicLeapTouchpadGesture) => void>;
+	OnTouchpadGestureEnd: UnrealEngineMulticastDelegate<(GestureData: MagicLeapTouchpadGesture) => void>;
+	static Load(ResourceName: string): MagicLeapTouchpadGesturesComponent;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapTouchpadGesturesComponent;
+	static GetDefaultObject(): MagicLeapTouchpadGesturesComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapTouchpadGesturesComponent;
+	static C(Other: UObject | any): MagicLeapTouchpadGesturesComponent;
+}
+
+declare class EyeTrackerStereoGazeData { 
+	LeftEyeOrigin: Vector;
+	LeftEyeDirection: Vector;
+	RightEyeOrigin: Vector;
+	RightEyeDirection: Vector;
+	FixationPoint: Vector;
+	ConfidenceValue: number;
+	clone() : EyeTrackerStereoGazeData;
+	static C(Other: UObject | any): EyeTrackerStereoGazeData;
+	GetStereoGazeData(): {OutGazeData: EyeTrackerStereoGazeData, $: boolean};
+	static GetStereoGazeData(OutGazeData?: EyeTrackerStereoGazeData): {OutGazeData: EyeTrackerStereoGazeData, $: boolean};
+}
+
+declare class EyeTrackerGazeData { 
+	GazeOrigin: Vector;
+	GazeDirection: Vector;
+	FixationPoint: Vector;
+	ConfidenceValue: number;
+	clone() : EyeTrackerGazeData;
+	static C(Other: UObject | any): EyeTrackerGazeData;
+	GetGazeData(): {OutGazeData: EyeTrackerGazeData, $: boolean};
+	static GetGazeData(OutGazeData?: EyeTrackerGazeData): {OutGazeData: EyeTrackerGazeData, $: boolean};
+}
+
+declare class EyeTrackerFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): EyeTrackerFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): EyeTrackerFunctionLibrary;
+	static GetDefaultObject(): EyeTrackerFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): EyeTrackerFunctionLibrary;
+	static SetEyeTrackedPlayer(PlayerController: PlayerController): void;
+	static IsStereoGazeDataAvailable(): boolean;
+	static IsEyeTrackerConnected(): boolean;
+	static GetStereoGazeData(OutGazeData?: EyeTrackerStereoGazeData): {OutGazeData: EyeTrackerStereoGazeData, $: boolean};
+	static GetGazeData(OutGazeData?: EyeTrackerGazeData): {OutGazeData: EyeTrackerGazeData, $: boolean};
+	static C(Other: UObject | any): EyeTrackerFunctionLibrary;
+}
+
+declare class MagicLeapEyeBlinkState { 
+	LeftEyeBlinked: boolean;
+	RightEyeBlinked: boolean;
+	clone() : MagicLeapEyeBlinkState;
+	static C(Other: UObject | any): MagicLeapEyeBlinkState;
+	GetEyeBlinkState(): {BlinkState: MagicLeapEyeBlinkState, $: boolean};
+	static GetEyeBlinkState(BlinkState?: MagicLeapEyeBlinkState): {BlinkState: MagicLeapEyeBlinkState, $: boolean};
+}
+
+declare type EMagicLeapEyeTrackingCalibrationStatus = 'None' | 'Bad' | 'Good' | 'EMagicLeapEyeTrackingCalibrationStatus_MAX';
+declare var EMagicLeapEyeTrackingCalibrationStatus : { None:'None',Bad:'Bad',Good:'Good',EMagicLeapEyeTrackingCalibrationStatus_MAX:'EMagicLeapEyeTrackingCalibrationStatus_MAX', };
+declare class MagicLeapEyeTrackerFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapEyeTrackerFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapEyeTrackerFunctionLibrary;
+	static GetDefaultObject(): MagicLeapEyeTrackerFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapEyeTrackerFunctionLibrary;
+	static GetEyeBlinkState(BlinkState?: MagicLeapEyeBlinkState): {BlinkState: MagicLeapEyeBlinkState, $: boolean};
+	static GetCalibrationStatus(): EMagicLeapEyeTrackingCalibrationStatus;
+	static C(Other: UObject | any): MagicLeapEyeTrackerFunctionLibrary;
+}
+
+declare class LiveLinkMagicLeapHandTrackingSourceFactory extends LiveLinkSourceFactory { 
+	static Load(ResourceName: string): LiveLinkMagicLeapHandTrackingSourceFactory;
+	static Find(Outer: UObject, ResourceName: string): LiveLinkMagicLeapHandTrackingSourceFactory;
+	static GetDefaultObject(): LiveLinkMagicLeapHandTrackingSourceFactory;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LiveLinkMagicLeapHandTrackingSourceFactory;
+	static C(Other: UObject | any): LiveLinkMagicLeapHandTrackingSourceFactory;
+}
+
+declare type EMagicLeapHandTrackingGesture = 'Finger' | 'Fist' | 'Pinch' | 'Thumb' | 'L' | 'OpenHand' | 'OpenHandBack' | 'Ok' | 'C' | 'NoPose' | 'NoHand' | 'EMagicLeapHandTrackingGesture_MAX';
+declare var EMagicLeapHandTrackingGesture : { Finger:'Finger',Fist:'Fist',Pinch:'Pinch',Thumb:'Thumb',L:'L',OpenHand:'OpenHand',OpenHandBack:'OpenHandBack',Ok:'Ok',C:'C',NoPose:'NoPose',NoHand:'NoHand',EMagicLeapHandTrackingGesture_MAX:'EMagicLeapHandTrackingGesture_MAX', };
+declare type EMagicLeapHandTrackingKeypointFilterLevel = 'NoFilter' | 'SimpleSmoothing' | 'PredictiveSmoothing' | 'EMagicLeapHandTrackingKeypointFilterLevel_MAX';
+declare var EMagicLeapHandTrackingKeypointFilterLevel : { NoFilter:'NoFilter',SimpleSmoothing:'SimpleSmoothing',PredictiveSmoothing:'PredictiveSmoothing',EMagicLeapHandTrackingKeypointFilterLevel_MAX:'EMagicLeapHandTrackingKeypointFilterLevel_MAX', };
+declare type EMagicLeapHandTrackingGestureFilterLevel = 'NoFilter' | 'SlightRobustnessToFlicker' | 'MoreRobustnessToFlicker' | 'EMagicLeapHandTrackingGestureFilterLevel_MAX';
+declare var EMagicLeapHandTrackingGestureFilterLevel : { NoFilter:'NoFilter',SlightRobustnessToFlicker:'SlightRobustnessToFlicker',MoreRobustnessToFlicker:'MoreRobustnessToFlicker',EMagicLeapHandTrackingGestureFilterLevel_MAX:'EMagicLeapHandTrackingGestureFilterLevel_MAX', };
+declare type EMagicLeapHandTrackingKeypoint = 'Thumb_Tip' | 'Thumb_IP' | 'Thumb_MCP' | 'Thumb_CMC' | 'Index_Tip' | 'Index_DIP' | 'Index_PIP' | 'Index_MCP' | 'Middle_Tip' | 'Middle_DIP' | 'Middle_PIP' | 'Middle_MCP' | 'Ring_Tip' | 'Ring_DIP' | 'Ring_PIP' | 'Ring_MCP' | 'Pinky_Tip' | 'Pinky_DIP' | 'Pinky_PIP' | 'Pinky_MCP' | 'Wrist_Center' | 'Wrist_Ulnar' | 'Wrist_Radial' | 'Hand_Center' | 'EMagicLeapHandTrackingKeypoint_MAX';
+declare var EMagicLeapHandTrackingKeypoint : { Thumb_Tip:'Thumb_Tip',Thumb_IP:'Thumb_IP',Thumb_MCP:'Thumb_MCP',Thumb_CMC:'Thumb_CMC',Index_Tip:'Index_Tip',Index_DIP:'Index_DIP',Index_PIP:'Index_PIP',Index_MCP:'Index_MCP',Middle_Tip:'Middle_Tip',Middle_DIP:'Middle_DIP',Middle_PIP:'Middle_PIP',Middle_MCP:'Middle_MCP',Ring_Tip:'Ring_Tip',Ring_DIP:'Ring_DIP',Ring_PIP:'Ring_PIP',Ring_MCP:'Ring_MCP',Pinky_Tip:'Pinky_Tip',Pinky_DIP:'Pinky_DIP',Pinky_PIP:'Pinky_PIP',Pinky_MCP:'Pinky_MCP',Wrist_Center:'Wrist_Center',Wrist_Ulnar:'Wrist_Ulnar',Wrist_Radial:'Wrist_Radial',Hand_Center:'Hand_Center',EMagicLeapHandTrackingKeypoint_MAX:'EMagicLeapHandTrackingKeypoint_MAX', };
+declare class LiveLinkSourceHandle { 
+	clone() : LiveLinkSourceHandle;
+	static C(Other: UObject | any): LiveLinkSourceHandle;
+	GetMagicLeapHandTrackingLiveLinkSource(): {SourceHandle: LiveLinkSourceHandle, $: boolean};
+	static GetMagicLeapHandTrackingLiveLinkSource(SourceHandle?: LiveLinkSourceHandle): {SourceHandle: LiveLinkSourceHandle, $: boolean};
+}
+
+declare type EMagicLeapGestureTransformSpace = 'World' | 'Hand' | 'Tracking' | 'EMagicLeapGestureTransformSpace_MAX';
+declare var EMagicLeapGestureTransformSpace : { World:'World',Hand:'Hand',Tracking:'Tracking',EMagicLeapGestureTransformSpace_MAX:'EMagicLeapGestureTransformSpace_MAX', };
+declare class MagicLeapHandTrackingFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapHandTrackingFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapHandTrackingFunctionLibrary;
+	static GetDefaultObject(): MagicLeapHandTrackingFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapHandTrackingFunctionLibrary;
+	static SetStaticGestureConfidenceThreshold(Gesture: EMagicLeapHandTrackingGesture,Confidence: number): void;
+	static SetConfiguration(StaticGesturesToActivate: EMagicLeapHandTrackingGesture[],KeypointsFilterLevel: EMagicLeapHandTrackingKeypointFilterLevel,GestureFilterLevel: EMagicLeapHandTrackingGestureFilterLevel,bTrackingEnabled: boolean): boolean;
+	static IsHoldingControl(hand: EControllerHand): boolean;
+	static GetStaticGestureConfidenceThreshold(Gesture: EMagicLeapHandTrackingGesture): number;
+	static GetMotionSourceForHandKeypoint(hand: EControllerHand,Keypoint: EMagicLeapHandTrackingKeypoint,OutMotionSource?: string): {OutMotionSource: string, $: boolean};
+	static GetMagicLeapHandTrackingLiveLinkSource(SourceHandle?: LiveLinkSourceHandle): {SourceHandle: LiveLinkSourceHandle, $: boolean};
+	static GetHandThumbTip(hand: EControllerHand,TransformSpace: EMagicLeapGestureTransformSpace,Secondary?: Transform): {Secondary: Transform, $: boolean};
+	static GetHandKeypointForMotionSource(MotionSource: string,OutKeyPoint?: EMagicLeapHandTrackingKeypoint): {OutKeyPoint: EMagicLeapHandTrackingKeypoint, $: boolean};
+	static GetHandIndexFingerTip(hand: EControllerHand,TransformSpace: EMagicLeapGestureTransformSpace,Pointer?: Transform): {Pointer: Transform, $: boolean};
+	static GetHandCenterNormalized(hand: EControllerHand,HandCenterNormalized?: Vector): {HandCenterNormalized: Vector, $: boolean};
+	static GetHandCenter(hand: EControllerHand,HandCenter?: Transform): {HandCenter: Transform, $: boolean};
+	static GetGestureKeypointTransform(hand: EControllerHand,Keypoint: EMagicLeapHandTrackingKeypoint,TransformSpace: EMagicLeapGestureTransformSpace,Transform?: Transform): {Transform: Transform, $: boolean};
+	static GetGestureKeypoints(hand: EControllerHand,Keypoints?: Transform[]): {Keypoints: Transform[], $: boolean};
+	static GetCurrentGestureConfidence(hand: EControllerHand,Confidence?: number): {Confidence: number, $: boolean};
+	static GetCurrentGesture(hand: EControllerHand,Gesture?: EMagicLeapHandTrackingGesture): {Gesture: EMagicLeapHandTrackingGesture, $: boolean};
+	static GetConfiguration(ActiveStaticGestures?: EMagicLeapHandTrackingGesture[],KeypointsFilterLevel?: EMagicLeapHandTrackingKeypointFilterLevel,GestureFilterLevel?: EMagicLeapHandTrackingGestureFilterLevel,bTrackingEnabled?: boolean): {ActiveStaticGestures: EMagicLeapHandTrackingGesture[], KeypointsFilterLevel: EMagicLeapHandTrackingKeypointFilterLevel, GestureFilterLevel: EMagicLeapHandTrackingGestureFilterLevel, bTrackingEnabled: boolean, $: boolean};
+	static C(Other: UObject | any): MagicLeapHandTrackingFunctionLibrary;
+}
+
+declare type EMagicLeapIdentityKey = 'GivenName' | 'FamilyName' | 'Email' | 'Bio' | 'PhoneNumber' | 'Avatar2D' | 'Avatar3D' | 'Unknown' | 'EMagicLeapIdentityKey_MAX';
+declare var EMagicLeapIdentityKey : { GivenName:'GivenName',FamilyName:'FamilyName',Email:'Email',Bio:'Bio',PhoneNumber:'PhoneNumber',Avatar2D:'Avatar2D',Avatar3D:'Avatar3D',Unknown:'Unknown',EMagicLeapIdentityKey_MAX:'EMagicLeapIdentityKey_MAX', };
+declare class MagicLeapIdentityAttribute { 
+	Attribute: EMagicLeapIdentityKey;
+	Value: string;
+	clone() : MagicLeapIdentityAttribute;
+	static C(Other: UObject | any): MagicLeapIdentityAttribute;
+}
+
+declare type EMagicLeapIdentityError = 'Ok' | 'InvalidParam' | 'AllocFailed' | 'PrivilegeDenied' | 'FailedToConnectToLocalService' | 'FailedToConnectToCloudService' | 'CloudAuthentication' | 'InvalidInformationFromCloud' | 'NotLoggedIn' | 'ExpiredCredentials' | 'FailedToGetUserProfile' | 'Unauthorized' | 'CertificateError' | 'RejectedByCloud' | 'AlreadyLoggedIn' | 'ModifyIsNotSupported' | 'NetworkError' | 'UnspecifiedFailure' | 'EMagicLeapIdentityError_MAX';
+declare var EMagicLeapIdentityError : { Ok:'Ok',InvalidParam:'InvalidParam',AllocFailed:'AllocFailed',PrivilegeDenied:'PrivilegeDenied',FailedToConnectToLocalService:'FailedToConnectToLocalService',FailedToConnectToCloudService:'FailedToConnectToCloudService',CloudAuthentication:'CloudAuthentication',InvalidInformationFromCloud:'InvalidInformationFromCloud',NotLoggedIn:'NotLoggedIn',ExpiredCredentials:'ExpiredCredentials',FailedToGetUserProfile:'FailedToGetUserProfile',Unauthorized:'Unauthorized',CertificateError:'CertificateError',RejectedByCloud:'RejectedByCloud',AlreadyLoggedIn:'AlreadyLoggedIn',ModifyIsNotSupported:'ModifyIsNotSupported',NetworkError:'NetworkError',UnspecifiedFailure:'UnspecifiedFailure',EMagicLeapIdentityError_MAX:'EMagicLeapIdentityError_MAX', };
+declare class MagicLeapIdentity extends UObject { 
+	static Load(ResourceName: string): MagicLeapIdentity;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapIdentity;
+	static GetDefaultObject(): MagicLeapIdentity;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapIdentity;
+	RequestAttributeValue(RequestedAttributeList: EMagicLeapIdentityKey[],RequestedAttributeValues?: MagicLeapIdentityAttribute[]): {RequestedAttributeValues: MagicLeapIdentityAttribute[], $: EMagicLeapIdentityError};
+	GetAllAvailableAttributes(AvailableAttributes?: EMagicLeapIdentityKey[]): {AvailableAttributes: EMagicLeapIdentityKey[], $: EMagicLeapIdentityError};
+	static C(Other: UObject | any): MagicLeapIdentity;
+}
+
+declare class MagicLeapSecureStorage extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapSecureStorage;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapSecureStorage;
+	static GetDefaultObject(): MagicLeapSecureStorage;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapSecureStorage;
+	static PutSecureVector(Key: string,DataToStore: Vector): boolean;
+	static PutSecureTransform(Key: string,DataToStore: Transform): boolean;
+	static PutSecureString(Key: string,DataToStore: string): boolean;
+	static PutSecureSaveGame(Key: string,ObjectToStore: SaveGame): boolean;
+	static PutSecureRotator(Key: string,DataToStore: Rotator): boolean;
+	static PutSecureInt64(Key: string,DataToStore: any): boolean;
+	static PutSecureInt(Key: string,DataToStore: number): boolean;
+	static PutSecureFloat(Key: string,DataToStore: number): boolean;
+	static PutSecureByte(Key: string,DataToStore: number): boolean;
+	static PutSecureBool(Key: string,DataToStore: boolean): boolean;
+	static PutSecureArray(Key: string,DataToStore: number[]): boolean;
+	static GetSecureVector(Key: string,DataToRetrieve?: Vector): {DataToRetrieve: Vector, $: boolean};
+	static GetSecureTransform(Key: string,DataToRetrieve?: Transform): {DataToRetrieve: Transform, $: boolean};
+	static GetSecureString(Key: string,DataToRetrieve?: string): {DataToRetrieve: string, $: boolean};
+	static GetSecureSaveGame(Key: string,ObjectToRetrieve?: SaveGame): {ObjectToRetrieve: SaveGame, $: boolean};
+	static GetSecureRotator(Key: string,DataToRetrieve?: Rotator): {DataToRetrieve: Rotator, $: boolean};
+	static GetSecureInt64(Key: string,DataToRetrieve?: any): {DataToRetrieve: any, $: boolean};
+	static GetSecureInt(Key: string,DataToRetrieve?: number): {DataToRetrieve: number, $: boolean};
+	static GetSecureFloat(Key: string,DataToRetrieve?: number): {DataToRetrieve: number, $: boolean};
+	static GetSecureByte(Key: string,DataToRetrieve?: number): {DataToRetrieve: number, $: boolean};
+	static GetSecureBool(Key: string,DataToRetrieve?: boolean): {DataToRetrieve: boolean, $: boolean};
+	static GetSecureArray(Key: string,DataToRetrieve?: number[]): {DataToRetrieve: number[], $: boolean};
+	static DeleteSecureData(Key: string): boolean;
+	static C(Other: UObject | any): MagicLeapSecureStorage;
+}
+
+declare class MagicLeapHandMeshingComponent extends ActorComponent { 
+	static Load(ResourceName: string): MagicLeapHandMeshingComponent;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapHandMeshingComponent;
+	static GetDefaultObject(): MagicLeapHandMeshingComponent;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapHandMeshingComponent;
+	SetUseWeightedNormals(bInUseWeightedNormals: boolean): void;
+	DisconnectMRMesh(InMRMeshPtr: MRMeshComponent): boolean;
+	ConnectMRMesh(InMRMeshPtr: MRMeshComponent): boolean;
+	static C(Other: UObject | any): MagicLeapHandMeshingComponent;
+}
+
+declare class MagicLeapHandMeshingFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapHandMeshingFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapHandMeshingFunctionLibrary;
+	static GetDefaultObject(): MagicLeapHandMeshingFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapHandMeshingFunctionLibrary;
+	static DisconnectMRMesh(InMRMeshPtr: MRMeshComponent): boolean;
+	static DestroyClient(): boolean;
+	static CreateClient(): boolean;
+	static ConnectMRMesh(InMRMeshPtr: MRMeshComponent): boolean;
+	static C(Other: UObject | any): MagicLeapHandMeshingFunctionLibrary;
+}
+
 declare class TcpMessagingSettings extends UObject { 
 	EnableTransport: boolean;
 	ListenEndpoint: string;
@@ -4195,32 +4195,6 @@ declare class AmbisonicsEncodingSettings extends SoundfieldEncodingSettingsBase 
 	static C(Other: UObject | any): AmbisonicsEncodingSettings;
 }
 
-declare class JSObject extends UObject { 
-	Root: ActorComponent;
-	static Load(ResourceName: string): JSObject;
-	static Find(Outer: UObject, ResourceName: string): JSObject;
-	static GetDefaultObject(): JSObject;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JSObject;
-	Tick(DeltaTime: number): void;
-	NotifyTrigger(): string;
-	static C(Other: UObject | any): JSObject;
-}
-
-declare class JSComponent extends ActorComponent { 
-	ScriptSourceFile: string;
-	JavascriptContext: JavascriptContext;
-	JSObject: JSObject;
-	static Load(ResourceName: string): JSComponent;
-	static Find(Outer: UObject, ResourceName: string): JSComponent;
-	static GetDefaultObject(): JSComponent;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): JSComponent;
-	SetJsObject(JSObject: JSObject): void;
-	NotifyTrigger(): string;
-	LoadJSFile(): void;
-	GetJsObject(): JSObject;
-	static C(Other: UObject | any): JSComponent;
-}
-
 declare class JSGameInstance extends GameInstance { 
 	Isolate: JavascriptIsolate;
 	JavascriptContext: JavascriptContext;
@@ -4231,18 +4205,32 @@ declare class JSGameInstance extends GameInstance {
 	static C(Other: UObject | any): JSGameInstance;
 }
 
+declare class KotlinObject extends UObject { 
+	Root: ActorComponent;
+	static Load(ResourceName: string): KotlinObject;
+	static Find(Outer: UObject, ResourceName: string): KotlinObject;
+	static GetDefaultObject(): KotlinObject;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): KotlinObject;
+	Tick(DeltaTime: number): void;
+	OnDestroyed(): void;
+	BeginOverlap(Other: Actor): string;
+	static C(Other: UObject | any): KotlinObject;
+}
+
 declare class KotlinComponent extends ActorComponent { 
 	KotlinClass: string;
 	JavascriptContext: JavascriptContext;
-	JSObject: JSObject;
+	KotlinObject: KotlinObject;
 	static Load(ResourceName: string): KotlinComponent;
 	static Find(Outer: UObject, ResourceName: string): KotlinComponent;
 	static GetDefaultObject(): KotlinComponent;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): KotlinComponent;
-	SetJsObject(JSObject: JSObject): void;
-	NotifyTrigger(): string;
-	LoadJSFile(): void;
-	GetJsObject(): JSObject;
+	SetKotlinObject(KotlinObject: KotlinObject): void;
+	OnTick(DeltaTime: number): void;
+	OnDestroyed(): void;
+	LoadKotlinObject(): void;
+	GetKotlinObject(): KotlinObject;
+	BeginOverlap(Other: Actor): string;
 	static C(Other: UObject | any): KotlinComponent;
 }
 
@@ -4996,74 +4984,6 @@ declare class AnimationSharingSetupFactory extends Factory {
 	static C(Other: UObject | any): AnimationSharingSetupFactory;
 }
 
-declare class MyPluginStruct { 
-	TestString: string;
-	clone() : MyPluginStruct;
-	static C(Other: UObject | any): MyPluginStruct;
-}
-
-declare class MyPluginObject extends UObject { 
-	MyStruct: MyPluginStruct;
-	static Load(ResourceName: string): MyPluginObject;
-	static Find(Outer: UObject, ResourceName: string): MyPluginObject;
-	static GetDefaultObject(): MyPluginObject;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MyPluginObject;
-	static C(Other: UObject | any): MyPluginObject;
-}
-
-declare class LevelVariantSetsActorFactory extends ActorFactory { 
-	static Load(ResourceName: string): LevelVariantSetsActorFactory;
-	static Find(Outer: UObject, ResourceName: string): LevelVariantSetsActorFactory;
-	static GetDefaultObject(): LevelVariantSetsActorFactory;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LevelVariantSetsActorFactory;
-	static C(Other: UObject | any): LevelVariantSetsActorFactory;
-}
-
-declare class SwitchActorFactory extends ActorFactory { 
-	static Load(ResourceName: string): SwitchActorFactory;
-	static Find(Outer: UObject, ResourceName: string): SwitchActorFactory;
-	static GetDefaultObject(): SwitchActorFactory;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SwitchActorFactory;
-	static C(Other: UObject | any): SwitchActorFactory;
-}
-
-declare class VariantManagerFactoryNew extends Factory { 
-	static Load(ResourceName: string): VariantManagerFactoryNew;
-	static Find(Outer: UObject, ResourceName: string): VariantManagerFactoryNew;
-	static GetDefaultObject(): VariantManagerFactoryNew;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VariantManagerFactoryNew;
-	static C(Other: UObject | any): VariantManagerFactoryNew;
-}
-
-declare type EVariantManagerTestEnum = 'None' | 'FirstOption' | 'SecondOption' | 'ThirdOption' | 'EVariantManagerTestEnum_MAX';
-declare var EVariantManagerTestEnum : { None:'None',FirstOption:'FirstOption',SecondOption:'SecondOption',ThirdOption:'ThirdOption',EVariantManagerTestEnum_MAX:'EVariantManagerTestEnum_MAX', };
-declare class VariantManagerTestActor extends Actor { 
-	EnumWithNoDefault: EVariantManagerTestEnum;
-	EnumWithSecondDefault: EVariantManagerTestEnum;
-	CapturedByteProperty: number;
-	CapturedIntProperty: number;
-	CapturedFloatProperty: number;
-	bCapturedBoolProperty: boolean;
-	CapturedObjectProperty: UObject;
-	CapturedInterfaceProperty: any;
-	CapturedNameProperty: string;
-	CapturedStrProperty: string;
-	CapturedTextProperty: string;
-	CapturedRotatorProperty: Rotator;
-	CapturedColorProperty: Color;
-	CapturedLinearColorProperty: LinearColor;
-	CapturedVectorProperty: Vector;
-	CapturedQuatProperty: Quat;
-	CapturedVector4Property: Vector4;
-	CapturedVector2DProperty: Vector2D;
-	CapturedIntPointProperty: IntPoint;
-	CapturedUObjectArrayProperty: UObject[];
-	CapturedVectorArrayProperty: Vector[];
-	static GetDefaultObject(): VariantManagerTestActor;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VariantManagerTestActor;
-	static C(Other: UObject | any): VariantManagerTestActor;
-}
-
 declare class CryptoKeysCommandlet extends Commandlet { 
 	static Load(ResourceName: string): CryptoKeysCommandlet;
 	static Find(Outer: UObject, ResourceName: string): CryptoKeysCommandlet;
@@ -5096,6 +5016,21 @@ declare class CryptoKeysSettings extends UObject {
 	static GetDefaultObject(): CryptoKeysSettings;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): CryptoKeysSettings;
 	static C(Other: UObject | any): CryptoKeysSettings;
+}
+
+declare class MyPluginStruct { 
+	TestString: string;
+	clone() : MyPluginStruct;
+	static C(Other: UObject | any): MyPluginStruct;
+}
+
+declare class MyPluginObject extends UObject { 
+	MyStruct: MyPluginStruct;
+	static Load(ResourceName: string): MyPluginObject;
+	static Find(Outer: UObject, ResourceName: string): MyPluginObject;
+	static GetDefaultObject(): MyPluginObject;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MyPluginObject;
+	static C(Other: UObject | any): MyPluginObject;
 }
 
 declare type ECurveEditorFFTFilterType = 'Lowpass' | 'Highpass' | 'ECurveEditorFFTFilterType_MAX';
@@ -5900,90 +5835,6 @@ declare class ReturnResultsTerminal extends FieldNodeBase {
 	static C(Other: UObject | any): ReturnResultsTerminal;
 }
 
-declare type EDataSourceTypeEnum = 'ChaosNiagara_DataSourceType_Collision' | 'ChaosNiagara_DataSourceType_Breaking' | 'ChaosNiagara_DataSourceType_Trailing' | 'ChaosNiagara_Max';
-declare var EDataSourceTypeEnum : { ChaosNiagara_DataSourceType_Collision:'ChaosNiagara_DataSourceType_Collision',ChaosNiagara_DataSourceType_Breaking:'ChaosNiagara_DataSourceType_Breaking',ChaosNiagara_DataSourceType_Trailing:'ChaosNiagara_DataSourceType_Trailing',ChaosNiagara_Max:'ChaosNiagara_Max', };
-declare type ELocationFilteringModeEnum = 'ChaosNiagara_LocationFilteringMode_Inclusive' | 'ChaosNiagara_LocationFilteringMode_Exclusive' | 'ChaosNiagara_Max';
-declare var ELocationFilteringModeEnum : { ChaosNiagara_LocationFilteringMode_Inclusive:'ChaosNiagara_LocationFilteringMode_Inclusive',ChaosNiagara_LocationFilteringMode_Exclusive:'ChaosNiagara_LocationFilteringMode_Exclusive',ChaosNiagara_Max:'ChaosNiagara_Max', };
-declare type ELocationXToSpawnEnum = 'ChaosNiagara_LocationXToSpawn_None' | 'ChaosNiagara_LocationXToSpawn_Min' | 'ChaosNiagara_LocationXToSpawn_Max' | 'ChaosNiagara_LocationXToSpawn_MinMax' | 'ChaosNiagara_Max';
-declare var ELocationXToSpawnEnum : { ChaosNiagara_LocationXToSpawn_None:'ChaosNiagara_LocationXToSpawn_None',ChaosNiagara_LocationXToSpawn_Min:'ChaosNiagara_LocationXToSpawn_Min',ChaosNiagara_LocationXToSpawn_Max:'ChaosNiagara_LocationXToSpawn_Max',ChaosNiagara_LocationXToSpawn_MinMax:'ChaosNiagara_LocationXToSpawn_MinMax',ChaosNiagara_Max:'ChaosNiagara_Max', };
-declare type ELocationYToSpawnEnum = 'ChaosNiagara_LocationYToSpawn_None' | 'ChaosNiagara_LocationYToSpawn_Min' | 'ChaosNiagara_LocationYToSpawn_Max' | 'ChaosNiagara_LocationYToSpawn_MinMax' | 'ChaosNiagara_Max';
-declare var ELocationYToSpawnEnum : { ChaosNiagara_LocationYToSpawn_None:'ChaosNiagara_LocationYToSpawn_None',ChaosNiagara_LocationYToSpawn_Min:'ChaosNiagara_LocationYToSpawn_Min',ChaosNiagara_LocationYToSpawn_Max:'ChaosNiagara_LocationYToSpawn_Max',ChaosNiagara_LocationYToSpawn_MinMax:'ChaosNiagara_LocationYToSpawn_MinMax',ChaosNiagara_Max:'ChaosNiagara_Max', };
-declare type ELocationZToSpawnEnum = 'ChaosNiagara_LocationZToSpawn_None' | 'ChaosNiagara_LocationZToSpawn_Min' | 'ChaosNiagara_LocationZToSpawn_Max' | 'ChaosNiagara_LocationZToSpawn_MinMax' | 'ChaosNiagara_Max';
-declare var ELocationZToSpawnEnum : { ChaosNiagara_LocationZToSpawn_None:'ChaosNiagara_LocationZToSpawn_None',ChaosNiagara_LocationZToSpawn_Min:'ChaosNiagara_LocationZToSpawn_Min',ChaosNiagara_LocationZToSpawn_Max:'ChaosNiagara_LocationZToSpawn_Max',ChaosNiagara_LocationZToSpawn_MinMax:'ChaosNiagara_LocationZToSpawn_MinMax',ChaosNiagara_Max:'ChaosNiagara_Max', };
-declare type EDataSortTypeEnum = 'ChaosNiagara_DataSortType_NoSorting' | 'ChaosNiagara_DataSortType_RandomShuffle' | 'ChaosNiagara_DataSortType_SortByMassMaxToMin' | 'ChaosNiagara_DataSortType_SortByMassMinToMax' | 'ChaosNiagara_Max';
-declare var EDataSortTypeEnum : { ChaosNiagara_DataSortType_NoSorting:'ChaosNiagara_DataSortType_NoSorting',ChaosNiagara_DataSortType_RandomShuffle:'ChaosNiagara_DataSortType_RandomShuffle',ChaosNiagara_DataSortType_SortByMassMaxToMin:'ChaosNiagara_DataSortType_SortByMassMaxToMin',ChaosNiagara_DataSortType_SortByMassMinToMax:'ChaosNiagara_DataSortType_SortByMassMinToMax',ChaosNiagara_Max:'ChaosNiagara_Max', };
-declare type ERandomVelocityGenerationTypeEnum = 'ChaosNiagara_RandomVelocityGenerationType_RandomDistribution' | 'ChaosNiagara_RandomVelocityGenerationType_RandomDistributionWithStreamers' | 'ChaosNiagara_RandomVelocityGenerationType_CollisionNormalBased' | 'ChaosNiagara_Max';
-declare var ERandomVelocityGenerationTypeEnum : { ChaosNiagara_RandomVelocityGenerationType_RandomDistribution:'ChaosNiagara_RandomVelocityGenerationType_RandomDistribution',ChaosNiagara_RandomVelocityGenerationType_RandomDistributionWithStreamers:'ChaosNiagara_RandomVelocityGenerationType_RandomDistributionWithStreamers',ChaosNiagara_RandomVelocityGenerationType_CollisionNormalBased:'ChaosNiagara_RandomVelocityGenerationType_CollisionNormalBased',ChaosNiagara_Max:'ChaosNiagara_Max', };
-declare type EDebugTypeEnum = 'ChaosNiagara_DebugType_NoDebug' | 'ChaosNiagara_DebugType_ColorBySolver' | 'ChaosNiagara_DebugType_ColorByParticleIndex' | 'ChaosNiagara_Max';
-declare var EDebugTypeEnum : { ChaosNiagara_DebugType_NoDebug:'ChaosNiagara_DebugType_NoDebug',ChaosNiagara_DebugType_ColorBySolver:'ChaosNiagara_DebugType_ColorBySolver',ChaosNiagara_DebugType_ColorByParticleIndex:'ChaosNiagara_DebugType_ColorByParticleIndex',ChaosNiagara_Max:'ChaosNiagara_Max', };
-declare class NiagaraDataInterfaceChaosDestruction extends NiagaraDataInterface { 
-	ChaosSolverActorSet: any;
-	DataSourceType: EDataSourceTypeEnum;
-	DataProcessFrequency: number;
-	MaxNumberOfDataEntriesToSpawn: number;
-	DoSpawn: boolean;
-	SpawnMultiplierMinMax: Vector2D;
-	SpawnChance: number;
-	ImpulseToSpawnMinMax: Vector2D;
-	SpeedToSpawnMinMax: Vector2D;
-	MassToSpawnMinMax: Vector2D;
-	ExtentMinToSpawnMinMax: Vector2D;
-	ExtentMaxToSpawnMinMax: Vector2D;
-	VolumeToSpawnMinMax: Vector2D;
-	SolverTimeToSpawnMinMax: Vector2D;
-	SurfaceTypeToSpawn: number;
-	LocationFilteringMode: ELocationFilteringModeEnum;
-	LocationXToSpawn: ELocationXToSpawnEnum;
-	LocationXToSpawnMinMax: Vector2D;
-	LocationYToSpawn: ELocationYToSpawnEnum;
-	LocationYToSpawnMinMax: Vector2D;
-	LocationZToSpawn: ELocationZToSpawnEnum;
-	LocationZToSpawnMinMax: Vector2D;
-	DataSortingType: EDataSortTypeEnum;
-	bGetExternalCollisionData: boolean;
-	DoSpatialHash: boolean;
-	SpatialHashVolumeMin: Vector;
-	SpatialHashVolumeMax: Vector;
-	SpatialHashVolumeCellSize: Vector;
-	MaxDataPerCell: number;
-	bApplyMaterialsFilter: boolean;
-	ChaosBreakingMaterialSet: any;
-	bGetExternalBreakingData: boolean;
-	bGetExternalTrailingData: boolean;
-	RandomPositionMagnitudeMinMax: Vector2D;
-	InheritedVelocityMultiplier: number;
-	RandomVelocityGenerationType: ERandomVelocityGenerationTypeEnum;
-	RandomVelocityMagnitudeMinMax: Vector2D;
-	SpreadAngleMax: number;
-	VelocityOffsetMin: Vector;
-	VelocityOffsetMax: Vector;
-	FinalVelocityMagnitudeMinMax: Vector2D;
-	MaxLatency: number;
-	DebugType: EDebugTypeEnum;
-	LastSpawnedPointID: number;
-	LastSpawnTime: number;
-	SolverTime: number;
-	TimeStampOfLastProcessedData: number;
-	static Load(ResourceName: string): NiagaraDataInterfaceChaosDestruction;
-	static Find(Outer: UObject, ResourceName: string): NiagaraDataInterfaceChaosDestruction;
-	static GetDefaultObject(): NiagaraDataInterfaceChaosDestruction;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): NiagaraDataInterfaceChaosDestruction;
-	static C(Other: UObject | any): NiagaraDataInterfaceChaosDestruction;
-}
-
-declare class NiagaraDataInterfaceFieldSystem extends NiagaraDataInterface { 
-	BlueprintSource: Blueprint;
-	SourceActor: Actor;
-	FieldDimensions: IntVector;
-	MinBounds: Vector;
-	MaxBounds: Vector;
-	static Load(ResourceName: string): NiagaraDataInterfaceFieldSystem;
-	static Find(Outer: UObject, ResourceName: string): NiagaraDataInterfaceFieldSystem;
-	static GetDefaultObject(): NiagaraDataInterfaceFieldSystem;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): NiagaraDataInterfaceFieldSystem;
-	static C(Other: UObject | any): NiagaraDataInterfaceFieldSystem;
-}
-
 declare type EChaosCollisionSortMethod = 'SortNone' | 'SortByHighestMass' | 'SortByHighestSpeed' | 'SortByHighestImpulse' | 'SortByNearestFirst' | 'Count' | 'EChaosCollisionSortMethod_MAX';
 declare var EChaosCollisionSortMethod : { SortNone:'SortNone',SortByHighestMass:'SortByHighestMass',SortByHighestSpeed:'SortByHighestSpeed',SortByHighestImpulse:'SortByHighestImpulse',SortByNearestFirst:'SortByNearestFirst',Count:'Count',EChaosCollisionSortMethod_MAX:'EChaosCollisionSortMethod_MAX', };
 declare class ChaosCollisionEventRequestSettings { 
@@ -6763,6 +6614,90 @@ declare class ChaosSolverFactory extends Factory {
 	static C(Other: UObject | any): ChaosSolverFactory;
 }
 
+declare type EDataSourceTypeEnum = 'ChaosNiagara_DataSourceType_Collision' | 'ChaosNiagara_DataSourceType_Breaking' | 'ChaosNiagara_DataSourceType_Trailing' | 'ChaosNiagara_Max';
+declare var EDataSourceTypeEnum : { ChaosNiagara_DataSourceType_Collision:'ChaosNiagara_DataSourceType_Collision',ChaosNiagara_DataSourceType_Breaking:'ChaosNiagara_DataSourceType_Breaking',ChaosNiagara_DataSourceType_Trailing:'ChaosNiagara_DataSourceType_Trailing',ChaosNiagara_Max:'ChaosNiagara_Max', };
+declare type ELocationFilteringModeEnum = 'ChaosNiagara_LocationFilteringMode_Inclusive' | 'ChaosNiagara_LocationFilteringMode_Exclusive' | 'ChaosNiagara_Max';
+declare var ELocationFilteringModeEnum : { ChaosNiagara_LocationFilteringMode_Inclusive:'ChaosNiagara_LocationFilteringMode_Inclusive',ChaosNiagara_LocationFilteringMode_Exclusive:'ChaosNiagara_LocationFilteringMode_Exclusive',ChaosNiagara_Max:'ChaosNiagara_Max', };
+declare type ELocationXToSpawnEnum = 'ChaosNiagara_LocationXToSpawn_None' | 'ChaosNiagara_LocationXToSpawn_Min' | 'ChaosNiagara_LocationXToSpawn_Max' | 'ChaosNiagara_LocationXToSpawn_MinMax' | 'ChaosNiagara_Max';
+declare var ELocationXToSpawnEnum : { ChaosNiagara_LocationXToSpawn_None:'ChaosNiagara_LocationXToSpawn_None',ChaosNiagara_LocationXToSpawn_Min:'ChaosNiagara_LocationXToSpawn_Min',ChaosNiagara_LocationXToSpawn_Max:'ChaosNiagara_LocationXToSpawn_Max',ChaosNiagara_LocationXToSpawn_MinMax:'ChaosNiagara_LocationXToSpawn_MinMax',ChaosNiagara_Max:'ChaosNiagara_Max', };
+declare type ELocationYToSpawnEnum = 'ChaosNiagara_LocationYToSpawn_None' | 'ChaosNiagara_LocationYToSpawn_Min' | 'ChaosNiagara_LocationYToSpawn_Max' | 'ChaosNiagara_LocationYToSpawn_MinMax' | 'ChaosNiagara_Max';
+declare var ELocationYToSpawnEnum : { ChaosNiagara_LocationYToSpawn_None:'ChaosNiagara_LocationYToSpawn_None',ChaosNiagara_LocationYToSpawn_Min:'ChaosNiagara_LocationYToSpawn_Min',ChaosNiagara_LocationYToSpawn_Max:'ChaosNiagara_LocationYToSpawn_Max',ChaosNiagara_LocationYToSpawn_MinMax:'ChaosNiagara_LocationYToSpawn_MinMax',ChaosNiagara_Max:'ChaosNiagara_Max', };
+declare type ELocationZToSpawnEnum = 'ChaosNiagara_LocationZToSpawn_None' | 'ChaosNiagara_LocationZToSpawn_Min' | 'ChaosNiagara_LocationZToSpawn_Max' | 'ChaosNiagara_LocationZToSpawn_MinMax' | 'ChaosNiagara_Max';
+declare var ELocationZToSpawnEnum : { ChaosNiagara_LocationZToSpawn_None:'ChaosNiagara_LocationZToSpawn_None',ChaosNiagara_LocationZToSpawn_Min:'ChaosNiagara_LocationZToSpawn_Min',ChaosNiagara_LocationZToSpawn_Max:'ChaosNiagara_LocationZToSpawn_Max',ChaosNiagara_LocationZToSpawn_MinMax:'ChaosNiagara_LocationZToSpawn_MinMax',ChaosNiagara_Max:'ChaosNiagara_Max', };
+declare type EDataSortTypeEnum = 'ChaosNiagara_DataSortType_NoSorting' | 'ChaosNiagara_DataSortType_RandomShuffle' | 'ChaosNiagara_DataSortType_SortByMassMaxToMin' | 'ChaosNiagara_DataSortType_SortByMassMinToMax' | 'ChaosNiagara_Max';
+declare var EDataSortTypeEnum : { ChaosNiagara_DataSortType_NoSorting:'ChaosNiagara_DataSortType_NoSorting',ChaosNiagara_DataSortType_RandomShuffle:'ChaosNiagara_DataSortType_RandomShuffle',ChaosNiagara_DataSortType_SortByMassMaxToMin:'ChaosNiagara_DataSortType_SortByMassMaxToMin',ChaosNiagara_DataSortType_SortByMassMinToMax:'ChaosNiagara_DataSortType_SortByMassMinToMax',ChaosNiagara_Max:'ChaosNiagara_Max', };
+declare type ERandomVelocityGenerationTypeEnum = 'ChaosNiagara_RandomVelocityGenerationType_RandomDistribution' | 'ChaosNiagara_RandomVelocityGenerationType_RandomDistributionWithStreamers' | 'ChaosNiagara_RandomVelocityGenerationType_CollisionNormalBased' | 'ChaosNiagara_Max';
+declare var ERandomVelocityGenerationTypeEnum : { ChaosNiagara_RandomVelocityGenerationType_RandomDistribution:'ChaosNiagara_RandomVelocityGenerationType_RandomDistribution',ChaosNiagara_RandomVelocityGenerationType_RandomDistributionWithStreamers:'ChaosNiagara_RandomVelocityGenerationType_RandomDistributionWithStreamers',ChaosNiagara_RandomVelocityGenerationType_CollisionNormalBased:'ChaosNiagara_RandomVelocityGenerationType_CollisionNormalBased',ChaosNiagara_Max:'ChaosNiagara_Max', };
+declare type EDebugTypeEnum = 'ChaosNiagara_DebugType_NoDebug' | 'ChaosNiagara_DebugType_ColorBySolver' | 'ChaosNiagara_DebugType_ColorByParticleIndex' | 'ChaosNiagara_Max';
+declare var EDebugTypeEnum : { ChaosNiagara_DebugType_NoDebug:'ChaosNiagara_DebugType_NoDebug',ChaosNiagara_DebugType_ColorBySolver:'ChaosNiagara_DebugType_ColorBySolver',ChaosNiagara_DebugType_ColorByParticleIndex:'ChaosNiagara_DebugType_ColorByParticleIndex',ChaosNiagara_Max:'ChaosNiagara_Max', };
+declare class NiagaraDataInterfaceChaosDestruction extends NiagaraDataInterface { 
+	ChaosSolverActorSet: any;
+	DataSourceType: EDataSourceTypeEnum;
+	DataProcessFrequency: number;
+	MaxNumberOfDataEntriesToSpawn: number;
+	DoSpawn: boolean;
+	SpawnMultiplierMinMax: Vector2D;
+	SpawnChance: number;
+	ImpulseToSpawnMinMax: Vector2D;
+	SpeedToSpawnMinMax: Vector2D;
+	MassToSpawnMinMax: Vector2D;
+	ExtentMinToSpawnMinMax: Vector2D;
+	ExtentMaxToSpawnMinMax: Vector2D;
+	VolumeToSpawnMinMax: Vector2D;
+	SolverTimeToSpawnMinMax: Vector2D;
+	SurfaceTypeToSpawn: number;
+	LocationFilteringMode: ELocationFilteringModeEnum;
+	LocationXToSpawn: ELocationXToSpawnEnum;
+	LocationXToSpawnMinMax: Vector2D;
+	LocationYToSpawn: ELocationYToSpawnEnum;
+	LocationYToSpawnMinMax: Vector2D;
+	LocationZToSpawn: ELocationZToSpawnEnum;
+	LocationZToSpawnMinMax: Vector2D;
+	DataSortingType: EDataSortTypeEnum;
+	bGetExternalCollisionData: boolean;
+	DoSpatialHash: boolean;
+	SpatialHashVolumeMin: Vector;
+	SpatialHashVolumeMax: Vector;
+	SpatialHashVolumeCellSize: Vector;
+	MaxDataPerCell: number;
+	bApplyMaterialsFilter: boolean;
+	ChaosBreakingMaterialSet: any;
+	bGetExternalBreakingData: boolean;
+	bGetExternalTrailingData: boolean;
+	RandomPositionMagnitudeMinMax: Vector2D;
+	InheritedVelocityMultiplier: number;
+	RandomVelocityGenerationType: ERandomVelocityGenerationTypeEnum;
+	RandomVelocityMagnitudeMinMax: Vector2D;
+	SpreadAngleMax: number;
+	VelocityOffsetMin: Vector;
+	VelocityOffsetMax: Vector;
+	FinalVelocityMagnitudeMinMax: Vector2D;
+	MaxLatency: number;
+	DebugType: EDebugTypeEnum;
+	LastSpawnedPointID: number;
+	LastSpawnTime: number;
+	SolverTime: number;
+	TimeStampOfLastProcessedData: number;
+	static Load(ResourceName: string): NiagaraDataInterfaceChaosDestruction;
+	static Find(Outer: UObject, ResourceName: string): NiagaraDataInterfaceChaosDestruction;
+	static GetDefaultObject(): NiagaraDataInterfaceChaosDestruction;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): NiagaraDataInterfaceChaosDestruction;
+	static C(Other: UObject | any): NiagaraDataInterfaceChaosDestruction;
+}
+
+declare class NiagaraDataInterfaceFieldSystem extends NiagaraDataInterface { 
+	BlueprintSource: Blueprint;
+	SourceActor: Actor;
+	FieldDimensions: IntVector;
+	MinBounds: Vector;
+	MaxBounds: Vector;
+	static Load(ResourceName: string): NiagaraDataInterfaceFieldSystem;
+	static Find(Outer: UObject, ResourceName: string): NiagaraDataInterfaceFieldSystem;
+	static GetDefaultObject(): NiagaraDataInterfaceFieldSystem;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): NiagaraDataInterfaceFieldSystem;
+	static C(Other: UObject | any): NiagaraDataInterfaceFieldSystem;
+}
+
 declare class MovieSceneGeometryCacheParams { 
 	GeometryCacheAsset: GeometryCache;
 	FirstLoopStartFrameOffset: FrameNumber;
@@ -6820,79 +6755,6 @@ declare class MovieSceneGeometryCollectionTrack extends MovieSceneNameableTrack 
 	static GetDefaultObject(): MovieSceneGeometryCollectionTrack;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MovieSceneGeometryCollectionTrack;
 	static C(Other: UObject | any): MovieSceneGeometryCollectionTrack;
-}
-
-declare class MagicLeapAudioFunctionLibrary extends BlueprintFunctionLibrary { 
-	static Load(ResourceName: string): MagicLeapAudioFunctionLibrary;
-	static Find(Outer: UObject, ResourceName: string): MagicLeapAudioFunctionLibrary;
-	static GetDefaultObject(): MagicLeapAudioFunctionLibrary;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapAudioFunctionLibrary;
-	static SetMicMute(IsMuted: boolean): boolean;
-	static IsMicMuted(): boolean;
-	static C(Other: UObject | any): MagicLeapAudioFunctionLibrary;
-}
-
-declare class MagicLeapSharedWorldSharedData { 
-	PinIDs: Guid[];
-	clone() : MagicLeapSharedWorldSharedData;
-	static C(Other: UObject | any): MagicLeapSharedWorldSharedData;
-}
-
-declare class MagicLeapSharedWorldPinData { 
-	PinId: Guid;
-	PinState: MagicLeapARPinState;
-	clone() : MagicLeapSharedWorldPinData;
-	static C(Other: UObject | any): MagicLeapSharedWorldPinData;
-}
-
-declare class MagicLeapSharedWorldLocalData { 
-	LocalPins: MagicLeapSharedWorldPinData[];
-	clone() : MagicLeapSharedWorldLocalData;
-	static C(Other: UObject | any): MagicLeapSharedWorldLocalData;
-}
-
-declare class MagicLeapSharedWorldAlignmentTransforms { 
-	AlignmentTransforms: Transform[];
-	clone() : MagicLeapSharedWorldAlignmentTransforms;
-	static C(Other: UObject | any): MagicLeapSharedWorldAlignmentTransforms;
-}
-
-declare class MagicLeapSharedWorldPlayerController extends PlayerController { 
-	static GetDefaultObject(): MagicLeapSharedWorldPlayerController;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapSharedWorldPlayerController;
-	ServerSetLocalWorldData(LocalWorldReplicationData: MagicLeapSharedWorldLocalData): void;
-	ServerSetAlignmentTransforms(InAlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms): void;
-	IsChosenOne(): boolean;
-	ClientSetChosenOne(bChosenOne: boolean): void;
-	ClientMarkReadyForSendingLocalData(): void;
-	CanSendLocalDataToServer(): boolean;
-	static C(Other: UObject | any): MagicLeapSharedWorldPlayerController;
-}
-
-declare class MagicLeapSharedWorldGameMode extends GameMode { 
-	SharedWorldData: MagicLeapSharedWorldSharedData;
-	OnNewLocalDataFromClients: UnrealEngineMulticastDelegate<() => void>;
-	PinSelectionConfidenceThreshold: number;
-	ChosenOne: MagicLeapSharedWorldPlayerController;
-	static GetDefaultObject(): MagicLeapSharedWorldGameMode;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapSharedWorldGameMode;
-	SendSharedWorldDataToClients(): boolean;
-	SelectChosenOne(): void;
-	DetermineSharedWorldData(NewSharedWorldData?: MagicLeapSharedWorldSharedData): {NewSharedWorldData: MagicLeapSharedWorldSharedData};
-	static C(Other: UObject | any): MagicLeapSharedWorldGameMode;
-}
-
-declare class MagicLeapSharedWorldGameState extends GameState { 
-	SharedWorldData: MagicLeapSharedWorldSharedData;
-	AlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms;
-	OnSharedWorldDataUpdated: UnrealEngineMulticastDelegate<() => void>;
-	OnAlignmentTransformsUpdated: UnrealEngineMulticastDelegate<() => void>;
-	static GetDefaultObject(): MagicLeapSharedWorldGameState;
-	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapSharedWorldGameState;
-	OnReplicate_SharedWorldData(): void;
-	OnReplicate_AlignmentTransforms(): void;
-	CalculateXRCameraRootTransform(): Transform;
-	static C(Other: UObject | any): MagicLeapSharedWorldGameState;
 }
 
 declare class GrainTableEntry { 
@@ -7009,6 +6871,79 @@ declare class MotoSynthSourceFactory extends Factory {
 	static GetDefaultObject(): MotoSynthSourceFactory;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MotoSynthSourceFactory;
 	static C(Other: UObject | any): MotoSynthSourceFactory;
+}
+
+declare class MagicLeapAudioFunctionLibrary extends BlueprintFunctionLibrary { 
+	static Load(ResourceName: string): MagicLeapAudioFunctionLibrary;
+	static Find(Outer: UObject, ResourceName: string): MagicLeapAudioFunctionLibrary;
+	static GetDefaultObject(): MagicLeapAudioFunctionLibrary;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapAudioFunctionLibrary;
+	static SetMicMute(IsMuted: boolean): boolean;
+	static IsMicMuted(): boolean;
+	static C(Other: UObject | any): MagicLeapAudioFunctionLibrary;
+}
+
+declare class MagicLeapSharedWorldSharedData { 
+	PinIDs: Guid[];
+	clone() : MagicLeapSharedWorldSharedData;
+	static C(Other: UObject | any): MagicLeapSharedWorldSharedData;
+}
+
+declare class MagicLeapSharedWorldPinData { 
+	PinId: Guid;
+	PinState: MagicLeapARPinState;
+	clone() : MagicLeapSharedWorldPinData;
+	static C(Other: UObject | any): MagicLeapSharedWorldPinData;
+}
+
+declare class MagicLeapSharedWorldLocalData { 
+	LocalPins: MagicLeapSharedWorldPinData[];
+	clone() : MagicLeapSharedWorldLocalData;
+	static C(Other: UObject | any): MagicLeapSharedWorldLocalData;
+}
+
+declare class MagicLeapSharedWorldAlignmentTransforms { 
+	AlignmentTransforms: Transform[];
+	clone() : MagicLeapSharedWorldAlignmentTransforms;
+	static C(Other: UObject | any): MagicLeapSharedWorldAlignmentTransforms;
+}
+
+declare class MagicLeapSharedWorldPlayerController extends PlayerController { 
+	static GetDefaultObject(): MagicLeapSharedWorldPlayerController;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapSharedWorldPlayerController;
+	ServerSetLocalWorldData(LocalWorldReplicationData: MagicLeapSharedWorldLocalData): void;
+	ServerSetAlignmentTransforms(InAlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms): void;
+	IsChosenOne(): boolean;
+	ClientSetChosenOne(bChosenOne: boolean): void;
+	ClientMarkReadyForSendingLocalData(): void;
+	CanSendLocalDataToServer(): boolean;
+	static C(Other: UObject | any): MagicLeapSharedWorldPlayerController;
+}
+
+declare class MagicLeapSharedWorldGameMode extends GameMode { 
+	SharedWorldData: MagicLeapSharedWorldSharedData;
+	OnNewLocalDataFromClients: UnrealEngineMulticastDelegate<() => void>;
+	PinSelectionConfidenceThreshold: number;
+	ChosenOne: MagicLeapSharedWorldPlayerController;
+	static GetDefaultObject(): MagicLeapSharedWorldGameMode;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapSharedWorldGameMode;
+	SendSharedWorldDataToClients(): boolean;
+	SelectChosenOne(): void;
+	DetermineSharedWorldData(NewSharedWorldData?: MagicLeapSharedWorldSharedData): {NewSharedWorldData: MagicLeapSharedWorldSharedData};
+	static C(Other: UObject | any): MagicLeapSharedWorldGameMode;
+}
+
+declare class MagicLeapSharedWorldGameState extends GameState { 
+	SharedWorldData: MagicLeapSharedWorldSharedData;
+	AlignmentTransforms: MagicLeapSharedWorldAlignmentTransforms;
+	OnSharedWorldDataUpdated: UnrealEngineMulticastDelegate<() => void>;
+	OnAlignmentTransformsUpdated: UnrealEngineMulticastDelegate<() => void>;
+	static GetDefaultObject(): MagicLeapSharedWorldGameState;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): MagicLeapSharedWorldGameState;
+	OnReplicate_SharedWorldData(): void;
+	OnReplicate_AlignmentTransforms(): void;
+	CalculateXRCameraRootTransform(): Transform;
+	static C(Other: UObject | any): MagicLeapSharedWorldGameState;
 }
 
 declare class ImgMediaSettings extends UObject { 
@@ -8984,6 +8919,59 @@ declare class SynthesisEditorSettings extends DeveloperSettings {
 	static GetDefaultObject(): SynthesisEditorSettings;
 	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SynthesisEditorSettings;
 	static C(Other: UObject | any): SynthesisEditorSettings;
+}
+
+declare class LevelVariantSetsActorFactory extends ActorFactory { 
+	static Load(ResourceName: string): LevelVariantSetsActorFactory;
+	static Find(Outer: UObject, ResourceName: string): LevelVariantSetsActorFactory;
+	static GetDefaultObject(): LevelVariantSetsActorFactory;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): LevelVariantSetsActorFactory;
+	static C(Other: UObject | any): LevelVariantSetsActorFactory;
+}
+
+declare class SwitchActorFactory extends ActorFactory { 
+	static Load(ResourceName: string): SwitchActorFactory;
+	static Find(Outer: UObject, ResourceName: string): SwitchActorFactory;
+	static GetDefaultObject(): SwitchActorFactory;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): SwitchActorFactory;
+	static C(Other: UObject | any): SwitchActorFactory;
+}
+
+declare class VariantManagerFactoryNew extends Factory { 
+	static Load(ResourceName: string): VariantManagerFactoryNew;
+	static Find(Outer: UObject, ResourceName: string): VariantManagerFactoryNew;
+	static GetDefaultObject(): VariantManagerFactoryNew;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VariantManagerFactoryNew;
+	static C(Other: UObject | any): VariantManagerFactoryNew;
+}
+
+declare type EVariantManagerTestEnum = 'None' | 'FirstOption' | 'SecondOption' | 'ThirdOption' | 'EVariantManagerTestEnum_MAX';
+declare var EVariantManagerTestEnum : { None:'None',FirstOption:'FirstOption',SecondOption:'SecondOption',ThirdOption:'ThirdOption',EVariantManagerTestEnum_MAX:'EVariantManagerTestEnum_MAX', };
+declare class VariantManagerTestActor extends Actor { 
+	EnumWithNoDefault: EVariantManagerTestEnum;
+	EnumWithSecondDefault: EVariantManagerTestEnum;
+	CapturedByteProperty: number;
+	CapturedIntProperty: number;
+	CapturedFloatProperty: number;
+	bCapturedBoolProperty: boolean;
+	CapturedObjectProperty: UObject;
+	CapturedInterfaceProperty: any;
+	CapturedNameProperty: string;
+	CapturedStrProperty: string;
+	CapturedTextProperty: string;
+	CapturedRotatorProperty: Rotator;
+	CapturedColorProperty: Color;
+	CapturedLinearColorProperty: LinearColor;
+	CapturedVectorProperty: Vector;
+	CapturedQuatProperty: Quat;
+	CapturedVector4Property: Vector4;
+	CapturedVector2DProperty: Vector2D;
+	CapturedIntPointProperty: IntPoint;
+	CapturedUObjectArrayProperty: UObject[];
+	CapturedVectorArrayProperty: Vector[];
+	static GetDefaultObject(): VariantManagerTestActor;
+	static CreateDefaultSubobject(Name: string, Transient?: boolean, Required?: boolean, Abstract?: boolean): VariantManagerTestActor;
+	static C(Other: UObject | any): VariantManagerTestActor;
 }
 
 declare class ContentBrowserAssetDataSource extends ContentBrowserDataSource { 

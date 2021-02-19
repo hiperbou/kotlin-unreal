@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "JSGameInstance.h"
-#include "JSComponent.h"
+#include "KotlinObject.h"
 #include "JavascriptComponent.h"
 #include "JavascriptIsolate.h"
 #include "JavascriptContext.h"
@@ -10,7 +10,7 @@
 #include "IV8.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Regex.h"
-#include "JSObject.h"
+#include "KotlinObject.h"
 
 
 void UJSGameInstance::Init()

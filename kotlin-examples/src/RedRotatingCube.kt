@@ -1,27 +1,33 @@
 import ue.*
-import kotlin.reflect.KClass
 
-class MyUObject2:JSObject() {
+class RedRotatingCube:KotlinObject() {
 
     var touched = 0
-
-    fun NotifyTrigger(): String {
-        touched++
-        println("Me llaman desde un blueprint")
-        return "touched $touched times"
-    }
 
     override fun BeginPlay() {
         println("BeginPlay")
     }
 
     override fun Tick(deltaTime: Float) {
-        val actor: SampleActor = Root.GetOwner().asDynamic()
+        val actor: RotatingCubeActor = Root.GetOwner().asDynamic()
         with(actor){
             if (actorToCopy != null) {
                 K2_SetActorRotation(Rotator(Yaw = actorToCopy!!.Yaw), false)
             }
         }
+    }
+
+    override fun BeginOverlap(other:Actor): String {
+        touched++
+
+        if(touched>30) {
+            return "die"
+        }
+        return "touched $touched times by ${other.GetName()}"
+    }
+
+    override fun OnDestroyed() {
+        println("OnDestroyed")
     }
 
     fun cleanup(): Unit {
