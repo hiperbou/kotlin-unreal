@@ -6,7 +6,6 @@ class HelloKotlin:KotlinObject() {
 
     override fun BeginPlay() {
         println("BeginPlay")
-        yaw = 0.0
 
         val pos = Vector(X = 100, Z = 100)
         val rotator = Rotator(Yaw = yaw)

@@ -17,23 +17,14 @@ class FirstPerson:KotlinObject() {
 
     var yaw = 180.0
 
-    lateinit var keyLeft:KeyListener
-    lateinit var keyRight:KeyListener
-    lateinit var keyUp:KeyListener
-    lateinit var keyDown:KeyListener
-    lateinit var keyJump:KeyListener
-    lateinit var keyFire:KeyListener
+    val keyLeft = KeyListener("A")
+    val keyRight = KeyListener("D")
+    val keyUp = KeyListener("W")
+    val keyDown = KeyListener("S")
+    val keyJump = KeyListener("SpaceBar")
+    val keyFire = KeyListener("LeftMouseButton")
 
     override fun BeginPlay() {
-        yaw = 180.0
-
-        keyLeft = KeyListener("A")
-        keyRight = KeyListener("D")
-        keyUp = KeyListener("W")
-        keyDown = KeyListener("S")
-        keyJump = KeyListener("SpaceBar")
-        keyFire = KeyListener("LeftMouseButton")
-
         //actor = Character(GWorld, Vector(), Rotator())
         val bp = Blueprint.Load("/Game/FirstPersonBP")
         actor = bp.GenerateClass(GWorld, Vector(), Rotator())
@@ -103,7 +94,6 @@ class FirstPerson:KotlinObject() {
         val myPlayerController = GWorld.GetPlayerController(0)
         //possess the MyThirdPerson character that just spawned
         myPlayerController.Possess(actor)
-
     }
 
     override fun Tick(deltaTime:Float) {

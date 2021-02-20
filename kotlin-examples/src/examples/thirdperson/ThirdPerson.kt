@@ -6,21 +6,13 @@ class ThirdPerson:KotlinObject() {
     //var myCamera:CameraComponent /*EditAnywhere+CameraComponent*/
     var yaw = 180.0
 
-    lateinit var keyLeft:KeyListener
-    lateinit var keyRight:KeyListener
-    lateinit var keyUp:KeyListener
-    lateinit var keyDown:KeyListener
-    lateinit var keyJump:KeyListener
-
+    val keyLeft = KeyListener("A")
+    val keyRight = KeyListener("D")
+    val keyUp = KeyListener("W")
+    val keyDown = KeyListener("S")
+    val keyJump = KeyListener("SpaceBar")
 
     override fun BeginPlay() {
-        yaw = 180.0
-
-        keyLeft = KeyListener("A")
-        keyRight = KeyListener("D")
-        keyUp = KeyListener("W")
-        keyDown = KeyListener("S")
-        keyJump = KeyListener("SpaceBar")
         //actor = Character(GWorld, Vector(), Rotator())
         val bp = Blueprint.Load("/Game/ThirdPersonBP")
         actor = bp.GenerateClass(GWorld,

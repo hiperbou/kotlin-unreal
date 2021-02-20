@@ -52,7 +52,6 @@
   });
   HelloBlueprint.prototype.BeginPlay = function () {
     var bp = Blueprint.Load('/Game/ExampleBlueprint');
-    this.yaw = 0.0;
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, this.yaw));
   };
   HelloBlueprint.prototype.Tick = function (deltaTime) {
@@ -77,22 +76,9 @@
   function HelloBlueprints() {
     KotlinObject.call(this);
     this.WIDTH = 400.0;
-    this.actorList_htiunx$_0 = this.actorList_htiunx$_0;
-  }
-  Object.defineProperty(HelloBlueprints.prototype, 'actorList', {
-    configurable: true,
-    get: function () {
-      if (this.actorList_htiunx$_0 == null)
-        return throwUPAE('actorList');
-      return this.actorList_htiunx$_0;
-    },
-    set: function (actorList) {
-      this.actorList_htiunx$_0 = actorList;
-    }
-  });
-  HelloBlueprints.prototype.BeginPlay = function () {
-    this.WIDTH = 400.0;
     this.actorList = ArrayList_init();
+  }
+  HelloBlueprints.prototype.BeginPlay = function () {
     for (var i = 0; i <= 10; i++)
       this.actorList.add_11rb$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
   };
@@ -160,8 +146,6 @@
   }
   WhiteRotatingCube.prototype.BeginPlay = function () {
     println('BeginPlay');
-    this.acumulatedDeltaTime = 0.0;
-    this.touched = 0;
     println(global);
   };
   WhiteRotatingCube.prototype.Tick = function (deltaTime) {
@@ -197,12 +181,12 @@
     this.weaponRange = 0.0;
     this.weaponDamage = 0.0;
     this.yaw = 180.0;
-    this.keyLeft_d64lkz$_0 = this.keyLeft_d64lkz$_0;
-    this.keyRight_kt731w$_0 = this.keyRight_kt731w$_0;
-    this.keyUp_g7805z$_0 = this.keyUp_g7805z$_0;
-    this.keyDown_dac7zy$_0 = this.keyDown_dac7zy$_0;
-    this.keyJump_d6xtvu$_0 = this.keyJump_d6xtvu$_0;
-    this.keyFire_d9cknm$_0 = this.keyFire_d9cknm$_0;
+    this.keyLeft = new KeyListener('A');
+    this.keyRight = new KeyListener('D');
+    this.keyUp = new KeyListener('W');
+    this.keyDown = new KeyListener('S');
+    this.keyJump = new KeyListener('SpaceBar');
+    this.keyFire = new KeyListener('LeftMouseButton');
   }
   Object.defineProperty(FirstPerson.prototype, 'actor', {
     configurable: true,
@@ -281,81 +265,8 @@
       this.gunOffset_ug3c4w$_0 = gunOffset;
     }
   });
-  Object.defineProperty(FirstPerson.prototype, 'keyLeft', {
-    configurable: true,
-    get: function () {
-      if (this.keyLeft_d64lkz$_0 == null)
-        return throwUPAE('keyLeft');
-      return this.keyLeft_d64lkz$_0;
-    },
-    set: function (keyLeft) {
-      this.keyLeft_d64lkz$_0 = keyLeft;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'keyRight', {
-    configurable: true,
-    get: function () {
-      if (this.keyRight_kt731w$_0 == null)
-        return throwUPAE('keyRight');
-      return this.keyRight_kt731w$_0;
-    },
-    set: function (keyRight) {
-      this.keyRight_kt731w$_0 = keyRight;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'keyUp', {
-    configurable: true,
-    get: function () {
-      if (this.keyUp_g7805z$_0 == null)
-        return throwUPAE('keyUp');
-      return this.keyUp_g7805z$_0;
-    },
-    set: function (keyUp) {
-      this.keyUp_g7805z$_0 = keyUp;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'keyDown', {
-    configurable: true,
-    get: function () {
-      if (this.keyDown_dac7zy$_0 == null)
-        return throwUPAE('keyDown');
-      return this.keyDown_dac7zy$_0;
-    },
-    set: function (keyDown) {
-      this.keyDown_dac7zy$_0 = keyDown;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'keyJump', {
-    configurable: true,
-    get: function () {
-      if (this.keyJump_d6xtvu$_0 == null)
-        return throwUPAE('keyJump');
-      return this.keyJump_d6xtvu$_0;
-    },
-    set: function (keyJump) {
-      this.keyJump_d6xtvu$_0 = keyJump;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'keyFire', {
-    configurable: true,
-    get: function () {
-      if (this.keyFire_d9cknm$_0 == null)
-        return throwUPAE('keyFire');
-      return this.keyFire_d9cknm$_0;
-    },
-    set: function (keyFire) {
-      this.keyFire_d9cknm$_0 = keyFire;
-    }
-  });
   FirstPerson.prototype.BeginPlay = function () {
     var tmp$;
-    this.yaw = 180.0;
-    this.keyLeft = new KeyListener('A');
-    this.keyRight = new KeyListener('D');
-    this.keyUp = new KeyListener('W');
-    this.keyDown = new KeyListener('S');
-    this.keyJump = new KeyListener('SpaceBar');
-    this.keyFire = new KeyListener('LeftMouseButton');
     var bp = Blueprint.Load('/Game/FirstPersonBP');
     this.actor = GenerateClass(bp, GWorld, new Vector(), new Rotator());
     this.actor.CapsuleComponent.CapsuleRadius = 42.0;
@@ -499,7 +410,6 @@
   });
   HelloKotlin.prototype.BeginPlay = function () {
     println('BeginPlay');
-    this.yaw = 0.0;
     var pos = Vector_0(100, void 0, 100);
     var rotator = Rotator_0(void 0, void 0, this.yaw);
     this.actor = new TextRenderActor(GWorld, pos, rotator);
@@ -529,10 +439,10 @@
     KotlinObject.call(this);
     this.actor_vvd834$_0 = this.actor_vvd834$_0;
     this.yaw = 180.0;
-    this.keyLeft_lq9rb5$_0 = this.keyLeft_lq9rb5$_0;
-    this.keyRight_vfwojy$_0 = this.keyRight_vfwojy$_0;
-    this.keyUp_ye4d5h$_0 = this.keyUp_ye4d5h$_0;
-    this.keyDown_luhdq4$_0 = this.keyDown_luhdq4$_0;
+    this.keyLeft = new KeyListener('F');
+    this.keyRight = new KeyListener('H');
+    this.keyUp = new KeyListener('T');
+    this.keyDown = new KeyListener('G');
   }
   Object.defineProperty(KeyboardInput.prototype, 'actor', {
     configurable: true,
@@ -545,56 +455,7 @@
       this.actor_vvd834$_0 = actor;
     }
   });
-  Object.defineProperty(KeyboardInput.prototype, 'keyLeft', {
-    configurable: true,
-    get: function () {
-      if (this.keyLeft_lq9rb5$_0 == null)
-        return throwUPAE('keyLeft');
-      return this.keyLeft_lq9rb5$_0;
-    },
-    set: function (keyLeft) {
-      this.keyLeft_lq9rb5$_0 = keyLeft;
-    }
-  });
-  Object.defineProperty(KeyboardInput.prototype, 'keyRight', {
-    configurable: true,
-    get: function () {
-      if (this.keyRight_vfwojy$_0 == null)
-        return throwUPAE('keyRight');
-      return this.keyRight_vfwojy$_0;
-    },
-    set: function (keyRight) {
-      this.keyRight_vfwojy$_0 = keyRight;
-    }
-  });
-  Object.defineProperty(KeyboardInput.prototype, 'keyUp', {
-    configurable: true,
-    get: function () {
-      if (this.keyUp_ye4d5h$_0 == null)
-        return throwUPAE('keyUp');
-      return this.keyUp_ye4d5h$_0;
-    },
-    set: function (keyUp) {
-      this.keyUp_ye4d5h$_0 = keyUp;
-    }
-  });
-  Object.defineProperty(KeyboardInput.prototype, 'keyDown', {
-    configurable: true,
-    get: function () {
-      if (this.keyDown_luhdq4$_0 == null)
-        return throwUPAE('keyDown');
-      return this.keyDown_luhdq4$_0;
-    },
-    set: function (keyDown) {
-      this.keyDown_luhdq4$_0 = keyDown;
-    }
-  });
   KeyboardInput.prototype.BeginPlay = function () {
-    this.yaw = 180.0;
-    this.keyLeft = new KeyListener('F');
-    this.keyRight = new KeyListener('H');
-    this.keyUp = new KeyListener('T');
-    this.keyDown = new KeyListener('G');
     var bp = Blueprint.Load('/Game/ExampleBlueprint');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
   };
@@ -757,11 +618,11 @@
     KotlinObject.call(this);
     this.actor_ica0dl$_0 = this.actor_ica0dl$_0;
     this.yaw = 180.0;
-    this.keyLeft_p72m92$_0 = this.keyLeft_p72m92$_0;
-    this.keyRight_2nhwbv$_0 = this.keyRight_2nhwbv$_0;
-    this.keyUp_dknjn2$_0 = this.keyUp_dknjn2$_0;
-    this.keyDown_p2uzu3$_0 = this.keyDown_p2uzu3$_0;
-    this.keyJump_p69dy7$_0 = this.keyJump_p69dy7$_0;
+    this.keyLeft = new KeyListener('A');
+    this.keyRight = new KeyListener('D');
+    this.keyUp = new KeyListener('W');
+    this.keyDown = new KeyListener('S');
+    this.keyJump = new KeyListener('SpaceBar');
   }
   Object.defineProperty(ThirdPerson.prototype, 'actor', {
     configurable: true,
@@ -774,68 +635,7 @@
       this.actor_ica0dl$_0 = actor;
     }
   });
-  Object.defineProperty(ThirdPerson.prototype, 'keyLeft', {
-    configurable: true,
-    get: function () {
-      if (this.keyLeft_p72m92$_0 == null)
-        return throwUPAE('keyLeft');
-      return this.keyLeft_p72m92$_0;
-    },
-    set: function (keyLeft) {
-      this.keyLeft_p72m92$_0 = keyLeft;
-    }
-  });
-  Object.defineProperty(ThirdPerson.prototype, 'keyRight', {
-    configurable: true,
-    get: function () {
-      if (this.keyRight_2nhwbv$_0 == null)
-        return throwUPAE('keyRight');
-      return this.keyRight_2nhwbv$_0;
-    },
-    set: function (keyRight) {
-      this.keyRight_2nhwbv$_0 = keyRight;
-    }
-  });
-  Object.defineProperty(ThirdPerson.prototype, 'keyUp', {
-    configurable: true,
-    get: function () {
-      if (this.keyUp_dknjn2$_0 == null)
-        return throwUPAE('keyUp');
-      return this.keyUp_dknjn2$_0;
-    },
-    set: function (keyUp) {
-      this.keyUp_dknjn2$_0 = keyUp;
-    }
-  });
-  Object.defineProperty(ThirdPerson.prototype, 'keyDown', {
-    configurable: true,
-    get: function () {
-      if (this.keyDown_p2uzu3$_0 == null)
-        return throwUPAE('keyDown');
-      return this.keyDown_p2uzu3$_0;
-    },
-    set: function (keyDown) {
-      this.keyDown_p2uzu3$_0 = keyDown;
-    }
-  });
-  Object.defineProperty(ThirdPerson.prototype, 'keyJump', {
-    configurable: true,
-    get: function () {
-      if (this.keyJump_p69dy7$_0 == null)
-        return throwUPAE('keyJump');
-      return this.keyJump_p69dy7$_0;
-    },
-    set: function (keyJump) {
-      this.keyJump_p69dy7$_0 = keyJump;
-    }
-  });
   ThirdPerson.prototype.BeginPlay = function () {
-    this.yaw = 180.0;
-    this.keyLeft = new KeyListener('A');
-    this.keyRight = new KeyListener('D');
-    this.keyUp = new KeyListener('W');
-    this.keyDown = new KeyListener('S');
-    this.keyJump = new KeyListener('SpaceBar');
     var bp = Blueprint.Load('/Game/ThirdPersonBP');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
     this.actor.CapsuleComponent.CapsuleRadius = 42.0;
@@ -945,9 +745,7 @@
     var instance = new GeneratedClassDefinition();
     instance.Root = Root;
     instance.Root.SetKotlinObject(instance);
-    if (!global.precious)
-      global.precious = [];
-    global.precious.push(instance);
+    instance.konstructor();
     if (instance.BeginPlay)
       instance.BeginPlay();
   }

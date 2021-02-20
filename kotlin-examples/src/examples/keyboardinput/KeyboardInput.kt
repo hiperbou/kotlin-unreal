@@ -4,19 +4,12 @@ class KeyboardInput:KotlinObject()  {
     lateinit var actor:Actor
     var yaw = 180.0
 
-    lateinit var keyLeft:KeyListener
-    lateinit var keyRight:KeyListener
-    lateinit var keyUp:KeyListener
-    lateinit var keyDown:KeyListener
+    val keyLeft = KeyListener("F")
+    val keyRight = KeyListener("H")
+    val keyUp = KeyListener("T")
+    val keyDown = KeyListener("G")
 
     override fun BeginPlay() {
-        yaw = 180.0
-
-        keyLeft = KeyListener("F")
-        keyRight = KeyListener("H")
-        keyUp = KeyListener("T")
-        keyDown = KeyListener("G")
-
         val bp = Blueprint.Load("/Game/ExampleBlueprint")
         actor = bp.GenerateClass(GWorld,
             Vector( X=1 ),

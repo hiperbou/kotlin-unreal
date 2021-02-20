@@ -184,8 +184,13 @@
                         return refactored(l)
                     })
                     properties = func
-                } else if (k != 'constructor') {
-                    let F = proxy[k] = template.prototype[k]
+                } else  {
+                    let kproxy = k
+                    let koriginal = k
+                    if (k == 'constructor'){
+                        kproxy = 'konstructor'
+                    }
+                    let F = proxy[kproxy] = template.prototype[koriginal]
 
                     let s = String(F)
 

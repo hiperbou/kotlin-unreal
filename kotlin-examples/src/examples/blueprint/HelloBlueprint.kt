@@ -7,7 +7,6 @@ class HelloBlueprint:KotlinObject() {
 
     override fun BeginPlay() {
         val bp = Blueprint.Load("/Game/ExampleBlueprint")
-        yaw = 0.0
         actor = bp.GenerateClass(GWorld,
             Vector( X=1 ),
             Rotator( Yaw=yaw ))

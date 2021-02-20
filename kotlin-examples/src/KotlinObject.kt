@@ -39,6 +39,7 @@ fun unrealProxyClass(global:dynamic, klass:dynamic, className:String) {
     val instance = js("new GeneratedClassDefinition()")
     instance.Root = Root
     instance.Root.SetKotlinObject(instance)
+    instance.konstructor()
     if(!global.precious) global.precious = js("[]"); global.precious.push(instance)
     if(instance.BeginPlay) instance.BeginPlay()
 }

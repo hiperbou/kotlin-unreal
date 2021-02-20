@@ -8,9 +8,6 @@ class WhiteRotatingCube: KotlinObject() {
     override fun BeginPlay()
     {
         println("BeginPlay")
-        acumulatedDeltaTime = 0.0
-        touched = 0
-
         println(global)
     }
 
