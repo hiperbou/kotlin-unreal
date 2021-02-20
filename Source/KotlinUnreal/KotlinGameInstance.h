@@ -6,13 +6,13 @@
 
 #include "JavascriptIsolate.h"
 #include "Engine/GameInstance.h"
-#include "JSGameInstance.generated.h"
+#include "KotlinGameInstance.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class KOTLINUNREAL_API UJSGameInstance : public UGameInstance
+class KOTLINUNREAL_API UKotlinGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 

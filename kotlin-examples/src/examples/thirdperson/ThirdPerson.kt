@@ -1,7 +1,7 @@
 import ue.*
 
 class ThirdPerson:KotlinObject() {
-    lateinit var actor:Character
+    var actor:Character
     //var myArm:SpringArmComponent /*EditAnywhere+SpringArmComponent*/
     //var myCamera:CameraComponent /*EditAnywhere+CameraComponent*/
     var yaw = 180.0
@@ -12,7 +12,7 @@ class ThirdPerson:KotlinObject() {
     val keyDown = KeyListener("S")
     val keyJump = KeyListener("SpaceBar")
 
-    override fun BeginPlay() {
+    init {
         //actor = Character(GWorld, Vector(), Rotator())
         val bp = Blueprint.Load("/Game/ThirdPersonBP")
         actor = bp.GenerateClass(GWorld,

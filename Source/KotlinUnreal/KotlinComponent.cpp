@@ -1,11 +1,9 @@
 #include "KotlinComponent.h"
-#include "JavascriptComponent.h"
-#include "JavascriptIsolate.h"
 #include "JavascriptContext.h"
 #include "Engine/World.h"
 #include "Engine/Engine.h"
 #include "IV8.h"
-#include "JSGameInstance.h"
+#include "KotlinGameInstance.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Regex.h"
 #include "KotlinObject.h"
@@ -59,7 +57,7 @@ void UKotlinComponent::OnRegister()
 	{
 		if (GetWorld() && ((GetWorld()->IsGameWorld() && !GetWorld()->IsPreviewWorld())))
 		{
-			JavascriptContext = Cast<UJSGameInstance>(GetWorld()->GetGameInstance())->GetContext();
+			JavascriptContext = Cast<UKotlinGameInstance>(GetWorld()->GetGameInstance())->GetContext();
 		}
 	}
 

@@ -5,7 +5,7 @@ class HelloBlueprints:KotlinObject() {
     val WIDTH = 400.0
     val actorList = arrayListOf<Actor>()
 
-    override fun BeginPlay() {
+    init {
         for (i in 0..10)
             actorList.add(createActor(rnd(-WIDTH, WIDTH),rnd(-WIDTH, WIDTH),rnd(0.0,360.0)))
     }

@@ -1,7 +1,7 @@
 import ue.*
 
 class KeyboardInput:KotlinObject()  {
-    lateinit var actor:Actor
+    var actor:Actor
     var yaw = 180.0
 
     val keyLeft = KeyListener("F")
@@ -9,7 +9,7 @@ class KeyboardInput:KotlinObject()  {
     val keyUp = KeyListener("T")
     val keyDown = KeyListener("G")
 
-    override fun BeginPlay() {
+    init {
         val bp = Blueprint.Load("/Game/ExampleBlueprint")
         actor = bp.GenerateClass(GWorld,
             Vector( X=1 ),

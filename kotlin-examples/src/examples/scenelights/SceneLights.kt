@@ -4,9 +4,9 @@ import kotlin.math.sin
 import kotlin.random.Random
 
 class SceneLights:KotlinObject() {
-    lateinit var tickable:List<()->Unit>
+    var tickable:List<()->Unit>
 
-    override fun BeginPlay() {
+    init {
 
         GWorld.GetAllActorsOfClass(Light).OutActors.forEach { it.K2_DestroyActor() }
 

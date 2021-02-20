@@ -4,10 +4,6 @@ class RedRotatingCube: KotlinObject() {
 
     var touched = 0
 
-    override fun BeginPlay() {
-        println("BeginPlay")
-    }
-
     override fun Tick(deltaTime: Float) {
         val actor: RotatingCubeActor = Root.GetOwner().asDynamic()
         with(actor){

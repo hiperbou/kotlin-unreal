@@ -2,10 +2,10 @@ import KotlinObject
 import ue.*
 
 class HelloBlueprint:KotlinObject() {
-    lateinit var actor: Actor
+    var actor: Actor
     var yaw = 0.0
 
-    override fun BeginPlay() {
+    init {
         val bp = Blueprint.Load("/Game/ExampleBlueprint")
         actor = bp.GenerateClass(GWorld,
             Vector( X=1 ),

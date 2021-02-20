@@ -5,12 +5,6 @@ class WhiteRotatingCube: KotlinObject() {
     var touched = 0
     var acumulatedDeltaTime = 0.0
 
-    override fun BeginPlay()
-    {
-        println("BeginPlay")
-        println(global)
-    }
-
     override fun Tick(deltaTime:Float) {
         acumulatedDeltaTime += deltaTime;
         val actor: RotatingCubeActor = Root.GetOwner().asDynamic()

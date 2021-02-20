@@ -1,16 +1,15 @@
 (function (_, Kotlin) {
   'use strict';
-  var throwUPAE = Kotlin.throwUPAE;
   var println = Kotlin.kotlin.io.println_s8jyv4$;
   var Kind_CLASS = Kotlin.Kind.CLASS;
   var Random = Kotlin.kotlin.random.Random;
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var ensureNotNull = Kotlin.ensureNotNull;
-  var throwCCE = Kotlin.throwCCE;
   var numberToDouble = Kotlin.numberToDouble;
+  var throwCCE = Kotlin.throwCCE;
   var Unit = Kotlin.kotlin.Unit;
-  var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
   var getCallableRef = Kotlin.getCallableRef;
+  var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
   var Math_0 = Math;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
@@ -36,24 +35,11 @@
   ThirdPerson.prototype.constructor = ThirdPerson;
   function HelloBlueprint() {
     KotlinObject.call(this);
-    this.actor_dmw9la$_0 = this.actor_dmw9la$_0;
+    this.actor = null;
     this.yaw = 0.0;
-  }
-  Object.defineProperty(HelloBlueprint.prototype, 'actor', {
-    configurable: true,
-    get: function () {
-      if (this.actor_dmw9la$_0 == null)
-        return throwUPAE('actor');
-      return this.actor_dmw9la$_0;
-    },
-    set: function (actor) {
-      this.actor_dmw9la$_0 = actor;
-    }
-  });
-  HelloBlueprint.prototype.BeginPlay = function () {
     var bp = Blueprint.Load('/Game/ExampleBlueprint');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, this.yaw));
-  };
+  }
   HelloBlueprint.prototype.Tick = function (deltaTime) {
     this.yaw += 100.0 * deltaTime;
     this.actor.K2_SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
@@ -77,11 +63,9 @@
     KotlinObject.call(this);
     this.WIDTH = 400.0;
     this.actorList = ArrayList_init();
-  }
-  HelloBlueprints.prototype.BeginPlay = function () {
     for (var i = 0; i <= 10; i++)
       this.actorList.add_11rb$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
-  };
+  }
   HelloBlueprints.prototype.rnd_lu1900$ = function (min, max) {
     return min + Random.Default.nextDouble() * (max - min);
   };
@@ -114,9 +98,6 @@
     KotlinObject.call(this);
     this.touched = 0;
   }
-  RedRotatingCube.prototype.BeginPlay = function () {
-    println('BeginPlay');
-  };
   RedRotatingCube.prototype.Tick = function (deltaTime) {
     var actor = this.Root.GetOwner();
     if (actor.actorToCopy != null) {
@@ -144,10 +125,6 @@
     this.touched = 0;
     this.acumulatedDeltaTime = 0.0;
   }
-  WhiteRotatingCube.prototype.BeginPlay = function () {
-    println('BeginPlay');
-    println(global);
-  };
   WhiteRotatingCube.prototype.Tick = function (deltaTime) {
     this.acumulatedDeltaTime += deltaTime;
     var actor = this.Root.GetOwner();
@@ -171,13 +148,13 @@
   };
   function FirstPerson() {
     KotlinObject.call(this);
-    this.actor_kyugwi$_0 = this.actor_kyugwi$_0;
-    this.myCamera_yus85c$_0 = this.myCamera_yus85c$_0;
-    this.myFPMesh_n1nqm$_0 = this.myFPMesh_n1nqm$_0;
-    this.myFPGunMesh_n4a4j0$_0 = this.myFPGunMesh_n4a4j0$_0;
-    this.fireSound_umk61i$_0 = this.fireSound_umk61i$_0;
-    this.fireAnimation_1007px$_0 = this.fireAnimation_1007px$_0;
-    this.gunOffset_ug3c4w$_0 = this.gunOffset_ug3c4w$_0;
+    this.actor = null;
+    this.myCamera = null;
+    this.myFPMesh = null;
+    this.myFPGunMesh = null;
+    this.fireSound = null;
+    this.fireAnimation = null;
+    this.gunOffset = null;
     this.weaponRange = 0.0;
     this.weaponDamage = 0.0;
     this.yaw = 180.0;
@@ -187,85 +164,6 @@
     this.keyDown = new KeyListener('S');
     this.keyJump = new KeyListener('SpaceBar');
     this.keyFire = new KeyListener('LeftMouseButton');
-  }
-  Object.defineProperty(FirstPerson.prototype, 'actor', {
-    configurable: true,
-    get: function () {
-      if (this.actor_kyugwi$_0 == null)
-        return throwUPAE('actor');
-      return this.actor_kyugwi$_0;
-    },
-    set: function (actor) {
-      this.actor_kyugwi$_0 = actor;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'myCamera', {
-    configurable: true,
-    get: function () {
-      if (this.myCamera_yus85c$_0 == null)
-        return throwUPAE('myCamera');
-      return this.myCamera_yus85c$_0;
-    },
-    set: function (myCamera) {
-      this.myCamera_yus85c$_0 = myCamera;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'myFPMesh', {
-    configurable: true,
-    get: function () {
-      if (this.myFPMesh_n1nqm$_0 == null)
-        return throwUPAE('myFPMesh');
-      return this.myFPMesh_n1nqm$_0;
-    },
-    set: function (myFPMesh) {
-      this.myFPMesh_n1nqm$_0 = myFPMesh;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'myFPGunMesh', {
-    configurable: true,
-    get: function () {
-      if (this.myFPGunMesh_n4a4j0$_0 == null)
-        return throwUPAE('myFPGunMesh');
-      return this.myFPGunMesh_n4a4j0$_0;
-    },
-    set: function (myFPGunMesh) {
-      this.myFPGunMesh_n4a4j0$_0 = myFPGunMesh;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'fireSound', {
-    configurable: true,
-    get: function () {
-      if (this.fireSound_umk61i$_0 == null)
-        return throwUPAE('fireSound');
-      return this.fireSound_umk61i$_0;
-    },
-    set: function (fireSound) {
-      this.fireSound_umk61i$_0 = fireSound;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'fireAnimation', {
-    configurable: true,
-    get: function () {
-      if (this.fireAnimation_1007px$_0 == null)
-        return throwUPAE('fireAnimation');
-      return this.fireAnimation_1007px$_0;
-    },
-    set: function (fireAnimation) {
-      this.fireAnimation_1007px$_0 = fireAnimation;
-    }
-  });
-  Object.defineProperty(FirstPerson.prototype, 'gunOffset', {
-    configurable: true,
-    get: function () {
-      if (this.gunOffset_ug3c4w$_0 == null)
-        return throwUPAE('gunOffset');
-      return this.gunOffset_ug3c4w$_0;
-    },
-    set: function (gunOffset) {
-      this.gunOffset_ug3c4w$_0 = gunOffset;
-    }
-  });
-  FirstPerson.prototype.BeginPlay = function () {
     var tmp$;
     var bp = Blueprint.Load('/Game/FirstPersonBP');
     this.actor = GenerateClass(bp, GWorld, new Vector(), new Rotator());
@@ -302,7 +200,7 @@
     this.createWall();
     var myPlayerController = GWorld.GetPlayerController(0);
     myPlayerController.Possess(this.actor);
-  };
+  }
   FirstPerson.prototype.Tick = function (deltaTime) {
     if (this.keyLeft.down()) {
       this.MoveRight_14dthe$(-1.0);
@@ -395,27 +293,13 @@
   function HelloKotlin() {
     KotlinObject.call(this);
     this.yaw = 0.0;
-    this.actor_xrtw4g$_0 = this.actor_xrtw4g$_0;
-  }
-  Object.defineProperty(HelloKotlin.prototype, 'actor', {
-    configurable: true,
-    get: function () {
-      if (this.actor_xrtw4g$_0 == null)
-        return throwUPAE('actor');
-      return this.actor_xrtw4g$_0;
-    },
-    set: function (actor) {
-      this.actor_xrtw4g$_0 = actor;
-    }
-  });
-  HelloKotlin.prototype.BeginPlay = function () {
-    println('BeginPlay');
+    this.actor = null;
     var pos = Vector_0(100, void 0, 100);
     var rotator = Rotator_0(void 0, void 0, this.yaw);
     this.actor = new TextRenderActor(GWorld, pos, rotator);
     this.actor.TextRender.SetHorizontalAlignment('EHTA_Center');
     this.actor.TextRender.SetText('Hello Kotlin');
-  };
+  }
   HelloKotlin.prototype.Tick = function (deltaTime) {
     this.yaw += 100.0 * deltaTime;
     this.actor.K2_SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
@@ -437,28 +321,15 @@
   };
   function KeyboardInput() {
     KotlinObject.call(this);
-    this.actor_vvd834$_0 = this.actor_vvd834$_0;
+    this.actor = null;
     this.yaw = 180.0;
     this.keyLeft = new KeyListener('F');
     this.keyRight = new KeyListener('H');
     this.keyUp = new KeyListener('T');
     this.keyDown = new KeyListener('G');
-  }
-  Object.defineProperty(KeyboardInput.prototype, 'actor', {
-    configurable: true,
-    get: function () {
-      if (this.actor_vvd834$_0 == null)
-        return throwUPAE('actor');
-      return this.actor_vvd834$_0;
-    },
-    set: function (actor) {
-      this.actor_vvd834$_0 = actor;
-    }
-  });
-  KeyboardInput.prototype.BeginPlay = function () {
     var bp = Blueprint.Load('/Game/ExampleBlueprint');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
-  };
+  }
   KeyboardInput.prototype.Tick = function (deltaTime) {
     this.yaw += 1.0;
     this.actor.K2_SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
@@ -482,57 +353,17 @@
   };
   function SceneLights() {
     KotlinObject.call(this);
-    this.tickable_4rsz1e$_0 = this.tickable_4rsz1e$_0;
-  }
-  Object.defineProperty(SceneLights.prototype, 'tickable', {
-    configurable: true,
-    get: function () {
-      if (this.tickable_4rsz1e$_0 == null)
-        return throwUPAE('tickable');
-      return this.tickable_4rsz1e$_0;
-    },
-    set: function (tickable) {
-      this.tickable_4rsz1e$_0 = tickable;
-    }
-  });
-  function SceneLights$BeginPlay$ObjectLiteral() {
-    this.k = 1.8;
-    this.r = 150;
-    this.p = Vector_0(400, -100, 100);
-  }
-  SceneLights$BeginPlay$ObjectLiteral.$metadata$ = {
-    kind: Kind_CLASS,
-    interfaces: []
-  };
-  function SceneLights$BeginPlay$ObjectLiteral_0() {
-    this.k = 1.5;
-    this.r = 30;
-    this.p = Vector_0(400, void 0, 150);
-  }
-  SceneLights$BeginPlay$ObjectLiteral_0.$metadata$ = {
-    kind: Kind_CLASS,
-    interfaces: []
-  };
-  function SceneLights$BeginPlay$ObjectLiteral_1() {
-    this.k = 0.1;
-    this.r = 230;
-    this.p = Vector_0(400, void 0, 250);
-  }
-  SceneLights$BeginPlay$ObjectLiteral_1.$metadata$ = {
-    kind: Kind_CLASS,
-    interfaces: []
-  };
-  SceneLights.prototype.BeginPlay = function () {
+    this.tickable = null;
     var $receiver = GWorld.GetAllActorsOfClass(Light).OutActors;
     var tmp$;
     for (tmp$ = 0; tmp$ !== $receiver.length; ++tmp$) {
       var element = $receiver[tmp$];
       element.K2_DestroyActor();
     }
-    this.tickable = listOf([this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(1)), new SceneLights$BeginPlay$ObjectLiteral()), this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, 1)), new SceneLights$BeginPlay$ObjectLiteral_0()), this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, void 0, 1)), new SceneLights$BeginPlay$ObjectLiteral_1())]);
+    this.tickable = listOf([this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(1)), new SceneLights_init$ObjectLiteral()), this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, 1)), new SceneLights_init$ObjectLiteral_0()), this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, void 0, 1)), new SceneLights_init$ObjectLiteral_1())]);
     this.bg_atrclb$(Vector_0(400, -100, -150));
     this.skel_atrclb$(Vector_0(400, -150, 0));
-  };
+  }
   SceneLights.prototype.light_qxwhts$ = function (color) {
     var actor = new PointLight(GWorld);
     actor.LightComponent.SetMobility('Movable');
@@ -609,6 +440,33 @@
       element.K2_DestroyActor();
     }
   };
+  function SceneLights_init$ObjectLiteral() {
+    this.k = 1.8;
+    this.r = 150;
+    this.p = Vector_0(400, -100, 100);
+  }
+  SceneLights_init$ObjectLiteral.$metadata$ = {
+    kind: Kind_CLASS,
+    interfaces: []
+  };
+  function SceneLights_init$ObjectLiteral_0() {
+    this.k = 1.5;
+    this.r = 30;
+    this.p = Vector_0(400, void 0, 150);
+  }
+  SceneLights_init$ObjectLiteral_0.$metadata$ = {
+    kind: Kind_CLASS,
+    interfaces: []
+  };
+  function SceneLights_init$ObjectLiteral_1() {
+    this.k = 0.1;
+    this.r = 230;
+    this.p = Vector_0(400, void 0, 250);
+  }
+  SceneLights_init$ObjectLiteral_1.$metadata$ = {
+    kind: Kind_CLASS,
+    interfaces: []
+  };
   SceneLights.$metadata$ = {
     kind: Kind_CLASS,
     simpleName: 'SceneLights',
@@ -616,26 +474,13 @@
   };
   function ThirdPerson() {
     KotlinObject.call(this);
-    this.actor_ica0dl$_0 = this.actor_ica0dl$_0;
+    this.actor = null;
     this.yaw = 180.0;
     this.keyLeft = new KeyListener('A');
     this.keyRight = new KeyListener('D');
     this.keyUp = new KeyListener('W');
     this.keyDown = new KeyListener('S');
     this.keyJump = new KeyListener('SpaceBar');
-  }
-  Object.defineProperty(ThirdPerson.prototype, 'actor', {
-    configurable: true,
-    get: function () {
-      if (this.actor_ica0dl$_0 == null)
-        return throwUPAE('actor');
-      return this.actor_ica0dl$_0;
-    },
-    set: function (actor) {
-      this.actor_ica0dl$_0 = actor;
-    }
-  });
-  ThirdPerson.prototype.BeginPlay = function () {
     var bp = Blueprint.Load('/Game/ThirdPersonBP');
     this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, 180));
     this.actor.CapsuleComponent.CapsuleRadius = 42.0;
@@ -653,7 +498,7 @@
     this.actor.Mesh.RelativeLocation = Vector.MakeVector(0, 0, -96);
     var myPlayerController = GWorld.GetPlayerController(0);
     myPlayerController.Possess(this.actor);
-  };
+  }
   ThirdPerson.prototype.Tick = function (deltaTime) {
     if (this.keyLeft.down()) {
       this.MoveRight_14dthe$(-1.0);
@@ -712,10 +557,13 @@
     interfaces: []
   };
   function init() {
-    console.log('<<<INIT>>>');
-    return getCallableRef('cleanup', function ($receiver) {
-      return $receiver.cleanup(), Unit;
-    }.bind(null, new WhiteRotatingCube()));
+    println('<<<INIT>>>');
+    return getCallableRef('cleanup', function () {
+      return cleanup(), Unit;
+    });
+  }
+  function cleanup() {
+    println('<<<Cleanup>>>');
   }
   function KotlinUnrealClassCache() {
     KotlinUnrealClassCache_instance = this;
@@ -746,8 +594,9 @@
     instance.Root = Root;
     instance.Root.SetKotlinObject(instance);
     instance.konstructor();
-    if (instance.BeginPlay)
-      instance.BeginPlay();
+    if (!global.precious)
+      global.precious = [];
+    global.precious.push(instance);
   }
   function GenerateClass($receiver, world, position, rotation) {
     var receiver = $receiver;
@@ -846,6 +695,7 @@
   _.SceneLights = SceneLights;
   _.ThirdPerson = ThirdPerson;
   _.init = init;
+  _.cleanup = cleanup;
   _.unrealProxyClass = unrealProxyClass;
   var package$ue = _.ue || (_.ue = {});
   package$ue.GenerateClass_6p5t4y$ = GenerateClass;

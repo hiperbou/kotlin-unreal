@@ -1,19 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "JSGameInstance.h"
-#include "KotlinObject.h"
-#include "JavascriptComponent.h"
+#include "KotlinGameInstance.h"
 #include "JavascriptIsolate.h"
 #include "JavascriptContext.h"
 #include "Engine/World.h"
 #include "Engine/Engine.h"
-#include "IV8.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
-#include "Regex.h"
-#include "KotlinObject.h"
 
-
-void UJSGameInstance::Init()
+void UKotlinGameInstance::Init()
 {
 	Super::Init();
 
@@ -32,7 +25,7 @@ void UJSGameInstance::Init()
 	LoadJSFile();
 }
 
-void UJSGameInstance::LoadJSFile()
+void UKotlinGameInstance::LoadJSFile()
 {
 	if (JavascriptContext == nullptr) return;
 
@@ -48,17 +41,17 @@ void UJSGameInstance::LoadJSFile()
 	JavascriptContext->RunScript(script);
 }
 
-void UJSGameInstance::Shutdown()
+void UKotlinGameInstance::Shutdown()
 {
 	Isolate->RemoveFromRoot();
 }
 
-UJavascriptIsolate* UJSGameInstance::GetIsolate()
+UJavascriptIsolate* UKotlinGameInstance::GetIsolate()
 {
 	return Isolate;
 }
 
-UJavascriptContext* UJSGameInstance::GetContext()
+UJavascriptContext* UKotlinGameInstance::GetContext()
 {
 	return JavascriptContext;
 }

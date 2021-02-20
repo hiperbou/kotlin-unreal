@@ -5,7 +5,6 @@ import ue.Root
 //external fun require(r:String):dynamic
 
 external interface KotlinUnrealObject {
-    fun BeginPlay()
     fun Tick(deltaTime:Float)
     fun BeginOverlap(other: Actor):String
     fun OnDestroyed()
@@ -13,7 +12,6 @@ external interface KotlinUnrealObject {
 
 external open class KotlinObject: KotlinUnrealObject {
     val Root:ActorComponent
-    override fun BeginPlay():Unit = definedExternally
     override fun Tick(deltaTime: Float):Unit = definedExternally
     override fun BeginOverlap(other: Actor):String = definedExternally
     override fun OnDestroyed():Unit = definedExternally
@@ -41,7 +39,6 @@ fun unrealProxyClass(global:dynamic, klass:dynamic, className:String) {
     instance.Root.SetKotlinObject(instance)
     instance.konstructor()
     if(!global.precious) global.precious = js("[]"); global.precious.push(instance)
-    if(instance.BeginPlay) instance.BeginPlay()
 }
 
 /*

@@ -2,16 +2,16 @@ import KotlinObject
 import ue.*
 
 class FirstPerson:KotlinObject() {
-    lateinit var actor:Character
+    val actor:Character
 
-    lateinit var myCamera:CameraComponent /*EditAnywhere+CameraComponent*/
-    lateinit var myFPMesh:SkeletalMeshComponent /*EditAnywhere+SkeletalMeshComponent*/
-    lateinit var myFPGunMesh:SkeletalMeshComponent /*EditAnywhere+SkeletalMeshComponent*/
+    val myCamera:CameraComponent /*EditAnywhere+CameraComponent*/
+    val myFPMesh:SkeletalMeshComponent /*EditAnywhere+SkeletalMeshComponent*/
+    val myFPGunMesh:SkeletalMeshComponent /*EditAnywhere+SkeletalMeshComponent*/
 
-    lateinit var fireSound:SoundBase /*EditAnywhere+SoundBase*/
-    lateinit var fireAnimation:AnimMontage /*EditAnywhere+AnimMontage*/
+    val fireSound:SoundBase /*EditAnywhere+SoundBase*/
+    val fireAnimation:AnimMontage /*EditAnywhere+AnimMontage*/
 
-    lateinit var gunOffset:Vector /*EditAnywhere+Vector*/
+    val gunOffset:Vector /*EditAnywhere+Vector*/
     var weaponRange:Double = 0.0 /*EditAnywhere+float*/
     var weaponDamage:Double = 0.0 /*EditAnywhere+float*/
 
@@ -24,7 +24,7 @@ class FirstPerson:KotlinObject() {
     val keyJump = KeyListener("SpaceBar")
     val keyFire = KeyListener("LeftMouseButton")
 
-    override fun BeginPlay() {
+    init {
         //actor = Character(GWorld, Vector(), Rotator())
         val bp = Blueprint.Load("/Game/FirstPersonBP")
         actor = bp.GenerateClass(GWorld, Vector(), Rotator())

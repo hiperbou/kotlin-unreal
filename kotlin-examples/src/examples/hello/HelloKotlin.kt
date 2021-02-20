@@ -2,11 +2,9 @@ import ue.*
 
 class HelloKotlin:KotlinObject() {
     var yaw = 0.0
-    lateinit var actor: TextRenderActor
+    var actor: TextRenderActor
 
-    override fun BeginPlay() {
-        println("BeginPlay")
-
+    init {
         val pos = Vector(X = 100, Z = 100)
         val rotator = Rotator(Yaw = yaw)
 
@@ -29,7 +27,6 @@ class HelloKotlin:KotlinObject() {
     override fun OnDestroyed() {
         println("OnDestroyed")
     }
-
 
     fun cleanup():Unit {
         console.log("<<<cleanup>>>")
