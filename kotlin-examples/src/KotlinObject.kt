@@ -17,6 +17,9 @@ external open class KotlinObject: KotlinUnrealObject {
     override fun OnDestroyed():Unit = definedExternally
 }
 
+fun <T:Actor>KotlinObject.GetOwner():T {
+    return Root.GetOwner().asDynamic()
+}
 
 external var global:dynamic
 

@@ -195,7 +195,7 @@
                     let s = String(F)
 
                     let matches = RE_func.exec(s)
-                    if(!matches) throw "invalid function"
+                    if(!matches) throw "invalid function: " + s
 
                     let functionName = matches[1]
                     s = matches[matches[3] ? 3 : 6]
@@ -254,7 +254,7 @@
                 let nonNative = _.includes(classFlags, "NonNative");
                 _.remove(classFlags, "NonNative");
                 klass = CreateClass(className, {
-                    Parent: parentClass,
+                    Parent: KotlinObject,//parentClass,
                     Functions: proxy,
                     ClassFlags: classFlags,
                     Outer: thePackage,

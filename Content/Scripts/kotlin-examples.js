@@ -7,6 +7,7 @@
   var ensureNotNull = Kotlin.ensureNotNull;
   var numberToDouble = Kotlin.numberToDouble;
   var throwCCE = Kotlin.throwCCE;
+  var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
   var Unit = Kotlin.kotlin.Unit;
   var getCallableRef = Kotlin.getCallableRef;
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
@@ -27,6 +28,10 @@
   FirstPerson.prototype.constructor = FirstPerson;
   HelloKotlin.prototype = Object.create(KotlinObject.prototype);
   HelloKotlin.prototype.constructor = HelloKotlin;
+  BaseCylinder.prototype = Object.create(KotlinObject.prototype);
+  BaseCylinder.prototype.constructor = BaseCylinder;
+  CustomCylinder.prototype = Object.create(BaseCylinder.prototype);
+  CustomCylinder.prototype.constructor = CustomCylinder;
   KeyboardInput.prototype = Object.create(KotlinObject.prototype);
   KeyboardInput.prototype.constructor = KeyboardInput;
   SceneLights.prototype = Object.create(KotlinObject.prototype);
@@ -99,7 +104,7 @@
     this.touched = 0;
   }
   RedRotatingCube.prototype.Tick = function (deltaTime) {
-    var actor = this.Root.GetOwner();
+    var actor = GetOwner(this);
     if (actor.actorToCopy != null) {
       actor.K2_SetActorRotation(Rotator_0(void 0, void 0, ensureNotNull(actor.actorToCopy).Yaw), false);
     }};
@@ -127,7 +132,7 @@
   }
   WhiteRotatingCube.prototype.Tick = function (deltaTime) {
     this.acumulatedDeltaTime += deltaTime;
-    var actor = this.Root.GetOwner();
+    var actor = GetOwner(this);
     actor.Yaw = actor.Yaw + actor.Speed * deltaTime * 4;
     actor.K2_SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
   };
@@ -317,6 +322,69 @@
   HelloKotlin.$metadata$ = {
     kind: Kind_CLASS,
     simpleName: 'HelloKotlin',
+    interfaces: []
+  };
+  function BaseCylinder() {
+    KotlinObject.call(this);
+    this.deltaTimeAccum = 0.0;
+    this.yaw = 0.0;
+  }
+  BaseCylinder.prototype.Tick = function (deltaTime) {
+    this.deltaTimeAccum += deltaTime;
+    var actor = GetOwner(this);
+    this.yaw += 100 * deltaTime;
+    actor.K2_SetActorRotation(Rotator_0(void 0, this.yaw), false);
+  };
+  BaseCylinder.prototype.BeginOverlap = function (other) {
+    return this.getName();
+  };
+  BaseCylinder.prototype.getName = function () {
+    return 'Base Cylinder';
+  };
+  BaseCylinder.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'BaseCylinder',
+    interfaces: [ICylinder]
+  };
+  function CustomCylinder() {
+    BaseCylinder.call(this);
+  }
+  CustomCylinder.prototype.getName = function () {
+    return 'Custom Cylinder';
+  };
+  CustomCylinder.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'CustomCylinder',
+    interfaces: [BaseCylinder]
+  };
+  function DelegatedCylinder(baseCylinder) {
+    if (baseCylinder === void 0)
+      baseCylinder = new BaseCylinder();
+    this.$delegate_159cgl$_0 = baseCylinder;
+    this.$delegate_159cgl$_1 = baseCylinder;
+  }
+  DelegatedCylinder.prototype.getName = function () {
+    return 'Delegated Cylinder';
+  };
+  DelegatedCylinder.prototype.BeginOverlap = function (other) {
+    return this.$delegate_159cgl$_0.BeginOverlap(other);
+  };
+  DelegatedCylinder.prototype.OnDestroyed = function () {
+    return this.$delegate_159cgl$_0.OnDestroyed();
+  };
+  DelegatedCylinder.prototype.Tick = function (deltaTime) {
+    return this.$delegate_159cgl$_0.Tick(deltaTime);
+  };
+  DelegatedCylinder.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'DelegatedCylinder',
+    interfaces: [ICylinder]
+  };
+  function ICylinder() {
+  }
+  ICylinder.$metadata$ = {
+    kind: Kind_INTERFACE,
+    simpleName: 'ICylinder',
     interfaces: []
   };
   function KeyboardInput() {
@@ -565,6 +633,9 @@
   function cleanup() {
     println('<<<Cleanup>>>');
   }
+  function GetOwner($receiver) {
+    return $receiver.Root.GetOwner();
+  }
   function KotlinUnrealClassCache() {
     KotlinUnrealClassCache_instance = this;
     this.cache = LinkedHashMap_init();
@@ -691,11 +762,16 @@
   _.WhiteRotatingCube = WhiteRotatingCube;
   _.FirstPerson = FirstPerson;
   _.HelloKotlin = HelloKotlin;
+  _.BaseCylinder = BaseCylinder;
+  _.CustomCylinder = CustomCylinder;
+  _.DelegatedCylinder = DelegatedCylinder;
+  _.ICylinder = ICylinder;
   _.KeyboardInput = KeyboardInput;
   _.SceneLights = SceneLights;
   _.ThirdPerson = ThirdPerson;
   _.init = init;
   _.cleanup = cleanup;
+  _.GetOwner_yjkk8i$ = GetOwner;
   _.unrealProxyClass = unrealProxyClass;
   var package$ue = _.ue || (_.ue = {});
   package$ue.GenerateClass_6p5t4y$ = GenerateClass;

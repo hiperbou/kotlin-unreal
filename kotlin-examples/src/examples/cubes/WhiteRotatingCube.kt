@@ -6,8 +6,8 @@ class WhiteRotatingCube: KotlinObject() {
     var acumulatedDeltaTime = 0.0
 
     override fun Tick(deltaTime:Float) {
-        acumulatedDeltaTime += deltaTime;
-        val actor: RotatingCubeActor = Root.GetOwner().asDynamic()
+        acumulatedDeltaTime += deltaTime
+        val actor = GetOwner<RotatingCubeActor>()
         actor.Yaw += actor.Speed * deltaTime * 4
         actor.K2_SetActorRotation(Rotator(Yaw  = actor.Yaw), false)
     }

@@ -5,7 +5,7 @@ class RedRotatingCube: KotlinObject() {
     var touched = 0
 
     override fun Tick(deltaTime: Float) {
-        val actor: RotatingCubeActor = Root.GetOwner().asDynamic()
+        val actor = GetOwner<RotatingCubeActor>()
         with(actor){
             if (actorToCopy != null) {
                 K2_SetActorRotation(Rotator(Yaw = actorToCopy!!.Yaw), false)
