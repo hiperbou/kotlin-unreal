@@ -7,12 +7,12 @@
   var ensureNotNull = Kotlin.ensureNotNull;
   var numberToDouble = Kotlin.numberToDouble;
   var throwCCE = Kotlin.throwCCE;
-  var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
+  var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var Unit = Kotlin.kotlin.Unit;
+  var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
   var getCallableRef = Kotlin.getCallableRef;
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
   var Math_0 = Math;
-  var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
   var equals = Kotlin.equals;
   var first = Kotlin.kotlin.collections.first_2p1efm$;
@@ -26,6 +26,14 @@
   WhiteRotatingCube.prototype.constructor = WhiteRotatingCube;
   FirstPerson.prototype = Object.create(KotlinObject.prototype);
   FirstPerson.prototype.constructor = FirstPerson;
+  Game.prototype = Object.create(KotlinObject.prototype);
+  Game.prototype.constructor = Game;
+  KotlinLogo.prototype = Object.create(KotlinObject.prototype);
+  KotlinLogo.prototype.constructor = KotlinLogo;
+  Pickup.prototype = Object.create(KotlinObject.prototype);
+  Pickup.prototype.constructor = Pickup;
+  Switch.prototype = Object.create(KotlinObject.prototype);
+  Switch.prototype.constructor = Switch;
   HelloKotlin.prototype = Object.create(KotlinObject.prototype);
   HelloKotlin.prototype.constructor = HelloKotlin;
   BaseCylinder.prototype = Object.create(KotlinObject.prototype);
@@ -293,6 +301,231 @@
   FirstPerson.$metadata$ = {
     kind: Kind_CLASS,
     simpleName: 'FirstPerson',
+    interfaces: []
+  };
+  function Game() {
+    KotlinObject.call(this);
+    this.actor = null;
+    this.myCamera = null;
+    this.myFPMesh = null;
+    this.myFPGunMesh = null;
+    this.fireSound = null;
+    this.fireAnimation = null;
+    this.gunOffset = null;
+    this.weaponRange = 0.0;
+    this.weaponDamage = 0.0;
+    this.yaw = 180.0;
+    this.keyLeft = new KeyListener('A');
+    this.keyRight = new KeyListener('D');
+    this.keyUp = new KeyListener('W');
+    this.keyDown = new KeyListener('S');
+    this.keyJump = new KeyListener('SpaceBar');
+    this.keyFire = new KeyListener('LeftMouseButton');
+    var tmp$;
+    var bp = Blueprint.Load('/Game/FirstPersonBP');
+    this.actor = GenerateClass(bp, GWorld, new Vector(), new Rotator());
+    this.actor.CapsuleComponent.CapsuleRadius = 42.0;
+    this.actor.CapsuleComponent.CapsuleHalfHeight = 96.0;
+    this.myCamera = Kotlin.isType(tmp$ = this.actor.GetComponentByClass(CameraComponent), CameraComponent) ? tmp$ : throwCCE();
+    this.myCamera.AttachParent = this.actor.CapsuleComponent;
+    this.myCamera.RelativeLocation = Vector_0(0, 0, 64);
+    this.myCamera.bUsePawnControlRotation = true;
+    this.myFPMesh = GetComponentByName(this.actor, SkeletalMeshComponent, 'Mesh2P');
+    this.myFPMesh.bOnlyOwnerSee = true;
+    this.myFPMesh.AttachParent = this.myCamera;
+    this.myFPMesh.bCastDynamicShadow = false;
+    this.myFPMesh.CastShadow = false;
+    this.myFPMesh.RelativeLocation = Vector_0(0, -4, -156);
+    this.myFPMesh.RelativeRotation = Rotator_0(5, 2, -20);
+    this.myFPGunMesh = GetComponentByName(this.actor, SkeletalMeshComponent, 'FP_Gun');
+    this.myFPGunMesh.bOnlyOwnerSee = true;
+    this.myFPGunMesh.bCastDynamicShadow = false;
+    this.myFPGunMesh.CastShadow = false;
+    this.myFPGunMesh.AttachParent = this.myFPMesh;
+    this.myFPGunMesh.AttachSocketName = 'GripPoint';
+    var FP_mesh = SkeletalMesh.Load('/Game/FirstPerson/Character/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms');
+    var FPGun_mesh = SkeletalMesh.Load('/Game/FirstPerson/FPWeapon/Mesh/SK_FPGun.SK_FPGun');
+    var ANI_AnimationBP = AnimBlueprint.Load('/Game/FirstPerson/Animations/FirstPerson_animBP.FirstPerson_AnimBP').GeneratedClass;
+    this.fireSound = SoundBase.Load('/Game/FirstPerson/Audio/FirstPersonTemplateWeaponFire02.FirstPersonTemplateWeaponFire02');
+    this.fireAnimation = AnimMontage.Load('/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage');
+    this.myFPMesh.SetSkeletalMesh(FP_mesh, false);
+    this.myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false);
+    this.myFPMesh.SetAnimClass(ANI_AnimationBP);
+    this.weaponRange = 5000.0;
+    this.weaponDamage = 500000.0;
+    this.gunOffset = Vector_0(100, 30, 10);
+    var myPlayerController = GWorld.GetPlayerController(0);
+    myPlayerController.Possess(this.actor);
+  }
+  Game.prototype.Tick = function (deltaTime) {
+    if (this.keyLeft.down()) {
+      this.MoveRight_14dthe$(-1.0);
+    }if (this.keyRight.down()) {
+      this.MoveRight_14dthe$(1.0);
+    }if (this.keyUp.down()) {
+      this.MoveForward_14dthe$(1.0);
+    }if (this.keyDown.down()) {
+      this.MoveForward_14dthe$(-1.0);
+    }if (this.keyJump.pressed()) {
+      this.startJump();
+    }if (this.keyJump.released()) {
+      this.stopJump();
+    }if (this.keyFire.pressed()) {
+      this.onFire();
+    }this.Turn_14dthe$(this.axisTurn());
+    this.LookUp_14dthe$(this.axisLookUp());
+  };
+  Game.prototype.Turn_14dthe$ = function (value) {
+    this.actor.AddControllerYawInput(value);
+  };
+  Game.prototype.LookUp_14dthe$ = function (value) {
+    this.actor.AddControllerPitchInput(value);
+  };
+  Game.prototype.MoveForward_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tForwardVector = tPawnRotator.GetForwardVector();
+    this.actor.AddMovementInput(tForwardVector, value, false);
+  };
+  Game.prototype.MoveRight_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tRightVector = tPawnRotator.GetRightVector();
+    this.actor.AddMovementInput(tRightVector, value, false);
+  };
+  Game.prototype.startJump = function () {
+    this.actor.Jump();
+  };
+  Game.prototype.stopJump = function () {
+    this.actor.StopJumping();
+  };
+  Game.prototype.onFire = function () {
+    console.log('shooting projectile');
+    GWorld.PlaySoundAtLocation(this.fireSound, this.actor.GetActorLocation(), Rotator_0(0, 0, 0), 1, 1, 0, this.fireSound.AttenuationSettings, this.fireSound.SoundConcurrencySettings, this.actor);
+    var tempAnimInstance = this.myFPMesh.GetAnimInstance();
+    tempAnimInstance.Montage_Play(this.fireAnimation, 1, 'MontageLength', 0, true);
+    var tempCamera = CameraComponent.C(this.myCamera);
+    var tempStartTrace = tempCamera.K2_GetComponentLocation();
+    var tempForwardDirection = tempCamera.K2_GetComponentRotation().GetForwardVector();
+    var tempOffset = tempForwardDirection.Multiply_VectorFloat(this.weaponRange);
+    var tempEndTrace = Vector.Add_VectorVector(tempStartTrace, tempOffset);
+    var tempHitResult = new HitResult();
+    GWorld.LineTraceSingle(tempStartTrace, tempEndTrace, 'TraceTypeQuery2', false, [this.actor], 'ForDuration', tempHitResult, true, LinearColor_0(1, 0, 0), LinearColor_0(1, 0, 0), 3);
+    var damageActor = tempHitResult.Actor;
+    var damageComponent = tempHitResult.Component;
+    if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
+      var tempImpulseVector = tempForwardDirection.Multiply_VectorFloat(this.weaponDamage);
+      damageComponent.AddImpulseAtLocation(tempImpulseVector, tempHitResult.ImpactPoint, '');
+    }};
+  Game.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.K2_DestroyActor();
+  };
+  Game.prototype.axisTurn = function () {
+    return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
+  };
+  Game.prototype.axisLookUp = function () {
+    return -numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
+  };
+  Game.prototype.createWall = function () {
+    for (var y = 0; y <= 9; y++) {
+      for (var z = 0; z <= 3; z++) {
+        this.createCube_atrclb$(Vector_0(450.0, -450.0 + (y * 100 | 0), 70 + (z * 100 | 0) | 0));
+      }
+    }
+  };
+  Game.prototype.createCube_atrclb$ = function (position) {
+    var bp = Blueprint.Load('/Game/CubeBP');
+    bp.GeneratedClass;
+    return GenerateClass(bp, GWorld, position, new Rotator());
+  };
+  Game.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Game',
+    interfaces: []
+  };
+  function KotlinLogo() {
+    KotlinObject.call(this);
+    this.yaw = 0.0;
+  }
+  KotlinLogo.prototype.Tick = function (deltaTime) {
+    var actor = GetOwner(this);
+    this.yaw += 100 * deltaTime;
+    actor.K2_SetActorRotation(Rotator_0(90.0, void 0, this.yaw), false);
+  };
+  KotlinLogo.prototype.BeginOverlap = function (other) {
+    return 'toucheds';
+  };
+  KotlinLogo.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'KotlinLogo',
+    interfaces: []
+  };
+  function Pickup() {
+    Pickup$Companion_getInstance();
+    KotlinObject.call(this);
+  }
+  Pickup.prototype.BeginOverlap = function (other) {
+    var tmp$;
+    tmp$ = Pickup$Companion_getInstance().armor;
+    Pickup$Companion_getInstance().armor = tmp$ + 1 | 0;
+    GetOwner(this).K2_DestroyActor();
+    return 'armor +1 -> ' + Pickup$Companion_getInstance().armor;
+  };
+  function Pickup$Companion() {
+    Pickup$Companion_instance = this;
+    this.armor = 0;
+  }
+  Pickup$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: []
+  };
+  var Pickup$Companion_instance = null;
+  function Pickup$Companion_getInstance() {
+    if (Pickup$Companion_instance === null) {
+      new Pickup$Companion();
+    }return Pickup$Companion_instance;
+  }
+  Pickup.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Pickup',
+    interfaces: []
+  };
+  function Switch() {
+    Switch$Companion_getInstance();
+    KotlinObject.call(this);
+  }
+  Switch.prototype.BeginOverlap = function (other) {
+    var tmp$;
+    var actor = GetOwner(this);
+    (tmp$ = actor.Lock) != null ? (tmp$.K2_DestroyActor(), Unit) : null;
+    var plate = actor.GetComponentByClass(StaticMeshComponent);
+    var button = GetComponentByName(actor, StaticMeshComponent, 'button');
+    button.K2_SetRelativeLocation(Vector_0(0, 20, 0), false);
+    plate.SetMaterial(0, button.GetMaterial(0));
+    return 'Lock opened';
+  };
+  function Switch$Companion() {
+    Switch$Companion_instance = this;
+    this.armor = 0;
+  }
+  Switch$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: []
+  };
+  var Switch$Companion_instance = null;
+  function Switch$Companion_getInstance() {
+    if (Switch$Companion_instance === null) {
+      new Switch$Companion();
+    }return Switch$Companion_instance;
+  }
+  Switch.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Switch',
     interfaces: []
   };
   function HelloKotlin() {
@@ -761,6 +994,16 @@
   _.RedRotatingCube = RedRotatingCube;
   _.WhiteRotatingCube = WhiteRotatingCube;
   _.FirstPerson = FirstPerson;
+  _.Game = Game;
+  _.KotlinLogo = KotlinLogo;
+  Object.defineProperty(Pickup, 'Companion', {
+    get: Pickup$Companion_getInstance
+  });
+  _.Pickup = Pickup;
+  Object.defineProperty(Switch, 'Companion', {
+    get: Switch$Companion_getInstance
+  });
+  _.Switch = Switch;
   _.HelloKotlin = HelloKotlin;
   _.BaseCylinder = BaseCylinder;
   _.CustomCylinder = CustomCylinder;

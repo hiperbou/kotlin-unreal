@@ -1,6 +1,6 @@
 import ue.*
 
-class FirstPerson:KotlinObject() {
+class Game:KotlinObject() {
     val actor:Character
 
     val myCamera:CameraComponent /*EditAnywhere+CameraComponent*/
@@ -88,7 +88,7 @@ class FirstPerson:KotlinObject() {
         gunOffset = Vector(100, 30, 10)
 
         //Create a wall of cubes just for fun
-        createWall()
+        //createWall()
 
         val myPlayerController = GWorld.GetPlayerController(0)
         //possess the MyThirdPerson character that just spawned
