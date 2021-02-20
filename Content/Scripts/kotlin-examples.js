@@ -3,21 +3,23 @@
   var throwUPAE = Kotlin.throwUPAE;
   var println = Kotlin.kotlin.io.println_s8jyv4$;
   var Kind_CLASS = Kotlin.Kind.CLASS;
+  var Random = Kotlin.kotlin.random.Random;
+  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var ensureNotNull = Kotlin.ensureNotNull;
   var throwCCE = Kotlin.throwCCE;
   var numberToDouble = Kotlin.numberToDouble;
   var Unit = Kotlin.kotlin.Unit;
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
-  var Random = Kotlin.kotlin.random.Random;
   var getCallableRef = Kotlin.getCallableRef;
   var Math_0 = Math;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
   var equals = Kotlin.equals;
   var first = Kotlin.kotlin.collections.first_2p1efm$;
-  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   HelloBlueprint.prototype = Object.create(KotlinObject.prototype);
   HelloBlueprint.prototype.constructor = HelloBlueprint;
+  HelloBlueprints.prototype = Object.create(KotlinObject.prototype);
+  HelloBlueprints.prototype.constructor = HelloBlueprints;
   RedRotatingCube.prototype = Object.create(KotlinObject.prototype);
   RedRotatingCube.prototype.constructor = RedRotatingCube;
   WhiteRotatingCube.prototype = Object.create(KotlinObject.prototype);
@@ -70,6 +72,56 @@
   HelloBlueprint.$metadata$ = {
     kind: Kind_CLASS,
     simpleName: 'HelloBlueprint',
+    interfaces: []
+  };
+  function HelloBlueprints() {
+    KotlinObject.call(this);
+    this.WIDTH = 400.0;
+    this.actorList_htiunx$_0 = this.actorList_htiunx$_0;
+  }
+  Object.defineProperty(HelloBlueprints.prototype, 'actorList', {
+    configurable: true,
+    get: function () {
+      if (this.actorList_htiunx$_0 == null)
+        return throwUPAE('actorList');
+      return this.actorList_htiunx$_0;
+    },
+    set: function (actorList) {
+      this.actorList_htiunx$_0 = actorList;
+    }
+  });
+  HelloBlueprints.prototype.BeginPlay = function () {
+    this.WIDTH = 400.0;
+    this.actorList = ArrayList_init();
+    for (var i = 0; i <= 10; i++)
+      this.actorList.add_11rb$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
+  };
+  HelloBlueprints.prototype.rnd_lu1900$ = function (min, max) {
+    return min + Random.Default.nextDouble() * (max - min);
+  };
+  HelloBlueprints.prototype.createActor_u22e3q$ = function (x, y, yaw) {
+    return GenerateClass(Blueprint.Load('/Game/ExampleBlueprint'), GWorld, Vector_0(x, y), Rotator_0(void 0, void 0, yaw));
+  };
+  HelloBlueprints.prototype.Tick = function (deltaTime) {
+    var tmp$;
+    tmp$ = this.actorList.iterator();
+    while (tmp$.hasNext()) {
+      var element = tmp$.next();
+      element.K2_AddActorLocalRotation(Rotator_0(void 0, void 0, 1), false);
+    }
+  };
+  HelloBlueprints.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    var tmp$;
+    tmp$ = this.actorList.iterator();
+    while (tmp$.hasNext()) {
+      var element = tmp$.next();
+      element.K2_DestroyActor();
+    }
+  };
+  HelloBlueprints.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'HelloBlueprints',
     interfaces: []
   };
   function RedRotatingCube() {
@@ -987,6 +1039,7 @@
     interfaces: []
   };
   _.HelloBlueprint = HelloBlueprint;
+  _.HelloBlueprints = HelloBlueprints;
   _.RedRotatingCube = RedRotatingCube;
   _.WhiteRotatingCube = WhiteRotatingCube;
   _.FirstPerson = FirstPerson;
