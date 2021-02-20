@@ -1,6 +1,6 @@
 import ue.*
 
-class RedRotatingCube:KotlinObject() {
+class RedRotatingCube: KotlinObject() {
 
     var touched = 0
 

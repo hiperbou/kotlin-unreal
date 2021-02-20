@@ -1,6 +1,6 @@
 import ue.*
 
-class WhiteRotatingCube:KotlinObject() {
+class WhiteRotatingCube: KotlinObject() {
 
     var touched = 0
     var acumulatedDeltaTime = 0.0
@@ -16,7 +16,7 @@ class WhiteRotatingCube:KotlinObject() {
 
     override fun Tick(deltaTime:Float) {
         acumulatedDeltaTime += deltaTime;
-        val actor:RotatingCubeActor = Root.GetOwner().asDynamic()
+        val actor: RotatingCubeActor = Root.GetOwner().asDynamic()
         actor.Yaw += actor.Speed * deltaTime * 4
         actor.K2_SetActorRotation(Rotator(Yaw  = actor.Yaw), false)
     }
