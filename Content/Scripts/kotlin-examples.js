@@ -7,6 +7,7 @@
   var ensureNotNull = Kotlin.ensureNotNull;
   var numberToDouble = Kotlin.numberToDouble;
   var throwCCE = Kotlin.throwCCE;
+  var contains = Kotlin.kotlin.text.contains_li3zpu$;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var Unit = Kotlin.kotlin.Unit;
   var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
@@ -415,7 +416,12 @@
     GWorld.LineTraceSingle(tempStartTrace, tempEndTrace, 'TraceTypeQuery2', false, [this.actor], 'ForDuration', tempHitResult, true, LinearColor_0(1, 0, 0), LinearColor_0(1, 0, 0), 3);
     var damageActor = tempHitResult.Actor;
     var damageComponent = tempHitResult.Component;
-    if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
+    if (damageActor != null && contains(damageActor.GetName(), 'AI')) {
+      var aiActor = damageActor;
+      if (!ensureNotNull(damageComponent).IsAnySimulatingPhysics()) {
+        aiActor.GetController().UnPossess();
+        damageComponent.SetSimulatePhysics(true);
+      }}if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
       var tempImpulseVector = tempForwardDirection.Multiply_VectorFloat(this.weaponDamage);
       damageComponent.AddImpulseAtLocation(tempImpulseVector, tempHitResult.ImpactPoint, '');
     }};
@@ -449,6 +455,8 @@
   function KotlinLogo() {
     KotlinObject.call(this);
     this.yaw = 0.0;
+    this.bp = Blueprint.Load('/Game/AIKubeController');
+    this.aiBP = Blueprint.Load('/Game/CubeAI');
   }
   KotlinLogo.prototype.Tick = function (deltaTime) {
     var actor = GetOwner(this);
@@ -456,7 +464,23 @@
     actor.K2_SetActorRotation(Rotator_0(90.0, void 0, this.yaw), false);
   };
   KotlinLogo.prototype.BeginOverlap = function (other) {
-    return 'toucheds';
+    this.spawnAICubes();
+    GetOwner(this).K2_DestroyActor();
+    return 'touched';
+  };
+  KotlinLogo.prototype.createAICube_atrclb$ = function (position) {
+    return GenerateClass(this.bp, GWorld, position, new Rotator());
+  };
+  KotlinLogo.prototype.createAIController = function () {
+    return GenerateClass(this.aiBP, GWorld, new Vector(), new Rotator());
+  };
+  KotlinLogo.prototype.spawnAICubes = function () {
+    for (var y = 0; y <= 7; y++) {
+      for (var z = 0; z <= 3; z++) {
+        var $receiver = this.createAICube_atrclb$(Vector_0(2500.0 + (z * 150 | 0), -450.0 + (y * 150 | 0), 100));
+        this.createAIController().Possess($receiver);
+      }
+    }
   };
   KotlinLogo.$metadata$ = {
     kind: Kind_CLASS,

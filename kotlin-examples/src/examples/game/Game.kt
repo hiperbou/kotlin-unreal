@@ -214,8 +214,16 @@ class Game:KotlinObject() {
         //console.log("hitresult = ", tempHitResult.bBlockingHit)
 
         //store hit actor and component from HitResult
-        val damageActor = tempHitResult.Actor
+        val damageActor:Actor = tempHitResult.Actor.asDynamic()
         val damageComponent:PrimitiveComponent? = tempHitResult.Component.asDynamic()
+
+        if(damageActor != null && damageActor.GetName().contains("AI")){
+            val aiActor:Character = damageActor.asDynamic()
+            if(!damageComponent!!.IsAnySimulatingPhysics()) {
+                aiActor.GetController().UnPossess()
+                damageComponent.SetSimulatePhysics(true)
+            }
+        }
 
         //if actor&component is valid while simulating physic then apply physic impulse
         if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics(""))
@@ -261,4 +269,6 @@ class Game:KotlinObject() {
         bp.GeneratedClass
         return bp.GenerateClass(GWorld, position, Rotator())
     }
+
+
 }
