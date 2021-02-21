@@ -4,6 +4,7 @@ import kotlin.random.Random
 class HelloBlueprints:KotlinObject() {
     val WIDTH = 400.0
     val actorList = arrayListOf<Actor>()
+    val owner = GetOwner<HelloBlueprintBlueprint>()
 
     init {
         for (i in 0..10)
@@ -15,9 +16,10 @@ class HelloBlueprints:KotlinObject() {
     }
 
     fun createActor(x:Double, y:Double, yaw:Number):Actor {
-        return Blueprint.Load("/Game/ExampleBlueprint").GenerateClass(GWorld,
-            Vector( X=x, Y=y),
-            Rotator( Yaw=yaw ))
+        return Root.Spawn(owner.ActorToSpawn, Vector(  X=x, Y=y ),Rotator( Yaw=yaw )).apply {
+            //K2_AddActorLocalRotation doesn't work without setting local rotation first
+            K2_SetActorRotation(Rotator(Yaw = yaw), false)
+        }
     }
 
     override fun Tick(deltaTime:Float) {

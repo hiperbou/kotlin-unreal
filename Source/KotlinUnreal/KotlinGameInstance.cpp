@@ -25,6 +25,12 @@ void UKotlinGameInstance::Init()
 	LoadJSFile();
 }
 
+void UKotlinGameInstance::OnWorldChanged(UWorld* OldWorld, UWorld* NewWorld)
+{
+	if (JavascriptContext == nullptr) return;
+	JavascriptContext->Expose("GWorld", NewWorld);
+}
+
 void UKotlinGameInstance::LoadJSFile()
 {
 	if (JavascriptContext == nullptr) return;

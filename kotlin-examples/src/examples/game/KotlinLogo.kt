@@ -17,14 +17,14 @@ class KotlinLogo: KotlinObject() {
 
     }
 
-    val bp = Blueprint.Load("/Game/AIKubeController")
+    val owner = GetOwner<FirstPersonGameBlueprint>()
+
     fun createAICube(position: Vector):Character {
-        return bp.GenerateClass(GWorld, position, Rotator())
+        return Root.Spawn(owner.AIKubeController, position, Rotator()).asDynamic()
     }
 
-    var aiBP = Blueprint.Load("/Game/CubeAI")
     fun createAIController():AIController {
-        return aiBP.GenerateClass(GWorld, Vector(), Rotator())
+        return Root.Spawn(owner.CubeAI, Vector(), Rotator()).asDynamic()
     }
 
     fun spawnAICubes(){

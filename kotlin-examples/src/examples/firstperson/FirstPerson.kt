@@ -1,5 +1,14 @@
 import ue.*
 
+external class FirstPersonBlueprint:Actor {
+    val FirstPerson_BP:UClass
+    val SK_Mannequin_Arms:SkeletalMesh
+    val SK_FPGun:SkeletalMesh
+    val FirstPerson_AnimBP:AnimBlueprint
+    val FirstPersonFire_Montage:AnimMontage
+    val FirstPersonTemplateWeaponFire02:SoundBase
+}
+
 class FirstPerson:KotlinObject() {
     val actor:Character
 
@@ -24,9 +33,9 @@ class FirstPerson:KotlinObject() {
     val keyFire = KeyListener("LeftMouseButton")
 
     init {
-        //actor = Character(GWorld, Vector(), Rotator())
-        val bp = Blueprint.Load("/Game/FirstPersonBP")
-        actor = bp.GenerateClass(GWorld, Vector(), Rotator())
+        val owner = GetOwner<FirstPersonBlueprint>()
+
+        actor = Root.Spawn(owner.FirstPerson_BP,Vector(), Rotator()).asDynamic()
         //Set size for collision capsule
         actor.CapsuleComponent.CapsuleRadius = 42.0
         actor.CapsuleComponent.CapsuleHalfHeight = 96.0
@@ -69,11 +78,11 @@ class FirstPerson:KotlinObject() {
         myFPGunMesh.AttachSocketName = "GripPoint"
 
         //load assets from editor.  REQUIRE assets from FirstPerson Blueprint template
-        val FP_mesh = SkeletalMesh.Load("/Game/FirstPerson/Character/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms")
-        val FPGun_mesh = SkeletalMesh.Load("/Game/FirstPerson/FPWeapon/Mesh/SK_FPGun.SK_FPGun")
-        val ANI_AnimationBP = AnimBlueprint.Load("/Game/FirstPerson/Animations/FirstPerson_animBP.FirstPerson_AnimBP").GeneratedClass
-        fireSound = SoundBase.Load("/Game/FirstPerson/Audio/FirstPersonTemplateWeaponFire02.FirstPersonTemplateWeaponFire02")
-        fireAnimation = AnimMontage.Load("/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage")
+        val FP_mesh = owner.SK_Mannequin_Arms //SkeletalMesh.Load("/Game/FirstPerson/Character/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms")
+        val FPGun_mesh = owner.SK_FPGun //SkeletalMesh.Load("/Game/FirstPerson/FPWeapon/Mesh/SK_FPGun.SK_FPGun")
+        val ANI_AnimationBP = owner.FirstPerson_AnimBP.GeneratedClass //AnimBlueprint.Load("/Game/FirstPerson/Animations/FirstPerson_animBP.FirstPerson_AnimBP").GeneratedClass
+        fireSound = owner.FirstPersonTemplateWeaponFire02 //SoundBase.Load("/Game/FirstPerson/Audio/FirstPersonTemplateWeaponFire02.FirstPersonTemplateWeaponFire02")
+        fireAnimation = owner.FirstPersonFire_Montage //AnimMontage.Load("/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage")
 
         //set loaded assets into class mesh
         myFPMesh.SetSkeletalMesh(FP_mesh, false)

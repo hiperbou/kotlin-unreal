@@ -1,15 +1,17 @@
 import KotlinObject
 import ue.*
 
+external class HelloBlueprintBlueprint:Actor {
+    val ActorToSpawn:UClass
+}
+
 class HelloBlueprint:KotlinObject() {
     var actor: Actor
     var yaw = 0.0
 
     init {
-        val bp = Blueprint.Load("/Game/ExampleBlueprint")
-        actor = bp.GenerateClass(GWorld,
-            Vector( X=1 ),
-            Rotator( Yaw=yaw ))
+        val owner = GetOwner<HelloBlueprintBlueprint>()
+        actor = Root.Spawn(owner.ActorToSpawn,Vector( X=1 ),Rotator( Yaw=yaw ))
     }
 
     override fun Tick(deltaTime:Float) {

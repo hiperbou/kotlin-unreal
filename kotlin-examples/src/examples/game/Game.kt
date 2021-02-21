@@ -1,5 +1,17 @@
 import ue.*
 
+external class FirstPersonGameBlueprint:Actor {
+    val FirstPerson_BP:UClass
+    val SK_Mannequin_Arms:SkeletalMesh
+    val SK_FPGun:SkeletalMesh
+    val FirstPerson_AnimBP:AnimBlueprint
+    val FirstPersonFire_Montage:AnimMontage
+    val FirstPersonTemplateWeaponFire02:SoundBase
+    val CubeBP:UClass
+    val AIKubeController:UClass
+    val CubeAI:UClass
+}
+
 class Game:KotlinObject() {
     val actor:Character
 
@@ -23,10 +35,9 @@ class Game:KotlinObject() {
     val keyJump = KeyListener("SpaceBar")
     val keyFire = KeyListener("LeftMouseButton")
 
+    val owner = GetOwner<FirstPersonGameBlueprint>()
     init {
-        //actor = Character(GWorld, Vector(), Rotator())
-        val bp = Blueprint.Load("/Game/FirstPersonBP")
-        actor = bp.GenerateClass(GWorld, Vector(), Rotator())
+        actor = Root.Spawn(owner.FirstPerson_BP,Vector(), Rotator()).asDynamic()
         //Set size for collision capsule
         actor.CapsuleComponent.CapsuleRadius = 42.0
         actor.CapsuleComponent.CapsuleHalfHeight = 96.0
@@ -69,11 +80,11 @@ class Game:KotlinObject() {
         myFPGunMesh.AttachSocketName = "GripPoint"
 
         //load assets from editor.  REQUIRE assets from FirstPerson Blueprint template
-        val FP_mesh = SkeletalMesh.Load("/Game/FirstPerson/Character/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms")
-        val FPGun_mesh = SkeletalMesh.Load("/Game/FirstPerson/FPWeapon/Mesh/SK_FPGun.SK_FPGun")
-        val ANI_AnimationBP = AnimBlueprint.Load("/Game/FirstPerson/Animations/FirstPerson_animBP.FirstPerson_AnimBP").GeneratedClass
-        fireSound = SoundBase.Load("/Game/FirstPerson/Audio/FirstPersonTemplateWeaponFire02.FirstPersonTemplateWeaponFire02")
-        fireAnimation = AnimMontage.Load("/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage")
+        val FP_mesh = owner.SK_Mannequin_Arms //SkeletalMesh.Load("/Game/FirstPerson/Character/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms")
+        val FPGun_mesh = owner.SK_FPGun //SkeletalMesh.Load("/Game/FirstPerson/FPWeapon/Mesh/SK_FPGun.SK_FPGun")
+        val ANI_AnimationBP = owner.FirstPerson_AnimBP //AnimBlueprint.Load("/Game/FirstPerson/Animations/FirstPerson_animBP.FirstPerson_AnimBP").GeneratedClass
+        fireSound = owner.FirstPersonTemplateWeaponFire02 //SoundBase.Load("/Game/FirstPerson/Audio/FirstPersonTemplateWeaponFire02.FirstPersonTemplateWeaponFire02")
+        fireAnimation = owner.FirstPersonFire_Montage //AnimMontage.Load("/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage")
 
         //set loaded assets into class mesh
         myFPMesh.SetSkeletalMesh(FP_mesh, false)
@@ -220,8 +231,16 @@ class Game:KotlinObject() {
         if(damageActor != null && damageActor.GetName().contains("AI")){
             val aiActor:Character = damageActor.asDynamic()
             if(!damageComponent!!.IsAnySimulatingPhysics()) {
-                aiActor.GetController().UnPossess()
+                damageActor.asDynamic().Kill()
+                val aiController = aiActor.GetAIController()
+                val actorController = aiActor.GetController()
+                val movementController = aiActor.GetMovementComponent()
+                movementController.StopMovementImmediately()
+                //actorController.UnPossess()
                 damageComponent.SetSimulatePhysics(true)
+                //movementController.StopMovementImmediately()
+                //movementController.Deactivate()
+                //aiController.K2_DestroyActor()
             }
         }
 
@@ -265,9 +284,7 @@ class Game:KotlinObject() {
     }
 
     fun createCube(position:Vector):Actor {
-        val bp = Blueprint.Load("/Game/CubeBP")
-        bp.GeneratedClass
-        return bp.GenerateClass(GWorld, position, Rotator())
+        return Root.Spawn(owner.CubeBP, Vector(), Rotator()).asDynamic()
     }
 
 

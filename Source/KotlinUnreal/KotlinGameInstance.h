@@ -21,6 +21,7 @@ class KOTLINUNREAL_API UKotlinGameInstance : public UGameInstance
 
 	public:
 	virtual void Shutdown() override;
+	virtual void OnWorldChanged(UWorld* OldWorld, UWorld* NewWorld) override;
 
 	UJavascriptIsolate* GetIsolate();
 	UJavascriptContext* GetContext();

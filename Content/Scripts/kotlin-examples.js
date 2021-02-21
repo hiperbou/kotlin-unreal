@@ -51,8 +51,8 @@
     KotlinObject.call(this);
     this.actor = null;
     this.yaw = 0.0;
-    var bp = Blueprint.Load('/Game/ExampleBlueprint');
-    this.actor = GenerateClass(bp, GWorld, Vector_0(1), Rotator_0(void 0, void 0, this.yaw));
+    var owner = GetOwner(this);
+    this.actor = this.Root.Spawn(owner.ActorToSpawn, Vector_0(1), Rotator_0(void 0, void 0, this.yaw));
   }
   HelloBlueprint.prototype.Tick = function (deltaTime) {
     this.yaw += 100.0 * deltaTime;
@@ -77,6 +77,7 @@
     KotlinObject.call(this);
     this.WIDTH = 400.0;
     this.actorList = ArrayList_init();
+    this.owner = GetOwner(this);
     for (var i = 0; i <= 10; i++)
       this.actorList.add_11rb$(this.createActor_u22e3q$(this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(-this.WIDTH, this.WIDTH), this.rnd_lu1900$(0.0, 360.0)));
   }
@@ -84,7 +85,9 @@
     return min + Random.Default.nextDouble() * (max - min);
   };
   HelloBlueprints.prototype.createActor_u22e3q$ = function (x, y, yaw) {
-    return GenerateClass(Blueprint.Load('/Game/ExampleBlueprint'), GWorld, Vector_0(x, y), Rotator_0(void 0, void 0, yaw));
+    var $receiver = this.Root.Spawn(this.owner.ActorToSpawn, Vector_0(x, y), Rotator_0(void 0, void 0, yaw));
+    $receiver.K2_SetActorRotation(Rotator_0(void 0, void 0, yaw), false);
+    return $receiver;
   };
   HelloBlueprints.prototype.Tick = function (deltaTime) {
     var tmp$;
@@ -179,8 +182,8 @@
     this.keyJump = new KeyListener('SpaceBar');
     this.keyFire = new KeyListener('LeftMouseButton');
     var tmp$;
-    var bp = Blueprint.Load('/Game/FirstPersonBP');
-    this.actor = GenerateClass(bp, GWorld, new Vector(), new Rotator());
+    var owner = GetOwner(this);
+    this.actor = this.Root.Spawn(owner.FirstPerson_BP, new Vector(), new Rotator());
     this.actor.CapsuleComponent.CapsuleRadius = 42.0;
     this.actor.CapsuleComponent.CapsuleHalfHeight = 96.0;
     this.myCamera = Kotlin.isType(tmp$ = this.actor.GetComponentByClass(CameraComponent), CameraComponent) ? tmp$ : throwCCE();
@@ -200,11 +203,11 @@
     this.myFPGunMesh.CastShadow = false;
     this.myFPGunMesh.AttachParent = this.myFPMesh;
     this.myFPGunMesh.AttachSocketName = 'GripPoint';
-    var FP_mesh = SkeletalMesh.Load('/Game/FirstPerson/Character/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms');
-    var FPGun_mesh = SkeletalMesh.Load('/Game/FirstPerson/FPWeapon/Mesh/SK_FPGun.SK_FPGun');
-    var ANI_AnimationBP = AnimBlueprint.Load('/Game/FirstPerson/Animations/FirstPerson_animBP.FirstPerson_AnimBP').GeneratedClass;
-    this.fireSound = SoundBase.Load('/Game/FirstPerson/Audio/FirstPersonTemplateWeaponFire02.FirstPersonTemplateWeaponFire02');
-    this.fireAnimation = AnimMontage.Load('/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage');
+    var FP_mesh = owner.SK_Mannequin_Arms;
+    var FPGun_mesh = owner.SK_FPGun;
+    var ANI_AnimationBP = owner.FirstPerson_AnimBP.GeneratedClass;
+    this.fireSound = owner.FirstPersonTemplateWeaponFire02;
+    this.fireAnimation = owner.FirstPersonFire_Montage;
     this.myFPMesh.SetSkeletalMesh(FP_mesh, false);
     this.myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false);
     this.myFPMesh.SetAnimClass(ANI_AnimationBP);
@@ -322,9 +325,9 @@
     this.keyDown = new KeyListener('S');
     this.keyJump = new KeyListener('SpaceBar');
     this.keyFire = new KeyListener('LeftMouseButton');
+    this.owner = GetOwner(this);
     var tmp$;
-    var bp = Blueprint.Load('/Game/FirstPersonBP');
-    this.actor = GenerateClass(bp, GWorld, new Vector(), new Rotator());
+    this.actor = this.Root.Spawn(this.owner.FirstPerson_BP, new Vector(), new Rotator());
     this.actor.CapsuleComponent.CapsuleRadius = 42.0;
     this.actor.CapsuleComponent.CapsuleHalfHeight = 96.0;
     this.myCamera = Kotlin.isType(tmp$ = this.actor.GetComponentByClass(CameraComponent), CameraComponent) ? tmp$ : throwCCE();
@@ -344,11 +347,11 @@
     this.myFPGunMesh.CastShadow = false;
     this.myFPGunMesh.AttachParent = this.myFPMesh;
     this.myFPGunMesh.AttachSocketName = 'GripPoint';
-    var FP_mesh = SkeletalMesh.Load('/Game/FirstPerson/Character/Mesh/SK_Mannequin_Arms.SK_Mannequin_Arms');
-    var FPGun_mesh = SkeletalMesh.Load('/Game/FirstPerson/FPWeapon/Mesh/SK_FPGun.SK_FPGun');
-    var ANI_AnimationBP = AnimBlueprint.Load('/Game/FirstPerson/Animations/FirstPerson_animBP.FirstPerson_AnimBP').GeneratedClass;
-    this.fireSound = SoundBase.Load('/Game/FirstPerson/Audio/FirstPersonTemplateWeaponFire02.FirstPersonTemplateWeaponFire02');
-    this.fireAnimation = AnimMontage.Load('/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage');
+    var FP_mesh = this.owner.SK_Mannequin_Arms;
+    var FPGun_mesh = this.owner.SK_FPGun;
+    var ANI_AnimationBP = this.owner.FirstPerson_AnimBP;
+    this.fireSound = this.owner.FirstPersonTemplateWeaponFire02;
+    this.fireAnimation = this.owner.FirstPersonFire_Montage;
     this.myFPMesh.SetSkeletalMesh(FP_mesh, false);
     this.myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false);
     this.myFPMesh.SetAnimClass(ANI_AnimationBP);
@@ -419,7 +422,11 @@
     if (damageActor != null && contains(damageActor.GetName(), 'AI')) {
       var aiActor = damageActor;
       if (!ensureNotNull(damageComponent).IsAnySimulatingPhysics()) {
-        aiActor.GetController().UnPossess();
+        damageActor.Kill();
+        var aiController = aiActor.GetAIController();
+        var actorController = aiActor.GetController();
+        var movementController = aiActor.GetMovementComponent();
+        movementController.StopMovementImmediately();
         damageComponent.SetSimulatePhysics(true);
       }}if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
       var tempImpulseVector = tempForwardDirection.Multiply_VectorFloat(this.weaponDamage);
@@ -443,9 +450,7 @@
     }
   };
   Game.prototype.createCube_atrclb$ = function (position) {
-    var bp = Blueprint.Load('/Game/CubeBP');
-    bp.GeneratedClass;
-    return GenerateClass(bp, GWorld, position, new Rotator());
+    return this.Root.Spawn(this.owner.CubeBP, new Vector(), new Rotator());
   };
   Game.$metadata$ = {
     kind: Kind_CLASS,
@@ -455,8 +460,7 @@
   function KotlinLogo() {
     KotlinObject.call(this);
     this.yaw = 0.0;
-    this.bp = Blueprint.Load('/Game/AIKubeController');
-    this.aiBP = Blueprint.Load('/Game/CubeAI');
+    this.owner = GetOwner(this);
   }
   KotlinLogo.prototype.Tick = function (deltaTime) {
     var actor = GetOwner(this);
@@ -469,10 +473,10 @@
     return 'touched';
   };
   KotlinLogo.prototype.createAICube_atrclb$ = function (position) {
-    return GenerateClass(this.bp, GWorld, position, new Rotator());
+    return this.Root.Spawn(this.owner.AIKubeController, position, new Rotator());
   };
   KotlinLogo.prototype.createAIController = function () {
-    return GenerateClass(this.aiBP, GWorld, new Vector(), new Rotator());
+    return this.Root.Spawn(this.owner.CubeAI, new Vector(), new Rotator());
   };
   KotlinLogo.prototype.spawnAICubes = function () {
     for (var y = 0; y <= 7; y++) {

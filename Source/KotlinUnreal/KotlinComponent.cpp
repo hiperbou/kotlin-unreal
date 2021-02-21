@@ -7,7 +7,6 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Regex.h"
 #include "KotlinObject.h"
-#include "MovieSceneSequenceID.h"
 
 UKotlinComponent::UKotlinComponent()
 	: JavascriptContext(nullptr)
@@ -101,4 +100,48 @@ FString UKotlinComponent::BeginOverlap(AActor* other)
 	return FString();
 }
 
+UObject* UKotlinComponent::ResolveAsset(FName Name, bool bTryLoad)
+{
+	UE_LOG(LogTemp, Warning, TEXT("ResolveAsset"));
+	for (const auto& Item : Assets)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ResolveAsset: %s"), *Item.Name.ToString());
+		if (Item.Name == Name)
+		{
+
+			if(bTryLoad)
+			{
+				FString BPRef = "Blueprint '" + Item.Asset.GetAssetPathString() + "'";
+				UE_LOG(LogTemp, Warning, TEXT("ResolveAsset.TryLoad: %s"), *BPRef);
+		
+				UClass* ThisBPClass = LoadObject<UClass>(NULL, *BPRef);
+				return ThisBPClass;
+			}
+			//return bTryLoad ? Item.Asset.TryLoad() : Item.Asset.ResolveObject();
+			return Item.Asset.ResolveObject();
+		}
+	}
+
+	return nullptr;
+}
+UClass* UKotlinComponent::ResolveClass(FName Name)
+{
+	UE_LOG(LogTemp, Warning, TEXT("ResolveClass:"));
+		
+	for (const auto& Item : ClassAssets)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ResolveClass: %s"), *Item.Name.ToString());
+		if (Item.Name == Name)
+		{
+			return Item.Class;
+		}
+	}
+
+	return nullptr;
+}
+
+AActor* UKotlinComponent::Spawn(UClass* ClassF, FVector const Location, FRotator const Rotation)
+{
+	return GetWorld()->SpawnActor(ClassF, &Location, &Rotation);
+}
 

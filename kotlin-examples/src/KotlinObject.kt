@@ -1,6 +1,4 @@
-import ue.Actor
-import ue.ActorComponent
-import ue.Root
+import ue.*
 
 //external fun require(r:String):dynamic
 
@@ -10,8 +8,12 @@ external interface KotlinUnrealObject {
     fun OnDestroyed()
 }
 
+external class KotlinActorComponent:ActorComponent {
+    fun Spawn(actorClass:UClass, position:Vector, rotation: Rotator):Actor
+}
+
 external open class KotlinObject: KotlinUnrealObject {
-    val Root:ActorComponent
+    val Root:KotlinActorComponent
     override fun Tick(deltaTime: Float):Unit = definedExternally
     override fun BeginOverlap(other: Actor):String = definedExternally
     override fun OnDestroyed():Unit = definedExternally
