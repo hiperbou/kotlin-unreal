@@ -12,7 +12,7 @@ class Switch:KotlinObject() {
         actor.Lock?.K2_DestroyActor()
 
         val plate:StaticMeshComponent = actor.GetComponentByClass(StaticMeshComponent).asDynamic()
-        val button:StaticMeshComponent = actor.GetComponentByName(StaticMeshComponent,"button")
+        val button:StaticMeshComponent = actor.GetComponentByName(StaticMeshComponent,"Button")
         button.K2_SetRelativeLocation(Vector(X = 0, Y = 20, Z = 0), false)
 
         plate.SetMaterial(0, button.GetMaterial(0))

@@ -55,7 +55,7 @@
     this.actor = this.Root.Spawn(owner.ActorToSpawn, Vector_0(1), Rotator_0(void 0, void 0, this.yaw));
   }
   HelloBlueprint.prototype.Tick = function (deltaTime) {
-    this.yaw += 100.0 * deltaTime;
+    this.yaw += 1000.0 * deltaTime;
     this.actor.K2_SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
   };
   HelloBlueprint.prototype.BeginOverlap = function (other) {
@@ -472,7 +472,7 @@
     GetOwner(this).K2_DestroyActor();
     return 'touched';
   };
-  KotlinLogo.prototype.createAICube_atrclb$ = function (position) {
+  KotlinLogo.prototype.createAIKube_atrclb$ = function (position) {
     return this.Root.Spawn(this.owner.AIKubeController, position, new Rotator());
   };
   KotlinLogo.prototype.createAIController = function () {
@@ -481,7 +481,7 @@
   KotlinLogo.prototype.spawnAICubes = function () {
     for (var y = 0; y <= 7; y++) {
       for (var z = 0; z <= 3; z++) {
-        var $receiver = this.createAICube_atrclb$(Vector_0(2500.0 + (z * 150 | 0), -450.0 + (y * 150 | 0), 100));
+        var $receiver = this.createAIKube_atrclb$(Vector_0(2500.0 + (z * 150 | 0), -450.0 + (y * 150 | 0), 100));
         this.createAIController().Possess($receiver);
       }
     }
@@ -530,10 +530,27 @@
     var tmp$;
     var actor = GetOwner(this);
     (tmp$ = actor.Lock) != null ? (tmp$.K2_DestroyActor(), Unit) : null;
+    println('Switch.BeginOverlap');
     var plate = actor.GetComponentByClass(StaticMeshComponent);
-    var button = GetComponentByName(actor, StaticMeshComponent, 'button');
+    println('plate');
+    console.log(plate);
+    println('componentsss');
+    var list = actor.GetComponentsByClass(StaticMeshComponent);
+    console.log(list);
+    var tmp$_0;
+    for (tmp$_0 = 0; tmp$_0 !== list.length; ++tmp$_0) {
+      var element = list[tmp$_0];
+      println('item');
+      console.log(element.GetName());
+    }
+    var button = GetComponentByName(actor, StaticMeshComponent, 'Button');
+    println('Button');
+    console.log(button);
     button.K2_SetRelativeLocation(Vector_0(0, 20, 0), false);
-    plate.SetMaterial(0, button.GetMaterial(0));
+    var material = button.GetMaterial(0);
+    console.log('material');
+    console.log(material);
+    plate.SetMaterial(0, material);
     return 'Lock opened';
   };
   function Switch$Companion() {
@@ -981,12 +998,13 @@
     return $receiver;
   }
   function GetComponentByName($receiver, ComponentClass, Name) {
+    var nameToCheck = Name.toLowerCase();
     var $receiver_0 = $receiver.GetComponentsByClass(ComponentClass);
     var destination = ArrayList_init();
     var tmp$;
     for (tmp$ = 0; tmp$ !== $receiver_0.length; ++tmp$) {
       var element = $receiver_0[tmp$];
-      if (equals(element.GetName(), Name))
+      if (equals(element.GetName().toLowerCase(), nameToCheck))
         destination.add_11rb$(element);
     }
     var component = destination;

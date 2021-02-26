@@ -19,7 +19,7 @@ class KotlinLogo: KotlinObject() {
 
     val owner = GetOwner<FirstPersonGameBlueprint>()
 
-    fun createAICube(position: Vector):Character {
+    fun createAIKube(position: Vector):Character {
         return Root.Spawn(owner.AIKubeController, position, Rotator()).asDynamic()
     }
 
@@ -30,7 +30,7 @@ class KotlinLogo: KotlinObject() {
     fun spawnAICubes(){
         for(y in 0..7){
             for (z in 0..3){
-                createAICube(Vector(2500.0 + z * 150, -450.0 + y *150, 100)).apply {
+                createAIKube(Vector(2500.0 + z * 150, -450.0 + y *150, 100)).apply {
                     createAIController().Possess(this)
                 }
             }

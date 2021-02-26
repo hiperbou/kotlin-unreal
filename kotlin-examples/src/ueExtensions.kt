@@ -32,7 +32,8 @@ fun Rotator(Roll:Number=0.0,Pitch:Number=0.0,Yaw:Number=0.0):Rotator {
 
 fun <T>Actor.GetComponentByName(ComponentClass:Any, Name:String):T
 {
-    val component = GetComponentsByClass(ComponentClass).filter { it.GetName()==Name }
+    val nameToCheck = Name.toLowerCase()
+    val component = GetComponentsByClass(ComponentClass).filter { it.GetName().toLowerCase()==nameToCheck }
     return component.first().asDynamic()
 }
 
