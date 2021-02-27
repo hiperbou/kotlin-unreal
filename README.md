@@ -33,10 +33,10 @@ https://github.com/hiperbou/kotlin-unreal/wiki
 
 ## Code examples
 
-First Person Game example (watch on [Youtube](https://www.youtube.com/watch?v=Pcb3cdpAFFA)):
+First Person Game example (watch on [Youtube](https://youtu.be/Pcb3cdpAFFA?t=9)):
 
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/game/Game.kt
-[![First Person Shooter example video](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/game.jpg)](https://www.youtube.com/watch?v=Pcb3cdpAFFA)
+[![First Person Shooter example video](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/game.jpg)](https://youtu.be/Pcb3cdpAFFA?t=9)
 
 Hello World example:
 
