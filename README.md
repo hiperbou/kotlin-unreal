@@ -33,34 +33,42 @@ https://github.com/hiperbou/kotlin-unreal/wiki
 
 ## Code examples
 
-First Person Game example:
+First Person Game example (watch on [Youtube](https://www.youtube.com/watch?v=Pcb3cdpAFFA)):
+
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/game/Game.kt
-![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/game.jpg)
+[![First Person Shooter example video](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/game.jpg)](https://www.youtube.com/watch?v=Pcb3cdpAFFA)
 
 Hello World example:
+
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/hello/HelloKotlin.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/helloworld.jpg)
 
 Rotating cubes example:
+
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/cubes/WhiteRotatingCube.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/cubes.jpg)
 
 Scene Lights example:
+
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/scenelights/SceneLights.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/scenelights.jpg)
 
 First Person example:
+
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/firstperson/FirstPerson.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/firstperson.jpg)
 
 Third Person example:
+
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/thirdperson/ThirdPerson.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/thirdperson.jpg)
 
 Hello Blueprints example:
+
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/blueprint/HelloBlueprints.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/helloblueprints.jpeg)
 
 Hello Blueprint example:
+
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/blueprint/HelloBlueprint.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/helloblueprint.jpg)
