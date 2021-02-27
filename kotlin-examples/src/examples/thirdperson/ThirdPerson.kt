@@ -158,7 +158,7 @@ class ThirdPerson:KotlinObject() {
         actor.StopJumping()
     }
 
-    fun cleanup():Unit {
+    fun cleanup() {
         console.log("<<<cleanup>>>")
         actor.K2_DestroyActor()
     }

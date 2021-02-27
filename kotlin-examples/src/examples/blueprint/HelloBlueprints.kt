@@ -28,7 +28,7 @@ class HelloBlueprints:KotlinObject() {
         }
     }
 
-    fun cleanup():Unit {
+    fun cleanup() {
         console.log("<<<cleanup>>>")
         actorList.forEach { it.K2_DestroyActor() }
     }

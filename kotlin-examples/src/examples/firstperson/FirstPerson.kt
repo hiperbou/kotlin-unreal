@@ -243,7 +243,7 @@ class FirstPerson:KotlinObject() {
 
     }
 
-    fun cleanup():Unit {
+    fun cleanup() {
         console.log("<<<cleanup>>>")
         actor.K2_DestroyActor()
     }

@@ -21,8 +21,5 @@ class WhiteRotatingCube: KotlinObject() {
         println("OnDestroyed")
     }
 
-    fun cleanup():Unit {
-        console.log("<<<cleanup>>>")
-    }
 }
 

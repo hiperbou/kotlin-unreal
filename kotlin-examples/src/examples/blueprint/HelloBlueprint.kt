@@ -27,7 +27,7 @@ class HelloBlueprint:KotlinObject() {
         println("OnDestroyed")
     }
 
-    fun cleanup():Unit {
+    fun cleanup() {
         console.log("<<<cleanup>>>")
         actor.K2_DestroyActor()
     }

@@ -86,7 +86,7 @@ class SceneLights:KotlinObject() {
         tickable.forEach { it() }
     }
 
-    fun cleanup():Unit {
+    fun cleanup() {
         GWorld.GetAllActorsOfClass(Light).OutActors.forEach { it.K2_DestroyActor() }
     }
 }

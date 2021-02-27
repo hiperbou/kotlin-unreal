@@ -6,6 +6,7 @@ import ue.Vector
 external class SwitchActor: Actor {
     var Lock: Actor?
 }
+
 class Switch:KotlinObject() {
     override fun BeginOverlap(other: Actor): String {
         val actor = GetOwner<SwitchActor>()
@@ -16,12 +17,7 @@ class Switch:KotlinObject() {
         button.K2_SetRelativeLocation(Vector(X = 0, Y = 20, Z = 0), false)
 
         plate.SetMaterial(0, button.GetMaterial(0))
-        //actor.K2_DestroyActor()
-        return "Lock opened"
-    }
 
-    companion object
-    {
-        var armor = 0
+        return "Lock opened"
     }
 }
