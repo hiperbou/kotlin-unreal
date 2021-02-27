@@ -5,12 +5,15 @@ package ue
  */
 fun <T> Blueprint.GenerateClass(world: World, position: Vector, rotation: Rotator):T{
     //return GeneratedClass(world,position,rotation) as T
-    return js("new \$receiver.GeneratedClass(world, position, rotation)")
+    //return js("new \$receiver_0.GeneratedClass(world, position, rotation)")
+    val receiver = this
+    return js("new receiver.GeneratedClass(world, position, rotation)")
 }
 
 fun <T> MovieSceneSpawnable.GenerateClass(world: World, position: Vector, rotation: Rotator):T{
     //return GeneratedClass(world,position,rotation) as T
-    return js("new \$receiver.GeneratedClass(world, position, rotation)")
+    val receiver = this
+    return js("new receiver.GeneratedClass(world, position, rotation)")
 }
 
 
@@ -29,14 +32,15 @@ fun Rotator(Roll:Number=0.0,Pitch:Number=0.0,Yaw:Number=0.0):Rotator {
 
 fun <T>Actor.GetComponentByName(ComponentClass:Any, Name:String):T
 {
-    val component = GetComponentsByClass(ComponentClass).filter { it.GetName()==Name }
-    return component.first() as T
+    val nameToCheck = Name.toLowerCase()
+    val component = GetComponentsByClass(ComponentClass).filter { it.GetName().toLowerCase()==nameToCheck }
+    return component.first().asDynamic()
 }
 
 fun Key(keyName:String):Key = Key().apply { KeyName=keyName }
 
-class KeyListener(keyName:String, val playerControllerIndex:Int = 0) {
-    val k = Key(keyName)
+class KeyListener(keyName:String, private val playerControllerIndex:Int = 0) {
+    private val k = Key(keyName)
     fun down(): Boolean {
         return GWorld.GetPlayerController(playerControllerIndex).IsInputKeyDown(k)
     }
