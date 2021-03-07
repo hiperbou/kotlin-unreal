@@ -1,22 +1,37 @@
-(function (_, Kotlin) {
+(function (_, Kotlin, $module$kotlinx_coroutines_core) {
   'use strict';
+  var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
   var println = Kotlin.kotlin.io.println_s8jyv4$;
   var Kind_CLASS = Kotlin.Kind.CLASS;
+  var Math_0 = Math;
+  var numberToDouble = Kotlin.numberToDouble;
+  var Unit = Kotlin.kotlin.Unit;
+  var equals = Kotlin.equals;
+  var coroutines = $module$kotlinx_coroutines_core.kotlinx.coroutines;
+  var COROUTINE_SUSPENDED = Kotlin.kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED;
+  var CoroutineImpl = Kotlin.kotlin.coroutines.CoroutineImpl;
+  var launch = $module$kotlinx_coroutines_core.kotlinx.coroutines.launch_s496o7$;
+  var Kind_OBJECT = Kotlin.Kind.OBJECT;
+  var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
+  var L2000 = Kotlin.Long.fromInt(2000);
+  var delay = $module$kotlinx_coroutines_core.kotlinx.coroutines.delay_s8cxhz$;
   var Random = Kotlin.kotlin.random.Random;
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var ensureNotNull = Kotlin.ensureNotNull;
-  var numberToDouble = Kotlin.numberToDouble;
   var throwCCE = Kotlin.throwCCE;
   var contains = Kotlin.kotlin.text.contains_li3zpu$;
-  var Kind_OBJECT = Kotlin.Kind.OBJECT;
-  var Unit = Kotlin.kotlin.Unit;
-  var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
   var getCallableRef = Kotlin.getCallableRef;
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
-  var Math_0 = Math;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
-  var equals = Kotlin.equals;
+  var defineInlineFunction = Kotlin.defineInlineFunction;
+  var wrapFunction = Kotlin.wrapFunction;
   var first = Kotlin.kotlin.collections.first_2p1efm$;
+  CubeTutorial.prototype = Object.create(KotlinObject.prototype);
+  CubeTutorial.prototype.constructor = CubeTutorial;
+  AdventureCharacter.prototype = Object.create(KotlinObject.prototype);
+  AdventureCharacter.prototype.constructor = AdventureCharacter;
+  InteractiveCube.prototype = Object.create(KotlinObject.prototype);
+  InteractiveCube.prototype.constructor = InteractiveCube;
   HelloBlueprint.prototype = Object.create(KotlinObject.prototype);
   HelloBlueprint.prototype.constructor = HelloBlueprint;
   HelloBlueprints.prototype = Object.create(KotlinObject.prototype);
@@ -45,8 +60,300 @@
   KeyboardInput.prototype.constructor = KeyboardInput;
   SceneLights.prototype = Object.create(KotlinObject.prototype);
   SceneLights.prototype.constructor = SceneLights;
+  Coin.prototype = Object.create(KotlinObject.prototype);
+  Coin.prototype.constructor = Coin;
+  Sonic.prototype = Object.create(KotlinObject.prototype);
+  Sonic.prototype.constructor = Sonic;
   ThirdPerson.prototype = Object.create(KotlinObject.prototype);
   ThirdPerson.prototype.constructor = ThirdPerson;
+  HelloTutorial.prototype = Object.create(KotlinObject.prototype);
+  HelloTutorial.prototype.constructor = HelloTutorial;
+  function CubeTutorial() {
+    KotlinObject.call(this);
+    this.accumulatedDeltaTime = 0.0;
+  }
+  CubeTutorial.prototype.Tick = function (deltaTime) {
+    var actor = GetOwner(this);
+    this.accumulatedDeltaTime += deltaTime;
+    var x = this.accumulatedDeltaTime;
+    actor.Yaw = 45.0 * Math_0.cos(x);
+    actor.K2_SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
+  };
+  CubeTutorial.prototype.BeginOverlap = function (other) {
+    println("I've been changed! Collided with " + other + '!');
+    return '';
+  };
+  CubeTutorial.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'CubeTutorial',
+    interfaces: []
+  };
+  function AdventureCharacter() {
+    KotlinObject.call(this);
+    this.keyLeft = new KeyListener('A');
+    this.keyRight = new KeyListener('D');
+    this.keyUp = new KeyListener('W');
+    this.keyDown = new KeyListener('S');
+    this.keyInteract = new KeyListener('E');
+    this.actor = GetOwner(this);
+    this.movementComponent = this.actor.GetMovementComponent();
+    this.actor.CapsuleComponent.CapsuleRadius = 42.0;
+    this.actor.CapsuleComponent.CapsuleHalfHeight = 96.0;
+    this.actor.bUseControllerRotationPitch = false;
+    this.actor.bUseControllerRotationRoll = false;
+    this.actor.bUseControllerRotationYaw = false;
+    this.actor.CharacterMovement.bOrientRotationToMovement = true;
+    this.actor.CharacterMovement.RotationRate = Rotator.MakeRotator(0, 0, 540);
+    var ANI_AnimationBP = AnimBlueprint.Load('/Game/Mannequin/Animations/ThirdPerson_AnimBP.ThirdPerson_AnimBP').GeneratedClass;
+    this.actor.Mesh.SetAnimClass(ANI_AnimationBP);
+    this.actor.Mesh.RelativeRotation = Rotator.MakeRotator(0, 0, 270);
+    this.actor.Mesh.RelativeLocation = Vector.MakeVector(0, 0, -96);
+    var myPlayerController = GWorld.GetPlayerController(0);
+    myPlayerController.Possess(this.actor);
+  }
+  AdventureCharacter.prototype.Tick = function (deltaTime) {
+    if (this.keyLeft.down()) {
+      this.MoveRight_14dthe$(-1.0);
+    }if (this.keyRight.down()) {
+      this.MoveRight_14dthe$(1.0);
+    }if (this.keyUp.down()) {
+      this.MoveForward_14dthe$(1.0);
+    }if (this.keyDown.down()) {
+      this.MoveForward_14dthe$(-1.0);
+    }if (this.keyInteract.pressed()) {
+      InteractionManager_getInstance().interact();
+    }this.Turn_14dthe$(this.axisTurn());
+    this.LookUp_14dthe$(this.axisLookUp());
+  };
+  AdventureCharacter.prototype.Turn_14dthe$ = function (value) {
+    this.actor.AddControllerYawInput(value);
+  };
+  AdventureCharacter.prototype.LookUp_14dthe$ = function (value) {
+    this.actor.AddControllerPitchInput(value);
+  };
+  AdventureCharacter.prototype.MoveForward_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tForwardVector = tPawnRotator.GetForwardVector();
+    this.actor.AddMovementInput(tForwardVector, value, false);
+  };
+  AdventureCharacter.prototype.MoveRight_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tRightVector = tPawnRotator.GetRightVector();
+    this.actor.AddMovementInput(tRightVector, value, false);
+  };
+  AdventureCharacter.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.K2_DestroyActor();
+  };
+  AdventureCharacter.prototype.axisTurn = function () {
+    return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
+  };
+  AdventureCharacter.prototype.axisLookUp = function () {
+    return -numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
+  };
+  AdventureCharacter.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'AdventureCharacter',
+    interfaces: []
+  };
+  function InteractionManager() {
+    InteractionManager_instance = this;
+    this.selected = null;
+    this.interacting_0 = false;
+  }
+  InteractionManager.prototype.select_tsf84i$ = function (interactiveObject) {
+    var tmp$;
+    (tmp$ = this.selected) != null ? (tmp$.highlight_6taknv$(false), Unit) : null;
+    interactiveObject.highlight_6taknv$(true);
+    this.selected = interactiveObject;
+  };
+  InteractionManager.prototype.release_tsf84i$ = function (interactiveObject) {
+    interactiveObject.highlight_6taknv$(false);
+    if (equals(this.selected, interactiveObject))
+      this.selected = null;
+  };
+  function Coroutine$InteractionManager$interact$lambda(this$InteractionManager_0, $receiver_0, controller, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.$controller = controller;
+    this.exceptionState_0 = 1;
+    this.local$this$InteractionManager = this$InteractionManager_0;
+  }
+  Coroutine$InteractionManager$interact$lambda.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$InteractionManager$interact$lambda.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$InteractionManager$interact$lambda.prototype.constructor = Coroutine$InteractionManager$interact$lambda;
+  Coroutine$InteractionManager$interact$lambda.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            var tmp$;
+            this.local$this$InteractionManager.interacting_0 = true;
+            if ((tmp$ = this.local$this$InteractionManager.selected) != null) {
+              this.state_0 = 2;
+              this.result_0 = tmp$.doAction(this);
+              if (this.result_0 === COROUTINE_SUSPENDED)
+                return COROUTINE_SUSPENDED;
+              continue;
+            } else {
+              this.result_0 = null;
+              this.state_0 = 3;
+              continue;
+            }
+
+          case 1:
+            throw this.exception_0;
+          case 2:
+            this.result_0 = Unit;
+            this.state_0 = 3;
+            continue;
+          case 3:
+            return this.local$this$InteractionManager.interacting_0 = false, Unit;
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  function InteractionManager$interact$lambda(this$InteractionManager_0) {
+    return function ($receiver_0, continuation_0, suspended) {
+      var instance = new Coroutine$InteractionManager$interact$lambda(this$InteractionManager_0, $receiver_0, this, continuation_0);
+      if (suspended)
+        return instance;
+      else
+        return instance.doResume(null);
+    };
+  }
+  InteractionManager.prototype.interact = function () {
+    if (this.interacting_0)
+      return;
+    launch(coroutines.GlobalScope, void 0, void 0, InteractionManager$interact$lambda(this));
+  };
+  InteractionManager.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'InteractionManager',
+    interfaces: []
+  };
+  var InteractionManager_instance = null;
+  function InteractionManager_getInstance() {
+    if (InteractionManager_instance === null) {
+      new InteractionManager();
+    }return InteractionManager_instance;
+  }
+  function InteractiveObject() {
+  }
+  InteractiveObject.$metadata$ = {
+    kind: Kind_INTERFACE,
+    simpleName: 'InteractiveObject',
+    interfaces: []
+  };
+  function InteractiveCube() {
+    KotlinObject.call(this);
+    this.actor = GetOwner(this);
+    this.mesh = this.actor.GetComponentByClass(StaticMeshComponent);
+  }
+  InteractiveCube.prototype.highlight_6taknv$ = function (enable) {
+    this.mesh.SetRenderCustomDepth(enable);
+  };
+  function Coroutine$doAction($this, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.exceptionState_0 = 1;
+    this.$this = $this;
+    this.local$widget = void 0;
+    this.local$$receiver = void 0;
+    this.local$tmp$ = void 0;
+  }
+  Coroutine$doAction.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$doAction.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$doAction.prototype.constructor = Coroutine$doAction;
+  Coroutine$doAction.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            this.local$widget = GWorld.Create(this.$this.actor.Widget, GWorld.GetPlayerController(0));
+            this.local$widget.AddToViewport(0);
+            this.local$$receiver = this.$this.actor.Texts;
+            this.local$tmp$ = 0;
+            this.state_0 = 2;
+            continue;
+          case 1:
+            throw this.exception_0;
+          case 2:
+            if (this.local$tmp$ === this.local$$receiver.length) {
+              this.state_0 = 5;
+              continue;
+            }
+            var element = this.local$$receiver[this.local$tmp$];
+            this.local$widget.SetText(element);
+            this.state_0 = 3;
+            this.result_0 = delay(L2000, this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 3:
+            this.state_0 = 4;
+            continue;
+          case 4:
+            ++this.local$tmp$;
+            this.state_0 = 2;
+            continue;
+          case 5:
+            this.local$widget.RemoveFromViewport();
+            this.local$widget.DestroyUObject();
+            return;
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  InteractiveCube.prototype.doAction = function (continuation_0, suspended) {
+    var instance = new Coroutine$doAction(this, continuation_0);
+    if (suspended)
+      return instance;
+    else
+      return instance.doResume(null);
+  };
+  InteractiveCube.prototype.BeginOverlap = function (other) {
+    InteractionManager_getInstance().select_tsf84i$(this);
+    return '';
+  };
+  InteractiveCube.prototype.EndOverlap = function (other) {
+    InteractionManager_getInstance().release_tsf84i$(this);
+  };
+  InteractiveCube.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'InteractiveCube',
+    interfaces: [InteractiveObject]
+  };
   function HelloBlueprint() {
     KotlinObject.call(this);
     this.actor = null;
@@ -55,7 +362,7 @@
     this.actor = this.Root.Spawn(owner.ActorToSpawn, Vector_0(1), Rotator_0(void 0, void 0, this.yaw));
   }
   HelloBlueprint.prototype.Tick = function (deltaTime) {
-    this.yaw += 1000.0 * deltaTime;
+    this.yaw += 100.0 * deltaTime;
     this.actor.K2_SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
   };
   HelloBlueprint.prototype.BeginOverlap = function (other) {
@@ -154,9 +461,6 @@
   };
   WhiteRotatingCube.prototype.OnDestroyed = function () {
     println('OnDestroyed');
-  };
-  WhiteRotatingCube.prototype.cleanup = function () {
-    console.log('<<<cleanup>>>');
   };
   WhiteRotatingCube.$metadata$ = {
     kind: Kind_CLASS,
@@ -523,51 +827,18 @@
     interfaces: []
   };
   function Switch() {
-    Switch$Companion_getInstance();
     KotlinObject.call(this);
   }
   Switch.prototype.BeginOverlap = function (other) {
     var tmp$;
     var actor = GetOwner(this);
     (tmp$ = actor.Lock) != null ? (tmp$.K2_DestroyActor(), Unit) : null;
-    println('Switch.BeginOverlap');
     var plate = actor.GetComponentByClass(StaticMeshComponent);
-    println('plate');
-    console.log(plate);
-    println('componentsss');
-    var list = actor.GetComponentsByClass(StaticMeshComponent);
-    console.log(list);
-    var tmp$_0;
-    for (tmp$_0 = 0; tmp$_0 !== list.length; ++tmp$_0) {
-      var element = list[tmp$_0];
-      println('item');
-      console.log(element.GetName());
-    }
     var button = GetComponentByName(actor, StaticMeshComponent, 'Button');
-    println('Button');
-    console.log(button);
     button.K2_SetRelativeLocation(Vector_0(0, 20, 0), false);
-    var material = button.GetMaterial(0);
-    console.log('material');
-    console.log(material);
-    plate.SetMaterial(0, material);
+    plate.SetMaterial(0, button.GetMaterial(0));
     return 'Lock opened';
   };
-  function Switch$Companion() {
-    Switch$Companion_instance = this;
-    this.armor = 0;
-  }
-  Switch$Companion.$metadata$ = {
-    kind: Kind_OBJECT,
-    simpleName: 'Companion',
-    interfaces: []
-  };
-  var Switch$Companion_instance = null;
-  function Switch$Companion_getInstance() {
-    if (Switch$Companion_instance === null) {
-      new Switch$Companion();
-    }return Switch$Companion_instance;
-  }
   Switch.$metadata$ = {
     kind: Kind_CLASS,
     simpleName: 'Switch',
@@ -646,6 +917,9 @@
   };
   DelegatedCylinder.prototype.BeginOverlap = function (other) {
     return this.$delegate_159cgl$_0.BeginOverlap(other);
+  };
+  DelegatedCylinder.prototype.EndOverlap = function (other) {
+    return this.$delegate_159cgl$_0.EndOverlap(other);
   };
   DelegatedCylinder.prototype.OnDestroyed = function () {
     return this.$delegate_159cgl$_0.OnDestroyed();
@@ -818,6 +1092,104 @@
     simpleName: 'SceneLights',
     interfaces: []
   };
+  function Coin() {
+    KotlinObject.call(this);
+    this.actor = GetOwner(this);
+  }
+  Coin.prototype.Tick = function (deltaTime) {
+    this.actor.K2_AddActorLocalRotation(Rotator_0(void 0, void 0, 15), false);
+  };
+  Coin.prototype.BeginOverlap = function (other) {
+    this.actor.K2_DestroyActor();
+    return '';
+  };
+  Coin.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Coin',
+    interfaces: []
+  };
+  function Sonic() {
+    KotlinObject.call(this);
+    this.MIN_JUMP_Z_VELOCITY = 200.0;
+    this.keyLeft = new KeyListener('A');
+    this.keyRight = new KeyListener('D');
+    this.keyUp = new KeyListener('W');
+    this.keyDown = new KeyListener('S');
+    this.keyJump = new KeyListener('SpaceBar');
+    this.actor = GetOwner(this);
+    this.movementComponent = this.actor.GetMovementComponent();
+    var myPlayerController = GWorld.GetPlayerController(0);
+    myPlayerController.Possess(this.actor);
+    this.actor.bUseControllerRotationPitch = false;
+    this.actor.bUseControllerRotationRoll = false;
+    this.actor.bUseControllerRotationYaw = false;
+    this.actor.CharacterMovement.bOrientRotationToMovement = true;
+    this.actor.CharacterMovement.RotationRate = Rotator.MakeRotator(0, 0, 540);
+    this.actor.CharacterMovement.JumpZVelocity = 650;
+    this.actor.CharacterMovement.AirControl = 0.8;
+  }
+  Sonic.prototype.Tick = function (deltaTime) {
+    if (this.keyLeft.down()) {
+      this.MoveRight_14dthe$(-1.0);
+    }if (this.keyRight.down()) {
+      this.MoveRight_14dthe$(1.0);
+    }if (this.keyUp.down()) {
+      this.MoveForward_14dthe$(1.0);
+    }if (this.keyDown.down()) {
+      this.MoveForward_14dthe$(-1.0);
+    }if (this.keyJump.pressed()) {
+      this.startJump();
+    }if (this.keyJump.released()) {
+      var velocity = this.movementComponent.Velocity;
+      if (numberToDouble(velocity.Z) > this.MIN_JUMP_Z_VELOCITY) {
+        var tmp$ = this.movementComponent;
+        var Z = this.MIN_JUMP_Z_VELOCITY;
+        tmp$.Velocity = Vector_0(velocity.X, velocity.Y, Z);
+      }this.stopJump();
+    }this.Turn_14dthe$(this.axisTurn());
+    this.LookUp_14dthe$(this.axisLookUp());
+  };
+  Sonic.prototype.Turn_14dthe$ = function (value) {
+    this.actor.AddControllerYawInput(value);
+  };
+  Sonic.prototype.LookUp_14dthe$ = function (value) {
+    this.actor.AddControllerPitchInput(value);
+  };
+  Sonic.prototype.MoveForward_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tForwardVector = tPawnRotator.GetForwardVector();
+    this.actor.AddMovementInput(tForwardVector, value, false);
+  };
+  Sonic.prototype.MoveRight_14dthe$ = function (value) {
+    var tPawnRotator = this.actor.GetControlRotation();
+    tPawnRotator.Pitch = 0;
+    tPawnRotator.Roll = 0;
+    var tRightVector = tPawnRotator.GetRightVector();
+    this.actor.AddMovementInput(tRightVector, value, false);
+  };
+  Sonic.prototype.startJump = function () {
+    this.actor.Jump();
+  };
+  Sonic.prototype.stopJump = function () {
+    this.actor.StopJumping();
+  };
+  Sonic.prototype.cleanup = function () {
+    console.log('<<<cleanup>>>');
+    this.actor.K2_DestroyActor();
+  };
+  Sonic.prototype.axisTurn = function () {
+    return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
+  };
+  Sonic.prototype.axisLookUp = function () {
+    return -numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
+  };
+  Sonic.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Sonic',
+    interfaces: []
+  };
   function ThirdPerson() {
     KotlinObject.call(this);
     this.actor = null;
@@ -902,6 +1274,15 @@
     simpleName: 'ThirdPerson',
     interfaces: []
   };
+  function HelloTutorial() {
+    KotlinObject.call(this);
+    println('Hello World!');
+  }
+  HelloTutorial.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'HelloTutorial',
+    interfaces: []
+  };
   function init() {
     println('<<<INIT>>>');
     return getCallableRef('cleanup', function () {
@@ -940,7 +1321,7 @@
     }
     var GeneratedClassDefinition = tmp$;
     var instance = new GeneratedClassDefinition();
-    instance.Root = Root;
+    instance.Root = ComponentRoot;
     instance.Root.SetKotlinObject(instance);
     instance.konstructor();
     if (!global.precious)
@@ -968,6 +1349,30 @@
     $receiver.Z = numberToDouble(Z);
     return $receiver;
   }
+  var withX = defineInlineFunction('kotlin-examples.ue.withX_7qok4o$', wrapFunction(function () {
+    var Vector = _.ue.Vector_a2j3zq$;
+    return function ($receiver, X) {
+      if (X === void 0)
+        X = 0.0;
+      return Vector(X, $receiver.Y, $receiver.Z);
+    };
+  }));
+  var withY = defineInlineFunction('kotlin-examples.ue.withY_7qok4o$', wrapFunction(function () {
+    var Vector = _.ue.Vector_a2j3zq$;
+    return function ($receiver, Y) {
+      if (Y === void 0)
+        Y = 0.0;
+      return Vector($receiver.X, Y, $receiver.Z);
+    };
+  }));
+  var withZ = defineInlineFunction('kotlin-examples.ue.withZ_7qok4o$', wrapFunction(function () {
+    var Vector = _.ue.Vector_a2j3zq$;
+    return function ($receiver, Z) {
+      if (Z === void 0)
+        Z = 0.0;
+      return Vector($receiver.X, $receiver.Y, Z);
+    };
+  }));
   function LinearColor_0(R, G, B, A) {
     if (R === void 0)
       R = 0.0;
@@ -984,6 +1389,38 @@
     $receiver.A = A;
     return $receiver;
   }
+  var withR = defineInlineFunction('kotlin-examples.ue.withR_624pw9$', wrapFunction(function () {
+    var LinearColor = _.ue.LinearColor_1ugm5o$;
+    return function ($receiver, R) {
+      if (R === void 0)
+        R = 0.0;
+      return LinearColor(R, $receiver.G, $receiver.B, $receiver.A);
+    };
+  }));
+  var withG = defineInlineFunction('kotlin-examples.ue.withG_624pw9$', wrapFunction(function () {
+    var LinearColor = _.ue.LinearColor_1ugm5o$;
+    return function ($receiver, G) {
+      if (G === void 0)
+        G = 0.0;
+      return LinearColor($receiver.R, G, $receiver.B, $receiver.A);
+    };
+  }));
+  var withB = defineInlineFunction('kotlin-examples.ue.withB_624pw9$', wrapFunction(function () {
+    var LinearColor = _.ue.LinearColor_1ugm5o$;
+    return function ($receiver, B) {
+      if (B === void 0)
+        B = 0.0;
+      return LinearColor($receiver.R, $receiver.G, B, $receiver.A);
+    };
+  }));
+  var withA = defineInlineFunction('kotlin-examples.ue.withA_624pw9$', wrapFunction(function () {
+    var LinearColor = _.ue.LinearColor_1ugm5o$;
+    return function ($receiver, A) {
+      if (A === void 0)
+        A = 0.0;
+      return LinearColor($receiver.R, $receiver.G, $receiver.B, A);
+    };
+  }));
   function Rotator_0(Roll, Pitch, Yaw) {
     if (Roll === void 0)
       Roll = 0.0;
@@ -997,6 +1434,30 @@
     $receiver.Yaw = Yaw;
     return $receiver;
   }
+  var withRoll = defineInlineFunction('kotlin-examples.ue.withRoll_opltre$', wrapFunction(function () {
+    var Rotator = _.ue.Rotator_a2j3zq$;
+    return function ($receiver, Roll) {
+      if (Roll === void 0)
+        Roll = 0.0;
+      return Rotator(Roll, $receiver.Pitch, $receiver.Yaw);
+    };
+  }));
+  var withPitch = defineInlineFunction('kotlin-examples.ue.withPitch_opltre$', wrapFunction(function () {
+    var Rotator = _.ue.Rotator_a2j3zq$;
+    return function ($receiver, Pitch) {
+      if (Pitch === void 0)
+        Pitch = 0.0;
+      return Rotator($receiver.Roll, Pitch, $receiver.Yaw);
+    };
+  }));
+  var withYaw = defineInlineFunction('kotlin-examples.ue.withYaw_opltre$', wrapFunction(function () {
+    var Rotator = _.ue.Rotator_a2j3zq$;
+    return function ($receiver, Yaw) {
+      if (Yaw === void 0)
+        Yaw = 0.0;
+      return Rotator($receiver.Roll, $receiver.Pitch, Yaw);
+    };
+  }));
   function GetComponentByName($receiver, ComponentClass, Name) {
     var nameToCheck = Name.toLowerCase();
     var $receiver_0 = $receiver.GetComponentsByClass(ComponentClass);
@@ -1035,6 +1496,15 @@
     simpleName: 'KeyListener',
     interfaces: []
   };
+  _.CubeTutorial = CubeTutorial;
+  _.AdventureCharacter = AdventureCharacter;
+  var package$examples = _.examples || (_.examples = {});
+  var package$adventure = package$examples.adventure || (package$examples.adventure = {});
+  Object.defineProperty(package$adventure, 'InteractionManager', {
+    get: InteractionManager_getInstance
+  });
+  package$adventure.InteractiveObject = InteractiveObject;
+  _.InteractiveCube = InteractiveCube;
   _.HelloBlueprint = HelloBlueprint;
   _.HelloBlueprints = HelloBlueprints;
   _.RedRotatingCube = RedRotatingCube;
@@ -1046,9 +1516,6 @@
     get: Pickup$Companion_getInstance
   });
   _.Pickup = Pickup;
-  Object.defineProperty(Switch, 'Companion', {
-    get: Switch$Companion_getInstance
-  });
   _.Switch = Switch;
   _.HelloKotlin = HelloKotlin;
   _.BaseCylinder = BaseCylinder;
@@ -1057,7 +1524,11 @@
   _.ICylinder = ICylinder;
   _.KeyboardInput = KeyboardInput;
   _.SceneLights = SceneLights;
+  _.Coin = Coin;
+  $$importsForInline$$['kotlin-examples'] = _;
+  _.Sonic = Sonic;
   _.ThirdPerson = ThirdPerson;
+  _.HelloTutorial = HelloTutorial;
   _.init = init;
   _.cleanup = cleanup;
   _.GetOwner_yjkk8i$ = GetOwner;
@@ -1066,11 +1537,21 @@
   package$ue.GenerateClass_6p5t4y$ = GenerateClass;
   package$ue.GenerateClass_4gucm0$ = GenerateClass_0;
   package$ue.Vector_a2j3zq$ = Vector_0;
+  package$ue.withX_7qok4o$ = withX;
+  package$ue.withY_7qok4o$ = withY;
+  package$ue.withZ_7qok4o$ = withZ;
   package$ue.LinearColor_1ugm5o$ = LinearColor_0;
+  package$ue.withR_624pw9$ = withR;
+  package$ue.withG_624pw9$ = withG;
+  package$ue.withB_624pw9$ = withB;
+  package$ue.withA_624pw9$ = withA;
   package$ue.Rotator_a2j3zq$ = Rotator_0;
+  package$ue.withRoll_opltre$ = withRoll;
+  package$ue.withPitch_opltre$ = withPitch;
+  package$ue.withYaw_opltre$ = withYaw;
   package$ue.GetComponentByName_4wsm31$ = GetComponentByName;
   package$ue.Key_61zpoe$ = Key_0;
   package$ue.KeyListener = KeyListener;
   Kotlin.defineModule('kotlin-examples', _);
   return _;
-}(module.exports, require('kotlin')));
+}(module.exports, require('kotlin'), require('kotlinx-coroutines-core')));

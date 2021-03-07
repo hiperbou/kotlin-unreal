@@ -86,7 +86,7 @@ void UKotlinComponent::LoadKotlinObject()
 	FString script = TEXT("this.kotlinUnreal.code.unrealProxyClass(this, this.kotlinUnreal.code.") + KotlinClass + TEXT(", \"") + KotlinClass + TEXT("\")\r\n");
 	//UE_LOG(LogTemp, Warning, TEXT("Running script: %s"), *script);
 		
-	JavascriptContext->Expose("Root", this);
+	JavascriptContext->Expose("ComponentRoot", this);
 	JavascriptContext->RunScript(script);
 }
 
@@ -98,6 +98,14 @@ FString UKotlinComponent::BeginOverlap(AActor* other)
 	}
 
 	return FString();
+}
+
+void UKotlinComponent::EndOverlap(AActor* other)
+{
+	if (KotlinObject != nullptr)
+	{
+		KotlinObject->EndOverlap(other);
+	}
 }
 
 UObject* UKotlinComponent::ResolveAsset(FName Name, bool bTryLoad)

@@ -18,11 +18,21 @@ void UKotlinGameInstance::Init()
 	auto* Context = Isolate->CreateContext();
 	JavascriptContext = Context;
 
-	//Context->Expose("Root", this);
+	Context->Expose("Root", this);
 	Context->Expose("GWorld", GetWorld());
 	Context->Expose("GEngine", GEngine);
 
 	LoadJSFile();
+}
+
+void UKotlinGameInstance::Tick( float DeltaTime )
+{
+	OnTick.ExecuteIfBound(DeltaTime);
+}
+
+TStatId UKotlinGameInstance::GetStatId() const
+{
+	return GetStatID();
 }
 
 void UKotlinGameInstance::OnWorldChanged(UWorld* OldWorld, UWorld* NewWorld)
