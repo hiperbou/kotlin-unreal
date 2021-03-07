@@ -31,6 +31,11 @@ Check out the wiki for details, tutorials and guides:
 
 https://github.com/hiperbou/kotlin-unreal/wiki
 
+## VIDEOS
+Playlist on Youtube
+
+https://youtube.com/playlist?list=PLJm5YzQnui1RfCue2NJtEKDSAJf-Kh0WG
+
 ## Code examples
 
 First Person Game example (watch on [Youtube](https://youtu.be/Pcb3cdpAFFA?t=9)):
