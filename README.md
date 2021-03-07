@@ -53,10 +53,10 @@ Rotating cubes example:
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/cubes/WhiteRotatingCube.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/cubes.jpg)
 
-Scene Lights example:
+Adventure example (Kotlin Coroutines):
 
-https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/scenelights/SceneLights.kt
-![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/scenelights.jpg)
+https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/adventure/InteractiveCube.kt
+![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/adventure.jpg)
 
 First Person example:
 
@@ -67,6 +67,11 @@ Third Person example:
 
 https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/thirdperson/ThirdPerson.kt
 ![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/thirdperson.jpg)
+
+Scene Lights example:
+
+https://github.com/hiperbou/kotlin-unreal/blob/master/kotlin-examples/src/examples/scenelights/SceneLights.kt
+![](https://github.com/hiperbou/kotlin-unreal/blob/master/Screenshots/scenelights.jpg)
 
 Hello Blueprints example:
 
