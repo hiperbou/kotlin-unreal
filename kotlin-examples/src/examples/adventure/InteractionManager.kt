@@ -7,38 +7,37 @@ import kotlinx.coroutines.launch
 
 
 object InteractionManager: CoroutineScope {
-    var selected:InteractiveObject? = null
+    private val nullInteractiveObject = object:InteractiveObject{}
+
+    var selected:InteractiveObject = nullInteractiveObject
 
     fun select(interactiveObject: InteractiveObject) {
         launch {
-            job?.join()
-            selected?.highlight(false)
+            job.join()
+            selected.highlight(false)
             selected = interactiveObject.apply { highlight(true) }
         }
     }
 
     fun release(interactiveObject: InteractiveObject) {
         launch {
-            job?.join()
+            job.join()
             interactiveObject.highlight(false)
-            if (selected == interactiveObject) selected = null
+            if (selected == interactiveObject) selected = nullInteractiveObject
         }
     }
 
-    private var interacting = false
-    private var job: Job? = null
+    private var job: Job = Job().apply { complete() }
     fun interact() {
-        if(interacting || selected==null) return
-        interacting = true
+        if(job.isActive || selected == nullInteractiveObject) return
         job = launch {
-            selected?.doAction()
-            interacting = false
+            selected.doAction()
         }
     }
     override val coroutineContext = Dispatchers.Default
 }
 
 interface InteractiveObject {
-    fun highlight(enable:Boolean)
-    suspend fun doAction()
+    fun highlight(enable:Boolean) {}
+    suspend fun doAction() {}
 }
