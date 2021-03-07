@@ -78,6 +78,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Kotlin")
 		FString BeginOverlap(AActor* other);
 	UFUNCTION(BlueprintCallable, Category = "Kotlin")
+		void EndOverlap(AActor* other);
+	UFUNCTION(BlueprintCallable, Category = "Kotlin")
         void OnDestroyed();
 
 	UFUNCTION(BlueprintCallable, Category = "Kotlin")

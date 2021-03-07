@@ -5,6 +5,7 @@ import ue.*
 external interface KotlinUnrealObject {
     fun Tick(deltaTime:Float)
     fun BeginOverlap(other: Actor):String
+    fun EndOverlap(other: Actor)
     fun OnDestroyed()
 }
 
@@ -16,6 +17,7 @@ external open class KotlinObject: KotlinUnrealObject {
     val Root:KotlinActorComponent
     override fun Tick(deltaTime: Float):Unit = definedExternally
     override fun BeginOverlap(other: Actor):String = definedExternally
+    override fun EndOverlap(other: Actor)
     override fun OnDestroyed():Unit = definedExternally
 }
 
@@ -24,7 +26,7 @@ fun <T:Actor>KotlinObject.GetOwner():T {
 }
 
 external var global:dynamic
-
+external var ComponentRoot:dynamic
 
 private object KotlinUnrealClassCache{
     val cache = mutableMapOf<String, dynamic>()
@@ -40,7 +42,7 @@ fun unrealProxyClass(global:dynamic, klass:dynamic, className:String) {
         r
     }
     val instance = js("new GeneratedClassDefinition()")
-    instance.Root = Root
+    instance.Root = ComponentRoot
     instance.Root.SetKotlinObject(instance)
     instance.konstructor()
     if(!global.precious) global.precious = js("[]"); global.precious.push(instance)

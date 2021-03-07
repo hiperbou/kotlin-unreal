@@ -19,5 +19,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="KotlinJavaScript" level="project" />
     <orderEntry type="library" name="KotlinUnreal" level="project" />
+    <orderEntry type="library" name="org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.4.3" level="project" />
   </component>
 </module>

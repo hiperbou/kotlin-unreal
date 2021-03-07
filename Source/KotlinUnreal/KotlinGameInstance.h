@@ -12,7 +12,7 @@
  * 
  */
 UCLASS()
-class KOTLINUNREAL_API UKotlinGameInstance : public UGameInstance
+class KOTLINUNREAL_API UKotlinGameInstance : public UGameInstance, public FTickableGameObject
 {
 	GENERATED_BODY()
 
@@ -20,6 +20,8 @@ class KOTLINUNREAL_API UKotlinGameInstance : public UGameInstance
 	virtual void Init() override;
 
 	public:
+	DECLARE_DYNAMIC_DELEGATE_OneParam(FJavascriptTickSignature, float, DeltaSeconds);	
+	
 	virtual void Shutdown() override;
 	virtual void OnWorldChanged(UWorld* OldWorld, UWorld* NewWorld) override;
 
@@ -27,6 +29,12 @@ class KOTLINUNREAL_API UKotlinGameInstance : public UGameInstance
 	UJavascriptContext* GetContext();
 	
     void LoadJSFile();
+
+	UPROPERTY()
+	FJavascriptTickSignature OnTick;
+
+	virtual void Tick( float DeltaTime ) override;
+	virtual TStatId GetStatId() const override;
 	
 	private:
 	UPROPERTY(transient)

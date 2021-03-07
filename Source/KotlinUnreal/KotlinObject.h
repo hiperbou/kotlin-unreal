@@ -15,6 +15,8 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		FString BeginOverlap(AActor* other);
 	UFUNCTION(BlueprintImplementableEvent)
+		FString EndOverlap(AActor* other);
+	UFUNCTION(BlueprintImplementableEvent)
         void Tick(float DeltaTime);
 	UFUNCTION(BlueprintImplementableEvent)
         void OnDestroyed();
