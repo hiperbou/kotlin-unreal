@@ -28,7 +28,7 @@ object InteractionManager: CoroutineScope {
     private var interacting = false
     private var job: Job? = null
     fun interact() {
-        if(interacting) return
+        if(interacting || selected==null) return
         interacting = true
         job = launch {
             selected?.doAction()
