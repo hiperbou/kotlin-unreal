@@ -8,7 +8,7 @@ class SceneLights:KotlinObject() {
 
     init {
 
-        GWorld.GetAllActorsOfClass(Light).OutActors.forEach { it.K2_DestroyActor() }
+        GWorld.GetAllActorsOfClass(Light).OutActors.forEach { it.DestroyActor() }
 
         tickable = listOf(
             rotate(light(LinearColor(R=1)),object{val k=1.8; val r=150;val p = Vector(X=400,Y=-100,Z=100)}),
@@ -33,7 +33,7 @@ class SceneLights:KotlinObject() {
         smc.SetMobility("Movable")
         smc.SetStaticMesh(StaticMesh.Load("/Engine/BasicShapes/Cube"))
         val mtrl = Material.Load("/Game/Color")
-        val mi = KismetMaterialLibrary.CreateDynamicMaterialInstance(GWorld, mtrl, "")
+        val mi = KismetMaterialLibrary.CreateDynamicMaterialInstance(GWorld, mtrl, "", "")
         mi.SetVectorParameterValue("color", color)
         smc.SetMaterial(0, mi)
         actor.SetActorScale3D(size)
@@ -56,7 +56,7 @@ class SceneLights:KotlinObject() {
         for(y in 0..N){
             for(x in 0..N){
                 val a = box(p.Add_VectorVector(Vector(Y=(y.toDouble()-N/2) * 50, Z= x.toDouble() * 50 )), Vector( X= s, Y= s, Z= s ), LinearColor( R= 1, G= 1, B= 1 ))
-                a.K2_SetActorRotation(Rotator( Yaw= Random.nextDouble() * 360, Pitch=Random.nextDouble() * 180 ), false)
+                a.SetActorRotation(Rotator( Yaw= Random.nextDouble() * 360, Pitch=Random.nextDouble() * 180 ), false)
             }
         }
     }
@@ -65,7 +65,7 @@ class SceneLights:KotlinObject() {
         val resource = SkeletalMesh.Load("/Game/Mannequin/Character/Mesh/SK_Mannequin")
         val actor = SkeletalMeshActor(GWorld, p.Add_VectorVector(Vector( Z= 50 )))
         actor.SkeletalMeshComponent.SetSkeletalMesh(resource, false)
-        actor.K2_SetActorRotation(Rotator( Yaw = 90 ),false)
+        actor.SetActorRotation(Rotator( Yaw = 90 ),false)
     }
 
     fun rotate(actor:Actor, opts:dynamic):()->Unit {
@@ -87,7 +87,7 @@ class SceneLights:KotlinObject() {
     }
 
     fun cleanup() {
-        GWorld.GetAllActorsOfClass(Light).OutActors.forEach { it.K2_DestroyActor() }
+        GWorld.GetAllActorsOfClass(Light).OutActors.forEach { it.DestroyActor() }
     }
 }
 

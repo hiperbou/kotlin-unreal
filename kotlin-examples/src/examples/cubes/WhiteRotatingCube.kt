@@ -9,7 +9,7 @@ class WhiteRotatingCube: KotlinObject() {
         acumulatedDeltaTime += deltaTime
         val actor = GetOwner<RotatingCubeActor>()
         actor.Yaw += actor.Speed * deltaTime * 4
-        actor.K2_SetActorRotation(Rotator(Yaw  = actor.Yaw), false)
+        actor.SetActorRotation(Rotator(Yaw  = actor.Yaw), false)
     }
 
     override fun BeginOverlap(other:Actor):String {

@@ -91,7 +91,7 @@ class Game:KotlinObject() {
         myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false)
 
         //set loaded animation blueprint into class
-        myFPMesh.SetAnimClass(ANI_AnimationBP)
+        myFPMesh.SetAnimInstanceClass(ANI_AnimationBP)
 
         //initialize weapon properties data
         weaponRange = 5000.0
@@ -205,10 +205,10 @@ class Game:KotlinObject() {
         val tempCamera = CameraComponent.C(this.myCamera)
 
         //get camera world location
-        val tempStartTrace = tempCamera.K2_GetComponentLocation()//GetWorldLocation()
+        val tempStartTrace = tempCamera.GetWorldLocation()
 
         //end location is start location + weaponrange(5000 cm) unit forward
-        val tempForwardDirection = tempCamera.K2_GetComponentRotation()/*GetWorldRotation()*/.GetForwardVector()
+        val tempForwardDirection = tempCamera.GetWorldRotation().GetForwardVector()
         val tempOffset = tempForwardDirection.Multiply_VectorFloat(this.weaponRange)
         val tempEndTrace = Vector.Add_VectorVector(tempStartTrace, tempOffset)
 
@@ -220,7 +220,7 @@ class Game:KotlinObject() {
         //line trace and return result into tempHitResult
         //'TraceTypeQuery1' is the 'Visibility' channel
         //'TraceTypeQuery2' is the 'Camera' channel
-        GWorld.LineTraceSingle/*LineTraceByChannel*/(tempStartTrace, tempEndTrace, "TraceTypeQuery2", false, arrayOf(actor), "ForDuration", tempHitResult, true, LinearColor(1, 0, 0), LinearColor(1, 0, 0), 3)
+        GWorld.LineTraceByChannel(tempStartTrace, tempEndTrace, "TraceTypeQuery2", false, arrayOf(actor), "ForDuration", tempHitResult, true, LinearColor(1, 0, 0), LinearColor(1, 0, 0), 3)
 
         //console.log("hitresult = ", tempHitResult.bBlockingHit)
 
@@ -263,7 +263,7 @@ class Game:KotlinObject() {
 
     fun cleanup() {
         console.log("<<<cleanup>>>")
-        actor.K2_DestroyActor()
+        actor.DestroyActor()
     }
 
     fun axisTurn():Double {

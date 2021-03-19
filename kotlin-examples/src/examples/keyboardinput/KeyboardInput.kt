@@ -18,24 +18,24 @@ class KeyboardInput:KotlinObject()  {
 
     override fun Tick(deltaTime:Float) {
         yaw += 1.0
-        actor.K2_SetActorRotation(Rotator(Yaw = yaw), false)
+        actor.SetActorRotation(Rotator(Yaw = yaw), false)
 
         if(keyLeft.down()) {
-            actor.K2_AddActorWorldOffset(Vector(Y = -1),false)
+            actor.AddActorWorldOffset(Vector(Y = -1),false)
         }
         if(keyRight.down()) {
-            actor.K2_AddActorWorldOffset(Vector(Y = 1),false)
+            actor.AddActorWorldOffset(Vector(Y = 1),false)
         }
         if(keyUp.down()) {
-            actor.K2_AddActorWorldOffset(Vector(X = 1),false)
+            actor.AddActorWorldOffset(Vector(X = 1),false)
         }
         if(keyDown.down()) {
-            actor.K2_AddActorWorldOffset(Vector(X = -1),false)
+            actor.AddActorWorldOffset(Vector(X = -1),false)
         }
     }
 
     fun cleanup() {
         console.log("<<<cleanup>>>")
-        actor.K2_DestroyActor()
+        actor.DestroyActor()
     }
 }

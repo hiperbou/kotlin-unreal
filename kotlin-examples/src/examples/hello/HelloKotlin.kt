@@ -17,7 +17,7 @@ class HelloKotlin:KotlinObject() {
 
     override fun Tick(deltaTime:Float) {
         yaw += 100.0 * deltaTime
-        actor.K2_SetActorRotation(Rotator(Yaw = yaw), false)
+        actor.SetActorRotation(Rotator(Yaw = yaw), false)
     }
 
     override fun BeginOverlap(other:Actor):String {
@@ -30,6 +30,6 @@ class HelloKotlin:KotlinObject() {
 
     fun cleanup() {
         console.log("<<<cleanup>>>")
-        actor.K2_DestroyActor()
+        actor.DestroyActor()
     }
 }

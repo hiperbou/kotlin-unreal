@@ -8,7 +8,7 @@ class RedRotatingCube: KotlinObject() {
         val actor = GetOwner<RotatingCubeActor>()
         with(actor){
             if (actorToCopy != null) {
-                K2_SetActorRotation(Rotator(Yaw = actorToCopy!!.Yaw), false)
+                SetActorRotation(Rotator(Yaw = actorToCopy!!.Yaw), false)
             }
         }
     }

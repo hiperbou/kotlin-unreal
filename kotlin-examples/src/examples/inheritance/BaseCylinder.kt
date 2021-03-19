@@ -9,7 +9,7 @@ open class BaseCylinder: KotlinObject(), ICylinder {
         deltaTimeAccum += deltaTime
         val actor = GetOwner<Actor>()
         yaw += 100 * deltaTime
-        actor.K2_SetActorRotation(Rotator(Pitch  = yaw), false)
+        actor.SetActorRotation(Rotator(Pitch  = yaw), false)
     }
 
     override fun BeginOverlap(other:Actor):String {

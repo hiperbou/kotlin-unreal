@@ -3,7 +3,7 @@ import ue.*
 class Pickup:KotlinObject() {
     override fun BeginOverlap(other:Actor): String {
         armor++
-        GetOwner<Actor>().K2_DestroyActor()
+        GetOwner<Actor>().DestroyActor()
         return "armor +1 -> $armor"
     }
 
