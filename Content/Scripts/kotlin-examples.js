@@ -38,6 +38,10 @@
   HelloBlueprint.prototype.constructor = HelloBlueprint;
   HelloBlueprints.prototype = Object.create(KotlinObject.prototype);
   HelloBlueprints.prototype.constructor = HelloBlueprints;
+  Bunny.prototype = Object.create(KotlinObject.prototype);
+  Bunny.prototype.constructor = Bunny;
+  BunnyMark.prototype = Object.create(KotlinObject.prototype);
+  BunnyMark.prototype.constructor = BunnyMark;
   RedRotatingCube.prototype = Object.create(KotlinObject.prototype);
   RedRotatingCube.prototype.constructor = RedRotatingCube;
   WhiteRotatingCube.prototype = Object.create(KotlinObject.prototype);
@@ -535,6 +539,169 @@
   HelloBlueprints.$metadata$ = {
     kind: Kind_CLASS,
     simpleName: 'HelloBlueprints',
+    interfaces: []
+  };
+  function Bunny() {
+    Bunny$Companion_getInstance();
+    KotlinObject.call(this);
+    this.actor = GetOwner(this);
+    this.speedXf = 0.0;
+    this.speedYf = 0.0;
+    this.xf = 0.0;
+    this.yf = 0.0;
+    this.zf = 0.0;
+    this.pos = Vector_0(this.xf, this.yf, this.zf);
+    this.yf = Random.Default.nextInt_za3lpa$(20) * 40.0;
+    this.speedXf = Random.Default.nextFloat() * 10;
+    this.speedYf = Random.Default.nextFloat() * 10 - 5;
+  }
+  function Bunny$Companion() {
+    Bunny$Companion_instance = this;
+    this.maxX = 800.0;
+    this.minX = 0.0;
+    this.maxY = 668.0;
+    this.minY = 0.0;
+    this.gravity = 0.5;
+  }
+  Bunny$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: []
+  };
+  var Bunny$Companion_instance = null;
+  function Bunny$Companion_getInstance() {
+    if (Bunny$Companion_instance === null) {
+      new Bunny$Companion();
+    }return Bunny$Companion_instance;
+  }
+  Bunny.prototype.Tick = function (deltaTime) {
+    this.xf += this.speedXf;
+    this.zf -= this.speedYf;
+    this.speedYf += Bunny$Companion_getInstance().gravity;
+    if (this.xf > Bunny$Companion_getInstance().maxX) {
+      this.speedXf *= -1;
+      this.xf = Bunny$Companion_getInstance().maxX;
+    } else if (this.xf < Bunny$Companion_getInstance().minX) {
+      this.speedXf *= -1;
+      this.xf = Bunny$Companion_getInstance().minX;
+    }if (this.zf < Bunny$Companion_getInstance().minY) {
+      this.speedYf *= -0.85;
+      this.zf = Bunny$Companion_getInstance().minY;
+      if (Random.Default.nextFloat() > 0.5) {
+        this.speedYf -= Random.Default.nextFloat() * 6;
+      }} else if (this.zf > Bunny$Companion_getInstance().maxY) {
+      this.speedYf = 0.0;
+      this.zf = Bunny$Companion_getInstance().maxY;
+    }this.pos.X = this.xf;
+    this.pos.Y = this.yf;
+    this.pos.Z = this.zf;
+    this.actor.SetActorLocation(this.pos, false);
+  };
+  Bunny.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Bunny',
+    interfaces: []
+  };
+  function BunnyMark() {
+    KotlinObject.call(this);
+    this.actorList = ArrayList_init();
+    this.owner = GetOwner(this);
+    this.keySpawnKoltinBunny = new KeyListener('K');
+    this.keySpawnBlueprintBunny = new KeyListener('B');
+    this.keySpawnKotlinOptimizedBunny = new KeyListener('O');
+    this.spawnedBunnies = 0;
+  }
+  BunnyMark.prototype.spawnBunnies_btcm9r$ = function (type) {
+    for (var i = 1; i <= 10; i++)
+      this.createActor_btcm9r$(type);
+    this.spawnedBunnies = this.spawnedBunnies + 10 | 0;
+    println('Bunnies: ' + this.spawnedBunnies);
+  };
+  BunnyMark.prototype.spawnOptimizedBunnies_btcm9r$ = function (type) {
+    for (var i = 1; i <= 10; i++)
+      this.actorList.add_11rb$(new OptimizedBunny(this.createActor_btcm9r$(type)));
+    println('Bunnies: ' + this.actorList.size);
+  };
+  BunnyMark.prototype.createActor_btcm9r$ = function (type) {
+    return this.Root.Spawn(type, new Vector(), new Rotator());
+  };
+  BunnyMark.prototype.Tick = function (deltaTime) {
+    if (this.keySpawnKoltinBunny.pressed()) {
+      this.spawnBunnies_btcm9r$(this.owner.KotlinBunny);
+    }if (this.keySpawnBlueprintBunny.pressed()) {
+      this.spawnBunnies_btcm9r$(this.owner.BlueprintBunny);
+    }if (this.keySpawnKotlinOptimizedBunny.pressed()) {
+      this.spawnOptimizedBunnies_btcm9r$(this.owner.KotlinOptimizedBunny);
+    }var tmp$;
+    tmp$ = this.actorList.iterator();
+    while (tmp$.hasNext()) {
+      var element = tmp$.next();
+      element.Tick_mx4ult$(deltaTime);
+    }
+  };
+  BunnyMark.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'BunnyMark',
+    interfaces: []
+  };
+  function OptimizedBunny(actor) {
+    OptimizedBunny$Companion_getInstance();
+    this.actor = actor;
+    this.speedXf = 0.0;
+    this.speedYf = 0.0;
+    this.xf = 0.0;
+    this.yf = 0.0;
+    this.zf = 0.0;
+    this.pos = Vector_0(this.xf, this.yf, this.zf);
+    this.yf = Random.Default.nextInt_za3lpa$(20) * 40.0;
+    this.speedXf = Random.Default.nextFloat() * 10;
+    this.speedYf = Random.Default.nextFloat() * 10 - 5;
+  }
+  function OptimizedBunny$Companion() {
+    OptimizedBunny$Companion_instance = this;
+    this.maxX = 800.0;
+    this.minX = 0.0;
+    this.maxY = 668.0;
+    this.minY = 0.0;
+    this.gravity = 0.5;
+  }
+  OptimizedBunny$Companion.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Companion',
+    interfaces: []
+  };
+  var OptimizedBunny$Companion_instance = null;
+  function OptimizedBunny$Companion_getInstance() {
+    if (OptimizedBunny$Companion_instance === null) {
+      new OptimizedBunny$Companion();
+    }return OptimizedBunny$Companion_instance;
+  }
+  OptimizedBunny.prototype.Tick_mx4ult$ = function (deltaTime) {
+    this.xf += this.speedXf;
+    this.zf -= this.speedYf;
+    this.speedYf += OptimizedBunny$Companion_getInstance().gravity;
+    if (this.xf > OptimizedBunny$Companion_getInstance().maxX) {
+      this.speedXf *= -1;
+      this.xf = OptimizedBunny$Companion_getInstance().maxX;
+    } else if (this.xf < OptimizedBunny$Companion_getInstance().minX) {
+      this.speedXf *= -1;
+      this.xf = OptimizedBunny$Companion_getInstance().minX;
+    }if (this.zf < OptimizedBunny$Companion_getInstance().minY) {
+      this.speedYf *= -0.85;
+      this.zf = OptimizedBunny$Companion_getInstance().minY;
+      if (Random.Default.nextFloat() > 0.5) {
+        this.speedYf -= Random.Default.nextFloat() * 6;
+      }} else if (this.zf > OptimizedBunny$Companion_getInstance().maxY) {
+      this.speedYf = 0.0;
+      this.zf = OptimizedBunny$Companion_getInstance().maxY;
+    }this.pos.X = this.xf;
+    this.pos.Y = this.yf;
+    this.pos.Z = this.zf;
+    this.actor.SetActorLocation(this.pos, false);
+  };
+  OptimizedBunny.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'OptimizedBunny',
     interfaces: []
   };
   function RedRotatingCube() {
@@ -1626,6 +1793,15 @@
   _.InteractiveCube = InteractiveCube;
   _.HelloBlueprint = HelloBlueprint;
   _.HelloBlueprints = HelloBlueprints;
+  Object.defineProperty(Bunny, 'Companion', {
+    get: Bunny$Companion_getInstance
+  });
+  _.Bunny = Bunny;
+  _.BunnyMark = BunnyMark;
+  Object.defineProperty(OptimizedBunny, 'Companion', {
+    get: OptimizedBunny$Companion_getInstance
+  });
+  _.OptimizedBunny = OptimizedBunny;
   _.RedRotatingCube = RedRotatingCube;
   _.WhiteRotatingCube = WhiteRotatingCube;
   _.FirstPerson = FirstPerson;
