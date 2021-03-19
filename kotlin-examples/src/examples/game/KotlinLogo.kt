@@ -7,12 +7,12 @@ class KotlinLogo: KotlinObject() {
     override fun Tick(deltaTime:Float) {
         val actor = GetOwner<Actor>()
         yaw += 100 * deltaTime
-        actor.K2_SetActorRotation(Rotator(Roll = 90.0, Yaw  = yaw), false)
+        actor.SetActorRotation(Rotator(Roll = 90.0, Yaw  = yaw), false)
     }
 
     override fun BeginOverlap(other:Actor):String {
         spawnAICubes()
-        GetOwner<Actor>().K2_DestroyActor()
+        GetOwner<Actor>().DestroyActor()
         return "touched"
 
     }

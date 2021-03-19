@@ -10,11 +10,11 @@ external class SwitchActor: Actor {
 class Switch:KotlinObject() {
     override fun BeginOverlap(other: Actor): String {
         val actor = GetOwner<SwitchActor>()
-        actor.Lock?.K2_DestroyActor()
+        actor.Lock?.DestroyActor()
 
         val plate:StaticMeshComponent = actor.GetComponentByClass(StaticMeshComponent).asDynamic()
         val button:StaticMeshComponent = actor.GetComponentByName(StaticMeshComponent,"Button")
-        button.K2_SetRelativeLocation(Vector(X = 0, Y = 20, Z = 0), false)
+        button.SetRelativeLocation(Vector(X = 0, Y = 20, Z = 0), false)
 
         plate.SetMaterial(0, button.GetMaterial(0))
 

@@ -30,7 +30,7 @@ class AdventureCharacter: KotlinObject() {
 
         val ANI_AnimationBP = AnimBlueprint.Load("/Game/Mannequin/Animations/ThirdPerson_AnimBP.ThirdPerson_AnimBP").GeneratedClass
 
-        actor.Mesh.SetAnimClass(ANI_AnimationBP)
+        actor.Mesh.SetAnimInstanceClass(ANI_AnimationBP)
 
         actor.Mesh.RelativeRotation = Rotator.MakeRotator(0, 0, 270)
 
@@ -108,7 +108,7 @@ class AdventureCharacter: KotlinObject() {
 
     fun cleanup() {
         console.log("<<<cleanup>>>")
-        actor.K2_DestroyActor()
+        actor.DestroyActor()
     }
 
     fun axisTurn():Double {

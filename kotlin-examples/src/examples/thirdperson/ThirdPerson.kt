@@ -67,7 +67,7 @@ class ThirdPerson:KotlinObject() {
         //actor.Mesh.SetSkeletalMesh(SK_mesh, false)
 
         //set animation class to ThirdPerson_AnimBP
-        actor.Mesh.SetAnimClass(ANI_AnimationBP)
+        actor.Mesh.SetAnimInstanceClass(ANI_AnimationBP)
 
         //rotate the skeletal mesh so it is facing front
         actor.Mesh.RelativeRotation = Rotator.MakeRotator(0, 0, 270)
@@ -160,7 +160,7 @@ class ThirdPerson:KotlinObject() {
 
     fun cleanup() {
         console.log("<<<cleanup>>>")
-        actor.K2_DestroyActor()
+        actor.DestroyActor()
     }
 
     fun axisTurn():Double {

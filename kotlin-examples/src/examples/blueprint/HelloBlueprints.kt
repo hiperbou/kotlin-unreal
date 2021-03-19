@@ -17,19 +17,19 @@ class HelloBlueprints:KotlinObject() {
 
     fun createActor(x:Double, y:Double, yaw:Number):Actor {
         return Root.Spawn(owner.ActorToSpawn, Vector(  X=x, Y=y ),Rotator( Yaw=yaw )).apply {
-            //K2_AddActorLocalRotation doesn't work without setting local rotation first
-            K2_SetActorRotation(Rotator(Yaw = yaw), false)
+            //AddActorLocalRotation doesn't work without setting local rotation first
+            SetActorRotation(Rotator(Yaw = yaw), false)
         }
     }
 
     override fun Tick(deltaTime:Float) {
         actorList.forEach {
-            it.K2_AddActorLocalRotation(Rotator(Yaw = 1),false)
+            it.AddActorLocalRotation(Rotator(Yaw = 1),false)
         }
     }
 
     fun cleanup() {
         console.log("<<<cleanup>>>")
-        actorList.forEach { it.K2_DestroyActor() }
+        actorList.forEach { it.DestroyActor() }
     }
 }

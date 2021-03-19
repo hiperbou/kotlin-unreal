@@ -6,12 +6,14 @@
   var Math_0 = Math;
   var numberToDouble = Kotlin.numberToDouble;
   var Unit = Kotlin.kotlin.Unit;
-  var equals = Kotlin.equals;
-  var coroutines = $module$kotlinx_coroutines_core.kotlinx.coroutines;
   var COROUTINE_SUSPENDED = Kotlin.kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED;
   var CoroutineImpl = Kotlin.kotlin.coroutines.CoroutineImpl;
   var launch = $module$kotlinx_coroutines_core.kotlinx.coroutines.launch_s496o7$;
+  var equals = Kotlin.equals;
+  var Job = $module$kotlinx_coroutines_core.kotlinx.coroutines.Job_5dx9e$;
+  var coroutines = $module$kotlinx_coroutines_core.kotlinx.coroutines;
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
+  var CoroutineScope = $module$kotlinx_coroutines_core.kotlinx.coroutines.CoroutineScope;
   var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
   var L2000 = Kotlin.Long.fromInt(2000);
   var delay = $module$kotlinx_coroutines_core.kotlinx.coroutines.delay_s8cxhz$;
@@ -77,7 +79,7 @@
     this.accumulatedDeltaTime += deltaTime;
     var x = this.accumulatedDeltaTime;
     actor.Yaw = 45.0 * Math_0.cos(x);
-    actor.K2_SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
+    actor.SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
   };
   CubeTutorial.prototype.BeginOverlap = function (other) {
     println("I've been changed! Collided with " + other + '!');
@@ -105,7 +107,7 @@
     this.actor.CharacterMovement.bOrientRotationToMovement = true;
     this.actor.CharacterMovement.RotationRate = Rotator.MakeRotator(0, 0, 540);
     var ANI_AnimationBP = AnimBlueprint.Load('/Game/Mannequin/Animations/ThirdPerson_AnimBP.ThirdPerson_AnimBP').GeneratedClass;
-    this.actor.Mesh.SetAnimClass(ANI_AnimationBP);
+    this.actor.Mesh.SetAnimInstanceClass(ANI_AnimationBP);
     this.actor.Mesh.RelativeRotation = Rotator.MakeRotator(0, 0, 270);
     this.actor.Mesh.RelativeLocation = Vector.MakeVector(0, 0, -96);
     var myPlayerController = GWorld.GetPlayerController(0);
@@ -147,7 +149,7 @@
   };
   AdventureCharacter.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
   };
   AdventureCharacter.prototype.axisTurn = function () {
     return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
@@ -162,19 +164,133 @@
   };
   function InteractionManager() {
     InteractionManager_instance = this;
-    this.selected = null;
-    this.interacting_0 = false;
+    this.nullInteractiveObject_0 = new InteractionManager$nullInteractiveObject$ObjectLiteral();
+    this.selected = this.nullInteractiveObject_0;
+    var $receiver = Job();
+    $receiver.complete();
+    this.job_0 = $receiver;
+    this.coroutineContext_4et243$_0 = coroutines.Dispatchers.Default;
+  }
+  function Coroutine$InteractionManager$select$lambda(this$InteractionManager_0, closure$interactiveObject_0, $receiver_0, controller, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.$controller = controller;
+    this.exceptionState_0 = 1;
+    this.local$this$InteractionManager = this$InteractionManager_0;
+    this.local$closure$interactiveObject = closure$interactiveObject_0;
+  }
+  Coroutine$InteractionManager$select$lambda.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$InteractionManager$select$lambda.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$InteractionManager$select$lambda.prototype.constructor = Coroutine$InteractionManager$select$lambda;
+  Coroutine$InteractionManager$select$lambda.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            this.state_0 = 2;
+            this.result_0 = this.local$this$InteractionManager.job_0.join(this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 1:
+            throw this.exception_0;
+          case 2:
+            this.local$this$InteractionManager.selected.highlight_6taknv$(false);
+            var tmp$ = this.local$this$InteractionManager;
+            var $receiver = this.local$closure$interactiveObject;
+            $receiver.highlight_6taknv$(true);
+            return tmp$.selected = $receiver, Unit;
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  function InteractionManager$select$lambda(this$InteractionManager_0, closure$interactiveObject_0) {
+    return function ($receiver_0, continuation_0, suspended) {
+      var instance = new Coroutine$InteractionManager$select$lambda(this$InteractionManager_0, closure$interactiveObject_0, $receiver_0, this, continuation_0);
+      if (suspended)
+        return instance;
+      else
+        return instance.doResume(null);
+    };
   }
   InteractionManager.prototype.select_tsf84i$ = function (interactiveObject) {
-    var tmp$;
-    (tmp$ = this.selected) != null ? (tmp$.highlight_6taknv$(false), Unit) : null;
-    interactiveObject.highlight_6taknv$(true);
-    this.selected = interactiveObject;
+    launch(this, void 0, void 0, InteractionManager$select$lambda(this, interactiveObject));
   };
+  function Coroutine$InteractionManager$release$lambda(this$InteractionManager_0, closure$interactiveObject_0, $receiver_0, controller, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.$controller = controller;
+    this.exceptionState_0 = 1;
+    this.local$this$InteractionManager = this$InteractionManager_0;
+    this.local$closure$interactiveObject = closure$interactiveObject_0;
+  }
+  Coroutine$InteractionManager$release$lambda.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$InteractionManager$release$lambda.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$InteractionManager$release$lambda.prototype.constructor = Coroutine$InteractionManager$release$lambda;
+  Coroutine$InteractionManager$release$lambda.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            this.state_0 = 2;
+            this.result_0 = this.local$this$InteractionManager.job_0.join(this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 1:
+            throw this.exception_0;
+          case 2:
+            this.local$closure$interactiveObject.highlight_6taknv$(false);
+            if (equals(this.local$this$InteractionManager.selected, this.local$closure$interactiveObject)) {
+              return this.local$this$InteractionManager.selected = this.local$this$InteractionManager.nullInteractiveObject_0, Unit;
+            } else {
+              this.state_0 = 3;
+              continue;
+            }
+
+          case 3:
+            return Unit;
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  function InteractionManager$release$lambda(this$InteractionManager_0, closure$interactiveObject_0) {
+    return function ($receiver_0, continuation_0, suspended) {
+      var instance = new Coroutine$InteractionManager$release$lambda(this$InteractionManager_0, closure$interactiveObject_0, $receiver_0, this, continuation_0);
+      if (suspended)
+        return instance;
+      else
+        return instance.doResume(null);
+    };
+  }
   InteractionManager.prototype.release_tsf84i$ = function (interactiveObject) {
-    interactiveObject.highlight_6taknv$(false);
-    if (equals(this.selected, interactiveObject))
-      this.selected = null;
+    launch(this, void 0, void 0, InteractionManager$release$lambda(this, interactiveObject));
   };
   function Coroutine$InteractionManager$interact$lambda(this$InteractionManager_0, $receiver_0, controller, continuation_0) {
     CoroutineImpl.call(this, continuation_0);
@@ -194,28 +310,15 @@
       try {
         switch (this.state_0) {
           case 0:
-            var tmp$;
-            this.local$this$InteractionManager.interacting_0 = true;
-            if ((tmp$ = this.local$this$InteractionManager.selected) != null) {
-              this.state_0 = 2;
-              this.result_0 = tmp$.doAction(this);
-              if (this.result_0 === COROUTINE_SUSPENDED)
-                return COROUTINE_SUSPENDED;
-              continue;
-            } else {
-              this.result_0 = null;
-              this.state_0 = 3;
-              continue;
-            }
-
+            this.state_0 = 2;
+            this.result_0 = this.local$this$InteractionManager.selected.doAction(this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
           case 1:
             throw this.exception_0;
           case 2:
-            this.result_0 = Unit;
-            this.state_0 = 3;
-            continue;
-          case 3:
-            return this.local$this$InteractionManager.interacting_0 = false, Unit;
+            return this.result_0;
           default:this.state_0 = 1;
             throw new Error('State Machine Unreachable execution');
         }
@@ -240,14 +343,26 @@
     };
   }
   InteractionManager.prototype.interact = function () {
-    if (this.interacting_0)
+    if (this.job_0.isActive || equals(this.selected, this.nullInteractiveObject_0))
       return;
-    launch(coroutines.GlobalScope, void 0, void 0, InteractionManager$interact$lambda(this));
+    this.job_0 = launch(this, void 0, void 0, InteractionManager$interact$lambda(this));
+  };
+  Object.defineProperty(InteractionManager.prototype, 'coroutineContext', {
+    configurable: true,
+    get: function () {
+      return this.coroutineContext_4et243$_0;
+    }
+  });
+  function InteractionManager$nullInteractiveObject$ObjectLiteral() {
+  }
+  InteractionManager$nullInteractiveObject$ObjectLiteral.$metadata$ = {
+    kind: Kind_CLASS,
+    interfaces: [InteractiveObject]
   };
   InteractionManager.$metadata$ = {
     kind: Kind_OBJECT,
     simpleName: 'InteractionManager',
-    interfaces: []
+    interfaces: [CoroutineScope]
   };
   var InteractionManager_instance = null;
   function InteractionManager_getInstance() {
@@ -257,6 +372,10 @@
   }
   function InteractiveObject() {
   }
+  InteractiveObject.prototype.highlight_6taknv$ = function (enable) {
+  };
+  InteractiveObject.prototype.doAction = function (continuation) {
+  };
   InteractiveObject.$metadata$ = {
     kind: Kind_INTERFACE,
     simpleName: 'InteractiveObject',
@@ -363,7 +482,7 @@
   }
   HelloBlueprint.prototype.Tick = function (deltaTime) {
     this.yaw += 100.0 * deltaTime;
-    this.actor.K2_SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
+    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
   };
   HelloBlueprint.prototype.BeginOverlap = function (other) {
     return '';
@@ -373,7 +492,7 @@
   };
   HelloBlueprint.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
   };
   HelloBlueprint.$metadata$ = {
     kind: Kind_CLASS,
@@ -393,7 +512,7 @@
   };
   HelloBlueprints.prototype.createActor_u22e3q$ = function (x, y, yaw) {
     var $receiver = this.Root.Spawn(this.owner.ActorToSpawn, Vector_0(x, y), Rotator_0(void 0, void 0, yaw));
-    $receiver.K2_SetActorRotation(Rotator_0(void 0, void 0, yaw), false);
+    $receiver.SetActorRotation(Rotator_0(void 0, void 0, yaw), false);
     return $receiver;
   };
   HelloBlueprints.prototype.Tick = function (deltaTime) {
@@ -401,7 +520,7 @@
     tmp$ = this.actorList.iterator();
     while (tmp$.hasNext()) {
       var element = tmp$.next();
-      element.K2_AddActorLocalRotation(Rotator_0(void 0, void 0, 1), false);
+      element.AddActorLocalRotation(Rotator_0(void 0, void 0, 1), false);
     }
   };
   HelloBlueprints.prototype.cleanup = function () {
@@ -410,7 +529,7 @@
     tmp$ = this.actorList.iterator();
     while (tmp$.hasNext()) {
       var element = tmp$.next();
-      element.K2_DestroyActor();
+      element.DestroyActor();
     }
   };
   HelloBlueprints.$metadata$ = {
@@ -425,7 +544,7 @@
   RedRotatingCube.prototype.Tick = function (deltaTime) {
     var actor = GetOwner(this);
     if (actor.actorToCopy != null) {
-      actor.K2_SetActorRotation(Rotator_0(void 0, void 0, ensureNotNull(actor.actorToCopy).Yaw), false);
+      actor.SetActorRotation(Rotator_0(void 0, void 0, ensureNotNull(actor.actorToCopy).Yaw), false);
     }};
   RedRotatingCube.prototype.BeginOverlap = function (other) {
     this.touched = this.touched + 1 | 0;
@@ -453,7 +572,7 @@
     this.acumulatedDeltaTime += deltaTime;
     var actor = GetOwner(this);
     actor.Yaw = actor.Yaw + actor.Speed * deltaTime * 4;
-    actor.K2_SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
+    actor.SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
   };
   WhiteRotatingCube.prototype.BeginOverlap = function (other) {
     this.touched = this.touched + 1 | 0;
@@ -514,7 +633,7 @@
     this.fireAnimation = owner.FirstPersonFire_Montage;
     this.myFPMesh.SetSkeletalMesh(FP_mesh, false);
     this.myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false);
-    this.myFPMesh.SetAnimClass(ANI_AnimationBP);
+    this.myFPMesh.SetAnimInstanceClass(ANI_AnimationBP);
     this.weaponRange = 5000.0;
     this.weaponDamage = 500000.0;
     this.gunOffset = Vector_0(100, 30, 10);
@@ -572,12 +691,12 @@
     var tempAnimInstance = this.myFPMesh.GetAnimInstance();
     tempAnimInstance.Montage_Play(this.fireAnimation, 1, 'MontageLength', 0, true);
     var tempCamera = CameraComponent.C(this.myCamera);
-    var tempStartTrace = tempCamera.K2_GetComponentLocation();
-    var tempForwardDirection = tempCamera.K2_GetComponentRotation().GetForwardVector();
+    var tempStartTrace = tempCamera.GetWorldLocation();
+    var tempForwardDirection = tempCamera.GetWorldRotation().GetForwardVector();
     var tempOffset = tempForwardDirection.Multiply_VectorFloat(this.weaponRange);
     var tempEndTrace = Vector.Add_VectorVector(tempStartTrace, tempOffset);
     var tempHitResult = new HitResult();
-    GWorld.LineTraceSingle(tempStartTrace, tempEndTrace, 'TraceTypeQuery2', false, [this.actor], 'ForDuration', tempHitResult, true, LinearColor_0(1, 0, 0), LinearColor_0(1, 0, 0), 3);
+    GWorld.LineTraceByChannel(tempStartTrace, tempEndTrace, 'TraceTypeQuery2', false, [this.actor], 'ForDuration', tempHitResult, true, LinearColor_0(1, 0, 0), LinearColor_0(1, 0, 0), 3);
     var damageActor = tempHitResult.Actor;
     var damageComponent = tempHitResult.Component;
     if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
@@ -586,7 +705,7 @@
     }};
   FirstPerson.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
   };
   FirstPerson.prototype.axisTurn = function () {
     return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
@@ -658,7 +777,7 @@
     this.fireAnimation = this.owner.FirstPersonFire_Montage;
     this.myFPMesh.SetSkeletalMesh(FP_mesh, false);
     this.myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false);
-    this.myFPMesh.SetAnimClass(ANI_AnimationBP);
+    this.myFPMesh.SetAnimInstanceClass(ANI_AnimationBP);
     this.weaponRange = 5000.0;
     this.weaponDamage = 500000.0;
     this.gunOffset = Vector_0(100, 30, 10);
@@ -715,12 +834,12 @@
     var tempAnimInstance = this.myFPMesh.GetAnimInstance();
     tempAnimInstance.Montage_Play(this.fireAnimation, 1, 'MontageLength', 0, true);
     var tempCamera = CameraComponent.C(this.myCamera);
-    var tempStartTrace = tempCamera.K2_GetComponentLocation();
-    var tempForwardDirection = tempCamera.K2_GetComponentRotation().GetForwardVector();
+    var tempStartTrace = tempCamera.GetWorldLocation();
+    var tempForwardDirection = tempCamera.GetWorldRotation().GetForwardVector();
     var tempOffset = tempForwardDirection.Multiply_VectorFloat(this.weaponRange);
     var tempEndTrace = Vector.Add_VectorVector(tempStartTrace, tempOffset);
     var tempHitResult = new HitResult();
-    GWorld.LineTraceSingle(tempStartTrace, tempEndTrace, 'TraceTypeQuery2', false, [this.actor], 'ForDuration', tempHitResult, true, LinearColor_0(1, 0, 0), LinearColor_0(1, 0, 0), 3);
+    GWorld.LineTraceByChannel(tempStartTrace, tempEndTrace, 'TraceTypeQuery2', false, [this.actor], 'ForDuration', tempHitResult, true, LinearColor_0(1, 0, 0), LinearColor_0(1, 0, 0), 3);
     var damageActor = tempHitResult.Actor;
     var damageComponent = tempHitResult.Component;
     if (damageActor != null && contains(damageActor.GetName(), 'AI')) {
@@ -738,7 +857,7 @@
     }};
   Game.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
   };
   Game.prototype.axisTurn = function () {
     return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
@@ -769,11 +888,11 @@
   KotlinLogo.prototype.Tick = function (deltaTime) {
     var actor = GetOwner(this);
     this.yaw += 100 * deltaTime;
-    actor.K2_SetActorRotation(Rotator_0(90.0, void 0, this.yaw), false);
+    actor.SetActorRotation(Rotator_0(90.0, void 0, this.yaw), false);
   };
   KotlinLogo.prototype.BeginOverlap = function (other) {
     this.spawnAICubes();
-    GetOwner(this).K2_DestroyActor();
+    GetOwner(this).DestroyActor();
     return 'touched';
   };
   KotlinLogo.prototype.createAIKube_atrclb$ = function (position) {
@@ -803,7 +922,7 @@
     var tmp$;
     tmp$ = Pickup$Companion_getInstance().armor;
     Pickup$Companion_getInstance().armor = tmp$ + 1 | 0;
-    GetOwner(this).K2_DestroyActor();
+    GetOwner(this).DestroyActor();
     return 'armor +1 -> ' + Pickup$Companion_getInstance().armor;
   };
   function Pickup$Companion() {
@@ -832,10 +951,10 @@
   Switch.prototype.BeginOverlap = function (other) {
     var tmp$;
     var actor = GetOwner(this);
-    (tmp$ = actor.Lock) != null ? (tmp$.K2_DestroyActor(), Unit) : null;
+    (tmp$ = actor.Lock) != null ? (tmp$.DestroyActor(), Unit) : null;
     var plate = actor.GetComponentByClass(StaticMeshComponent);
     var button = GetComponentByName(actor, StaticMeshComponent, 'Button');
-    button.K2_SetRelativeLocation(Vector_0(0, 20, 0), false);
+    button.SetRelativeLocation(Vector_0(0, 20, 0), false);
     plate.SetMaterial(0, button.GetMaterial(0));
     return 'Lock opened';
   };
@@ -856,7 +975,7 @@
   }
   HelloKotlin.prototype.Tick = function (deltaTime) {
     this.yaw += 100.0 * deltaTime;
-    this.actor.K2_SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
+    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
   };
   HelloKotlin.prototype.BeginOverlap = function (other) {
     return '';
@@ -866,7 +985,7 @@
   };
   HelloKotlin.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
   };
   HelloKotlin.$metadata$ = {
     kind: Kind_CLASS,
@@ -882,7 +1001,7 @@
     this.deltaTimeAccum += deltaTime;
     var actor = GetOwner(this);
     this.yaw += 100 * deltaTime;
-    actor.K2_SetActorRotation(Rotator_0(void 0, this.yaw), false);
+    actor.SetActorRotation(Rotator_0(void 0, this.yaw), false);
   };
   BaseCylinder.prototype.BeginOverlap = function (other) {
     return this.getName();
@@ -952,19 +1071,19 @@
   }
   KeyboardInput.prototype.Tick = function (deltaTime) {
     this.yaw += 1.0;
-    this.actor.K2_SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
+    this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
     if (this.keyLeft.down()) {
-      this.actor.K2_AddActorWorldOffset(Vector_0(void 0, -1), false);
+      this.actor.AddActorWorldOffset(Vector_0(void 0, -1), false);
     }if (this.keyRight.down()) {
-      this.actor.K2_AddActorWorldOffset(Vector_0(void 0, 1), false);
+      this.actor.AddActorWorldOffset(Vector_0(void 0, 1), false);
     }if (this.keyUp.down()) {
-      this.actor.K2_AddActorWorldOffset(Vector_0(1), false);
+      this.actor.AddActorWorldOffset(Vector_0(1), false);
     }if (this.keyDown.down()) {
-      this.actor.K2_AddActorWorldOffset(Vector_0(-1), false);
+      this.actor.AddActorWorldOffset(Vector_0(-1), false);
     }};
   KeyboardInput.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
   };
   KeyboardInput.$metadata$ = {
     kind: Kind_CLASS,
@@ -978,7 +1097,7 @@
     var tmp$;
     for (tmp$ = 0; tmp$ !== $receiver.length; ++tmp$) {
       var element = $receiver[tmp$];
-      element.K2_DestroyActor();
+      element.DestroyActor();
     }
     this.tickable = listOf([this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(1)), new SceneLights_init$ObjectLiteral()), this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, 1)), new SceneLights_init$ObjectLiteral_0()), this.rotate_ot2g50$(this.light_qxwhts$(LinearColor_0(void 0, void 0, 1)), new SceneLights_init$ObjectLiteral_1())]);
     this.bg_atrclb$(Vector_0(400, -100, -150));
@@ -997,7 +1116,7 @@
     smc.SetMobility('Movable');
     smc.SetStaticMesh(StaticMesh.Load('/Engine/BasicShapes/Cube'));
     var mtrl = Material.Load('/Game/Color');
-    var mi = KismetMaterialLibrary.CreateDynamicMaterialInstance(GWorld, mtrl, '');
+    var mi = KismetMaterialLibrary.CreateDynamicMaterialInstance(GWorld, mtrl, '', '');
     mi.SetVectorParameterValue('color', color);
     smc.SetMaterial(0, mi);
     actor.SetActorScale3D(size);
@@ -1017,7 +1136,7 @@
       for (var x = 0; x <= N; x++) {
         var a = this.box_bzru3a$(p.Add_VectorVector(Vector_0(void 0, (y - (N / 2 | 0)) * 50, x * 50)), Vector_0(s, s, s), LinearColor_0(1, 1, 1));
         tmp$ = Random.Default.nextDouble() * 360;
-        a.K2_SetActorRotation(Rotator_0(void 0, Random.Default.nextDouble() * 180, tmp$), false);
+        a.SetActorRotation(Rotator_0(void 0, Random.Default.nextDouble() * 180, tmp$), false);
       }
     }
   };
@@ -1025,7 +1144,7 @@
     var resource = SkeletalMesh.Load('/Game/Mannequin/Character/Mesh/SK_Mannequin');
     var actor = new SkeletalMeshActor(GWorld, p.Add_VectorVector(Vector_0(void 0, void 0, 50)));
     actor.SkeletalMeshComponent.SetSkeletalMesh(resource, false);
-    actor.K2_SetActorRotation(Rotator_0(void 0, void 0, 90), false);
+    actor.SetActorRotation(Rotator_0(void 0, void 0, 90), false);
   };
   function SceneLights$rotate$tick(closure$actor, closure$opts) {
     return function () {
@@ -1057,7 +1176,7 @@
     var tmp$;
     for (tmp$ = 0; tmp$ !== $receiver.length; ++tmp$) {
       var element = $receiver[tmp$];
-      element.K2_DestroyActor();
+      element.DestroyActor();
     }
   };
   function SceneLights_init$ObjectLiteral() {
@@ -1097,10 +1216,10 @@
     this.actor = GetOwner(this);
   }
   Coin.prototype.Tick = function (deltaTime) {
-    this.actor.K2_AddActorLocalRotation(Rotator_0(void 0, void 0, 15), false);
+    this.actor.AddActorLocalRotation(Rotator_0(void 0, void 0, 150 * deltaTime), false);
   };
   Coin.prototype.BeginOverlap = function (other) {
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
     return '';
   };
   Coin.$metadata$ = {
@@ -1177,7 +1296,7 @@
   };
   Sonic.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
   };
   Sonic.prototype.axisTurn = function () {
     return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
@@ -1211,7 +1330,7 @@
     this.actor.CharacterMovement.JumpZVelocity = 600;
     this.actor.CharacterMovement.AirControl = 0.2;
     var ANI_AnimationBP = AnimBlueprint.Load('/Game/Mannequin/Animations/ThirdPerson_AnimBP.ThirdPerson_AnimBP').GeneratedClass;
-    this.actor.Mesh.SetAnimClass(ANI_AnimationBP);
+    this.actor.Mesh.SetAnimInstanceClass(ANI_AnimationBP);
     this.actor.Mesh.RelativeRotation = Rotator.MakeRotator(0, 0, 270);
     this.actor.Mesh.RelativeLocation = Vector.MakeVector(0, 0, -96);
     var myPlayerController = GWorld.GetPlayerController(0);
@@ -1261,7 +1380,7 @@
   };
   ThirdPerson.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
-    this.actor.K2_DestroyActor();
+    this.actor.DestroyActor();
   };
   ThirdPerson.prototype.axisTurn = function () {
     return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
@@ -1552,6 +1671,8 @@
   package$ue.GetComponentByName_4wsm31$ = GetComponentByName;
   package$ue.Key_61zpoe$ = Key_0;
   package$ue.KeyListener = KeyListener;
+  InteractionManager$nullInteractiveObject$ObjectLiteral.prototype.highlight_6taknv$ = InteractiveObject.prototype.highlight_6taknv$;
+  InteractionManager$nullInteractiveObject$ObjectLiteral.prototype.doAction = InteractiveObject.prototype.doAction;
   Kotlin.defineModule('kotlin-examples', _);
   return _;
 }(module.exports, require('kotlin'), require('kotlinx-coroutines-core')));
