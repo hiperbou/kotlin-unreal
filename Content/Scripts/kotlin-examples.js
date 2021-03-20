@@ -396,6 +396,7 @@
     InteractiveObjectBase.call(this);
     this.actor = GetOwner(this);
     this.opened = false;
+    this.sequencePlayed = false;
   }
   function Coroutine$doAction($this, continuation_0) {
     CoroutineImpl.call(this, continuation_0);
@@ -415,6 +416,10 @@
       try {
         switch (this.state_0) {
           case 0:
+            if (!this.$this.sequencePlayed) {
+              this.$this.sequencePlayed = true;
+              this.$this.playSequence_0(this.$this.actor.Sequence);
+            }
             this.local$tmp$ = (this.$this.opened ? new IntRange(-110, 0) : downTo(0, -110)).iterator();
             this.state_0 = 2;
             continue;
@@ -458,6 +463,21 @@
       return instance;
     else
       return instance.doResume(null);
+  };
+  function InteractiveChest$playSequence$lambda$lambda(this$) {
+    return function () {
+      this$.DestroyActor();
+      return Unit;
+    };
+  }
+  InteractiveChest.prototype.playSequence_0 = function (sequence) {
+    var $receiver = new MovieSceneSequencePlaybackSettings();
+    $receiver.bDisableMovementInput = true;
+    $receiver.bDisableLookAtInput = true;
+    var settings = $receiver;
+    var $receiver_0 = LevelSequencePlayer.CreateLevelSequencePlayer(GWorld, sequence, settings).OutActor;
+    $receiver_0.SequencePlayer.Play();
+    $receiver_0.SequencePlayer.OnFinished.Add(InteractiveChest$playSequence$lambda$lambda($receiver_0));
   };
   InteractiveChest.$metadata$ = {
     kind: Kind_CLASS,
