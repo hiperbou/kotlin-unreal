@@ -49,6 +49,14 @@ fun <T>Actor.GetComponentByName(ComponentClass:Any, Name:String):T
     return component.first().asDynamic()
 }
 
+fun <T>Actor.GetComponentByClass(ComponentClass: Any):T{
+    return GetComponentByClass(ComponentClass).asDynamic()
+}
+
+fun <T>Actor.GetComponentsByClass(ComponentClass: Any):Array<T>{
+    return GetComponentsByClass(ComponentClass).asDynamic()
+}
+
 fun Key(keyName:String):Key = Key().apply { KeyName=keyName }
 
 class KeyListener(keyName:String, private val playerControllerIndex:Int = 0) {

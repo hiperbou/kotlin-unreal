@@ -10,7 +10,7 @@ external interface KotlinUnrealObject {
 }
 
 external class KotlinActorComponent:ActorComponent {
-    fun Spawn(actorClass:UClass, position:Vector, rotation: Rotator):Actor
+    fun <T:Actor>Spawn(actorClass:UClass, position:Vector, rotation: Rotator):T
 }
 
 external open class KotlinObject: KotlinUnrealObject {

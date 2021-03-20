@@ -15,8 +15,11 @@
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var CoroutineScope = $module$kotlinx_coroutines_core.kotlinx.coroutines.CoroutineScope;
   var Kind_INTERFACE = Kotlin.Kind.INTERFACE;
-  var L2000 = Kotlin.Long.fromInt(2000);
+  var IntRange = Kotlin.kotlin.ranges.IntRange;
+  var downTo = Kotlin.kotlin.ranges.downTo_dqglrj$;
+  var L16 = Kotlin.Long.fromInt(16);
   var delay = $module$kotlinx_coroutines_core.kotlinx.coroutines.delay_s8cxhz$;
+  var L2000 = Kotlin.Long.fromInt(2000);
   var Random = Kotlin.kotlin.random.Random;
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var ensureNotNull = Kotlin.ensureNotNull;
@@ -32,7 +35,11 @@
   CubeTutorial.prototype.constructor = CubeTutorial;
   AdventureCharacter.prototype = Object.create(KotlinObject.prototype);
   AdventureCharacter.prototype.constructor = AdventureCharacter;
-  InteractiveCube.prototype = Object.create(KotlinObject.prototype);
+  InteractiveObjectBase.prototype = Object.create(KotlinObject.prototype);
+  InteractiveObjectBase.prototype.constructor = InteractiveObjectBase;
+  InteractiveChest.prototype = Object.create(InteractiveObjectBase.prototype);
+  InteractiveChest.prototype.constructor = InteractiveChest;
+  InteractiveCube.prototype = Object.create(InteractiveObjectBase.prototype);
   InteractiveCube.prototype.constructor = InteractiveCube;
   HelloBlueprint.prototype = Object.create(KotlinObject.prototype);
   HelloBlueprint.prototype.constructor = HelloBlueprint;
@@ -385,20 +392,15 @@
     simpleName: 'InteractiveObject',
     interfaces: []
   };
-  function InteractiveCube() {
-    KotlinObject.call(this);
+  function InteractiveChest() {
+    InteractiveObjectBase.call(this);
     this.actor = GetOwner(this);
-    this.mesh = this.actor.GetComponentByClass(StaticMeshComponent);
+    this.opened = false;
   }
-  InteractiveCube.prototype.highlight_6taknv$ = function (enable) {
-    this.mesh.SetRenderCustomDepth(enable);
-  };
   function Coroutine$doAction($this, continuation_0) {
     CoroutineImpl.call(this, continuation_0);
     this.exceptionState_0 = 1;
     this.$this = $this;
-    this.local$widget = void 0;
-    this.local$$receiver = void 0;
     this.local$tmp$ = void 0;
   }
   Coroutine$doAction.$metadata$ = {
@@ -409,6 +411,79 @@
   Coroutine$doAction.prototype = Object.create(CoroutineImpl.prototype);
   Coroutine$doAction.prototype.constructor = Coroutine$doAction;
   Coroutine$doAction.prototype.doResume = function () {
+    do
+      try {
+        switch (this.state_0) {
+          case 0:
+            this.local$tmp$ = (this.$this.opened ? new IntRange(-110, 0) : downTo(0, -110)).iterator();
+            this.state_0 = 2;
+            continue;
+          case 1:
+            throw this.exception_0;
+          case 2:
+            if (!this.local$tmp$.hasNext()) {
+              this.state_0 = 4;
+              continue;
+            }
+            var element = this.local$tmp$.next();
+            this.$this.actor.Top.SetRelativeRotation(Rotator_0(0, element, 0), false);
+            this.state_0 = 3;
+            this.result_0 = delay(L16, this);
+            if (this.result_0 === COROUTINE_SUSPENDED)
+              return COROUTINE_SUSPENDED;
+            continue;
+          case 3:
+            this.state_0 = 2;
+            continue;
+          case 4:
+            this.$this.opened = !this.$this.opened;
+            return;
+          default:this.state_0 = 1;
+            throw new Error('State Machine Unreachable execution');
+        }
+      } catch (e) {
+        if (this.state_0 === 1) {
+          this.exceptionState_0 = this.state_0;
+          throw e;
+        } else {
+          this.state_0 = this.exceptionState_0;
+          this.exception_0 = e;
+        }
+      }
+     while (true);
+  };
+  InteractiveChest.prototype.doAction = function (continuation_0, suspended) {
+    var instance = new Coroutine$doAction(this, continuation_0);
+    if (suspended)
+      return instance;
+    else
+      return instance.doResume(null);
+  };
+  InteractiveChest.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'InteractiveChest',
+    interfaces: [InteractiveObjectBase]
+  };
+  function InteractiveCube() {
+    InteractiveObjectBase.call(this);
+    this.actor = GetOwner(this);
+  }
+  function Coroutine$doAction_0($this, continuation_0) {
+    CoroutineImpl.call(this, continuation_0);
+    this.exceptionState_0 = 1;
+    this.$this = $this;
+    this.local$widget = void 0;
+    this.local$$receiver = void 0;
+    this.local$tmp$ = void 0;
+  }
+  Coroutine$doAction_0.$metadata$ = {
+    kind: Kotlin.Kind.CLASS,
+    simpleName: null,
+    interfaces: [CoroutineImpl]
+  };
+  Coroutine$doAction_0.prototype = Object.create(CoroutineImpl.prototype);
+  Coroutine$doAction_0.prototype.constructor = Coroutine$doAction_0;
+  Coroutine$doAction_0.prototype.doResume = function () {
     do
       try {
         switch (this.state_0) {
@@ -459,22 +534,39 @@
      while (true);
   };
   InteractiveCube.prototype.doAction = function (continuation_0, suspended) {
-    var instance = new Coroutine$doAction(this, continuation_0);
+    var instance = new Coroutine$doAction_0(this, continuation_0);
     if (suspended)
       return instance;
     else
       return instance.doResume(null);
   };
-  InteractiveCube.prototype.BeginOverlap = function (other) {
-    InteractionManager_getInstance().select_tsf84i$(this);
-    return '';
-  };
-  InteractiveCube.prototype.EndOverlap = function (other) {
-    InteractionManager_getInstance().release_tsf84i$(this);
-  };
   InteractiveCube.$metadata$ = {
     kind: Kind_CLASS,
     simpleName: 'InteractiveCube',
+    interfaces: [InteractiveObjectBase]
+  };
+  function InteractiveObjectBase() {
+    KotlinObject.call(this);
+    this.meshes_q7j1ib$_0 = GetComponentsByClass(GetOwner(this), StaticMeshComponent);
+  }
+  InteractiveObjectBase.prototype.highlight_6taknv$ = function (enable) {
+    var $receiver = this.meshes_q7j1ib$_0;
+    var tmp$;
+    for (tmp$ = 0; tmp$ !== $receiver.length; ++tmp$) {
+      var element = $receiver[tmp$];
+      element.SetRenderCustomDepth(enable);
+    }
+  };
+  InteractiveObjectBase.prototype.BeginOverlap = function (other) {
+    InteractionManager_getInstance().select_tsf84i$(this);
+    return '';
+  };
+  InteractiveObjectBase.prototype.EndOverlap = function (other) {
+    InteractionManager_getInstance().release_tsf84i$(this);
+  };
+  InteractiveObjectBase.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'InteractiveObjectBase',
     interfaces: [InteractiveObject]
   };
   function HelloBlueprint() {
@@ -1119,7 +1211,7 @@
     var tmp$;
     var actor = GetOwner(this);
     (tmp$ = actor.Lock) != null ? (tmp$.DestroyActor(), Unit) : null;
-    var plate = actor.GetComponentByClass(StaticMeshComponent);
+    var plate = GetComponentByClass(actor, StaticMeshComponent);
     var button = GetComponentByName(actor, StaticMeshComponent, 'Button');
     button.SetRelativeLocation(Vector_0(0, 20, 0), false);
     plate.SetMaterial(0, button.GetMaterial(0));
@@ -1757,6 +1849,12 @@
     var component = destination;
     return first(component);
   }
+  function GetComponentByClass($receiver, ComponentClass) {
+    return $receiver.GetComponentByClass(ComponentClass);
+  }
+  function GetComponentsByClass($receiver, ComponentClass) {
+    return $receiver.GetComponentsByClass(ComponentClass);
+  }
   function Key_0(keyName) {
     var $receiver = new Key();
     $receiver.KeyName = keyName;
@@ -1790,7 +1888,9 @@
     get: InteractionManager_getInstance
   });
   package$adventure.InteractiveObject = InteractiveObject;
+  _.InteractiveChest = InteractiveChest;
   _.InteractiveCube = InteractiveCube;
+  _.InteractiveObjectBase = InteractiveObjectBase;
   _.HelloBlueprint = HelloBlueprint;
   _.HelloBlueprints = HelloBlueprints;
   Object.defineProperty(Bunny, 'Companion', {
@@ -1845,10 +1945,13 @@
   package$ue.withPitch_opltre$ = withPitch;
   package$ue.withYaw_opltre$ = withYaw;
   package$ue.GetComponentByName_4wsm31$ = GetComponentByName;
+  package$ue.GetComponentByClass_xetjdt$ = GetComponentByClass;
+  package$ue.GetComponentsByClass_xetjdt$ = GetComponentsByClass;
   package$ue.Key_61zpoe$ = Key_0;
   package$ue.KeyListener = KeyListener;
   InteractionManager$nullInteractiveObject$ObjectLiteral.prototype.highlight_6taknv$ = InteractiveObject.prototype.highlight_6taknv$;
   InteractionManager$nullInteractiveObject$ObjectLiteral.prototype.doAction = InteractiveObject.prototype.doAction;
+  InteractiveObjectBase.prototype.doAction = InteractiveObject.prototype.doAction;
   Kotlin.defineModule('kotlin-examples', _);
   return _;
 }(module.exports, require('kotlin'), require('kotlinx-coroutines-core')));

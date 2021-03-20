@@ -37,7 +37,7 @@ class Game:KotlinObject() {
 
     val owner = GetOwner<FirstPersonGameBlueprint>()
     init {
-        actor = Root.Spawn(owner.FirstPerson_BP,Vector(), Rotator()).asDynamic()
+        actor = Root.Spawn(owner.FirstPerson_BP,Vector(), Rotator())
         //Set size for collision capsule
         actor.CapsuleComponent.CapsuleRadius = 42.0
         actor.CapsuleComponent.CapsuleHalfHeight = 96.0
@@ -284,7 +284,7 @@ class Game:KotlinObject() {
     }
 
     fun createCube(position:Vector):Actor {
-        return Root.Spawn(owner.CubeBP, Vector(), Rotator()).asDynamic()
+        return Root.Spawn(owner.CubeBP, Vector(), Rotator())
     }
 
 
