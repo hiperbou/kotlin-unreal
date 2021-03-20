@@ -1,7 +1,4 @@
-import ue.Actor
-import ue.GetComponentByName
-import ue.StaticMeshComponent
-import ue.Vector
+import ue.*
 
 external class SwitchActor: Actor {
     var Lock: Actor?
@@ -12,8 +9,8 @@ class Switch:KotlinObject() {
         val actor = GetOwner<SwitchActor>()
         actor.Lock?.DestroyActor()
 
-        val plate:StaticMeshComponent = actor.GetComponentByClass(StaticMeshComponent).asDynamic()
-        val button:StaticMeshComponent = actor.GetComponentByName(StaticMeshComponent,"Button")
+        val plate = actor.GetComponentByClass<StaticMeshComponent>(StaticMeshComponent)
+        val button = actor.GetComponentByName<StaticMeshComponent>(StaticMeshComponent,"Button")
         button.SetRelativeLocation(Vector(X = 0, Y = 20, Z = 0), false)
 
         plate.SetMaterial(0, button.GetMaterial(0))

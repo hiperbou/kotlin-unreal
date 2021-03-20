@@ -16,7 +16,7 @@ class HelloBlueprints:KotlinObject() {
     }
 
     fun createActor(x:Double, y:Double, yaw:Number):Actor {
-        return Root.Spawn(owner.ActorToSpawn, Vector(  X=x, Y=y ),Rotator( Yaw=yaw )).apply {
+        return Root.Spawn<Actor>(owner.ActorToSpawn, Vector(  X=x, Y=y ),Rotator( Yaw=yaw )).apply {
             //AddActorLocalRotation doesn't work without setting local rotation first
             SetActorRotation(Rotator(Yaw = yaw), false)
         }

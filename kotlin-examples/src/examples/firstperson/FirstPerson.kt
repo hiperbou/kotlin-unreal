@@ -35,7 +35,7 @@ class FirstPerson:KotlinObject() {
     init {
         val owner = GetOwner<FirstPersonBlueprint>()
 
-        actor = Root.Spawn(owner.FirstPerson_BP,Vector(), Rotator()).asDynamic()
+        actor = Root.Spawn(owner.FirstPerson_BP,Vector(), Rotator())
         //Set size for collision capsule
         actor.CapsuleComponent.CapsuleRadius = 42.0
         actor.CapsuleComponent.CapsuleHalfHeight = 96.0

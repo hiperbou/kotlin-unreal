@@ -20,11 +20,11 @@ class KotlinLogo: KotlinObject() {
     val owner = GetOwner<FirstPersonGameBlueprint>()
 
     fun createAIKube(position: Vector):Character {
-        return Root.Spawn(owner.AIKubeController, position, Rotator()).asDynamic()
+        return Root.Spawn(owner.AIKubeController, position, Rotator())
     }
 
     fun createAIController():AIController {
-        return Root.Spawn(owner.CubeAI, Vector(), Rotator()).asDynamic()
+        return Root.Spawn(owner.CubeAI, Vector(), Rotator())
     }
 
     fun spawnAICubes(){
