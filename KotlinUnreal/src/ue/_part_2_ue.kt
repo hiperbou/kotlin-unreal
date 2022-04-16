@@ -23641,6 +23641,163 @@ external open class VisualLoggerExtension : UObject {
     }
 }
 
+external object EClothMassMode {
+    var UniformMass: String /* "UniformMass" */
+    var TotalMass: String /* "TotalMass" */
+    var Density: String /* "Density" */
+    var MaxClothMassMode: String /* "MaxClothMassMode" */
+    var EClothMassMode_MAX: String /* "EClothMassMode_MAX" */
+}
+
+external open class ChaosClothWeightedValue {
+    open var Low: Number
+    open var High: Number
+    open fun clone(): ChaosClothWeightedValue
+
+    companion object {
+        fun C(Other: UObject): ChaosClothWeightedValue
+        fun C(Other: Any): ChaosClothWeightedValue
+    }
+}
+
+external object EChaosClothTetherMode {
+    var FastTetherFastLength: String /* "FastTetherFastLength" */
+    var AccurateTetherFastLength: String /* "AccurateTetherFastLength" */
+    var AccurateTetherAccurateLength: String /* "AccurateTetherAccurateLength" */
+    var MaxChaosClothTetherMode: String /* "MaxChaosClothTetherMode" */
+    var EChaosClothTetherMode_MAX: String /* "EChaosClothTetherMode_MAX" */
+}
+
+external open class ChaosClothConfig : ClothConfigCommon {
+    constructor()
+    constructor(Outer: UObject)
+    open var MassMode: String /* "UniformMass" | "TotalMass" | "Density" | "MaxClothMassMode" | "EClothMassMode_MAX" */
+    open var UniformMass: Number
+    open var TotalMass: Number
+    open var Density: Number
+    open var MinPerParticleMass: Number
+    open var EdgeStiffness: Number
+    open var BendingStiffness: Number
+    open var bUseBendingElements: Boolean
+    open var AreaStiffness: Number
+    open var VolumeStiffness: Number
+    open var TetherStiffness: ChaosClothWeightedValue
+    open var LimitScale: Number
+    open var bUseGeodesicDistance: Boolean
+    open var ShapeTargetStiffness: Number
+    open var CollisionThickness: Number
+    open var FrictionCoefficient: Number
+    open var bUseCCD: Boolean
+    open var bUseSelfCollisions: Boolean
+    open var SelfCollisionThickness: Number
+    open var bUseLegacyBackstop: Boolean
+    open var DampingCoefficient: Number
+    open var bUsePointBasedWindModel: Boolean
+    open var DragCoefficient: Number
+    open var LiftCoefficient: Number
+    open var bUseGravityOverride: Boolean
+    open var GravityScale: Number
+    open var Gravity: Vector
+    open var AnimDriveStiffness: ChaosClothWeightedValue
+    open var AnimDriveDamping: ChaosClothWeightedValue
+    open var LinearVelocityScale: Vector
+    open var AngularVelocityScale: Number
+    open var FictitiousAngularScale: Number
+    open var bUseTetrahedralConstraints: Boolean
+    open var bUseThinShellVolumeConstraints: Boolean
+    open var bUseContinuousCollisionDetection: Boolean
+    open var TetherMode: String /* "FastTetherFastLength" | "AccurateTetherFastLength" | "AccurateTetherAccurateLength" | "MaxChaosClothTetherMode" | "EChaosClothTetherMode_MAX" */
+    open var AnimDriveSpringStiffness: Number
+    open var StrainLimitingStiffness: Number
+
+    companion object {
+        fun Load(ResourceName: String): ChaosClothConfig
+        fun Find(Outer: UObject, ResourceName: String): ChaosClothConfig
+        fun GetDefaultObject(): ChaosClothConfig
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothConfig
+        fun C(Other: UObject): ChaosClothConfig
+        fun C(Other: Any): ChaosClothConfig
+    }
+}
+
+external open class ChaosClothSharedSimConfig : ClothSharedConfigCommon {
+    constructor()
+    constructor(Outer: UObject)
+    open var IterationCount: Number
+    open var SubdivisionCount: Number
+    open var SelfCollisionThickness: Number
+    open var CollisionThickness: Number
+    open var bUseDampingOverride: Boolean
+    open var Damping: Number
+    open var bUseGravityOverride: Boolean
+    open var GravityScale: Number
+    open var Gravity: Vector
+    open var bUseLocalSpaceSimulation: Boolean
+    open var bUseXPBDConstraints: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): ChaosClothSharedSimConfig
+        fun Find(Outer: UObject, ResourceName: String): ChaosClothSharedSimConfig
+        fun GetDefaultObject(): ChaosClothSharedSimConfig
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothSharedSimConfig
+        fun C(Other: UObject): ChaosClothSharedSimConfig
+        fun C(Other: Any): ChaosClothSharedSimConfig
+    }
+}
+
+external open class ChaosClothingSimulationFactory : ClothingSimulationFactory {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): ChaosClothingSimulationFactory
+        fun Find(Outer: UObject, ResourceName: String): ChaosClothingSimulationFactory
+        fun GetDefaultObject(): ChaosClothingSimulationFactory
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothingSimulationFactory
+        fun C(Other: UObject): ChaosClothingSimulationFactory
+        fun C(Other: Any): ChaosClothingSimulationFactory
+    }
+}
+
+external open class ChaosClothingInteractor : ClothingInteractor {
+    constructor()
+    constructor(Outer: UObject)
+    open fun SetVelocityScale(LinearVelocityScale: Vector, AngularVelocityScale: Number, FictitiousAngularScale: Number)
+    open fun SetMaterialLinear(EdgeStiffness: Number, BendingStiffness: Number, AreaStiffness: Number)
+    open fun SetLongRangeAttachmentLinear(TetherStiffness: Number)
+    open fun SetLongRangeAttachment(TetherStiffness: Vector2D)
+    open fun SetGravity(GravityScale: Number, bIsGravityOverridden: Boolean, GravityOverride: Vector)
+    open fun SetDamping(DampingCoefficient: Number)
+    open fun SetCollision(CollisionThickness: Number, FrictionCoefficient: Number, bUseCCD: Boolean, SelfCollisionThickness: Number)
+    open fun SetAnimDriveLinear(AnimDriveStiffness: Number)
+    open fun SetAnimDrive(AnimDriveStiffness: Vector2D, AnimDriveDamping: Vector2D)
+    open fun SetAerodynamics(DragCoefficient: Number, LiftCoefficient: Number, WindVelocity: Vector)
+    open fun ResetAndTeleport(bReset: Boolean, bTeleport: Boolean)
+
+    companion object {
+        fun Load(ResourceName: String): ChaosClothingInteractor
+        fun Find(Outer: UObject, ResourceName: String): ChaosClothingInteractor
+        fun GetDefaultObject(): ChaosClothingInteractor
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothingInteractor
+        fun C(Other: UObject): ChaosClothingInteractor
+        fun C(Other: Any): ChaosClothingInteractor
+    }
+}
+
+external open class ChaosClothingSimulationInteractor : ClothingSimulationInteractor {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): ChaosClothingSimulationInteractor
+        fun Find(Outer: UObject, ResourceName: String): ChaosClothingSimulationInteractor
+        fun GetDefaultObject(): ChaosClothingSimulationInteractor
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothingSimulationInteractor
+        fun C(Other: UObject): ChaosClothingSimulationInteractor
+        fun C(Other: Any): ChaosClothingSimulationInteractor
+    }
+}
+
 external open class VariantDependency {
     open var VariantSet: VariantSet
     open var Variant: Variant
@@ -24969,163 +25126,6 @@ external open class DatasmithStaticMeshTemplate : DatasmithObjectTemplate {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): DatasmithStaticMeshTemplate
         fun C(Other: UObject): DatasmithStaticMeshTemplate
         fun C(Other: Any): DatasmithStaticMeshTemplate
-    }
-}
-
-external object EClothMassMode {
-    var UniformMass: String /* "UniformMass" */
-    var TotalMass: String /* "TotalMass" */
-    var Density: String /* "Density" */
-    var MaxClothMassMode: String /* "MaxClothMassMode" */
-    var EClothMassMode_MAX: String /* "EClothMassMode_MAX" */
-}
-
-external open class ChaosClothWeightedValue {
-    open var Low: Number
-    open var High: Number
-    open fun clone(): ChaosClothWeightedValue
-
-    companion object {
-        fun C(Other: UObject): ChaosClothWeightedValue
-        fun C(Other: Any): ChaosClothWeightedValue
-    }
-}
-
-external object EChaosClothTetherMode {
-    var FastTetherFastLength: String /* "FastTetherFastLength" */
-    var AccurateTetherFastLength: String /* "AccurateTetherFastLength" */
-    var AccurateTetherAccurateLength: String /* "AccurateTetherAccurateLength" */
-    var MaxChaosClothTetherMode: String /* "MaxChaosClothTetherMode" */
-    var EChaosClothTetherMode_MAX: String /* "EChaosClothTetherMode_MAX" */
-}
-
-external open class ChaosClothConfig : ClothConfigCommon {
-    constructor()
-    constructor(Outer: UObject)
-    open var MassMode: String /* "UniformMass" | "TotalMass" | "Density" | "MaxClothMassMode" | "EClothMassMode_MAX" */
-    open var UniformMass: Number
-    open var TotalMass: Number
-    open var Density: Number
-    open var MinPerParticleMass: Number
-    open var EdgeStiffness: Number
-    open var BendingStiffness: Number
-    open var bUseBendingElements: Boolean
-    open var AreaStiffness: Number
-    open var VolumeStiffness: Number
-    open var TetherStiffness: ChaosClothWeightedValue
-    open var LimitScale: Number
-    open var bUseGeodesicDistance: Boolean
-    open var ShapeTargetStiffness: Number
-    open var CollisionThickness: Number
-    open var FrictionCoefficient: Number
-    open var bUseCCD: Boolean
-    open var bUseSelfCollisions: Boolean
-    open var SelfCollisionThickness: Number
-    open var bUseLegacyBackstop: Boolean
-    open var DampingCoefficient: Number
-    open var bUsePointBasedWindModel: Boolean
-    open var DragCoefficient: Number
-    open var LiftCoefficient: Number
-    open var bUseGravityOverride: Boolean
-    open var GravityScale: Number
-    open var Gravity: Vector
-    open var AnimDriveStiffness: ChaosClothWeightedValue
-    open var AnimDriveDamping: ChaosClothWeightedValue
-    open var LinearVelocityScale: Vector
-    open var AngularVelocityScale: Number
-    open var FictitiousAngularScale: Number
-    open var bUseTetrahedralConstraints: Boolean
-    open var bUseThinShellVolumeConstraints: Boolean
-    open var bUseContinuousCollisionDetection: Boolean
-    open var TetherMode: String /* "FastTetherFastLength" | "AccurateTetherFastLength" | "AccurateTetherAccurateLength" | "MaxChaosClothTetherMode" | "EChaosClothTetherMode_MAX" */
-    open var AnimDriveSpringStiffness: Number
-    open var StrainLimitingStiffness: Number
-
-    companion object {
-        fun Load(ResourceName: String): ChaosClothConfig
-        fun Find(Outer: UObject, ResourceName: String): ChaosClothConfig
-        fun GetDefaultObject(): ChaosClothConfig
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothConfig
-        fun C(Other: UObject): ChaosClothConfig
-        fun C(Other: Any): ChaosClothConfig
-    }
-}
-
-external open class ChaosClothSharedSimConfig : ClothSharedConfigCommon {
-    constructor()
-    constructor(Outer: UObject)
-    open var IterationCount: Number
-    open var SubdivisionCount: Number
-    open var SelfCollisionThickness: Number
-    open var CollisionThickness: Number
-    open var bUseDampingOverride: Boolean
-    open var Damping: Number
-    open var bUseGravityOverride: Boolean
-    open var GravityScale: Number
-    open var Gravity: Vector
-    open var bUseLocalSpaceSimulation: Boolean
-    open var bUseXPBDConstraints: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): ChaosClothSharedSimConfig
-        fun Find(Outer: UObject, ResourceName: String): ChaosClothSharedSimConfig
-        fun GetDefaultObject(): ChaosClothSharedSimConfig
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothSharedSimConfig
-        fun C(Other: UObject): ChaosClothSharedSimConfig
-        fun C(Other: Any): ChaosClothSharedSimConfig
-    }
-}
-
-external open class ChaosClothingSimulationFactory : ClothingSimulationFactory {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ChaosClothingSimulationFactory
-        fun Find(Outer: UObject, ResourceName: String): ChaosClothingSimulationFactory
-        fun GetDefaultObject(): ChaosClothingSimulationFactory
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothingSimulationFactory
-        fun C(Other: UObject): ChaosClothingSimulationFactory
-        fun C(Other: Any): ChaosClothingSimulationFactory
-    }
-}
-
-external open class ChaosClothingInteractor : ClothingInteractor {
-    constructor()
-    constructor(Outer: UObject)
-    open fun SetVelocityScale(LinearVelocityScale: Vector, AngularVelocityScale: Number, FictitiousAngularScale: Number)
-    open fun SetMaterialLinear(EdgeStiffness: Number, BendingStiffness: Number, AreaStiffness: Number)
-    open fun SetLongRangeAttachmentLinear(TetherStiffness: Number)
-    open fun SetLongRangeAttachment(TetherStiffness: Vector2D)
-    open fun SetGravity(GravityScale: Number, bIsGravityOverridden: Boolean, GravityOverride: Vector)
-    open fun SetDamping(DampingCoefficient: Number)
-    open fun SetCollision(CollisionThickness: Number, FrictionCoefficient: Number, bUseCCD: Boolean, SelfCollisionThickness: Number)
-    open fun SetAnimDriveLinear(AnimDriveStiffness: Number)
-    open fun SetAnimDrive(AnimDriveStiffness: Vector2D, AnimDriveDamping: Vector2D)
-    open fun SetAerodynamics(DragCoefficient: Number, LiftCoefficient: Number, WindVelocity: Vector)
-    open fun ResetAndTeleport(bReset: Boolean, bTeleport: Boolean)
-
-    companion object {
-        fun Load(ResourceName: String): ChaosClothingInteractor
-        fun Find(Outer: UObject, ResourceName: String): ChaosClothingInteractor
-        fun GetDefaultObject(): ChaosClothingInteractor
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothingInteractor
-        fun C(Other: UObject): ChaosClothingInteractor
-        fun C(Other: Any): ChaosClothingInteractor
-    }
-}
-
-external open class ChaosClothingSimulationInteractor : ClothingSimulationInteractor {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ChaosClothingSimulationInteractor
-        fun Find(Outer: UObject, ResourceName: String): ChaosClothingSimulationInteractor
-        fun GetDefaultObject(): ChaosClothingSimulationInteractor
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosClothingSimulationInteractor
-        fun C(Other: UObject): ChaosClothingSimulationInteractor
-        fun C(Other: Any): ChaosClothingSimulationInteractor
     }
 }
 
@@ -26750,6 +26750,67 @@ external open class K2Node_LeaderboardQuery : K2Node_BaseAsyncTask {
     }
 }
 
+external interface `T$759` {
+    var OutGazeData: EyeTrackerStereoGazeData
+    var `$`: Boolean
+}
+
+external open class EyeTrackerStereoGazeData {
+    open var LeftEyeOrigin: Vector
+    open var LeftEyeDirection: Vector
+    open var RightEyeOrigin: Vector
+    open var RightEyeDirection: Vector
+    open var FixationPoint: Vector
+    open var ConfidenceValue: Number
+    open fun clone(): EyeTrackerStereoGazeData
+    open fun GetStereoGazeData(): `T$759`
+
+    companion object {
+        fun C(Other: UObject): EyeTrackerStereoGazeData
+        fun C(Other: Any): EyeTrackerStereoGazeData
+        fun GetStereoGazeData(OutGazeData: EyeTrackerStereoGazeData = definedExternally): `T$759`
+    }
+}
+
+external interface `T$760` {
+    var OutGazeData: EyeTrackerGazeData
+    var `$`: Boolean
+}
+
+external open class EyeTrackerGazeData {
+    open var GazeOrigin: Vector
+    open var GazeDirection: Vector
+    open var FixationPoint: Vector
+    open var ConfidenceValue: Number
+    open fun clone(): EyeTrackerGazeData
+    open fun GetGazeData(): `T$760`
+
+    companion object {
+        fun C(Other: UObject): EyeTrackerGazeData
+        fun C(Other: Any): EyeTrackerGazeData
+        fun GetGazeData(OutGazeData: EyeTrackerGazeData = definedExternally): `T$760`
+    }
+}
+
+external open class EyeTrackerFunctionLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): EyeTrackerFunctionLibrary
+        fun Find(Outer: UObject, ResourceName: String): EyeTrackerFunctionLibrary
+        fun GetDefaultObject(): EyeTrackerFunctionLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): EyeTrackerFunctionLibrary
+        fun SetEyeTrackedPlayer(PlayerController: PlayerController)
+        fun IsStereoGazeDataAvailable(): Boolean
+        fun IsEyeTrackerConnected(): Boolean
+        fun GetStereoGazeData(OutGazeData: EyeTrackerStereoGazeData = definedExternally): `T$759`
+        fun GetGazeData(OutGazeData: EyeTrackerGazeData = definedExternally): `T$760`
+        fun C(Other: UObject): EyeTrackerFunctionLibrary
+        fun C(Other: Any): EyeTrackerFunctionLibrary
+    }
+}
+
 external open class LiveLinkBasicFrameInterpolationProcessor : LiveLinkFrameInterpolationProcessor {
     constructor()
     constructor(Outer: UObject)
@@ -26925,7 +26986,7 @@ external open class LiveLinkSkeletonStaticData : LiveLinkBaseStaticData {
     }
 }
 
-external interface `T$759` {
+external interface `T$761` {
     var BasicData: LiveLinkBasicBlueprintData
     var Value: Number
     var `$`: Boolean
@@ -26935,12 +26996,12 @@ external open class LiveLinkBasicBlueprintData : LiveLinkBaseBlueprintData {
     open var StaticData: LiveLinkBaseStaticData
     open var FrameData: LiveLinkBaseFrameData
     override fun clone(): LiveLinkBasicBlueprintData
-    open fun GetPropertyValue(PropertyName: String = definedExternally, Value: Number = definedExternally): `T$759`
+    open fun GetPropertyValue(PropertyName: String = definedExternally, Value: Number = definedExternally): `T$761`
 
     companion object {
         fun C(Other: UObject): LiveLinkBasicBlueprintData
         fun C(Other: Any): LiveLinkBasicBlueprintData
-        fun GetPropertyValue(BasicData: LiveLinkBasicBlueprintData = definedExternally, PropertyName: String = definedExternally, Value: Number = definedExternally): `T$759`
+        fun GetPropertyValue(BasicData: LiveLinkBasicBlueprintData = definedExternally, PropertyName: String = definedExternally, Value: Number = definedExternally): `T$761`
     }
 }
 
@@ -26956,137 +27017,137 @@ external open class SubjectMetadata {
     }
 }
 
-external interface `T$760` {
+external interface `T$762` {
     var LiveLinkTransform: LiveLinkTransform
     var `$`: Number
 }
 
-external interface `T$761` {
+external interface `T$763` {
     var LiveLinkTransform: LiveLinkTransform
     var Transform: Transform
 }
 
-external interface `T$762` {
+external interface `T$764` {
     var LiveLinkTransform: LiveLinkTransform
     var Children: Array<LiveLinkTransform>
 }
 
-external interface `T$763` {
+external interface `T$765` {
     var LiveLinkTransform: LiveLinkTransform
     var Parent: LiveLinkTransform
 }
 
-external interface `T$764` {
+external interface `T$766` {
     var LiveLinkTransform: LiveLinkTransform
     var `$`: Boolean
 }
 
-external interface `T$765` {
+external interface `T$767` {
     var LiveLinkTransform: LiveLinkTransform
     var Name: String
 }
 
-external interface `T$766` {
+external interface `T$768` {
     var LiveLinkTransform: LiveLinkTransform
     var Children: Array<LiveLinkTransform>
 }
 
 external open class LiveLinkTransform {
     open fun clone(): LiveLinkTransform
-    open fun ChildCount(): `T$760`
-    open fun ComponentSpaceTransform(Transform: Transform = definedExternally): `T$761`
-    open fun GetChildren(Children: Array<LiveLinkTransform> = definedExternally): `T$762`
-    open fun GetParent(Parent: LiveLinkTransform = definedExternally): `T$763`
-    open fun HasParent(): `T$764`
-    open fun ParentBoneSpaceTransform(Transform: Transform = definedExternally): `T$761`
-    open fun TransformName(Name: String = definedExternally): `T$765`
+    open fun ChildCount(): `T$762`
+    open fun ComponentSpaceTransform(Transform: Transform = definedExternally): `T$763`
+    open fun GetChildren(Children: Array<LiveLinkTransform> = definedExternally): `T$764`
+    open fun GetParent(Parent: LiveLinkTransform = definedExternally): `T$765`
+    open fun HasParent(): `T$766`
+    open fun ParentBoneSpaceTransform(Transform: Transform = definedExternally): `T$763`
+    open fun TransformName(Name: String = definedExternally): `T$767`
 
     companion object {
         fun C(Other: UObject): LiveLinkTransform
         fun C(Other: Any): LiveLinkTransform
-        fun ChildCount(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$760`
-        fun ComponentSpaceTransform(LiveLinkTransform: LiveLinkTransform = definedExternally, Transform: Transform = definedExternally): `T$761`
-        fun GetChildren(LiveLinkTransform: LiveLinkTransform = definedExternally, Children: Array<LiveLinkTransform> = definedExternally): `T$766`
-        fun GetParent(LiveLinkTransform: LiveLinkTransform = definedExternally, Parent: LiveLinkTransform = definedExternally): `T$763`
-        fun HasParent(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$764`
-        fun ParentBoneSpaceTransform(LiveLinkTransform: LiveLinkTransform = definedExternally, Transform: Transform = definedExternally): `T$761`
-        fun TransformName(LiveLinkTransform: LiveLinkTransform = definedExternally, Name: String = definedExternally): `T$765`
+        fun ChildCount(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$762`
+        fun ComponentSpaceTransform(LiveLinkTransform: LiveLinkTransform = definedExternally, Transform: Transform = definedExternally): `T$763`
+        fun GetChildren(LiveLinkTransform: LiveLinkTransform = definedExternally, Children: Array<LiveLinkTransform> = definedExternally): `T$768`
+        fun GetParent(LiveLinkTransform: LiveLinkTransform = definedExternally, Parent: LiveLinkTransform = definedExternally): `T$765`
+        fun HasParent(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$766`
+        fun ParentBoneSpaceTransform(LiveLinkTransform: LiveLinkTransform = definedExternally, Transform: Transform = definedExternally): `T$763`
+        fun TransformName(LiveLinkTransform: LiveLinkTransform = definedExternally, Name: String = definedExternally): `T$767`
     }
 }
 
-external interface `T$767` {
+external interface `T$769` {
     var SubjectFrameHandle: SubjectFrameHandle
     var AnimationFrameData: LiveLinkAnimationFrameData
     var `$`: Boolean
 }
 
-external interface `T$768` {
+external interface `T$770` {
     var SubjectFrameHandle: SubjectFrameHandle
     var AnimationStaticData: LiveLinkSkeletonStaticData
     var `$`: Boolean
 }
 
-external interface `T$769` {
+external interface `T$771` {
     var SubjectFrameHandle: SubjectFrameHandle
     var BasicBlueprintData: LiveLinkBasicBlueprintData
 }
 
-external interface `T$770` {
+external interface `T$772` {
     var SubjectFrameHandle: SubjectFrameHandle
     var Curves: Any
 }
 
-external interface `T$771` {
+external interface `T$773` {
     var SubjectFrameHandle: SubjectFrameHandle
     var MetaData: SubjectMetadata
 }
 
-external interface `T$772` {
+external interface `T$774` {
     var SubjectFrameHandle: SubjectFrameHandle
     var LiveLinkTransform: LiveLinkTransform
 }
 
-external interface `T$773` {
+external interface `T$775` {
     var SubjectFrameHandle: SubjectFrameHandle
     var `$`: Number
 }
 
-external interface `T$774` {
+external interface `T$776` {
     var SubjectFrameHandle: SubjectFrameHandle
     var TransformNames: Array<String>
 }
 
-external interface `T$775` {
+external interface `T$777` {
     var SubjectFrameHandle: SubjectFrameHandle
     var TransformNames: Array<String>
 }
 
 external open class SubjectFrameHandle : LiveLinkBaseBlueprintData {
     override fun clone(): SubjectFrameHandle
-    open fun GetAnimationFrameData(AnimationFrameData: LiveLinkAnimationFrameData = definedExternally): `T$767`
-    open fun GetAnimationStaticData(AnimationStaticData: LiveLinkSkeletonStaticData = definedExternally): `T$768`
-    open fun GetBasicData(BasicBlueprintData: LiveLinkBasicBlueprintData = definedExternally): `T$769`
-    open fun GetCurves(Curves: Any = definedExternally): `T$770`
-    open fun GetMetadata(MetaData: SubjectMetadata = definedExternally): `T$771`
-    open fun GetRootTransform(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
-    open fun GetTransformByIndex(TransformIndex: Number = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
-    open fun GetTransformByName(TransformName: String = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
-    open fun NumberOfTransforms(): `T$773`
-    open fun TransformNames(TransformNames: Array<String> = definedExternally): `T$774`
+    open fun GetAnimationFrameData(AnimationFrameData: LiveLinkAnimationFrameData = definedExternally): `T$769`
+    open fun GetAnimationStaticData(AnimationStaticData: LiveLinkSkeletonStaticData = definedExternally): `T$770`
+    open fun GetBasicData(BasicBlueprintData: LiveLinkBasicBlueprintData = definedExternally): `T$771`
+    open fun GetCurves(Curves: Any = definedExternally): `T$772`
+    open fun GetMetadata(MetaData: SubjectMetadata = definedExternally): `T$773`
+    open fun GetRootTransform(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
+    open fun GetTransformByIndex(TransformIndex: Number = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
+    open fun GetTransformByName(TransformName: String = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
+    open fun NumberOfTransforms(): `T$775`
+    open fun TransformNames(TransformNames: Array<String> = definedExternally): `T$776`
 
     companion object {
         fun C(Other: UObject): SubjectFrameHandle
         fun C(Other: Any): SubjectFrameHandle
-        fun GetAnimationFrameData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, AnimationFrameData: LiveLinkAnimationFrameData = definedExternally): `T$767`
-        fun GetAnimationStaticData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, AnimationStaticData: LiveLinkSkeletonStaticData = definedExternally): `T$768`
-        fun GetBasicData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, BasicBlueprintData: LiveLinkBasicBlueprintData = definedExternally): `T$769`
-        fun GetCurves(SubjectFrameHandle: SubjectFrameHandle = definedExternally, Curves: Any = definedExternally): `T$770`
-        fun GetMetadata(SubjectFrameHandle: SubjectFrameHandle = definedExternally, MetaData: SubjectMetadata = definedExternally): `T$771`
-        fun GetRootTransform(SubjectFrameHandle: SubjectFrameHandle = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
-        fun GetTransformByIndex(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformIndex: Number = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
-        fun GetTransformByName(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformName: String = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
-        fun NumberOfTransforms(SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$773`
-        fun TransformNames(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformNames: Array<String> = definedExternally): `T$775`
+        fun GetAnimationFrameData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, AnimationFrameData: LiveLinkAnimationFrameData = definedExternally): `T$769`
+        fun GetAnimationStaticData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, AnimationStaticData: LiveLinkSkeletonStaticData = definedExternally): `T$770`
+        fun GetBasicData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, BasicBlueprintData: LiveLinkBasicBlueprintData = definedExternally): `T$771`
+        fun GetCurves(SubjectFrameHandle: SubjectFrameHandle = definedExternally, Curves: Any = definedExternally): `T$772`
+        fun GetMetadata(SubjectFrameHandle: SubjectFrameHandle = definedExternally, MetaData: SubjectMetadata = definedExternally): `T$773`
+        fun GetRootTransform(SubjectFrameHandle: SubjectFrameHandle = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
+        fun GetTransformByIndex(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformIndex: Number = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
+        fun GetTransformByName(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformName: String = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
+        fun NumberOfTransforms(SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$775`
+        fun TransformNames(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformNames: Array<String> = definedExternally): `T$777`
     }
 }
 
@@ -27107,29 +27168,29 @@ external open class LiveLinkSubjectKey {
     }
 }
 
-external interface `T$776` {
+external interface `T$778` {
     var SourceHandle: LiveLinkSourceHandle
     var `$`: String
 }
 
 external open class LiveLinkSourceHandle {
     open fun clone(): LiveLinkSourceHandle
-    open fun GetMagicLeapHandTrackingLiveLinkSource(): `T$427`
-    open fun GetSourceMachineName(): `T$776`
-    open fun GetSourceStatus(): `T$776`
-    open fun GetSourceType(): `T$776`
-    open fun IsSourceStillValid(): `T$427`
-    open fun RemoveSource(): `T$427`
+    open fun GetMagicLeapHandTrackingLiveLinkSource(): `T$452`
+    open fun GetSourceMachineName(): `T$778`
+    open fun GetSourceStatus(): `T$778`
+    open fun GetSourceType(): `T$778`
+    open fun IsSourceStillValid(): `T$452`
+    open fun RemoveSource(): `T$452`
 
     companion object {
         fun C(Other: UObject): LiveLinkSourceHandle
         fun C(Other: Any): LiveLinkSourceHandle
-        fun GetMagicLeapHandTrackingLiveLinkSource(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$427`
-        fun GetSourceMachineName(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$776`
-        fun GetSourceStatus(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$776`
-        fun GetSourceType(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$776`
-        fun IsSourceStillValid(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$427`
-        fun RemoveSource(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$427`
+        fun GetMagicLeapHandTrackingLiveLinkSource(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$452`
+        fun GetSourceMachineName(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$778`
+        fun GetSourceStatus(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$778`
+        fun GetSourceType(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$778`
+        fun IsSourceStillValid(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$452`
+        fun RemoveSource(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$452`
     }
 }
 
@@ -27146,12 +27207,12 @@ external open class LiveLinkSubjectRepresentation {
     }
 }
 
-external interface `T$777` {
+external interface `T$779` {
     var SubjectFrameHandle: SubjectFrameHandle
     var TransformNames: Array<String>
 }
 
-external interface `T$778` {
+external interface `T$780` {
     var LiveLinkTransform: LiveLinkTransform
     var Children: Array<LiveLinkTransform>
 }
@@ -27165,40 +27226,40 @@ external open class LiveLinkBlueprintLibrary : BlueprintFunctionLibrary {
         fun Find(Outer: UObject, ResourceName: String): LiveLinkBlueprintLibrary
         fun GetDefaultObject(): LiveLinkBlueprintLibrary
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkBlueprintLibrary
-        fun TransformNames(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformNames: Array<String> = definedExternally): `T$777`
-        fun TransformName(LiveLinkTransform: LiveLinkTransform = definedExternally, Name: String = definedExternally): `T$765`
+        fun TransformNames(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformNames: Array<String> = definedExternally): `T$779`
+        fun TransformName(LiveLinkTransform: LiveLinkTransform = definedExternally, Name: String = definedExternally): `T$767`
         fun SetLiveLinkSubjectEnabled(SubjectKey: LiveLinkSubjectKey, bEnabled: Boolean)
-        fun RemoveSource(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$427`
-        fun ParentBoneSpaceTransform(LiveLinkTransform: LiveLinkTransform = definedExternally, Transform: Transform = definedExternally): `T$761`
-        fun NumberOfTransforms(SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$773`
+        fun RemoveSource(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$452`
+        fun ParentBoneSpaceTransform(LiveLinkTransform: LiveLinkTransform = definedExternally, Transform: Transform = definedExternally): `T$763`
+        fun NumberOfTransforms(SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$775`
         fun IsSpecificLiveLinkSubjectEnabled(SubjectKey: LiveLinkSubjectKey, bForThisFrame: Boolean): Boolean
-        fun IsSourceStillValid(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$427`
+        fun IsSourceStillValid(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$452`
         fun IsLiveLinkSubjectEnabled(SubjectName: LiveLinkSubjectName): Boolean
-        fun HasParent(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$764`
-        fun GetTransformByName(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformName: String = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
-        fun GetTransformByIndex(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformIndex: Number = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
+        fun HasParent(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$766`
+        fun GetTransformByName(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformName: String = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
+        fun GetTransformByIndex(SubjectFrameHandle: SubjectFrameHandle = definedExternally, TransformIndex: Number = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
         fun GetSpecificLiveLinkSubjectRole(SubjectKey: LiveLinkSubjectKey): UnrealEngineClass
-        fun GetSourceType(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$776`
-        fun GetSourceStatus(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$776`
-        fun GetSourceMachineName(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$776`
-        fun GetRootTransform(SubjectFrameHandle: SubjectFrameHandle = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$772`
-        fun GetPropertyValue(BasicData: LiveLinkBasicBlueprintData = definedExternally, PropertyName: String = definedExternally, Value: Number = definedExternally): `T$759`
-        fun GetParent(LiveLinkTransform: LiveLinkTransform = definedExternally, Parent: LiveLinkTransform = definedExternally): `T$763`
-        fun GetMetadata(SubjectFrameHandle: SubjectFrameHandle = definedExternally, MetaData: SubjectMetadata = definedExternally): `T$771`
+        fun GetSourceType(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$778`
+        fun GetSourceStatus(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$778`
+        fun GetSourceMachineName(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$778`
+        fun GetRootTransform(SubjectFrameHandle: SubjectFrameHandle = definedExternally, LiveLinkTransform: LiveLinkTransform = definedExternally): `T$774`
+        fun GetPropertyValue(BasicData: LiveLinkBasicBlueprintData = definedExternally, PropertyName: String = definedExternally, Value: Number = definedExternally): `T$761`
+        fun GetParent(LiveLinkTransform: LiveLinkTransform = definedExternally, Parent: LiveLinkTransform = definedExternally): `T$765`
+        fun GetMetadata(SubjectFrameHandle: SubjectFrameHandle = definedExternally, MetaData: SubjectMetadata = definedExternally): `T$773`
         fun GetLiveLinkSubjects(bIncludeDisabledSubject: Boolean, bIncludeVirtualSubject: Boolean): Array<LiveLinkSubjectKey>
         fun GetLiveLinkSubjectRole(SubjectName: LiveLinkSubjectName): UnrealEngineClass
         fun GetLiveLinkEnabledSubjectNames(bIncludeVirtualSubject: Boolean): Array<LiveLinkSubjectName>
-        fun GetCurves(SubjectFrameHandle: SubjectFrameHandle = definedExternally, Curves: Any = definedExternally): `T$770`
-        fun GetChildren(LiveLinkTransform: LiveLinkTransform = definedExternally, Children: Array<LiveLinkTransform> = definedExternally): `T$778`
-        fun GetBasicData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, BasicBlueprintData: LiveLinkBasicBlueprintData = definedExternally): `T$769`
-        fun GetAnimationStaticData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, AnimationStaticData: LiveLinkSkeletonStaticData = definedExternally): `T$768`
-        fun GetAnimationFrameData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, AnimationFrameData: LiveLinkAnimationFrameData = definedExternally): `T$767`
+        fun GetCurves(SubjectFrameHandle: SubjectFrameHandle = definedExternally, Curves: Any = definedExternally): `T$772`
+        fun GetChildren(LiveLinkTransform: LiveLinkTransform = definedExternally, Children: Array<LiveLinkTransform> = definedExternally): `T$780`
+        fun GetBasicData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, BasicBlueprintData: LiveLinkBasicBlueprintData = definedExternally): `T$771`
+        fun GetAnimationStaticData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, AnimationStaticData: LiveLinkSkeletonStaticData = definedExternally): `T$770`
+        fun GetAnimationFrameData(SubjectFrameHandle: SubjectFrameHandle = definedExternally, AnimationFrameData: LiveLinkAnimationFrameData = definedExternally): `T$769`
         fun EvaluateLiveLinkFrameWithSpecificRole(SubjectName: LiveLinkSubjectName, Role: UnrealEngineClass, OutBlueprintData: LiveLinkBaseBlueprintData = definedExternally): `T$573`
         fun EvaluateLiveLinkFrameAtWorldTimeOffset(SubjectName: LiveLinkSubjectName, Role: UnrealEngineClass, WorldTimeOffset: Number, OutBlueprintData: LiveLinkBaseBlueprintData = definedExternally): `T$573`
         fun EvaluateLiveLinkFrameAtSceneTime(SubjectName: LiveLinkSubjectName, Role: UnrealEngineClass, SceneTime: Timecode, OutBlueprintData: LiveLinkBaseBlueprintData = definedExternally): `T$573`
         fun EvaluateLiveLinkFrame(SubjectRepresentation: LiveLinkSubjectRepresentation, OutBlueprintData: LiveLinkBaseBlueprintData = definedExternally): `T$573`
-        fun ComponentSpaceTransform(LiveLinkTransform: LiveLinkTransform = definedExternally, Transform: Transform = definedExternally): `T$761`
-        fun ChildCount(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$760`
+        fun ComponentSpaceTransform(LiveLinkTransform: LiveLinkTransform = definedExternally, Transform: Transform = definedExternally): `T$763`
+        fun ChildCount(LiveLinkTransform: LiveLinkTransform = definedExternally): `T$762`
         fun C(Other: UObject): LiveLinkBlueprintLibrary
         fun C(Other: Any): LiveLinkBlueprintLibrary
     }
@@ -27222,12 +27283,12 @@ external open class LiveLinkBlueprintVirtualSubject : LiveLinkVirtualSubject {
     }
 }
 
-external interface `T$779` {
+external interface `T$781` {
     var bSuccess: Boolean
     var SubjectFrameHandle: SubjectFrameHandle
 }
 
-external interface `T$780` {
+external interface `T$782` {
     var SubjectNames: Array<String>
 }
 
@@ -27235,10 +27296,10 @@ external open class LiveLinkComponent : ActorComponent {
     constructor()
     constructor(Outer: UObject)
     open var OnLiveLinkUpdated: UnrealEngineMulticastDelegate<(DeltaTime: Number) -> Unit>
-    open fun GetSubjectDataAtWorldTime(SubjectName: String, WorldTime: Number, bSuccess: Boolean = definedExternally, SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$779`
-    open fun GetSubjectDataAtSceneTime(SubjectName: String, SceneTime: Timecode, bSuccess: Boolean = definedExternally, SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$779`
-    open fun GetSubjectData(SubjectName: String, bSuccess: Boolean = definedExternally, SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$779`
-    open fun GetAvailableSubjectNames(SubjectNames: Array<String> = definedExternally): `T$780`
+    open fun GetSubjectDataAtWorldTime(SubjectName: String, WorldTime: Number, bSuccess: Boolean = definedExternally, SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$781`
+    open fun GetSubjectDataAtSceneTime(SubjectName: String, SceneTime: Timecode, bSuccess: Boolean = definedExternally, SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$781`
+    open fun GetSubjectData(SubjectName: String, bSuccess: Boolean = definedExternally, SubjectFrameHandle: SubjectFrameHandle = definedExternally): `T$781`
+    open fun GetAvailableSubjectNames(SubjectNames: Array<String> = definedExternally): `T$782`
 
     companion object {
         fun Load(ResourceName: String): LiveLinkComponent
@@ -27311,11 +27372,11 @@ external open class ProviderPollResult {
     }
 }
 
-external interface `T$781` {
+external interface `T$783` {
     var AvailableProviders: Array<ProviderPollResult>
 }
 
-external interface `T$782` {
+external interface `T$784` {
     var Provider: ProviderPollResult
     var SourceHandle: LiveLinkSourceHandle
 }
@@ -27323,7 +27384,7 @@ external interface `T$782` {
 external open class LiveLinkMessageBusFinder : UObject {
     constructor()
     constructor(Outer: UObject)
-    open fun GetAvailableProviders(WorldContextObject: UObject, LatentInfo: LatentActionInfo, Duration: Number, AvailableProviders: Array<ProviderPollResult> = definedExternally): `T$781`
+    open fun GetAvailableProviders(WorldContextObject: UObject, LatentInfo: LatentActionInfo, Duration: Number, AvailableProviders: Array<ProviderPollResult> = definedExternally): `T$783`
 
     companion object {
         fun Load(ResourceName: String): LiveLinkMessageBusFinder
@@ -27331,7 +27392,7 @@ external open class LiveLinkMessageBusFinder : UObject {
         fun GetDefaultObject(): LiveLinkMessageBusFinder
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkMessageBusFinder
         fun ConstructMessageBusFinder(): LiveLinkMessageBusFinder
-        fun ConnectToProvider(Provider: ProviderPollResult = definedExternally, SourceHandle: LiveLinkSourceHandle = definedExternally): `T$782`
+        fun ConnectToProvider(Provider: ProviderPollResult = definedExternally, SourceHandle: LiveLinkSourceHandle = definedExternally): `T$784`
         fun C(Other: UObject): LiveLinkMessageBusFinder
         fun C(Other: Any): LiveLinkMessageBusFinder
     }
@@ -27410,14 +27471,14 @@ external open class LiveLinkPreset : UObject {
     }
 }
 
-external interface `T$783` {
+external interface `T$785` {
     var CurveItems: Any
 }
 
 external open class LiveLinkRemapAsset : LiveLinkRetargetAsset {
     constructor()
     constructor(Outer: UObject)
-    open fun RemapCurveElements(CurveItems: Any = definedExternally): `T$783`
+    open fun RemapCurveElements(CurveItems: Any = definedExternally): `T$785`
     open fun GetRemappedCurveName(CurveName: String): String
     open fun GetRemappedBoneName(BoneName: String): String
 
@@ -27573,67 +27634,6 @@ external open class OpenXRHandTrackingLiveLinkRemapAsset : LiveLinkRetargetAsset
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OpenXRHandTrackingLiveLinkRemapAsset
         fun C(Other: UObject): OpenXRHandTrackingLiveLinkRemapAsset
         fun C(Other: Any): OpenXRHandTrackingLiveLinkRemapAsset
-    }
-}
-
-external interface `T$784` {
-    var OutGazeData: EyeTrackerStereoGazeData
-    var `$`: Boolean
-}
-
-external open class EyeTrackerStereoGazeData {
-    open var LeftEyeOrigin: Vector
-    open var LeftEyeDirection: Vector
-    open var RightEyeOrigin: Vector
-    open var RightEyeDirection: Vector
-    open var FixationPoint: Vector
-    open var ConfidenceValue: Number
-    open fun clone(): EyeTrackerStereoGazeData
-    open fun GetStereoGazeData(): `T$784`
-
-    companion object {
-        fun C(Other: UObject): EyeTrackerStereoGazeData
-        fun C(Other: Any): EyeTrackerStereoGazeData
-        fun GetStereoGazeData(OutGazeData: EyeTrackerStereoGazeData = definedExternally): `T$784`
-    }
-}
-
-external interface `T$785` {
-    var OutGazeData: EyeTrackerGazeData
-    var `$`: Boolean
-}
-
-external open class EyeTrackerGazeData {
-    open var GazeOrigin: Vector
-    open var GazeDirection: Vector
-    open var FixationPoint: Vector
-    open var ConfidenceValue: Number
-    open fun clone(): EyeTrackerGazeData
-    open fun GetGazeData(): `T$785`
-
-    companion object {
-        fun C(Other: UObject): EyeTrackerGazeData
-        fun C(Other: Any): EyeTrackerGazeData
-        fun GetGazeData(OutGazeData: EyeTrackerGazeData = definedExternally): `T$785`
-    }
-}
-
-external open class EyeTrackerFunctionLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): EyeTrackerFunctionLibrary
-        fun Find(Outer: UObject, ResourceName: String): EyeTrackerFunctionLibrary
-        fun GetDefaultObject(): EyeTrackerFunctionLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): EyeTrackerFunctionLibrary
-        fun SetEyeTrackedPlayer(PlayerController: PlayerController)
-        fun IsStereoGazeDataAvailable(): Boolean
-        fun IsEyeTrackerConnected(): Boolean
-        fun GetStereoGazeData(OutGazeData: EyeTrackerStereoGazeData = definedExternally): `T$784`
-        fun GetGazeData(OutGazeData: EyeTrackerGazeData = definedExternally): `T$785`
-        fun C(Other: UObject): EyeTrackerFunctionLibrary
-        fun C(Other: Any): EyeTrackerFunctionLibrary
     }
 }
 

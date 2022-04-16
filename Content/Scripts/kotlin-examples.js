@@ -25,7 +25,7 @@
   var contains = Kotlin.kotlin.text.contains_li3zpu$;
   var getCallableRef = Kotlin.getCallableRef;
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
-  var JsMath = Math;
+  var Math_0 = Math;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
   var defineInlineFunction = Kotlin.defineInlineFunction;
   var wrapFunction = Kotlin.wrapFunction;
@@ -1455,7 +1455,7 @@
         var time = numberToDouble(GWorld.GetTimeSeconds());
         var rad = time * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : throwCCE());
         var r = closure$opts.r;
-        var p = Vector_0(void 0, JsMath.cos(rad) * r, JsMath.sin(rad) * r).Add_VectorVector(closure$opts.p);
+        var p = Vector_0(void 0, Math_0.cos(rad) * r, Math_0.sin(rad) * r).Add_VectorVector(closure$opts.p);
         closure$actor.SetActorLocation(p, false);
       }
     };

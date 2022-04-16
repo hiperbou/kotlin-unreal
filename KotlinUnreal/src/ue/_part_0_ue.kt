@@ -16204,7 +16204,6 @@ external open class Class : Struct {
     open fun Conv_ClassToSoftClassReference(): Class
     open fun Conv_SoftClassReferenceToClass(): UnrealEngineClass
     open fun Equal(B: Class): Boolean
-    open fun GetPrimaryAssetIdFromClass(): PrimaryAssetId
     open fun GetPrimaryAssetIdFromSoftClassReference(): PrimaryAssetId
     open fun IsValidClass(): Boolean
     open fun IsValidSoftClassReference(): Boolean
@@ -19134,13 +19133,13 @@ external open class VectorSpringState {
 }
 
 external interface `T$232` {
-    var IntersectionPoint: Vector
-    var `$`: Boolean
+    var PinId: Guid
+    var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
 }
 
 external interface `T$233` {
-    var PinId: Guid
-    var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
+    var IntersectionPoint: Vector
+    var `$`: Boolean
 }
 
 external interface `T$234` {
@@ -19265,8 +19264,8 @@ external open class Vector {
     open var Y: Number
     open var Z: Number
     open fun clone(): Vector
-    open fun SegmentIntersection2D(SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$232`
-    open fun GetClosestARPin(PinId: Guid = definedExternally): `T$233`
+    open fun GetClosestARPin(PinId: Guid = definedExternally): `T$232`
+    open fun SegmentIntersection2D(SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$233`
     open fun GetSelectionBounds(BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$32`
     open fun GetLeftHandPoseData(Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$234`
     open fun GetRightHandPoseData(Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$234`
@@ -19419,8 +19418,8 @@ external open class Vector {
     companion object {
         fun C(Other: UObject): Vector
         fun C(Other: Any): Vector
-        fun SegmentIntersection2D(SegmentStartA: Vector, SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$232`
-        fun GetClosestARPin(SearchPoint: Vector, PinId: Guid = definedExternally): `T$233`
+        fun GetClosestARPin(SearchPoint: Vector, PinId: Guid = definedExternally): `T$232`
+        fun SegmentIntersection2D(SegmentStartA: Vector, SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$233`
         fun GetSelectionBounds(Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$32`
         fun GetLeftHandPoseData(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$234`
         fun GetRightHandPoseData(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$234`
@@ -19818,6 +19817,35 @@ external open class ActorLayer {
     companion object {
         fun C(Other: UObject): ActorLayer
         fun C(Other: Any): ActorLayer
+    }
+}
+
+external object EMagicLeapPlaneQueryFlags {
+    var Vertical: String /* "Vertical" */
+    var Horizontal: String /* "Horizontal" */
+    var Arbitrary: String /* "Arbitrary" */
+    var OrientToGravity: String /* "OrientToGravity" */
+    var PreferInner: String /* "PreferInner" */
+    var Ceiling: String /* "Ceiling" */
+    var Floor: String /* "Floor" */
+    var Wall: String /* "Wall" */
+    var Polygons: String /* "Polygons" */
+    var EMagicLeapPlaneQueryFlags_MAX: String /* "EMagicLeapPlaneQueryFlags_MAX" */
+}
+
+external open class MagicLeapPlaneResult {
+    open var PlanePosition: Vector
+    open var PlaneOrientation: Rotator
+    open var ContentOrientation: Rotator
+    open var PlaneDimensions: Vector2D
+    open var PlaneFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>
+    open var ID: Guid
+    open var InnerID: Guid
+    open fun clone(): MagicLeapPlaneResult
+
+    companion object {
+        fun C(Other: UObject): MagicLeapPlaneResult
+        fun C(Other: Any): MagicLeapPlaneResult
     }
 }
 
@@ -20751,35 +20779,6 @@ external open class Level : UObject {
         fun C(Other: UObject): Level
         fun C(Other: Any): Level
         fun UpdateModelComponents(Level: Level)
-    }
-}
-
-external object EMagicLeapPlaneQueryFlags {
-    var Vertical: String /* "Vertical" */
-    var Horizontal: String /* "Horizontal" */
-    var Arbitrary: String /* "Arbitrary" */
-    var OrientToGravity: String /* "OrientToGravity" */
-    var PreferInner: String /* "PreferInner" */
-    var Ceiling: String /* "Ceiling" */
-    var Floor: String /* "Floor" */
-    var Wall: String /* "Wall" */
-    var Polygons: String /* "Polygons" */
-    var EMagicLeapPlaneQueryFlags_MAX: String /* "EMagicLeapPlaneQueryFlags_MAX" */
-}
-
-external open class MagicLeapPlaneResult {
-    open var PlanePosition: Vector
-    open var PlaneOrientation: Rotator
-    open var ContentOrientation: Rotator
-    open var PlaneDimensions: Vector2D
-    open var PlaneFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>
-    open var ID: Guid
-    open var InnerID: Guid
-    open fun clone(): MagicLeapPlaneResult
-
-    companion object {
-        fun C(Other: UObject): MagicLeapPlaneResult
-        fun C(Other: Any): MagicLeapPlaneResult
     }
 }
 
@@ -22631,6 +22630,7 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open fun SetFolderPath_Recursively(NewFolderPath: String)
     open fun AddActorToLayer(Layer: ActorLayer)
     open fun RemoveActorFromLayer(Layer: ActorLayer)
+    open fun GetContentScale(PlaneResult: MagicLeapPlaneResult): Transform
     open fun Actor_GetWorld(): World
     open fun GetLastRenderTime(): Number
     open fun GetLevel(): Level
@@ -22638,7 +22638,6 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open fun ReregisterAllComponents()
     open fun SetActorFlags(Flags: Number)
     open fun SetRootComponent(Component: SceneComponent)
-    open fun GetContentScale(PlaneResult: MagicLeapPlaneResult): Transform
     open fun SetFocusActor(bSetStabilizationActor: Boolean)
     open fun SetStabilizationDepthActor(bSetFocusActor: Boolean)
     open fun GetAIController(): AIController
@@ -22671,6 +22670,7 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
         fun SetIsTemporarilyHiddenInEditor(Actor: Actor, bIsHidden: Boolean)
         fun AddActorToLayer(InActor: Actor, Layer: ActorLayer)
         fun RemoveActorFromLayer(InActor: Actor, Layer: ActorLayer)
+        fun GetContentScale(ContentActor: Actor, PlaneResult: MagicLeapPlaneResult): Transform
         fun Actor_GetWorld(Actor: Actor): World
         fun GetComponentsByClass(Actor: Actor, ComponentClass: UnrealEngineClass): Array<ActorComponent>
         fun GetLastRenderTime(Actor: Actor): Number
@@ -22679,7 +22679,6 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
         fun ReregisterAllComponents(Actor: Actor)
         fun SetActorFlags(Actor: Actor, Flags: Number)
         fun SetRootComponent(Actor: Actor, Component: SceneComponent)
-        fun GetContentScale(ContentActor: Actor, PlaneResult: MagicLeapPlaneResult): Transform
         fun SetFocusActor(InFocusActor: Actor, bSetStabilizationActor: Boolean)
         fun SetStabilizationDepthActor(InStabilizationDepthActor: Actor, bSetFocusActor: Boolean)
         fun GetAIController(ControlledActor: Actor): AIController
@@ -22958,100 +22957,6 @@ external open class WorldPSCPool {
     companion object {
         fun C(Other: UObject): WorldPSCPool
         fun C(Other: Any): WorldPSCPool
-    }
-}
-
-external open class URL {
-    open var Protocol: String
-    open var Host: String
-    open var Port: Number
-    open var Valid: Number
-    open var Map: String
-    open var RedirectURL: String
-    open var Op: Array<String>
-    open var Portal: String
-    open fun clone(): URL
-
-    companion object {
-        fun C(Other: UObject): URL
-        fun C(Other: Any): URL
-    }
-}
-
-external object ERecastPartitioning {
-    var Monotone: String /* "Monotone" */
-    var Watershed: String /* "Watershed" */
-    var ChunkyMonotone: String /* "ChunkyMonotone" */
-    var ERecastPartitioning_MAX: String /* "ERecastPartitioning_MAX" */
-}
-
-external open class RecastNavMesh(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : NavigationData {
-    open var bDrawTriangleEdges: Boolean
-    open var bDrawPolyEdges: Boolean
-    open var bDrawFilledPolys: Boolean
-    open var bDrawNavMeshEdges: Boolean
-    open var bDrawTileBounds: Boolean
-    open var bDrawPathCollidingGeometry: Boolean
-    open var bDrawTileLabels: Boolean
-    open var bDrawPolygonLabels: Boolean
-    open var bDrawDefaultPolygonCost: Boolean
-    open var bDrawPolygonFlags: Boolean
-    open var bDrawLabelsOnPathNodes: Boolean
-    open var bDrawNavLinks: Boolean
-    open var bDrawFailedNavLinks: Boolean
-    open var bDrawClusters: Boolean
-    open var bDrawOctree: Boolean
-    open var bDrawOctreeDetails: Boolean
-    open var bDrawMarkedForbiddenPolys: Boolean
-    open var bDistinctlyDrawTilesBeingBuilt: Boolean
-    open var DrawOffset: Number
-    open var bFixedTilePoolSize: Boolean
-    open var TilePoolSize: Number
-    open var TileSizeUU: Number
-    open var CellSize: Number
-    open var CellHeight: Number
-    open var AgentRadius: Number
-    open var AgentHeight: Number
-    open var AgentMaxSlope: Number
-    open var AgentMaxStepHeight: Number
-    open var MinRegionArea: Number
-    open var MergeRegionSize: Number
-    open var MaxSimplificationError: Number
-    open var MaxSimultaneousTileGenerationJobsCount: Number
-    open var TileNumberHardLimit: Number
-    open var PolyRefTileBits: Number
-    open var PolyRefNavPolyBits: Number
-    open var PolyRefSaltBits: Number
-    open var NavMeshOriginOffset: Vector
-    open var DefaultDrawDistance: Number
-    open var DefaultMaxSearchNodes: Number
-    open var DefaultMaxHierarchicalSearchNodes: Number
-    open var RegionPartitioning: String /* "Monotone" | "Watershed" | "ChunkyMonotone" | "ERecastPartitioning_MAX" */
-    open var LayerPartitioning: String /* "Monotone" | "Watershed" | "ChunkyMonotone" | "ERecastPartitioning_MAX" */
-    open var RegionChunkSplits: Number
-    open var LayerChunkSplits: Number
-    open var bSortNavigationAreasByCost: Boolean
-    open var bPerformVoxelFiltering: Boolean
-    open var bMarkLowHeightAreas: Boolean
-    open var bUseExtraTopCellWhenMarkingAreas: Boolean
-    open var bFilterLowSpanSequences: Boolean
-    open var bFilterLowSpanFromTileCache: Boolean
-    open var bDoFullyAsyncNavDataGathering: Boolean
-    open var bUseBetterOffsetsFromCorners: Boolean
-    open var bStoreEmptyTileLayers: Boolean
-    open var bUseVirtualFilters: Boolean
-    open var bAllowNavLinkAsPathEnd: Boolean
-    open var bUseVoxelCache: Boolean
-    open var TileSetUpdateInterval: Number
-    open var HeuristicScale: Number
-    open var VerticalDeviationFromGroundCompensation: Number
-    open fun ReplaceAreaInTileBounds(Bounds: Box, OldArea: UnrealEngineClass, NewArea: UnrealEngineClass, ReplaceLinks: Boolean): Boolean
-
-    companion object {
-        fun GetDefaultObject(): RecastNavMesh
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): RecastNavMesh
-        fun C(Other: UObject): RecastNavMesh
-        fun C(Other: Any): RecastNavMesh
     }
 }
 
@@ -23820,6 +23725,100 @@ external open class LuminARSessionConfig : ARSessionConfig {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LuminARSessionConfig
         fun C(Other: UObject): LuminARSessionConfig
         fun C(Other: Any): LuminARSessionConfig
+    }
+}
+
+external open class URL {
+    open var Protocol: String
+    open var Host: String
+    open var Port: Number
+    open var Valid: Number
+    open var Map: String
+    open var RedirectURL: String
+    open var Op: Array<String>
+    open var Portal: String
+    open fun clone(): URL
+
+    companion object {
+        fun C(Other: UObject): URL
+        fun C(Other: Any): URL
+    }
+}
+
+external object ERecastPartitioning {
+    var Monotone: String /* "Monotone" */
+    var Watershed: String /* "Watershed" */
+    var ChunkyMonotone: String /* "ChunkyMonotone" */
+    var ERecastPartitioning_MAX: String /* "ERecastPartitioning_MAX" */
+}
+
+external open class RecastNavMesh(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : NavigationData {
+    open var bDrawTriangleEdges: Boolean
+    open var bDrawPolyEdges: Boolean
+    open var bDrawFilledPolys: Boolean
+    open var bDrawNavMeshEdges: Boolean
+    open var bDrawTileBounds: Boolean
+    open var bDrawPathCollidingGeometry: Boolean
+    open var bDrawTileLabels: Boolean
+    open var bDrawPolygonLabels: Boolean
+    open var bDrawDefaultPolygonCost: Boolean
+    open var bDrawPolygonFlags: Boolean
+    open var bDrawLabelsOnPathNodes: Boolean
+    open var bDrawNavLinks: Boolean
+    open var bDrawFailedNavLinks: Boolean
+    open var bDrawClusters: Boolean
+    open var bDrawOctree: Boolean
+    open var bDrawOctreeDetails: Boolean
+    open var bDrawMarkedForbiddenPolys: Boolean
+    open var bDistinctlyDrawTilesBeingBuilt: Boolean
+    open var DrawOffset: Number
+    open var bFixedTilePoolSize: Boolean
+    open var TilePoolSize: Number
+    open var TileSizeUU: Number
+    open var CellSize: Number
+    open var CellHeight: Number
+    open var AgentRadius: Number
+    open var AgentHeight: Number
+    open var AgentMaxSlope: Number
+    open var AgentMaxStepHeight: Number
+    open var MinRegionArea: Number
+    open var MergeRegionSize: Number
+    open var MaxSimplificationError: Number
+    open var MaxSimultaneousTileGenerationJobsCount: Number
+    open var TileNumberHardLimit: Number
+    open var PolyRefTileBits: Number
+    open var PolyRefNavPolyBits: Number
+    open var PolyRefSaltBits: Number
+    open var NavMeshOriginOffset: Vector
+    open var DefaultDrawDistance: Number
+    open var DefaultMaxSearchNodes: Number
+    open var DefaultMaxHierarchicalSearchNodes: Number
+    open var RegionPartitioning: String /* "Monotone" | "Watershed" | "ChunkyMonotone" | "ERecastPartitioning_MAX" */
+    open var LayerPartitioning: String /* "Monotone" | "Watershed" | "ChunkyMonotone" | "ERecastPartitioning_MAX" */
+    open var RegionChunkSplits: Number
+    open var LayerChunkSplits: Number
+    open var bSortNavigationAreasByCost: Boolean
+    open var bPerformVoxelFiltering: Boolean
+    open var bMarkLowHeightAreas: Boolean
+    open var bUseExtraTopCellWhenMarkingAreas: Boolean
+    open var bFilterLowSpanSequences: Boolean
+    open var bFilterLowSpanFromTileCache: Boolean
+    open var bDoFullyAsyncNavDataGathering: Boolean
+    open var bUseBetterOffsetsFromCorners: Boolean
+    open var bStoreEmptyTileLayers: Boolean
+    open var bUseVirtualFilters: Boolean
+    open var bAllowNavLinkAsPathEnd: Boolean
+    open var bUseVoxelCache: Boolean
+    open var TileSetUpdateInterval: Number
+    open var HeuristicScale: Number
+    open var VerticalDeviationFromGroundCompensation: Number
+    open fun ReplaceAreaInTileBounds(Bounds: Box, OldArea: UnrealEngineClass, NewArea: UnrealEngineClass, ReplaceLinks: Boolean): Boolean
+
+    companion object {
+        fun GetDefaultObject(): RecastNavMesh
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): RecastNavMesh
+        fun C(Other: UObject): RecastNavMesh
+        fun C(Other: Any): RecastNavMesh
     }
 }
 
@@ -26332,7 +26331,8 @@ external open class XRMotionControllerData {
 }
 
 external interface `T$282` {
-    var OutActors: Array<Actor>
+    var OutHitResults: Array<ARTraceResult>
+    var `$`: Boolean
 }
 
 external interface `T$283` {
@@ -26340,8 +26340,7 @@ external interface `T$283` {
 }
 
 external interface `T$284` {
-    var OutHitResults: Array<ARTraceResult>
-    var `$`: Boolean
+    var OutActors: Array<Actor>
 }
 
 external interface `T$285` {
@@ -26589,7 +26588,8 @@ external interface `T$333` {
 }
 
 external interface `T$334` {
-    var OutActors: Array<Actor>
+    var OutHitResults: Array<ARTraceResult>
+    var `$`: Boolean
 }
 
 external interface `T$335` {
@@ -26597,8 +26597,7 @@ external interface `T$335` {
 }
 
 external interface `T$336` {
-    var OutHitResults: Array<ARTraceResult>
-    var `$`: Boolean
+    var OutActors: Array<Actor>
 }
 
 external interface `T$337` {
@@ -26794,20 +26793,20 @@ external open class World : UObject {
     open fun InvalidateModelGeometry(InLevel: Level)
     open fun RemoveLevelInstance()
     open fun GetActors(ActorLayer: ActorLayer): Array<Actor>
+    open fun LuminARLineTrace(ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$282`
+    open fun StartLuminARSession(LatentInfo: LatentActionInfo, Configuration: LuminARSessionConfig)
     open fun BeginPlay()
     open fun DestroyWorld()
     open fun InitializeActorsForPlay(URL: URL)
     open fun GenerateNavigation(NavData: RecastNavMesh)
-    open fun GetAllActorsOfClassAndTags(ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$282`
-    open fun GetAllActorsOfClassAndTagsInCurrentLevel(ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$283`
+    open fun GetAllActorsOfClassAndTags(ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$283`
+    open fun GetAllActorsOfClassAndTagsInCurrentLevel(ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$284`
     open fun GetLevels(): Array<Level>
     open fun GetModel(): Model
     open fun GetWorldBounds(): Box
     open fun IsGameWorld(): Boolean
     open fun IsPlayInEditor(): Boolean
     open fun IsPlayInPreview(): Boolean
-    open fun LuminARLineTrace(ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$284`
-    open fun StartLuminARSession(LatentInfo: LatentActionInfo, Configuration: LuminARSessionConfig)
     open fun GetNiagaraParameterCollection(Collection: NiagaraParameterCollection): NiagaraParameterCollectionInstance
     open fun SpawnSystemAtLocation(SystemTemplate: NiagaraSystem, Location: Vector, Rotation: Rotator, Scale: Vector, bAutoDestroy: Boolean, bAutoActivate: Boolean, PoolingMethod: String /* "None" | "AutoRelease" | "ManualRelease" | "ManualRelease_OnComplete" | "FreeInPool" | "ENCPoolMethod_MAX" */, bPreCullCheck: Boolean): NiagaraComponent
     open fun TraceChannelTestUtil(BatchOptions: TraceChannelTestBatchOptions, Start: Vector, End: Vector, SphereCapsuleRadius: Number, CapsuleHalfHeight: Number, BoxHalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, bIgnoreSelf: Boolean, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, TraceColor: LinearColor, TraceHitColor: LinearColor, DrawTime: Number): TraceQueryTestResults
@@ -27075,20 +27074,20 @@ external open class World : UObject {
         fun InvalidateModelGeometry(World: World, InLevel: Level)
         fun RemoveLevelInstance(World: World)
         fun GetActors(WorldContextObject: UObject, ActorLayer: ActorLayer): Array<Actor>
+        fun LuminARLineTrace(WorldContextObject: UObject, ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$334`
+        fun StartLuminARSession(WorldContextObject: UObject, LatentInfo: LatentActionInfo, Configuration: LuminARSessionConfig)
         fun BeginPlay(World: World)
         fun DestroyWorld(World: World)
         fun InitializeActorsForPlay(World: World, URL: URL)
         fun GenerateNavigation(InWorld: World, NavData: RecastNavMesh)
-        fun GetAllActorsOfClassAndTags(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$334`
-        fun GetAllActorsOfClassAndTagsInCurrentLevel(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$335`
+        fun GetAllActorsOfClassAndTags(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$335`
+        fun GetAllActorsOfClassAndTagsInCurrentLevel(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$336`
         fun GetLevels(World: World): Array<Level>
         fun GetModel(World: World): Model
         fun GetWorldBounds(InWorld: World): Box
         fun IsGameWorld(World: World): Boolean
         fun IsPlayInEditor(World: World): Boolean
         fun IsPlayInPreview(World: World): Boolean
-        fun LuminARLineTrace(WorldContextObject: UObject, ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$336`
-        fun StartLuminARSession(WorldContextObject: UObject, LatentInfo: LatentActionInfo, Configuration: LuminARSessionConfig)
         fun GetNiagaraParameterCollection(WorldContextObject: UObject, Collection: NiagaraParameterCollection): NiagaraParameterCollectionInstance
         fun SpawnSystemAtLocation(WorldContextObject: UObject, SystemTemplate: NiagaraSystem, Location: Vector, Rotation: Rotator, Scale: Vector, bAutoDestroy: Boolean, bAutoActivate: Boolean, PoolingMethod: String /* "None" | "AutoRelease" | "ManualRelease" | "ManualRelease_OnComplete" | "FreeInPool" | "ENCPoolMethod_MAX" */, bPreCullCheck: Boolean): NiagaraComponent
         fun TraceChannelTestUtil(WorldContextObject: UObject, BatchOptions: TraceChannelTestBatchOptions, Start: Vector, End: Vector, SphereCapsuleRadius: Number, CapsuleHalfHeight: Number, BoxHalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, bIgnoreSelf: Boolean, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, TraceColor: LinearColor, TraceHitColor: LinearColor, DrawTime: Number): TraceQueryTestResults

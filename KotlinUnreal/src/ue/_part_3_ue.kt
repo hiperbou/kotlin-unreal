@@ -1452,6 +1452,59 @@ external open class EnvironmentQueryGraphNode_Test : EnvironmentQueryGraphNode {
     }
 }
 
+external open class LightPropagationVolumeSettings {
+    open var bOverride_LPVIntensity: Boolean
+    open var bOverride_LPVDirectionalOcclusionIntensity: Boolean
+    open var bOverride_LPVDirectionalOcclusionRadius: Boolean
+    open var bOverride_LPVDiffuseOcclusionExponent: Boolean
+    open var bOverride_LPVSpecularOcclusionExponent: Boolean
+    open var bOverride_LPVDiffuseOcclusionIntensity: Boolean
+    open var bOverride_LPVSpecularOcclusionIntensity: Boolean
+    open var bOverride_LPVSize: Boolean
+    open var bOverride_LPVSecondaryOcclusionIntensity: Boolean
+    open var bOverride_LPVSecondaryBounceIntensity: Boolean
+    open var bOverride_LPVGeometryVolumeBias: Boolean
+    open var bOverride_LPVVplInjectionBias: Boolean
+    open var bOverride_LPVEmissiveInjectionIntensity: Boolean
+    open var LPVIntensity: Number
+    open var LPVVplInjectionBias: Number
+    open var LPVSize: Number
+    open var LPVSecondaryOcclusionIntensity: Number
+    open var LPVSecondaryBounceIntensity: Number
+    open var LPVGeometryVolumeBias: Number
+    open var LPVEmissiveInjectionIntensity: Number
+    open var LPVDirectionalOcclusionIntensity: Number
+    open var LPVDirectionalOcclusionRadius: Number
+    open var LPVDiffuseOcclusionExponent: Number
+    open var LPVSpecularOcclusionExponent: Number
+    open var LPVDiffuseOcclusionIntensity: Number
+    open var LPVSpecularOcclusionIntensity: Number
+    open var LPVFadeRange: Number
+    open var LPVDirectionalOcclusionFadeRange: Number
+    open fun clone(): LightPropagationVolumeSettings
+
+    companion object {
+        fun C(Other: UObject): LightPropagationVolumeSettings
+        fun C(Other: Any): LightPropagationVolumeSettings
+    }
+}
+
+external open class LightPropagationVolumeBlendable : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Settings: LightPropagationVolumeSettings
+    open var BlendWeight: Number
+
+    companion object {
+        fun Load(ResourceName: String): LightPropagationVolumeBlendable
+        fun Find(Outer: UObject, ResourceName: String): LightPropagationVolumeBlendable
+        fun GetDefaultObject(): LightPropagationVolumeBlendable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LightPropagationVolumeBlendable
+        fun C(Other: UObject): LightPropagationVolumeBlendable
+        fun C(Other: Any): LightPropagationVolumeBlendable
+    }
+}
+
 external interface `T$389` {
     var OutActor: TemplateSequenceActor
     var `$`: TemplateSequencePlayer
@@ -1788,227 +1841,6 @@ external open class WaveOscillatorCameraShakePattern : SimpleCameraShakePattern 
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): WaveOscillatorCameraShakePattern
         fun C(Other: UObject): WaveOscillatorCameraShakePattern
         fun C(Other: Any): WaveOscillatorCameraShakePattern
-    }
-}
-
-external open class LightPropagationVolumeSettings {
-    open var bOverride_LPVIntensity: Boolean
-    open var bOverride_LPVDirectionalOcclusionIntensity: Boolean
-    open var bOverride_LPVDirectionalOcclusionRadius: Boolean
-    open var bOverride_LPVDiffuseOcclusionExponent: Boolean
-    open var bOverride_LPVSpecularOcclusionExponent: Boolean
-    open var bOverride_LPVDiffuseOcclusionIntensity: Boolean
-    open var bOverride_LPVSpecularOcclusionIntensity: Boolean
-    open var bOverride_LPVSize: Boolean
-    open var bOverride_LPVSecondaryOcclusionIntensity: Boolean
-    open var bOverride_LPVSecondaryBounceIntensity: Boolean
-    open var bOverride_LPVGeometryVolumeBias: Boolean
-    open var bOverride_LPVVplInjectionBias: Boolean
-    open var bOverride_LPVEmissiveInjectionIntensity: Boolean
-    open var LPVIntensity: Number
-    open var LPVVplInjectionBias: Number
-    open var LPVSize: Number
-    open var LPVSecondaryOcclusionIntensity: Number
-    open var LPVSecondaryBounceIntensity: Number
-    open var LPVGeometryVolumeBias: Number
-    open var LPVEmissiveInjectionIntensity: Number
-    open var LPVDirectionalOcclusionIntensity: Number
-    open var LPVDirectionalOcclusionRadius: Number
-    open var LPVDiffuseOcclusionExponent: Number
-    open var LPVSpecularOcclusionExponent: Number
-    open var LPVDiffuseOcclusionIntensity: Number
-    open var LPVSpecularOcclusionIntensity: Number
-    open var LPVFadeRange: Number
-    open var LPVDirectionalOcclusionFadeRange: Number
-    open fun clone(): LightPropagationVolumeSettings
-
-    companion object {
-        fun C(Other: UObject): LightPropagationVolumeSettings
-        fun C(Other: Any): LightPropagationVolumeSettings
-    }
-}
-
-external open class LightPropagationVolumeBlendable : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Settings: LightPropagationVolumeSettings
-    open var BlendWeight: Number
-
-    companion object {
-        fun Load(ResourceName: String): LightPropagationVolumeBlendable
-        fun Find(Outer: UObject, ResourceName: String): LightPropagationVolumeBlendable
-        fun GetDefaultObject(): LightPropagationVolumeBlendable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LightPropagationVolumeBlendable
-        fun C(Other: UObject): LightPropagationVolumeBlendable
-        fun C(Other: Any): LightPropagationVolumeBlendable
-    }
-}
-
-external open class EdGraph_ReferenceViewer : EdGraph {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): EdGraph_ReferenceViewer
-        fun Find(Outer: UObject, ResourceName: String): EdGraph_ReferenceViewer
-        fun GetDefaultObject(): EdGraph_ReferenceViewer
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): EdGraph_ReferenceViewer
-        fun C(Other: UObject): EdGraph_ReferenceViewer
-        fun C(Other: Any): EdGraph_ReferenceViewer
-    }
-}
-
-external open class EdGraphNode_Reference : EdGraphNode {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): EdGraphNode_Reference
-        fun Find(Outer: UObject, ResourceName: String): EdGraphNode_Reference
-        fun GetDefaultObject(): EdGraphNode_Reference
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): EdGraphNode_Reference
-        fun C(Other: UObject): EdGraphNode_Reference
-        fun C(Other: Any): EdGraphNode_Reference
-    }
-}
-
-external open class ReferenceViewerSchema : EdGraphSchema {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ReferenceViewerSchema
-        fun Find(Outer: UObject, ResourceName: String): ReferenceViewerSchema
-        fun GetDefaultObject(): ReferenceViewerSchema
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ReferenceViewerSchema
-        fun C(Other: UObject): ReferenceViewerSchema
-        fun C(Other: Any): ReferenceViewerSchema
-    }
-}
-
-external open class InternationalizationExportSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var CulturesToGenerate: Array<String>
-    open var CommandletClass: String
-    open var SourcePath: String
-    open var DestinationPath: String
-    open var PortableObjectName: String
-    open var ManifestName: String
-    open var ArchiveName: String
-    open var bExportLoc: Boolean
-    open var bImportLoc: Boolean
-    open var bUseCultureDirectory: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): InternationalizationExportSettings
-        fun Find(Outer: UObject, ResourceName: String): InternationalizationExportSettings
-        fun GetDefaultObject(): InternationalizationExportSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): InternationalizationExportSettings
-        fun C(Other: UObject): InternationalizationExportSettings
-        fun C(Other: Any): InternationalizationExportSettings
-    }
-}
-
-external open class TranslationPickerSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var bSubmitTranslationPickerChangesToLocalizationService: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): TranslationPickerSettings
-        fun Find(Outer: UObject, ResourceName: String): TranslationPickerSettings
-        fun GetDefaultObject(): TranslationPickerSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TranslationPickerSettings
-        fun C(Other: UObject): TranslationPickerSettings
-        fun C(Other: Any): TranslationPickerSettings
-    }
-}
-
-external open class TranslationChange {
-    open var Version: String
-    open var DateAndTime: DateTime
-    open var Source: String
-    open var Translation: String
-    open fun clone(): TranslationChange
-
-    companion object {
-        fun C(Other: UObject): TranslationChange
-        fun C(Other: Any): TranslationChange
-    }
-}
-
-external open class TranslationContextInfo {
-    open var Key: String
-    open var Context: String
-    open var Changes: Array<TranslationChange>
-    open fun clone(): TranslationContextInfo
-
-    companion object {
-        fun C(Other: UObject): TranslationContextInfo
-        fun C(Other: Any): TranslationContextInfo
-    }
-}
-
-external open class TranslationUnit : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Namespace: String
-    open var Key: String
-    open var Source: String
-    open var Translation: String
-    open var Contexts: Array<TranslationContextInfo>
-    open var HasBeenReviewed: Boolean
-    open var TranslationBeforeImport: String
-    open var LocresPath: String
-
-    companion object {
-        fun Load(ResourceName: String): TranslationUnit
-        fun Find(Outer: UObject, ResourceName: String): TranslationUnit
-        fun GetDefaultObject(): TranslationUnit
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TranslationUnit
-        fun C(Other: UObject): TranslationUnit
-        fun C(Other: Any): TranslationUnit
-    }
-}
-
-external open class PixelInspectorView : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var FinalColor: LinearColor
-    open var SceneColor: LinearColor
-    open var PreExposure: Number
-    open var Luminance: Number
-    open var HdrColor: LinearColor
-    open var Normal: Vector
-    open var PerObjectGBufferData: Number
-    open var Metallic: Number
-    open var Specular: Number
-    open var Roughness: Number
-    open var MaterialShadingModel: String /* "MSM_Unlit" | "MSM_DefaultLit" | "MSM_Subsurface" | "MSM_PreintegratedSkin" | "MSM_ClearCoat" | "MSM_SubsurfaceProfile" | "MSM_TwoSidedFoliage" | "MSM_Hair" | "MSM_Cloth" | "MSM_Eye" | "MSM_SingleLayerWater" | "MSM_ThinTranslucent" | "MSM_NUM" | "MSM_FromMaterialExpression" | "MSM_MAX" */
-    open var SelectiveOutputMask: Number
-    open var BaseColor: LinearColor
-    open var IndirectIrradiance: Number
-    open var AmbientOcclusion: Number
-    open var SubsurfaceColor: LinearColor
-    open var SubsurfaceProfile: Vector
-    open var Opacity: Number
-    open var ClearCoat: Number
-    open var ClearCoatRoughness: Number
-    open var WorldNormal: Vector
-    open var BackLit: Number
-    open var Cloth: Number
-    open var EyeTangent: Vector
-    open var IrisMask: Number
-    open var IrisDistance: Number
-
-    companion object {
-        fun Load(ResourceName: String): PixelInspectorView
-        fun Find(Outer: UObject, ResourceName: String): PixelInspectorView
-        fun GetDefaultObject(): PixelInspectorView
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PixelInspectorView
-        fun C(Other: UObject): PixelInspectorView
-        fun C(Other: Any): PixelInspectorView
     }
 }
 
@@ -2705,6 +2537,174 @@ external open class GameplayTagsK2Node_SwitchGameplayTagContainer : K2Node_Switc
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): GameplayTagsK2Node_SwitchGameplayTagContainer
         fun C(Other: UObject): GameplayTagsK2Node_SwitchGameplayTagContainer
         fun C(Other: Any): GameplayTagsK2Node_SwitchGameplayTagContainer
+    }
+}
+
+external open class EdGraph_ReferenceViewer : EdGraph {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): EdGraph_ReferenceViewer
+        fun Find(Outer: UObject, ResourceName: String): EdGraph_ReferenceViewer
+        fun GetDefaultObject(): EdGraph_ReferenceViewer
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): EdGraph_ReferenceViewer
+        fun C(Other: UObject): EdGraph_ReferenceViewer
+        fun C(Other: Any): EdGraph_ReferenceViewer
+    }
+}
+
+external open class EdGraphNode_Reference : EdGraphNode {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): EdGraphNode_Reference
+        fun Find(Outer: UObject, ResourceName: String): EdGraphNode_Reference
+        fun GetDefaultObject(): EdGraphNode_Reference
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): EdGraphNode_Reference
+        fun C(Other: UObject): EdGraphNode_Reference
+        fun C(Other: Any): EdGraphNode_Reference
+    }
+}
+
+external open class ReferenceViewerSchema : EdGraphSchema {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): ReferenceViewerSchema
+        fun Find(Outer: UObject, ResourceName: String): ReferenceViewerSchema
+        fun GetDefaultObject(): ReferenceViewerSchema
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ReferenceViewerSchema
+        fun C(Other: UObject): ReferenceViewerSchema
+        fun C(Other: Any): ReferenceViewerSchema
+    }
+}
+
+external open class InternationalizationExportSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var CulturesToGenerate: Array<String>
+    open var CommandletClass: String
+    open var SourcePath: String
+    open var DestinationPath: String
+    open var PortableObjectName: String
+    open var ManifestName: String
+    open var ArchiveName: String
+    open var bExportLoc: Boolean
+    open var bImportLoc: Boolean
+    open var bUseCultureDirectory: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): InternationalizationExportSettings
+        fun Find(Outer: UObject, ResourceName: String): InternationalizationExportSettings
+        fun GetDefaultObject(): InternationalizationExportSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): InternationalizationExportSettings
+        fun C(Other: UObject): InternationalizationExportSettings
+        fun C(Other: Any): InternationalizationExportSettings
+    }
+}
+
+external open class TranslationPickerSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var bSubmitTranslationPickerChangesToLocalizationService: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): TranslationPickerSettings
+        fun Find(Outer: UObject, ResourceName: String): TranslationPickerSettings
+        fun GetDefaultObject(): TranslationPickerSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TranslationPickerSettings
+        fun C(Other: UObject): TranslationPickerSettings
+        fun C(Other: Any): TranslationPickerSettings
+    }
+}
+
+external open class TranslationChange {
+    open var Version: String
+    open var DateAndTime: DateTime
+    open var Source: String
+    open var Translation: String
+    open fun clone(): TranslationChange
+
+    companion object {
+        fun C(Other: UObject): TranslationChange
+        fun C(Other: Any): TranslationChange
+    }
+}
+
+external open class TranslationContextInfo {
+    open var Key: String
+    open var Context: String
+    open var Changes: Array<TranslationChange>
+    open fun clone(): TranslationContextInfo
+
+    companion object {
+        fun C(Other: UObject): TranslationContextInfo
+        fun C(Other: Any): TranslationContextInfo
+    }
+}
+
+external open class TranslationUnit : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Namespace: String
+    open var Key: String
+    open var Source: String
+    open var Translation: String
+    open var Contexts: Array<TranslationContextInfo>
+    open var HasBeenReviewed: Boolean
+    open var TranslationBeforeImport: String
+    open var LocresPath: String
+
+    companion object {
+        fun Load(ResourceName: String): TranslationUnit
+        fun Find(Outer: UObject, ResourceName: String): TranslationUnit
+        fun GetDefaultObject(): TranslationUnit
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TranslationUnit
+        fun C(Other: UObject): TranslationUnit
+        fun C(Other: Any): TranslationUnit
+    }
+}
+
+external open class PixelInspectorView : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var FinalColor: LinearColor
+    open var SceneColor: LinearColor
+    open var PreExposure: Number
+    open var Luminance: Number
+    open var HdrColor: LinearColor
+    open var Normal: Vector
+    open var PerObjectGBufferData: Number
+    open var Metallic: Number
+    open var Specular: Number
+    open var Roughness: Number
+    open var MaterialShadingModel: String /* "MSM_Unlit" | "MSM_DefaultLit" | "MSM_Subsurface" | "MSM_PreintegratedSkin" | "MSM_ClearCoat" | "MSM_SubsurfaceProfile" | "MSM_TwoSidedFoliage" | "MSM_Hair" | "MSM_Cloth" | "MSM_Eye" | "MSM_SingleLayerWater" | "MSM_ThinTranslucent" | "MSM_NUM" | "MSM_FromMaterialExpression" | "MSM_MAX" */
+    open var SelectiveOutputMask: Number
+    open var BaseColor: LinearColor
+    open var IndirectIrradiance: Number
+    open var AmbientOcclusion: Number
+    open var SubsurfaceColor: LinearColor
+    open var SubsurfaceProfile: Vector
+    open var Opacity: Number
+    open var ClearCoat: Number
+    open var ClearCoatRoughness: Number
+    open var WorldNormal: Vector
+    open var BackLit: Number
+    open var Cloth: Number
+    open var EyeTangent: Vector
+    open var IrisMask: Number
+    open var IrisDistance: Number
+
+    companion object {
+        fun Load(ResourceName: String): PixelInspectorView
+        fun Find(Outer: UObject, ResourceName: String): PixelInspectorView
+        fun GetDefaultObject(): PixelInspectorView
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PixelInspectorView
+        fun C(Other: UObject): PixelInspectorView
+        fun C(Other: Any): PixelInspectorView
     }
 }
 
@@ -7458,6 +7458,1803 @@ external open class AnimNotifyState_TimedNiagaraEffectAdvanced : AnimNotifyState
     }
 }
 
+external open class V8Config : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var bGenAltPropAccessorForAllProp: Boolean
+    open var bGenGetStructRefArrayFunction: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): V8Config
+        fun Find(Outer: UObject, ResourceName: String): V8Config
+        fun GetDefaultObject(): V8Config
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): V8Config
+        fun C(Other: UObject): V8Config
+        fun C(Other: Any): V8Config
+    }
+}
+
+external open class DirectoryWatcher : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Added: Array<String>
+    open var Modified: Array<String>
+    open var Removed: Array<String>
+    open var OnChanged: UnrealEngineMulticastDelegate<() -> Unit>
+    open fun Watch(Directory: String)
+    open fun Unwatch()
+    open fun Contains(File: String): Boolean
+
+    companion object {
+        fun Load(ResourceName: String): DirectoryWatcher
+        fun Find(Outer: UObject, ResourceName: String): DirectoryWatcher
+        fun GetDefaultObject(): DirectoryWatcher
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): DirectoryWatcher
+        fun C(Other: UObject): DirectoryWatcher
+        fun C(Other: Any): DirectoryWatcher
+    }
+}
+
+external interface `T$407` {
+    var OutFiles: Array<String>
+}
+
+external open class JavascriptContext : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Paths: Array<String>
+    open fun WriteDTS(Target: String, bIncludingTooltip: Boolean): Boolean
+    open fun WriteAliases(Target: String): Boolean
+    open fun UnregisterConsoleCommand(Command: String)
+    open fun SetContextId(Name: String)
+    open fun RunScript(Script: String, bOutput: Boolean): String
+    open fun RunFileWithArgs(Filename: String, Args: Array<String>): String
+    open fun RunFile(Filename: String): String
+    open fun ResetUnrealConsoleDelegate()
+    open fun RequestV8GarbageCollection()
+    open fun RegisterConsoleCommand(Command: String, Help: String, UFunction: JavascriptFunction)
+    open fun ReadScriptFile(Filename: String): String
+    open fun IsDebugContext(): Boolean
+    open fun GetScriptFileFullPath(Filename: String): String
+    open fun FindPathFile(TargetRootPath: String, TargetFileName: String, OutFiles: Array<String> = definedExternally): `T$407`
+    open fun Expose(Name: String, UObject: UObject)
+    open fun DestroyInspector()
+    open fun CreateInspector(Port: Number)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptContext
+        fun Find(Outer: UObject, ResourceName: String): JavascriptContext
+        fun GetDefaultObject(): JavascriptContext
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptContext
+        fun C(Other: UObject): JavascriptContext
+        fun C(Other: Any): JavascriptContext
+    }
+}
+
+external open class JavascriptHeapStatistics {
+    open var TotalHeapSize: Number
+    open var TotalHeapSizeExecutable: Number
+    open var TotalPhysicalSize: Number
+    open var TotalAvailableSize: Number
+    open var UsedHeapSize: Number
+    open var HeapSizeLimit: Number
+    open var MallocedMemory: Number
+    open var bDoesZapGarbage: Boolean
+    open fun clone(): JavascriptHeapStatistics
+
+    companion object {
+        fun C(Other: UObject): JavascriptHeapStatistics
+        fun C(Other: Any): JavascriptHeapStatistics
+    }
+}
+
+external interface `T$408` {
+    var Statistics: JavascriptHeapStatistics
+}
+
+external open class JavascriptIsolate : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun Init(bIsEditor: Boolean)
+    open fun GetHeapStatistics(Statistics: JavascriptHeapStatistics = definedExternally): `T$408`
+    open fun CreateContext(): JavascriptContext
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptIsolate
+        fun Find(Outer: UObject, ResourceName: String): JavascriptIsolate
+        fun GetDefaultObject(): JavascriptIsolate
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptIsolate
+        fun C(Other: UObject): JavascriptIsolate
+        fun C(Other: Any): JavascriptIsolate
+    }
+}
+
+external open class JavascriptAsset {
+    open var Name: String
+    open var Asset: SoftObjectPath
+    open fun clone(): JavascriptAsset
+
+    companion object {
+        fun C(Other: UObject): JavascriptAsset
+        fun C(Other: Any): JavascriptAsset
+    }
+}
+
+external open class JavascriptClassAsset {
+    open var Name: String
+    open var Class: UnrealEngineClass
+    open fun clone(): JavascriptClassAsset
+
+    companion object {
+        fun C(Other: UObject): JavascriptClassAsset
+        fun C(Other: Any): JavascriptClassAsset
+    }
+}
+
+external open class JavascriptComponent : ActorComponent {
+    constructor()
+    constructor(Outer: UObject)
+    open var ScriptSourceFile: String
+    open var bActiveWithinEditor: Boolean
+    open var JavascriptContext: JavascriptContext
+    open var JavascriptIsolate: JavascriptIsolate
+    open var OnTick: UnrealEngineDelegate<(DeltaSeconds: Number) -> Unit>
+    open var OnBeginPlay: UnrealEngineDelegate<() -> Unit>
+    open var OnEndPlay: UnrealEngineDelegate<() -> Unit>
+    open var OnInvoke: UnrealEngineDelegate<(Name: String) -> Unit>
+    open var Assets: Array<JavascriptAsset>
+    open var ClassAssets: Array<JavascriptClassAsset>
+    open fun ResolveClass(Name: String): UnrealEngineClass
+    open fun ResolveAsset(Name: String, bTryLoad: Boolean): UObject
+    open fun Invoke(Name: String)
+    open fun ForceGC()
+    open fun Expose(ExposedAs: String, UObject: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptComponent
+        fun Find(Outer: UObject, ResourceName: String): JavascriptComponent
+        fun GetDefaultObject(): JavascriptComponent
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptComponent
+        fun C(Other: UObject): JavascriptComponent
+        fun C(Other: Any): JavascriptComponent
+    }
+}
+
+external open class JavascriptDelegate : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun Fire()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptDelegate
+        fun Find(Outer: UObject, ResourceName: String): JavascriptDelegate
+        fun GetDefaultObject(): JavascriptDelegate
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptDelegate
+        fun C(Other: UObject): JavascriptDelegate
+        fun C(Other: Any): JavascriptDelegate
+    }
+}
+
+external open class JavascriptGeneratedClass : BlueprintGeneratedClass {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptGeneratedClass
+        fun Find(Outer: UObject, ResourceName: String): JavascriptGeneratedClass
+        fun GetDefaultObject(): JavascriptGeneratedClass
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGeneratedClass
+        fun C(Other: UObject): JavascriptGeneratedClass
+        fun C(Other: Any): JavascriptGeneratedClass
+    }
+}
+
+external open class JavascriptGeneratedClass_Native : BlueprintGeneratedClass {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptGeneratedClass_Native
+        fun Find(Outer: UObject, ResourceName: String): JavascriptGeneratedClass_Native
+        fun GetDefaultObject(): JavascriptGeneratedClass_Native
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGeneratedClass_Native
+        fun C(Other: UObject): JavascriptGeneratedClass_Native
+        fun C(Other: Any): JavascriptGeneratedClass_Native
+    }
+}
+
+external open class JavascriptGeneratedFunction : UFunction {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptGeneratedFunction
+        fun Find(Outer: UObject, ResourceName: String): JavascriptGeneratedFunction
+        fun GetDefaultObject(): JavascriptGeneratedFunction
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGeneratedFunction
+        fun C(Other: UObject): JavascriptGeneratedFunction
+        fun C(Other: Any): JavascriptGeneratedFunction
+    }
+}
+
+external open class JavascriptGlobalDelegates : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun UnbindAll()
+    open fun Unbind(Key: String)
+    open fun RedirectorFollowed(PackageName: String, Redirector: UObject)
+    open fun PreLoadMap(MapName: String)
+    open fun PreGarbageCollectDelegate()
+    open fun PostLoadMapWithWorld(World: World)
+    open fun PostGarbageCollect()
+    open fun PostDemoPlay()
+    open fun PostApplyLevelOffset(Level: Level, World: World, Offset: Vector, Flag: Boolean)
+    open fun PackageCreatedForLoad(InPackage: Package)
+    open fun OnWorldCleanup(World: World, bSessionEnded: Boolean, bCleanupResources: Boolean)
+    open fun OnPreWorldInitialization_Friendly(World: World)
+    open fun OnPreWorldFinishDestroy(World: World)
+    open fun OnPreObjectPropertyChanged_Friendly(InObject: UObject, Property: Any, MemberProperty: Any)
+    open fun OnPostWorldInitialization_Friendly(World: World)
+    open fun OnPostWorldCreation(World: World)
+    open fun OnPostDuplicate_Friendly(World: World, bDuplicateForPIE: Boolean)
+    open fun OnObjectSaved(UObject: UObject)
+    open fun OnObjectPropertyChanged_Friendly(InObject: UObject, Property: Any, MemberProperty: Any, ChangeType: Number)
+    open fun OnObjectModified(UObject: UObject)
+    open fun OnAssetLoaded(UObject: UObject)
+    open fun OnActorLabelChanged(Actor: Actor)
+    open fun LevelRemovedFromWorld(Level: Level, World: World)
+    open fun LevelAddedToWorld(Level: Level, World: World)
+    open fun Bind(Key: String)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptGlobalDelegates
+        fun Find(Outer: UObject, ResourceName: String): JavascriptGlobalDelegates
+        fun GetDefaultObject(): JavascriptGlobalDelegates
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGlobalDelegates
+        fun C(Other: UObject): JavascriptGlobalDelegates
+        fun C(Other: Any): JavascriptGlobalDelegates
+    }
+}
+
+external open class JavascriptStaticCache : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Isolates: Array<JavascriptIsolate>
+    open var bExecuteTestModePIE: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptStaticCache
+        fun Find(Outer: UObject, ResourceName: String): JavascriptStaticCache
+        fun GetDefaultObject(): JavascriptStaticCache
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptStaticCache
+        fun C(Other: UObject): JavascriptStaticCache
+        fun C(Other: Any): JavascriptStaticCache
+    }
+}
+
+external open class JavascriptStreamableManager {
+    open fun clone(): JavascriptStreamableManager
+    open fun IsAsyncLoadComplete(Target: SoftObjectPath): Boolean
+    open fun RequestAsyncLoad(TargetsToStream: Array<SoftObjectPath>, DelegateToCall: JavascriptFunction, Priority: Number)
+    open fun SimpleAsyncLoad(Target: SoftObjectPath, Priority: Number)
+    open fun Unload(Target: SoftObjectPath)
+
+    companion object {
+        fun C(Other: UObject): JavascriptStreamableManager
+        fun C(Other: Any): JavascriptStreamableManager
+        fun IsAsyncLoadComplete(Manager: JavascriptStreamableManager, Target: SoftObjectPath): Boolean
+        fun RequestAsyncLoad(Manager: JavascriptStreamableManager, TargetsToStream: Array<SoftObjectPath>, DelegateToCall: JavascriptFunction, Priority: Number)
+        fun SimpleAsyncLoad(Manager: JavascriptStreamableManager, Target: SoftObjectPath, Priority: Number)
+        fun Unload(Manager: JavascriptStreamableManager, Target: SoftObjectPath)
+        fun CreateStreamableManager(): JavascriptStreamableManager
+    }
+}
+
+external interface `T$409` {
+    var Addr: JavascriptInternetAddr
+    var bValid: Boolean
+}
+
+external interface `T$410` {
+    var Addr: JavascriptInternetAddr
+}
+
+external open class JavascriptInternetAddr {
+    open fun clone(): JavascriptInternetAddr
+    open fun SetIp(ResolvedAddress: String = definedExternally, bValid: Boolean = definedExternally): `T$409`
+    open fun SetPort(Port: Number = definedExternally): `T$410`
+
+    companion object {
+        fun C(Other: UObject): JavascriptInternetAddr
+        fun C(Other: Any): JavascriptInternetAddr
+        fun SetIp(Addr: JavascriptInternetAddr = definedExternally, ResolvedAddress: String = definedExternally, bValid: Boolean = definedExternally): `T$409`
+        fun SetPort(Addr: JavascriptInternetAddr = definedExternally, Port: Number = definedExternally): `T$410`
+        fun CreateInternetAddr(): JavascriptInternetAddr
+    }
+}
+
+external interface `T$411` {
+    var Socket: JavascriptSocket
+    var BytesSent: Number
+    var `$`: Boolean
+}
+
+external open class JavascriptSocket {
+    open fun clone(): JavascriptSocket
+    open fun SendMemoryTo(ToAddr: JavascriptInternetAddr = definedExternally, NumBytes: Number = definedExternally, BytesSent: Number = definedExternally): `T$411`
+
+    companion object {
+        fun C(Other: UObject): JavascriptSocket
+        fun C(Other: Any): JavascriptSocket
+        fun SendMemoryTo(Socket: JavascriptSocket = definedExternally, ToAddr: JavascriptInternetAddr = definedExternally, NumBytes: Number = definedExternally, BytesSent: Number = definedExternally): `T$411`
+        fun CreateSocket(SocketType: String, Description: String, bForceUDP: Boolean): JavascriptSocket
+    }
+}
+
+external object EJavascriptStatDataType {
+    var Invalid: String /* "Invalid" */
+    var ST_None: String /* "ST_None" */
+    var ST_int64: String /* "ST_int64" */
+    var ST_double: String /* "ST_double" */
+    var ST_FName: String /* "ST_FName" */
+    var ST_Ptr: String /* "ST_Ptr" */
+    var EJavascriptStatDataType_MAX: String /* "EJavascriptStatDataType_MAX" */
+}
+
+external object EJavascriptStatOperation {
+    var Invalid: String /* "Invalid" */
+    var SetLongName: String /* "SetLongName" */
+    var AdvanceFrameEventGameThread: String /* "AdvanceFrameEventGameThread" */
+    var AdvanceFrameEventRenderThread: String /* "AdvanceFrameEventRenderThread" */
+    var CycleScopeStart: String /* "CycleScopeStart" */
+    var CycleScopeEnd: String /* "CycleScopeEnd" */
+    var SpecialMessageMarker: String /* "SpecialMessageMarker" */
+    var Set: String /* "Set" */
+    var Clear: String /* "Clear" */
+    var Add: String /* "Add" */
+    var Subtract: String /* "Subtract" */
+    var ChildrenStart: String /* "ChildrenStart" */
+    var ChildrenEnd: String /* "ChildrenEnd" */
+    var Leaf: String /* "Leaf" */
+    var MaxVal: String /* "MaxVal" */
+    var Memory: String /* "Memory" */
+    var EJavascriptStatOperation_MAX: String /* "EJavascriptStatOperation_MAX" */
+}
+
+external open class JavascriptStat {
+    open fun clone(): JavascriptStat
+    open fun AddMessage(InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */)
+    open fun AddMessage_float(InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
+    open fun AddMessage_int(InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
+
+    companion object {
+        fun C(Other: UObject): JavascriptStat
+        fun C(Other: Any): JavascriptStat
+        fun AddMessage(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */)
+        fun AddMessage_float(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
+        fun AddMessage_int(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
+        fun NewStat(InStatName: String, InStatDesc: String, InGroupName: String, InGroupCategory: String, InGroupDesc: String, bDefaultEnable: Boolean, bShouldClearEveryFrame: Boolean, InStatType: String /* "Invalid" | "ST_None" | "ST_int64" | "ST_double" | "ST_FName" | "ST_Ptr" | "EJavascriptStatDataType_MAX" */, bCycleStat: Boolean, bSortByName: Boolean): JavascriptStat
+    }
+}
+
+external object ELogVerbosity_JS {
+    var NoLogging: String /* "NoLogging" */
+    var Fatal: String /* "Fatal" */
+    var Error: String /* "Error" */
+    var Warning: String /* "Warning" */
+    var Display: String /* "Display" */
+    var Log: String /* "Log" */
+    var Verbose: String /* "Verbose" */
+    var VeryVerbose: String /* "VeryVerbose" */
+    var ELogVerbosity_MAX: String /* "ELogVerbosity_MAX" */
+}
+
+external open class JavascriptLogCategory {
+    open fun clone(): JavascriptLogCategory
+    open fun GetCategoryName(): String
+    open fun IsSuppressed(Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): Boolean
+    open fun Log(Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Message: String, Filename: String, LineNumber: Number)
+
+    companion object {
+        fun C(Other: UObject): JavascriptLogCategory
+        fun C(Other: Any): JavascriptLogCategory
+        fun GetCategoryName(Category: JavascriptLogCategory): String
+        fun IsSuppressed(Category: JavascriptLogCategory, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): Boolean
+        fun Log(Category: JavascriptLogCategory, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Message: String, Filename: String, LineNumber: Number)
+        fun CreateLogCategory(CategoryName: String, InDefaultVerbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): JavascriptLogCategory
+    }
+}
+
+external open class JavscriptProperty {
+    open var Type: String
+    open var Name: String
+    open fun clone(): JavscriptProperty
+
+    companion object {
+        fun C(Other: UObject): JavscriptProperty
+        fun C(Other: Any): JavscriptProperty
+    }
+}
+
+external open class JavascriptProfileNode {
+    open fun clone(): JavascriptProfileNode
+    open fun GetBailoutReason(): String
+    open fun GetCallUid(): Number
+    open fun GetChild(index: Number): JavascriptProfileNode
+    open fun GetChildrenCount(): Number
+    open fun GetColumnNumber(): Number
+    open fun GetDeoptInfo_Reason(index: Number): String
+    open fun GetDeoptInfo_Stack(index: Number): String
+    open fun GetDeoptInfosCount(index: Number): Number
+    open fun GetFunctionName(): String
+    open fun GetHitCount(): Number
+    open fun GetHitLineCount(): Number
+    open fun GetLineNumber(): Number
+    open fun GetNodeId(): Number
+    open fun GetScriptId(): Number
+    open fun GetScriptResourceName(): String
+
+    companion object {
+        fun C(Other: UObject): JavascriptProfileNode
+        fun C(Other: Any): JavascriptProfileNode
+        fun GetBailoutReason(UNode: JavascriptProfileNode): String
+        fun GetCallUid(UNode: JavascriptProfileNode): Number
+        fun GetChild(UNode: JavascriptProfileNode, index: Number): JavascriptProfileNode
+        fun GetChildrenCount(UNode: JavascriptProfileNode): Number
+        fun GetColumnNumber(UNode: JavascriptProfileNode): Number
+        fun GetDeoptInfo_Reason(UNode: JavascriptProfileNode, index: Number): String
+        fun GetDeoptInfo_Stack(UNode: JavascriptProfileNode, index: Number): String
+        fun GetDeoptInfosCount(UNode: JavascriptProfileNode, index: Number): Number
+        fun GetFunctionName(UNode: JavascriptProfileNode): String
+        fun GetHitCount(UNode: JavascriptProfileNode): Number
+        fun GetHitLineCount(UNode: JavascriptProfileNode): Number
+        fun GetLineNumber(UNode: JavascriptProfileNode): Number
+        fun GetNodeId(UNode: JavascriptProfileNode): Number
+        fun GetScriptId(UNode: JavascriptProfileNode): Number
+        fun GetScriptResourceName(UNode: JavascriptProfileNode): String
+    }
+}
+
+external interface `T$412` {
+    var OutIp: String
+    var `$`: Boolean
+}
+
+external interface `T$413` {
+    var OutItems: Array<DirectoryItem>
+    var `$`: Boolean
+}
+
+external interface `T$414` {
+    var Results: Array<UObject>
+}
+
+external interface `T$415` {
+    var Results: Array<UObject>
+}
+
+external interface `T$416` {
+    var Results: Array<UnrealEngineClass>
+}
+
+external interface `T$417` {
+    var OutActors: Array<Actor>
+}
+
+external interface `T$418` {
+    var OutActors: Array<Actor>
+}
+
+external open class JavascriptLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptLibrary
+        fun Find(Outer: UObject, ResourceName: String): JavascriptLibrary
+        fun GetDefaultObject(): JavascriptLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptLibrary
+        fun WriteStringToFile(UObject: UObject, Filename: String, Data: String, EncodingOptions: String /* "AutoDetect" | "ForceAnsi" | "ForceUnicode" | "ForceUTF8" | "ForceUTF8WithoutBOM" | "EJavascriptEncodingOptions_MAX" */): Boolean
+        fun WriteFile(UObject: UObject, Filename: String): Boolean
+        fun V8_SetIdleTaskBudget(BudgetInSeconds: Number)
+        fun V8_SetFlagsFromString(V8Flags: String)
+        fun V8_IsEnableHotReload(): Boolean
+        fun UnregisterComponent(ActorComponent: ActorComponent)
+        fun Unload(Manager: JavascriptStreamableManager, Target: SoftObjectPath)
+        fun TryLoadByPath(Path: String): UObject
+        fun SimpleAsyncLoad(Manager: JavascriptStreamableManager, Target: SoftObjectPath, Priority: Number)
+        fun SetRootComponent(Actor: Actor, Component: SceneComponent)
+        fun SetPort(Addr: JavascriptInternetAddr = definedExternally, Port: Number = definedExternally): `T$410`
+        fun SetObjectFlags(Obj: UObject, Flags: Number)
+        fun SetMobility(SceneComponent: SceneComponent, Type: String /* "Static" | "Stationary" | "Movable" | "EComponentMobility_MAX" */)
+        fun SetMobile(SceneComponent: SceneComponent)
+        fun SetIp(Addr: JavascriptInternetAddr = definedExternally, ResolvedAddress: String = definedExternally, bValid: Boolean = definedExternally): `T$409`
+        fun SetClientTravel(Engine: Engine, InWorld: World, NextURL: String, InTravelType: String /* "TRAVEL_Absolute" | "TRAVEL_Partial" | "TRAVEL_Relative" | "TRAVEL_MAX" */)
+        fun SetActorFlags(Actor: Actor, Flags: Number)
+        fun SendMemoryTo(Socket: JavascriptSocket = definedExternally, ToAddr: JavascriptInternetAddr = definedExternally, NumBytes: Number = definedExternally, BytesSent: Number = definedExternally): `T$411`
+        fun SegmentIntersection2D(SegmentStartA: Vector, SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$233`
+        fun ResolveIp(HostName: String, OutIp: String = definedExternally): `T$412`
+        fun ReregisterComponent(ActorComponent: ActorComponent)
+        fun ReregisterAllComponents(Actor: Actor)
+        fun RequestAsyncLoad(Manager: JavascriptStreamableManager, TargetsToStream: Array<SoftObjectPath>, DelegateToCall: JavascriptFunction, Priority: Number)
+        fun RegisterComponent(ActorComponent: ActorComponent)
+        fun ReadStringFromFileAsync(UObject: UObject, Filename: String, UFunction: JavascriptFunction): ReadStringFromFileHandle
+        fun ReadStringFromFile(UObject: UObject, Filename: String, ReadFlags: String /* "FILEREAD_None" | "FILEREAD_NoFail" | "FILEREAD_Silent" | "FILEREAD_NotUsedDummy" | "FILEREAD_AllowWrite" | "FILEREAD_MAX" */): String
+        fun ReadFile(UObject: UObject, Filename: String): Boolean
+        fun ReadDirectory(UObject: UObject, Directory: String, OutItems: Array<DirectoryItem> = definedExternally): `T$413`
+        fun NewStat(InStatName: String, InStatDesc: String, InGroupName: String, InGroupCategory: String, InGroupDesc: String, bDefaultEnable: Boolean, bShouldClearEveryFrame: Boolean, InStatType: String /* "Invalid" | "ST_None" | "ST_int64" | "ST_double" | "ST_FName" | "ST_Ptr" | "EJavascriptStatDataType_MAX" */, bCycleStat: Boolean, bSortByName: Boolean): JavascriptStat
+        fun MarkRenderStateDirty(Component: ActorComponent)
+        fun MakeDirectory(Path: String, Tree: Boolean): Boolean
+        fun Log(Category: JavascriptLogCategory, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Message: String, Filename: String, LineNumber: Number)
+        fun LoadPackage(InOuter: Package, PackageName: String): Package
+        fun IsSuppressed(Category: JavascriptLogCategory, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): Boolean
+        fun IsRegistered(ActorComponent: ActorComponent): Boolean
+        fun IsPlayInPreview(World: World): Boolean
+        fun IsPlayInEditor(World: World): Boolean
+        fun IsPendingKill(InActor: Actor): Boolean
+        fun IsGeneratedByBlueprint(InClass: UnrealEngineClass): Boolean
+        fun IsGameWorld(World: World): Boolean
+        fun IsAsyncLoadComplete(Manager: JavascriptStreamableManager, Target: SoftObjectPath): Boolean
+        fun HasUndo(Engine: Engine): Boolean
+        fun HasAnyPackageFlags(Package: Package, Flags: Number): Boolean
+        fun HasAnyFlags(UObject: UObject, Flags: Number): Boolean
+        fun HandleSeamlessTravelPlayer(GameMode: GameModeBase, C: Controller = definedExternally): `T$252`
+        fun GetWorldBounds(InWorld: World): Box
+        fun GetSuperClasses(InClass: UnrealEngineClass): Array<UnrealEngineClass>
+        fun GetStructProperties(StructName: String, bIncludeSuper: Boolean): Array<JavscriptProperty>
+        fun GetScriptResourceName(UNode: JavascriptProfileNode): String
+        fun GetScriptId(UNode: JavascriptProfileNode): Number
+        fun GetPlatformName(): String
+        fun GetOutermost(UObject: UObject): UObject
+        fun GetOuter(UObject: UObject): UObject
+        fun GetObjectsWithOuter(Outer: UObject, Results: Array<UObject> = definedExternally, bIncludeNestedObjects: Boolean = definedExternally, ExclusionFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$414`
+        fun GetObjectsOfClass(ClassToLookFor: UnrealEngineClass, Results: Array<UObject> = definedExternally, bIncludeDerivedClasses: Boolean = definedExternally, ExcludeFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$415`
+        fun GetNodeId(UNode: JavascriptProfileNode): Number
+        fun GetName(UObject: UObject): String
+        fun GetModel(World: World): Model
+        fun GetMetaData(Field: Field, Key: String): String
+        fun GetLineNumber(UNode: JavascriptProfileNode): Number
+        fun GetLevels(World: World): Array<Level>
+        fun GetLevel(Actor: Actor): Level
+        fun GetLastRenderTime(Actor: Actor): Number
+        fun GetHitLineCount(UNode: JavascriptProfileNode): Number
+        fun GetHitCount(UNode: JavascriptProfileNode): Number
+        fun GetFunctionParmsSize(UFunction: UFunction): Number
+        fun GetFunctionName(UNode: JavascriptProfileNode): String
+        fun GetFileSize(UObject: UObject, Filename: String): Number
+        fun GetFields(UObject: UObject, bIncludeSuper: Boolean): Array<Field>
+        fun GetEnumListByEnumName(EnumName: String): Array<String>
+        fun GetDynamicBinding(Outer: UnrealEngineClass, BindingObjectClass: UnrealEngineClass): DynamicBlueprintBinding
+        fun GetDir(UObject: UObject, WhichDir: String): String
+        fun GetDerivedClasses(ClassToLookFor: UnrealEngineClass, Results: Array<UnrealEngineClass> = definedExternally, bRecursive: Boolean = definedExternally): `T$416`
+        fun GetDeoptInfosCount(UNode: JavascriptProfileNode, index: Number): Number
+        fun GetDeoptInfo_Stack(UNode: JavascriptProfileNode, index: Number): String
+        fun GetDeoptInfo_Reason(UNode: JavascriptProfileNode, index: Number): String
+        fun GetCurrentProcessId(): Number
+        fun GetComponentsByClass(Actor: Actor, ComponentClass: UnrealEngineClass): Array<ActorComponent>
+        fun GetColumnNumber(UNode: JavascriptProfileNode): Number
+        fun GetClassPathName(Class: UnrealEngineClass): String
+        fun GetChildrenCount(UNode: JavascriptProfileNode): Number
+        fun GetChild(UNode: JavascriptProfileNode, index: Number): JavascriptProfileNode
+        fun GetCategoryName(Category: JavascriptLogCategory): String
+        fun GetCallUid(UNode: JavascriptProfileNode): Number
+        fun GetBlueprintGeneratedClassFromPath(Path: String): UnrealEngineClass
+        fun GetBlueprintGeneratedClass(Blueprint: Blueprint): UnrealEngineClass
+        fun GetBailoutReason(UNode: JavascriptProfileNode): String
+        fun GetArchetypePathName(UObject: UObject): String
+        fun GetAllActorsOfClassAndTagsInCurrentLevel(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$417`
+        fun GetAllActorsOfClassAndTags(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$418`
+        fun GenerateNavigation(InWorld: World, NavData: RecastNavMesh)
+        fun FindPackage(InOuter: UObject, PackageName: String): Package
+        fun FindObjectWithOuter(Outer: UObject, ClassToLookFor: UnrealEngineClass, NameToLookFor: String): UObject
+        fun FileExists(Filename: String): Boolean
+        fun Duplicate(UObject: UObject, Outer: UObject, Name: String): UObject
+        fun DirectoryExists(InDirectory: String): Boolean
+        fun DeleteFile(Filename: String, ReadOnly: Boolean): Boolean
+        fun DeleteDirectory(Path: String, RequireExists: Boolean, Tree: Boolean): Boolean
+        fun CreateStreamableManager(): JavascriptStreamableManager
+        fun CreateSocket(SocketType: String, Description: String, bForceUDP: Boolean): JavascriptSocket
+        fun CreatePackage(Outer: UObject, PackageName: String): Package
+        fun CreateLogCategory(CategoryName: String, InDefaultVerbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): JavascriptLogCategory
+        fun CreateInternetAddr(): JavascriptInternetAddr
+        fun CreateEnum(Outer: UObject, Name: String, DisplayNames: Array<String>, Flags: Array<String>): Enum
+        fun ConvertRelativePathToFull(UObject: UObject, RelativePath: String): String
+        fun ClipboardPaste(): String
+        fun ClipboardCopy(string: String)
+        fun CallJS(UFunction: JavascriptFunction, CustomStruct: JavascriptStubStruct)
+        fun AddMessage_int(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
+        fun AddMessage_float(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
+        fun AddMessage(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */)
+        fun AddDynamicBinding(Outer: UnrealEngineClass, BindingObject: DynamicBlueprintBinding)
+        fun Actor_GetWorld(Actor: Actor): World
+        fun C(Other: UObject): JavascriptLibrary
+        fun C(Other: Any): JavascriptLibrary
+    }
+}
+
+external open class JavascriptMemoryObject : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptMemoryObject
+        fun Find(Outer: UObject, ResourceName: String): JavascriptMemoryObject
+        fun GetDefaultObject(): JavascriptMemoryObject
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptMemoryObject
+        fun C(Other: UObject): JavascriptMemoryObject
+        fun C(Other: Any): JavascriptMemoryObject
+    }
+}
+
+external open class JavascriptRef {
+    open fun clone(): JavascriptRef
+
+    companion object {
+        fun C(Other: UObject): JavascriptRef
+        fun C(Other: Any): JavascriptRef
+    }
+}
+
+external open class JavascriptObject : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Ref: JavascriptRef
+    open var Func: JavascriptFunction
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptObject
+        fun Find(Outer: UObject, ResourceName: String): JavascriptObject
+        fun GetDefaultObject(): JavascriptObject
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptObject
+        fun C(Other: UObject): JavascriptObject
+        fun C(Other: Any): JavascriptObject
+    }
+}
+
+external open class JavascriptOutputDevice : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun OnMessage(Message: String, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Category: String)
+    open fun Kill()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptOutputDevice
+        fun Find(Outer: UObject, ResourceName: String): JavascriptOutputDevice
+        fun GetDefaultObject(): JavascriptOutputDevice
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptOutputDevice
+        fun Log(Category: String, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Filename: String, LineNumber: Number, Message: String)
+        fun C(Other: UObject): JavascriptOutputDevice
+        fun C(Other: Any): JavascriptOutputDevice
+    }
+}
+
+external interface `T$419` {
+    var OutWritten: String
+    var `$`: Boolean
+}
+
+external interface `T$420` {
+    var Array: Array<Number>
+    var `$`: Boolean
+}
+
+external interface `T$421` {
+    var Error: String
+}
+
+external interface `T$422` {
+    var ReturnCode: Number
+    var `$`: Boolean
+}
+
+external open class JavascriptProcess : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun WriteToPipe(Message: String, OutWritten: String = definedExternally): `T$419`
+    open fun Wait()
+    open fun Terminate(KillTree: Boolean)
+    open fun ReadFromPipe(): String
+    open fun ReadArrayFromPipe(Array: Array<Number> = definedExternally): `T$420`
+    open fun IsRunning(): Boolean
+    open fun GetReturnCode(ReturnCode: Number = definedExternally): `T$422`
+    open fun Close()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptProcess
+        fun Find(Outer: UObject, ResourceName: String): JavascriptProcess
+        fun GetDefaultObject(): JavascriptProcess
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptProcess
+        fun Sleep(Seconds: Number)
+        fun SimulateKeypress(KeyEvent: Number)
+        fun SetEnvironmentVar(VarName: String, VarValue: String)
+        fun Open_PID(ProcessId: Number): JavascriptProcess
+        fun Open(ProcName: String): JavascriptProcess
+        fun LaunchURL(URL: String, Parms: String, Error: String = definedExternally): `T$421`
+        fun IsApplicationRunning_PID(ProcessId: Number): Boolean
+        fun IsApplicationRunning(ProcName: String): Boolean
+        fun GetString(Key: String, bFlag: Boolean): String
+        fun GetEnvironmentVar(VarName: String): String
+        fun GetCurrentProcessId(): Number
+        fun GetApplicationName(ProcessId: Number): String
+        fun CreateWidget(URL: String, Parms: String, bLaunchDetached: Boolean, bLaunchHidden: Boolean, bLaunchReallyHidden: Boolean, PriorityModifier: Number, OptionalWorkingDirectory: String, bUsePipe: Boolean): JavascriptProcess
+        fun CanLaunchURL(URL: String): Boolean
+        fun C(Other: UObject): JavascriptProcess
+        fun C(Other: Any): JavascriptProcess
+    }
+}
+
+external open class JavascriptCpuProfiler {
+    open fun clone(): JavascriptCpuProfiler
+
+    companion object {
+        fun C(Other: UObject): JavascriptCpuProfiler
+        fun C(Other: Any): JavascriptCpuProfiler
+    }
+}
+
+external open class JavascriptProfile : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun GetTopDownRoot(): JavascriptProfileNode
+    open fun GetSampleTimestamp(index: Number): Number
+    open fun GetSamplesCount(): Number
+    open fun GetSample(index: Number): JavascriptProfileNode
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptProfile
+        fun Find(Outer: UObject, ResourceName: String): JavascriptProfile
+        fun GetDefaultObject(): JavascriptProfile
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptProfile
+        fun Stop(Profiler: JavascriptCpuProfiler, Title: String): JavascriptProfile
+        fun Start(Title: String, bRecordSamples: Boolean): JavascriptCpuProfiler
+        fun SetSamplingInterval(Profiler: JavascriptCpuProfiler, us: Number)
+        fun SetIdle(Profiler: JavascriptCpuProfiler, is_idle: Boolean)
+        fun C(Other: UObject): JavascriptProfile
+        fun C(Other: Any): JavascriptProfile
+    }
+}
+
+external open class JavascriptSemaphore : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun Unlock()
+    open fun TryLock(NanosecondsToWait: Number): Boolean
+    open fun Lock()
+    open fun Dispose()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptSemaphore
+        fun Find(Outer: UObject, ResourceName: String): JavascriptSemaphore
+        fun GetDefaultObject(): JavascriptSemaphore
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptSemaphore
+        fun CreateWidget(Name: String, bCreate: Boolean, MaxLocks: Number): JavascriptSemaphore
+        fun C(Other: UObject): JavascriptSemaphore
+        fun C(Other: Any): JavascriptSemaphore
+    }
+}
+
+external open class JavascriptSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var V8Flags: String
+    open var bEnableHotReload: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptSettings
+        fun Find(Outer: UObject, ResourceName: String): JavascriptSettings
+        fun GetDefaultObject(): JavascriptSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptSettings
+        fun C(Other: UObject): JavascriptSettings
+        fun C(Other: Any): JavascriptSettings
+    }
+}
+
+external open class JavascriptSharedMemoryRegion : JavascriptMemoryObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun Dispose()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptSharedMemoryRegion
+        fun Find(Outer: UObject, ResourceName: String): JavascriptSharedMemoryRegion
+        fun GetDefaultObject(): JavascriptSharedMemoryRegion
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptSharedMemoryRegion
+        fun Create(Name: String, bCreate: Boolean, bRead: Boolean, bWrite: Boolean, Size: Number): JavascriptSharedMemoryRegion
+        fun C(Other: UObject): JavascriptSharedMemoryRegion
+        fun C(Other: Any): JavascriptSharedMemoryRegion
+    }
+}
+
+external interface `T$423` {
+    var Test: JavascriptAutomatedTestInstance
+}
+
+external open class JavascriptAutomatedTestInstance {
+    open fun clone(): JavascriptAutomatedTestInstance
+    open fun AddAnalyticsItem(InAnalyticsItem: String)
+    open fun AddError(InError: String)
+    open fun AddLogItem(InLogItem: String)
+    open fun AddWarning(InWarning: String)
+    open fun ClearExecutionInfo()
+    open fun Destroy(): `T$423`
+    open fun SetContinue(bInContinue: Boolean)
+
+    companion object {
+        fun C(Other: UObject): JavascriptAutomatedTestInstance
+        fun C(Other: Any): JavascriptAutomatedTestInstance
+        fun AddAnalyticsItem(Test: JavascriptAutomatedTestInstance, InAnalyticsItem: String)
+        fun AddError(Test: JavascriptAutomatedTestInstance, InError: String)
+        fun AddLogItem(Test: JavascriptAutomatedTestInstance, InLogItem: String)
+        fun AddWarning(Test: JavascriptAutomatedTestInstance, InWarning: String)
+        fun ClearExecutionInfo(Test: JavascriptAutomatedTestInstance)
+        fun Destroy(Test: JavascriptAutomatedTestInstance = definedExternally): `T$423`
+        fun SetContinue(Test: JavascriptAutomatedTestInstance, bInContinue: Boolean)
+    }
+}
+
+external open class JavascriptAutomatedTest {
+    open var Name: String
+    open var bComplexTask: Boolean
+    open var TestFlags: Number
+    open var RequiredDeviceNum: Number
+    open var TestFunctionNames: Array<String>
+    open var UFunction: JavascriptFunction
+    open fun clone(): JavascriptAutomatedTest
+    open fun Create(): JavascriptAutomatedTestInstance
+
+    companion object {
+        fun C(Other: UObject): JavascriptAutomatedTest
+        fun C(Other: Any): JavascriptAutomatedTest
+        fun Create(Test: JavascriptAutomatedTest): JavascriptAutomatedTestInstance
+    }
+}
+
+external open class JavascriptTestLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptTestLibrary
+        fun Find(Outer: UObject, ResourceName: String): JavascriptTestLibrary
+        fun GetDefaultObject(): JavascriptTestLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTestLibrary
+        fun SetContinue(Test: JavascriptAutomatedTestInstance, bInContinue: Boolean)
+        fun PushFrameCounter()
+        fun PopFrameCounter()
+        fun NewWorld(): World
+        fun InitializeActorsForPlay(World: World, URL: URL)
+        fun DestroyWorld(World: World)
+        fun DestroyUObject(UObject: UObject)
+        fun Destroy(Test: JavascriptAutomatedTestInstance = definedExternally): `T$423`
+        fun Create(Test: JavascriptAutomatedTest): JavascriptAutomatedTestInstance
+        fun ClearExecutionInfo(Test: JavascriptAutomatedTestInstance)
+        fun BeginPlay(World: World)
+        fun AddWarning(Test: JavascriptAutomatedTestInstance, InWarning: String)
+        fun AddLogItem(Test: JavascriptAutomatedTestInstance, InLogItem: String)
+        fun AddError(Test: JavascriptAutomatedTestInstance, InError: String)
+        fun AddAnalyticsItem(Test: JavascriptAutomatedTestInstance, InAnalyticsItem: String)
+        fun C(Other: UObject): JavascriptTestLibrary
+        fun C(Other: Any): JavascriptTestLibrary
+    }
+}
+
+external open class JavascriptComboButton : ContentWidget {
+    constructor()
+    constructor(Outer: UObject)
+    open var ComboButtonStyle: ComboButtonStyle
+    open var ButtonStyle: ButtonStyle
+    open var OnGetMenuContent: UnrealEngineDelegate<() -> JavascriptSlateWidget>
+    open var OnMenuOpenChanged: UnrealEngineDelegate<(Value: Boolean) -> Unit>
+    open var OnComboBoxOpened: UnrealEngineDelegate<() -> Unit>
+    open var bIsFocusable: Boolean
+    open var bHasDownArrow: Boolean
+    open var ForegroundColor: SlateColor
+    open var ButtonColorAndOpacity: SlateColor
+    open var ContentPadding: Margin
+    open var MenuPlacement: String /* "MenuPlacement_BelowAnchor" | "MenuPlacement_CenteredBelowAnchor" | "MenuPlacement_BelowRightAnchor" | "MenuPlacement_ComboBox" | "MenuPlacement_ComboBoxRight" | "MenuPlacement_MenuRight" | "MenuPlacement_AboveAnchor" | "MenuPlacement_CenteredAboveAnchor" | "MenuPlacement_AboveRightAnchor" | "MenuPlacement_MenuLeft" | "MenuPlacement_Center" | "MenuPlacement_RightLeftCenter" | "MenuPlacement_MatchBottomLeft" | "MenuPlacement_MAX" */
+    open var HAlign: String /* "HAlign_Fill" | "HAlign_Left" | "HAlign_Center" | "HAlign_Right" | "HAlign_MAX" */
+    open var VAlign: String /* "VAlign_Fill" | "VAlign_Top" | "VAlign_Center" | "VAlign_Bottom" | "VAlign_MAX" */
+    open fun SetIsOpen(InIsOpen: Boolean, bFocusMenu: Boolean)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptComboButton
+        fun Find(Outer: UObject, ResourceName: String): JavascriptComboButton
+        fun GetDefaultObject(): JavascriptComboButton
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptComboButton
+        fun C(Other: UObject): JavascriptComboButton
+        fun C(Other: Any): JavascriptComboButton
+    }
+}
+
+external open class JavascriptSlateIcon {
+    open var StyleSetName: String
+    open var StyleName: String
+    open var SmallStyleName: String
+    open fun clone(): JavascriptSlateIcon
+
+    companion object {
+        fun C(Other: UObject): JavascriptSlateIcon
+        fun C(Other: Any): JavascriptSlateIcon
+    }
+}
+
+external open class JavascriptComboButtonContext : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var OnGetLabel: UnrealEngineDelegate<() -> String>
+    open var OnGetTooltip: UnrealEngineDelegate<() -> String>
+    open var OnGetIcon: UnrealEngineDelegate<() -> JavascriptSlateIcon>
+    open var OnGetWidget: UnrealEngineDelegate<(EditingObject: UObject) -> JavascriptSlateWidget>
+    open var OnCanExecute: UnrealEngineDelegate<() -> Boolean>
+    open fun UnmarkReferencedObject()
+    open fun MarkReferencedObject()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptComboButtonContext
+        fun Find(Outer: UObject, ResourceName: String): JavascriptComboButtonContext
+        fun GetDefaultObject(): JavascriptComboButtonContext
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptComboButtonContext
+        fun C(Other: UObject): JavascriptComboButtonContext
+        fun C(Other: Any): JavascriptComboButtonContext
+    }
+}
+
+external open class JavascriptTextProperty {
+    open var Key: String
+    open var Namespace: String
+    open var Value: String
+    open var TableId: String
+    open fun clone(): JavascriptTextProperty
+
+    companion object {
+        fun C(Other: UObject): JavascriptTextProperty
+        fun C(Other: Any): JavascriptTextProperty
+        fun FromStringTable(InTableId: String, InKey: String): JavascriptTextProperty
+    }
+}
+
+external open class JavascriptFTextBox : Widget {
+    constructor()
+    constructor(Outer: UObject)
+    open var OnIsReadOnly: UnrealEngineDelegate<() -> Boolean>
+    open var OnIsValidText: UnrealEngineDelegate<(TextValue: String) -> String>
+    open var OnGetDefaultValue: UnrealEngineDelegate<() -> JavascriptTextProperty>
+    open var OnTextCommitted: UnrealEngineMulticastDelegate<(TextProperty: JavascriptTextProperty) -> Unit>
+    open var WidgetStyle: EditableTextBoxStyle
+    open var WrapTextAt: Number
+    open var AutoWrapText: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptFTextBox
+        fun Find(Outer: UObject, ResourceName: String): JavascriptFTextBox
+        fun GetDefaultObject(): JavascriptFTextBox
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptFTextBox
+        fun C(Other: UObject): JavascriptFTextBox
+        fun C(Other: Any): JavascriptFTextBox
+    }
+}
+
+external open class JavascriptGameViewport : ContentWidget {
+    constructor()
+    constructor(Outer: UObject)
+    open var BackgroundColor: LinearColor
+    open fun Spawn(ActorClass: UnrealEngineClass): Actor
+    open fun SetViewRotation(Rotation: Rotator)
+    open fun SetViewLocation(Location: Vector)
+    open fun GetViewRotation(): Rotator
+    open fun GetViewportWorld(): World
+    open fun GetViewLocation(): Vector
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptGameViewport
+        fun Find(Outer: UObject, ResourceName: String): JavascriptGameViewport
+        fun GetDefaultObject(): JavascriptGameViewport
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGameViewport
+        fun C(Other: UObject): JavascriptGameViewport
+        fun C(Other: Any): JavascriptGameViewport
+    }
+}
+
+external open class JavascriptIntSpinBox : Widget {
+    constructor()
+    constructor(Outer: UObject)
+    open var Value: Number
+    open var ValueDelegate: UnrealEngineDelegate<() -> Number>
+    open var WidgetStyle: SpinBoxStyle
+    open var Style: SlateWidgetStyleAsset
+    open var Delta: Number
+    open var SliderExponent: Number
+    open var Font: SlateFontInfo
+    open var Justification: String /* "Left" | "Center" | "Right" | "ETextJustify_MAX" */
+    open var MinDesiredWidth: Number
+    open var ClearKeyboardFocusOnCommit: Boolean
+    open var SelectAllTextOnCommit: Boolean
+    open var ForegroundColor: SlateColor
+    open var OnValueChanged: UnrealEngineMulticastDelegate<(InValue: Number) -> Unit>
+    open var OnValueCommitted: UnrealEngineMulticastDelegate<(InValue: Number, CommitMethod: String /* "Default" | "OnEnter" | "OnUserMovedFocus" | "OnCleared" | "ETextCommit_MAX" */) -> Unit>
+    open var OnBeginSliderMovement: UnrealEngineMulticastDelegate<() -> Unit>
+    open var OnEndSliderMovement: UnrealEngineMulticastDelegate<(InValue: Number) -> Unit>
+    open var bOverride_MinValue: Boolean
+    open var bOverride_MaxValue: Boolean
+    open var bOverride_MinSliderValue: Boolean
+    open var bOverride_MaxSliderValue: Boolean
+    open var MinValue: Number
+    open var MaxValue: Number
+    open var MinSliderValue: Number
+    open var MaxSliderValue: Number
+    open fun SetValue(NewValue: Number)
+    open fun SetMinValue(NewValue: Number)
+    open fun SetMinSliderValue(NewValue: Number)
+    open fun SetMaxValue(NewValue: Number)
+    open fun SetMaxSliderValue(NewValue: Number)
+    open fun SetForegroundColor(InForegroundColor: SlateColor)
+    open fun GetValue(): Number
+    open fun GetMinValue(): Number
+    open fun GetMinSliderValue(): Number
+    open fun GetMaxValue(): Number
+    open fun GetMaxSliderValue(): Number
+    open fun ClearMinValue()
+    open fun ClearMinSliderValue()
+    open fun ClearMaxValue()
+    open fun ClearMaxSliderValue()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptIntSpinBox
+        fun Find(Outer: UObject, ResourceName: String): JavascriptIntSpinBox
+        fun GetDefaultObject(): JavascriptIntSpinBox
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptIntSpinBox
+        fun C(Other: UObject): JavascriptIntSpinBox
+        fun C(Other: Any): JavascriptIntSpinBox
+    }
+}
+
+external open class TableColumnHeaderStyle : SlateWidgetStyle {
+    open var SortPrimaryAscendingImage: SlateBrush
+    open var SortPrimaryDescendingImage: SlateBrush
+    open var SortSecondaryAscendingImage: SlateBrush
+    open var SortSecondaryDescendingImage: SlateBrush
+    open var NormalBrush: SlateBrush
+    open var HoveredBrush: SlateBrush
+    open var MenuDropdownImage: SlateBrush
+    open var MenuDropdownNormalBorderBrush: SlateBrush
+    open var MenuDropdownHoveredBorderBrush: SlateBrush
+    override fun clone(): TableColumnHeaderStyle
+
+    companion object {
+        fun C(Other: UObject): TableColumnHeaderStyle
+        fun C(Other: Any): TableColumnHeaderStyle
+    }
+}
+
+external open class SplitterStyle : SlateWidgetStyle {
+    open var HandleNormalBrush: SlateBrush
+    open var HandleHighlightBrush: SlateBrush
+    override fun clone(): SplitterStyle
+
+    companion object {
+        fun C(Other: UObject): SplitterStyle
+        fun C(Other: Any): SplitterStyle
+    }
+}
+
+external open class HeaderRowStyle : SlateWidgetStyle {
+    open var ColumnStyle: TableColumnHeaderStyle
+    open var LastColumnStyle: TableColumnHeaderStyle
+    open var ColumnSplitterStyle: SplitterStyle
+    open var BackgroundBrush: SlateBrush
+    open var ForegroundColor: SlateColor
+    override fun clone(): HeaderRowStyle
+
+    companion object {
+        fun C(Other: UObject): HeaderRowStyle
+        fun C(Other: Any): HeaderRowStyle
+    }
+}
+
+external open class JavascriptColumn {
+    open var ID: String
+    open var Width: Number
+    open var Widget: Widget
+    open fun clone(): JavascriptColumn
+
+    companion object {
+        fun C(Other: UObject): JavascriptColumn
+        fun C(Other: Any): JavascriptColumn
+    }
+}
+
+external interface `T$424` {
+    var OutItems: Array<UObject>
+    var `$`: Boolean
+}
+
+external interface `T$425` {
+    var OutItems: Array<UObject>
+}
+
+external open class JavascriptTreeView : ListViewBase {
+    constructor()
+    constructor(Outer: UObject)
+    open var OnGenerateRowEvent: UnrealEngineDelegate<(UObject: UObject, ID: String, Instance: JavascriptTreeView) -> Widget>
+    open var OnExpansionChanged: UnrealEngineDelegate<(Item: UObject, bExpanded: Boolean, Instance: JavascriptTreeView) -> Unit>
+    open var OnContextMenuOpening: UnrealEngineDelegate<(Instance: JavascriptTreeView) -> Widget>
+    open var OnGetChildren: UnrealEngineDelegate<(Item: UObject, Instance: JavascriptTreeView) -> Unit>
+    open var JavascriptContext: JavascriptContext
+    open var Items: Array<UObject>
+    open var HeaderRowStyle: HeaderRowStyle
+    open var TableRowStyle: TableRowStyle
+    open var ScrollBarStyle: ScrollBarStyle
+    open var SelectionMode: String /* "None" | "Single" | "SingleToggle" | "Multi" | "ESelectionMode_MAX" */
+    open var Children: Array<UObject>
+    open var Columns: Array<JavascriptColumn>
+    open var ColumnWidgets: Array<Widget>
+    open fun SetSingleExpandedItem(InItem: UObject)
+    open fun SetSelection(SoleSelectedItem: UObject)
+    open fun SetItemSelection(MultiSelectedItems: Array<UObject>, bIsSelected: Boolean)
+    open fun SetItemExpansion(InItem: UObject, InShouldExpandItem: Boolean)
+    open fun SetDoubleClickSelection(SelectedItem: UObject)
+    open fun RequestTreeRefresh()
+    open fun RequestNavigateToItem(Item: UObject)
+    open fun OnSelectionChanged(UObject: UObject, Type: String /* "OnKeyPress" | "OnNavigation" | "OnMouseClick" | "Direct" | "ESelectInfo_MAX" */)
+    open fun OnDoubleClick(UObject: UObject)
+    open fun IsItemExpanded(InItem: UObject): Boolean
+    open fun IsDoubleClickSelection(SelectedItem: UObject): Boolean
+    open fun GetSelectedItems(OutItems: Array<UObject> = definedExternally): `T$424`
+    open fun GetDoubleClickedItems(OutItems: Array<UObject> = definedExternally): `T$425`
+    open fun ClearSelection()
+    open fun ClearDoubleClickSelection()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptTreeView
+        fun Find(Outer: UObject, ResourceName: String): JavascriptTreeView
+        fun GetDefaultObject(): JavascriptTreeView
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTreeView
+        fun C(Other: UObject): JavascriptTreeView
+        fun C(Other: Any): JavascriptTreeView
+    }
+}
+
+external open class JavascriptListView : JavascriptTreeView {
+    constructor()
+    constructor(Outer: UObject)
+    open var ItemHeight: Number
+    open fun RequestListRefresh()
+    open fun OnClick(UObject: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptListView
+        fun Find(Outer: UObject, ResourceName: String): JavascriptListView
+        fun GetDefaultObject(): JavascriptListView
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptListView
+        fun C(Other: UObject): JavascriptListView
+        fun C(Other: Any): JavascriptListView
+    }
+}
+
+external object EJavasrciptUserInterfaceActionType {
+    var None: String /* "None" */
+    var Button: String /* "Button" */
+    var ToggleButton: String /* "ToggleButton" */
+    var RadioButton: String /* "RadioButton" */
+    var Check: String /* "Check" */
+    var CollapsedButton: String /* "CollapsedButton" */
+    var EJavasrciptUserInterfaceActionType_MAX: String /* "EJavasrciptUserInterfaceActionType_MAX" */
+}
+
+external open class JavascriptMenuContext : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Description: String
+    open var Tooltip: String
+    open var Icon: JavascriptSlateIcon
+    open var ActionType: String /* "None" | "Button" | "ToggleButton" | "RadioButton" | "Check" | "CollapsedButton" | "EJavasrciptUserInterfaceActionType_MAX" */
+    open var OnCanExecute: UnrealEngineDelegate<() -> Boolean>
+    open var OnExecute: UnrealEngineDelegate<() -> Unit>
+    open var OnGetActionCheckState: UnrealEngineDelegate<() -> String>
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptMenuContext
+        fun Find(Outer: UObject, ResourceName: String): JavascriptMenuContext
+        fun GetDefaultObject(): JavascriptMenuContext
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptMenuContext
+        fun C(Other: UObject): JavascriptMenuContext
+        fun C(Other: Any): JavascriptMenuContext
+    }
+}
+
+external open class JavascriptSlateTextRun {
+    open fun clone(): JavascriptSlateTextRun
+
+    companion object {
+        fun C(Other: UObject): JavascriptSlateTextRun
+        fun C(Other: Any): JavascriptSlateTextRun
+    }
+}
+
+external open class JavascriptTextModel : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun SetString(string: String)
+    open fun GetString(): String
+    open fun CreateRun(MessageTextStyle: TextBlockStyle, BeginIndex: Number, EndIndex: Number): JavascriptSlateTextRun
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptTextModel
+        fun Find(Outer: UObject, ResourceName: String): JavascriptTextModel
+        fun GetDefaultObject(): JavascriptTextModel
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTextModel
+        fun C(Other: UObject): JavascriptTextModel
+        fun C(Other: Any): JavascriptTextModel
+    }
+}
+
+external interface `T$426` {
+    var TextLayout: JavascriptTextLayout
+}
+
+external open class JavascriptTextLayout {
+    open fun clone(): JavascriptTextLayout
+    open fun AddLine(Model: JavascriptTextModel = definedExternally, Runs: Array<JavascriptSlateTextRun> = definedExternally): `T$426`
+    open fun ClearLines(): `T$426`
+    open fun GetAsText(): String
+    open fun GetLineLength(): Number
+
+    companion object {
+        fun C(Other: UObject): JavascriptTextLayout
+        fun C(Other: Any): JavascriptTextLayout
+        fun AddLine(TextLayout: JavascriptTextLayout = definedExternally, Model: JavascriptTextModel = definedExternally, Runs: Array<JavascriptSlateTextRun> = definedExternally): `T$426`
+        fun ClearLines(TextLayout: JavascriptTextLayout = definedExternally): `T$426`
+        fun GetAsText(TextLayout: JavascriptTextLayout): String
+        fun GetLineLength(TargetTextLayout: JavascriptTextLayout): Number
+    }
+}
+
+external open class JavascriptMultiLineEditableTextBox : MultiLineEditableTextBox {
+    constructor()
+    constructor(Outer: UObject)
+    open var OnVScrollBarUserScrolled: UnrealEngineMulticastDelegate<(Offset: Number) -> Unit>
+    open var GetTextDelegate: UnrealEngineDelegate<(TextLayout: JavascriptTextLayout) -> String>
+    open var SetTextDelegate: UnrealEngineDelegate<(InText: String, TextLayout: JavascriptTextLayout) -> Unit>
+    open var bAlwaysShowScrollbars: Boolean
+    open fun ScrollTo(Line: Number, Offset: Number)
+    open fun Refresh()
+    open fun GoTo(Line: Number, Offset: Number)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptMultiLineEditableTextBox
+        fun Find(Outer: UObject, ResourceName: String): JavascriptMultiLineEditableTextBox
+        fun GetDefaultObject(): JavascriptMultiLineEditableTextBox
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptMultiLineEditableTextBox
+        fun C(Other: UObject): JavascriptMultiLineEditableTextBox
+        fun C(Other: Any): JavascriptMultiLineEditableTextBox
+    }
+}
+
+external open class JavascriptRichTextBlockHyperlinkDecorator : RichTextBlockDecorator {
+    constructor()
+    constructor(Outer: UObject)
+    open var HyperlinkId: String
+    open var OnClick: UnrealEngineMulticastDelegate<(Self: JavascriptRichTextBlockHyperlinkDecorator) -> Unit>
+    open fun GetMetadata(Key: String): String
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptRichTextBlockHyperlinkDecorator
+        fun Find(Outer: UObject, ResourceName: String): JavascriptRichTextBlockHyperlinkDecorator
+        fun GetDefaultObject(): JavascriptRichTextBlockHyperlinkDecorator
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptRichTextBlockHyperlinkDecorator
+        fun C(Other: UObject): JavascriptRichTextBlockHyperlinkDecorator
+        fun C(Other: Any): JavascriptRichTextBlockHyperlinkDecorator
+    }
+}
+
+external open class JavascriptSearchBox : Widget {
+    constructor()
+    constructor(Outer: UObject)
+    open var JavascriptContext: JavascriptContext
+    open var OnTextChanged: UnrealEngineMulticastDelegate<(text: String) -> Unit>
+    open var OnTextCommitted: UnrealEngineMulticastDelegate<(text: String, CommitMethod: String /* "Default" | "OnEnter" | "OnUserMovedFocus" | "OnCleared" | "ETextCommit_MAX" */) -> Unit>
+    open var text: String
+    open var TextDelegate: UnrealEngineDelegate<() -> String>
+    open var HintText: String
+    open var HintTextDelegate: UnrealEngineDelegate<() -> String>
+    open fun SetText(InText: String)
+    open fun SetHintText(InHintText: String)
+    open fun OnKeyDown(MyGeometry: Geometry, InKeyEvent: KeyEvent): EventReply
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptSearchBox
+        fun Find(Outer: UObject, ResourceName: String): JavascriptSearchBox
+        fun GetDefaultObject(): JavascriptSearchBox
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptSearchBox
+        fun C(Other: UObject): JavascriptSearchBox
+        fun C(Other: Any): JavascriptSearchBox
+    }
+}
+
+external open class JavascriptStyleSet {
+    open var StyleSetName: String
+    open fun clone(): JavascriptStyleSet
+    open fun GetBrush(StyleName: String): SlateBrush
+    open fun GetButtonStyle(StyleName: String): ButtonStyle
+    open fun GetCheckBoxStyle(StyleName: String): CheckBoxStyle
+    open fun GetColor(StyleName: String): LinearColor
+    open fun GetComboBoxStyle(StyleName: String): ComboBoxStyle
+    open fun GetComboButtonStyle(StyleName: String): ComboButtonStyle
+    open fun GetEditableTextBoxStyle(StyleName: String): EditableTextBoxStyle
+    open fun GetEditableTextStyle(StyleName: String): EditableTextStyle
+    open fun GetFloat(StyleName: String): Number
+    open fun GetFontStyle(StyleName: String): SlateFontInfo
+    open fun GetMargin(StyleName: String): Margin
+    open fun GetProgressBarStyle(StyleName: String): ProgressBarStyle
+    open fun GetSlateColor(StyleName: String): SlateColor
+    open fun GetSound(StyleName: String): SlateSound
+    open fun GetTextBlockStyle(StyleName: String): TextBlockStyle
+    open fun GetVector(StyleName: String): Vector2D
+
+    companion object {
+        fun C(Other: UObject): JavascriptStyleSet
+        fun C(Other: Any): JavascriptStyleSet
+        fun GetBrush(Handle: JavascriptStyleSet, StyleName: String): SlateBrush
+        fun GetButtonStyle(Handle: JavascriptStyleSet, StyleName: String): ButtonStyle
+        fun GetCheckBoxStyle(Handle: JavascriptStyleSet, StyleName: String): CheckBoxStyle
+        fun GetColor(Handle: JavascriptStyleSet, StyleName: String): LinearColor
+        fun GetComboBoxStyle(Handle: JavascriptStyleSet, StyleName: String): ComboBoxStyle
+        fun GetComboButtonStyle(Handle: JavascriptStyleSet, StyleName: String): ComboButtonStyle
+        fun GetEditableTextBoxStyle(Handle: JavascriptStyleSet, StyleName: String): EditableTextBoxStyle
+        fun GetEditableTextStyle(Handle: JavascriptStyleSet, StyleName: String): EditableTextStyle
+        fun GetFloat(Handle: JavascriptStyleSet, StyleName: String): Number
+        fun GetFontStyle(Handle: JavascriptStyleSet, StyleName: String): SlateFontInfo
+        fun GetMargin(Handle: JavascriptStyleSet, StyleName: String): Margin
+        fun GetProgressBarStyle(Handle: JavascriptStyleSet, StyleName: String): ProgressBarStyle
+        fun GetSlateColor(Handle: JavascriptStyleSet, StyleName: String): SlateColor
+        fun GetSound(Handle: JavascriptStyleSet, StyleName: String): SlateSound
+        fun GetTextBlockStyle(Handle: JavascriptStyleSet, StyleName: String): TextBlockStyle
+        fun GetVector(Handle: JavascriptStyleSet, StyleName: String): Vector2D
+    }
+}
+
+external open class JavascriptStyleSetLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+    open var SlateColor: SlateColor
+    open var SlateBrush: SlateBrush
+    open var ButtonStyle: ButtonStyle
+    open var TextBlockStyle: TextBlockStyle
+    open var EditableTextStyle: EditableTextStyle
+    open var EditableTextBoxStyle: EditableTextBoxStyle
+    open var CheckBoxStyle: CheckBoxStyle
+    open var ComboBoxStyle: ComboBoxStyle
+    open var ComboButtonStyle: ComboButtonStyle
+    open var ProgressBarStyle: ProgressBarStyle
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptStyleSetLibrary
+        fun Find(Outer: UObject, ResourceName: String): JavascriptStyleSetLibrary
+        fun GetDefaultObject(): JavascriptStyleSetLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptStyleSetLibrary
+        fun GetVector(Handle: JavascriptStyleSet, StyleName: String): Vector2D
+        fun GetTextBlockStyle(Handle: JavascriptStyleSet, StyleName: String): TextBlockStyle
+        fun GetSound(Handle: JavascriptStyleSet, StyleName: String): SlateSound
+        fun GetSlateColor(Handle: JavascriptStyleSet, StyleName: String): SlateColor
+        fun GetProgressBarStyle(Handle: JavascriptStyleSet, StyleName: String): ProgressBarStyle
+        fun GetMargin(Handle: JavascriptStyleSet, StyleName: String): Margin
+        fun GetFontStyle(Handle: JavascriptStyleSet, StyleName: String): SlateFontInfo
+        fun GetFloat(Handle: JavascriptStyleSet, StyleName: String): Number
+        fun GetEditableTextStyle(Handle: JavascriptStyleSet, StyleName: String): EditableTextStyle
+        fun GetEditableTextBoxStyle(Handle: JavascriptStyleSet, StyleName: String): EditableTextBoxStyle
+        fun GetComboButtonStyle(Handle: JavascriptStyleSet, StyleName: String): ComboButtonStyle
+        fun GetComboBoxStyle(Handle: JavascriptStyleSet, StyleName: String): ComboBoxStyle
+        fun GetColor(Handle: JavascriptStyleSet, StyleName: String): LinearColor
+        fun GetCheckBoxStyle(Handle: JavascriptStyleSet, StyleName: String): CheckBoxStyle
+        fun GetButtonStyle(Handle: JavascriptStyleSet, StyleName: String): ButtonStyle
+        fun GetBrush(Handle: JavascriptStyleSet, StyleName: String): SlateBrush
+        fun C(Other: UObject): JavascriptStyleSetLibrary
+        fun C(Other: Any): JavascriptStyleSetLibrary
+    }
+}
+
+external open class JavascriptTextBlock : TextBlock {
+    constructor()
+    constructor(Outer: UObject)
+    open var HighlightText: String
+    open var HighlightTextDelegate: UnrealEngineDelegate<() -> String>
+    open fun SetHighlightText(InHighlightText: String)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptTextBlock
+        fun Find(Outer: UObject, ResourceName: String): JavascriptTextBlock
+        fun GetDefaultObject(): JavascriptTextBlock
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTextBlock
+        fun C(Other: UObject): JavascriptTextBlock
+        fun C(Other: Any): JavascriptTextBlock
+    }
+}
+
+external open class JavascriptTileView : TileView {
+    constructor()
+    constructor(Outer: UObject)
+    open var JavascriptContext: JavascriptContext
+    open var TileListItems: Array<UObject>
+    open fun OnSelectionChanged(UObject: UObject, Type: String /* "OnKeyPress" | "OnNavigation" | "OnMouseClick" | "Direct" | "ESelectInfo_MAX" */)
+    open fun OnDoubleClick(UObject: UObject)
+    open fun OnClick(UObject: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptTileView
+        fun Find(Outer: UObject, ResourceName: String): JavascriptTileView
+        fun GetDefaultObject(): JavascriptTileView
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTileView
+        fun C(Other: UObject): JavascriptTileView
+        fun C(Other: Any): JavascriptTileView
+    }
+}
+
+external open class JavascriptToolbarButtonContext : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var OnGetLabel: UnrealEngineDelegate<() -> String>
+    open var OnGetTooltip: UnrealEngineDelegate<() -> String>
+    open var OnGetIcon: UnrealEngineDelegate<() -> JavascriptSlateIcon>
+    open var OnExecuteAction: UnrealEngineDelegate<(EditingObject: UObject) -> Unit>
+    open var OnCanExecuteAction: UnrealEngineDelegate<(EditingObject: UObject) -> Boolean>
+    open var OnIsActionChecked: UnrealEngineDelegate<(EditingObject: UObject) -> Boolean>
+    open var OnIsActionButtonVisible: UnrealEngineDelegate<(EditingObject: UObject) -> Boolean>
+    open fun UnmarkReferencedObject()
+    open fun MarkReferencedObject()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptToolbarButtonContext
+        fun Find(Outer: UObject, ResourceName: String): JavascriptToolbarButtonContext
+        fun GetDefaultObject(): JavascriptToolbarButtonContext
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptToolbarButtonContext
+        fun C(Other: UObject): JavascriptToolbarButtonContext
+        fun C(Other: Any): JavascriptToolbarButtonContext
+    }
+}
+
+external open class JavascriptUMGBlueprintLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptUMGBlueprintLibrary
+        fun Find(Outer: UObject, ResourceName: String): JavascriptUMGBlueprintLibrary
+        fun GetDefaultObject(): JavascriptUMGBlueprintLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptUMGBlueprintLibrary
+        fun SlateColor_UseSubduedForeground(): SlateColor
+        fun SlateColor_UseForeground(): SlateColor
+        fun GetLineLength(TargetTextLayout: JavascriptTextLayout): Number
+        fun GetAsText(TextLayout: JavascriptTextLayout): String
+        fun DrawSpaceSpline(Context: PaintContext = definedExternally, InStart: Vector2D = definedExternally, InStartDir: Vector2D = definedExternally, InEnd: Vector2D = definedExternally, InEndDir: Vector2D = definedExternally, InThickness: Number = definedExternally, InTint: LinearColor = definedExternally): `T$183`
+        fun ClearLines(TextLayout: JavascriptTextLayout = definedExternally): `T$426`
+        fun AddLine(TextLayout: JavascriptTextLayout = definedExternally, Model: JavascriptTextModel = definedExternally, Runs: Array<JavascriptSlateTextRun> = definedExternally): `T$426`
+        fun C(Other: UObject): JavascriptUMGBlueprintLibrary
+        fun C(Other: Any): JavascriptUMGBlueprintLibrary
+    }
+}
+
+external open class JavascriptSlateStyle {
+    open fun clone(): JavascriptSlateStyle
+    open fun AddBorderBrush(PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+    open fun AddBoxBrush(PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+    open fun AddFontInfo(PropertyName: String, FontInfo: SlateFontInfo)
+    open fun AddImageBrush(PropertyName: String, InImageName: String, InImageSize: Vector2D, InTint: LinearColor, InTiling: String /* "NoTile" | "Horizontal" | "Vertical" | "Both" | "ESlateBrushTileType_MAX" */, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+    open fun AddSound(PropertyName: String, Sound: SlateSound)
+    open fun Register()
+    open fun RootToContentDir(RelativePath: String): String
+    open fun RootToCoreContentDir(RelativePath: String): String
+    open fun SetContentRoot(InContentRootDir: String)
+    open fun SetCoreContentRoot(InCoreContentRootDir: String)
+    open fun Unregister()
+
+    companion object {
+        fun C(Other: UObject): JavascriptSlateStyle
+        fun C(Other: Any): JavascriptSlateStyle
+        fun AddBorderBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+        fun AddBoxBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+        fun AddFontInfo(StyleSet: JavascriptSlateStyle, PropertyName: String, FontInfo: SlateFontInfo)
+        fun AddImageBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InImageSize: Vector2D, InTint: LinearColor, InTiling: String /* "NoTile" | "Horizontal" | "Vertical" | "Both" | "ESlateBrushTileType_MAX" */, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+        fun AddSound(StyleSet: JavascriptSlateStyle, PropertyName: String, Sound: SlateSound)
+        fun Register(StyleSet: JavascriptSlateStyle)
+        fun RootToContentDir(StyleSet: JavascriptSlateStyle, RelativePath: String): String
+        fun RootToCoreContentDir(StyleSet: JavascriptSlateStyle, RelativePath: String): String
+        fun SetContentRoot(StyleSet: JavascriptSlateStyle, InContentRootDir: String)
+        fun SetCoreContentRoot(StyleSet: JavascriptSlateStyle, InCoreContentRootDir: String)
+        fun Unregister(StyleSet: JavascriptSlateStyle)
+        fun CreateSlateStyle(InStyleSetName: String): JavascriptSlateStyle
+    }
+}
+
+external open class JavascriptUMGLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptUMGLibrary
+        fun Find(Outer: UObject, ResourceName: String): JavascriptUMGLibrary
+        fun GetDefaultObject(): JavascriptUMGLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptUMGLibrary
+        fun Unregister(StyleSet: JavascriptSlateStyle)
+        fun TakeWidget(Widget: Widget): JavascriptSlateWidget
+        fun ShowWindow(NewWindow: JavascriptSlateWidget)
+        fun SetCoreContentRoot(StyleSet: JavascriptSlateStyle, InCoreContentRootDir: String)
+        fun SetContentRoot(StyleSet: JavascriptSlateStyle, InContentRootDir: String)
+        fun SetContent(TargetWidget: NativeWidgetHost, SlateWidget: JavascriptSlateWidget): Widget
+        fun RootToCoreContentDir(StyleSet: JavascriptSlateStyle, RelativePath: String): String
+        fun RootToContentDir(StyleSet: JavascriptSlateStyle, RelativePath: String): String
+        fun Register(StyleSet: JavascriptSlateStyle)
+        fun GetRootWindow(): JavascriptSlateWidget
+        fun GenerateDynamicImageResource(InDynamicBrushName: String): Vector2D
+        fun CreateSlateStyle(InStyleSetName: String): JavascriptSlateStyle
+        fun AddWindowAsNativeChild(NewWindow: JavascriptSlateWidget, RootWindow: JavascriptSlateWidget)
+        fun AddWindow(NewWindow: JavascriptSlateWidget, bShowImmediately: Boolean)
+        fun AddSound(StyleSet: JavascriptSlateStyle, PropertyName: String, Sound: SlateSound)
+        fun AddImageBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InImageSize: Vector2D, InTint: LinearColor, InTiling: String /* "NoTile" | "Horizontal" | "Vertical" | "Both" | "ESlateBrushTileType_MAX" */, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+        fun AddFontInfo(StyleSet: JavascriptSlateStyle, PropertyName: String, FontInfo: SlateFontInfo)
+        fun AddBoxBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+        fun AddBorderBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
+        fun C(Other: UObject): JavascriptUMGLibrary
+        fun C(Other: Any): JavascriptUMGLibrary
+    }
+}
+
+external open class JavascriptWidget : UserWidget {
+    constructor()
+    constructor(Outer: UObject)
+    open var JavascriptContext: JavascriptContext
+    open var OnInputActionEvent: UnrealEngineMulticastDelegate<(ActionName: String) -> Unit>
+    open var OnReleaseActionEvent: UnrealEngineMulticastDelegate<(ActionName: String) -> Unit>
+    open var OnInputAxisEvent: UnrealEngineMulticastDelegate<(Axis: Number, AxisName: String) -> Unit>
+    open var ContentSlot: PanelSlot
+    open fun SetRootWidget(Widget: Widget)
+    open fun RemoveChild(): Boolean
+    open fun OnReleaseInputActionByName(ActionName: String)
+    open fun OnListenForInputAxis(AxisName: String, EventType: String /* "IE_Pressed" | "IE_Released" | "IE_Repeat" | "IE_DoubleClick" | "IE_Axis" | "IE_MAX" */, bConsume: Boolean)
+    open fun OnListenForInputAction(ActionName: String, EventType: String /* "IE_Pressed" | "IE_Released" | "IE_Repeat" | "IE_DoubleClick" | "IE_Axis" | "IE_MAX" */, bConsume: Boolean)
+    open fun OnInputAxisByName(Axis: Number, ActionName: String)
+    open fun OnInputActionByName(ActionName: String)
+    open fun OnDestroy(bReleaseChildren: Boolean)
+    open fun AddChild(Content: Widget): PanelSlot
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptWidget
+        fun Find(Outer: UObject, ResourceName: String): JavascriptWidget
+        fun GetDefaultObject(): JavascriptWidget
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptWidget
+        fun HasValidCachedWidget(Widget: Widget): Boolean
+        fun CallSynchronizeProperties(WidgetOrSlot: Visual)
+        fun C(Other: UObject): JavascriptWidget
+        fun C(Other: Any): JavascriptWidget
+    }
+}
+
+external object EJavascriptWindowType {
+    var Normal: String /* "Normal" */
+    var Menu: String /* "Menu" */
+    var ToolTip: String /* "ToolTip" */
+    var Notification: String /* "Notification" */
+    var CursorDecorator: String /* "CursorDecorator" */
+    var EJavascriptWindowType_MAX: String /* "EJavascriptWindowType_MAX" */
+}
+
+external open class WindowStyle : SlateWidgetStyle {
+    open var MinimizeButtonStyle: ButtonStyle
+    open var MaximizeButtonStyle: ButtonStyle
+    open var RestoreButtonStyle: ButtonStyle
+    open var CloseButtonStyle: ButtonStyle
+    open var TitleTextStyle: TextBlockStyle
+    open var ActiveTitleBrush: SlateBrush
+    open var InactiveTitleBrush: SlateBrush
+    open var FlashTitleBrush: SlateBrush
+    open var BackgroundColor: SlateColor
+    open var OutlineBrush: SlateBrush
+    open var OutlineColor: SlateColor
+    open var BorderBrush: SlateBrush
+    open var BackgroundBrush: SlateBrush
+    open var ChildBackgroundBrush: SlateBrush
+    override fun clone(): WindowStyle
+
+    companion object {
+        fun C(Other: UObject): WindowStyle
+        fun C(Other: Any): WindowStyle
+    }
+}
+
+external object EJavascriptAutoCenter {
+    var None: String /* "None" */
+    var PrimaryWorkArea: String /* "PrimaryWorkArea" */
+    var PreferredWorkArea: String /* "PreferredWorkArea" */
+    var EJavascriptAutoCenter_MAX: String /* "EJavascriptAutoCenter_MAX" */
+}
+
+external object EJavascriptWindowTransparency {
+    var None: String /* "None" */
+    var PerWindow: String /* "PerWindow" */
+    var EJavascriptWindowTransparency_MAX: String /* "EJavascriptWindowTransparency_MAX" */
+}
+
+external object EJavascriptSizingRule {
+    var FixedSize: String /* "FixedSize" */
+    var Autosized: String /* "Autosized" */
+    var UserSized: String /* "UserSized" */
+    var EJavascriptSizingRule_MAX: String /* "EJavascriptSizingRule_MAX" */
+}
+
+external object EJavascriptWindowActivationPolicy {
+    var Never: String /* "Never" */
+    var Always: String /* "Always" */
+    var FirstShown: String /* "FirstShown" */
+    var EJavascriptWindowActivationPolicy_MAX: String /* "EJavascriptWindowActivationPolicy_MAX" */
+}
+
+external interface `T$427` {
+    var OutFolderName: String
+    var `$`: Boolean
+}
+
+external interface `T$428` {
+    var OutFilenames: Array<String>
+    var `$`: Boolean
+}
+
+external interface `T$429` {
+    var OutFilenames: Array<String>
+    var `$`: Boolean
+}
+
+external interface `T$430` {
+    var OutFilenames: Array<String>
+    var `$`: Boolean
+}
+
+external interface `T$431` {
+    var OutFilenames: Array<String>
+    var `$`: Boolean
+}
+
+external open class JavascriptWindow : ContentWidget {
+    constructor()
+    constructor(Outer: UObject)
+    open var Type: String /* "Normal" | "Menu" | "ToolTip" | "Notification" | "CursorDecorator" | "EJavascriptWindowType_MAX" */
+    open var Style: WindowStyle
+    open var Title: String
+    open var bDragAnywhere: Boolean
+    open var AutoCenter: String /* "None" | "PrimaryWorkArea" | "PreferredWorkArea" | "EJavascriptAutoCenter_MAX" */
+    open var ScreenPosition: Vector2D
+    open var ClientSize: Vector2D
+    open var SupportsTransparency: String /* "None" | "PerWindow" | "EJavascriptWindowTransparency_MAX" */
+    open var InitialOpacity: Number
+    open var IsInitiallyMaximized: Boolean
+    open var SizingRule: String /* "FixedSize" | "Autosized" | "UserSized" | "EJavascriptSizingRule_MAX" */
+    open var IsPopupWindow: Boolean
+    open var FocusWhenFirstShown: Boolean
+    open var ActivateWhenFirstShown: Boolean
+    open var UseOSWindowBorder: Boolean
+    open var HasCloseButton: Boolean
+    open var SupportsMaximize: Boolean
+    open var SupportsMinimize: Boolean
+    open var CreateTitleBar: Boolean
+    open var SaneWindowPlacement: Boolean
+    open var LayoutBorder: Margin
+    open var UserResizeBorder: Margin
+    open var OnWindowClosed: UnrealEngineDelegate<() -> Unit>
+    open var OnWindowDeactivated: UnrealEngineDelegate<() -> Unit>
+    open var IsTopmostWindow: Boolean
+    open var AdjustInitialSizeAndPositionForDPIScale: Boolean
+    open var ActivationPolicy: String /* "Never" | "Always" | "FirstShown" | "EJavascriptWindowActivationPolicy_MAX" */
+    open fun ShowWindow()
+    open fun SetOpacity(InOpacity: Number)
+    open fun Resize(NewSize: Vector2D)
+    open fun ReshapeWindow(NewPosition: Vector2D, NewSize: Vector2D)
+    open fun RequestDestroyWindow()
+    open fun MoveWindowTo(NewPosition: Vector2D)
+    open fun HideWindow()
+    open fun FlashWindow()
+    open fun EnableWindow(bEnable: Boolean)
+    open fun DestroyWindowImmediately()
+    open fun BringToFront()
+    open fun OpenDirectoryDialog(DialogTitle: String, DefaultPath: String, OutFolderName: String = definedExternally): `T$427`
+    open fun OpenFileDialog(DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$428`
+    open fun SaveFileDialog(DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$429`
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptWindow
+        fun Find(Outer: UObject, ResourceName: String): JavascriptWindow
+        fun GetDefaultObject(): JavascriptWindow
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptWindow
+        fun C(Other: UObject): JavascriptWindow
+        fun C(Other: Any): JavascriptWindow
+        fun OpenDirectoryDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, OutFolderName: String = definedExternally): `T$427`
+        fun OpenFileDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$430`
+        fun SaveFileDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$431`
+    }
+}
+
+external object EJavascriptHttpRequestStatus {
+    var NotStarted: String /* "NotStarted" */
+    var Processing: String /* "Processing" */
+    var Failed: String /* "Failed" */
+    var Succeeded: String /* "Succeeded" */
+    var EJavascriptHttpRequestStatus_MAX: String /* "EJavascriptHttpRequestStatus_MAX" */
+}
+
+external open class JavascriptHttpRequest : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var OnComplete: UnrealEngineDelegate<(successful: Boolean) -> Unit>
+    open var OnProgress: UnrealEngineDelegate<(sent: Number, recv: Number) -> Unit>
+    open fun SetVerb(Verb: String)
+    open fun SetURL(URL: String)
+    open fun SetHeader(HeaderName: String, HeaderValue: String)
+    open fun SetContentWithFiles(FilePaths: Array<String>, Boundary: String, Content: String)
+    open fun SetContentFromMemory()
+    open fun SetContentAsString(ContentString: String)
+    open fun ProcessRequest(): Boolean
+    open fun GetVerb(): String
+    open fun GetStatus(): String /* "NotStarted" | "Processing" | "Failed" | "Succeeded" | "EJavascriptHttpRequestStatus_MAX" */
+    open fun GetResponseCode(): Number
+    open fun GetElapsedTime(): Number
+    open fun GetContentToMemory()
+    open fun GetContentLength(): Number
+    open fun GetContentAsString(): String
+    open fun CancelRequest()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptHttpRequest
+        fun Find(Outer: UObject, ResourceName: String): JavascriptHttpRequest
+        fun GetDefaultObject(): JavascriptHttpRequest
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptHttpRequest
+        fun C(Other: UObject): JavascriptHttpRequest
+        fun C(Other: Any): JavascriptHttpRequest
+    }
+}
+
+external open class JavascriptWebSocket : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var OnReceived: UnrealEngineMulticastDelegate<() -> Unit>
+    open var OnConnected: UnrealEngineMulticastDelegate<() -> Unit>
+    open var OnError: UnrealEngineMulticastDelegate<() -> Unit>
+    open fun Tick()
+    open fun SendMemory(NumBytes: Number)
+    open fun RemoteEndPoint(bAppendPort: Boolean): String
+    open fun LocalEndPoint(bAppendPort: Boolean): String
+    open fun GetReceivedBytes(): Number
+    open fun Flush()
+    open fun Dispose()
+    open fun CopyBuffer()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptWebSocket
+        fun Find(Outer: UObject, ResourceName: String): JavascriptWebSocket
+        fun GetDefaultObject(): JavascriptWebSocket
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptWebSocket
+        fun Connect(Endpoint: String): JavascriptWebSocket
+        fun C(Other: UObject): JavascriptWebSocket
+        fun C(Other: Any): JavascriptWebSocket
+    }
+}
+
+external open class JavascriptWebSocketServer : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var OnConnected: UnrealEngineMulticastDelegate<(WebSocket: JavascriptWebSocket) -> Unit>
+    open var Connections: Array<JavascriptWebSocket>
+    open fun Tick()
+    open fun Info(): String
+    open fun Dispose()
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptWebSocketServer
+        fun Find(Outer: UObject, ResourceName: String): JavascriptWebSocketServer
+        fun GetDefaultObject(): JavascriptWebSocketServer
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptWebSocketServer
+        fun Create(Port: Number): JavascriptWebSocketServer
+        fun C(Other: UObject): JavascriptWebSocketServer
+        fun C(Other: Any): JavascriptWebSocketServer
+    }
+}
+
 external open class ContentBrowserFileDataSource : ContentBrowserDataSource {
     constructor()
     constructor(Outer: UObject)
@@ -7555,7 +9352,7 @@ external open class PyTestChildStruct : PyTestStruct {
     }
 }
 
-external interface `T$407` {
+external interface `T$432` {
     var InOutStruct: PyTestStruct
 }
 
@@ -7583,11 +9380,11 @@ external open class PyTestObject : UObject {
     open fun LegacyFuncTakingPyTestStruct(InStruct: PyTestStruct)
     open fun FuncTakingPyTestStruct(InStruct: PyTestStruct)
     open fun FuncTakingPyTestChildStruct(InStruct: PyTestChildStruct)
-    open fun FuncBlueprintNativeRef(InOutStruct: PyTestStruct = definedExternally): `T$407`
+    open fun FuncBlueprintNativeRef(InOutStruct: PyTestStruct = definedExternally): `T$432`
     open fun FuncBlueprintNative(InValue: Number): Number
     open fun FuncBlueprintImplementable(InValue: Number): Number
     open fun DelegatePropertyCallback(InValue: Number): Number
-    open fun CallFuncBlueprintNativeRef(InOutStruct: PyTestStruct = definedExternally): `T$407`
+    open fun CallFuncBlueprintNativeRef(InOutStruct: PyTestStruct = definedExternally): `T$432`
     open fun CallFuncBlueprintNative(InValue: Number): Number
     open fun CallFuncBlueprintImplementable(InValue: Number): Number
     open fun IsBoolSet(): Boolean
@@ -7712,7 +9509,7 @@ external object EPythonFileExecutionScope {
     var EPythonFileExecutionScope_MAX: String /* "EPythonFileExecutionScope_MAX" */
 }
 
-external interface `T$408` {
+external interface `T$433` {
     var CommandResult: String
     var LogOutput: Array<PythonLogOutputEntry>
     var `$`: Boolean
@@ -7729,7 +9526,7 @@ external open class PythonScriptLibrary : BlueprintFunctionLibrary {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PythonScriptLibrary
         fun IsPythonAvailable(): Boolean
         fun ExecutePythonScript(PythonScript: String, PythonInputs: Array<String>, PythonOutputs: Array<String>): Boolean
-        fun ExecutePythonCommand(PythonCommand: String, CommandResult: String = definedExternally, LogOutput: Array<PythonLogOutputEntry> = definedExternally, ExecutionMode: String /* "ExecuteFile" | "ExecuteStatement" | "EvaluateStatement" | "EPythonCommandExecutionMode_MAX" */ = definedExternally, FileExecutionScope: String /* "Private" | "Public" | "EPythonFileExecutionScope_MAX" */ = definedExternally): `T$408`
+        fun ExecutePythonCommand(PythonCommand: String, CommandResult: String = definedExternally, LogOutput: Array<PythonLogOutputEntry> = definedExternally, ExecutionMode: String /* "ExecuteFile" | "ExecuteStatement" | "EvaluateStatement" | "EPythonCommandExecutionMode_MAX" */ = definedExternally, FileExecutionScope: String /* "Private" | "Public" | "EPythonFileExecutionScope_MAX" */ = definedExternally): `T$433`
         fun ExecutePythonCommand(PythonCommand: String): Boolean
         fun C(Other: UObject): PythonScriptLibrary
         fun C(Other: Any): PythonScriptLibrary
@@ -11387,6 +13184,468 @@ external open class OnPastedFunctionCallNode__PythonCallable : PythonCallableFor
     }
 }
 
+external open class DirectoryWatcherCallback__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): DirectoryWatcherCallback__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): DirectoryWatcherCallback__PythonCallable
+        fun GetDefaultObject(): DirectoryWatcherCallback__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): DirectoryWatcherCallback__PythonCallable
+        fun C(Other: UObject): DirectoryWatcherCallback__PythonCallable
+        fun C(Other: Any): DirectoryWatcherCallback__PythonCallable
+    }
+}
+
+external open class JavascriptNameSignature__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptNameSignature__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptNameSignature__PythonCallable
+        fun GetDefaultObject(): JavascriptNameSignature__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptNameSignature__PythonCallable
+        fun C(Other: UObject): JavascriptNameSignature__PythonCallable
+        fun C(Other: Any): JavascriptNameSignature__PythonCallable
+    }
+}
+
+external open class JavascriptNoParamSignature__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptNoParamSignature__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptNoParamSignature__PythonCallable
+        fun GetDefaultObject(): JavascriptNoParamSignature__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptNoParamSignature__PythonCallable
+        fun C(Other: UObject): JavascriptNoParamSignature__PythonCallable
+        fun C(Other: Any): JavascriptNoParamSignature__PythonCallable
+    }
+}
+
+external open class JavascriptTickSignature__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptTickSignature__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptTickSignature__PythonCallable
+        fun GetDefaultObject(): JavascriptTickSignature__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTickSignature__PythonCallable
+        fun C(Other: UObject): JavascriptTickSignature__PythonCallable
+        fun C(Other: Any): JavascriptTickSignature__PythonCallable
+    }
+}
+
+external open class OnComboBoxOpened__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnComboBoxOpened__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnComboBoxOpened__PythonCallable
+        fun GetDefaultObject(): OnComboBoxOpened__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnComboBoxOpened__PythonCallable
+        fun C(Other: UObject): OnComboBoxOpened__PythonCallable
+        fun C(Other: Any): OnComboBoxOpened__PythonCallable
+    }
+}
+
+external open class OnGetContent__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnGetContent__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnGetContent__PythonCallable
+        fun GetDefaultObject(): OnGetContent__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnGetContent__PythonCallable
+        fun C(Other: UObject): OnGetContent__PythonCallable
+        fun C(Other: Any): OnGetContent__PythonCallable
+    }
+}
+
+external open class OnIsOpenChanged__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnIsOpenChanged__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnIsOpenChanged__PythonCallable
+        fun GetDefaultObject(): OnIsOpenChanged__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnIsOpenChanged__PythonCallable
+        fun C(Other: UObject): OnIsOpenChanged__PythonCallable
+        fun C(Other: Any): OnIsOpenChanged__PythonCallable
+    }
+}
+
+external open class BoolDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): BoolDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): BoolDelegate__PythonCallable
+        fun GetDefaultObject(): BoolDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): BoolDelegate__PythonCallable
+        fun C(Other: UObject): BoolDelegate__PythonCallable
+        fun C(Other: Any): BoolDelegate__PythonCallable
+    }
+}
+
+external open class IconDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): IconDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): IconDelegate__PythonCallable
+        fun GetDefaultObject(): IconDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): IconDelegate__PythonCallable
+        fun C(Other: UObject): IconDelegate__PythonCallable
+        fun C(Other: Any): IconDelegate__PythonCallable
+    }
+}
+
+external open class JavascriptGetWidgetWithEditingObject__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptGetWidgetWithEditingObject__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptGetWidgetWithEditingObject__PythonCallable
+        fun GetDefaultObject(): JavascriptGetWidgetWithEditingObject__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGetWidgetWithEditingObject__PythonCallable
+        fun C(Other: UObject): JavascriptGetWidgetWithEditingObject__PythonCallable
+        fun C(Other: Any): JavascriptGetWidgetWithEditingObject__PythonCallable
+    }
+}
+
+external open class TextDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): TextDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): TextDelegate__PythonCallable
+        fun GetDefaultObject(): TextDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TextDelegate__PythonCallable
+        fun C(Other: UObject): TextDelegate__PythonCallable
+        fun C(Other: Any): TextDelegate__PythonCallable
+    }
+}
+
+external open class OnGetDefaultValue__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnGetDefaultValue__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnGetDefaultValue__PythonCallable
+        fun GetDefaultObject(): OnGetDefaultValue__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnGetDefaultValue__PythonCallable
+        fun C(Other: UObject): OnGetDefaultValue__PythonCallable
+        fun C(Other: Any): OnGetDefaultValue__PythonCallable
+    }
+}
+
+external open class OnIsReadOnly__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnIsReadOnly__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnIsReadOnly__PythonCallable
+        fun GetDefaultObject(): OnIsReadOnly__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnIsReadOnly__PythonCallable
+        fun C(Other: UObject): OnIsReadOnly__PythonCallable
+        fun C(Other: Any): OnIsReadOnly__PythonCallable
+    }
+}
+
+external open class OnIsValidText__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnIsValidText__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnIsValidText__PythonCallable
+        fun GetDefaultObject(): OnIsValidText__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnIsValidText__PythonCallable
+        fun C(Other: UObject): OnIsValidText__PythonCallable
+        fun C(Other: Any): OnIsValidText__PythonCallable
+    }
+}
+
+external open class OnContextMenuOpening__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnContextMenuOpening__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnContextMenuOpening__PythonCallable
+        fun GetDefaultObject(): OnContextMenuOpening__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnContextMenuOpening__PythonCallable
+        fun C(Other: UObject): OnContextMenuOpening__PythonCallable
+        fun C(Other: Any): OnContextMenuOpening__PythonCallable
+    }
+}
+
+external open class OnExpansionChanged__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnExpansionChanged__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnExpansionChanged__PythonCallable
+        fun GetDefaultObject(): OnExpansionChanged__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnExpansionChanged__PythonCallable
+        fun C(Other: UObject): OnExpansionChanged__PythonCallable
+        fun C(Other: Any): OnExpansionChanged__PythonCallable
+    }
+}
+
+external open class OnGenerateRow__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnGenerateRow__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnGenerateRow__PythonCallable
+        fun GetDefaultObject(): OnGenerateRow__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnGenerateRow__PythonCallable
+        fun C(Other: UObject): OnGenerateRow__PythonCallable
+        fun C(Other: Any): OnGenerateRow__PythonCallable
+    }
+}
+
+external open class OnGetChildrenUObject__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnGetChildrenUObject__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnGetChildrenUObject__PythonCallable
+        fun GetDefaultObject(): OnGetChildrenUObject__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnGetChildrenUObject__PythonCallable
+        fun C(Other: UObject): OnGetChildrenUObject__PythonCallable
+        fun C(Other: Any): OnGetChildrenUObject__PythonCallable
+    }
+}
+
+external open class ActionCheckStateDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): ActionCheckStateDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): ActionCheckStateDelegate__PythonCallable
+        fun GetDefaultObject(): ActionCheckStateDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ActionCheckStateDelegate__PythonCallable
+        fun C(Other: UObject): ActionCheckStateDelegate__PythonCallable
+        fun C(Other: Any): ActionCheckStateDelegate__PythonCallable
+    }
+}
+
+external open class ExecuteAction__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): ExecuteAction__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): ExecuteAction__PythonCallable
+        fun GetDefaultObject(): ExecuteAction__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ExecuteAction__PythonCallable
+        fun C(Other: UObject): ExecuteAction__PythonCallable
+        fun C(Other: Any): ExecuteAction__PythonCallable
+    }
+}
+
+external open class OnVScrollBarUserScrolled__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnVScrollBarUserScrolled__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnVScrollBarUserScrolled__PythonCallable
+        fun GetDefaultObject(): OnVScrollBarUserScrolled__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnVScrollBarUserScrolled__PythonCallable
+        fun C(Other: UObject): OnVScrollBarUserScrolled__PythonCallable
+        fun C(Other: Any): OnVScrollBarUserScrolled__PythonCallable
+    }
+}
+
+external open class SetText__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): SetText__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): SetText__PythonCallable
+        fun GetDefaultObject(): SetText__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SetText__PythonCallable
+        fun C(Other: UObject): SetText__PythonCallable
+        fun C(Other: Any): SetText__PythonCallable
+    }
+}
+
+external open class JavascriptHyperlinkSignature__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptHyperlinkSignature__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptHyperlinkSignature__PythonCallable
+        fun GetDefaultObject(): JavascriptHyperlinkSignature__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptHyperlinkSignature__PythonCallable
+        fun C(Other: UObject): JavascriptHyperlinkSignature__PythonCallable
+        fun C(Other: Any): JavascriptHyperlinkSignature__PythonCallable
+    }
+}
+
+external open class JavascriptCanExecuteActionWithEditingObject__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptCanExecuteActionWithEditingObject__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptCanExecuteActionWithEditingObject__PythonCallable
+        fun GetDefaultObject(): JavascriptCanExecuteActionWithEditingObject__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptCanExecuteActionWithEditingObject__PythonCallable
+        fun C(Other: UObject): JavascriptCanExecuteActionWithEditingObject__PythonCallable
+        fun C(Other: Any): JavascriptCanExecuteActionWithEditingObject__PythonCallable
+    }
+}
+
+external open class JavascriptExecuteActionWithEditingObject__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptExecuteActionWithEditingObject__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptExecuteActionWithEditingObject__PythonCallable
+        fun GetDefaultObject(): JavascriptExecuteActionWithEditingObject__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptExecuteActionWithEditingObject__PythonCallable
+        fun C(Other: UObject): JavascriptExecuteActionWithEditingObject__PythonCallable
+        fun C(Other: Any): JavascriptExecuteActionWithEditingObject__PythonCallable
+    }
+}
+
+external open class OnInputActionEvent__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnInputActionEvent__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnInputActionEvent__PythonCallable
+        fun GetDefaultObject(): OnInputActionEvent__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnInputActionEvent__PythonCallable
+        fun C(Other: UObject): OnInputActionEvent__PythonCallable
+        fun C(Other: Any): OnInputActionEvent__PythonCallable
+    }
+}
+
+external open class OnInputAxisEvent__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnInputAxisEvent__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnInputAxisEvent__PythonCallable
+        fun GetDefaultObject(): OnInputAxisEvent__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnInputAxisEvent__PythonCallable
+        fun C(Other: UObject): OnInputAxisEvent__PythonCallable
+        fun C(Other: Any): OnInputAxisEvent__PythonCallable
+    }
+}
+
+external open class OnWindowDeactivated__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnWindowDeactivated__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnWindowDeactivated__PythonCallable
+        fun GetDefaultObject(): OnWindowDeactivated__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnWindowDeactivated__PythonCallable
+        fun C(Other: UObject): OnWindowDeactivated__PythonCallable
+        fun C(Other: Any): OnWindowDeactivated__PythonCallable
+    }
+}
+
+external open class OnWindowWidgetClosed__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnWindowWidgetClosed__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnWindowWidgetClosed__PythonCallable
+        fun GetDefaultObject(): OnWindowWidgetClosed__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnWindowWidgetClosed__PythonCallable
+        fun C(Other: UObject): OnWindowWidgetClosed__PythonCallable
+        fun C(Other: Any): OnWindowWidgetClosed__PythonCallable
+    }
+}
+
+external open class JavascriptHttpRequestCompleteDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptHttpRequestCompleteDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptHttpRequestCompleteDelegate__PythonCallable
+        fun GetDefaultObject(): JavascriptHttpRequestCompleteDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptHttpRequestCompleteDelegate__PythonCallable
+        fun C(Other: UObject): JavascriptHttpRequestCompleteDelegate__PythonCallable
+        fun C(Other: Any): JavascriptHttpRequestCompleteDelegate__PythonCallable
+    }
+}
+
+external open class JavascriptHttpRequestProgressDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): JavascriptHttpRequestProgressDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): JavascriptHttpRequestProgressDelegate__PythonCallable
+        fun GetDefaultObject(): JavascriptHttpRequestProgressDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptHttpRequestProgressDelegate__PythonCallable
+        fun C(Other: UObject): JavascriptHttpRequestProgressDelegate__PythonCallable
+        fun C(Other: Any): JavascriptHttpRequestProgressDelegate__PythonCallable
+    }
+}
+
+external open class OnWebSocketDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnWebSocketDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnWebSocketDelegate__PythonCallable
+        fun GetDefaultObject(): OnWebSocketDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnWebSocketDelegate__PythonCallable
+        fun C(Other: UObject): OnWebSocketDelegate__PythonCallable
+        fun C(Other: Any): OnWebSocketDelegate__PythonCallable
+    }
+}
+
+external open class OnWebSocketServerDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): OnWebSocketServerDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): OnWebSocketServerDelegate__PythonCallable
+        fun GetDefaultObject(): OnWebSocketServerDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnWebSocketServerDelegate__PythonCallable
+        fun C(Other: UObject): OnWebSocketServerDelegate__PythonCallable
+        fun C(Other: Any): OnWebSocketServerDelegate__PythonCallable
+    }
+}
+
 external open class PyTestDelegate__PythonCallable : PythonCallableForDelegate {
     constructor()
     constructor(Outer: UObject)
@@ -11915,11 +14174,11 @@ external open class MagicLeapPlanesComponent : SceneComponent {
     }
 }
 
-external interface `T$409` {
+external interface `T$434` {
     var OutReorderedFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>
 }
 
-external interface `T$410` {
+external interface `T$435` {
     var OutFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>
 }
 
@@ -11932,9 +14191,9 @@ external open class MagicLeapPlanesFunctionLibrary : BlueprintFunctionLibrary {
         fun Find(Outer: UObject, ResourceName: String): MagicLeapPlanesFunctionLibrary
         fun GetDefaultObject(): MagicLeapPlanesFunctionLibrary
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MagicLeapPlanesFunctionLibrary
-        fun ReorderPlaneFlags(InPriority: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>, InFlagsToReorder: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>, OutReorderedFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */> = definedExternally): `T$409`
+        fun ReorderPlaneFlags(InPriority: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>, InFlagsToReorder: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>, OutReorderedFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */> = definedExternally): `T$434`
         fun RemovePersistentQuery(Handle: Guid): Boolean
-        fun RemoveFlagsNotInQuery(InQueryFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>, InResultFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>, OutFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */> = definedExternally): `T$410`
+        fun RemoveFlagsNotInQuery(InQueryFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>, InResultFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */>, OutFlags: Array<String /* "Vertical" | "Horizontal" | "Arbitrary" | "OrientToGravity" | "PreferInner" | "Ceiling" | "Floor" | "Wall" | "Polygons" | "EMagicLeapPlaneQueryFlags_MAX" */> = definedExternally): `T$435`
         fun IsTrackerValid(): Boolean
         fun GetContentScale(ContentActor: Actor, PlaneResult: MagicLeapPlaneResult): Transform
         fun DestroyTracker(): Boolean
@@ -11961,7 +14220,7 @@ external open class MagicLeapLightingTrackingComponent : ActorComponent {
     }
 }
 
-external interface `T$411` {
+external interface `T$436` {
     var ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState
     var `$`: Boolean
 }
@@ -11971,16 +14230,16 @@ external open class MagicLeapLightEstimationColorTemperatureState {
     open var AmbientColor: LinearColor
     open var Timestamp: Timespan
     open fun clone(): MagicLeapLightEstimationColorTemperatureState
-    open fun GetColorTemperatureState(): `T$411`
+    open fun GetColorTemperatureState(): `T$436`
 
     companion object {
         fun C(Other: UObject): MagicLeapLightEstimationColorTemperatureState
         fun C(Other: Any): MagicLeapLightEstimationColorTemperatureState
-        fun GetColorTemperatureState(ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState = definedExternally): `T$411`
+        fun GetColorTemperatureState(ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState = definedExternally): `T$436`
     }
 }
 
-external interface `T$412` {
+external interface `T$437` {
     var GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState
     var `$`: Boolean
 }
@@ -11989,12 +14248,12 @@ external open class MagicLeapLightEstimationAmbientGlobalState {
     open var AmbientIntensityNits: Array<Number>
     open var Timestamp: Timespan
     open fun clone(): MagicLeapLightEstimationAmbientGlobalState
-    open fun GetAmbientGlobalState(): `T$412`
+    open fun GetAmbientGlobalState(): `T$437`
 
     companion object {
         fun C(Other: UObject): MagicLeapLightEstimationAmbientGlobalState
         fun C(Other: Any): MagicLeapLightEstimationAmbientGlobalState
-        fun GetAmbientGlobalState(GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState = definedExternally): `T$412`
+        fun GetAmbientGlobalState(GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState = definedExternally): `T$437`
     }
 }
 
@@ -12008,8 +14267,8 @@ external open class MagicLeapLightEstimationFunctionLibrary : BlueprintFunctionL
         fun GetDefaultObject(): MagicLeapLightEstimationFunctionLibrary
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MagicLeapLightEstimationFunctionLibrary
         fun IsTrackerValid(): Boolean
-        fun GetColorTemperatureState(ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState = definedExternally): `T$411`
-        fun GetAmbientGlobalState(GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState = definedExternally): `T$412`
+        fun GetColorTemperatureState(ColorTemperatureState: MagicLeapLightEstimationColorTemperatureState = definedExternally): `T$436`
+        fun GetAmbientGlobalState(GlobalAmbientState: MagicLeapLightEstimationAmbientGlobalState = definedExternally): `T$437`
         fun DestroyTracker()
         fun CreateTracker(): Boolean
         fun C(Other: UObject): MagicLeapLightEstimationFunctionLibrary
@@ -12042,17 +14301,17 @@ external open class MagicLeapARPinSaveGame : SaveGame {
     }
 }
 
-external interface `T$413` {
+external interface `T$438` {
     var OutPinDataValid: Boolean
     var `$`: MagicLeapARPinSaveGame
 }
 
-external interface `T$414` {
+external interface `T$439` {
     var State: MagicLeapARPinState
     var `$`: Boolean
 }
 
-external interface `T$415` {
+external interface `T$440` {
     var PinId: Guid
     var `$`: Boolean
 }
@@ -12074,7 +14333,7 @@ external open class MagicLeapARPinComponent : SceneComponent {
     open var PinnedSceneComponent: SceneComponent
     open var PinData: MagicLeapARPinSaveGame
     open fun UnPin()
-    open fun TryGetPinData(InPinDataClass: UnrealEngineClass, OutPinDataValid: Boolean = definedExternally): `T$413`
+    open fun TryGetPinData(InPinDataClass: UnrealEngineClass, OutPinDataValid: Boolean = definedExternally): `T$438`
     open fun PinToRestoredOrSyncedID(): Boolean
     open fun PinToID(PinId: Guid): Boolean
     open fun PinToBestFit()
@@ -12082,8 +14341,8 @@ external open class MagicLeapARPinComponent : SceneComponent {
     open fun PinRestoredOrSynced(): Boolean
     open fun PinActor(ActorToPin: Actor): Boolean
     open fun IsPinned(): Boolean
-    open fun GetPinState(State: MagicLeapARPinState = definedExternally): `T$414`
-    open fun GetPinnedPinID(PinId: Guid = definedExternally): `T$415`
+    open fun GetPinState(State: MagicLeapARPinState = definedExternally): `T$439`
+    open fun GetPinnedPinID(PinId: Guid = definedExternally): `T$440`
     open fun GetPinData(PinDataClass: UnrealEngineClass): MagicLeapARPinSaveGame
     open fun AttemptPinDataRestorationAsync()
     open fun AttemptPinDataRestoration(): Boolean
@@ -12098,17 +14357,17 @@ external open class MagicLeapARPinComponent : SceneComponent {
     }
 }
 
-external interface `T$416` {
+external interface `T$441` {
     var CurrentGlobalFilter: MagicLeapARPinQuery
     var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
 }
 
-external interface `T$417` {
+external interface `T$442` {
     var Pins: Array<Guid>
     var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
 }
 
-external interface `T$418` {
+external interface `T$443` {
     var Pins: Array<Guid>
     var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
 }
@@ -12120,35 +14379,35 @@ external open class MagicLeapARPinQuery {
     open var Radius: Number
     open var bSorted: Boolean
     open fun clone(): MagicLeapARPinQuery
-    open fun GetGlobalQueryFilter(): `T$416`
-    open fun QueryARPins(Pins: Array<Guid> = definedExternally): `T$417`
+    open fun GetGlobalQueryFilter(): `T$441`
+    open fun QueryARPins(Pins: Array<Guid> = definedExternally): `T$442`
     open fun SetGlobalQueryFilter(): String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
 
     companion object {
         fun C(Other: UObject): MagicLeapARPinQuery
         fun C(Other: Any): MagicLeapARPinQuery
-        fun GetGlobalQueryFilter(CurrentGlobalFilter: MagicLeapARPinQuery = definedExternally): `T$416`
-        fun QueryARPins(Query: MagicLeapARPinQuery, Pins: Array<Guid> = definedExternally): `T$418`
+        fun GetGlobalQueryFilter(CurrentGlobalFilter: MagicLeapARPinQuery = definedExternally): `T$441`
+        fun QueryARPins(Query: MagicLeapARPinQuery, Pins: Array<Guid> = definedExternally): `T$443`
         fun SetGlobalQueryFilter(InGlobalFilter: MagicLeapARPinQuery): String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
     }
 }
 
-external interface `T$419` {
+external interface `T$444` {
     var Pins: Array<Guid>
     var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
 }
 
-external interface `T$420` {
+external interface `T$445` {
     var ARPinId: Guid
     var `$`: Boolean
 }
 
-external interface `T$421` {
+external interface `T$446` {
     var Count: Number
     var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
 }
 
-external interface `T$422` {
+external interface `T$447` {
     var Pins: Array<Guid>
     var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
 }
@@ -12164,14 +14423,14 @@ external open class MagicLeapARPinFunctionLibrary : BlueprintFunctionLibrary {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MagicLeapARPinFunctionLibrary
         fun SetGlobalQueryFilter(InGlobalFilter: MagicLeapARPinQuery): String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
         fun SetContentBindingSaveGameUserIndex(UserIndex: Number)
-        fun QueryARPins(Query: MagicLeapARPinQuery, Pins: Array<Guid> = definedExternally): `T$419`
-        fun ParseStringToARPinId(PinIdString: String, ARPinId: Guid = definedExternally): `T$420`
+        fun QueryARPins(Query: MagicLeapARPinQuery, Pins: Array<Guid> = definedExternally): `T$444`
+        fun ParseStringToARPinId(PinIdString: String, ARPinId: Guid = definedExternally): `T$445`
         fun IsTrackerValid(): Boolean
-        fun GetNumAvailableARPins(Count: Number = definedExternally): `T$421`
-        fun GetGlobalQueryFilter(CurrentGlobalFilter: MagicLeapARPinQuery = definedExternally): `T$416`
+        fun GetNumAvailableARPins(Count: Number = definedExternally): `T$446`
+        fun GetGlobalQueryFilter(CurrentGlobalFilter: MagicLeapARPinQuery = definedExternally): `T$441`
         fun GetContentBindingSaveGameUserIndex(): Number
-        fun GetClosestARPin(SearchPoint: Vector, PinId: Guid = definedExternally): `T$233`
-        fun GetAvailableARPins(NumRequested: Number, Pins: Array<Guid> = definedExternally): `T$422`
+        fun GetClosestARPin(SearchPoint: Vector, PinId: Guid = definedExternally): `T$232`
+        fun GetAvailableARPins(NumRequested: Number, Pins: Array<Guid> = definedExternally): `T$447`
         fun ToString(State: MagicLeapARPinState): String
         fun GetARPinState(PinId: Guid, State: MagicLeapARPinState = definedExternally): `T$18`
         fun GetARPinPositionAndOrientation_TrackingSpace(PinId: Guid, Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$17`
@@ -12309,7 +14568,7 @@ external object ELuminARTrackingState {
     var ELuminARTrackingState_MAX: String /* "ELuminARTrackingState_MAX" */
 }
 
-external interface `T$423` {
+external interface `T$448` {
     var OutHitResults: Array<ARTraceResult>
     var `$`: Boolean
 }
@@ -12323,7 +14582,7 @@ external open class LuminARFrameFunctionLibrary : BlueprintFunctionLibrary {
         fun Find(Outer: UObject, ResourceName: String): LuminARFrameFunctionLibrary
         fun GetDefaultObject(): LuminARFrameFunctionLibrary
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LuminARFrameFunctionLibrary
-        fun LuminARLineTrace(WorldContextObject: UObject, ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$423`
+        fun LuminARLineTrace(WorldContextObject: UObject, ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$448`
         fun GetTrackingState(): String /* "Tracking" | "NotTracking" | "StoppedTracking" | "ELuminARTrackingState_MAX" */
         fun C(Other: UObject): LuminARFrameFunctionLibrary
         fun C(Other: Any): LuminARFrameFunctionLibrary
@@ -12469,7 +14728,7 @@ external object EMagicLeapControllerType {
     var EMagicLeapControllerType_MAX: String /* "EMagicLeapControllerType_MAX" */
 }
 
-external interface `T$424` {
+external interface `T$449` {
     var hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */
     var `$`: Boolean
 }
@@ -12499,7 +14758,7 @@ external open class MagicLeapControllerFunctionLibrary : BlueprintFunctionLibrar
         fun GetHandForMotionSource(MotionSource: String): String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */
         fun GetControllerType(MotionSource: String): String /* "None" | "Device" | "MobileApp" | "EMagicLeapControllerType_MAX" */
         fun GetControllerTrackingMode(): String /* "InputService" | "CoordinateFrameUID" | "EMagicLeapControllerTrackingMode_MAX" */
-        fun GetControllerMapping(ControllerIndex: Number, hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */ = definedExternally): `T$424`
+        fun GetControllerMapping(ControllerIndex: Number, hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */ = definedExternally): `T$449`
         fun C(Other: UObject): MagicLeapControllerFunctionLibrary
         fun C(Other: Any): MagicLeapControllerFunctionLibrary
     }
@@ -12583,7 +14842,7 @@ external open class TouchpadGestureEvent__PythonCallable : PythonCallableForDele
     }
 }
 
-external interface `T$425` {
+external interface `T$450` {
     var BlinkState: MagicLeapEyeBlinkState
     var `$`: Boolean
 }
@@ -12592,12 +14851,12 @@ external open class MagicLeapEyeBlinkState {
     open var LeftEyeBlinked: Boolean
     open var RightEyeBlinked: Boolean
     open fun clone(): MagicLeapEyeBlinkState
-    open fun GetEyeBlinkState(): `T$425`
+    open fun GetEyeBlinkState(): `T$450`
 
     companion object {
         fun C(Other: UObject): MagicLeapEyeBlinkState
         fun C(Other: Any): MagicLeapEyeBlinkState
-        fun GetEyeBlinkState(BlinkState: MagicLeapEyeBlinkState = definedExternally): `T$425`
+        fun GetEyeBlinkState(BlinkState: MagicLeapEyeBlinkState = definedExternally): `T$450`
     }
 }
 
@@ -12617,7 +14876,7 @@ external open class MagicLeapEyeTrackerFunctionLibrary : BlueprintFunctionLibrar
         fun Find(Outer: UObject, ResourceName: String): MagicLeapEyeTrackerFunctionLibrary
         fun GetDefaultObject(): MagicLeapEyeTrackerFunctionLibrary
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MagicLeapEyeTrackerFunctionLibrary
-        fun GetEyeBlinkState(BlinkState: MagicLeapEyeBlinkState = definedExternally): `T$425`
+        fun GetEyeBlinkState(BlinkState: MagicLeapEyeBlinkState = definedExternally): `T$450`
         fun GetCalibrationStatus(): String /* "None" | "Bad" | "Good" | "EMagicLeapEyeTrackingCalibrationStatus_MAX" */
         fun C(Other: UObject): MagicLeapEyeTrackerFunctionLibrary
         fun C(Other: Any): MagicLeapEyeTrackerFunctionLibrary
@@ -12702,62 +14961,62 @@ external object EMagicLeapGestureTransformSpace {
     var EMagicLeapGestureTransformSpace_MAX: String /* "EMagicLeapGestureTransformSpace_MAX" */
 }
 
-external interface `T$426` {
+external interface `T$451` {
     var OutMotionSource: String
     var `$`: Boolean
 }
 
-external interface `T$427` {
+external interface `T$452` {
     var SourceHandle: LiveLinkSourceHandle
     var `$`: Boolean
 }
 
-external interface `T$428` {
+external interface `T$453` {
     var Secondary: Transform
     var `$`: Boolean
 }
 
-external interface `T$429` {
+external interface `T$454` {
     var OutKeyPoint: String /* "Thumb_Tip" | "Thumb_IP" | "Thumb_MCP" | "Thumb_CMC" | "Index_Tip" | "Index_DIP" | "Index_PIP" | "Index_MCP" | "Middle_Tip" | "Middle_DIP" | "Middle_PIP" | "Middle_MCP" | "Ring_Tip" | "Ring_DIP" | "Ring_PIP" | "Ring_MCP" | "Pinky_Tip" | "Pinky_DIP" | "Pinky_PIP" | "Pinky_MCP" | "Wrist_Center" | "Wrist_Ulnar" | "Wrist_Radial" | "Hand_Center" | "EMagicLeapHandTrackingKeypoint_MAX" */
     var `$`: Boolean
 }
 
-external interface `T$430` {
+external interface `T$455` {
     var Pointer: Transform
     var `$`: Boolean
 }
 
-external interface `T$431` {
+external interface `T$456` {
     var HandCenterNormalized: Vector
     var `$`: Boolean
 }
 
-external interface `T$432` {
+external interface `T$457` {
     var HandCenter: Transform
     var `$`: Boolean
 }
 
-external interface `T$433` {
+external interface `T$458` {
     var Transform: Transform
     var `$`: Boolean
 }
 
-external interface `T$434` {
+external interface `T$459` {
     var Keypoints: Array<Transform>
     var `$`: Boolean
 }
 
-external interface `T$435` {
+external interface `T$460` {
     var Confidence: Number
     var `$`: Boolean
 }
 
-external interface `T$436` {
+external interface `T$461` {
     var Gesture: String /* "Finger" | "Fist" | "Pinch" | "Thumb" | "L" | "OpenHand" | "OpenHandBack" | "Ok" | "C" | "NoPose" | "NoHand" | "EMagicLeapHandTrackingGesture_MAX" */
     var `$`: Boolean
 }
 
-external interface `T$437` {
+external interface `T$462` {
     var ActiveStaticGestures: Array<String /* "Finger" | "Fist" | "Pinch" | "Thumb" | "L" | "OpenHand" | "OpenHandBack" | "Ok" | "C" | "NoPose" | "NoHand" | "EMagicLeapHandTrackingGesture_MAX" */>
     var KeypointsFilterLevel: String /* "NoFilter" | "SimpleSmoothing" | "PredictiveSmoothing" | "EMagicLeapHandTrackingKeypointFilterLevel_MAX" */
     var GestureFilterLevel: String /* "NoFilter" | "SlightRobustnessToFlicker" | "MoreRobustnessToFlicker" | "EMagicLeapHandTrackingGestureFilterLevel_MAX" */
@@ -12778,18 +15037,18 @@ external open class MagicLeapHandTrackingFunctionLibrary : BlueprintFunctionLibr
         fun SetConfiguration(StaticGesturesToActivate: Array<String /* "Finger" | "Fist" | "Pinch" | "Thumb" | "L" | "OpenHand" | "OpenHandBack" | "Ok" | "C" | "NoPose" | "NoHand" | "EMagicLeapHandTrackingGesture_MAX" */>, KeypointsFilterLevel: String /* "NoFilter" | "SimpleSmoothing" | "PredictiveSmoothing" | "EMagicLeapHandTrackingKeypointFilterLevel_MAX" */, GestureFilterLevel: String /* "NoFilter" | "SlightRobustnessToFlicker" | "MoreRobustnessToFlicker" | "EMagicLeapHandTrackingGestureFilterLevel_MAX" */, bTrackingEnabled: Boolean): Boolean
         fun IsHoldingControl(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */): Boolean
         fun GetStaticGestureConfidenceThreshold(Gesture: String /* "Finger" | "Fist" | "Pinch" | "Thumb" | "L" | "OpenHand" | "OpenHandBack" | "Ok" | "C" | "NoPose" | "NoHand" | "EMagicLeapHandTrackingGesture_MAX" */): Number
-        fun GetMotionSourceForHandKeypoint(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Keypoint: String /* "Thumb_Tip" | "Thumb_IP" | "Thumb_MCP" | "Thumb_CMC" | "Index_Tip" | "Index_DIP" | "Index_PIP" | "Index_MCP" | "Middle_Tip" | "Middle_DIP" | "Middle_PIP" | "Middle_MCP" | "Ring_Tip" | "Ring_DIP" | "Ring_PIP" | "Ring_MCP" | "Pinky_Tip" | "Pinky_DIP" | "Pinky_PIP" | "Pinky_MCP" | "Wrist_Center" | "Wrist_Ulnar" | "Wrist_Radial" | "Hand_Center" | "EMagicLeapHandTrackingKeypoint_MAX" */, OutMotionSource: String = definedExternally): `T$426`
-        fun GetMagicLeapHandTrackingLiveLinkSource(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$427`
-        fun GetHandThumbTip(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, TransformSpace: String /* "World" | "Hand" | "Tracking" | "EMagicLeapGestureTransformSpace_MAX" */, Secondary: Transform = definedExternally): `T$428`
-        fun GetHandKeypointForMotionSource(MotionSource: String, OutKeyPoint: String /* "Thumb_Tip" | "Thumb_IP" | "Thumb_MCP" | "Thumb_CMC" | "Index_Tip" | "Index_DIP" | "Index_PIP" | "Index_MCP" | "Middle_Tip" | "Middle_DIP" | "Middle_PIP" | "Middle_MCP" | "Ring_Tip" | "Ring_DIP" | "Ring_PIP" | "Ring_MCP" | "Pinky_Tip" | "Pinky_DIP" | "Pinky_PIP" | "Pinky_MCP" | "Wrist_Center" | "Wrist_Ulnar" | "Wrist_Radial" | "Hand_Center" | "EMagicLeapHandTrackingKeypoint_MAX" */ = definedExternally): `T$429`
-        fun GetHandIndexFingerTip(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, TransformSpace: String /* "World" | "Hand" | "Tracking" | "EMagicLeapGestureTransformSpace_MAX" */, Pointer: Transform = definedExternally): `T$430`
-        fun GetHandCenterNormalized(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, HandCenterNormalized: Vector = definedExternally): `T$431`
-        fun GetHandCenter(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, HandCenter: Transform = definedExternally): `T$432`
-        fun GetGestureKeypointTransform(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Keypoint: String /* "Thumb_Tip" | "Thumb_IP" | "Thumb_MCP" | "Thumb_CMC" | "Index_Tip" | "Index_DIP" | "Index_PIP" | "Index_MCP" | "Middle_Tip" | "Middle_DIP" | "Middle_PIP" | "Middle_MCP" | "Ring_Tip" | "Ring_DIP" | "Ring_PIP" | "Ring_MCP" | "Pinky_Tip" | "Pinky_DIP" | "Pinky_PIP" | "Pinky_MCP" | "Wrist_Center" | "Wrist_Ulnar" | "Wrist_Radial" | "Hand_Center" | "EMagicLeapHandTrackingKeypoint_MAX" */, TransformSpace: String /* "World" | "Hand" | "Tracking" | "EMagicLeapGestureTransformSpace_MAX" */, Transform: Transform = definedExternally): `T$433`
-        fun GetGestureKeypoints(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Keypoints: Array<Transform> = definedExternally): `T$434`
-        fun GetCurrentGestureConfidence(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Confidence: Number = definedExternally): `T$435`
-        fun GetCurrentGesture(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Gesture: String /* "Finger" | "Fist" | "Pinch" | "Thumb" | "L" | "OpenHand" | "OpenHandBack" | "Ok" | "C" | "NoPose" | "NoHand" | "EMagicLeapHandTrackingGesture_MAX" */ = definedExternally): `T$436`
-        fun GetConfiguration(ActiveStaticGestures: Array<String /* "Finger" | "Fist" | "Pinch" | "Thumb" | "L" | "OpenHand" | "OpenHandBack" | "Ok" | "C" | "NoPose" | "NoHand" | "EMagicLeapHandTrackingGesture_MAX" */> = definedExternally, KeypointsFilterLevel: String /* "NoFilter" | "SimpleSmoothing" | "PredictiveSmoothing" | "EMagicLeapHandTrackingKeypointFilterLevel_MAX" */ = definedExternally, GestureFilterLevel: String /* "NoFilter" | "SlightRobustnessToFlicker" | "MoreRobustnessToFlicker" | "EMagicLeapHandTrackingGestureFilterLevel_MAX" */ = definedExternally, bTrackingEnabled: Boolean = definedExternally): `T$437`
+        fun GetMotionSourceForHandKeypoint(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Keypoint: String /* "Thumb_Tip" | "Thumb_IP" | "Thumb_MCP" | "Thumb_CMC" | "Index_Tip" | "Index_DIP" | "Index_PIP" | "Index_MCP" | "Middle_Tip" | "Middle_DIP" | "Middle_PIP" | "Middle_MCP" | "Ring_Tip" | "Ring_DIP" | "Ring_PIP" | "Ring_MCP" | "Pinky_Tip" | "Pinky_DIP" | "Pinky_PIP" | "Pinky_MCP" | "Wrist_Center" | "Wrist_Ulnar" | "Wrist_Radial" | "Hand_Center" | "EMagicLeapHandTrackingKeypoint_MAX" */, OutMotionSource: String = definedExternally): `T$451`
+        fun GetMagicLeapHandTrackingLiveLinkSource(SourceHandle: LiveLinkSourceHandle = definedExternally): `T$452`
+        fun GetHandThumbTip(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, TransformSpace: String /* "World" | "Hand" | "Tracking" | "EMagicLeapGestureTransformSpace_MAX" */, Secondary: Transform = definedExternally): `T$453`
+        fun GetHandKeypointForMotionSource(MotionSource: String, OutKeyPoint: String /* "Thumb_Tip" | "Thumb_IP" | "Thumb_MCP" | "Thumb_CMC" | "Index_Tip" | "Index_DIP" | "Index_PIP" | "Index_MCP" | "Middle_Tip" | "Middle_DIP" | "Middle_PIP" | "Middle_MCP" | "Ring_Tip" | "Ring_DIP" | "Ring_PIP" | "Ring_MCP" | "Pinky_Tip" | "Pinky_DIP" | "Pinky_PIP" | "Pinky_MCP" | "Wrist_Center" | "Wrist_Ulnar" | "Wrist_Radial" | "Hand_Center" | "EMagicLeapHandTrackingKeypoint_MAX" */ = definedExternally): `T$454`
+        fun GetHandIndexFingerTip(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, TransformSpace: String /* "World" | "Hand" | "Tracking" | "EMagicLeapGestureTransformSpace_MAX" */, Pointer: Transform = definedExternally): `T$455`
+        fun GetHandCenterNormalized(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, HandCenterNormalized: Vector = definedExternally): `T$456`
+        fun GetHandCenter(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, HandCenter: Transform = definedExternally): `T$457`
+        fun GetGestureKeypointTransform(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Keypoint: String /* "Thumb_Tip" | "Thumb_IP" | "Thumb_MCP" | "Thumb_CMC" | "Index_Tip" | "Index_DIP" | "Index_PIP" | "Index_MCP" | "Middle_Tip" | "Middle_DIP" | "Middle_PIP" | "Middle_MCP" | "Ring_Tip" | "Ring_DIP" | "Ring_PIP" | "Ring_MCP" | "Pinky_Tip" | "Pinky_DIP" | "Pinky_PIP" | "Pinky_MCP" | "Wrist_Center" | "Wrist_Ulnar" | "Wrist_Radial" | "Hand_Center" | "EMagicLeapHandTrackingKeypoint_MAX" */, TransformSpace: String /* "World" | "Hand" | "Tracking" | "EMagicLeapGestureTransformSpace_MAX" */, Transform: Transform = definedExternally): `T$458`
+        fun GetGestureKeypoints(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Keypoints: Array<Transform> = definedExternally): `T$459`
+        fun GetCurrentGestureConfidence(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Confidence: Number = definedExternally): `T$460`
+        fun GetCurrentGesture(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Gesture: String /* "Finger" | "Fist" | "Pinch" | "Thumb" | "L" | "OpenHand" | "OpenHandBack" | "Ok" | "C" | "NoPose" | "NoHand" | "EMagicLeapHandTrackingGesture_MAX" */ = definedExternally): `T$461`
+        fun GetConfiguration(ActiveStaticGestures: Array<String /* "Finger" | "Fist" | "Pinch" | "Thumb" | "L" | "OpenHand" | "OpenHandBack" | "Ok" | "C" | "NoPose" | "NoHand" | "EMagicLeapHandTrackingGesture_MAX" */> = definedExternally, KeypointsFilterLevel: String /* "NoFilter" | "SimpleSmoothing" | "PredictiveSmoothing" | "EMagicLeapHandTrackingKeypointFilterLevel_MAX" */ = definedExternally, GestureFilterLevel: String /* "NoFilter" | "SlightRobustnessToFlicker" | "MoreRobustnessToFlicker" | "EMagicLeapHandTrackingGestureFilterLevel_MAX" */ = definedExternally, bTrackingEnabled: Boolean = definedExternally): `T$462`
         fun C(Other: UObject): MagicLeapHandTrackingFunctionLibrary
         fun C(Other: Any): MagicLeapHandTrackingFunctionLibrary
     }
@@ -12840,12 +15099,12 @@ external object EMagicLeapIdentityError {
     var EMagicLeapIdentityError_MAX: String /* "EMagicLeapIdentityError_MAX" */
 }
 
-external interface `T$438` {
+external interface `T$463` {
     var RequestedAttributeValues: Array<MagicLeapIdentityAttribute>
     var `$`: String /* "Ok" | "InvalidParam" | "AllocFailed" | "PrivilegeDenied" | "FailedToConnectToLocalService" | "FailedToConnectToCloudService" | "CloudAuthentication" | "InvalidInformationFromCloud" | "NotLoggedIn" | "ExpiredCredentials" | "FailedToGetUserProfile" | "Unauthorized" | "CertificateError" | "RejectedByCloud" | "AlreadyLoggedIn" | "ModifyIsNotSupported" | "NetworkError" | "UnspecifiedFailure" | "EMagicLeapIdentityError_MAX" */
 }
 
-external interface `T$439` {
+external interface `T$464` {
     var AvailableAttributes: Array<String /* "GivenName" | "FamilyName" | "Email" | "Bio" | "PhoneNumber" | "Avatar2D" | "Avatar3D" | "Unknown" | "EMagicLeapIdentityKey_MAX" */>
     var `$`: String /* "Ok" | "InvalidParam" | "AllocFailed" | "PrivilegeDenied" | "FailedToConnectToLocalService" | "FailedToConnectToCloudService" | "CloudAuthentication" | "InvalidInformationFromCloud" | "NotLoggedIn" | "ExpiredCredentials" | "FailedToGetUserProfile" | "Unauthorized" | "CertificateError" | "RejectedByCloud" | "AlreadyLoggedIn" | "ModifyIsNotSupported" | "NetworkError" | "UnspecifiedFailure" | "EMagicLeapIdentityError_MAX" */
 }
@@ -12853,8 +15112,8 @@ external interface `T$439` {
 external open class MagicLeapIdentity : UObject {
     constructor()
     constructor(Outer: UObject)
-    open fun RequestAttributeValue(RequestedAttributeList: Array<String /* "GivenName" | "FamilyName" | "Email" | "Bio" | "PhoneNumber" | "Avatar2D" | "Avatar3D" | "Unknown" | "EMagicLeapIdentityKey_MAX" */>, RequestedAttributeValues: Array<MagicLeapIdentityAttribute> = definedExternally): `T$438`
-    open fun GetAllAvailableAttributes(AvailableAttributes: Array<String /* "GivenName" | "FamilyName" | "Email" | "Bio" | "PhoneNumber" | "Avatar2D" | "Avatar3D" | "Unknown" | "EMagicLeapIdentityKey_MAX" */> = definedExternally): `T$439`
+    open fun RequestAttributeValue(RequestedAttributeList: Array<String /* "GivenName" | "FamilyName" | "Email" | "Bio" | "PhoneNumber" | "Avatar2D" | "Avatar3D" | "Unknown" | "EMagicLeapIdentityKey_MAX" */>, RequestedAttributeValues: Array<MagicLeapIdentityAttribute> = definedExternally): `T$463`
+    open fun GetAllAvailableAttributes(AvailableAttributes: Array<String /* "GivenName" | "FamilyName" | "Email" | "Bio" | "PhoneNumber" | "Avatar2D" | "Avatar3D" | "Unknown" | "EMagicLeapIdentityKey_MAX" */> = definedExternally): `T$464`
 
     companion object {
         fun Load(ResourceName: String): MagicLeapIdentity
@@ -13132,47 +15391,47 @@ external open class MagicLeapPersistentPlanesResultDelegateMulti__PythonCallable
     }
 }
 
-external interface `T$440` {
+external interface `T$465` {
     var DataToRetrieve: Vector
     var `$`: Boolean
 }
 
-external interface `T$441` {
+external interface `T$466` {
     var DataToRetrieve: Transform
     var `$`: Boolean
 }
 
-external interface `T$442` {
+external interface `T$467` {
     var DataToRetrieve: String
     var `$`: Boolean
 }
 
-external interface `T$443` {
+external interface `T$468` {
     var ObjectToRetrieve: SaveGame
     var `$`: Boolean
 }
 
-external interface `T$444` {
+external interface `T$469` {
     var DataToRetrieve: Rotator
     var `$`: Boolean
 }
 
-external interface `T$445` {
+external interface `T$470` {
     var DataToRetrieve: Any
     var `$`: Boolean
 }
 
-external interface `T$446` {
+external interface `T$471` {
     var DataToRetrieve: Number
     var `$`: Boolean
 }
 
-external interface `T$447` {
+external interface `T$472` {
     var DataToRetrieve: Boolean
     var `$`: Boolean
 }
 
-external interface `T$448` {
+external interface `T$473` {
     var DataToRetrieve: Array<Number>
     var `$`: Boolean
 }
@@ -13197,17 +15456,17 @@ external open class MagicLeapSecureStorage : BlueprintFunctionLibrary {
         fun PutSecureByte(Key: String, DataToStore: Number): Boolean
         fun PutSecureBool(Key: String, DataToStore: Boolean): Boolean
         fun PutSecureArray(Key: String, DataToStore: Array<Number>): Boolean
-        fun GetSecureVector(Key: String, DataToRetrieve: Vector = definedExternally): `T$440`
-        fun GetSecureTransform(Key: String, DataToRetrieve: Transform = definedExternally): `T$441`
-        fun GetSecureString(Key: String, DataToRetrieve: String = definedExternally): `T$442`
-        fun GetSecureSaveGame(Key: String, ObjectToRetrieve: SaveGame = definedExternally): `T$443`
-        fun GetSecureRotator(Key: String, DataToRetrieve: Rotator = definedExternally): `T$444`
-        fun GetSecureInt64(Key: String, DataToRetrieve: Any = definedExternally): `T$445`
-        fun GetSecureInt(Key: String, DataToRetrieve: Number = definedExternally): `T$446`
-        fun GetSecureFloat(Key: String, DataToRetrieve: Number = definedExternally): `T$446`
-        fun GetSecureByte(Key: String, DataToRetrieve: Number = definedExternally): `T$446`
-        fun GetSecureBool(Key: String, DataToRetrieve: Boolean = definedExternally): `T$447`
-        fun GetSecureArray(Key: String, DataToRetrieve: Array<Number> = definedExternally): `T$448`
+        fun GetSecureVector(Key: String, DataToRetrieve: Vector = definedExternally): `T$465`
+        fun GetSecureTransform(Key: String, DataToRetrieve: Transform = definedExternally): `T$466`
+        fun GetSecureString(Key: String, DataToRetrieve: String = definedExternally): `T$467`
+        fun GetSecureSaveGame(Key: String, ObjectToRetrieve: SaveGame = definedExternally): `T$468`
+        fun GetSecureRotator(Key: String, DataToRetrieve: Rotator = definedExternally): `T$469`
+        fun GetSecureInt64(Key: String, DataToRetrieve: Any = definedExternally): `T$470`
+        fun GetSecureInt(Key: String, DataToRetrieve: Number = definedExternally): `T$471`
+        fun GetSecureFloat(Key: String, DataToRetrieve: Number = definedExternally): `T$471`
+        fun GetSecureByte(Key: String, DataToRetrieve: Number = definedExternally): `T$471`
+        fun GetSecureBool(Key: String, DataToRetrieve: Boolean = definedExternally): `T$472`
+        fun GetSecureArray(Key: String, DataToRetrieve: Array<Number> = definedExternally): `T$473`
         fun DeleteSecureData(Key: String): Boolean
         fun C(Other: UObject): MagicLeapSecureStorage
         fun C(Other: Any): MagicLeapSecureStorage
@@ -13363,2284 +15622,6 @@ external open class ImgMediaPlaybackComponent : ActorComponent {
     }
 }
 
-external open class V8Config : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var bGenAltPropAccessorForAllProp: Boolean
-    open var bGenGetStructRefArrayFunction: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): V8Config
-        fun Find(Outer: UObject, ResourceName: String): V8Config
-        fun GetDefaultObject(): V8Config
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): V8Config
-        fun C(Other: UObject): V8Config
-        fun C(Other: Any): V8Config
-    }
-}
-
-external open class DirectoryWatcher : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Added: Array<String>
-    open var Modified: Array<String>
-    open var Removed: Array<String>
-    open var OnChanged: UnrealEngineMulticastDelegate<() -> Unit>
-    open fun Watch(Directory: String)
-    open fun Unwatch()
-    open fun Contains(File: String): Boolean
-
-    companion object {
-        fun Load(ResourceName: String): DirectoryWatcher
-        fun Find(Outer: UObject, ResourceName: String): DirectoryWatcher
-        fun GetDefaultObject(): DirectoryWatcher
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): DirectoryWatcher
-        fun C(Other: UObject): DirectoryWatcher
-        fun C(Other: Any): DirectoryWatcher
-    }
-}
-
-external interface `T$449` {
-    var OutFiles: Array<String>
-}
-
-external open class JavascriptContext : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Paths: Array<String>
-    open fun WriteDTS(Target: String, bIncludingTooltip: Boolean): Boolean
-    open fun WriteAliases(Target: String): Boolean
-    open fun UnregisterConsoleCommand(Command: String)
-    open fun SetContextId(Name: String)
-    open fun RunScript(Script: String, bOutput: Boolean): String
-    open fun RunFileWithArgs(Filename: String, Args: Array<String>): String
-    open fun RunFile(Filename: String): String
-    open fun ResetUnrealConsoleDelegate()
-    open fun RequestV8GarbageCollection()
-    open fun RegisterConsoleCommand(Command: String, Help: String, UFunction: JavascriptFunction)
-    open fun ReadScriptFile(Filename: String): String
-    open fun IsDebugContext(): Boolean
-    open fun GetScriptFileFullPath(Filename: String): String
-    open fun FindPathFile(TargetRootPath: String, TargetFileName: String, OutFiles: Array<String> = definedExternally): `T$449`
-    open fun Expose(Name: String, UObject: UObject)
-    open fun DestroyInspector()
-    open fun CreateInspector(Port: Number)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptContext
-        fun Find(Outer: UObject, ResourceName: String): JavascriptContext
-        fun GetDefaultObject(): JavascriptContext
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptContext
-        fun C(Other: UObject): JavascriptContext
-        fun C(Other: Any): JavascriptContext
-    }
-}
-
-external open class JavascriptHeapStatistics {
-    open var TotalHeapSize: Number
-    open var TotalHeapSizeExecutable: Number
-    open var TotalPhysicalSize: Number
-    open var TotalAvailableSize: Number
-    open var UsedHeapSize: Number
-    open var HeapSizeLimit: Number
-    open var MallocedMemory: Number
-    open var bDoesZapGarbage: Boolean
-    open fun clone(): JavascriptHeapStatistics
-
-    companion object {
-        fun C(Other: UObject): JavascriptHeapStatistics
-        fun C(Other: Any): JavascriptHeapStatistics
-    }
-}
-
-external interface `T$450` {
-    var Statistics: JavascriptHeapStatistics
-}
-
-external open class JavascriptIsolate : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun Init(bIsEditor: Boolean)
-    open fun GetHeapStatistics(Statistics: JavascriptHeapStatistics = definedExternally): `T$450`
-    open fun CreateContext(): JavascriptContext
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptIsolate
-        fun Find(Outer: UObject, ResourceName: String): JavascriptIsolate
-        fun GetDefaultObject(): JavascriptIsolate
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptIsolate
-        fun C(Other: UObject): JavascriptIsolate
-        fun C(Other: Any): JavascriptIsolate
-    }
-}
-
-external open class JavascriptAsset {
-    open var Name: String
-    open var Asset: SoftObjectPath
-    open fun clone(): JavascriptAsset
-
-    companion object {
-        fun C(Other: UObject): JavascriptAsset
-        fun C(Other: Any): JavascriptAsset
-    }
-}
-
-external open class JavascriptClassAsset {
-    open var Name: String
-    open var Class: UnrealEngineClass
-    open fun clone(): JavascriptClassAsset
-
-    companion object {
-        fun C(Other: UObject): JavascriptClassAsset
-        fun C(Other: Any): JavascriptClassAsset
-    }
-}
-
-external open class JavascriptComponent : ActorComponent {
-    constructor()
-    constructor(Outer: UObject)
-    open var ScriptSourceFile: String
-    open var bActiveWithinEditor: Boolean
-    open var JavascriptContext: JavascriptContext
-    open var JavascriptIsolate: JavascriptIsolate
-    open var OnTick: UnrealEngineDelegate<(DeltaSeconds: Number) -> Unit>
-    open var OnBeginPlay: UnrealEngineDelegate<() -> Unit>
-    open var OnEndPlay: UnrealEngineDelegate<() -> Unit>
-    open var OnInvoke: UnrealEngineDelegate<(Name: String) -> Unit>
-    open var Assets: Array<JavascriptAsset>
-    open var ClassAssets: Array<JavascriptClassAsset>
-    open fun ResolveClass(Name: String): UnrealEngineClass
-    open fun ResolveAsset(Name: String, bTryLoad: Boolean): UObject
-    open fun Invoke(Name: String)
-    open fun ForceGC()
-    open fun Expose(ExposedAs: String, UObject: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptComponent
-        fun Find(Outer: UObject, ResourceName: String): JavascriptComponent
-        fun GetDefaultObject(): JavascriptComponent
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptComponent
-        fun C(Other: UObject): JavascriptComponent
-        fun C(Other: Any): JavascriptComponent
-    }
-}
-
-external open class JavascriptDelegate : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun Fire()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptDelegate
-        fun Find(Outer: UObject, ResourceName: String): JavascriptDelegate
-        fun GetDefaultObject(): JavascriptDelegate
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptDelegate
-        fun C(Other: UObject): JavascriptDelegate
-        fun C(Other: Any): JavascriptDelegate
-    }
-}
-
-external open class JavascriptGeneratedClass : BlueprintGeneratedClass {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptGeneratedClass
-        fun Find(Outer: UObject, ResourceName: String): JavascriptGeneratedClass
-        fun GetDefaultObject(): JavascriptGeneratedClass
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGeneratedClass
-        fun C(Other: UObject): JavascriptGeneratedClass
-        fun C(Other: Any): JavascriptGeneratedClass
-    }
-}
-
-external open class JavascriptGeneratedClass_Native : BlueprintGeneratedClass {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptGeneratedClass_Native
-        fun Find(Outer: UObject, ResourceName: String): JavascriptGeneratedClass_Native
-        fun GetDefaultObject(): JavascriptGeneratedClass_Native
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGeneratedClass_Native
-        fun C(Other: UObject): JavascriptGeneratedClass_Native
-        fun C(Other: Any): JavascriptGeneratedClass_Native
-    }
-}
-
-external open class JavascriptGeneratedFunction : UFunction {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptGeneratedFunction
-        fun Find(Outer: UObject, ResourceName: String): JavascriptGeneratedFunction
-        fun GetDefaultObject(): JavascriptGeneratedFunction
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGeneratedFunction
-        fun C(Other: UObject): JavascriptGeneratedFunction
-        fun C(Other: Any): JavascriptGeneratedFunction
-    }
-}
-
-external open class JavascriptGlobalDelegates : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun UnbindAll()
-    open fun Unbind(Key: String)
-    open fun RedirectorFollowed(PackageName: String, Redirector: UObject)
-    open fun PreLoadMap(MapName: String)
-    open fun PreGarbageCollectDelegate()
-    open fun PostLoadMapWithWorld(World: World)
-    open fun PostGarbageCollect()
-    open fun PostDemoPlay()
-    open fun PostApplyLevelOffset(Level: Level, World: World, Offset: Vector, Flag: Boolean)
-    open fun PackageCreatedForLoad(InPackage: Package)
-    open fun OnWorldCleanup(World: World, bSessionEnded: Boolean, bCleanupResources: Boolean)
-    open fun OnPreWorldInitialization_Friendly(World: World)
-    open fun OnPreWorldFinishDestroy(World: World)
-    open fun OnPreObjectPropertyChanged_Friendly(InObject: UObject, Property: Any, MemberProperty: Any)
-    open fun OnPostWorldInitialization_Friendly(World: World)
-    open fun OnPostWorldCreation(World: World)
-    open fun OnPostDuplicate_Friendly(World: World, bDuplicateForPIE: Boolean)
-    open fun OnObjectSaved(UObject: UObject)
-    open fun OnObjectPropertyChanged_Friendly(InObject: UObject, Property: Any, MemberProperty: Any, ChangeType: Number)
-    open fun OnObjectModified(UObject: UObject)
-    open fun OnAssetLoaded(UObject: UObject)
-    open fun OnActorLabelChanged(Actor: Actor)
-    open fun LevelRemovedFromWorld(Level: Level, World: World)
-    open fun LevelAddedToWorld(Level: Level, World: World)
-    open fun Bind(Key: String)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptGlobalDelegates
-        fun Find(Outer: UObject, ResourceName: String): JavascriptGlobalDelegates
-        fun GetDefaultObject(): JavascriptGlobalDelegates
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGlobalDelegates
-        fun C(Other: UObject): JavascriptGlobalDelegates
-        fun C(Other: Any): JavascriptGlobalDelegates
-    }
-}
-
-external open class JavascriptStaticCache : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Isolates: Array<JavascriptIsolate>
-    open var bExecuteTestModePIE: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptStaticCache
-        fun Find(Outer: UObject, ResourceName: String): JavascriptStaticCache
-        fun GetDefaultObject(): JavascriptStaticCache
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptStaticCache
-        fun C(Other: UObject): JavascriptStaticCache
-        fun C(Other: Any): JavascriptStaticCache
-    }
-}
-
-external open class JavascriptStreamableManager {
-    open fun clone(): JavascriptStreamableManager
-    open fun IsAsyncLoadComplete(Target: SoftObjectPath): Boolean
-    open fun RequestAsyncLoad(TargetsToStream: Array<SoftObjectPath>, DelegateToCall: JavascriptFunction, Priority: Number)
-    open fun SimpleAsyncLoad(Target: SoftObjectPath, Priority: Number)
-    open fun Unload(Target: SoftObjectPath)
-
-    companion object {
-        fun C(Other: UObject): JavascriptStreamableManager
-        fun C(Other: Any): JavascriptStreamableManager
-        fun IsAsyncLoadComplete(Manager: JavascriptStreamableManager, Target: SoftObjectPath): Boolean
-        fun RequestAsyncLoad(Manager: JavascriptStreamableManager, TargetsToStream: Array<SoftObjectPath>, DelegateToCall: JavascriptFunction, Priority: Number)
-        fun SimpleAsyncLoad(Manager: JavascriptStreamableManager, Target: SoftObjectPath, Priority: Number)
-        fun Unload(Manager: JavascriptStreamableManager, Target: SoftObjectPath)
-        fun CreateStreamableManager(): JavascriptStreamableManager
-    }
-}
-
-external interface `T$451` {
-    var Addr: JavascriptInternetAddr
-    var bValid: Boolean
-}
-
-external interface `T$452` {
-    var Addr: JavascriptInternetAddr
-}
-
-external open class JavascriptInternetAddr {
-    open fun clone(): JavascriptInternetAddr
-    open fun SetIp(ResolvedAddress: String = definedExternally, bValid: Boolean = definedExternally): `T$451`
-    open fun SetPort(Port: Number = definedExternally): `T$452`
-
-    companion object {
-        fun C(Other: UObject): JavascriptInternetAddr
-        fun C(Other: Any): JavascriptInternetAddr
-        fun SetIp(Addr: JavascriptInternetAddr = definedExternally, ResolvedAddress: String = definedExternally, bValid: Boolean = definedExternally): `T$451`
-        fun SetPort(Addr: JavascriptInternetAddr = definedExternally, Port: Number = definedExternally): `T$452`
-        fun CreateInternetAddr(): JavascriptInternetAddr
-    }
-}
-
-external interface `T$453` {
-    var Socket: JavascriptSocket
-    var BytesSent: Number
-    var `$`: Boolean
-}
-
-external open class JavascriptSocket {
-    open fun clone(): JavascriptSocket
-    open fun SendMemoryTo(ToAddr: JavascriptInternetAddr = definedExternally, NumBytes: Number = definedExternally, BytesSent: Number = definedExternally): `T$453`
-
-    companion object {
-        fun C(Other: UObject): JavascriptSocket
-        fun C(Other: Any): JavascriptSocket
-        fun SendMemoryTo(Socket: JavascriptSocket = definedExternally, ToAddr: JavascriptInternetAddr = definedExternally, NumBytes: Number = definedExternally, BytesSent: Number = definedExternally): `T$453`
-        fun CreateSocket(SocketType: String, Description: String, bForceUDP: Boolean): JavascriptSocket
-    }
-}
-
-external object EJavascriptStatDataType {
-    var Invalid: String /* "Invalid" */
-    var ST_None: String /* "ST_None" */
-    var ST_int64: String /* "ST_int64" */
-    var ST_double: String /* "ST_double" */
-    var ST_FName: String /* "ST_FName" */
-    var ST_Ptr: String /* "ST_Ptr" */
-    var EJavascriptStatDataType_MAX: String /* "EJavascriptStatDataType_MAX" */
-}
-
-external object EJavascriptStatOperation {
-    var Invalid: String /* "Invalid" */
-    var SetLongName: String /* "SetLongName" */
-    var AdvanceFrameEventGameThread: String /* "AdvanceFrameEventGameThread" */
-    var AdvanceFrameEventRenderThread: String /* "AdvanceFrameEventRenderThread" */
-    var CycleScopeStart: String /* "CycleScopeStart" */
-    var CycleScopeEnd: String /* "CycleScopeEnd" */
-    var SpecialMessageMarker: String /* "SpecialMessageMarker" */
-    var Set: String /* "Set" */
-    var Clear: String /* "Clear" */
-    var Add: String /* "Add" */
-    var Subtract: String /* "Subtract" */
-    var ChildrenStart: String /* "ChildrenStart" */
-    var ChildrenEnd: String /* "ChildrenEnd" */
-    var Leaf: String /* "Leaf" */
-    var MaxVal: String /* "MaxVal" */
-    var Memory: String /* "Memory" */
-    var EJavascriptStatOperation_MAX: String /* "EJavascriptStatOperation_MAX" */
-}
-
-external open class JavascriptStat {
-    open fun clone(): JavascriptStat
-    open fun AddMessage(InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */)
-    open fun AddMessage_float(InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
-    open fun AddMessage_int(InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
-
-    companion object {
-        fun C(Other: UObject): JavascriptStat
-        fun C(Other: Any): JavascriptStat
-        fun AddMessage(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */)
-        fun AddMessage_float(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
-        fun AddMessage_int(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
-        fun NewStat(InStatName: String, InStatDesc: String, InGroupName: String, InGroupCategory: String, InGroupDesc: String, bDefaultEnable: Boolean, bShouldClearEveryFrame: Boolean, InStatType: String /* "Invalid" | "ST_None" | "ST_int64" | "ST_double" | "ST_FName" | "ST_Ptr" | "EJavascriptStatDataType_MAX" */, bCycleStat: Boolean, bSortByName: Boolean): JavascriptStat
-    }
-}
-
-external object ELogVerbosity_JS {
-    var NoLogging: String /* "NoLogging" */
-    var Fatal: String /* "Fatal" */
-    var Error: String /* "Error" */
-    var Warning: String /* "Warning" */
-    var Display: String /* "Display" */
-    var Log: String /* "Log" */
-    var Verbose: String /* "Verbose" */
-    var VeryVerbose: String /* "VeryVerbose" */
-    var ELogVerbosity_MAX: String /* "ELogVerbosity_MAX" */
-}
-
-external open class JavascriptLogCategory {
-    open fun clone(): JavascriptLogCategory
-    open fun GetCategoryName(): String
-    open fun IsSuppressed(Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): Boolean
-    open fun Log(Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Message: String, Filename: String, LineNumber: Number)
-
-    companion object {
-        fun C(Other: UObject): JavascriptLogCategory
-        fun C(Other: Any): JavascriptLogCategory
-        fun GetCategoryName(Category: JavascriptLogCategory): String
-        fun IsSuppressed(Category: JavascriptLogCategory, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): Boolean
-        fun Log(Category: JavascriptLogCategory, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Message: String, Filename: String, LineNumber: Number)
-        fun CreateLogCategory(CategoryName: String, InDefaultVerbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): JavascriptLogCategory
-    }
-}
-
-external open class JavscriptProperty {
-    open var Type: String
-    open var Name: String
-    open fun clone(): JavscriptProperty
-
-    companion object {
-        fun C(Other: UObject): JavscriptProperty
-        fun C(Other: Any): JavscriptProperty
-    }
-}
-
-external open class JavascriptProfileNode {
-    open fun clone(): JavascriptProfileNode
-    open fun GetBailoutReason(): String
-    open fun GetCallUid(): Number
-    open fun GetChild(index: Number): JavascriptProfileNode
-    open fun GetChildrenCount(): Number
-    open fun GetColumnNumber(): Number
-    open fun GetDeoptInfo_Reason(index: Number): String
-    open fun GetDeoptInfo_Stack(index: Number): String
-    open fun GetDeoptInfosCount(index: Number): Number
-    open fun GetFunctionName(): String
-    open fun GetHitCount(): Number
-    open fun GetHitLineCount(): Number
-    open fun GetLineNumber(): Number
-    open fun GetNodeId(): Number
-    open fun GetScriptId(): Number
-    open fun GetScriptResourceName(): String
-
-    companion object {
-        fun C(Other: UObject): JavascriptProfileNode
-        fun C(Other: Any): JavascriptProfileNode
-        fun GetBailoutReason(UNode: JavascriptProfileNode): String
-        fun GetCallUid(UNode: JavascriptProfileNode): Number
-        fun GetChild(UNode: JavascriptProfileNode, index: Number): JavascriptProfileNode
-        fun GetChildrenCount(UNode: JavascriptProfileNode): Number
-        fun GetColumnNumber(UNode: JavascriptProfileNode): Number
-        fun GetDeoptInfo_Reason(UNode: JavascriptProfileNode, index: Number): String
-        fun GetDeoptInfo_Stack(UNode: JavascriptProfileNode, index: Number): String
-        fun GetDeoptInfosCount(UNode: JavascriptProfileNode, index: Number): Number
-        fun GetFunctionName(UNode: JavascriptProfileNode): String
-        fun GetHitCount(UNode: JavascriptProfileNode): Number
-        fun GetHitLineCount(UNode: JavascriptProfileNode): Number
-        fun GetLineNumber(UNode: JavascriptProfileNode): Number
-        fun GetNodeId(UNode: JavascriptProfileNode): Number
-        fun GetScriptId(UNode: JavascriptProfileNode): Number
-        fun GetScriptResourceName(UNode: JavascriptProfileNode): String
-    }
-}
-
-external interface `T$454` {
-    var OutIp: String
-    var `$`: Boolean
-}
-
-external interface `T$455` {
-    var OutItems: Array<DirectoryItem>
-    var `$`: Boolean
-}
-
-external interface `T$456` {
-    var Results: Array<UObject>
-}
-
-external interface `T$457` {
-    var Results: Array<UObject>
-}
-
-external interface `T$458` {
-    var Results: Array<UnrealEngineClass>
-}
-
-external interface `T$459` {
-    var OutActors: Array<Actor>
-}
-
-external interface `T$460` {
-    var OutActors: Array<Actor>
-}
-
-external open class JavascriptLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptLibrary
-        fun Find(Outer: UObject, ResourceName: String): JavascriptLibrary
-        fun GetDefaultObject(): JavascriptLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptLibrary
-        fun WriteStringToFile(UObject: UObject, Filename: String, Data: String, EncodingOptions: String /* "AutoDetect" | "ForceAnsi" | "ForceUnicode" | "ForceUTF8" | "ForceUTF8WithoutBOM" | "EJavascriptEncodingOptions_MAX" */): Boolean
-        fun WriteFile(UObject: UObject, Filename: String): Boolean
-        fun V8_SetIdleTaskBudget(BudgetInSeconds: Number)
-        fun V8_SetFlagsFromString(V8Flags: String)
-        fun V8_IsEnableHotReload(): Boolean
-        fun UnregisterComponent(ActorComponent: ActorComponent)
-        fun Unload(Manager: JavascriptStreamableManager, Target: SoftObjectPath)
-        fun TryLoadByPath(Path: String): UObject
-        fun SimpleAsyncLoad(Manager: JavascriptStreamableManager, Target: SoftObjectPath, Priority: Number)
-        fun SetRootComponent(Actor: Actor, Component: SceneComponent)
-        fun SetPort(Addr: JavascriptInternetAddr = definedExternally, Port: Number = definedExternally): `T$452`
-        fun SetObjectFlags(Obj: UObject, Flags: Number)
-        fun SetMobility(SceneComponent: SceneComponent, Type: String /* "Static" | "Stationary" | "Movable" | "EComponentMobility_MAX" */)
-        fun SetMobile(SceneComponent: SceneComponent)
-        fun SetIp(Addr: JavascriptInternetAddr = definedExternally, ResolvedAddress: String = definedExternally, bValid: Boolean = definedExternally): `T$451`
-        fun SetClientTravel(Engine: Engine, InWorld: World, NextURL: String, InTravelType: String /* "TRAVEL_Absolute" | "TRAVEL_Partial" | "TRAVEL_Relative" | "TRAVEL_MAX" */)
-        fun SetActorFlags(Actor: Actor, Flags: Number)
-        fun SendMemoryTo(Socket: JavascriptSocket = definedExternally, ToAddr: JavascriptInternetAddr = definedExternally, NumBytes: Number = definedExternally, BytesSent: Number = definedExternally): `T$453`
-        fun SegmentIntersection2D(SegmentStartA: Vector, SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$232`
-        fun ResolveIp(HostName: String, OutIp: String = definedExternally): `T$454`
-        fun ReregisterComponent(ActorComponent: ActorComponent)
-        fun ReregisterAllComponents(Actor: Actor)
-        fun RequestAsyncLoad(Manager: JavascriptStreamableManager, TargetsToStream: Array<SoftObjectPath>, DelegateToCall: JavascriptFunction, Priority: Number)
-        fun RegisterComponent(ActorComponent: ActorComponent)
-        fun ReadStringFromFileAsync(UObject: UObject, Filename: String, UFunction: JavascriptFunction): ReadStringFromFileHandle
-        fun ReadStringFromFile(UObject: UObject, Filename: String, ReadFlags: String /* "FILEREAD_None" | "FILEREAD_NoFail" | "FILEREAD_Silent" | "FILEREAD_NotUsedDummy" | "FILEREAD_AllowWrite" | "FILEREAD_MAX" */): String
-        fun ReadFile(UObject: UObject, Filename: String): Boolean
-        fun ReadDirectory(UObject: UObject, Directory: String, OutItems: Array<DirectoryItem> = definedExternally): `T$455`
-        fun NewStat(InStatName: String, InStatDesc: String, InGroupName: String, InGroupCategory: String, InGroupDesc: String, bDefaultEnable: Boolean, bShouldClearEveryFrame: Boolean, InStatType: String /* "Invalid" | "ST_None" | "ST_int64" | "ST_double" | "ST_FName" | "ST_Ptr" | "EJavascriptStatDataType_MAX" */, bCycleStat: Boolean, bSortByName: Boolean): JavascriptStat
-        fun MarkRenderStateDirty(Component: ActorComponent)
-        fun MakeDirectory(Path: String, Tree: Boolean): Boolean
-        fun Log(Category: JavascriptLogCategory, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Message: String, Filename: String, LineNumber: Number)
-        fun LoadPackage(InOuter: Package, PackageName: String): Package
-        fun IsSuppressed(Category: JavascriptLogCategory, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): Boolean
-        fun IsRegistered(ActorComponent: ActorComponent): Boolean
-        fun IsPlayInPreview(World: World): Boolean
-        fun IsPlayInEditor(World: World): Boolean
-        fun IsPendingKill(InActor: Actor): Boolean
-        fun IsGeneratedByBlueprint(InClass: UnrealEngineClass): Boolean
-        fun IsGameWorld(World: World): Boolean
-        fun IsAsyncLoadComplete(Manager: JavascriptStreamableManager, Target: SoftObjectPath): Boolean
-        fun HasUndo(Engine: Engine): Boolean
-        fun HasAnyPackageFlags(Package: Package, Flags: Number): Boolean
-        fun HasAnyFlags(UObject: UObject, Flags: Number): Boolean
-        fun HandleSeamlessTravelPlayer(GameMode: GameModeBase, C: Controller = definedExternally): `T$252`
-        fun GetWorldBounds(InWorld: World): Box
-        fun GetSuperClasses(InClass: UnrealEngineClass): Array<UnrealEngineClass>
-        fun GetStructProperties(StructName: String, bIncludeSuper: Boolean): Array<JavscriptProperty>
-        fun GetScriptResourceName(UNode: JavascriptProfileNode): String
-        fun GetScriptId(UNode: JavascriptProfileNode): Number
-        fun GetPlatformName(): String
-        fun GetOutermost(UObject: UObject): UObject
-        fun GetOuter(UObject: UObject): UObject
-        fun GetObjectsWithOuter(Outer: UObject, Results: Array<UObject> = definedExternally, bIncludeNestedObjects: Boolean = definedExternally, ExclusionFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$456`
-        fun GetObjectsOfClass(ClassToLookFor: UnrealEngineClass, Results: Array<UObject> = definedExternally, bIncludeDerivedClasses: Boolean = definedExternally, ExcludeFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$457`
-        fun GetNodeId(UNode: JavascriptProfileNode): Number
-        fun GetName(UObject: UObject): String
-        fun GetModel(World: World): Model
-        fun GetMetaData(Field: Field, Key: String): String
-        fun GetLineNumber(UNode: JavascriptProfileNode): Number
-        fun GetLevels(World: World): Array<Level>
-        fun GetLevel(Actor: Actor): Level
-        fun GetLastRenderTime(Actor: Actor): Number
-        fun GetHitLineCount(UNode: JavascriptProfileNode): Number
-        fun GetHitCount(UNode: JavascriptProfileNode): Number
-        fun GetFunctionParmsSize(UFunction: UFunction): Number
-        fun GetFunctionName(UNode: JavascriptProfileNode): String
-        fun GetFileSize(UObject: UObject, Filename: String): Number
-        fun GetFields(UObject: UObject, bIncludeSuper: Boolean): Array<Field>
-        fun GetEnumListByEnumName(EnumName: String): Array<String>
-        fun GetDynamicBinding(Outer: UnrealEngineClass, BindingObjectClass: UnrealEngineClass): DynamicBlueprintBinding
-        fun GetDir(UObject: UObject, WhichDir: String): String
-        fun GetDerivedClasses(ClassToLookFor: UnrealEngineClass, Results: Array<UnrealEngineClass> = definedExternally, bRecursive: Boolean = definedExternally): `T$458`
-        fun GetDeoptInfosCount(UNode: JavascriptProfileNode, index: Number): Number
-        fun GetDeoptInfo_Stack(UNode: JavascriptProfileNode, index: Number): String
-        fun GetDeoptInfo_Reason(UNode: JavascriptProfileNode, index: Number): String
-        fun GetCurrentProcessId(): Number
-        fun GetComponentsByClass(Actor: Actor, ComponentClass: UnrealEngineClass): Array<ActorComponent>
-        fun GetColumnNumber(UNode: JavascriptProfileNode): Number
-        fun GetClassPathName(Class: UnrealEngineClass): String
-        fun GetChildrenCount(UNode: JavascriptProfileNode): Number
-        fun GetChild(UNode: JavascriptProfileNode, index: Number): JavascriptProfileNode
-        fun GetCategoryName(Category: JavascriptLogCategory): String
-        fun GetCallUid(UNode: JavascriptProfileNode): Number
-        fun GetBlueprintGeneratedClassFromPath(Path: String): UnrealEngineClass
-        fun GetBlueprintGeneratedClass(Blueprint: Blueprint): UnrealEngineClass
-        fun GetBailoutReason(UNode: JavascriptProfileNode): String
-        fun GetArchetypePathName(UObject: UObject): String
-        fun GetAllActorsOfClassAndTagsInCurrentLevel(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$459`
-        fun GetAllActorsOfClassAndTags(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$460`
-        fun GenerateNavigation(InWorld: World, NavData: RecastNavMesh)
-        fun FindPackage(InOuter: UObject, PackageName: String): Package
-        fun FindObjectWithOuter(Outer: UObject, ClassToLookFor: UnrealEngineClass, NameToLookFor: String): UObject
-        fun FileExists(Filename: String): Boolean
-        fun Duplicate(UObject: UObject, Outer: UObject, Name: String): UObject
-        fun DirectoryExists(InDirectory: String): Boolean
-        fun DeleteFile(Filename: String, ReadOnly: Boolean): Boolean
-        fun DeleteDirectory(Path: String, RequireExists: Boolean, Tree: Boolean): Boolean
-        fun CreateStreamableManager(): JavascriptStreamableManager
-        fun CreateSocket(SocketType: String, Description: String, bForceUDP: Boolean): JavascriptSocket
-        fun CreatePackage(Outer: UObject, PackageName: String): Package
-        fun CreateLogCategory(CategoryName: String, InDefaultVerbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */): JavascriptLogCategory
-        fun CreateInternetAddr(): JavascriptInternetAddr
-        fun CreateEnum(Outer: UObject, Name: String, DisplayNames: Array<String>, Flags: Array<String>): Enum
-        fun ConvertRelativePathToFull(UObject: UObject, RelativePath: String): String
-        fun ClipboardPaste(): String
-        fun ClipboardCopy(string: String)
-        fun CallJS(UFunction: JavascriptFunction, CustomStruct: JavascriptStubStruct)
-        fun AddMessage_int(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
-        fun AddMessage_float(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */, Value: Number, bIsCycle: Boolean)
-        fun AddMessage(Stat: JavascriptStat, InStatOperation: String /* "Invalid" | "SetLongName" | "AdvanceFrameEventGameThread" | "AdvanceFrameEventRenderThread" | "CycleScopeStart" | "CycleScopeEnd" | "SpecialMessageMarker" | "Set" | "Clear" | "Add" | "Subtract" | "ChildrenStart" | "ChildrenEnd" | "Leaf" | "MaxVal" | "Memory" | "EJavascriptStatOperation_MAX" */)
-        fun AddDynamicBinding(Outer: UnrealEngineClass, BindingObject: DynamicBlueprintBinding)
-        fun Actor_GetWorld(Actor: Actor): World
-        fun C(Other: UObject): JavascriptLibrary
-        fun C(Other: Any): JavascriptLibrary
-    }
-}
-
-external open class JavascriptMemoryObject : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptMemoryObject
-        fun Find(Outer: UObject, ResourceName: String): JavascriptMemoryObject
-        fun GetDefaultObject(): JavascriptMemoryObject
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptMemoryObject
-        fun C(Other: UObject): JavascriptMemoryObject
-        fun C(Other: Any): JavascriptMemoryObject
-    }
-}
-
-external open class JavascriptRef {
-    open fun clone(): JavascriptRef
-
-    companion object {
-        fun C(Other: UObject): JavascriptRef
-        fun C(Other: Any): JavascriptRef
-    }
-}
-
-external open class JavascriptObject : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Ref: JavascriptRef
-    open var Func: JavascriptFunction
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptObject
-        fun Find(Outer: UObject, ResourceName: String): JavascriptObject
-        fun GetDefaultObject(): JavascriptObject
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptObject
-        fun C(Other: UObject): JavascriptObject
-        fun C(Other: Any): JavascriptObject
-    }
-}
-
-external open class JavascriptOutputDevice : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun OnMessage(Message: String, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Category: String)
-    open fun Kill()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptOutputDevice
-        fun Find(Outer: UObject, ResourceName: String): JavascriptOutputDevice
-        fun GetDefaultObject(): JavascriptOutputDevice
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptOutputDevice
-        fun Log(Category: String, Verbosity: String /* "NoLogging" | "Fatal" | "Error" | "Warning" | "Display" | "Log" | "Verbose" | "VeryVerbose" | "ELogVerbosity_MAX" */, Filename: String, LineNumber: Number, Message: String)
-        fun C(Other: UObject): JavascriptOutputDevice
-        fun C(Other: Any): JavascriptOutputDevice
-    }
-}
-
-external interface `T$461` {
-    var OutWritten: String
-    var `$`: Boolean
-}
-
-external interface `T$462` {
-    var Array: Array<Number>
-    var `$`: Boolean
-}
-
-external interface `T$463` {
-    var Error: String
-}
-
-external interface `T$464` {
-    var ReturnCode: Number
-    var `$`: Boolean
-}
-
-external open class JavascriptProcess : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun WriteToPipe(Message: String, OutWritten: String = definedExternally): `T$461`
-    open fun Wait()
-    open fun Terminate(KillTree: Boolean)
-    open fun ReadFromPipe(): String
-    open fun ReadArrayFromPipe(Array: Array<Number> = definedExternally): `T$462`
-    open fun IsRunning(): Boolean
-    open fun GetReturnCode(ReturnCode: Number = definedExternally): `T$464`
-    open fun Close()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptProcess
-        fun Find(Outer: UObject, ResourceName: String): JavascriptProcess
-        fun GetDefaultObject(): JavascriptProcess
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptProcess
-        fun Sleep(Seconds: Number)
-        fun SimulateKeypress(KeyEvent: Number)
-        fun SetEnvironmentVar(VarName: String, VarValue: String)
-        fun Open_PID(ProcessId: Number): JavascriptProcess
-        fun Open(ProcName: String): JavascriptProcess
-        fun LaunchURL(URL: String, Parms: String, Error: String = definedExternally): `T$463`
-        fun IsApplicationRunning_PID(ProcessId: Number): Boolean
-        fun IsApplicationRunning(ProcName: String): Boolean
-        fun GetString(Key: String, bFlag: Boolean): String
-        fun GetEnvironmentVar(VarName: String): String
-        fun GetCurrentProcessId(): Number
-        fun GetApplicationName(ProcessId: Number): String
-        fun CreateWidget(URL: String, Parms: String, bLaunchDetached: Boolean, bLaunchHidden: Boolean, bLaunchReallyHidden: Boolean, PriorityModifier: Number, OptionalWorkingDirectory: String, bUsePipe: Boolean): JavascriptProcess
-        fun CanLaunchURL(URL: String): Boolean
-        fun C(Other: UObject): JavascriptProcess
-        fun C(Other: Any): JavascriptProcess
-    }
-}
-
-external open class JavascriptCpuProfiler {
-    open fun clone(): JavascriptCpuProfiler
-
-    companion object {
-        fun C(Other: UObject): JavascriptCpuProfiler
-        fun C(Other: Any): JavascriptCpuProfiler
-    }
-}
-
-external open class JavascriptProfile : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun GetTopDownRoot(): JavascriptProfileNode
-    open fun GetSampleTimestamp(index: Number): Number
-    open fun GetSamplesCount(): Number
-    open fun GetSample(index: Number): JavascriptProfileNode
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptProfile
-        fun Find(Outer: UObject, ResourceName: String): JavascriptProfile
-        fun GetDefaultObject(): JavascriptProfile
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptProfile
-        fun Stop(Profiler: JavascriptCpuProfiler, Title: String): JavascriptProfile
-        fun Start(Title: String, bRecordSamples: Boolean): JavascriptCpuProfiler
-        fun SetSamplingInterval(Profiler: JavascriptCpuProfiler, us: Number)
-        fun SetIdle(Profiler: JavascriptCpuProfiler, is_idle: Boolean)
-        fun C(Other: UObject): JavascriptProfile
-        fun C(Other: Any): JavascriptProfile
-    }
-}
-
-external open class JavascriptSemaphore : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun Unlock()
-    open fun TryLock(NanosecondsToWait: Number): Boolean
-    open fun Lock()
-    open fun Dispose()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptSemaphore
-        fun Find(Outer: UObject, ResourceName: String): JavascriptSemaphore
-        fun GetDefaultObject(): JavascriptSemaphore
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptSemaphore
-        fun CreateWidget(Name: String, bCreate: Boolean, MaxLocks: Number): JavascriptSemaphore
-        fun C(Other: UObject): JavascriptSemaphore
-        fun C(Other: Any): JavascriptSemaphore
-    }
-}
-
-external open class JavascriptSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var V8Flags: String
-    open var bEnableHotReload: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptSettings
-        fun Find(Outer: UObject, ResourceName: String): JavascriptSettings
-        fun GetDefaultObject(): JavascriptSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptSettings
-        fun C(Other: UObject): JavascriptSettings
-        fun C(Other: Any): JavascriptSettings
-    }
-}
-
-external open class JavascriptSharedMemoryRegion : JavascriptMemoryObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun Dispose()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptSharedMemoryRegion
-        fun Find(Outer: UObject, ResourceName: String): JavascriptSharedMemoryRegion
-        fun GetDefaultObject(): JavascriptSharedMemoryRegion
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptSharedMemoryRegion
-        fun Create(Name: String, bCreate: Boolean, bRead: Boolean, bWrite: Boolean, Size: Number): JavascriptSharedMemoryRegion
-        fun C(Other: UObject): JavascriptSharedMemoryRegion
-        fun C(Other: Any): JavascriptSharedMemoryRegion
-    }
-}
-
-external interface `T$465` {
-    var Test: JavascriptAutomatedTestInstance
-}
-
-external open class JavascriptAutomatedTestInstance {
-    open fun clone(): JavascriptAutomatedTestInstance
-    open fun AddAnalyticsItem(InAnalyticsItem: String)
-    open fun AddError(InError: String)
-    open fun AddLogItem(InLogItem: String)
-    open fun AddWarning(InWarning: String)
-    open fun ClearExecutionInfo()
-    open fun Destroy(): `T$465`
-    open fun SetContinue(bInContinue: Boolean)
-
-    companion object {
-        fun C(Other: UObject): JavascriptAutomatedTestInstance
-        fun C(Other: Any): JavascriptAutomatedTestInstance
-        fun AddAnalyticsItem(Test: JavascriptAutomatedTestInstance, InAnalyticsItem: String)
-        fun AddError(Test: JavascriptAutomatedTestInstance, InError: String)
-        fun AddLogItem(Test: JavascriptAutomatedTestInstance, InLogItem: String)
-        fun AddWarning(Test: JavascriptAutomatedTestInstance, InWarning: String)
-        fun ClearExecutionInfo(Test: JavascriptAutomatedTestInstance)
-        fun Destroy(Test: JavascriptAutomatedTestInstance = definedExternally): `T$465`
-        fun SetContinue(Test: JavascriptAutomatedTestInstance, bInContinue: Boolean)
-    }
-}
-
-external open class JavascriptAutomatedTest {
-    open var Name: String
-    open var bComplexTask: Boolean
-    open var TestFlags: Number
-    open var RequiredDeviceNum: Number
-    open var TestFunctionNames: Array<String>
-    open var UFunction: JavascriptFunction
-    open fun clone(): JavascriptAutomatedTest
-    open fun Create(): JavascriptAutomatedTestInstance
-
-    companion object {
-        fun C(Other: UObject): JavascriptAutomatedTest
-        fun C(Other: Any): JavascriptAutomatedTest
-        fun Create(Test: JavascriptAutomatedTest): JavascriptAutomatedTestInstance
-    }
-}
-
-external open class JavascriptTestLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptTestLibrary
-        fun Find(Outer: UObject, ResourceName: String): JavascriptTestLibrary
-        fun GetDefaultObject(): JavascriptTestLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTestLibrary
-        fun SetContinue(Test: JavascriptAutomatedTestInstance, bInContinue: Boolean)
-        fun PushFrameCounter()
-        fun PopFrameCounter()
-        fun NewWorld(): World
-        fun InitializeActorsForPlay(World: World, URL: URL)
-        fun DestroyWorld(World: World)
-        fun DestroyUObject(UObject: UObject)
-        fun Destroy(Test: JavascriptAutomatedTestInstance = definedExternally): `T$465`
-        fun Create(Test: JavascriptAutomatedTest): JavascriptAutomatedTestInstance
-        fun ClearExecutionInfo(Test: JavascriptAutomatedTestInstance)
-        fun BeginPlay(World: World)
-        fun AddWarning(Test: JavascriptAutomatedTestInstance, InWarning: String)
-        fun AddLogItem(Test: JavascriptAutomatedTestInstance, InLogItem: String)
-        fun AddError(Test: JavascriptAutomatedTestInstance, InError: String)
-        fun AddAnalyticsItem(Test: JavascriptAutomatedTestInstance, InAnalyticsItem: String)
-        fun C(Other: UObject): JavascriptTestLibrary
-        fun C(Other: Any): JavascriptTestLibrary
-    }
-}
-
-external open class DirectoryWatcherCallback__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): DirectoryWatcherCallback__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): DirectoryWatcherCallback__PythonCallable
-        fun GetDefaultObject(): DirectoryWatcherCallback__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): DirectoryWatcherCallback__PythonCallable
-        fun C(Other: UObject): DirectoryWatcherCallback__PythonCallable
-        fun C(Other: Any): DirectoryWatcherCallback__PythonCallable
-    }
-}
-
-external open class JavascriptNameSignature__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptNameSignature__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptNameSignature__PythonCallable
-        fun GetDefaultObject(): JavascriptNameSignature__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptNameSignature__PythonCallable
-        fun C(Other: UObject): JavascriptNameSignature__PythonCallable
-        fun C(Other: Any): JavascriptNameSignature__PythonCallable
-    }
-}
-
-external open class JavascriptNoParamSignature__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptNoParamSignature__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptNoParamSignature__PythonCallable
-        fun GetDefaultObject(): JavascriptNoParamSignature__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptNoParamSignature__PythonCallable
-        fun C(Other: UObject): JavascriptNoParamSignature__PythonCallable
-        fun C(Other: Any): JavascriptNoParamSignature__PythonCallable
-    }
-}
-
-external open class JavascriptTickSignature__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptTickSignature__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptTickSignature__PythonCallable
-        fun GetDefaultObject(): JavascriptTickSignature__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTickSignature__PythonCallable
-        fun C(Other: UObject): JavascriptTickSignature__PythonCallable
-        fun C(Other: Any): JavascriptTickSignature__PythonCallable
-    }
-}
-
-external open class JavascriptComboButton : ContentWidget {
-    constructor()
-    constructor(Outer: UObject)
-    open var ComboButtonStyle: ComboButtonStyle
-    open var ButtonStyle: ButtonStyle
-    open var OnGetMenuContent: UnrealEngineDelegate<() -> JavascriptSlateWidget>
-    open var OnMenuOpenChanged: UnrealEngineDelegate<(Value: Boolean) -> Unit>
-    open var OnComboBoxOpened: UnrealEngineDelegate<() -> Unit>
-    open var bIsFocusable: Boolean
-    open var bHasDownArrow: Boolean
-    open var ForegroundColor: SlateColor
-    open var ButtonColorAndOpacity: SlateColor
-    open var ContentPadding: Margin
-    open var MenuPlacement: String /* "MenuPlacement_BelowAnchor" | "MenuPlacement_CenteredBelowAnchor" | "MenuPlacement_BelowRightAnchor" | "MenuPlacement_ComboBox" | "MenuPlacement_ComboBoxRight" | "MenuPlacement_MenuRight" | "MenuPlacement_AboveAnchor" | "MenuPlacement_CenteredAboveAnchor" | "MenuPlacement_AboveRightAnchor" | "MenuPlacement_MenuLeft" | "MenuPlacement_Center" | "MenuPlacement_RightLeftCenter" | "MenuPlacement_MatchBottomLeft" | "MenuPlacement_MAX" */
-    open var HAlign: String /* "HAlign_Fill" | "HAlign_Left" | "HAlign_Center" | "HAlign_Right" | "HAlign_MAX" */
-    open var VAlign: String /* "VAlign_Fill" | "VAlign_Top" | "VAlign_Center" | "VAlign_Bottom" | "VAlign_MAX" */
-    open fun SetIsOpen(InIsOpen: Boolean, bFocusMenu: Boolean)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptComboButton
-        fun Find(Outer: UObject, ResourceName: String): JavascriptComboButton
-        fun GetDefaultObject(): JavascriptComboButton
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptComboButton
-        fun C(Other: UObject): JavascriptComboButton
-        fun C(Other: Any): JavascriptComboButton
-    }
-}
-
-external open class JavascriptSlateIcon {
-    open var StyleSetName: String
-    open var StyleName: String
-    open var SmallStyleName: String
-    open fun clone(): JavascriptSlateIcon
-
-    companion object {
-        fun C(Other: UObject): JavascriptSlateIcon
-        fun C(Other: Any): JavascriptSlateIcon
-    }
-}
-
-external open class JavascriptComboButtonContext : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var OnGetLabel: UnrealEngineDelegate<() -> String>
-    open var OnGetTooltip: UnrealEngineDelegate<() -> String>
-    open var OnGetIcon: UnrealEngineDelegate<() -> JavascriptSlateIcon>
-    open var OnGetWidget: UnrealEngineDelegate<(EditingObject: UObject) -> JavascriptSlateWidget>
-    open var OnCanExecute: UnrealEngineDelegate<() -> Boolean>
-    open fun UnmarkReferencedObject()
-    open fun MarkReferencedObject()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptComboButtonContext
-        fun Find(Outer: UObject, ResourceName: String): JavascriptComboButtonContext
-        fun GetDefaultObject(): JavascriptComboButtonContext
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptComboButtonContext
-        fun C(Other: UObject): JavascriptComboButtonContext
-        fun C(Other: Any): JavascriptComboButtonContext
-    }
-}
-
-external open class JavascriptTextProperty {
-    open var Key: String
-    open var Namespace: String
-    open var Value: String
-    open var TableId: String
-    open fun clone(): JavascriptTextProperty
-
-    companion object {
-        fun C(Other: UObject): JavascriptTextProperty
-        fun C(Other: Any): JavascriptTextProperty
-        fun FromStringTable(InTableId: String, InKey: String): JavascriptTextProperty
-    }
-}
-
-external open class JavascriptFTextBox : Widget {
-    constructor()
-    constructor(Outer: UObject)
-    open var OnIsReadOnly: UnrealEngineDelegate<() -> Boolean>
-    open var OnIsValidText: UnrealEngineDelegate<(TextValue: String) -> String>
-    open var OnGetDefaultValue: UnrealEngineDelegate<() -> JavascriptTextProperty>
-    open var OnTextCommitted: UnrealEngineMulticastDelegate<(TextProperty: JavascriptTextProperty) -> Unit>
-    open var WidgetStyle: EditableTextBoxStyle
-    open var WrapTextAt: Number
-    open var AutoWrapText: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptFTextBox
-        fun Find(Outer: UObject, ResourceName: String): JavascriptFTextBox
-        fun GetDefaultObject(): JavascriptFTextBox
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptFTextBox
-        fun C(Other: UObject): JavascriptFTextBox
-        fun C(Other: Any): JavascriptFTextBox
-    }
-}
-
-external open class JavascriptGameViewport : ContentWidget {
-    constructor()
-    constructor(Outer: UObject)
-    open var BackgroundColor: LinearColor
-    open fun Spawn(ActorClass: UnrealEngineClass): Actor
-    open fun SetViewRotation(Rotation: Rotator)
-    open fun SetViewLocation(Location: Vector)
-    open fun GetViewRotation(): Rotator
-    open fun GetViewportWorld(): World
-    open fun GetViewLocation(): Vector
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptGameViewport
-        fun Find(Outer: UObject, ResourceName: String): JavascriptGameViewport
-        fun GetDefaultObject(): JavascriptGameViewport
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGameViewport
-        fun C(Other: UObject): JavascriptGameViewport
-        fun C(Other: Any): JavascriptGameViewport
-    }
-}
-
-external open class JavascriptIntSpinBox : Widget {
-    constructor()
-    constructor(Outer: UObject)
-    open var Value: Number
-    open var ValueDelegate: UnrealEngineDelegate<() -> Number>
-    open var WidgetStyle: SpinBoxStyle
-    open var Style: SlateWidgetStyleAsset
-    open var Delta: Number
-    open var SliderExponent: Number
-    open var Font: SlateFontInfo
-    open var Justification: String /* "Left" | "Center" | "Right" | "ETextJustify_MAX" */
-    open var MinDesiredWidth: Number
-    open var ClearKeyboardFocusOnCommit: Boolean
-    open var SelectAllTextOnCommit: Boolean
-    open var ForegroundColor: SlateColor
-    open var OnValueChanged: UnrealEngineMulticastDelegate<(InValue: Number) -> Unit>
-    open var OnValueCommitted: UnrealEngineMulticastDelegate<(InValue: Number, CommitMethod: String /* "Default" | "OnEnter" | "OnUserMovedFocus" | "OnCleared" | "ETextCommit_MAX" */) -> Unit>
-    open var OnBeginSliderMovement: UnrealEngineMulticastDelegate<() -> Unit>
-    open var OnEndSliderMovement: UnrealEngineMulticastDelegate<(InValue: Number) -> Unit>
-    open var bOverride_MinValue: Boolean
-    open var bOverride_MaxValue: Boolean
-    open var bOverride_MinSliderValue: Boolean
-    open var bOverride_MaxSliderValue: Boolean
-    open var MinValue: Number
-    open var MaxValue: Number
-    open var MinSliderValue: Number
-    open var MaxSliderValue: Number
-    open fun SetValue(NewValue: Number)
-    open fun SetMinValue(NewValue: Number)
-    open fun SetMinSliderValue(NewValue: Number)
-    open fun SetMaxValue(NewValue: Number)
-    open fun SetMaxSliderValue(NewValue: Number)
-    open fun SetForegroundColor(InForegroundColor: SlateColor)
-    open fun GetValue(): Number
-    open fun GetMinValue(): Number
-    open fun GetMinSliderValue(): Number
-    open fun GetMaxValue(): Number
-    open fun GetMaxSliderValue(): Number
-    open fun ClearMinValue()
-    open fun ClearMinSliderValue()
-    open fun ClearMaxValue()
-    open fun ClearMaxSliderValue()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptIntSpinBox
-        fun Find(Outer: UObject, ResourceName: String): JavascriptIntSpinBox
-        fun GetDefaultObject(): JavascriptIntSpinBox
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptIntSpinBox
-        fun C(Other: UObject): JavascriptIntSpinBox
-        fun C(Other: Any): JavascriptIntSpinBox
-    }
-}
-
-external open class TableColumnHeaderStyle : SlateWidgetStyle {
-    open var SortPrimaryAscendingImage: SlateBrush
-    open var SortPrimaryDescendingImage: SlateBrush
-    open var SortSecondaryAscendingImage: SlateBrush
-    open var SortSecondaryDescendingImage: SlateBrush
-    open var NormalBrush: SlateBrush
-    open var HoveredBrush: SlateBrush
-    open var MenuDropdownImage: SlateBrush
-    open var MenuDropdownNormalBorderBrush: SlateBrush
-    open var MenuDropdownHoveredBorderBrush: SlateBrush
-    override fun clone(): TableColumnHeaderStyle
-
-    companion object {
-        fun C(Other: UObject): TableColumnHeaderStyle
-        fun C(Other: Any): TableColumnHeaderStyle
-    }
-}
-
-external open class SplitterStyle : SlateWidgetStyle {
-    open var HandleNormalBrush: SlateBrush
-    open var HandleHighlightBrush: SlateBrush
-    override fun clone(): SplitterStyle
-
-    companion object {
-        fun C(Other: UObject): SplitterStyle
-        fun C(Other: Any): SplitterStyle
-    }
-}
-
-external open class HeaderRowStyle : SlateWidgetStyle {
-    open var ColumnStyle: TableColumnHeaderStyle
-    open var LastColumnStyle: TableColumnHeaderStyle
-    open var ColumnSplitterStyle: SplitterStyle
-    open var BackgroundBrush: SlateBrush
-    open var ForegroundColor: SlateColor
-    override fun clone(): HeaderRowStyle
-
-    companion object {
-        fun C(Other: UObject): HeaderRowStyle
-        fun C(Other: Any): HeaderRowStyle
-    }
-}
-
-external open class JavascriptColumn {
-    open var ID: String
-    open var Width: Number
-    open var Widget: Widget
-    open fun clone(): JavascriptColumn
-
-    companion object {
-        fun C(Other: UObject): JavascriptColumn
-        fun C(Other: Any): JavascriptColumn
-    }
-}
-
-external interface `T$466` {
-    var OutItems: Array<UObject>
-    var `$`: Boolean
-}
-
-external interface `T$467` {
-    var OutItems: Array<UObject>
-}
-
-external open class JavascriptTreeView : ListViewBase {
-    constructor()
-    constructor(Outer: UObject)
-    open var OnGenerateRowEvent: UnrealEngineDelegate<(UObject: UObject, ID: String, Instance: JavascriptTreeView) -> Widget>
-    open var OnExpansionChanged: UnrealEngineDelegate<(Item: UObject, bExpanded: Boolean, Instance: JavascriptTreeView) -> Unit>
-    open var OnContextMenuOpening: UnrealEngineDelegate<(Instance: JavascriptTreeView) -> Widget>
-    open var OnGetChildren: UnrealEngineDelegate<(Item: UObject, Instance: JavascriptTreeView) -> Unit>
-    open var JavascriptContext: JavascriptContext
-    open var Items: Array<UObject>
-    open var HeaderRowStyle: HeaderRowStyle
-    open var TableRowStyle: TableRowStyle
-    open var ScrollBarStyle: ScrollBarStyle
-    open var SelectionMode: String /* "None" | "Single" | "SingleToggle" | "Multi" | "ESelectionMode_MAX" */
-    open var Children: Array<UObject>
-    open var Columns: Array<JavascriptColumn>
-    open var ColumnWidgets: Array<Widget>
-    open fun SetSingleExpandedItem(InItem: UObject)
-    open fun SetSelection(SoleSelectedItem: UObject)
-    open fun SetItemSelection(MultiSelectedItems: Array<UObject>, bIsSelected: Boolean)
-    open fun SetItemExpansion(InItem: UObject, InShouldExpandItem: Boolean)
-    open fun SetDoubleClickSelection(SelectedItem: UObject)
-    open fun RequestTreeRefresh()
-    open fun RequestNavigateToItem(Item: UObject)
-    open fun OnSelectionChanged(UObject: UObject, Type: String /* "OnKeyPress" | "OnNavigation" | "OnMouseClick" | "Direct" | "ESelectInfo_MAX" */)
-    open fun OnDoubleClick(UObject: UObject)
-    open fun IsItemExpanded(InItem: UObject): Boolean
-    open fun IsDoubleClickSelection(SelectedItem: UObject): Boolean
-    open fun GetSelectedItems(OutItems: Array<UObject> = definedExternally): `T$466`
-    open fun GetDoubleClickedItems(OutItems: Array<UObject> = definedExternally): `T$467`
-    open fun ClearSelection()
-    open fun ClearDoubleClickSelection()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptTreeView
-        fun Find(Outer: UObject, ResourceName: String): JavascriptTreeView
-        fun GetDefaultObject(): JavascriptTreeView
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTreeView
-        fun C(Other: UObject): JavascriptTreeView
-        fun C(Other: Any): JavascriptTreeView
-    }
-}
-
-external open class JavascriptListView : JavascriptTreeView {
-    constructor()
-    constructor(Outer: UObject)
-    open var ItemHeight: Number
-    open fun RequestListRefresh()
-    open fun OnClick(UObject: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptListView
-        fun Find(Outer: UObject, ResourceName: String): JavascriptListView
-        fun GetDefaultObject(): JavascriptListView
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptListView
-        fun C(Other: UObject): JavascriptListView
-        fun C(Other: Any): JavascriptListView
-    }
-}
-
-external object EJavasrciptUserInterfaceActionType {
-    var None: String /* "None" */
-    var Button: String /* "Button" */
-    var ToggleButton: String /* "ToggleButton" */
-    var RadioButton: String /* "RadioButton" */
-    var Check: String /* "Check" */
-    var CollapsedButton: String /* "CollapsedButton" */
-    var EJavasrciptUserInterfaceActionType_MAX: String /* "EJavasrciptUserInterfaceActionType_MAX" */
-}
-
-external open class JavascriptMenuContext : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Description: String
-    open var Tooltip: String
-    open var Icon: JavascriptSlateIcon
-    open var ActionType: String /* "None" | "Button" | "ToggleButton" | "RadioButton" | "Check" | "CollapsedButton" | "EJavasrciptUserInterfaceActionType_MAX" */
-    open var OnCanExecute: UnrealEngineDelegate<() -> Boolean>
-    open var OnExecute: UnrealEngineDelegate<() -> Unit>
-    open var OnGetActionCheckState: UnrealEngineDelegate<() -> String>
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptMenuContext
-        fun Find(Outer: UObject, ResourceName: String): JavascriptMenuContext
-        fun GetDefaultObject(): JavascriptMenuContext
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptMenuContext
-        fun C(Other: UObject): JavascriptMenuContext
-        fun C(Other: Any): JavascriptMenuContext
-    }
-}
-
-external open class JavascriptSlateTextRun {
-    open fun clone(): JavascriptSlateTextRun
-
-    companion object {
-        fun C(Other: UObject): JavascriptSlateTextRun
-        fun C(Other: Any): JavascriptSlateTextRun
-    }
-}
-
-external open class JavascriptTextModel : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun SetString(string: String)
-    open fun GetString(): String
-    open fun CreateRun(MessageTextStyle: TextBlockStyle, BeginIndex: Number, EndIndex: Number): JavascriptSlateTextRun
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptTextModel
-        fun Find(Outer: UObject, ResourceName: String): JavascriptTextModel
-        fun GetDefaultObject(): JavascriptTextModel
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTextModel
-        fun C(Other: UObject): JavascriptTextModel
-        fun C(Other: Any): JavascriptTextModel
-    }
-}
-
-external interface `T$468` {
-    var TextLayout: JavascriptTextLayout
-}
-
-external open class JavascriptTextLayout {
-    open fun clone(): JavascriptTextLayout
-    open fun AddLine(Model: JavascriptTextModel = definedExternally, Runs: Array<JavascriptSlateTextRun> = definedExternally): `T$468`
-    open fun ClearLines(): `T$468`
-    open fun GetAsText(): String
-    open fun GetLineLength(): Number
-
-    companion object {
-        fun C(Other: UObject): JavascriptTextLayout
-        fun C(Other: Any): JavascriptTextLayout
-        fun AddLine(TextLayout: JavascriptTextLayout = definedExternally, Model: JavascriptTextModel = definedExternally, Runs: Array<JavascriptSlateTextRun> = definedExternally): `T$468`
-        fun ClearLines(TextLayout: JavascriptTextLayout = definedExternally): `T$468`
-        fun GetAsText(TextLayout: JavascriptTextLayout): String
-        fun GetLineLength(TargetTextLayout: JavascriptTextLayout): Number
-    }
-}
-
-external open class JavascriptMultiLineEditableTextBox : MultiLineEditableTextBox {
-    constructor()
-    constructor(Outer: UObject)
-    open var OnVScrollBarUserScrolled: UnrealEngineMulticastDelegate<(Offset: Number) -> Unit>
-    open var GetTextDelegate: UnrealEngineDelegate<(TextLayout: JavascriptTextLayout) -> String>
-    open var SetTextDelegate: UnrealEngineDelegate<(InText: String, TextLayout: JavascriptTextLayout) -> Unit>
-    open var bAlwaysShowScrollbars: Boolean
-    open fun ScrollTo(Line: Number, Offset: Number)
-    open fun Refresh()
-    open fun GoTo(Line: Number, Offset: Number)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptMultiLineEditableTextBox
-        fun Find(Outer: UObject, ResourceName: String): JavascriptMultiLineEditableTextBox
-        fun GetDefaultObject(): JavascriptMultiLineEditableTextBox
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptMultiLineEditableTextBox
-        fun C(Other: UObject): JavascriptMultiLineEditableTextBox
-        fun C(Other: Any): JavascriptMultiLineEditableTextBox
-    }
-}
-
-external open class JavascriptRichTextBlockHyperlinkDecorator : RichTextBlockDecorator {
-    constructor()
-    constructor(Outer: UObject)
-    open var HyperlinkId: String
-    open var OnClick: UnrealEngineMulticastDelegate<(Self: JavascriptRichTextBlockHyperlinkDecorator) -> Unit>
-    open fun GetMetadata(Key: String): String
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptRichTextBlockHyperlinkDecorator
-        fun Find(Outer: UObject, ResourceName: String): JavascriptRichTextBlockHyperlinkDecorator
-        fun GetDefaultObject(): JavascriptRichTextBlockHyperlinkDecorator
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptRichTextBlockHyperlinkDecorator
-        fun C(Other: UObject): JavascriptRichTextBlockHyperlinkDecorator
-        fun C(Other: Any): JavascriptRichTextBlockHyperlinkDecorator
-    }
-}
-
-external open class JavascriptSearchBox : Widget {
-    constructor()
-    constructor(Outer: UObject)
-    open var JavascriptContext: JavascriptContext
-    open var OnTextChanged: UnrealEngineMulticastDelegate<(text: String) -> Unit>
-    open var OnTextCommitted: UnrealEngineMulticastDelegate<(text: String, CommitMethod: String /* "Default" | "OnEnter" | "OnUserMovedFocus" | "OnCleared" | "ETextCommit_MAX" */) -> Unit>
-    open var text: String
-    open var TextDelegate: UnrealEngineDelegate<() -> String>
-    open var HintText: String
-    open var HintTextDelegate: UnrealEngineDelegate<() -> String>
-    open fun SetText(InText: String)
-    open fun SetHintText(InHintText: String)
-    open fun OnKeyDown(MyGeometry: Geometry, InKeyEvent: KeyEvent): EventReply
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptSearchBox
-        fun Find(Outer: UObject, ResourceName: String): JavascriptSearchBox
-        fun GetDefaultObject(): JavascriptSearchBox
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptSearchBox
-        fun C(Other: UObject): JavascriptSearchBox
-        fun C(Other: Any): JavascriptSearchBox
-    }
-}
-
-external open class JavascriptStyleSet {
-    open var StyleSetName: String
-    open fun clone(): JavascriptStyleSet
-    open fun GetBrush(StyleName: String): SlateBrush
-    open fun GetButtonStyle(StyleName: String): ButtonStyle
-    open fun GetCheckBoxStyle(StyleName: String): CheckBoxStyle
-    open fun GetColor(StyleName: String): LinearColor
-    open fun GetComboBoxStyle(StyleName: String): ComboBoxStyle
-    open fun GetComboButtonStyle(StyleName: String): ComboButtonStyle
-    open fun GetEditableTextBoxStyle(StyleName: String): EditableTextBoxStyle
-    open fun GetEditableTextStyle(StyleName: String): EditableTextStyle
-    open fun GetFloat(StyleName: String): Number
-    open fun GetFontStyle(StyleName: String): SlateFontInfo
-    open fun GetMargin(StyleName: String): Margin
-    open fun GetProgressBarStyle(StyleName: String): ProgressBarStyle
-    open fun GetSlateColor(StyleName: String): SlateColor
-    open fun GetSound(StyleName: String): SlateSound
-    open fun GetTextBlockStyle(StyleName: String): TextBlockStyle
-    open fun GetVector(StyleName: String): Vector2D
-
-    companion object {
-        fun C(Other: UObject): JavascriptStyleSet
-        fun C(Other: Any): JavascriptStyleSet
-        fun GetBrush(Handle: JavascriptStyleSet, StyleName: String): SlateBrush
-        fun GetButtonStyle(Handle: JavascriptStyleSet, StyleName: String): ButtonStyle
-        fun GetCheckBoxStyle(Handle: JavascriptStyleSet, StyleName: String): CheckBoxStyle
-        fun GetColor(Handle: JavascriptStyleSet, StyleName: String): LinearColor
-        fun GetComboBoxStyle(Handle: JavascriptStyleSet, StyleName: String): ComboBoxStyle
-        fun GetComboButtonStyle(Handle: JavascriptStyleSet, StyleName: String): ComboButtonStyle
-        fun GetEditableTextBoxStyle(Handle: JavascriptStyleSet, StyleName: String): EditableTextBoxStyle
-        fun GetEditableTextStyle(Handle: JavascriptStyleSet, StyleName: String): EditableTextStyle
-        fun GetFloat(Handle: JavascriptStyleSet, StyleName: String): Number
-        fun GetFontStyle(Handle: JavascriptStyleSet, StyleName: String): SlateFontInfo
-        fun GetMargin(Handle: JavascriptStyleSet, StyleName: String): Margin
-        fun GetProgressBarStyle(Handle: JavascriptStyleSet, StyleName: String): ProgressBarStyle
-        fun GetSlateColor(Handle: JavascriptStyleSet, StyleName: String): SlateColor
-        fun GetSound(Handle: JavascriptStyleSet, StyleName: String): SlateSound
-        fun GetTextBlockStyle(Handle: JavascriptStyleSet, StyleName: String): TextBlockStyle
-        fun GetVector(Handle: JavascriptStyleSet, StyleName: String): Vector2D
-    }
-}
-
-external open class JavascriptStyleSetLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-    open var SlateColor: SlateColor
-    open var SlateBrush: SlateBrush
-    open var ButtonStyle: ButtonStyle
-    open var TextBlockStyle: TextBlockStyle
-    open var EditableTextStyle: EditableTextStyle
-    open var EditableTextBoxStyle: EditableTextBoxStyle
-    open var CheckBoxStyle: CheckBoxStyle
-    open var ComboBoxStyle: ComboBoxStyle
-    open var ComboButtonStyle: ComboButtonStyle
-    open var ProgressBarStyle: ProgressBarStyle
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptStyleSetLibrary
-        fun Find(Outer: UObject, ResourceName: String): JavascriptStyleSetLibrary
-        fun GetDefaultObject(): JavascriptStyleSetLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptStyleSetLibrary
-        fun GetVector(Handle: JavascriptStyleSet, StyleName: String): Vector2D
-        fun GetTextBlockStyle(Handle: JavascriptStyleSet, StyleName: String): TextBlockStyle
-        fun GetSound(Handle: JavascriptStyleSet, StyleName: String): SlateSound
-        fun GetSlateColor(Handle: JavascriptStyleSet, StyleName: String): SlateColor
-        fun GetProgressBarStyle(Handle: JavascriptStyleSet, StyleName: String): ProgressBarStyle
-        fun GetMargin(Handle: JavascriptStyleSet, StyleName: String): Margin
-        fun GetFontStyle(Handle: JavascriptStyleSet, StyleName: String): SlateFontInfo
-        fun GetFloat(Handle: JavascriptStyleSet, StyleName: String): Number
-        fun GetEditableTextStyle(Handle: JavascriptStyleSet, StyleName: String): EditableTextStyle
-        fun GetEditableTextBoxStyle(Handle: JavascriptStyleSet, StyleName: String): EditableTextBoxStyle
-        fun GetComboButtonStyle(Handle: JavascriptStyleSet, StyleName: String): ComboButtonStyle
-        fun GetComboBoxStyle(Handle: JavascriptStyleSet, StyleName: String): ComboBoxStyle
-        fun GetColor(Handle: JavascriptStyleSet, StyleName: String): LinearColor
-        fun GetCheckBoxStyle(Handle: JavascriptStyleSet, StyleName: String): CheckBoxStyle
-        fun GetButtonStyle(Handle: JavascriptStyleSet, StyleName: String): ButtonStyle
-        fun GetBrush(Handle: JavascriptStyleSet, StyleName: String): SlateBrush
-        fun C(Other: UObject): JavascriptStyleSetLibrary
-        fun C(Other: Any): JavascriptStyleSetLibrary
-    }
-}
-
-external open class JavascriptTextBlock : TextBlock {
-    constructor()
-    constructor(Outer: UObject)
-    open var HighlightText: String
-    open var HighlightTextDelegate: UnrealEngineDelegate<() -> String>
-    open fun SetHighlightText(InHighlightText: String)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptTextBlock
-        fun Find(Outer: UObject, ResourceName: String): JavascriptTextBlock
-        fun GetDefaultObject(): JavascriptTextBlock
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTextBlock
-        fun C(Other: UObject): JavascriptTextBlock
-        fun C(Other: Any): JavascriptTextBlock
-    }
-}
-
-external open class JavascriptTileView : TileView {
-    constructor()
-    constructor(Outer: UObject)
-    open var JavascriptContext: JavascriptContext
-    open var TileListItems: Array<UObject>
-    open fun OnSelectionChanged(UObject: UObject, Type: String /* "OnKeyPress" | "OnNavigation" | "OnMouseClick" | "Direct" | "ESelectInfo_MAX" */)
-    open fun OnDoubleClick(UObject: UObject)
-    open fun OnClick(UObject: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptTileView
-        fun Find(Outer: UObject, ResourceName: String): JavascriptTileView
-        fun GetDefaultObject(): JavascriptTileView
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptTileView
-        fun C(Other: UObject): JavascriptTileView
-        fun C(Other: Any): JavascriptTileView
-    }
-}
-
-external open class JavascriptToolbarButtonContext : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var OnGetLabel: UnrealEngineDelegate<() -> String>
-    open var OnGetTooltip: UnrealEngineDelegate<() -> String>
-    open var OnGetIcon: UnrealEngineDelegate<() -> JavascriptSlateIcon>
-    open var OnExecuteAction: UnrealEngineDelegate<(EditingObject: UObject) -> Unit>
-    open var OnCanExecuteAction: UnrealEngineDelegate<(EditingObject: UObject) -> Boolean>
-    open var OnIsActionChecked: UnrealEngineDelegate<(EditingObject: UObject) -> Boolean>
-    open var OnIsActionButtonVisible: UnrealEngineDelegate<(EditingObject: UObject) -> Boolean>
-    open fun UnmarkReferencedObject()
-    open fun MarkReferencedObject()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptToolbarButtonContext
-        fun Find(Outer: UObject, ResourceName: String): JavascriptToolbarButtonContext
-        fun GetDefaultObject(): JavascriptToolbarButtonContext
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptToolbarButtonContext
-        fun C(Other: UObject): JavascriptToolbarButtonContext
-        fun C(Other: Any): JavascriptToolbarButtonContext
-    }
-}
-
-external open class JavascriptUMGBlueprintLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptUMGBlueprintLibrary
-        fun Find(Outer: UObject, ResourceName: String): JavascriptUMGBlueprintLibrary
-        fun GetDefaultObject(): JavascriptUMGBlueprintLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptUMGBlueprintLibrary
-        fun SlateColor_UseSubduedForeground(): SlateColor
-        fun SlateColor_UseForeground(): SlateColor
-        fun GetLineLength(TargetTextLayout: JavascriptTextLayout): Number
-        fun GetAsText(TextLayout: JavascriptTextLayout): String
-        fun DrawSpaceSpline(Context: PaintContext = definedExternally, InStart: Vector2D = definedExternally, InStartDir: Vector2D = definedExternally, InEnd: Vector2D = definedExternally, InEndDir: Vector2D = definedExternally, InThickness: Number = definedExternally, InTint: LinearColor = definedExternally): `T$183`
-        fun ClearLines(TextLayout: JavascriptTextLayout = definedExternally): `T$468`
-        fun AddLine(TextLayout: JavascriptTextLayout = definedExternally, Model: JavascriptTextModel = definedExternally, Runs: Array<JavascriptSlateTextRun> = definedExternally): `T$468`
-        fun C(Other: UObject): JavascriptUMGBlueprintLibrary
-        fun C(Other: Any): JavascriptUMGBlueprintLibrary
-    }
-}
-
-external open class JavascriptSlateStyle {
-    open fun clone(): JavascriptSlateStyle
-    open fun AddBorderBrush(PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-    open fun AddBoxBrush(PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-    open fun AddFontInfo(PropertyName: String, FontInfo: SlateFontInfo)
-    open fun AddImageBrush(PropertyName: String, InImageName: String, InImageSize: Vector2D, InTint: LinearColor, InTiling: String /* "NoTile" | "Horizontal" | "Vertical" | "Both" | "ESlateBrushTileType_MAX" */, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-    open fun AddSound(PropertyName: String, Sound: SlateSound)
-    open fun Register()
-    open fun RootToContentDir(RelativePath: String): String
-    open fun RootToCoreContentDir(RelativePath: String): String
-    open fun SetContentRoot(InContentRootDir: String)
-    open fun SetCoreContentRoot(InCoreContentRootDir: String)
-    open fun Unregister()
-
-    companion object {
-        fun C(Other: UObject): JavascriptSlateStyle
-        fun C(Other: Any): JavascriptSlateStyle
-        fun AddBorderBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-        fun AddBoxBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-        fun AddFontInfo(StyleSet: JavascriptSlateStyle, PropertyName: String, FontInfo: SlateFontInfo)
-        fun AddImageBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InImageSize: Vector2D, InTint: LinearColor, InTiling: String /* "NoTile" | "Horizontal" | "Vertical" | "Both" | "ESlateBrushTileType_MAX" */, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-        fun AddSound(StyleSet: JavascriptSlateStyle, PropertyName: String, Sound: SlateSound)
-        fun Register(StyleSet: JavascriptSlateStyle)
-        fun RootToContentDir(StyleSet: JavascriptSlateStyle, RelativePath: String): String
-        fun RootToCoreContentDir(StyleSet: JavascriptSlateStyle, RelativePath: String): String
-        fun SetContentRoot(StyleSet: JavascriptSlateStyle, InContentRootDir: String)
-        fun SetCoreContentRoot(StyleSet: JavascriptSlateStyle, InCoreContentRootDir: String)
-        fun Unregister(StyleSet: JavascriptSlateStyle)
-        fun CreateSlateStyle(InStyleSetName: String): JavascriptSlateStyle
-    }
-}
-
-external open class JavascriptUMGLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptUMGLibrary
-        fun Find(Outer: UObject, ResourceName: String): JavascriptUMGLibrary
-        fun GetDefaultObject(): JavascriptUMGLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptUMGLibrary
-        fun Unregister(StyleSet: JavascriptSlateStyle)
-        fun TakeWidget(Widget: Widget): JavascriptSlateWidget
-        fun ShowWindow(NewWindow: JavascriptSlateWidget)
-        fun SetCoreContentRoot(StyleSet: JavascriptSlateStyle, InCoreContentRootDir: String)
-        fun SetContentRoot(StyleSet: JavascriptSlateStyle, InContentRootDir: String)
-        fun SetContent(TargetWidget: NativeWidgetHost, SlateWidget: JavascriptSlateWidget): Widget
-        fun RootToCoreContentDir(StyleSet: JavascriptSlateStyle, RelativePath: String): String
-        fun RootToContentDir(StyleSet: JavascriptSlateStyle, RelativePath: String): String
-        fun Register(StyleSet: JavascriptSlateStyle)
-        fun GetRootWindow(): JavascriptSlateWidget
-        fun GenerateDynamicImageResource(InDynamicBrushName: String): Vector2D
-        fun CreateSlateStyle(InStyleSetName: String): JavascriptSlateStyle
-        fun AddWindowAsNativeChild(NewWindow: JavascriptSlateWidget, RootWindow: JavascriptSlateWidget)
-        fun AddWindow(NewWindow: JavascriptSlateWidget, bShowImmediately: Boolean)
-        fun AddSound(StyleSet: JavascriptSlateStyle, PropertyName: String, Sound: SlateSound)
-        fun AddImageBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InImageSize: Vector2D, InTint: LinearColor, InTiling: String /* "NoTile" | "Horizontal" | "Vertical" | "Both" | "ESlateBrushTileType_MAX" */, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-        fun AddFontInfo(StyleSet: JavascriptSlateStyle, PropertyName: String, FontInfo: SlateFontInfo)
-        fun AddBoxBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-        fun AddBorderBrush(StyleSet: JavascriptSlateStyle, PropertyName: String, InImageName: String, InMargin: Margin, InColorAndOpacity: LinearColor, InImageType: String /* "NoImage" | "FullColor" | "Linear" | "ESlateBrushImageType_MAX" */)
-        fun C(Other: UObject): JavascriptUMGLibrary
-        fun C(Other: Any): JavascriptUMGLibrary
-    }
-}
-
-external open class JavascriptWidget : UserWidget {
-    constructor()
-    constructor(Outer: UObject)
-    open var JavascriptContext: JavascriptContext
-    open var OnInputActionEvent: UnrealEngineMulticastDelegate<(ActionName: String) -> Unit>
-    open var OnReleaseActionEvent: UnrealEngineMulticastDelegate<(ActionName: String) -> Unit>
-    open var OnInputAxisEvent: UnrealEngineMulticastDelegate<(Axis: Number, AxisName: String) -> Unit>
-    open var ContentSlot: PanelSlot
-    open fun SetRootWidget(Widget: Widget)
-    open fun RemoveChild(): Boolean
-    open fun OnReleaseInputActionByName(ActionName: String)
-    open fun OnListenForInputAxis(AxisName: String, EventType: String /* "IE_Pressed" | "IE_Released" | "IE_Repeat" | "IE_DoubleClick" | "IE_Axis" | "IE_MAX" */, bConsume: Boolean)
-    open fun OnListenForInputAction(ActionName: String, EventType: String /* "IE_Pressed" | "IE_Released" | "IE_Repeat" | "IE_DoubleClick" | "IE_Axis" | "IE_MAX" */, bConsume: Boolean)
-    open fun OnInputAxisByName(Axis: Number, ActionName: String)
-    open fun OnInputActionByName(ActionName: String)
-    open fun OnDestroy(bReleaseChildren: Boolean)
-    open fun AddChild(Content: Widget): PanelSlot
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptWidget
-        fun Find(Outer: UObject, ResourceName: String): JavascriptWidget
-        fun GetDefaultObject(): JavascriptWidget
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptWidget
-        fun HasValidCachedWidget(Widget: Widget): Boolean
-        fun CallSynchronizeProperties(WidgetOrSlot: Visual)
-        fun C(Other: UObject): JavascriptWidget
-        fun C(Other: Any): JavascriptWidget
-    }
-}
-
-external object EJavascriptWindowType {
-    var Normal: String /* "Normal" */
-    var Menu: String /* "Menu" */
-    var ToolTip: String /* "ToolTip" */
-    var Notification: String /* "Notification" */
-    var CursorDecorator: String /* "CursorDecorator" */
-    var EJavascriptWindowType_MAX: String /* "EJavascriptWindowType_MAX" */
-}
-
-external open class WindowStyle : SlateWidgetStyle {
-    open var MinimizeButtonStyle: ButtonStyle
-    open var MaximizeButtonStyle: ButtonStyle
-    open var RestoreButtonStyle: ButtonStyle
-    open var CloseButtonStyle: ButtonStyle
-    open var TitleTextStyle: TextBlockStyle
-    open var ActiveTitleBrush: SlateBrush
-    open var InactiveTitleBrush: SlateBrush
-    open var FlashTitleBrush: SlateBrush
-    open var BackgroundColor: SlateColor
-    open var OutlineBrush: SlateBrush
-    open var OutlineColor: SlateColor
-    open var BorderBrush: SlateBrush
-    open var BackgroundBrush: SlateBrush
-    open var ChildBackgroundBrush: SlateBrush
-    override fun clone(): WindowStyle
-
-    companion object {
-        fun C(Other: UObject): WindowStyle
-        fun C(Other: Any): WindowStyle
-    }
-}
-
-external object EJavascriptAutoCenter {
-    var None: String /* "None" */
-    var PrimaryWorkArea: String /* "PrimaryWorkArea" */
-    var PreferredWorkArea: String /* "PreferredWorkArea" */
-    var EJavascriptAutoCenter_MAX: String /* "EJavascriptAutoCenter_MAX" */
-}
-
-external object EJavascriptWindowTransparency {
-    var None: String /* "None" */
-    var PerWindow: String /* "PerWindow" */
-    var EJavascriptWindowTransparency_MAX: String /* "EJavascriptWindowTransparency_MAX" */
-}
-
-external object EJavascriptSizingRule {
-    var FixedSize: String /* "FixedSize" */
-    var Autosized: String /* "Autosized" */
-    var UserSized: String /* "UserSized" */
-    var EJavascriptSizingRule_MAX: String /* "EJavascriptSizingRule_MAX" */
-}
-
-external object EJavascriptWindowActivationPolicy {
-    var Never: String /* "Never" */
-    var Always: String /* "Always" */
-    var FirstShown: String /* "FirstShown" */
-    var EJavascriptWindowActivationPolicy_MAX: String /* "EJavascriptWindowActivationPolicy_MAX" */
-}
-
-external interface `T$469` {
-    var OutFolderName: String
-    var `$`: Boolean
-}
-
-external interface `T$470` {
-    var OutFilenames: Array<String>
-    var `$`: Boolean
-}
-
-external interface `T$471` {
-    var OutFilenames: Array<String>
-    var `$`: Boolean
-}
-
-external interface `T$472` {
-    var OutFilenames: Array<String>
-    var `$`: Boolean
-}
-
-external interface `T$473` {
-    var OutFilenames: Array<String>
-    var `$`: Boolean
-}
-
-external open class JavascriptWindow : ContentWidget {
-    constructor()
-    constructor(Outer: UObject)
-    open var Type: String /* "Normal" | "Menu" | "ToolTip" | "Notification" | "CursorDecorator" | "EJavascriptWindowType_MAX" */
-    open var Style: WindowStyle
-    open var Title: String
-    open var bDragAnywhere: Boolean
-    open var AutoCenter: String /* "None" | "PrimaryWorkArea" | "PreferredWorkArea" | "EJavascriptAutoCenter_MAX" */
-    open var ScreenPosition: Vector2D
-    open var ClientSize: Vector2D
-    open var SupportsTransparency: String /* "None" | "PerWindow" | "EJavascriptWindowTransparency_MAX" */
-    open var InitialOpacity: Number
-    open var IsInitiallyMaximized: Boolean
-    open var SizingRule: String /* "FixedSize" | "Autosized" | "UserSized" | "EJavascriptSizingRule_MAX" */
-    open var IsPopupWindow: Boolean
-    open var FocusWhenFirstShown: Boolean
-    open var ActivateWhenFirstShown: Boolean
-    open var UseOSWindowBorder: Boolean
-    open var HasCloseButton: Boolean
-    open var SupportsMaximize: Boolean
-    open var SupportsMinimize: Boolean
-    open var CreateTitleBar: Boolean
-    open var SaneWindowPlacement: Boolean
-    open var LayoutBorder: Margin
-    open var UserResizeBorder: Margin
-    open var OnWindowClosed: UnrealEngineDelegate<() -> Unit>
-    open var OnWindowDeactivated: UnrealEngineDelegate<() -> Unit>
-    open var IsTopmostWindow: Boolean
-    open var AdjustInitialSizeAndPositionForDPIScale: Boolean
-    open var ActivationPolicy: String /* "Never" | "Always" | "FirstShown" | "EJavascriptWindowActivationPolicy_MAX" */
-    open fun ShowWindow()
-    open fun SetOpacity(InOpacity: Number)
-    open fun Resize(NewSize: Vector2D)
-    open fun ReshapeWindow(NewPosition: Vector2D, NewSize: Vector2D)
-    open fun RequestDestroyWindow()
-    open fun MoveWindowTo(NewPosition: Vector2D)
-    open fun HideWindow()
-    open fun FlashWindow()
-    open fun EnableWindow(bEnable: Boolean)
-    open fun DestroyWindowImmediately()
-    open fun BringToFront()
-    open fun OpenDirectoryDialog(DialogTitle: String, DefaultPath: String, OutFolderName: String = definedExternally): `T$469`
-    open fun OpenFileDialog(DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$470`
-    open fun SaveFileDialog(DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$471`
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptWindow
-        fun Find(Outer: UObject, ResourceName: String): JavascriptWindow
-        fun GetDefaultObject(): JavascriptWindow
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptWindow
-        fun C(Other: UObject): JavascriptWindow
-        fun C(Other: Any): JavascriptWindow
-        fun OpenDirectoryDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, OutFolderName: String = definedExternally): `T$469`
-        fun OpenFileDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$472`
-        fun SaveFileDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$473`
-    }
-}
-
-external open class JavascriptHyperlinkSignature__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptHyperlinkSignature__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptHyperlinkSignature__PythonCallable
-        fun GetDefaultObject(): JavascriptHyperlinkSignature__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptHyperlinkSignature__PythonCallable
-        fun C(Other: UObject): JavascriptHyperlinkSignature__PythonCallable
-        fun C(Other: Any): JavascriptHyperlinkSignature__PythonCallable
-    }
-}
-
-external open class OnInputActionEvent__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnInputActionEvent__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnInputActionEvent__PythonCallable
-        fun GetDefaultObject(): OnInputActionEvent__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnInputActionEvent__PythonCallable
-        fun C(Other: UObject): OnInputActionEvent__PythonCallable
-        fun C(Other: Any): OnInputActionEvent__PythonCallable
-    }
-}
-
-external open class OnInputAxisEvent__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnInputAxisEvent__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnInputAxisEvent__PythonCallable
-        fun GetDefaultObject(): OnInputAxisEvent__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnInputAxisEvent__PythonCallable
-        fun C(Other: UObject): OnInputAxisEvent__PythonCallable
-        fun C(Other: Any): OnInputAxisEvent__PythonCallable
-    }
-}
-
-external open class OnWindowDeactivated__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnWindowDeactivated__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnWindowDeactivated__PythonCallable
-        fun GetDefaultObject(): OnWindowDeactivated__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnWindowDeactivated__PythonCallable
-        fun C(Other: UObject): OnWindowDeactivated__PythonCallable
-        fun C(Other: Any): OnWindowDeactivated__PythonCallable
-    }
-}
-
-external open class OnWindowWidgetClosed__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnWindowWidgetClosed__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnWindowWidgetClosed__PythonCallable
-        fun GetDefaultObject(): OnWindowWidgetClosed__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnWindowWidgetClosed__PythonCallable
-        fun C(Other: UObject): OnWindowWidgetClosed__PythonCallable
-        fun C(Other: Any): OnWindowWidgetClosed__PythonCallable
-    }
-}
-
-external open class BoolDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): BoolDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): BoolDelegate__PythonCallable
-        fun GetDefaultObject(): BoolDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): BoolDelegate__PythonCallable
-        fun C(Other: UObject): BoolDelegate__PythonCallable
-        fun C(Other: Any): BoolDelegate__PythonCallable
-    }
-}
-
-external open class IconDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): IconDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): IconDelegate__PythonCallable
-        fun GetDefaultObject(): IconDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): IconDelegate__PythonCallable
-        fun C(Other: UObject): IconDelegate__PythonCallable
-        fun C(Other: Any): IconDelegate__PythonCallable
-    }
-}
-
-external open class JavascriptCanExecuteActionWithEditingObject__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptCanExecuteActionWithEditingObject__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptCanExecuteActionWithEditingObject__PythonCallable
-        fun GetDefaultObject(): JavascriptCanExecuteActionWithEditingObject__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptCanExecuteActionWithEditingObject__PythonCallable
-        fun C(Other: UObject): JavascriptCanExecuteActionWithEditingObject__PythonCallable
-        fun C(Other: Any): JavascriptCanExecuteActionWithEditingObject__PythonCallable
-    }
-}
-
-external open class JavascriptExecuteActionWithEditingObject__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptExecuteActionWithEditingObject__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptExecuteActionWithEditingObject__PythonCallable
-        fun GetDefaultObject(): JavascriptExecuteActionWithEditingObject__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptExecuteActionWithEditingObject__PythonCallable
-        fun C(Other: UObject): JavascriptExecuteActionWithEditingObject__PythonCallable
-        fun C(Other: Any): JavascriptExecuteActionWithEditingObject__PythonCallable
-    }
-}
-
-external open class TextDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): TextDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): TextDelegate__PythonCallable
-        fun GetDefaultObject(): TextDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TextDelegate__PythonCallable
-        fun C(Other: UObject): TextDelegate__PythonCallable
-        fun C(Other: Any): TextDelegate__PythonCallable
-    }
-}
-
-external open class OnVScrollBarUserScrolled__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnVScrollBarUserScrolled__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnVScrollBarUserScrolled__PythonCallable
-        fun GetDefaultObject(): OnVScrollBarUserScrolled__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnVScrollBarUserScrolled__PythonCallable
-        fun C(Other: UObject): OnVScrollBarUserScrolled__PythonCallable
-        fun C(Other: Any): OnVScrollBarUserScrolled__PythonCallable
-    }
-}
-
-external open class SetText__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): SetText__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): SetText__PythonCallable
-        fun GetDefaultObject(): SetText__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SetText__PythonCallable
-        fun C(Other: UObject): SetText__PythonCallable
-        fun C(Other: Any): SetText__PythonCallable
-    }
-}
-
-external open class ActionCheckStateDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ActionCheckStateDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): ActionCheckStateDelegate__PythonCallable
-        fun GetDefaultObject(): ActionCheckStateDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ActionCheckStateDelegate__PythonCallable
-        fun C(Other: UObject): ActionCheckStateDelegate__PythonCallable
-        fun C(Other: Any): ActionCheckStateDelegate__PythonCallable
-    }
-}
-
-external open class ExecuteAction__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ExecuteAction__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): ExecuteAction__PythonCallable
-        fun GetDefaultObject(): ExecuteAction__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ExecuteAction__PythonCallable
-        fun C(Other: UObject): ExecuteAction__PythonCallable
-        fun C(Other: Any): ExecuteAction__PythonCallable
-    }
-}
-
-external open class OnContextMenuOpening__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnContextMenuOpening__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnContextMenuOpening__PythonCallable
-        fun GetDefaultObject(): OnContextMenuOpening__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnContextMenuOpening__PythonCallable
-        fun C(Other: UObject): OnContextMenuOpening__PythonCallable
-        fun C(Other: Any): OnContextMenuOpening__PythonCallable
-    }
-}
-
-external open class OnExpansionChanged__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnExpansionChanged__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnExpansionChanged__PythonCallable
-        fun GetDefaultObject(): OnExpansionChanged__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnExpansionChanged__PythonCallable
-        fun C(Other: UObject): OnExpansionChanged__PythonCallable
-        fun C(Other: Any): OnExpansionChanged__PythonCallable
-    }
-}
-
-external open class OnGenerateRow__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnGenerateRow__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnGenerateRow__PythonCallable
-        fun GetDefaultObject(): OnGenerateRow__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnGenerateRow__PythonCallable
-        fun C(Other: UObject): OnGenerateRow__PythonCallable
-        fun C(Other: Any): OnGenerateRow__PythonCallable
-    }
-}
-
-external open class OnGetChildrenUObject__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnGetChildrenUObject__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnGetChildrenUObject__PythonCallable
-        fun GetDefaultObject(): OnGetChildrenUObject__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnGetChildrenUObject__PythonCallable
-        fun C(Other: UObject): OnGetChildrenUObject__PythonCallable
-        fun C(Other: Any): OnGetChildrenUObject__PythonCallable
-    }
-}
-
-external open class OnGetDefaultValue__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnGetDefaultValue__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnGetDefaultValue__PythonCallable
-        fun GetDefaultObject(): OnGetDefaultValue__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnGetDefaultValue__PythonCallable
-        fun C(Other: UObject): OnGetDefaultValue__PythonCallable
-        fun C(Other: Any): OnGetDefaultValue__PythonCallable
-    }
-}
-
-external open class OnIsReadOnly__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnIsReadOnly__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnIsReadOnly__PythonCallable
-        fun GetDefaultObject(): OnIsReadOnly__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnIsReadOnly__PythonCallable
-        fun C(Other: UObject): OnIsReadOnly__PythonCallable
-        fun C(Other: Any): OnIsReadOnly__PythonCallable
-    }
-}
-
-external open class OnIsValidText__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnIsValidText__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnIsValidText__PythonCallable
-        fun GetDefaultObject(): OnIsValidText__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnIsValidText__PythonCallable
-        fun C(Other: UObject): OnIsValidText__PythonCallable
-        fun C(Other: Any): OnIsValidText__PythonCallable
-    }
-}
-
-external open class JavascriptGetWidgetWithEditingObject__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptGetWidgetWithEditingObject__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptGetWidgetWithEditingObject__PythonCallable
-        fun GetDefaultObject(): JavascriptGetWidgetWithEditingObject__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptGetWidgetWithEditingObject__PythonCallable
-        fun C(Other: UObject): JavascriptGetWidgetWithEditingObject__PythonCallable
-        fun C(Other: Any): JavascriptGetWidgetWithEditingObject__PythonCallable
-    }
-}
-
-external open class OnComboBoxOpened__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnComboBoxOpened__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnComboBoxOpened__PythonCallable
-        fun GetDefaultObject(): OnComboBoxOpened__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnComboBoxOpened__PythonCallable
-        fun C(Other: UObject): OnComboBoxOpened__PythonCallable
-        fun C(Other: Any): OnComboBoxOpened__PythonCallable
-    }
-}
-
-external open class OnGetContent__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnGetContent__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnGetContent__PythonCallable
-        fun GetDefaultObject(): OnGetContent__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnGetContent__PythonCallable
-        fun C(Other: UObject): OnGetContent__PythonCallable
-        fun C(Other: Any): OnGetContent__PythonCallable
-    }
-}
-
-external open class OnIsOpenChanged__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnIsOpenChanged__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnIsOpenChanged__PythonCallable
-        fun GetDefaultObject(): OnIsOpenChanged__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnIsOpenChanged__PythonCallable
-        fun C(Other: UObject): OnIsOpenChanged__PythonCallable
-        fun C(Other: Any): OnIsOpenChanged__PythonCallable
-    }
-}
-
-external object EJavascriptHttpRequestStatus {
-    var NotStarted: String /* "NotStarted" */
-    var Processing: String /* "Processing" */
-    var Failed: String /* "Failed" */
-    var Succeeded: String /* "Succeeded" */
-    var EJavascriptHttpRequestStatus_MAX: String /* "EJavascriptHttpRequestStatus_MAX" */
-}
-
-external open class JavascriptHttpRequest : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var OnComplete: UnrealEngineDelegate<(successful: Boolean) -> Unit>
-    open var OnProgress: UnrealEngineDelegate<(sent: Number, recv: Number) -> Unit>
-    open fun SetVerb(Verb: String)
-    open fun SetURL(URL: String)
-    open fun SetHeader(HeaderName: String, HeaderValue: String)
-    open fun SetContentWithFiles(FilePaths: Array<String>, Boundary: String, Content: String)
-    open fun SetContentFromMemory()
-    open fun SetContentAsString(ContentString: String)
-    open fun ProcessRequest(): Boolean
-    open fun GetVerb(): String
-    open fun GetStatus(): String /* "NotStarted" | "Processing" | "Failed" | "Succeeded" | "EJavascriptHttpRequestStatus_MAX" */
-    open fun GetResponseCode(): Number
-    open fun GetElapsedTime(): Number
-    open fun GetContentToMemory()
-    open fun GetContentLength(): Number
-    open fun GetContentAsString(): String
-    open fun CancelRequest()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptHttpRequest
-        fun Find(Outer: UObject, ResourceName: String): JavascriptHttpRequest
-        fun GetDefaultObject(): JavascriptHttpRequest
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptHttpRequest
-        fun C(Other: UObject): JavascriptHttpRequest
-        fun C(Other: Any): JavascriptHttpRequest
-    }
-}
-
-external open class JavascriptHttpRequestCompleteDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptHttpRequestCompleteDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptHttpRequestCompleteDelegate__PythonCallable
-        fun GetDefaultObject(): JavascriptHttpRequestCompleteDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptHttpRequestCompleteDelegate__PythonCallable
-        fun C(Other: UObject): JavascriptHttpRequestCompleteDelegate__PythonCallable
-        fun C(Other: Any): JavascriptHttpRequestCompleteDelegate__PythonCallable
-    }
-}
-
-external open class JavascriptHttpRequestProgressDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptHttpRequestProgressDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): JavascriptHttpRequestProgressDelegate__PythonCallable
-        fun GetDefaultObject(): JavascriptHttpRequestProgressDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptHttpRequestProgressDelegate__PythonCallable
-        fun C(Other: UObject): JavascriptHttpRequestProgressDelegate__PythonCallable
-        fun C(Other: Any): JavascriptHttpRequestProgressDelegate__PythonCallable
-    }
-}
-
-external open class JavascriptWebSocket : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var OnReceived: UnrealEngineMulticastDelegate<() -> Unit>
-    open var OnConnected: UnrealEngineMulticastDelegate<() -> Unit>
-    open var OnError: UnrealEngineMulticastDelegate<() -> Unit>
-    open fun Tick()
-    open fun SendMemory(NumBytes: Number)
-    open fun RemoteEndPoint(bAppendPort: Boolean): String
-    open fun LocalEndPoint(bAppendPort: Boolean): String
-    open fun GetReceivedBytes(): Number
-    open fun Flush()
-    open fun Dispose()
-    open fun CopyBuffer()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptWebSocket
-        fun Find(Outer: UObject, ResourceName: String): JavascriptWebSocket
-        fun GetDefaultObject(): JavascriptWebSocket
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptWebSocket
-        fun Connect(Endpoint: String): JavascriptWebSocket
-        fun C(Other: UObject): JavascriptWebSocket
-        fun C(Other: Any): JavascriptWebSocket
-    }
-}
-
-external open class JavascriptWebSocketServer : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var OnConnected: UnrealEngineMulticastDelegate<(WebSocket: JavascriptWebSocket) -> Unit>
-    open var Connections: Array<JavascriptWebSocket>
-    open fun Tick()
-    open fun Info(): String
-    open fun Dispose()
-
-    companion object {
-        fun Load(ResourceName: String): JavascriptWebSocketServer
-        fun Find(Outer: UObject, ResourceName: String): JavascriptWebSocketServer
-        fun GetDefaultObject(): JavascriptWebSocketServer
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JavascriptWebSocketServer
-        fun Create(Port: Number): JavascriptWebSocketServer
-        fun C(Other: UObject): JavascriptWebSocketServer
-        fun C(Other: Any): JavascriptWebSocketServer
-    }
-}
-
-external open class OnWebSocketServerDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnWebSocketServerDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnWebSocketServerDelegate__PythonCallable
-        fun GetDefaultObject(): OnWebSocketServerDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnWebSocketServerDelegate__PythonCallable
-        fun C(Other: UObject): OnWebSocketServerDelegate__PythonCallable
-        fun C(Other: Any): OnWebSocketServerDelegate__PythonCallable
-    }
-}
-
-external open class OnWebSocketDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): OnWebSocketDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): OnWebSocketDelegate__PythonCallable
-        fun GetDefaultObject(): OnWebSocketDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnWebSocketDelegate__PythonCallable
-        fun C(Other: UObject): OnWebSocketDelegate__PythonCallable
-        fun C(Other: Any): OnWebSocketDelegate__PythonCallable
-    }
-}
-
-external open class TcpMessagingSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var EnableTransport: Boolean
-    open var ListenEndpoint: String
-    open var ConnectToEndpoints: Array<String>
-    open var ConnectionRetryDelay: Number
-    open var bStopServiceWhenAppDeactivates: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): TcpMessagingSettings
-        fun Find(Outer: UObject, ResourceName: String): TcpMessagingSettings
-        fun GetDefaultObject(): TcpMessagingSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TcpMessagingSettings
-        fun C(Other: UObject): TcpMessagingSettings
-        fun C(Other: Any): TcpMessagingSettings
-    }
-}
-
 external object EActorSequenceObjectReferenceType {
     var ContextActor: String /* "ContextActor" */
     var ExternalActor: String /* "ExternalActor" */
@@ -15726,6 +15707,25 @@ external open class ActorSequenceComponent : ActorComponent {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ActorSequenceComponent
         fun C(Other: UObject): ActorSequenceComponent
         fun C(Other: Any): ActorSequenceComponent
+    }
+}
+
+external open class TcpMessagingSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var EnableTransport: Boolean
+    open var ListenEndpoint: String
+    open var ConnectToEndpoints: Array<String>
+    open var ConnectionRetryDelay: Number
+    open var bStopServiceWhenAppDeactivates: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): TcpMessagingSettings
+        fun Find(Outer: UObject, ResourceName: String): TcpMessagingSettings
+        fun GetDefaultObject(): TcpMessagingSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TcpMessagingSettings
+        fun C(Other: UObject): TcpMessagingSettings
+        fun C(Other: Any): TcpMessagingSettings
     }
 }
 
@@ -17725,1090 +17725,6 @@ external open class PaperTiledImporterFactory : Factory {
     }
 }
 
-external open class LiveLinkControllerBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkControllerBase
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkControllerBase
-        fun GetDefaultObject(): LiveLinkControllerBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkControllerBase
-        fun C(Other: UObject): LiveLinkControllerBase
-        fun C(Other: Any): LiveLinkControllerBase
-    }
-}
-
-external open class ComponentReference {
-    open var OtherActor: Actor
-    open var ComponentProperty: String
-    open var PathToComponent: String
-    open fun clone(): ComponentReference
-
-    companion object {
-        fun C(Other: UObject): ComponentReference
-        fun C(Other: Any): ComponentReference
-    }
-}
-
-external open class LiveLinkComponentController : ActorComponent {
-    constructor()
-    constructor(Outer: UObject)
-    open var SubjectRepresentation: LiveLinkSubjectRepresentation
-    open var Controller: LiveLinkControllerBase
-    open var ControllerMap: Any
-    open var bUpdateInEditor: Boolean
-    open var OnLiveLinkUpdated: UnrealEngineMulticastDelegate<(DeltaTime: Number) -> Unit>
-    open var ComponentToControl: ComponentReference
-    open var bDisableEvaluateLiveLinkWhenSpawnable: Boolean
-    open var bEvaluateLiveLink: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkComponentController
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkComponentController
-        fun GetDefaultObject(): LiveLinkComponentController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkComponentController
-        fun C(Other: UObject): LiveLinkComponentController
-        fun C(Other: Any): LiveLinkComponentController
-    }
-}
-
-external open class LiveLinkComponentSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var DefaultControllerForRole: Any
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkComponentSettings
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkComponentSettings
-        fun GetDefaultObject(): LiveLinkComponentSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkComponentSettings
-        fun C(Other: UObject): LiveLinkComponentSettings
-        fun C(Other: Any): LiveLinkComponentSettings
-    }
-}
-
-external open class LiveLinkTransformControllerData {
-    open var bWorldTransform: Boolean
-    open var bUseLocation: Boolean
-    open var bUseRotation: Boolean
-    open var bUseScale: Boolean
-    open var bSweep: Boolean
-    open var bTeleport: Boolean
-    open fun clone(): LiveLinkTransformControllerData
-
-    companion object {
-        fun C(Other: UObject): LiveLinkTransformControllerData
-        fun C(Other: Any): LiveLinkTransformControllerData
-    }
-}
-
-external open class LiveLinkLightController : LiveLinkControllerBase {
-    constructor()
-    constructor(Outer: UObject)
-    open var ComponentToControl: ComponentReference
-    open var TransformData: LiveLinkTransformControllerData
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkLightController
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkLightController
-        fun GetDefaultObject(): LiveLinkLightController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkLightController
-        fun C(Other: UObject): LiveLinkLightController
-        fun C(Other: Any): LiveLinkLightController
-    }
-}
-
-external open class LiveLinkTransformController : LiveLinkControllerBase {
-    constructor()
-    constructor(Outer: UObject)
-    open var ComponentToControl: ComponentReference
-    open var TransformData: LiveLinkTransformControllerData
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkTransformController
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkTransformController
-        fun GetDefaultObject(): LiveLinkTransformController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkTransformController
-        fun C(Other: UObject): LiveLinkTransformController
-        fun C(Other: Any): LiveLinkTransformController
-    }
-}
-
-external open class LiveLinkTickDelegate__PythonCallable : PythonCallableForDelegate {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkTickDelegate__PythonCallable
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkTickDelegate__PythonCallable
-        fun GetDefaultObject(): LiveLinkTickDelegate__PythonCallable
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkTickDelegate__PythonCallable
-        fun C(Other: UObject): LiveLinkTickDelegate__PythonCallable
-        fun C(Other: Any): LiveLinkTickDelegate__PythonCallable
-    }
-}
-
-external open class AnimNode_LiveLinkPose : AnimNode_Base {
-    open var InputPose: PoseLink
-    open var LiveLinkSubjectName: LiveLinkSubjectName
-    open var SubjectName: String
-    open var RetargetAsset: UnrealEngineClass
-    open var CurrentRetargetAsset: LiveLinkRetargetAsset
-    override fun clone(): AnimNode_LiveLinkPose
-
-    companion object {
-        fun C(Other: UObject): AnimNode_LiveLinkPose
-        fun C(Other: Any): AnimNode_LiveLinkPose
-    }
-}
-
-external open class AnimGraphNode_LiveLinkPose : AnimGraphNode_Base {
-    constructor()
-    constructor(Outer: UObject)
-    open var UNode: AnimNode_LiveLinkPose
-
-    companion object {
-        fun Load(ResourceName: String): AnimGraphNode_LiveLinkPose
-        fun Find(Outer: UObject, ResourceName: String): AnimGraphNode_LiveLinkPose
-        fun GetDefaultObject(): AnimGraphNode_LiveLinkPose
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AnimGraphNode_LiveLinkPose
-        fun C(Other: UObject): AnimGraphNode_LiveLinkPose
-        fun C(Other: Any): AnimGraphNode_LiveLinkPose
-    }
-}
-
-external open class K2Node_EvaluateLiveLinkFrame : K2Node {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): K2Node_EvaluateLiveLinkFrame
-        fun Find(Outer: UObject, ResourceName: String): K2Node_EvaluateLiveLinkFrame
-        fun GetDefaultObject(): K2Node_EvaluateLiveLinkFrame
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_EvaluateLiveLinkFrame
-        fun C(Other: UObject): K2Node_EvaluateLiveLinkFrame
-        fun C(Other: Any): K2Node_EvaluateLiveLinkFrame
-    }
-}
-
-external open class K2Node_EvaluateLiveLinkFrameWithSpecificRole : K2Node_EvaluateLiveLinkFrame {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): K2Node_EvaluateLiveLinkFrameWithSpecificRole
-        fun Find(Outer: UObject, ResourceName: String): K2Node_EvaluateLiveLinkFrameWithSpecificRole
-        fun GetDefaultObject(): K2Node_EvaluateLiveLinkFrameWithSpecificRole
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_EvaluateLiveLinkFrameWithSpecificRole
-        fun C(Other: UObject): K2Node_EvaluateLiveLinkFrameWithSpecificRole
-        fun C(Other: Any): K2Node_EvaluateLiveLinkFrameWithSpecificRole
-    }
-}
-
-external open class K2Node_EvaluateLiveLinkFrameAtWorldTime : K2Node_EvaluateLiveLinkFrame {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): K2Node_EvaluateLiveLinkFrameAtWorldTime
-        fun Find(Outer: UObject, ResourceName: String): K2Node_EvaluateLiveLinkFrameAtWorldTime
-        fun GetDefaultObject(): K2Node_EvaluateLiveLinkFrameAtWorldTime
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_EvaluateLiveLinkFrameAtWorldTime
-        fun C(Other: UObject): K2Node_EvaluateLiveLinkFrameAtWorldTime
-        fun C(Other: Any): K2Node_EvaluateLiveLinkFrameAtWorldTime
-    }
-}
-
-external open class K2Node_EvaluateLiveLinkFrameAtSceneTime : K2Node_EvaluateLiveLinkFrame {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): K2Node_EvaluateLiveLinkFrameAtSceneTime
-        fun Find(Outer: UObject, ResourceName: String): K2Node_EvaluateLiveLinkFrameAtSceneTime
-        fun GetDefaultObject(): K2Node_EvaluateLiveLinkFrameAtSceneTime
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_EvaluateLiveLinkFrameAtSceneTime
-        fun C(Other: UObject): K2Node_EvaluateLiveLinkFrameAtSceneTime
-        fun C(Other: Any): K2Node_EvaluateLiveLinkFrameAtSceneTime
-    }
-}
-
-external open class K2Node_UpdateVirtualSubjectDataBase : K2Node {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): K2Node_UpdateVirtualSubjectDataBase
-        fun Find(Outer: UObject, ResourceName: String): K2Node_UpdateVirtualSubjectDataBase
-        fun GetDefaultObject(): K2Node_UpdateVirtualSubjectDataBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_UpdateVirtualSubjectDataBase
-        fun C(Other: UObject): K2Node_UpdateVirtualSubjectDataBase
-        fun C(Other: Any): K2Node_UpdateVirtualSubjectDataBase
-    }
-}
-
-external open class K2Node_UpdateVirtualSubjectStaticData : K2Node_UpdateVirtualSubjectDataBase {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): K2Node_UpdateVirtualSubjectStaticData
-        fun Find(Outer: UObject, ResourceName: String): K2Node_UpdateVirtualSubjectStaticData
-        fun GetDefaultObject(): K2Node_UpdateVirtualSubjectStaticData
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_UpdateVirtualSubjectStaticData
-        fun C(Other: UObject): K2Node_UpdateVirtualSubjectStaticData
-        fun C(Other: Any): K2Node_UpdateVirtualSubjectStaticData
-    }
-}
-
-external open class K2Node_UpdateVirtualSubjectFrameData : K2Node_UpdateVirtualSubjectDataBase {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): K2Node_UpdateVirtualSubjectFrameData
-        fun Find(Outer: UObject, ResourceName: String): K2Node_UpdateVirtualSubjectFrameData
-        fun GetDefaultObject(): K2Node_UpdateVirtualSubjectFrameData
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_UpdateVirtualSubjectFrameData
-        fun C(Other: UObject): K2Node_UpdateVirtualSubjectFrameData
-        fun C(Other: Any): K2Node_UpdateVirtualSubjectFrameData
-    }
-}
-
-external open class LiveLinkPropertyData {
-    open var PropertyName: String
-    open var FloatChannel: Array<MovieSceneFloatChannel>
-    open var StringChannel: Array<MovieSceneStringChannel>
-    open var IntegerChannel: Array<MovieSceneIntegerChannel>
-    open var BoolChannel: Array<MovieSceneBoolChannel>
-    open var ByteChannel: Array<MovieSceneByteChannel>
-    open fun clone(): LiveLinkPropertyData
-
-    companion object {
-        fun C(Other: UObject): LiveLinkPropertyData
-        fun C(Other: Any): LiveLinkPropertyData
-    }
-}
-
-external open class LiveLinkSubSectionData {
-    open var Properties: Array<LiveLinkPropertyData>
-    open fun clone(): LiveLinkSubSectionData
-
-    companion object {
-        fun C(Other: UObject): LiveLinkSubSectionData
-        fun C(Other: Any): LiveLinkSubSectionData
-    }
-}
-
-external open class MovieSceneLiveLinkSubSection : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var SubSectionData: LiveLinkSubSectionData
-    open var SubjectRole: UnrealEngineClass
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkSubSection
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSubSection
-        fun GetDefaultObject(): MovieSceneLiveLinkSubSection
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSubSection
-        fun C(Other: UObject): MovieSceneLiveLinkSubSection
-        fun C(Other: Any): MovieSceneLiveLinkSubSection
-    }
-}
-
-external open class LiveLinkCurveElement {
-    open var CurveName: String
-    open var CurveValue: Number
-    open fun clone(): LiveLinkCurveElement
-
-    companion object {
-        fun C(Other: UObject): LiveLinkCurveElement
-        fun C(Other: Any): LiveLinkCurveElement
-    }
-}
-
-external open class LiveLinkFrameData {
-    open var Transforms: Array<Transform>
-    open var CurveElements: Array<LiveLinkCurveElement>
-    open var WorldTime: LiveLinkWorldTime
-    open var MetaData: LiveLinkMetaData
-    open fun clone(): LiveLinkFrameData
-
-    companion object {
-        fun C(Other: UObject): LiveLinkFrameData
-        fun C(Other: Any): LiveLinkFrameData
-    }
-}
-
-external open class LiveLinkRefSkeleton {
-    open var BoneNames: Array<String>
-    open var BoneParents: Array<Number>
-    open fun clone(): LiveLinkRefSkeleton
-
-    companion object {
-        fun C(Other: UObject): LiveLinkRefSkeleton
-        fun C(Other: Any): LiveLinkRefSkeleton
-    }
-}
-
-external open class MovieSceneLiveLinkSection : MovieSceneSection {
-    constructor()
-    constructor(Outer: UObject)
-    open var SubjectPreset: LiveLinkSubjectPreset
-    open var ChannelMask: Array<Boolean>
-    open var SubSections: Array<MovieSceneLiveLinkSubSection>
-    open var SubjectName: String
-    open var TemplateToPush: LiveLinkFrameData
-    open var RefSkeleton: LiveLinkRefSkeleton
-    open var CurveNames: Array<String>
-    open var PropertyFloatChannels: Array<MovieSceneFloatChannel>
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkSection
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSection
-        fun GetDefaultObject(): MovieSceneLiveLinkSection
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSection
-        fun C(Other: UObject): MovieSceneLiveLinkSection
-        fun C(Other: Any): MovieSceneLiveLinkSection
-    }
-}
-
-external open class MovieSceneLiveLinkSubSectionAnimation : MovieSceneLiveLinkSubSection {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkSubSectionAnimation
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSubSectionAnimation
-        fun GetDefaultObject(): MovieSceneLiveLinkSubSectionAnimation
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSubSectionAnimation
-        fun C(Other: UObject): MovieSceneLiveLinkSubSectionAnimation
-        fun C(Other: Any): MovieSceneLiveLinkSubSectionAnimation
-    }
-}
-
-external open class MovieSceneLiveLinkSubSectionBasicRole : MovieSceneLiveLinkSubSection {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkSubSectionBasicRole
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSubSectionBasicRole
-        fun GetDefaultObject(): MovieSceneLiveLinkSubSectionBasicRole
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSubSectionBasicRole
-        fun C(Other: UObject): MovieSceneLiveLinkSubSectionBasicRole
-        fun C(Other: Any): MovieSceneLiveLinkSubSectionBasicRole
-    }
-}
-
-external open class MovieSceneLiveLinkSubSectionProperties : MovieSceneLiveLinkSubSection {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkSubSectionProperties
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSubSectionProperties
-        fun GetDefaultObject(): MovieSceneLiveLinkSubSectionProperties
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSubSectionProperties
-        fun C(Other: UObject): MovieSceneLiveLinkSubSectionProperties
-        fun C(Other: Any): MovieSceneLiveLinkSubSectionProperties
-    }
-}
-
-external open class MovieSceneLiveLinkTrack : MovieScenePropertyTrack {
-    constructor()
-    constructor(Outer: UObject)
-    open var TrackRole: UnrealEngineClass
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkTrack
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkTrack
-        fun GetDefaultObject(): MovieSceneLiveLinkTrack
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkTrack
-        fun C(Other: UObject): MovieSceneLiveLinkTrack
-        fun C(Other: Any): MovieSceneLiveLinkTrack
-    }
-}
-
-external object EPinnedCommandListType {
-    var Command: String /* "Command" */
-    var CustomWidget: String /* "CustomWidget" */
-    var EPinnedCommandListType_MAX: String /* "EPinnedCommandListType_MAX" */
-}
-
-external open class PinnedCommandListCommand {
-    open var Name: String
-    open var Binding: String
-    open var Type: String /* "Command" | "CustomWidget" | "EPinnedCommandListType_MAX" */
-    open fun clone(): PinnedCommandListCommand
-
-    companion object {
-        fun C(Other: UObject): PinnedCommandListCommand
-        fun C(Other: Any): PinnedCommandListCommand
-    }
-}
-
-external open class PinnedCommandListContext {
-    open var Name: String
-    open var Commands: Array<PinnedCommandListCommand>
-    open fun clone(): PinnedCommandListContext
-
-    companion object {
-        fun C(Other: UObject): PinnedCommandListContext
-        fun C(Other: Any): PinnedCommandListContext
-    }
-}
-
-external open class PinnedCommandListSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Contexts: Array<PinnedCommandListContext>
-
-    companion object {
-        fun Load(ResourceName: String): PinnedCommandListSettings
-        fun Find(Outer: UObject, ResourceName: String): PinnedCommandListSettings
-        fun GetDefaultObject(): PinnedCommandListSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PinnedCommandListSettings
-        fun C(Other: UObject): PinnedCommandListSettings
-        fun C(Other: Any): PinnedCommandListSettings
-    }
-}
-
-external open class AnimationEditorPreviewActor(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : Actor {
-    companion object {
-        fun GetDefaultObject(): AnimationEditorPreviewActor
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AnimationEditorPreviewActor
-        fun C(Other: UObject): AnimationEditorPreviewActor
-        fun C(Other: Any): AnimationEditorPreviewActor
-    }
-}
-
-external open class LODInfoUILayout : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var LODInfo: SkeletalMeshLODInfo
-
-    companion object {
-        fun Load(ResourceName: String): LODInfoUILayout
-        fun Find(Outer: UObject, ResourceName: String): LODInfoUILayout
-        fun GetDefaultObject(): LODInfoUILayout
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LODInfoUILayout
-        fun C(Other: UObject): LODInfoUILayout
-        fun C(Other: Any): LODInfoUILayout
-    }
-}
-
-external open class PersonaPreviewSceneController : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): PersonaPreviewSceneController
-        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneController
-        fun GetDefaultObject(): PersonaPreviewSceneController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneController
-        fun C(Other: UObject): PersonaPreviewSceneController
-        fun C(Other: Any): PersonaPreviewSceneController
-    }
-}
-
-external open class PersonaPreviewSceneAnimationController : PersonaPreviewSceneController {
-    constructor()
-    constructor(Outer: UObject)
-    open var Animation: AnimationAsset
-
-    companion object {
-        fun Load(ResourceName: String): PersonaPreviewSceneAnimationController
-        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneAnimationController
-        fun GetDefaultObject(): PersonaPreviewSceneAnimationController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneAnimationController
-        fun C(Other: UObject): PersonaPreviewSceneAnimationController
-        fun C(Other: Any): PersonaPreviewSceneAnimationController
-    }
-}
-
-external open class PersonaPreviewSceneDefaultController : PersonaPreviewSceneController {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): PersonaPreviewSceneDefaultController
-        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneDefaultController
-        fun GetDefaultObject(): PersonaPreviewSceneDefaultController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneDefaultController
-        fun C(Other: UObject): PersonaPreviewSceneDefaultController
-        fun C(Other: Any): PersonaPreviewSceneDefaultController
-    }
-}
-
-external open class PersonaPreviewSceneDescription : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var PreviewController: UnrealEngineClass
-    open var PreviewControllerInstance: PersonaPreviewSceneController
-    open var PreviewControllerInstances: Array<PersonaPreviewSceneController>
-    open var PreviewMesh: SkeletalMesh
-    open var PreviewAnimationBlueprint: AnimBlueprint
-    open var ApplicationMethod: String /* "LinkedLayers" | "LinkedAnimGraph" | "EPreviewAnimationBlueprintApplicationMethod_MAX" */
-    open var LinkedAnimGraphTag: String
-    open var AdditionalMeshes: DataAsset
-    open var DefaultAdditionalMeshes: PreviewMeshCollection
-
-    companion object {
-        fun Load(ResourceName: String): PersonaPreviewSceneDescription
-        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneDescription
-        fun GetDefaultObject(): PersonaPreviewSceneDescription
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneDescription
-        fun C(Other: UObject): PersonaPreviewSceneDescription
-        fun C(Other: Any): PersonaPreviewSceneDescription
-    }
-}
-
-external open class PersonaPreviewSceneRefPoseController : PersonaPreviewSceneController {
-    constructor()
-    constructor(Outer: UObject)
-    open var bResetBoneTransforms: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): PersonaPreviewSceneRefPoseController
-        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneRefPoseController
-        fun GetDefaultObject(): PersonaPreviewSceneRefPoseController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneRefPoseController
-        fun C(Other: UObject): PersonaPreviewSceneRefPoseController
-        fun C(Other: Any): PersonaPreviewSceneRefPoseController
-    }
-}
-
-external open class SkinWeightImportOptions : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var ProfileName: String
-    open var FilePath: String
-    open var LODIndex: Number
-
-    companion object {
-        fun Load(ResourceName: String): SkinWeightImportOptions
-        fun Find(Outer: UObject, ResourceName: String): SkinWeightImportOptions
-        fun GetDefaultObject(): SkinWeightImportOptions
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SkinWeightImportOptions
-        fun C(Other: UObject): SkinWeightImportOptions
-        fun C(Other: Any): SkinWeightImportOptions
-    }
-}
-
-external open class LiveLinkBlueprintVirtualSubjectFactory : Factory {
-    constructor()
-    constructor(Outer: UObject)
-    open var ParentClass: UnrealEngineClass
-    open var Role: UnrealEngineClass
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkBlueprintVirtualSubjectFactory
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkBlueprintVirtualSubjectFactory
-        fun GetDefaultObject(): LiveLinkBlueprintVirtualSubjectFactory
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkBlueprintVirtualSubjectFactory
-        fun C(Other: UObject): LiveLinkBlueprintVirtualSubjectFactory
-        fun C(Other: Any): LiveLinkBlueprintVirtualSubjectFactory
-    }
-}
-
-external open class LiveLinkPreviewController : PersonaPreviewSceneController {
-    constructor()
-    constructor(Outer: UObject)
-    open var SubjectName: String
-    open var LiveLinkSubjectName: LiveLinkSubjectName
-    open var bEnableCameraSync: Boolean
-    open var RetargetAsset: UnrealEngineClass
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkPreviewController
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkPreviewController
-        fun GetDefaultObject(): LiveLinkPreviewController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkPreviewController
-        fun C(Other: UObject): LiveLinkPreviewController
-        fun C(Other: Any): LiveLinkPreviewController
-    }
-}
-
-external open class LiveLinkSequencerTrackFilter : SequencerTrackFilterExtension {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkSequencerTrackFilter
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkSequencerTrackFilter
-        fun GetDefaultObject(): LiveLinkSequencerTrackFilter
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkSequencerTrackFilter
-        fun C(Other: UObject): LiveLinkSequencerTrackFilter
-        fun C(Other: Any): LiveLinkSequencerTrackFilter
-    }
-}
-
-external open class ActorRecordedProperty {
-    open var PropertyName: String
-    open var bEnabled: Boolean
-    open var RecorderName: String
-    open fun clone(): ActorRecordedProperty
-
-    companion object {
-        fun C(Other: UObject): ActorRecordedProperty
-        fun C(Other: Any): ActorRecordedProperty
-    }
-}
-
-external open class ActorRecorderPropertyMap : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var RecordedObject: UObject
-    open var Properties: Array<ActorRecordedProperty>
-    open var Children: Array<ActorRecorderPropertyMap>
-
-    companion object {
-        fun Load(ResourceName: String): ActorRecorderPropertyMap
-        fun Find(Outer: UObject, ResourceName: String): ActorRecorderPropertyMap
-        fun GetDefaultObject(): ActorRecorderPropertyMap
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ActorRecorderPropertyMap
-        fun C(Other: UObject): ActorRecorderPropertyMap
-        fun C(Other: Any): ActorRecorderPropertyMap
-    }
-}
-
-external open class TakesCoreBlueprintLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): TakesCoreBlueprintLibrary
-        fun Find(Outer: UObject, ResourceName: String): TakesCoreBlueprintLibrary
-        fun GetDefaultObject(): TakesCoreBlueprintLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakesCoreBlueprintLibrary
-        fun FindTakes(Slate: String, TakeNumber: Number): Array<AssetData>
-        fun ComputeNextTakeNumber(Slate: String): Number
-        fun C(Other: UObject): TakesCoreBlueprintLibrary
-        fun C(Other: Any): TakesCoreBlueprintLibrary
-    }
-}
-
-external open class MovieSceneTakeSection : MovieSceneSection {
-    constructor()
-    constructor(Outer: UObject)
-    open var HoursCurve: MovieSceneIntegerChannel
-    open var MinutesCurve: MovieSceneIntegerChannel
-    open var SecondsCurve: MovieSceneIntegerChannel
-    open var FramesCurve: MovieSceneIntegerChannel
-    open var SubFramesCurve: MovieSceneFloatChannel
-    open var Slate: MovieSceneStringChannel
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneTakeSection
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneTakeSection
-        fun GetDefaultObject(): MovieSceneTakeSection
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTakeSection
-        fun C(Other: UObject): MovieSceneTakeSection
-        fun C(Other: Any): MovieSceneTakeSection
-    }
-}
-
-external open class MovieSceneTakeSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var HoursName: String
-    open var MinutesName: String
-    open var SecondsName: String
-    open var FramesName: String
-    open var SubFramesName: String
-    open var SlateName: String
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneTakeSettings
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneTakeSettings
-        fun GetDefaultObject(): MovieSceneTakeSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTakeSettings
-        fun C(Other: UObject): MovieSceneTakeSettings
-        fun C(Other: Any): MovieSceneTakeSettings
-    }
-}
-
-external open class MovieSceneTakeTrack : MovieSceneNameableTrack {
-    constructor()
-    constructor(Outer: UObject)
-    open var Sections: Array<MovieSceneSection>
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneTakeTrack
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneTakeTrack
-        fun GetDefaultObject(): MovieSceneTakeTrack
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTakeTrack
-        fun C(Other: UObject): MovieSceneTakeTrack
-        fun C(Other: Any): MovieSceneTakeTrack
-    }
-}
-
-external open class MovieSceneTrackRecorder : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneTrackRecorder
-        fun GetDefaultObject(): MovieSceneTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTrackRecorder
-        fun C(Other: UObject): MovieSceneTrackRecorder
-        fun C(Other: Any): MovieSceneTrackRecorder
-    }
-}
-
-external open class MovieScene3DAttachTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieScene3DAttachTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieScene3DAttachTrackRecorder
-        fun GetDefaultObject(): MovieScene3DAttachTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieScene3DAttachTrackRecorder
-        fun C(Other: UObject): MovieScene3DAttachTrackRecorder
-        fun C(Other: Any): MovieScene3DAttachTrackRecorder
-    }
-}
-
-external open class MovieScene3DTransformTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieScene3DTransformTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieScene3DTransformTrackRecorder
-        fun GetDefaultObject(): MovieScene3DTransformTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieScene3DTransformTrackRecorder
-        fun C(Other: UObject): MovieScene3DTransformTrackRecorder
-        fun C(Other: Any): MovieScene3DTransformTrackRecorder
-    }
-}
-
-external open class MovieSceneAnimationTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneAnimationTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneAnimationTrackRecorder
-        fun GetDefaultObject(): MovieSceneAnimationTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneAnimationTrackRecorder
-        fun C(Other: UObject): MovieSceneAnimationTrackRecorder
-        fun C(Other: Any): MovieSceneAnimationTrackRecorder
-    }
-}
-
-external open class MovieSceneTrackRecorderSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneTrackRecorderSettings
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneTrackRecorderSettings
-        fun GetDefaultObject(): MovieSceneTrackRecorderSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTrackRecorderSettings
-        fun C(Other: UObject): MovieSceneTrackRecorderSettings
-        fun C(Other: Any): MovieSceneTrackRecorderSettings
-    }
-}
-
-external open class MovieSceneAnimationTrackRecorderEditorSettings : MovieSceneTrackRecorderSettings {
-    constructor()
-    constructor(Outer: UObject)
-    open var AnimationTrackName: String
-    open var AnimationAssetName: String
-    open var AnimationSubDirectory: String
-    open var InterpMode: String /* "RCIM_Linear" | "RCIM_Constant" | "RCIM_Cubic" | "RCIM_None" | "RCIM_MAX" */
-    open var TangentMode: String /* "RCTM_Auto" | "RCTM_User" | "RCTM_Break" | "RCTM_None" | "RCTM_MAX" */
-    open var bRemoveRootAnimation: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneAnimationTrackRecorderEditorSettings
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneAnimationTrackRecorderEditorSettings
-        fun GetDefaultObject(): MovieSceneAnimationTrackRecorderEditorSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneAnimationTrackRecorderEditorSettings
-        fun C(Other: UObject): MovieSceneAnimationTrackRecorderEditorSettings
-        fun C(Other: Any): MovieSceneAnimationTrackRecorderEditorSettings
-    }
-}
-
-external open class MovieSceneAnimationTrackRecorderSettings : MovieSceneAnimationTrackRecorderEditorSettings {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneAnimationTrackRecorderSettings
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneAnimationTrackRecorderSettings
-        fun GetDefaultObject(): MovieSceneAnimationTrackRecorderSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneAnimationTrackRecorderSettings
-        fun C(Other: UObject): MovieSceneAnimationTrackRecorderSettings
-        fun C(Other: Any): MovieSceneAnimationTrackRecorderSettings
-    }
-}
-
-external open class MovieSceneParticleTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-    open fun OnTriggered(Component: ParticleSystemComponent, bActivating: Boolean)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneParticleTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneParticleTrackRecorder
-        fun GetDefaultObject(): MovieSceneParticleTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneParticleTrackRecorder
-        fun C(Other: UObject): MovieSceneParticleTrackRecorder
-        fun C(Other: Any): MovieSceneParticleTrackRecorder
-    }
-}
-
-external open class MovieScenePropertyTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieScenePropertyTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieScenePropertyTrackRecorder
-        fun GetDefaultObject(): MovieScenePropertyTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieScenePropertyTrackRecorder
-        fun C(Other: UObject): MovieScenePropertyTrackRecorder
-        fun C(Other: Any): MovieScenePropertyTrackRecorder
-    }
-}
-
-external open class MovieSceneSpawnTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneSpawnTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneSpawnTrackRecorder
-        fun GetDefaultObject(): MovieSceneSpawnTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneSpawnTrackRecorder
-        fun C(Other: UObject): MovieSceneSpawnTrackRecorder
-        fun C(Other: Any): MovieSceneSpawnTrackRecorder
-    }
-}
-
-external open class MovieSceneVisibilityTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneVisibilityTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneVisibilityTrackRecorder
-        fun GetDefaultObject(): MovieSceneVisibilityTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneVisibilityTrackRecorder
-        fun C(Other: UObject): MovieSceneVisibilityTrackRecorder
-        fun C(Other: Any): MovieSceneVisibilityTrackRecorder
-    }
-}
-
-external object ETakeRecorderPanelMode {
-    var NewRecording: String /* "NewRecording" */
-    var RecordingInto: String /* "RecordingInto" */
-    var EditingPreset: String /* "EditingPreset" */
-    var ReviewingRecording: String /* "ReviewingRecording" */
-    var ETakeRecorderPanelMode_MAX: String /* "ETakeRecorderPanelMode_MAX" */
-}
-
-external interface `T$479` {
-    var OutErrorText: String
-    var `$`: Boolean
-}
-
-external open class TakeRecorderPanel : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun StopRecording()
-    open fun StartRecording()
-    open fun SetMode(LevelSequenceAsset: LevelSequence)
-    open fun SetMode(TakePresetAsset: TakePreset)
-    open fun SetMode(TakePreset: TakePreset)
-    open fun SetFrameRateFromTimecode(bInFromTimecode: Boolean)
-    open fun SetFrameRate(InFrameRate: FrameRate)
-    open fun NewTake()
-    open fun GetTakeMetaData(): TakeMetaData
-    open fun GetSources(): TakeRecorderSources
-    open fun GetMode(): String /* "NewRecording" | "RecordingInto" | "EditingPreset" | "ReviewingRecording" | "ETakeRecorderPanelMode_MAX" */
-    open fun GetLevelSequence(): LevelSequence
-    open fun GetLastRecordedLevelSequence(): LevelSequence
-    open fun GetFrameRate(): FrameRate
-    open fun ClearPendingTake()
-    open fun CanStartRecording(OutErrorText: String = definedExternally): `T$479`
-
-    companion object {
-        fun Load(ResourceName: String): TakeRecorderPanel
-        fun Find(Outer: UObject, ResourceName: String): TakeRecorderPanel
-        fun GetDefaultObject(): TakeRecorderPanel
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderPanel
-        fun C(Other: UObject): TakeRecorderPanel
-        fun C(Other: Any): TakeRecorderPanel
-    }
-}
-
-external open class TakeRecorderBlueprintLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): TakeRecorderBlueprintLibrary
-        fun Find(Outer: UObject, ResourceName: String): TakeRecorderBlueprintLibrary
-        fun GetDefaultObject(): TakeRecorderBlueprintLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderBlueprintLibrary
-        fun StopRecording()
-        fun StartRecording(LevelSequence: LevelSequence, Sources: TakeRecorderSources, MetaData: TakeMetaData, Parameters: TakeRecorderParameters): TakeRecorder
-        fun OpenTakeRecorderPanel(): TakeRecorderPanel
-        fun IsTakeRecorderEnabled(): Boolean
-        fun IsRecording(): Boolean
-        fun GetTakeRecorderPanel(): TakeRecorderPanel
-        fun GetDefaultParameters(): TakeRecorderParameters
-        fun GetActiveRecorder(): TakeRecorder
-        fun C(Other: UObject): TakeRecorderBlueprintLibrary
-        fun C(Other: Any): TakeRecorderBlueprintLibrary
-    }
-}
-
-external open class TakeRecorderUserSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Settings: TakeRecorderUserParameters
-    open var PresetSaveDir: DirectoryPath
-    open var LastOpenedPreset: TakePreset
-    open var bIsSequenceOpen: Boolean
-    open var bShowUserSettingsOnUI: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): TakeRecorderUserSettings
-        fun Find(Outer: UObject, ResourceName: String): TakeRecorderUserSettings
-        fun GetDefaultObject(): TakeRecorderUserSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderUserSettings
-        fun C(Other: UObject): TakeRecorderUserSettings
-        fun C(Other: Any): TakeRecorderUserSettings
-    }
-}
-
-external open class TakeRecorderProjectSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Settings: TakeRecorderProjectParameters
-
-    companion object {
-        fun Load(ResourceName: String): TakeRecorderProjectSettings
-        fun Find(Outer: UObject, ResourceName: String): TakeRecorderProjectSettings
-        fun GetDefaultObject(): TakeRecorderProjectSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderProjectSettings
-        fun C(Other: UObject): TakeRecorderProjectSettings
-        fun C(Other: Any): TakeRecorderProjectSettings
-    }
-}
-
-external open class LiveLinkSequencerSettings : DeveloperSettings {
-    constructor()
-    constructor(Outer: UObject)
-    open var DefaultTrackRecordersForController: Any
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkSequencerSettings
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkSequencerSettings
-        fun GetDefaultObject(): LiveLinkSequencerSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkSequencerSettings
-        fun C(Other: UObject): LiveLinkSequencerSettings
-        fun C(Other: Any): LiveLinkSequencerSettings
-    }
-}
-
-external open class MovieSceneLiveLinkControllerMapTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkControllerMapTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkControllerMapTrackRecorder
-        fun GetDefaultObject(): MovieSceneLiveLinkControllerMapTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkControllerMapTrackRecorder
-        fun C(Other: UObject): MovieSceneLiveLinkControllerMapTrackRecorder
-        fun C(Other: Any): MovieSceneLiveLinkControllerMapTrackRecorder
-    }
-}
-
-external open class MovieSceneLiveLinkControllerTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-    open var LiveLinkControllerToRecord: LiveLinkControllerBase
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkControllerTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkControllerTrackRecorder
-        fun GetDefaultObject(): MovieSceneLiveLinkControllerTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkControllerTrackRecorder
-        fun C(Other: UObject): MovieSceneLiveLinkControllerTrackRecorder
-        fun C(Other: Any): MovieSceneLiveLinkControllerTrackRecorder
-    }
-}
-
-external open class MovieSceneLiveLinkTrackRecorder : MovieSceneTrackRecorder {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneLiveLinkTrackRecorder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkTrackRecorder
-        fun GetDefaultObject(): MovieSceneLiveLinkTrackRecorder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkTrackRecorder
-        fun C(Other: UObject): MovieSceneLiveLinkTrackRecorder
-        fun C(Other: Any): MovieSceneLiveLinkTrackRecorder
-    }
-}
-
-external open class LiveLinkSubjectProperty {
-    open var SubjectName: String
-    open var bEnabled: Boolean
-    open fun clone(): LiveLinkSubjectProperty
-
-    companion object {
-        fun C(Other: UObject): LiveLinkSubjectProperty
-        fun C(Other: Any): LiveLinkSubjectProperty
-    }
-}
-
-external open class LiveLinkSubjectProperties : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Properties: Array<LiveLinkSubjectProperty>
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkSubjectProperties
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkSubjectProperties
-        fun GetDefaultObject(): LiveLinkSubjectProperties
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkSubjectProperties
-        fun C(Other: UObject): LiveLinkSubjectProperties
-        fun C(Other: Any): LiveLinkSubjectProperties
-    }
-}
-
-external open class TakeRecorderLiveLinkSource : TakeRecorderSource {
-    constructor()
-    constructor(Outer: UObject)
-    open var bReduceKeys: Boolean
-    open var SubjectName: String
-    open var bSaveSubjectSettings: Boolean
-    open var bUseSourceTimecode: Boolean
-    open var bDiscardSamplesBeforeStart: Boolean
-    open var TrackRecorder: MovieSceneLiveLinkTrackRecorder
-
-    companion object {
-        fun Load(ResourceName: String): TakeRecorderLiveLinkSource
-        fun Find(Outer: UObject, ResourceName: String): TakeRecorderLiveLinkSource
-        fun GetDefaultObject(): TakeRecorderLiveLinkSource
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderLiveLinkSource
-        fun C(Other: UObject): TakeRecorderLiveLinkSource
-        fun C(Other: Any): TakeRecorderLiveLinkSource
-    }
-}
-
 external open class LightPropagationVolumeBlendableFactory : Factory {
     constructor()
     constructor(Outer: UObject)
@@ -19067,87 +17983,6 @@ external open class AnimationSharingSetupFactory : Factory {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AnimationSharingSetupFactory
         fun C(Other: UObject): AnimationSharingSetupFactory
         fun C(Other: Any): AnimationSharingSetupFactory
-    }
-}
-
-external open class LevelVariantSetsActorFactory : ActorFactory {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LevelVariantSetsActorFactory
-        fun Find(Outer: UObject, ResourceName: String): LevelVariantSetsActorFactory
-        fun GetDefaultObject(): LevelVariantSetsActorFactory
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LevelVariantSetsActorFactory
-        fun C(Other: UObject): LevelVariantSetsActorFactory
-        fun C(Other: Any): LevelVariantSetsActorFactory
-    }
-}
-
-external open class SwitchActorFactory : ActorFactory {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): SwitchActorFactory
-        fun Find(Outer: UObject, ResourceName: String): SwitchActorFactory
-        fun GetDefaultObject(): SwitchActorFactory
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SwitchActorFactory
-        fun C(Other: UObject): SwitchActorFactory
-        fun C(Other: Any): SwitchActorFactory
-    }
-}
-
-external open class VariantManagerFactoryNew : Factory {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): VariantManagerFactoryNew
-        fun Find(Outer: UObject, ResourceName: String): VariantManagerFactoryNew
-        fun GetDefaultObject(): VariantManagerFactoryNew
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): VariantManagerFactoryNew
-        fun C(Other: UObject): VariantManagerFactoryNew
-        fun C(Other: Any): VariantManagerFactoryNew
-    }
-}
-
-external object EVariantManagerTestEnum {
-    var None: String /* "None" */
-    var FirstOption: String /* "FirstOption" */
-    var SecondOption: String /* "SecondOption" */
-    var ThirdOption: String /* "ThirdOption" */
-    var EVariantManagerTestEnum_MAX: String /* "EVariantManagerTestEnum_MAX" */
-}
-
-external open class VariantManagerTestActor(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : Actor {
-    open var EnumWithNoDefault: String /* "None" | "FirstOption" | "SecondOption" | "ThirdOption" | "EVariantManagerTestEnum_MAX" */
-    open var EnumWithSecondDefault: String /* "None" | "FirstOption" | "SecondOption" | "ThirdOption" | "EVariantManagerTestEnum_MAX" */
-    open var CapturedByteProperty: Number
-    open var CapturedIntProperty: Number
-    open var CapturedFloatProperty: Number
-    open var bCapturedBoolProperty: Boolean
-    open var CapturedObjectProperty: UObject
-    open var CapturedInterfaceProperty: Any
-    open var CapturedNameProperty: String
-    open var CapturedStrProperty: String
-    open var CapturedTextProperty: String
-    open var CapturedRotatorProperty: Rotator
-    open var CapturedColorProperty: Color
-    open var CapturedLinearColorProperty: LinearColor
-    open var CapturedVectorProperty: Vector
-    open var CapturedQuatProperty: Quat
-    open var CapturedVector4Property: Vector4
-    open var CapturedVector2DProperty: Vector2D
-    open var CapturedIntPointProperty: IntPoint
-    open var CapturedUObjectArrayProperty: Array<UObject>
-    open var CapturedVectorArrayProperty: Array<Vector>
-
-    companion object {
-        fun GetDefaultObject(): VariantManagerTestActor
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): VariantManagerTestActor
-        fun C(Other: UObject): VariantManagerTestActor
-        fun C(Other: Any): VariantManagerTestActor
     }
 }
 
@@ -20948,15 +19783,15 @@ external open class GeometryCollectionActor(InWorld: World, Location: Vector = d
     }
 }
 
-external interface `T$480` {
+external interface `T$479` {
     var TrailingEvents: Array<ChaosTrailingEventData>
 }
 
-external interface `T$481` {
+external interface `T$480` {
     var CollisionEvents: Array<ChaosCollisionEventData>
 }
 
-external interface `T$482` {
+external interface `T$481` {
     var BreakingEvents: Array<ChaosBreakingEventData>
 }
 
@@ -20974,9 +19809,9 @@ external open class ChaosDestructionListener : SceneComponent {
     open var OnCollisionEvents: UnrealEngineMulticastDelegate<(CollisionEvents: Array<ChaosCollisionEventData>) -> Unit>
     open var OnBreakingEvents: UnrealEngineMulticastDelegate<(BreakingEvents: Array<ChaosBreakingEventData>) -> Unit>
     open var OnTrailingEvents: UnrealEngineMulticastDelegate<(TrailingEvents: Array<ChaosTrailingEventData>) -> Unit>
-    open fun SortTrailingEvents(TrailingEvents: Array<ChaosTrailingEventData> = definedExternally, SortMethod: String /* "SortNone" | "SortByHighestMass" | "SortByHighestSpeed" | "SortByNearestFirst" | "Count" | "EChaosTrailingSortMethod_MAX" */ = definedExternally): `T$480`
-    open fun SortCollisionEvents(CollisionEvents: Array<ChaosCollisionEventData> = definedExternally, SortMethod: String /* "SortNone" | "SortByHighestMass" | "SortByHighestSpeed" | "SortByHighestImpulse" | "SortByNearestFirst" | "Count" | "EChaosCollisionSortMethod_MAX" */ = definedExternally): `T$481`
-    open fun SortBreakingEvents(BreakingEvents: Array<ChaosBreakingEventData> = definedExternally, SortMethod: String /* "SortNone" | "SortByHighestMass" | "SortByHighestSpeed" | "SortByNearestFirst" | "Count" | "EChaosBreakingSortMethod_MAX" */ = definedExternally): `T$482`
+    open fun SortTrailingEvents(TrailingEvents: Array<ChaosTrailingEventData> = definedExternally, SortMethod: String /* "SortNone" | "SortByHighestMass" | "SortByHighestSpeed" | "SortByNearestFirst" | "Count" | "EChaosTrailingSortMethod_MAX" */ = definedExternally): `T$479`
+    open fun SortCollisionEvents(CollisionEvents: Array<ChaosCollisionEventData> = definedExternally, SortMethod: String /* "SortNone" | "SortByHighestMass" | "SortByHighestSpeed" | "SortByHighestImpulse" | "SortByNearestFirst" | "Count" | "EChaosCollisionSortMethod_MAX" */ = definedExternally): `T$480`
+    open fun SortBreakingEvents(BreakingEvents: Array<ChaosBreakingEventData> = definedExternally, SortMethod: String /* "SortNone" | "SortByHighestMass" | "SortByHighestSpeed" | "SortByNearestFirst" | "Count" | "EChaosBreakingSortMethod_MAX" */ = definedExternally): `T$481`
     open fun SetTrailingEventRequestSettings(InSettings: ChaosTrailingEventRequestSettings)
     open fun SetTrailingEventEnabled(bIsEnabled: Boolean)
     open fun SetCollisionEventRequestSettings(InSettings: ChaosCollisionEventRequestSettings)
@@ -22042,6 +20877,87 @@ external open class ChaosSolverFactory : Factory {
     }
 }
 
+external open class LevelVariantSetsActorFactory : ActorFactory {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): LevelVariantSetsActorFactory
+        fun Find(Outer: UObject, ResourceName: String): LevelVariantSetsActorFactory
+        fun GetDefaultObject(): LevelVariantSetsActorFactory
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LevelVariantSetsActorFactory
+        fun C(Other: UObject): LevelVariantSetsActorFactory
+        fun C(Other: Any): LevelVariantSetsActorFactory
+    }
+}
+
+external open class SwitchActorFactory : ActorFactory {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): SwitchActorFactory
+        fun Find(Outer: UObject, ResourceName: String): SwitchActorFactory
+        fun GetDefaultObject(): SwitchActorFactory
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SwitchActorFactory
+        fun C(Other: UObject): SwitchActorFactory
+        fun C(Other: Any): SwitchActorFactory
+    }
+}
+
+external open class VariantManagerFactoryNew : Factory {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): VariantManagerFactoryNew
+        fun Find(Outer: UObject, ResourceName: String): VariantManagerFactoryNew
+        fun GetDefaultObject(): VariantManagerFactoryNew
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): VariantManagerFactoryNew
+        fun C(Other: UObject): VariantManagerFactoryNew
+        fun C(Other: Any): VariantManagerFactoryNew
+    }
+}
+
+external object EVariantManagerTestEnum {
+    var None: String /* "None" */
+    var FirstOption: String /* "FirstOption" */
+    var SecondOption: String /* "SecondOption" */
+    var ThirdOption: String /* "ThirdOption" */
+    var EVariantManagerTestEnum_MAX: String /* "EVariantManagerTestEnum_MAX" */
+}
+
+external open class VariantManagerTestActor(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : Actor {
+    open var EnumWithNoDefault: String /* "None" | "FirstOption" | "SecondOption" | "ThirdOption" | "EVariantManagerTestEnum_MAX" */
+    open var EnumWithSecondDefault: String /* "None" | "FirstOption" | "SecondOption" | "ThirdOption" | "EVariantManagerTestEnum_MAX" */
+    open var CapturedByteProperty: Number
+    open var CapturedIntProperty: Number
+    open var CapturedFloatProperty: Number
+    open var bCapturedBoolProperty: Boolean
+    open var CapturedObjectProperty: UObject
+    open var CapturedInterfaceProperty: Any
+    open var CapturedNameProperty: String
+    open var CapturedStrProperty: String
+    open var CapturedTextProperty: String
+    open var CapturedRotatorProperty: Rotator
+    open var CapturedColorProperty: Color
+    open var CapturedLinearColorProperty: LinearColor
+    open var CapturedVectorProperty: Vector
+    open var CapturedQuatProperty: Quat
+    open var CapturedVector4Property: Vector4
+    open var CapturedVector2DProperty: Vector2D
+    open var CapturedIntPointProperty: IntPoint
+    open var CapturedUObjectArrayProperty: Array<UObject>
+    open var CapturedVectorArrayProperty: Array<Vector>
+
+    companion object {
+        fun GetDefaultObject(): VariantManagerTestActor
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): VariantManagerTestActor
+        fun C(Other: UObject): VariantManagerTestActor
+        fun C(Other: Any): VariantManagerTestActor
+    }
+}
+
 external open class MovieSceneGeometryCacheParams {
     open var GeometryCacheAsset: GeometryCache
     open var FirstLoopStartFrameOffset: FrameNumber
@@ -22239,7 +21155,7 @@ external open class MotoSynthPreset : UObject {
     }
 }
 
-external interface `T$483` {
+external interface `T$482` {
     var OutMinRPM: Number
     var OutMaxRPM: Number
 }
@@ -22252,7 +21168,7 @@ external open class SynthComponentMoto : SynthComponent {
     open fun SetSettings(InSettings: MotoSynthRuntimeSettings)
     open fun SetRPM(InRPM: Number, InTimeSec: Number)
     open fun IsEnabled(): Boolean
-    open fun GetRPMRange(OutMinRPM: Number = definedExternally, OutMaxRPM: Number = definedExternally): `T$483`
+    open fun GetRPMRange(OutMinRPM: Number = definedExternally, OutMaxRPM: Number = definedExternally): `T$482`
 
     companion object {
         fun Load(ResourceName: String): SynthComponentMoto
@@ -22421,7 +21337,7 @@ external open class MagicLeapSharedWorldPlayerController(InWorld: World, Locatio
     }
 }
 
-external interface `T$484` {
+external interface `T$483` {
     var NewSharedWorldData: MagicLeapSharedWorldSharedData
 }
 
@@ -22432,7 +21348,7 @@ external open class MagicLeapSharedWorldGameMode(InWorld: World, Location: Vecto
     open var ChosenOne: MagicLeapSharedWorldPlayerController
     open fun SendSharedWorldDataToClients(): Boolean
     open fun SelectChosenOne()
-    open fun DetermineSharedWorldData(NewSharedWorldData: MagicLeapSharedWorldSharedData = definedExternally): `T$484`
+    open fun DetermineSharedWorldData(NewSharedWorldData: MagicLeapSharedWorldSharedData = definedExternally): `T$483`
 
     companion object {
         fun GetDefaultObject(): MagicLeapSharedWorldGameMode
@@ -22511,7 +21427,7 @@ external open class ImgMediaSettings : UObject {
     }
 }
 
-external interface `T$485` {
+external interface `T$484` {
     var OutProxies: Array<String>
 }
 
@@ -22525,7 +21441,7 @@ external open class ImgMediaSource : BaseMediaSource {
     open fun RemoveTargetObject(InActor: Actor)
     open fun RemoveGlobalCamera(InActor: Actor)
     open fun GetSequencePath(): String
-    open fun GetProxies(OutProxies: Array<String> = definedExternally): `T$485`
+    open fun GetProxies(OutProxies: Array<String> = definedExternally): `T$484`
     open fun AddTargetObject(InActor: Actor, Width: Number)
     open fun AddGlobalCamera(InActor: Actor)
 
@@ -22836,71 +21752,6 @@ external open class ArchVisCharMovementComponent : CharacterMovementComponent {
     }
 }
 
-external open class AudioCaptureDeviceInfo {
-    open var DeviceName: String
-    open var NumInputChannels: Number
-    open var SampleRate: Number
-    open fun clone(): AudioCaptureDeviceInfo
-
-    companion object {
-        fun C(Other: UObject): AudioCaptureDeviceInfo
-        fun C(Other: Any): AudioCaptureDeviceInfo
-    }
-}
-
-external interface `T$486` {
-    var OutInfo: AudioCaptureDeviceInfo
-    var `$`: Boolean
-}
-
-external open class AudioCapture : AudioGenerator {
-    constructor()
-    constructor(Outer: UObject)
-    open fun StopCapturingAudio()
-    open fun StartCapturingAudio()
-    open fun IsCapturingAudio(): Boolean
-    open fun GetAudioCaptureDeviceInfo(OutInfo: AudioCaptureDeviceInfo = definedExternally): `T$486`
-
-    companion object {
-        fun Load(ResourceName: String): AudioCapture
-        fun Find(Outer: UObject, ResourceName: String): AudioCapture
-        fun GetDefaultObject(): AudioCapture
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AudioCapture
-        fun C(Other: UObject): AudioCapture
-        fun C(Other: Any): AudioCapture
-    }
-}
-
-external open class AudioCaptureFunctionLibrary : BlueprintFunctionLibrary {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): AudioCaptureFunctionLibrary
-        fun Find(Outer: UObject, ResourceName: String): AudioCaptureFunctionLibrary
-        fun GetDefaultObject(): AudioCaptureFunctionLibrary
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AudioCaptureFunctionLibrary
-        fun CreateAudioCapture(): AudioCapture
-        fun C(Other: UObject): AudioCaptureFunctionLibrary
-        fun C(Other: Any): AudioCaptureFunctionLibrary
-    }
-}
-
-external open class AudioCaptureComponent : SynthComponent {
-    constructor()
-    constructor(Outer: UObject)
-    open var JitterLatencyFrames: Number
-
-    companion object {
-        fun Load(ResourceName: String): AudioCaptureComponent
-        fun Find(Outer: UObject, ResourceName: String): AudioCaptureComponent
-        fun GetDefaultObject(): AudioCaptureComponent
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AudioCaptureComponent
-        fun C(Other: UObject): AudioCaptureComponent
-        fun C(Other: Any): AudioCaptureComponent
-    }
-}
-
 external object ECollectionScriptingShareType {
     var Local: String /* "Local" */
     var Private: String /* "Private" */
@@ -22945,7 +21796,84 @@ external open class AssetTagsSubsystem : EngineSubsystem {
     }
 }
 
-external interface `T$487` {
+external open class AudioCaptureDeviceInfo {
+    open var DeviceName: String
+    open var NumInputChannels: Number
+    open var SampleRate: Number
+    open fun clone(): AudioCaptureDeviceInfo
+
+    companion object {
+        fun C(Other: UObject): AudioCaptureDeviceInfo
+        fun C(Other: Any): AudioCaptureDeviceInfo
+    }
+}
+
+external interface `T$485` {
+    var OutInfo: AudioCaptureDeviceInfo
+    var `$`: Boolean
+}
+
+external open class AudioCapture : AudioGenerator {
+    constructor()
+    constructor(Outer: UObject)
+    open fun StopCapturingAudio()
+    open fun StartCapturingAudio()
+    open fun IsCapturingAudio(): Boolean
+    open fun GetAudioCaptureDeviceInfo(OutInfo: AudioCaptureDeviceInfo = definedExternally): `T$485`
+
+    companion object {
+        fun Load(ResourceName: String): AudioCapture
+        fun Find(Outer: UObject, ResourceName: String): AudioCapture
+        fun GetDefaultObject(): AudioCapture
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AudioCapture
+        fun C(Other: UObject): AudioCapture
+        fun C(Other: Any): AudioCapture
+    }
+}
+
+external open class AudioCaptureFunctionLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): AudioCaptureFunctionLibrary
+        fun Find(Outer: UObject, ResourceName: String): AudioCaptureFunctionLibrary
+        fun GetDefaultObject(): AudioCaptureFunctionLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AudioCaptureFunctionLibrary
+        fun CreateAudioCapture(): AudioCapture
+        fun C(Other: UObject): AudioCaptureFunctionLibrary
+        fun C(Other: Any): AudioCaptureFunctionLibrary
+    }
+}
+
+external open class AudioCaptureComponent : SynthComponent {
+    constructor()
+    constructor(Outer: UObject)
+    open var JitterLatencyFrames: Number
+
+    companion object {
+        fun Load(ResourceName: String): AudioCaptureComponent
+        fun Find(Outer: UObject, ResourceName: String): AudioCaptureComponent
+        fun GetDefaultObject(): AudioCaptureComponent
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AudioCaptureComponent
+        fun C(Other: UObject): AudioCaptureComponent
+        fun C(Other: Any): AudioCaptureComponent
+    }
+}
+
+external open class ComponentReference {
+    open var OtherActor: Actor
+    open var ComponentProperty: String
+    open var PathToComponent: String
+    open fun clone(): ComponentReference
+
+    companion object {
+        fun C(Other: UObject): ComponentReference
+        fun C(Other: Any): ComponentReference
+    }
+}
+
+external interface `T$486` {
     var Locations: Array<Vector>
 }
 
@@ -22974,7 +21902,7 @@ external open class CableComponent : MeshComponent {
     open var TileMaterial: Number
     open fun SetAttachEndToComponent(Component: SceneComponent, SocketName: String)
     open fun SetAttachEndTo(Actor: Actor, ComponentProperty: String, SocketName: String)
-    open fun GetCableParticleLocations(Locations: Array<Vector> = definedExternally): `T$487`
+    open fun GetCableParticleLocations(Locations: Array<Vector> = definedExternally): `T$486`
     open fun GetAttachedComponent(): SceneComponent
     open fun GetAttachedActor(): Actor
 
@@ -23390,40 +22318,44 @@ external open class PolygonGroupForPolygon {
     }
 }
 
-external interface `T$488` {
+external interface `T$487` {
     var OutNewVertexID: VertexID
 }
 
-external interface `T$489` {
+external interface `T$488` {
     var bOutWasVertexRemoved: Boolean
     var OutNewEdgeID: EdgeID
 }
 
-external interface `T$490` {
+external interface `T$489` {
     var bOutWasEdgeRemoved: Boolean
     var OutNewPolygonID: PolygonID
 }
 
-external interface `T$491` {
+external interface `T$490` {
     var OutNewTrianglePolygons: Array<PolygonID>
 }
 
-external interface `T$492` {
+external interface `T$491` {
     var OutNewPolygonIDs: Array<PolygonID>
 }
 
-external interface `T$493` {
+external interface `T$492` {
     var OutNewEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$494` {
+external interface `T$493` {
     var PolygonIDs1: Array<PolygonID>
     var PolygonIDs2: Array<PolygonID>
     var BoundaryIDs: Array<EdgeID>
 }
 
-external interface `T$495` {
+external interface `T$494` {
     var OutNewVertexIDs: Array<VertexID>
+}
+
+external interface `T$495` {
+    var OutPolygons: Array<PolygonID>
 }
 
 external interface `T$496` {
@@ -23435,25 +22367,25 @@ external interface `T$497` {
 }
 
 external interface `T$498` {
-    var OutPolygons: Array<PolygonID>
-}
-
-external interface `T$499` {
     var OutNewPolygonIDs: Array<PolygonID>
 }
 
-external interface `T$500` {
+external interface `T$499` {
     var OutNewCenterPolygonIDs: Array<PolygonID>
     var OutNewSidePolygonIDs: Array<PolygonID>
 }
 
-external interface `T$501` {
+external interface `T$500` {
     var OutNewEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$502` {
+external interface `T$501` {
     var bOutEdgeWindingIsReversed: Boolean
     var `$`: EdgeID
+}
+
+external interface `T$502` {
+    var OutConnectedPolygonIDs: Array<PolygonID>
 }
 
 external interface `T$503` {
@@ -23461,104 +22393,100 @@ external interface `T$503` {
 }
 
 external interface `T$504` {
-    var OutConnectedPolygonIDs: Array<PolygonID>
-}
-
-external interface `T$505` {
     var OutConnectedEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$506` {
+external interface `T$505` {
     var OutAdjacentVertexIDs: Array<VertexID>
 }
 
-external interface `T$507` {
+external interface `T$506` {
     var OutPolygonPerimeterVertexIDs: Array<VertexID>
 }
 
-external interface `T$508` {
+external interface `T$507` {
     var OutPolygonPerimeterVertexInstanceIDs: Array<VertexInstanceID>
 }
 
-external interface `T$509` {
+external interface `T$508` {
     var OutPolygonPerimeterEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$510` {
+external interface `T$509` {
     var bOutEdgeWindingIsReversedForPolygon: Boolean
     var `$`: EdgeID
 }
 
-external interface `T$511` {
+external interface `T$510` {
     var OutAdjacentPolygons: Array<PolygonID>
 }
 
-external interface `T$512` {
+external interface `T$511` {
     var OutEdgeVertexID0: VertexID
     var OutEdgeVertexID1: VertexID
 }
 
-external interface `T$513` {
+external interface `T$512` {
     var EdgeLoopIDs: Array<EdgeID>
 }
 
-external interface `T$514` {
+external interface `T$513` {
     var OutConnectedPolygonIDs: Array<PolygonID>
 }
 
-external interface `T$515` {
+external interface `T$514` {
     var OutEdgeLoopEdgeIDs: Array<EdgeID>
     var OutFlippedEdgeIDs: Array<EdgeID>
     var OutReversedEdgeIDPathToTake: Array<EdgeID>
     var OutPolygonIDsToSplit: Array<PolygonID>
 }
 
-external interface `T$516` {
+external interface `T$515` {
     var OutNewExtrudedFrontPolygons: Array<PolygonID>
 }
 
-external interface `T$517` {
+external interface `T$516` {
     var OutNewExtendedVertexIDs: Array<VertexID>
 }
 
-external interface `T$518` {
+external interface `T$517` {
     var OutNewExtendedEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$519` {
+external interface `T$518` {
     var OutNewVertexIDs: Array<VertexID>
 }
 
-external interface `T$520` {
+external interface `T$519` {
     var OutNewVertexInstanceIDs: Array<VertexInstanceID>
 }
 
-external interface `T$521` {
+external interface `T$520` {
     var OutNewPolygonIDs: Array<PolygonID>
     var OutNewEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$522` {
+external interface `T$521` {
     var OutNewPolygonGroupIDs: Array<PolygonGroupID>
 }
 
-external interface `T$523` {
+external interface `T$522` {
     var OutNewEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$524` {
+external interface `T$523` {
     var OutNewVertexIDs: Array<VertexID>
 }
 
-external interface `T$525` {
+external interface `T$524` {
     var OutNewEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$526` {
+external interface `T$525` {
     var OutSharedEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$527` {
+external interface `T$526` {
     var OutNewCenterPolygonIDs: Array<PolygonID>
     var OutNewSidePolygonIDs: Array<PolygonID>
 }
@@ -23570,15 +22498,15 @@ external open class EditableMesh : UObject {
     open var TextureCoordinateCount: Number
     open var PendingCompactCounter: Number
     open var SubdivisionCount: Number
-    open fun WeldVertices(VertexIDs: Array<VertexID>, OutNewVertexID: VertexID = definedExternally): `T$488`
-    open fun TryToRemoveVertex(VertexID: VertexID, bOutWasVertexRemoved: Boolean = definedExternally, OutNewEdgeID: EdgeID = definedExternally): `T$489`
-    open fun TryToRemovePolygonEdge(EdgeID: EdgeID, bOutWasEdgeRemoved: Boolean = definedExternally, OutNewPolygonID: PolygonID = definedExternally): `T$490`
-    open fun TriangulatePolygons(PolygonIDs: Array<PolygonID>, OutNewTrianglePolygons: Array<PolygonID> = definedExternally): `T$491`
-    open fun TessellatePolygons(PolygonIDs: Array<PolygonID>, TriangleTessellationMode: String /* "ThreeTriangles" | "FourTriangles" | "ETriangleTessellationMode_MAX" */, OutNewPolygonIDs: Array<PolygonID> = definedExternally): `T$492`
+    open fun WeldVertices(VertexIDs: Array<VertexID>, OutNewVertexID: VertexID = definedExternally): `T$487`
+    open fun TryToRemoveVertex(VertexID: VertexID, bOutWasVertexRemoved: Boolean = definedExternally, OutNewEdgeID: EdgeID = definedExternally): `T$488`
+    open fun TryToRemovePolygonEdge(EdgeID: EdgeID, bOutWasEdgeRemoved: Boolean = definedExternally, OutNewPolygonID: PolygonID = definedExternally): `T$489`
+    open fun TriangulatePolygons(PolygonIDs: Array<PolygonID>, OutNewTrianglePolygons: Array<PolygonID> = definedExternally): `T$490`
+    open fun TessellatePolygons(PolygonIDs: Array<PolygonID>, TriangleTessellationMode: String /* "ThreeTriangles" | "FourTriangles" | "ETriangleTessellationMode_MAX" */, OutNewPolygonIDs: Array<PolygonID> = definedExternally): `T$491`
     open fun StartModification(MeshModificationType: String /* "FirstInterim" | "Interim" | "Final" | "EMeshModificationType_MAX" */, MeshTopologyChange: String /* "NoTopologyChange" | "TopologyChange" | "EMeshTopologyChange_MAX" */)
-    open fun SplitPolygons(PolygonsToSplit: Array<PolygonToSplit>, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$493`
-    open fun SplitPolygonalMesh(InPlane: Plane, PolygonIDs1: Array<PolygonID> = definedExternally, PolygonIDs2: Array<PolygonID> = definedExternally, BoundaryIDs: Array<EdgeID> = definedExternally): `T$494`
-    open fun SplitEdge(EdgeID: EdgeID, Splits: Array<Number>, OutNewVertexIDs: Array<VertexID> = definedExternally): `T$495`
+    open fun SplitPolygons(PolygonsToSplit: Array<PolygonToSplit>, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$492`
+    open fun SplitPolygonalMesh(InPlane: Plane, PolygonIDs1: Array<PolygonID> = definedExternally, PolygonIDs2: Array<PolygonID> = definedExternally, BoundaryIDs: Array<EdgeID> = definedExternally): `T$493`
+    open fun SplitEdge(EdgeID: EdgeID, Splits: Array<Number>, OutNewVertexIDs: Array<VertexID> = definedExternally): `T$494`
     open fun SetVerticesCornerSharpness(VertexIDs: Array<VertexID>, VerticesNewCornerSharpness: Array<Number>)
     open fun SetVerticesAttributes(AttributesForVertices: Array<AttributesForVertex>)
     open fun SetVertexInstancesAttributes(AttributesForVertexInstances: Array<AttributesForVertexInstance>)
@@ -23592,13 +22520,13 @@ external open class EditableMesh : UObject {
     open fun SetAllowUndo(bInAllowUndo: Boolean)
     open fun SetAllowSpatialDatabase(bInAllowSpatialDatabase: Boolean)
     open fun SetAllowCompact(bInAllowCompact: Boolean)
-    open fun SearchSpatialDatabaseForPolygonsPotentiallyIntersectingPlane(InPlane: Plane, OutPolygons: Array<PolygonID> = definedExternally): `T$496`
-    open fun SearchSpatialDatabaseForPolygonsPotentiallyIntersectingLineSegment(LineSegmentStart: Vector, LineSegmentEnd: Vector, OutPolygons: Array<PolygonID> = definedExternally): `T$497`
-    open fun SearchSpatialDatabaseForPolygonsInVolume(planes: Array<Plane>, OutPolygons: Array<PolygonID> = definedExternally): `T$498`
+    open fun SearchSpatialDatabaseForPolygonsPotentiallyIntersectingPlane(InPlane: Plane, OutPolygons: Array<PolygonID> = definedExternally): `T$495`
+    open fun SearchSpatialDatabaseForPolygonsPotentiallyIntersectingLineSegment(LineSegmentStart: Vector, LineSegmentEnd: Vector, OutPolygons: Array<PolygonID> = definedExternally): `T$496`
+    open fun SearchSpatialDatabaseForPolygonsInVolume(planes: Array<Plane>, OutPolygons: Array<PolygonID> = definedExternally): `T$497`
     open fun RevertInstance(): EditableMesh
     open fun Revert()
     open fun RebuildRenderMesh()
-    open fun QuadrangulateMesh(OutNewPolygonIDs: Array<PolygonID> = definedExternally): `T$499`
+    open fun QuadrangulateMesh(OutNewPolygonIDs: Array<PolygonID> = definedExternally): `T$498`
     open fun PropagateInstanceChanges()
     open fun MoveVertices(VerticesToMove: Array<VertexToMove>)
     open fun IsValidVertex(VertexID: VertexID): Boolean
@@ -23613,57 +22541,57 @@ external open class EditableMesh : UObject {
     open fun IsCommittedAsInstance(): Boolean
     open fun IsCommitted(): Boolean
     open fun IsBeingModified(): Boolean
-    open fun InsetPolygons(PolygonIDs: Array<PolygonID>, InsetFixedDistance: Number, InsetProgressTowardCenter: Number, Mode: String /* "All" | "CenterPolygonOnly" | "SidePolygonsOnly" | "EInsetPolygonsMode_MAX" */, OutNewCenterPolygonIDs: Array<PolygonID> = definedExternally, OutNewSidePolygonIDs: Array<PolygonID> = definedExternally): `T$500`
-    open fun InsertEdgeLoop(EdgeID: EdgeID, Splits: Array<Number>, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$501`
+    open fun InsetPolygons(PolygonIDs: Array<PolygonID>, InsetFixedDistance: Number, InsetProgressTowardCenter: Number, Mode: String /* "All" | "CenterPolygonOnly" | "SidePolygonsOnly" | "EInsetPolygonsMode_MAX" */, OutNewCenterPolygonIDs: Array<PolygonID> = definedExternally, OutNewSidePolygonIDs: Array<PolygonID> = definedExternally): `T$499`
+    open fun InsertEdgeLoop(EdgeID: EdgeID, Splits: Array<Number>, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$500`
     open fun InitializeAdapters()
-    open fun GetVertexPairEdge(VertexID: VertexID, NextVertexID: VertexID, bOutEdgeWindingIsReversed: Boolean = definedExternally): `T$502`
+    open fun GetVertexPairEdge(VertexID: VertexID, NextVertexID: VertexID, bOutEdgeWindingIsReversed: Boolean = definedExternally): `T$501`
     open fun GetVertexInstanceVertex(VertexInstanceID: VertexInstanceID): VertexID
     open fun GetVertexInstanceCount(): Number
-    open fun GetVertexInstanceConnectedPolygons(VertexInstanceID: VertexInstanceID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$503`
+    open fun GetVertexInstanceConnectedPolygons(VertexInstanceID: VertexInstanceID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$502`
     open fun GetVertexInstanceConnectedPolygonCount(VertexInstanceID: VertexInstanceID): Number
     open fun GetVertexInstanceConnectedPolygon(VertexInstanceID: VertexInstanceID, ConnectedPolygonNumber: Number): PolygonID
     open fun GetVertexCount(): Number
-    open fun GetVertexConnectedPolygons(VertexID: VertexID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$504`
-    open fun GetVertexConnectedEdges(VertexID: VertexID, OutConnectedEdgeIDs: Array<EdgeID> = definedExternally): `T$505`
+    open fun GetVertexConnectedPolygons(VertexID: VertexID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$503`
+    open fun GetVertexConnectedEdges(VertexID: VertexID, OutConnectedEdgeIDs: Array<EdgeID> = definedExternally): `T$504`
     open fun GetVertexConnectedEdgeCount(VertexID: VertexID): Number
     open fun GetVertexConnectedEdge(VertexID: VertexID, ConnectedEdgeNumber: Number): EdgeID
-    open fun GetVertexAdjacentVertices(VertexID: VertexID, OutAdjacentVertexIDs: Array<VertexID> = definedExternally): `T$506`
+    open fun GetVertexAdjacentVertices(VertexID: VertexID, OutAdjacentVertexIDs: Array<VertexID> = definedExternally): `T$505`
     open fun GetTextureCoordinateCount(): Number
     open fun GetSubdivisionLimitData(): SubdivisionLimitData
     open fun GetSubdivisionCount(): Number
     open fun GetPolygonTriangulatedTriangleCount(PolygonID: PolygonID): Number
     open fun GetPolygonTriangulatedTriangle(PolygonID: PolygonID, PolygonTriangleNumber: Number): TriangleID
-    open fun GetPolygonPerimeterVertices(PolygonID: PolygonID, OutPolygonPerimeterVertexIDs: Array<VertexID> = definedExternally): `T$507`
-    open fun GetPolygonPerimeterVertexInstances(PolygonID: PolygonID, OutPolygonPerimeterVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$508`
+    open fun GetPolygonPerimeterVertices(PolygonID: PolygonID, OutPolygonPerimeterVertexIDs: Array<VertexID> = definedExternally): `T$506`
+    open fun GetPolygonPerimeterVertexInstances(PolygonID: PolygonID, OutPolygonPerimeterVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$507`
     open fun GetPolygonPerimeterVertexInstance(PolygonID: PolygonID, PolygonVertexNumber: Number): VertexInstanceID
     open fun GetPolygonPerimeterVertexCount(PolygonID: PolygonID): Number
     open fun GetPolygonPerimeterVertex(PolygonID: PolygonID, PolygonVertexNumber: Number): VertexID
-    open fun GetPolygonPerimeterEdges(PolygonID: PolygonID, OutPolygonPerimeterEdgeIDs: Array<EdgeID> = definedExternally): `T$509`
+    open fun GetPolygonPerimeterEdges(PolygonID: PolygonID, OutPolygonPerimeterEdgeIDs: Array<EdgeID> = definedExternally): `T$508`
     open fun GetPolygonPerimeterEdgeCount(PolygonID: PolygonID): Number
-    open fun GetPolygonPerimeterEdge(PolygonID: PolygonID, PerimeterEdgeNumber: Number, bOutEdgeWindingIsReversedForPolygon: Boolean = definedExternally): `T$510`
+    open fun GetPolygonPerimeterEdge(PolygonID: PolygonID, PerimeterEdgeNumber: Number, bOutEdgeWindingIsReversedForPolygon: Boolean = definedExternally): `T$509`
     open fun GetPolygonInGroup(PolygonGroupID: PolygonGroupID, PolygonNumber: Number): PolygonID
     open fun GetPolygonGroupCount(): Number
     open fun GetPolygonCountInGroup(PolygonGroupID: PolygonGroupID): Number
     open fun GetPolygonCount(): Number
-    open fun GetPolygonAdjacentPolygons(PolygonID: PolygonID, OutAdjacentPolygons: Array<PolygonID> = definedExternally): `T$511`
+    open fun GetPolygonAdjacentPolygons(PolygonID: PolygonID, OutAdjacentPolygons: Array<PolygonID> = definedExternally): `T$510`
     open fun GetGroupForPolygon(PolygonID: PolygonID): PolygonGroupID
     open fun GetFirstValidPolygonGroup(): PolygonGroupID
-    open fun GetEdgeVertices(EdgeID: EdgeID, OutEdgeVertexID0: VertexID = definedExternally, OutEdgeVertexID1: VertexID = definedExternally): `T$512`
+    open fun GetEdgeVertices(EdgeID: EdgeID, OutEdgeVertexID0: VertexID = definedExternally, OutEdgeVertexID1: VertexID = definedExternally): `T$511`
     open fun GetEdgeVertex(EdgeID: EdgeID, EdgeVertexNumber: Number): VertexID
     open fun GetEdgeThatConnectsVertices(VertexID0: VertexID, VertexID1: VertexID): EdgeID
-    open fun GetEdgeLoopElements(EdgeID: EdgeID, EdgeLoopIDs: Array<EdgeID> = definedExternally): `T$513`
+    open fun GetEdgeLoopElements(EdgeID: EdgeID, EdgeLoopIDs: Array<EdgeID> = definedExternally): `T$512`
     open fun GetEdgeCount(): Number
-    open fun GetEdgeConnectedPolygons(EdgeID: EdgeID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$514`
+    open fun GetEdgeConnectedPolygons(EdgeID: EdgeID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$513`
     open fun GetEdgeConnectedPolygonCount(EdgeID: EdgeID): Number
     open fun GetEdgeConnectedPolygon(EdgeID: EdgeID, ConnectedPolygonNumber: Number): PolygonID
     open fun GeneratePolygonTangentsAndNormals(PolygonIDs: Array<PolygonID>)
     open fun FlipPolygons(PolygonIDs: Array<PolygonID>)
     open fun FindPolygonPerimeterVertexNumberForVertex(PolygonID: PolygonID, VertexID: VertexID): Number
     open fun FindPolygonPerimeterEdgeNumberForVertices(PolygonID: PolygonID, EdgeVertexID0: VertexID, EdgeVertexID1: VertexID): Number
-    open fun FindPolygonLoop(EdgeID: EdgeID, OutEdgeLoopEdgeIDs: Array<EdgeID> = definedExternally, OutFlippedEdgeIDs: Array<EdgeID> = definedExternally, OutReversedEdgeIDPathToTake: Array<EdgeID> = definedExternally, OutPolygonIDsToSplit: Array<PolygonID> = definedExternally): `T$515`
-    open fun ExtrudePolygons(Polygons: Array<PolygonID>, ExtrudeDistance: Number, bKeepNeighborsTogether: Boolean, OutNewExtrudedFrontPolygons: Array<PolygonID> = definedExternally): `T$516`
-    open fun ExtendVertices(VertexIDs: Array<VertexID>, bOnlyExtendClosestEdge: Boolean, ReferencePosition: Vector, OutNewExtendedVertexIDs: Array<VertexID> = definedExternally): `T$517`
-    open fun ExtendEdges(EdgeIDs: Array<EdgeID>, bWeldNeighbors: Boolean, OutNewExtendedEdgeIDs: Array<EdgeID> = definedExternally): `T$518`
+    open fun FindPolygonLoop(EdgeID: EdgeID, OutEdgeLoopEdgeIDs: Array<EdgeID> = definedExternally, OutFlippedEdgeIDs: Array<EdgeID> = definedExternally, OutReversedEdgeIDPathToTake: Array<EdgeID> = definedExternally, OutPolygonIDsToSplit: Array<PolygonID> = definedExternally): `T$514`
+    open fun ExtrudePolygons(Polygons: Array<PolygonID>, ExtrudeDistance: Number, bKeepNeighborsTogether: Boolean, OutNewExtrudedFrontPolygons: Array<PolygonID> = definedExternally): `T$515`
+    open fun ExtendVertices(VertexIDs: Array<VertexID>, bOnlyExtendClosestEdge: Boolean, ReferencePosition: Vector, OutNewExtendedVertexIDs: Array<VertexID> = definedExternally): `T$516`
+    open fun ExtendEdges(EdgeIDs: Array<EdgeID>, bWeldNeighbors: Boolean, OutNewExtendedEdgeIDs: Array<EdgeID> = definedExternally): `T$517`
     open fun EndModification(bFromUndo: Boolean)
     open fun DeleteVertexInstances(VertexInstanceIDsToDelete: Array<VertexInstanceID>, bDeleteOrphanedVertices: Boolean)
     open fun DeleteVertexAndConnectedEdgesAndPolygons(VertexID: VertexID, bDeleteOrphanedEdges: Boolean, bDeleteOrphanedVertices: Boolean, bDeleteOrphanedVertexInstances: Boolean, bDeleteEmptyPolygonGroups: Boolean)
@@ -23672,14 +22600,14 @@ external open class EditableMesh : UObject {
     open fun DeleteOrphanVertices(VertexIDsToDelete: Array<VertexID>)
     open fun DeleteEdges(EdgeIDsToDelete: Array<EdgeID>, bDeleteOrphanedVertices: Boolean)
     open fun DeleteEdgeAndConnectedPolygons(EdgeID: EdgeID, bDeleteOrphanedEdges: Boolean, bDeleteOrphanedVertices: Boolean, bDeleteOrphanedVertexInstances: Boolean, bDeleteEmptyPolygonGroups: Boolean)
-    open fun CreateVertices(VerticesToCreate: Array<VertexToCreate>, OutNewVertexIDs: Array<VertexID> = definedExternally): `T$519`
-    open fun CreateVertexInstances(VertexInstancesToCreate: Array<VertexInstanceToCreate>, OutNewVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$520`
-    open fun CreatePolygons(PolygonsToCreate: Array<PolygonToCreate>, OutNewPolygonIDs: Array<PolygonID> = definedExternally, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$521`
-    open fun CreatePolygonGroups(PolygonGroupsToCreate: Array<PolygonGroupToCreate>, OutNewPolygonGroupIDs: Array<PolygonGroupID> = definedExternally): `T$522`
-    open fun CreateMissingPolygonPerimeterEdges(PolygonID: PolygonID, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$523`
-    open fun CreateEmptyVertexRange(NumVerticesToCreate: Number, OutNewVertexIDs: Array<VertexID> = definedExternally): `T$524`
-    open fun CreateEdges(EdgesToCreate: Array<EdgeToCreate>, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$525`
-    open fun ComputePolygonsSharedEdges(PolygonIDs: Array<PolygonID>, OutSharedEdgeIDs: Array<EdgeID> = definedExternally): `T$526`
+    open fun CreateVertices(VerticesToCreate: Array<VertexToCreate>, OutNewVertexIDs: Array<VertexID> = definedExternally): `T$518`
+    open fun CreateVertexInstances(VertexInstancesToCreate: Array<VertexInstanceToCreate>, OutNewVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$519`
+    open fun CreatePolygons(PolygonsToCreate: Array<PolygonToCreate>, OutNewPolygonIDs: Array<PolygonID> = definedExternally, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$520`
+    open fun CreatePolygonGroups(PolygonGroupsToCreate: Array<PolygonGroupToCreate>, OutNewPolygonGroupIDs: Array<PolygonGroupID> = definedExternally): `T$521`
+    open fun CreateMissingPolygonPerimeterEdges(PolygonID: PolygonID, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$522`
+    open fun CreateEmptyVertexRange(NumVerticesToCreate: Number, OutNewVertexIDs: Array<VertexID> = definedExternally): `T$523`
+    open fun CreateEdges(EdgesToCreate: Array<EdgeToCreate>, OutNewEdgeIDs: Array<EdgeID> = definedExternally): `T$524`
+    open fun ComputePolygonsSharedEdges(PolygonIDs: Array<PolygonID>, OutSharedEdgeIDs: Array<EdgeID> = definedExternally): `T$525`
     open fun ComputePolygonPlane(PolygonID: PolygonID): Plane
     open fun ComputePolygonNormal(PolygonID: PolygonID): Vector
     open fun ComputePolygonCenter(PolygonID: PolygonID): Vector
@@ -23688,7 +22616,7 @@ external open class EditableMesh : UObject {
     open fun CommitInstance(ComponentToInstanceTo: PrimitiveComponent): EditableMesh
     open fun Commit()
     open fun ChangePolygonsVertexInstances(VertexInstancesForPolygons: Array<ChangeVertexInstancesForPolygon>)
-    open fun BevelPolygons(PolygonIDs: Array<PolygonID>, BevelFixedDistance: Number, BevelProgressTowardCenter: Number, OutNewCenterPolygonIDs: Array<PolygonID> = definedExternally, OutNewSidePolygonIDs: Array<PolygonID> = definedExternally): `T$527`
+    open fun BevelPolygons(PolygonIDs: Array<PolygonID>, BevelFixedDistance: Number, BevelProgressTowardCenter: Number, OutNewCenterPolygonIDs: Array<PolygonID> = definedExternally, OutNewSidePolygonIDs: Array<PolygonID> = definedExternally): `T$526`
     open fun AssignPolygonsToPolygonGroups(PolygonGroupForPolygons: Array<PolygonGroupForPolygon>, bDeleteOrphanedPolygonGroups: Boolean)
     open fun AnyChangesToUndo(): Boolean
 
@@ -23793,17 +22721,17 @@ external object EGooglePADDownloadStatus {
     var AssetPack_MAX: String /* "AssetPack_MAX" */
 }
 
-external interface `T$528` {
+external interface `T$527` {
     var Status: String /* "AssetPack_CONFIRM_UNKNOWN" | "AssetPack_CONFIRM_PENDING" | "AssetPack_CONFIRM_USER_APPROVED" | "AssetPack_CONFIRM_USER_CANCELED" | "AssetPack_CONFIRM_MAX" */
     var `$`: String /* "AssetPack_NO_ERROR" | "AssetPack_APP_UNAVAILABLE" | "AssetPack_UNAVAILABLE" | "AssetPack_INVALID_REQUEST" | "AssetPack_DOWNLOAD_NOT_FOUND" | "AssetPack_API_NOT_AVAILABLE" | "AssetPack_NETWORK_ERROR" | "AssetPack_ACCESS_DENIED" | "AssetPack_INSUFFICIENT_STORAGE" | "AssetPack_PLAY_STORE_NOT_FOUND" | "AssetPack_NETWORK_UNRESTRICTED" | "AssetPack_INTERNAL_ERROR" | "AssetPack_INITIALIZATION_NEEDED" | "AssetPack_INITIALIZATION_FAILED" | "AssetPack_MAX" */
 }
 
-external interface `T$529` {
+external interface `T$528` {
     var State: Number
     var `$`: String /* "AssetPack_NO_ERROR" | "AssetPack_APP_UNAVAILABLE" | "AssetPack_UNAVAILABLE" | "AssetPack_INVALID_REQUEST" | "AssetPack_DOWNLOAD_NOT_FOUND" | "AssetPack_API_NOT_AVAILABLE" | "AssetPack_NETWORK_ERROR" | "AssetPack_ACCESS_DENIED" | "AssetPack_INSUFFICIENT_STORAGE" | "AssetPack_PLAY_STORE_NOT_FOUND" | "AssetPack_NETWORK_UNRESTRICTED" | "AssetPack_INTERNAL_ERROR" | "AssetPack_INITIALIZATION_NEEDED" | "AssetPack_INITIALIZATION_FAILED" | "AssetPack_MAX" */
 }
 
-external interface `T$530` {
+external interface `T$529` {
     var Location: Number
     var `$`: String /* "AssetPack_NO_ERROR" | "AssetPack_APP_UNAVAILABLE" | "AssetPack_UNAVAILABLE" | "AssetPack_INVALID_REQUEST" | "AssetPack_DOWNLOAD_NOT_FOUND" | "AssetPack_API_NOT_AVAILABLE" | "AssetPack_NETWORK_ERROR" | "AssetPack_ACCESS_DENIED" | "AssetPack_INSUFFICIENT_STORAGE" | "AssetPack_PLAY_STORE_NOT_FOUND" | "AssetPack_NETWORK_UNRESTRICTED" | "AssetPack_INTERNAL_ERROR" | "AssetPack_INITIALIZATION_NEEDED" | "AssetPack_INITIALIZATION_FAILED" | "AssetPack_MAX" */
 }
@@ -23825,12 +22753,12 @@ external open class GooglePADFunctionLibrary : BlueprintFunctionLibrary {
         fun ReleaseAssetPackLocation(Location: Number)
         fun GetTotalBytesToDownload(State: Number): Number
         fun GetStorageMethod(Location: Number): String /* "AssetPack_STORAGE_FILES" | "AssetPack_STORAGE_APK" | "AssetPack_STORAGE_UNKNOWN" | "AssetPack_STORAGE_NOT_INSTALLED" | "AssetPack_STORAGE_MAX" */
-        fun GetCellularDataConfirmationStatus(Status: String /* "AssetPack_CONFIRM_UNKNOWN" | "AssetPack_CONFIRM_PENDING" | "AssetPack_CONFIRM_USER_APPROVED" | "AssetPack_CONFIRM_USER_CANCELED" | "AssetPack_CONFIRM_MAX" */ = definedExternally): `T$528`
+        fun GetCellularDataConfirmationStatus(Status: String /* "AssetPack_CONFIRM_UNKNOWN" | "AssetPack_CONFIRM_PENDING" | "AssetPack_CONFIRM_USER_APPROVED" | "AssetPack_CONFIRM_USER_CANCELED" | "AssetPack_CONFIRM_MAX" */ = definedExternally): `T$527`
         fun GetDownloadStatus(State: Number): String /* "AssetPack_UNKNOWN" | "AssetPack_DOWNLOAD_PENDING" | "AssetPack_DOWNLOADING" | "AssetPack_TRANSFERRING" | "AssetPack_DOWNLOAD_COMPLETED" | "AssetPack_DOWNLOAD_FAILED" | "AssetPack_DOWNLOAD_CANCELED" | "AssetPack_WAITING_FOR_WIFI" | "AssetPack_NOT_INSTALLED" | "AssetPack_INFO_PENDING" | "AssetPack_INFO_FAILED" | "AssetPack_REMOVAL_PENDING" | "AssetPack_REMOVAL_FAILED" | "AssetPack_MAX" */
-        fun GetDownloadState(Name: String, State: Number = definedExternally): `T$529`
+        fun GetDownloadState(Name: String, State: Number = definedExternally): `T$528`
         fun GetBytesDownloaded(State: Number): Number
         fun GetAssetsPath(Location: Number): String
-        fun GetAssetPackLocation(Name: String, Location: Number = definedExternally): `T$530`
+        fun GetAssetPackLocation(Name: String, Location: Number = definedExternally): `T$529`
         fun CancelDownload(AssetPacks: Array<String>): String /* "AssetPack_NO_ERROR" | "AssetPack_APP_UNAVAILABLE" | "AssetPack_UNAVAILABLE" | "AssetPack_INVALID_REQUEST" | "AssetPack_DOWNLOAD_NOT_FOUND" | "AssetPack_API_NOT_AVAILABLE" | "AssetPack_NETWORK_ERROR" | "AssetPack_ACCESS_DENIED" | "AssetPack_INSUFFICIENT_STORAGE" | "AssetPack_PLAY_STORE_NOT_FOUND" | "AssetPack_NETWORK_UNRESTRICTED" | "AssetPack_INTERNAL_ERROR" | "AssetPack_INITIALIZATION_NEEDED" | "AssetPack_INITIALIZATION_FAILED" | "AssetPack_MAX" */
         fun C(Other: UObject): GooglePADFunctionLibrary
         fun C(Other: Any): GooglePADFunctionLibrary
@@ -23945,6 +22873,61 @@ external open class OnRequestContentFailed__PythonCallable : PythonCallableForDe
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OnRequestContentFailed__PythonCallable
         fun C(Other: UObject): OnRequestContentFailed__PythonCallable
         fun C(Other: Any): OnRequestContentFailed__PythonCallable
+    }
+}
+
+external open class MovieSceneTakeSection : MovieSceneSection {
+    constructor()
+    constructor(Outer: UObject)
+    open var HoursCurve: MovieSceneIntegerChannel
+    open var MinutesCurve: MovieSceneIntegerChannel
+    open var SecondsCurve: MovieSceneIntegerChannel
+    open var FramesCurve: MovieSceneIntegerChannel
+    open var SubFramesCurve: MovieSceneFloatChannel
+    open var Slate: MovieSceneStringChannel
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneTakeSection
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneTakeSection
+        fun GetDefaultObject(): MovieSceneTakeSection
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTakeSection
+        fun C(Other: UObject): MovieSceneTakeSection
+        fun C(Other: Any): MovieSceneTakeSection
+    }
+}
+
+external open class MovieSceneTakeSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var HoursName: String
+    open var MinutesName: String
+    open var SecondsName: String
+    open var FramesName: String
+    open var SubFramesName: String
+    open var SlateName: String
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneTakeSettings
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneTakeSettings
+        fun GetDefaultObject(): MovieSceneTakeSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTakeSettings
+        fun C(Other: UObject): MovieSceneTakeSettings
+        fun C(Other: Any): MovieSceneTakeSettings
+    }
+}
+
+external open class MovieSceneTakeTrack : MovieSceneNameableTrack {
+    constructor()
+    constructor(Outer: UObject)
+    open var Sections: Array<MovieSceneSection>
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneTakeTrack
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneTakeTrack
+        fun GetDefaultObject(): MovieSceneTakeTrack
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTakeTrack
+        fun C(Other: UObject): MovieSceneTakeTrack
+        fun C(Other: Any): MovieSceneTakeTrack
     }
 }
 
@@ -25197,15 +24180,15 @@ external open class SubmixEffectTapDelaySettings {
     }
 }
 
-external interface `T$531` {
+external interface `T$530` {
     var TapIds: Array<Number>
 }
 
-external interface `T$532` {
+external interface `T$531` {
     var TapInfo: TapDelayInfo
 }
 
-external interface `T$533` {
+external interface `T$532` {
     var TapId: Number
 }
 
@@ -25217,10 +24200,10 @@ external open class SubmixEffectTapDelayPreset : SoundEffectSubmixPreset {
     open fun SetSettings(InSettings: SubmixEffectTapDelaySettings)
     open fun SetInterpolationTime(Time: Number)
     open fun RemoveTap(TapId: Number)
-    open fun GetTapIds(TapIds: Array<Number> = definedExternally): `T$531`
-    open fun GetTap(TapId: Number, TapInfo: TapDelayInfo = definedExternally): `T$532`
+    open fun GetTapIds(TapIds: Array<Number> = definedExternally): `T$530`
+    open fun GetTap(TapId: Number, TapInfo: TapDelayInfo = definedExternally): `T$531`
     open fun GetMaxDelayInMilliseconds(): Number
-    open fun AddTap(TapId: Number = definedExternally): `T$533`
+    open fun AddTap(TapId: Number = definedExternally): `T$532`
 
     companion object {
         fun Load(ResourceName: String): SubmixEffectTapDelayPreset
@@ -25791,6 +24774,1023 @@ external open class OodleNetworkTrainerCommandlet : Commandlet {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): OodleNetworkTrainerCommandlet
         fun C(Other: UObject): OodleNetworkTrainerCommandlet
         fun C(Other: Any): OodleNetworkTrainerCommandlet
+    }
+}
+
+external open class LiveLinkControllerBase : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkControllerBase
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkControllerBase
+        fun GetDefaultObject(): LiveLinkControllerBase
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkControllerBase
+        fun C(Other: UObject): LiveLinkControllerBase
+        fun C(Other: Any): LiveLinkControllerBase
+    }
+}
+
+external open class LiveLinkComponentController : ActorComponent {
+    constructor()
+    constructor(Outer: UObject)
+    open var SubjectRepresentation: LiveLinkSubjectRepresentation
+    open var Controller: LiveLinkControllerBase
+    open var ControllerMap: Any
+    open var bUpdateInEditor: Boolean
+    open var OnLiveLinkUpdated: UnrealEngineMulticastDelegate<(DeltaTime: Number) -> Unit>
+    open var ComponentToControl: ComponentReference
+    open var bDisableEvaluateLiveLinkWhenSpawnable: Boolean
+    open var bEvaluateLiveLink: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkComponentController
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkComponentController
+        fun GetDefaultObject(): LiveLinkComponentController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkComponentController
+        fun C(Other: UObject): LiveLinkComponentController
+        fun C(Other: Any): LiveLinkComponentController
+    }
+}
+
+external open class LiveLinkComponentSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var DefaultControllerForRole: Any
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkComponentSettings
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkComponentSettings
+        fun GetDefaultObject(): LiveLinkComponentSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkComponentSettings
+        fun C(Other: UObject): LiveLinkComponentSettings
+        fun C(Other: Any): LiveLinkComponentSettings
+    }
+}
+
+external open class LiveLinkTransformControllerData {
+    open var bWorldTransform: Boolean
+    open var bUseLocation: Boolean
+    open var bUseRotation: Boolean
+    open var bUseScale: Boolean
+    open var bSweep: Boolean
+    open var bTeleport: Boolean
+    open fun clone(): LiveLinkTransformControllerData
+
+    companion object {
+        fun C(Other: UObject): LiveLinkTransformControllerData
+        fun C(Other: Any): LiveLinkTransformControllerData
+    }
+}
+
+external open class LiveLinkLightController : LiveLinkControllerBase {
+    constructor()
+    constructor(Outer: UObject)
+    open var ComponentToControl: ComponentReference
+    open var TransformData: LiveLinkTransformControllerData
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkLightController
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkLightController
+        fun GetDefaultObject(): LiveLinkLightController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkLightController
+        fun C(Other: UObject): LiveLinkLightController
+        fun C(Other: Any): LiveLinkLightController
+    }
+}
+
+external open class LiveLinkTransformController : LiveLinkControllerBase {
+    constructor()
+    constructor(Outer: UObject)
+    open var ComponentToControl: ComponentReference
+    open var TransformData: LiveLinkTransformControllerData
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkTransformController
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkTransformController
+        fun GetDefaultObject(): LiveLinkTransformController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkTransformController
+        fun C(Other: UObject): LiveLinkTransformController
+        fun C(Other: Any): LiveLinkTransformController
+    }
+}
+
+external open class LiveLinkTickDelegate__PythonCallable : PythonCallableForDelegate {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkTickDelegate__PythonCallable
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkTickDelegate__PythonCallable
+        fun GetDefaultObject(): LiveLinkTickDelegate__PythonCallable
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkTickDelegate__PythonCallable
+        fun C(Other: UObject): LiveLinkTickDelegate__PythonCallable
+        fun C(Other: Any): LiveLinkTickDelegate__PythonCallable
+    }
+}
+
+external open class AnimNode_LiveLinkPose : AnimNode_Base {
+    open var InputPose: PoseLink
+    open var LiveLinkSubjectName: LiveLinkSubjectName
+    open var SubjectName: String
+    open var RetargetAsset: UnrealEngineClass
+    open var CurrentRetargetAsset: LiveLinkRetargetAsset
+    override fun clone(): AnimNode_LiveLinkPose
+
+    companion object {
+        fun C(Other: UObject): AnimNode_LiveLinkPose
+        fun C(Other: Any): AnimNode_LiveLinkPose
+    }
+}
+
+external open class AnimGraphNode_LiveLinkPose : AnimGraphNode_Base {
+    constructor()
+    constructor(Outer: UObject)
+    open var UNode: AnimNode_LiveLinkPose
+
+    companion object {
+        fun Load(ResourceName: String): AnimGraphNode_LiveLinkPose
+        fun Find(Outer: UObject, ResourceName: String): AnimGraphNode_LiveLinkPose
+        fun GetDefaultObject(): AnimGraphNode_LiveLinkPose
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AnimGraphNode_LiveLinkPose
+        fun C(Other: UObject): AnimGraphNode_LiveLinkPose
+        fun C(Other: Any): AnimGraphNode_LiveLinkPose
+    }
+}
+
+external open class K2Node_EvaluateLiveLinkFrame : K2Node {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): K2Node_EvaluateLiveLinkFrame
+        fun Find(Outer: UObject, ResourceName: String): K2Node_EvaluateLiveLinkFrame
+        fun GetDefaultObject(): K2Node_EvaluateLiveLinkFrame
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_EvaluateLiveLinkFrame
+        fun C(Other: UObject): K2Node_EvaluateLiveLinkFrame
+        fun C(Other: Any): K2Node_EvaluateLiveLinkFrame
+    }
+}
+
+external open class K2Node_EvaluateLiveLinkFrameWithSpecificRole : K2Node_EvaluateLiveLinkFrame {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): K2Node_EvaluateLiveLinkFrameWithSpecificRole
+        fun Find(Outer: UObject, ResourceName: String): K2Node_EvaluateLiveLinkFrameWithSpecificRole
+        fun GetDefaultObject(): K2Node_EvaluateLiveLinkFrameWithSpecificRole
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_EvaluateLiveLinkFrameWithSpecificRole
+        fun C(Other: UObject): K2Node_EvaluateLiveLinkFrameWithSpecificRole
+        fun C(Other: Any): K2Node_EvaluateLiveLinkFrameWithSpecificRole
+    }
+}
+
+external open class K2Node_EvaluateLiveLinkFrameAtWorldTime : K2Node_EvaluateLiveLinkFrame {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): K2Node_EvaluateLiveLinkFrameAtWorldTime
+        fun Find(Outer: UObject, ResourceName: String): K2Node_EvaluateLiveLinkFrameAtWorldTime
+        fun GetDefaultObject(): K2Node_EvaluateLiveLinkFrameAtWorldTime
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_EvaluateLiveLinkFrameAtWorldTime
+        fun C(Other: UObject): K2Node_EvaluateLiveLinkFrameAtWorldTime
+        fun C(Other: Any): K2Node_EvaluateLiveLinkFrameAtWorldTime
+    }
+}
+
+external open class K2Node_EvaluateLiveLinkFrameAtSceneTime : K2Node_EvaluateLiveLinkFrame {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): K2Node_EvaluateLiveLinkFrameAtSceneTime
+        fun Find(Outer: UObject, ResourceName: String): K2Node_EvaluateLiveLinkFrameAtSceneTime
+        fun GetDefaultObject(): K2Node_EvaluateLiveLinkFrameAtSceneTime
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_EvaluateLiveLinkFrameAtSceneTime
+        fun C(Other: UObject): K2Node_EvaluateLiveLinkFrameAtSceneTime
+        fun C(Other: Any): K2Node_EvaluateLiveLinkFrameAtSceneTime
+    }
+}
+
+external open class K2Node_UpdateVirtualSubjectDataBase : K2Node {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): K2Node_UpdateVirtualSubjectDataBase
+        fun Find(Outer: UObject, ResourceName: String): K2Node_UpdateVirtualSubjectDataBase
+        fun GetDefaultObject(): K2Node_UpdateVirtualSubjectDataBase
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_UpdateVirtualSubjectDataBase
+        fun C(Other: UObject): K2Node_UpdateVirtualSubjectDataBase
+        fun C(Other: Any): K2Node_UpdateVirtualSubjectDataBase
+    }
+}
+
+external open class K2Node_UpdateVirtualSubjectStaticData : K2Node_UpdateVirtualSubjectDataBase {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): K2Node_UpdateVirtualSubjectStaticData
+        fun Find(Outer: UObject, ResourceName: String): K2Node_UpdateVirtualSubjectStaticData
+        fun GetDefaultObject(): K2Node_UpdateVirtualSubjectStaticData
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_UpdateVirtualSubjectStaticData
+        fun C(Other: UObject): K2Node_UpdateVirtualSubjectStaticData
+        fun C(Other: Any): K2Node_UpdateVirtualSubjectStaticData
+    }
+}
+
+external open class K2Node_UpdateVirtualSubjectFrameData : K2Node_UpdateVirtualSubjectDataBase {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): K2Node_UpdateVirtualSubjectFrameData
+        fun Find(Outer: UObject, ResourceName: String): K2Node_UpdateVirtualSubjectFrameData
+        fun GetDefaultObject(): K2Node_UpdateVirtualSubjectFrameData
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): K2Node_UpdateVirtualSubjectFrameData
+        fun C(Other: UObject): K2Node_UpdateVirtualSubjectFrameData
+        fun C(Other: Any): K2Node_UpdateVirtualSubjectFrameData
+    }
+}
+
+external open class LiveLinkPropertyData {
+    open var PropertyName: String
+    open var FloatChannel: Array<MovieSceneFloatChannel>
+    open var StringChannel: Array<MovieSceneStringChannel>
+    open var IntegerChannel: Array<MovieSceneIntegerChannel>
+    open var BoolChannel: Array<MovieSceneBoolChannel>
+    open var ByteChannel: Array<MovieSceneByteChannel>
+    open fun clone(): LiveLinkPropertyData
+
+    companion object {
+        fun C(Other: UObject): LiveLinkPropertyData
+        fun C(Other: Any): LiveLinkPropertyData
+    }
+}
+
+external open class LiveLinkSubSectionData {
+    open var Properties: Array<LiveLinkPropertyData>
+    open fun clone(): LiveLinkSubSectionData
+
+    companion object {
+        fun C(Other: UObject): LiveLinkSubSectionData
+        fun C(Other: Any): LiveLinkSubSectionData
+    }
+}
+
+external open class MovieSceneLiveLinkSubSection : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var SubSectionData: LiveLinkSubSectionData
+    open var SubjectRole: UnrealEngineClass
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkSubSection
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSubSection
+        fun GetDefaultObject(): MovieSceneLiveLinkSubSection
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSubSection
+        fun C(Other: UObject): MovieSceneLiveLinkSubSection
+        fun C(Other: Any): MovieSceneLiveLinkSubSection
+    }
+}
+
+external open class LiveLinkCurveElement {
+    open var CurveName: String
+    open var CurveValue: Number
+    open fun clone(): LiveLinkCurveElement
+
+    companion object {
+        fun C(Other: UObject): LiveLinkCurveElement
+        fun C(Other: Any): LiveLinkCurveElement
+    }
+}
+
+external open class LiveLinkFrameData {
+    open var Transforms: Array<Transform>
+    open var CurveElements: Array<LiveLinkCurveElement>
+    open var WorldTime: LiveLinkWorldTime
+    open var MetaData: LiveLinkMetaData
+    open fun clone(): LiveLinkFrameData
+
+    companion object {
+        fun C(Other: UObject): LiveLinkFrameData
+        fun C(Other: Any): LiveLinkFrameData
+    }
+}
+
+external open class LiveLinkRefSkeleton {
+    open var BoneNames: Array<String>
+    open var BoneParents: Array<Number>
+    open fun clone(): LiveLinkRefSkeleton
+
+    companion object {
+        fun C(Other: UObject): LiveLinkRefSkeleton
+        fun C(Other: Any): LiveLinkRefSkeleton
+    }
+}
+
+external open class MovieSceneLiveLinkSection : MovieSceneSection {
+    constructor()
+    constructor(Outer: UObject)
+    open var SubjectPreset: LiveLinkSubjectPreset
+    open var ChannelMask: Array<Boolean>
+    open var SubSections: Array<MovieSceneLiveLinkSubSection>
+    open var SubjectName: String
+    open var TemplateToPush: LiveLinkFrameData
+    open var RefSkeleton: LiveLinkRefSkeleton
+    open var CurveNames: Array<String>
+    open var PropertyFloatChannels: Array<MovieSceneFloatChannel>
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkSection
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSection
+        fun GetDefaultObject(): MovieSceneLiveLinkSection
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSection
+        fun C(Other: UObject): MovieSceneLiveLinkSection
+        fun C(Other: Any): MovieSceneLiveLinkSection
+    }
+}
+
+external open class MovieSceneLiveLinkSubSectionAnimation : MovieSceneLiveLinkSubSection {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkSubSectionAnimation
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSubSectionAnimation
+        fun GetDefaultObject(): MovieSceneLiveLinkSubSectionAnimation
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSubSectionAnimation
+        fun C(Other: UObject): MovieSceneLiveLinkSubSectionAnimation
+        fun C(Other: Any): MovieSceneLiveLinkSubSectionAnimation
+    }
+}
+
+external open class MovieSceneLiveLinkSubSectionBasicRole : MovieSceneLiveLinkSubSection {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkSubSectionBasicRole
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSubSectionBasicRole
+        fun GetDefaultObject(): MovieSceneLiveLinkSubSectionBasicRole
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSubSectionBasicRole
+        fun C(Other: UObject): MovieSceneLiveLinkSubSectionBasicRole
+        fun C(Other: Any): MovieSceneLiveLinkSubSectionBasicRole
+    }
+}
+
+external open class MovieSceneLiveLinkSubSectionProperties : MovieSceneLiveLinkSubSection {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkSubSectionProperties
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkSubSectionProperties
+        fun GetDefaultObject(): MovieSceneLiveLinkSubSectionProperties
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkSubSectionProperties
+        fun C(Other: UObject): MovieSceneLiveLinkSubSectionProperties
+        fun C(Other: Any): MovieSceneLiveLinkSubSectionProperties
+    }
+}
+
+external open class MovieSceneLiveLinkTrack : MovieScenePropertyTrack {
+    constructor()
+    constructor(Outer: UObject)
+    open var TrackRole: UnrealEngineClass
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkTrack
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkTrack
+        fun GetDefaultObject(): MovieSceneLiveLinkTrack
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkTrack
+        fun C(Other: UObject): MovieSceneLiveLinkTrack
+        fun C(Other: Any): MovieSceneLiveLinkTrack
+    }
+}
+
+external object EPinnedCommandListType {
+    var Command: String /* "Command" */
+    var CustomWidget: String /* "CustomWidget" */
+    var EPinnedCommandListType_MAX: String /* "EPinnedCommandListType_MAX" */
+}
+
+external open class PinnedCommandListCommand {
+    open var Name: String
+    open var Binding: String
+    open var Type: String /* "Command" | "CustomWidget" | "EPinnedCommandListType_MAX" */
+    open fun clone(): PinnedCommandListCommand
+
+    companion object {
+        fun C(Other: UObject): PinnedCommandListCommand
+        fun C(Other: Any): PinnedCommandListCommand
+    }
+}
+
+external open class PinnedCommandListContext {
+    open var Name: String
+    open var Commands: Array<PinnedCommandListCommand>
+    open fun clone(): PinnedCommandListContext
+
+    companion object {
+        fun C(Other: UObject): PinnedCommandListContext
+        fun C(Other: Any): PinnedCommandListContext
+    }
+}
+
+external open class PinnedCommandListSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Contexts: Array<PinnedCommandListContext>
+
+    companion object {
+        fun Load(ResourceName: String): PinnedCommandListSettings
+        fun Find(Outer: UObject, ResourceName: String): PinnedCommandListSettings
+        fun GetDefaultObject(): PinnedCommandListSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PinnedCommandListSettings
+        fun C(Other: UObject): PinnedCommandListSettings
+        fun C(Other: Any): PinnedCommandListSettings
+    }
+}
+
+external open class AnimationEditorPreviewActor(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : Actor {
+    companion object {
+        fun GetDefaultObject(): AnimationEditorPreviewActor
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AnimationEditorPreviewActor
+        fun C(Other: UObject): AnimationEditorPreviewActor
+        fun C(Other: Any): AnimationEditorPreviewActor
+    }
+}
+
+external open class LODInfoUILayout : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var LODInfo: SkeletalMeshLODInfo
+
+    companion object {
+        fun Load(ResourceName: String): LODInfoUILayout
+        fun Find(Outer: UObject, ResourceName: String): LODInfoUILayout
+        fun GetDefaultObject(): LODInfoUILayout
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LODInfoUILayout
+        fun C(Other: UObject): LODInfoUILayout
+        fun C(Other: Any): LODInfoUILayout
+    }
+}
+
+external open class PersonaPreviewSceneController : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): PersonaPreviewSceneController
+        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneController
+        fun GetDefaultObject(): PersonaPreviewSceneController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneController
+        fun C(Other: UObject): PersonaPreviewSceneController
+        fun C(Other: Any): PersonaPreviewSceneController
+    }
+}
+
+external open class PersonaPreviewSceneAnimationController : PersonaPreviewSceneController {
+    constructor()
+    constructor(Outer: UObject)
+    open var Animation: AnimationAsset
+
+    companion object {
+        fun Load(ResourceName: String): PersonaPreviewSceneAnimationController
+        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneAnimationController
+        fun GetDefaultObject(): PersonaPreviewSceneAnimationController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneAnimationController
+        fun C(Other: UObject): PersonaPreviewSceneAnimationController
+        fun C(Other: Any): PersonaPreviewSceneAnimationController
+    }
+}
+
+external open class PersonaPreviewSceneDefaultController : PersonaPreviewSceneController {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): PersonaPreviewSceneDefaultController
+        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneDefaultController
+        fun GetDefaultObject(): PersonaPreviewSceneDefaultController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneDefaultController
+        fun C(Other: UObject): PersonaPreviewSceneDefaultController
+        fun C(Other: Any): PersonaPreviewSceneDefaultController
+    }
+}
+
+external open class PersonaPreviewSceneDescription : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var PreviewController: UnrealEngineClass
+    open var PreviewControllerInstance: PersonaPreviewSceneController
+    open var PreviewControllerInstances: Array<PersonaPreviewSceneController>
+    open var PreviewMesh: SkeletalMesh
+    open var PreviewAnimationBlueprint: AnimBlueprint
+    open var ApplicationMethod: String /* "LinkedLayers" | "LinkedAnimGraph" | "EPreviewAnimationBlueprintApplicationMethod_MAX" */
+    open var LinkedAnimGraphTag: String
+    open var AdditionalMeshes: DataAsset
+    open var DefaultAdditionalMeshes: PreviewMeshCollection
+
+    companion object {
+        fun Load(ResourceName: String): PersonaPreviewSceneDescription
+        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneDescription
+        fun GetDefaultObject(): PersonaPreviewSceneDescription
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneDescription
+        fun C(Other: UObject): PersonaPreviewSceneDescription
+        fun C(Other: Any): PersonaPreviewSceneDescription
+    }
+}
+
+external open class PersonaPreviewSceneRefPoseController : PersonaPreviewSceneController {
+    constructor()
+    constructor(Outer: UObject)
+    open var bResetBoneTransforms: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): PersonaPreviewSceneRefPoseController
+        fun Find(Outer: UObject, ResourceName: String): PersonaPreviewSceneRefPoseController
+        fun GetDefaultObject(): PersonaPreviewSceneRefPoseController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PersonaPreviewSceneRefPoseController
+        fun C(Other: UObject): PersonaPreviewSceneRefPoseController
+        fun C(Other: Any): PersonaPreviewSceneRefPoseController
+    }
+}
+
+external open class SkinWeightImportOptions : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var ProfileName: String
+    open var FilePath: String
+    open var LODIndex: Number
+
+    companion object {
+        fun Load(ResourceName: String): SkinWeightImportOptions
+        fun Find(Outer: UObject, ResourceName: String): SkinWeightImportOptions
+        fun GetDefaultObject(): SkinWeightImportOptions
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SkinWeightImportOptions
+        fun C(Other: UObject): SkinWeightImportOptions
+        fun C(Other: Any): SkinWeightImportOptions
+    }
+}
+
+external open class LiveLinkBlueprintVirtualSubjectFactory : Factory {
+    constructor()
+    constructor(Outer: UObject)
+    open var ParentClass: UnrealEngineClass
+    open var Role: UnrealEngineClass
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkBlueprintVirtualSubjectFactory
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkBlueprintVirtualSubjectFactory
+        fun GetDefaultObject(): LiveLinkBlueprintVirtualSubjectFactory
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkBlueprintVirtualSubjectFactory
+        fun C(Other: UObject): LiveLinkBlueprintVirtualSubjectFactory
+        fun C(Other: Any): LiveLinkBlueprintVirtualSubjectFactory
+    }
+}
+
+external open class LiveLinkPreviewController : PersonaPreviewSceneController {
+    constructor()
+    constructor(Outer: UObject)
+    open var SubjectName: String
+    open var LiveLinkSubjectName: LiveLinkSubjectName
+    open var bEnableCameraSync: Boolean
+    open var RetargetAsset: UnrealEngineClass
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkPreviewController
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkPreviewController
+        fun GetDefaultObject(): LiveLinkPreviewController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkPreviewController
+        fun C(Other: UObject): LiveLinkPreviewController
+        fun C(Other: Any): LiveLinkPreviewController
+    }
+}
+
+external open class LiveLinkSequencerTrackFilter : SequencerTrackFilterExtension {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkSequencerTrackFilter
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkSequencerTrackFilter
+        fun GetDefaultObject(): LiveLinkSequencerTrackFilter
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkSequencerTrackFilter
+        fun C(Other: UObject): LiveLinkSequencerTrackFilter
+        fun C(Other: Any): LiveLinkSequencerTrackFilter
+    }
+}
+
+external open class ActorRecordedProperty {
+    open var PropertyName: String
+    open var bEnabled: Boolean
+    open var RecorderName: String
+    open fun clone(): ActorRecordedProperty
+
+    companion object {
+        fun C(Other: UObject): ActorRecordedProperty
+        fun C(Other: Any): ActorRecordedProperty
+    }
+}
+
+external open class ActorRecorderPropertyMap : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var RecordedObject: UObject
+    open var Properties: Array<ActorRecordedProperty>
+    open var Children: Array<ActorRecorderPropertyMap>
+
+    companion object {
+        fun Load(ResourceName: String): ActorRecorderPropertyMap
+        fun Find(Outer: UObject, ResourceName: String): ActorRecorderPropertyMap
+        fun GetDefaultObject(): ActorRecorderPropertyMap
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ActorRecorderPropertyMap
+        fun C(Other: UObject): ActorRecorderPropertyMap
+        fun C(Other: Any): ActorRecorderPropertyMap
+    }
+}
+
+external open class TakesCoreBlueprintLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): TakesCoreBlueprintLibrary
+        fun Find(Outer: UObject, ResourceName: String): TakesCoreBlueprintLibrary
+        fun GetDefaultObject(): TakesCoreBlueprintLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakesCoreBlueprintLibrary
+        fun FindTakes(Slate: String, TakeNumber: Number): Array<AssetData>
+        fun ComputeNextTakeNumber(Slate: String): Number
+        fun C(Other: UObject): TakesCoreBlueprintLibrary
+        fun C(Other: Any): TakesCoreBlueprintLibrary
+    }
+}
+
+external open class MovieSceneTrackRecorder : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneTrackRecorder
+        fun GetDefaultObject(): MovieSceneTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTrackRecorder
+        fun C(Other: UObject): MovieSceneTrackRecorder
+        fun C(Other: Any): MovieSceneTrackRecorder
+    }
+}
+
+external open class MovieScene3DAttachTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieScene3DAttachTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieScene3DAttachTrackRecorder
+        fun GetDefaultObject(): MovieScene3DAttachTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieScene3DAttachTrackRecorder
+        fun C(Other: UObject): MovieScene3DAttachTrackRecorder
+        fun C(Other: Any): MovieScene3DAttachTrackRecorder
+    }
+}
+
+external open class MovieScene3DTransformTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieScene3DTransformTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieScene3DTransformTrackRecorder
+        fun GetDefaultObject(): MovieScene3DTransformTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieScene3DTransformTrackRecorder
+        fun C(Other: UObject): MovieScene3DTransformTrackRecorder
+        fun C(Other: Any): MovieScene3DTransformTrackRecorder
+    }
+}
+
+external open class MovieSceneAnimationTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneAnimationTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneAnimationTrackRecorder
+        fun GetDefaultObject(): MovieSceneAnimationTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneAnimationTrackRecorder
+        fun C(Other: UObject): MovieSceneAnimationTrackRecorder
+        fun C(Other: Any): MovieSceneAnimationTrackRecorder
+    }
+}
+
+external open class MovieSceneTrackRecorderSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneTrackRecorderSettings
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneTrackRecorderSettings
+        fun GetDefaultObject(): MovieSceneTrackRecorderSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTrackRecorderSettings
+        fun C(Other: UObject): MovieSceneTrackRecorderSettings
+        fun C(Other: Any): MovieSceneTrackRecorderSettings
+    }
+}
+
+external open class MovieSceneAnimationTrackRecorderEditorSettings : MovieSceneTrackRecorderSettings {
+    constructor()
+    constructor(Outer: UObject)
+    open var AnimationTrackName: String
+    open var AnimationAssetName: String
+    open var AnimationSubDirectory: String
+    open var InterpMode: String /* "RCIM_Linear" | "RCIM_Constant" | "RCIM_Cubic" | "RCIM_None" | "RCIM_MAX" */
+    open var TangentMode: String /* "RCTM_Auto" | "RCTM_User" | "RCTM_Break" | "RCTM_None" | "RCTM_MAX" */
+    open var bRemoveRootAnimation: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneAnimationTrackRecorderEditorSettings
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneAnimationTrackRecorderEditorSettings
+        fun GetDefaultObject(): MovieSceneAnimationTrackRecorderEditorSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneAnimationTrackRecorderEditorSettings
+        fun C(Other: UObject): MovieSceneAnimationTrackRecorderEditorSettings
+        fun C(Other: Any): MovieSceneAnimationTrackRecorderEditorSettings
+    }
+}
+
+external open class MovieSceneAnimationTrackRecorderSettings : MovieSceneAnimationTrackRecorderEditorSettings {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneAnimationTrackRecorderSettings
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneAnimationTrackRecorderSettings
+        fun GetDefaultObject(): MovieSceneAnimationTrackRecorderSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneAnimationTrackRecorderSettings
+        fun C(Other: UObject): MovieSceneAnimationTrackRecorderSettings
+        fun C(Other: Any): MovieSceneAnimationTrackRecorderSettings
+    }
+}
+
+external open class MovieSceneParticleTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+    open fun OnTriggered(Component: ParticleSystemComponent, bActivating: Boolean)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneParticleTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneParticleTrackRecorder
+        fun GetDefaultObject(): MovieSceneParticleTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneParticleTrackRecorder
+        fun C(Other: UObject): MovieSceneParticleTrackRecorder
+        fun C(Other: Any): MovieSceneParticleTrackRecorder
+    }
+}
+
+external open class MovieScenePropertyTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieScenePropertyTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieScenePropertyTrackRecorder
+        fun GetDefaultObject(): MovieScenePropertyTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieScenePropertyTrackRecorder
+        fun C(Other: UObject): MovieScenePropertyTrackRecorder
+        fun C(Other: Any): MovieScenePropertyTrackRecorder
+    }
+}
+
+external open class MovieSceneSpawnTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneSpawnTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneSpawnTrackRecorder
+        fun GetDefaultObject(): MovieSceneSpawnTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneSpawnTrackRecorder
+        fun C(Other: UObject): MovieSceneSpawnTrackRecorder
+        fun C(Other: Any): MovieSceneSpawnTrackRecorder
+    }
+}
+
+external open class MovieSceneVisibilityTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneVisibilityTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneVisibilityTrackRecorder
+        fun GetDefaultObject(): MovieSceneVisibilityTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneVisibilityTrackRecorder
+        fun C(Other: UObject): MovieSceneVisibilityTrackRecorder
+        fun C(Other: Any): MovieSceneVisibilityTrackRecorder
+    }
+}
+
+external object ETakeRecorderPanelMode {
+    var NewRecording: String /* "NewRecording" */
+    var RecordingInto: String /* "RecordingInto" */
+    var EditingPreset: String /* "EditingPreset" */
+    var ReviewingRecording: String /* "ReviewingRecording" */
+    var ETakeRecorderPanelMode_MAX: String /* "ETakeRecorderPanelMode_MAX" */
+}
+
+external interface `T$533` {
+    var OutErrorText: String
+    var `$`: Boolean
+}
+
+external open class TakeRecorderPanel : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open fun StopRecording()
+    open fun StartRecording()
+    open fun SetMode(LevelSequenceAsset: LevelSequence)
+    open fun SetMode(TakePresetAsset: TakePreset)
+    open fun SetMode(TakePreset: TakePreset)
+    open fun SetFrameRateFromTimecode(bInFromTimecode: Boolean)
+    open fun SetFrameRate(InFrameRate: FrameRate)
+    open fun NewTake()
+    open fun GetTakeMetaData(): TakeMetaData
+    open fun GetSources(): TakeRecorderSources
+    open fun GetMode(): String /* "NewRecording" | "RecordingInto" | "EditingPreset" | "ReviewingRecording" | "ETakeRecorderPanelMode_MAX" */
+    open fun GetLevelSequence(): LevelSequence
+    open fun GetLastRecordedLevelSequence(): LevelSequence
+    open fun GetFrameRate(): FrameRate
+    open fun ClearPendingTake()
+    open fun CanStartRecording(OutErrorText: String = definedExternally): `T$533`
+
+    companion object {
+        fun Load(ResourceName: String): TakeRecorderPanel
+        fun Find(Outer: UObject, ResourceName: String): TakeRecorderPanel
+        fun GetDefaultObject(): TakeRecorderPanel
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderPanel
+        fun C(Other: UObject): TakeRecorderPanel
+        fun C(Other: Any): TakeRecorderPanel
+    }
+}
+
+external open class TakeRecorderBlueprintLibrary : BlueprintFunctionLibrary {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): TakeRecorderBlueprintLibrary
+        fun Find(Outer: UObject, ResourceName: String): TakeRecorderBlueprintLibrary
+        fun GetDefaultObject(): TakeRecorderBlueprintLibrary
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderBlueprintLibrary
+        fun StopRecording()
+        fun StartRecording(LevelSequence: LevelSequence, Sources: TakeRecorderSources, MetaData: TakeMetaData, Parameters: TakeRecorderParameters): TakeRecorder
+        fun OpenTakeRecorderPanel(): TakeRecorderPanel
+        fun IsTakeRecorderEnabled(): Boolean
+        fun IsRecording(): Boolean
+        fun GetTakeRecorderPanel(): TakeRecorderPanel
+        fun GetDefaultParameters(): TakeRecorderParameters
+        fun GetActiveRecorder(): TakeRecorder
+        fun C(Other: UObject): TakeRecorderBlueprintLibrary
+        fun C(Other: Any): TakeRecorderBlueprintLibrary
+    }
+}
+
+external open class TakeRecorderUserSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Settings: TakeRecorderUserParameters
+    open var PresetSaveDir: DirectoryPath
+    open var LastOpenedPreset: TakePreset
+    open var bIsSequenceOpen: Boolean
+    open var bShowUserSettingsOnUI: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): TakeRecorderUserSettings
+        fun Find(Outer: UObject, ResourceName: String): TakeRecorderUserSettings
+        fun GetDefaultObject(): TakeRecorderUserSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderUserSettings
+        fun C(Other: UObject): TakeRecorderUserSettings
+        fun C(Other: Any): TakeRecorderUserSettings
+    }
+}
+
+external open class TakeRecorderProjectSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Settings: TakeRecorderProjectParameters
+
+    companion object {
+        fun Load(ResourceName: String): TakeRecorderProjectSettings
+        fun Find(Outer: UObject, ResourceName: String): TakeRecorderProjectSettings
+        fun GetDefaultObject(): TakeRecorderProjectSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderProjectSettings
+        fun C(Other: UObject): TakeRecorderProjectSettings
+        fun C(Other: Any): TakeRecorderProjectSettings
+    }
+}
+
+external open class LiveLinkSequencerSettings : DeveloperSettings {
+    constructor()
+    constructor(Outer: UObject)
+    open var DefaultTrackRecordersForController: Any
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkSequencerSettings
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkSequencerSettings
+        fun GetDefaultObject(): LiveLinkSequencerSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkSequencerSettings
+        fun C(Other: UObject): LiveLinkSequencerSettings
+        fun C(Other: Any): LiveLinkSequencerSettings
+    }
+}
+
+external open class MovieSceneLiveLinkControllerMapTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkControllerMapTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkControllerMapTrackRecorder
+        fun GetDefaultObject(): MovieSceneLiveLinkControllerMapTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkControllerMapTrackRecorder
+        fun C(Other: UObject): MovieSceneLiveLinkControllerMapTrackRecorder
+        fun C(Other: Any): MovieSceneLiveLinkControllerMapTrackRecorder
+    }
+}
+
+external open class MovieSceneLiveLinkControllerTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+    open var LiveLinkControllerToRecord: LiveLinkControllerBase
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkControllerTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkControllerTrackRecorder
+        fun GetDefaultObject(): MovieSceneLiveLinkControllerTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkControllerTrackRecorder
+        fun C(Other: UObject): MovieSceneLiveLinkControllerTrackRecorder
+        fun C(Other: Any): MovieSceneLiveLinkControllerTrackRecorder
+    }
+}
+
+external open class MovieSceneLiveLinkTrackRecorder : MovieSceneTrackRecorder {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneLiveLinkTrackRecorder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneLiveLinkTrackRecorder
+        fun GetDefaultObject(): MovieSceneLiveLinkTrackRecorder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneLiveLinkTrackRecorder
+        fun C(Other: UObject): MovieSceneLiveLinkTrackRecorder
+        fun C(Other: Any): MovieSceneLiveLinkTrackRecorder
+    }
+}
+
+external open class LiveLinkSubjectProperty {
+    open var SubjectName: String
+    open var bEnabled: Boolean
+    open fun clone(): LiveLinkSubjectProperty
+
+    companion object {
+        fun C(Other: UObject): LiveLinkSubjectProperty
+        fun C(Other: Any): LiveLinkSubjectProperty
+    }
+}
+
+external open class LiveLinkSubjectProperties : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Properties: Array<LiveLinkSubjectProperty>
+
+    companion object {
+        fun Load(ResourceName: String): LiveLinkSubjectProperties
+        fun Find(Outer: UObject, ResourceName: String): LiveLinkSubjectProperties
+        fun GetDefaultObject(): LiveLinkSubjectProperties
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkSubjectProperties
+        fun C(Other: UObject): LiveLinkSubjectProperties
+        fun C(Other: Any): LiveLinkSubjectProperties
+    }
+}
+
+external open class TakeRecorderLiveLinkSource : TakeRecorderSource {
+    constructor()
+    constructor(Outer: UObject)
+    open var bReduceKeys: Boolean
+    open var SubjectName: String
+    open var bSaveSubjectSettings: Boolean
+    open var bUseSourceTimecode: Boolean
+    open var bDiscardSamplesBeforeStart: Boolean
+    open var TrackRecorder: MovieSceneLiveLinkTrackRecorder
+
+    companion object {
+        fun Load(ResourceName: String): TakeRecorderLiveLinkSource
+        fun Find(Outer: UObject, ResourceName: String): TakeRecorderLiveLinkSource
+        fun GetDefaultObject(): TakeRecorderLiveLinkSource
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TakeRecorderLiveLinkSource
+        fun C(Other: UObject): TakeRecorderLiveLinkSource
+        fun C(Other: Any): TakeRecorderLiveLinkSource
     }
 }
 
@@ -27306,7 +27306,7 @@ external open class JavascriptEditorLibrary : BlueprintFunctionLibrary {
         fun OpenFileDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, DefaultFile: String, FileTypes: String, Flags: Number, OutFilenames: Array<String> = definedExternally): `T$543`
         fun OpenEditorForAssetByPath(AssetPathName: String, ObjectName: String)
         fun OpenEditorForAsset(Asset: UObject): Boolean
-        fun OpenDirectoryDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, OutFolderName: String = definedExternally): `T$469`
+        fun OpenDirectoryDialog(WindowHandle: JavascriptWindow, DialogTitle: String, DefaultPath: String, OutFolderName: String = definedExternally): `T$427`
         fun NotifyUpdateCurveTable(InCurveTable: CurveTable)
         fun ModifyObject(UObject: UObject, bAlwaysMarkDirty: Boolean)
         fun MarkPackageDirty(InObject: UObject): Boolean
