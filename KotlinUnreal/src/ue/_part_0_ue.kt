@@ -223,11 +223,11 @@ external object EBone {
     var EBone_MAX: String /* "EBone_MAX" */
 }
 
-external interface `T$181` {
+external interface `T$1` {
     var A: Quat
 }
 
-external interface `T$182` {
+external interface `T$2` {
     var Q: Quat
 }
 
@@ -243,7 +243,7 @@ external open class Quat {
     open fun Multiply_QuatQuat(B: Quat): Quat
     open fun NotEqual(B: Quat, ErrorTolerance: Number): Boolean
     open fun AngularDistance(B: Quat): Number
-    open fun Ensureshortestarcto(B: Quat = definedExternally): `T$181`
+    open fun Ensureshortestarcto(B: Quat = definedExternally): `T$1`
     open fun Euler(): Vector
     open fun Exp(): Quat
     open fun Angle(): Number
@@ -257,12 +257,12 @@ external open class Quat {
     open fun Quat_IsNonFinite(): Boolean
     open fun IsNormalized(): Boolean
     open fun Log(): Quat
-    open fun Normalize(Tolerance: Number = definedExternally): `T$182`
+    open fun Normalize(Tolerance: Number = definedExternally): `T$2`
     open fun Normalized(Tolerance: Number): Quat
     open fun RotateVector(V: Vector): Vector
     open fun ToRotator(): Rotator
-    open fun SetComponents(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$182`
-    open fun SetfromEuler(Euler: Vector = definedExternally): `T$182`
+    open fun SetComponents(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$2`
+    open fun SetfromEuler(Euler: Vector = definedExternally): `T$2`
     open fun Size(): Number
     open fun SizeSquared(): Number
     open fun UnrotateVector(V: Vector): Vector
@@ -280,7 +280,7 @@ external open class Quat {
         fun Multiply_QuatQuat(A: Quat, B: Quat): Quat
         fun NotEqual(A: Quat, B: Quat, ErrorTolerance: Number): Boolean
         fun AngularDistance(A: Quat, B: Quat): Number
-        fun Ensureshortestarcto(A: Quat = definedExternally, B: Quat = definedExternally): `T$181`
+        fun Ensureshortestarcto(A: Quat = definedExternally, B: Quat = definedExternally): `T$1`
         fun Euler(Q: Quat): Vector
         fun Exp(Q: Quat): Quat
         fun Angle(Q: Quat): Number
@@ -294,12 +294,12 @@ external open class Quat {
         fun Quat_IsNonFinite(Q: Quat): Boolean
         fun IsNormalized(Q: Quat): Boolean
         fun Log(Q: Quat): Quat
-        fun Normalize(Q: Quat = definedExternally, Tolerance: Number = definedExternally): `T$182`
+        fun Normalize(Q: Quat = definedExternally, Tolerance: Number = definedExternally): `T$2`
         fun Normalized(Q: Quat, Tolerance: Number): Quat
         fun RotateVector(Q: Quat, V: Vector): Vector
         fun ToRotator(Q: Quat): Rotator
-        fun SetComponents(Q: Quat = definedExternally, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$182`
-        fun SetfromEuler(Q: Quat = definedExternally, Euler: Vector = definedExternally): `T$182`
+        fun SetComponents(Q: Quat = definedExternally, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$2`
+        fun SetfromEuler(Q: Quat = definedExternally, Euler: Vector = definedExternally): `T$2`
         fun Size(Q: Quat): Number
         fun SizeSquared(Q: Quat): Number
         fun UnrotateVector(Q: Quat, V: Vector): Vector
@@ -338,14 +338,14 @@ external object EAxis {
     var EAxis_MAX: String /* "EAxis_MAX" */
 }
 
-external interface `T$183` {
+external interface `T$3` {
     var X: Number
     var Y: Number
     var Z: Number
     var W: Number
 }
 
-external interface `T$184` {
+external interface `T$4` {
     var A: Vector4
 }
 
@@ -356,7 +356,7 @@ external open class Vector4 {
     open var W: Number
     open fun clone(): Vector4
     open fun Add_Vector4Vector4(B: Vector4): Vector4
-    open fun BreakVector4(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$183`
+    open fun BreakVector4(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$3`
     open fun ToQuaternion(): Quat
     open fun ToRotation(): Rotator
     open fun ToVector(): Vector
@@ -367,7 +367,7 @@ external open class Vector4 {
     open fun NotEqual(B: Vector4, ErrorTolerance: Number): Boolean
     open fun NotEqualExactly(B: Vector4): Boolean
     open fun Subtract_Vector4Vector4(B: Vector4): Vector4
-    open fun Vector4_Assign(InVector: Vector4 = definedExternally): `T$184`
+    open fun Vector4_Assign(InVector: Vector4 = definedExternally): `T$4`
     open fun CrossProductXYZ(B: Vector4): Vector4
     open fun DotProduct(B: Vector4): Number
     open fun DotProductXYZ(B: Vector4): Number
@@ -379,9 +379,9 @@ external open class Vector4 {
     open fun Vector4_MirrorByVector3(SurfaceNormal: Vector4): Vector4
     open fun Negated(): Vector4
     open fun NormalizeXYZ(Tolerance: Number): Vector4
-    open fun NormalizeInPlaceXYZ(Tolerance: Number = definedExternally): `T$184`
+    open fun NormalizeInPlaceXYZ(Tolerance: Number = definedExternally): `T$4`
     open fun NormalunsafeXYZ(): Vector4
-    open fun Vector4_Set(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$184`
+    open fun Vector4_Set(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$4`
     open fun Length(): Number
     open fun LengthXYZ(): Number
     open fun LengthSquared(): Number
@@ -391,7 +391,7 @@ external open class Vector4 {
         fun C(Other: UObject): Vector4
         fun C(Other: Any): Vector4
         fun Add_Vector4Vector4(A: Vector4, B: Vector4): Vector4
-        fun BreakVector4(InVec: Vector4, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$183`
+        fun BreakVector4(InVec: Vector4, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$3`
         fun ToQuaternion(InVec: Vector4): Quat
         fun ToRotation(InVec: Vector4): Rotator
         fun ToVector(InVector4: Vector4): Vector
@@ -402,7 +402,7 @@ external open class Vector4 {
         fun NotEqual(A: Vector4, B: Vector4, ErrorTolerance: Number): Boolean
         fun NotEqualExactly(A: Vector4, B: Vector4): Boolean
         fun Subtract_Vector4Vector4(A: Vector4, B: Vector4): Vector4
-        fun Vector4_Assign(A: Vector4 = definedExternally, InVector: Vector4 = definedExternally): `T$184`
+        fun Vector4_Assign(A: Vector4 = definedExternally, InVector: Vector4 = definedExternally): `T$4`
         fun CrossProductXYZ(A: Vector4, B: Vector4): Vector4
         fun DotProduct(A: Vector4, B: Vector4): Number
         fun DotProductXYZ(A: Vector4, B: Vector4): Number
@@ -414,9 +414,9 @@ external open class Vector4 {
         fun Vector4_MirrorByVector3(Direction: Vector4, SurfaceNormal: Vector4): Vector4
         fun Negated(A: Vector4): Vector4
         fun NormalizeXYZ(A: Vector4, Tolerance: Number): Vector4
-        fun NormalizeInPlaceXYZ(A: Vector4 = definedExternally, Tolerance: Number = definedExternally): `T$184`
+        fun NormalizeInPlaceXYZ(A: Vector4 = definedExternally, Tolerance: Number = definedExternally): `T$4`
         fun NormalunsafeXYZ(A: Vector4): Vector4
-        fun Vector4_Set(A: Vector4 = definedExternally, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$184`
+        fun Vector4_Set(A: Vector4 = definedExternally, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally, W: Number = definedExternally): `T$4`
         fun Length(A: Vector4): Number
         fun LengthXYZ(A: Vector4): Number
         fun LengthSquared(A: Vector4): Number
@@ -426,18 +426,18 @@ external open class Vector4 {
     }
 }
 
-external interface `T$185` {
+external interface `T$5` {
     var OutPlane: Plane
     var `$`: Boolean
 }
 
-external interface `T$186` {
+external interface `T$6` {
     var X: Vector
     var Y: Vector
     var Z: Vector
 }
 
-external interface `T$187` {
+external interface `T$7` {
     var M: Matrix
 }
 
@@ -457,34 +457,34 @@ external open class Matrix {
     open fun ContainsNaN(): Boolean
     open fun GetColumn(Column: String /* "First" | "Second" | "Third" | "Fourth" | "EMatrixColumns_MAX" */): Vector
     open fun GetDeterminant(): Number
-    open fun GetFrustumBottomPlane(OutPlane: Plane = definedExternally): `T$185`
-    open fun GetFrustumFarPlane(OutPlane: Plane = definedExternally): `T$185`
-    open fun GetFrustumLeftPlane(OutPlane: Plane = definedExternally): `T$185`
-    open fun GetFrustumNearPlane(OutPlane: Plane = definedExternally): `T$185`
-    open fun GetFrustumRightPlane(OutPlane: Plane = definedExternally): `T$185`
-    open fun GetFrustumTopPlane(OutPlane: Plane = definedExternally): `T$185`
+    open fun GetFrustumBottomPlane(OutPlane: Plane = definedExternally): `T$5`
+    open fun GetFrustumFarPlane(OutPlane: Plane = definedExternally): `T$5`
+    open fun GetFrustumLeftPlane(OutPlane: Plane = definedExternally): `T$5`
+    open fun GetFrustumNearPlane(OutPlane: Plane = definedExternally): `T$5`
+    open fun GetFrustumRightPlane(OutPlane: Plane = definedExternally): `T$5`
+    open fun GetFrustumTopPlane(OutPlane: Plane = definedExternally): `T$5`
     open fun GetInverse(): Matrix
     open fun GetMatrixWithoutScale(Tolerance: Number): Matrix
     open fun GetMaximumAxisScale(): Number
     open fun GetOrigin(): Vector
     open fun GetRotator(): Rotator
     open fun GetRotationDeterminant(): Number
-    open fun GetScaledAxes(X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$186`
+    open fun GetScaledAxes(X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$6`
     open fun GetScaledAxis(Axis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */): Vector
     open fun GetScaleVector(Tolerance: Number): Vector
     open fun GetTransposeAdjoint(): Matrix
     open fun GetTransposed(): Matrix
-    open fun GetUnitAxes(X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$186`
+    open fun GetUnitAxes(X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$6`
     open fun GetUnitAxis(Axis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */): Vector
     open fun InverseTransformPosition(V: Vector): Vector
     open fun InverseTransformVector(V: Vector): Vector
     open fun Mirror(MirrorAxis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */, FlipAxis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */): Matrix
-    open fun RemoveScaling(Tolerance: Number = definedExternally): `T$187`
+    open fun RemoveScaling(Tolerance: Number = definedExternally): `T$7`
     open fun RemoveTranslation(): Matrix
     open fun ScaleTranslation(Scale3D: Vector): Matrix
-    open fun SetAxis(Axis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */ = definedExternally, AxisVector: Vector = definedExternally): `T$187`
-    open fun SetColumn(Column: String /* "First" | "Second" | "Third" | "Fourth" | "EMatrixColumns_MAX" */ = definedExternally, Value: Vector = definedExternally): `T$187`
-    open fun SetOrigin(NewOrigin: Vector = definedExternally): `T$187`
+    open fun SetAxis(Axis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */ = definedExternally, AxisVector: Vector = definedExternally): `T$7`
+    open fun SetColumn(Column: String /* "First" | "Second" | "Third" | "Fourth" | "EMatrixColumns_MAX" */ = definedExternally, Value: Vector = definedExternally): `T$7`
+    open fun SetOrigin(NewOrigin: Vector = definedExternally): `T$7`
     open fun ToQuat(): Quat
     open fun TransformPosition(V: Vector): Vector4
     open fun TransformVector(V: Vector): Vector4
@@ -507,34 +507,34 @@ external open class Matrix {
         fun ContainsNaN(M: Matrix): Boolean
         fun GetColumn(M: Matrix, Column: String /* "First" | "Second" | "Third" | "Fourth" | "EMatrixColumns_MAX" */): Vector
         fun GetDeterminant(M: Matrix): Number
-        fun GetFrustumBottomPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$185`
-        fun GetFrustumFarPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$185`
-        fun GetFrustumLeftPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$185`
-        fun GetFrustumNearPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$185`
-        fun GetFrustumRightPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$185`
-        fun GetFrustumTopPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$185`
+        fun GetFrustumBottomPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$5`
+        fun GetFrustumFarPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$5`
+        fun GetFrustumLeftPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$5`
+        fun GetFrustumNearPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$5`
+        fun GetFrustumRightPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$5`
+        fun GetFrustumTopPlane(M: Matrix, OutPlane: Plane = definedExternally): `T$5`
         fun GetInverse(M: Matrix): Matrix
         fun GetMatrixWithoutScale(M: Matrix, Tolerance: Number): Matrix
         fun GetMaximumAxisScale(M: Matrix): Number
         fun GetOrigin(InMatrix: Matrix): Vector
         fun GetRotator(M: Matrix): Rotator
         fun GetRotationDeterminant(M: Matrix): Number
-        fun GetScaledAxes(M: Matrix, X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$186`
+        fun GetScaledAxes(M: Matrix, X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$6`
         fun GetScaledAxis(M: Matrix, Axis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */): Vector
         fun GetScaleVector(M: Matrix, Tolerance: Number): Vector
         fun GetTransposeAdjoint(M: Matrix): Matrix
         fun GetTransposed(M: Matrix): Matrix
-        fun GetUnitAxes(M: Matrix, X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$186`
+        fun GetUnitAxes(M: Matrix, X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$6`
         fun GetUnitAxis(M: Matrix, Axis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */): Vector
         fun InverseTransformPosition(M: Matrix, V: Vector): Vector
         fun InverseTransformVector(M: Matrix, V: Vector): Vector
         fun Mirror(M: Matrix, MirrorAxis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */, FlipAxis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */): Matrix
-        fun RemoveScaling(M: Matrix = definedExternally, Tolerance: Number = definedExternally): `T$187`
+        fun RemoveScaling(M: Matrix = definedExternally, Tolerance: Number = definedExternally): `T$7`
         fun RemoveTranslation(M: Matrix): Matrix
         fun ScaleTranslation(M: Matrix, Scale3D: Vector): Matrix
-        fun SetAxis(M: Matrix = definedExternally, Axis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */ = definedExternally, AxisVector: Vector = definedExternally): `T$187`
-        fun SetColumn(M: Matrix = definedExternally, Column: String /* "First" | "Second" | "Third" | "Fourth" | "EMatrixColumns_MAX" */ = definedExternally, Value: Vector = definedExternally): `T$187`
-        fun SetOrigin(M: Matrix = definedExternally, NewOrigin: Vector = definedExternally): `T$187`
+        fun SetAxis(M: Matrix = definedExternally, Axis: String /* "None" | "X" | "Y" | "Z" | "EAxis_MAX" */ = definedExternally, AxisVector: Vector = definedExternally): `T$7`
+        fun SetColumn(M: Matrix = definedExternally, Column: String /* "First" | "Second" | "Third" | "Fourth" | "EMatrixColumns_MAX" */ = definedExternally, Value: Vector = definedExternally): `T$7`
+        fun SetOrigin(M: Matrix = definedExternally, NewOrigin: Vector = definedExternally): `T$7`
         fun ToQuat(M: Matrix): Quat
         fun TransformPosition(M: Matrix, V: Vector): Vector4
         fun TransformVector(M: Matrix, V: Vector): Vector4
@@ -572,13 +572,13 @@ external object ELerpInterpolationMode {
     var ELerpInterpolationMode_MAX: String /* "ELerpInterpolationMode_MAX" */
 }
 
-external interface `T$188` {
+external interface `T$8` {
     var Location: Vector
     var Rotation: Rotator
     var Scale: Vector
 }
 
-external interface `T$189` {
+external interface `T$9` {
     var AlignmentTransform: Transform
 }
 
@@ -589,7 +589,7 @@ external open class Transform {
     open fun clone(): Transform
     open fun ToText(): String
     open fun ToString(): String
-    open fun BreakTransform(Location: Vector = definedExternally, Rotation: Rotator = definedExternally, Scale: Vector = definedExternally): `T$188`
+    open fun BreakTransform(Location: Vector = definedExternally, Rotation: Rotator = definedExternally, Scale: Vector = definedExternally): `T$8`
     open fun ComposeTransforms(B: Transform): Transform
     open fun ToMatrix(): Matrix
     open fun ConvertTransformToRelative(ParentTransform: Transform): Transform
@@ -612,7 +612,7 @@ external open class Transform {
     open fun CalibrateExternalTrackingToHMD()
     open fun UpdateExternalTrackingHMDPosition()
     open fun AddTrackedPointWithName(PointName: String, bDeletePointsWithSameName: Boolean): Boolean
-    open fun CalculateAlignmentTransform(TransformInSecondCoordinateSystem: Transform, AlignmentTransform: Transform = definedExternally): `T$189`
+    open fun CalculateAlignmentTransform(TransformInSecondCoordinateSystem: Transform, AlignmentTransform: Transform = definedExternally): `T$9`
     open fun SetARAlignmentTransform()
 
     companion object {
@@ -620,7 +620,7 @@ external open class Transform {
         fun C(Other: Any): Transform
         fun ToText(InTrans: Transform): String
         fun ToString(InTrans: Transform): String
-        fun BreakTransform(InTransform: Transform, Location: Vector = definedExternally, Rotation: Rotator = definedExternally, Scale: Vector = definedExternally): `T$188`
+        fun BreakTransform(InTransform: Transform, Location: Vector = definedExternally, Rotation: Rotator = definedExternally, Scale: Vector = definedExternally): `T$8`
         fun ComposeTransforms(A: Transform, B: Transform): Transform
         fun ToMatrix(Transform: Transform): Matrix
         fun ConvertTransformToRelative(Transform: Transform, ParentTransform: Transform): Transform
@@ -643,7 +643,7 @@ external open class Transform {
         fun CalibrateExternalTrackingToHMD(ExternalTrackingTransform: Transform)
         fun UpdateExternalTrackingHMDPosition(ExternalTrackingTransform: Transform)
         fun AddTrackedPointWithName(WorldTransform: Transform, PointName: String, bDeletePointsWithSameName: Boolean): Boolean
-        fun CalculateAlignmentTransform(TransformInFirstCoordinateSystem: Transform, TransformInSecondCoordinateSystem: Transform, AlignmentTransform: Transform = definedExternally): `T$189`
+        fun CalculateAlignmentTransform(TransformInFirstCoordinateSystem: Transform, TransformInSecondCoordinateSystem: Transform, AlignmentTransform: Transform = definedExternally): `T$9`
         fun SetARAlignmentTransform(InAlignmentTransform: Transform)
         fun GetPointerPose(DeviceHand: String /* "None" | "HandLeft" | "HandRight" | "EOculusHandType_MAX" */, ControllerIndex: Number): Transform
         fun GetPlayAreaTransform(): Transform
@@ -651,11 +651,11 @@ external open class Transform {
     }
 }
 
-external interface `T$190` {
+external interface `T$10` {
     var InitialSeed: Number
 }
 
-external interface `T$191` {
+external interface `T$11` {
     var Stream: RandomStream
 }
 
@@ -663,51 +663,51 @@ external open class RandomStream {
     open var InitialSeed: Number
     open var Seed: Number
     open fun clone(): RandomStream
-    open fun BreakRandomStream(InitialSeed: Number = definedExternally): `T$190`
+    open fun BreakRandomStream(InitialSeed: Number = definedExternally): `T$10`
     open fun RandomBoolFromStream(): Boolean
     open fun RandomFloatFromStream(): Number
     open fun RandomUnitVectorFromStream(): Vector
     open fun ResetRandomStream()
-    open fun SeedRandomStream(): `T$191`
-    open fun SetRandomStreamSeed(NewSeed: Number = definedExternally): `T$191`
+    open fun SeedRandomStream(): `T$11`
+    open fun SetRandomStreamSeed(NewSeed: Number = definedExternally): `T$11`
 
     companion object {
         fun C(Other: UObject): RandomStream
         fun C(Other: Any): RandomStream
-        fun BreakRandomStream(InRandomStream: RandomStream, InitialSeed: Number = definedExternally): `T$190`
+        fun BreakRandomStream(InRandomStream: RandomStream, InitialSeed: Number = definedExternally): `T$10`
         fun RandomBoolFromStream(Stream: RandomStream): Boolean
         fun RandomFloatFromStream(Stream: RandomStream): Number
         fun RandomUnitVectorFromStream(Stream: RandomStream): Vector
         fun ResetRandomStream(Stream: RandomStream)
-        fun SeedRandomStream(Stream: RandomStream = definedExternally): `T$191`
-        fun SetRandomStreamSeed(Stream: RandomStream = definedExternally, NewSeed: Number = definedExternally): `T$191`
+        fun SeedRandomStream(Stream: RandomStream = definedExternally): `T$11`
+        fun SetRandomStreamSeed(Stream: RandomStream = definedExternally, NewSeed: Number = definedExternally): `T$11`
         fun MakeRandomStream(InitialSeed: Number): RandomStream
     }
 }
 
-external interface `T$192` {
+external interface `T$12` {
     var OutRotation: Rotator
     var OutBaseOffsetInMeters: Vector
 }
 
-external interface `T$193` {
+external interface `T$13` {
     var OutRot: Rotator
     var OutPosOffset: Vector
 }
 
-external interface `T$194` {
+external interface `T$14` {
     var DeviceRotation: Rotator
     var DevicePosition: Vector
     var NeckPosition: Vector
 }
 
-external interface `T$195` {
+external interface `T$15` {
     var Roll: Number
     var Pitch: Number
     var Yaw: Number
 }
 
-external interface `T$196` {
+external interface `T$16` {
     var DeviceRotation: Rotator
     var DevicePosition: Vector
 }
@@ -717,23 +717,23 @@ external open class Rotator {
     open var Yaw: Number
     open var Roll: Number
     open fun clone(): Rotator
-    open fun GetBaseRotationAndBaseOffsetInMeters(OutBaseOffsetInMeters: Vector = definedExternally): `T$192`
-    open fun GetBaseRotationAndPositionOffset(OutPosOffset: Vector = definedExternally): `T$193`
-    open fun GetPose(DevicePosition: Vector = definedExternally, NeckPosition: Vector = definedExternally, bUseOrienationForPlayerCamera: Boolean = definedExternally, bUsePositionForPlayerCamera: Boolean = definedExternally, PositionScale: Vector = definedExternally): `T$194`
+    open fun GetBaseRotationAndBaseOffsetInMeters(OutBaseOffsetInMeters: Vector = definedExternally): `T$12`
+    open fun GetBaseRotationAndPositionOffset(OutPosOffset: Vector = definedExternally): `T$13`
+    open fun GetPose(DevicePosition: Vector = definedExternally, NeckPosition: Vector = definedExternally, bUseOrienationForPlayerCamera: Boolean = definedExternally, bUsePositionForPlayerCamera: Boolean = definedExternally, PositionScale: Vector = definedExternally): `T$14`
     open fun SetBaseRotationAndBaseOffsetInMeters(BaseOffsetInMeters: Vector, Options: String /* "Orientation" | "Position" | "OrientationAndPosition" | "EOrientPositionSelector_MAX" */)
     open fun SetBaseRotationAndPositionOffset(PosOffset: Vector, Options: String /* "Orientation" | "Position" | "OrientationAndPosition" | "EOrientPositionSelector_MAX" */)
     open fun SetBaseRotation()
     open fun IsValidAIRotation(): Boolean
     open fun ToText(): String
     open fun ToString(): String
-    open fun BreakRotator(Roll: Number = definedExternally, Pitch: Number = definedExternally, Yaw: Number = definedExternally): `T$195`
-    open fun BreakRotIntoAxes(X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$186`
+    open fun BreakRotator(Roll: Number = definedExternally, Pitch: Number = definedExternally, Yaw: Number = definedExternally): `T$15`
+    open fun BreakRotIntoAxes(X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$6`
     open fun CombineRotators(B: Rotator): Rotator
     open fun ToTransform(): Transform
     open fun GetRotationXVector(): Vector
     open fun DynamicWeightedMovingAverageRotator(PreviousSample: Rotator, MaxDistance: Number, MinWeight: Number, MaxWeight: Number): Rotator
     open fun Equal(B: Rotator, ErrorTolerance: Number): Boolean
-    open fun GetAxes(X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$186`
+    open fun GetAxes(X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$6`
     open fun GetForwardVector(): Vector
     open fun GetRightVector(): Vector
     open fun GetUpVector(): Vector
@@ -747,28 +747,28 @@ external open class Rotator {
     open fun Lerp(B: Rotator, Alpha: Number, bShortestPath: Boolean): Rotator
     open fun SelectRotator(B: Rotator, bPickA: Boolean): Rotator
     open fun WeightedMovingAverageRotator(PreviousSample: Rotator, Weight: Number): Rotator
-    open fun GetOrientationAndPosition(DevicePosition: Vector = definedExternally): `T$196`
+    open fun GetOrientationAndPosition(DevicePosition: Vector = definedExternally): `T$16`
 
     companion object {
         fun C(Other: UObject): Rotator
         fun C(Other: Any): Rotator
-        fun GetBaseRotationAndBaseOffsetInMeters(OutRotation: Rotator = definedExternally, OutBaseOffsetInMeters: Vector = definedExternally): `T$192`
-        fun GetBaseRotationAndPositionOffset(OutRot: Rotator = definedExternally, OutPosOffset: Vector = definedExternally): `T$193`
-        fun GetPose(DeviceRotation: Rotator = definedExternally, DevicePosition: Vector = definedExternally, NeckPosition: Vector = definedExternally, bUseOrienationForPlayerCamera: Boolean = definedExternally, bUsePositionForPlayerCamera: Boolean = definedExternally, PositionScale: Vector = definedExternally): `T$194`
+        fun GetBaseRotationAndBaseOffsetInMeters(OutRotation: Rotator = definedExternally, OutBaseOffsetInMeters: Vector = definedExternally): `T$12`
+        fun GetBaseRotationAndPositionOffset(OutRot: Rotator = definedExternally, OutPosOffset: Vector = definedExternally): `T$13`
+        fun GetPose(DeviceRotation: Rotator = definedExternally, DevicePosition: Vector = definedExternally, NeckPosition: Vector = definedExternally, bUseOrienationForPlayerCamera: Boolean = definedExternally, bUsePositionForPlayerCamera: Boolean = definedExternally, PositionScale: Vector = definedExternally): `T$14`
         fun SetBaseRotationAndBaseOffsetInMeters(Rotation: Rotator, BaseOffsetInMeters: Vector, Options: String /* "Orientation" | "Position" | "OrientationAndPosition" | "EOrientPositionSelector_MAX" */)
         fun SetBaseRotationAndPositionOffset(BaseRot: Rotator, PosOffset: Vector, Options: String /* "Orientation" | "Position" | "OrientationAndPosition" | "EOrientPositionSelector_MAX" */)
         fun SetBaseRotation(InBaseRotation: Rotator)
         fun IsValidAIRotation(Rotation: Rotator): Boolean
         fun ToText(InRot: Rotator): String
         fun ToString(InRot: Rotator): String
-        fun BreakRotator(InRot: Rotator, Roll: Number = definedExternally, Pitch: Number = definedExternally, Yaw: Number = definedExternally): `T$195`
-        fun BreakRotIntoAxes(InRot: Rotator, X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$186`
+        fun BreakRotator(InRot: Rotator, Roll: Number = definedExternally, Pitch: Number = definedExternally, Yaw: Number = definedExternally): `T$15`
+        fun BreakRotIntoAxes(InRot: Rotator, X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$6`
         fun CombineRotators(A: Rotator, B: Rotator): Rotator
         fun ToTransform(InRotator: Rotator): Transform
         fun GetRotationXVector(InRot: Rotator): Vector
         fun DynamicWeightedMovingAverageRotator(CurrentSample: Rotator, PreviousSample: Rotator, MaxDistance: Number, MinWeight: Number, MaxWeight: Number): Rotator
         fun Equal(A: Rotator, B: Rotator, ErrorTolerance: Number): Boolean
-        fun GetAxes(A: Rotator, X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$186`
+        fun GetAxes(A: Rotator, X: Vector = definedExternally, Y: Vector = definedExternally, Z: Vector = definedExternally): `T$6`
         fun GetForwardVector(InRot: Rotator): Vector
         fun GetRightVector(InRot: Rotator): Vector
         fun GetUpVector(InRot: Rotator): Vector
@@ -782,7 +782,7 @@ external open class Rotator {
         fun Lerp(A: Rotator, B: Rotator, Alpha: Number, bShortestPath: Boolean): Rotator
         fun SelectRotator(A: Rotator, B: Rotator, bPickA: Boolean): Rotator
         fun WeightedMovingAverageRotator(CurrentSample: Rotator, PreviousSample: Rotator, Weight: Number): Rotator
-        fun GetOrientationAndPosition(DeviceRotation: Rotator = definedExternally, DevicePosition: Vector = definedExternally): `T$196`
+        fun GetOrientationAndPosition(DeviceRotation: Rotator = definedExternally, DevicePosition: Vector = definedExternally): `T$16`
         fun MakeRotator(Roll: Number, Pitch: Number, Yaw: Number): Rotator
         fun RandomRotator(bRoll: Boolean): Rotator
         fun RandomRotatorFromStream(bRoll: Boolean, Stream: RandomStream): Rotator
@@ -808,7 +808,7 @@ external open class MagicLeapARPinState {
     companion object {
         fun C(Other: UObject): MagicLeapARPinState
         fun C(Other: Any): MagicLeapARPinState
-        fun GetARPinStateToString(State: MagicLeapARPinState): String
+        fun ToString(State: MagicLeapARPinState): String
     }
 }
 
@@ -834,7 +834,19 @@ external object EMagicLeapPlaneQueryType {
     var EMagicLeapPlaneQueryType_MAX: String /* "EMagicLeapPlaneQueryType_MAX" */
 }
 
-external interface `T$197` {
+external interface `T$17` {
+    var Position: Vector
+    var Orientation: Rotator
+    var PinFoundInEnvironment: Boolean
+    var `$`: Boolean
+}
+
+external interface `T$18` {
+    var State: MagicLeapARPinState
+    var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
+}
+
+external interface `T$19` {
     var InGuid: Guid
 }
 
@@ -845,26 +857,26 @@ external open class Guid {
     open var D: Number
     open fun clone(): Guid
     open fun ToString(): String
-    open fun GetARPinPositionAndOrientation(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$21`
-    open fun GetARPinPositionAndOrientation_TrackingSpace(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$21`
-    open fun GetARPinState(State: MagicLeapARPinState = definedExternally): `T$20`
+    open fun GetARPinPositionAndOrientation(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$17`
+    open fun GetARPinPositionAndOrientation_TrackingSpace(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$17`
+    open fun GetARPinState(State: MagicLeapARPinState = definedExternally): `T$18`
     open fun RemovePersistentQuery(): Boolean
     open fun Equal(B: Guid): Boolean
-    open fun Invalidate_Guid(): `T$197`
+    open fun Invalidate_Guid(): `T$19`
     open fun IsValid(): Boolean
     open fun NotEqual(B: Guid): Boolean
 
     companion object {
         fun C(Other: UObject): Guid
         fun C(Other: Any): Guid
-        fun ARPinIdToString(ARPinId: Guid): String
-        fun GetARPinPositionAndOrientation(PinId: Guid, Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$21`
-        fun GetARPinPositionAndOrientation_TrackingSpace(PinId: Guid, Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$21`
-        fun GetARPinState(PinId: Guid, State: MagicLeapARPinState = definedExternally): `T$20`
+        fun ToString(ARPinId: Guid): String
+        fun GetARPinPositionAndOrientation(PinId: Guid, Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$17`
+        fun GetARPinPositionAndOrientation_TrackingSpace(PinId: Guid, Position: Vector = definedExternally, Orientation: Rotator = definedExternally, PinFoundInEnvironment: Boolean = definedExternally): `T$17`
+        fun GetARPinState(PinId: Guid, State: MagicLeapARPinState = definedExternally): `T$18`
         fun RemovePersistentQuery(Handle: Guid): Boolean
         fun ToString(InGuid: Guid): String
         fun Equal(A: Guid, B: Guid): Boolean
-        fun Invalidate_Guid(InGuid: Guid = definedExternally): `T$197`
+        fun Invalidate_Guid(InGuid: Guid = definedExternally): `T$19`
         fun IsValid(InGuid: Guid): Boolean
         fun NotEqual(A: Guid, B: Guid): Boolean
         fun AddPersistentQuery(PersistentQueryType: String /* "Bulk" | "Delta" | "EMagicLeapPlaneQueryType_MAX" */): Guid
@@ -1092,29 +1104,29 @@ external object EBrushType {
     var Brush_MAX: String /* "Brush_MAX" */
 }
 
-external interface `T$198` {
+external interface `T$20` {
     var R: Number
     var G: Number
     var B: Number
     var A: Number
 }
 
-external interface `T$199` {
+external interface `T$21` {
     var RGB: LinearColor
 }
 
-external interface `T$200` {
+external interface `T$22` {
     var InOutColor: LinearColor
 }
 
-external interface `T$201` {
+external interface `T$23` {
     var H: Number
     var S: Number
     var V: Number
     var A: Number
 }
 
-external interface `T$202` {
+external interface `T$24` {
     var HSV: LinearColor
 }
 
@@ -1128,13 +1140,13 @@ external open class LinearColor {
     open fun ToText(): String
     open fun ToString(): String
     open fun Add_LinearColorLinearColor(B: LinearColor): LinearColor
-    open fun BreakColor(R: Number = definedExternally, G: Number = definedExternally, B: Number = definedExternally, A: Number = definedExternally): `T$198`
+    open fun BreakColor(R: Number = definedExternally, G: Number = definedExternally, B: Number = definedExternally, A: Number = definedExternally): `T$20`
     open fun Interpolate(Target: LinearColor, DeltaTime: Number, InterpSpeed: Number): LinearColor
     open fun ToColor(InUseSRGB: Boolean): Color
     open fun ToVector(): Vector
     open fun Divide_LinearColorLinearColor(B: LinearColor): LinearColor
     open fun Equal(B: LinearColor): Boolean
-    open fun HSVtoRGB(RGB: LinearColor = definedExternally): `T$199`
+    open fun HSVtoRGB(RGB: LinearColor = definedExternally): `T$21`
     open fun HSVtoRGBlinearcolor(): LinearColor
     open fun Desaturate(InDesaturation: Number): LinearColor
     open fun Distance(C2: LinearColor): Number
@@ -1144,13 +1156,13 @@ external open class LinearColor {
     open fun NearEqual(B: LinearColor, Tolerance: Number): Boolean
     open fun LinearColor_Quantize(): Color
     open fun LinearColor_QuantizeRound(): Color
-    open fun LinearColor_Set(InColor: LinearColor = definedExternally): `T$200`
-    open fun LinearColor_SetFromHSV(H: Number = definedExternally, S: Number = definedExternally, V: Number = definedExternally, A: Number = definedExternally): `T$200`
-    open fun LinearColor_SetFromPow22(InColor: Color = definedExternally): `T$200`
-    open fun LinearColor_SetFromSRGB(InSRGB: Color = definedExternally): `T$200`
-    open fun LinearColor_SetRandomHue(): `T$200`
-    open fun LinearColor_SetRGBA(R: Number = definedExternally, G: Number = definedExternally, B: Number = definedExternally, A: Number = definedExternally): `T$200`
-    open fun LinearColor_SetTemperature(InTemperature: Number = definedExternally): `T$200`
+    open fun LinearColor_Set(InColor: LinearColor = definedExternally): `T$22`
+    open fun LinearColor_SetFromHSV(H: Number = definedExternally, S: Number = definedExternally, V: Number = definedExternally, A: Number = definedExternally): `T$22`
+    open fun LinearColor_SetFromPow22(InColor: Color = definedExternally): `T$22`
+    open fun LinearColor_SetFromSRGB(InSRGB: Color = definedExternally): `T$22`
+    open fun LinearColor_SetRandomHue(): `T$22`
+    open fun LinearColor_SetRGBA(R: Number = definedExternally, G: Number = definedExternally, B: Number = definedExternally, A: Number = definedExternally): `T$22`
+    open fun LinearColor_SetTemperature(InTemperature: Number = definedExternally): `T$22`
     open fun NewOpacity(InOpacity: Number): LinearColor
     open fun ToRGBE(): Color
     open fun Lerp(B: LinearColor, Alpha: Number): LinearColor
@@ -1159,8 +1171,8 @@ external open class LinearColor {
     open fun Multiply_LinearColorLinearColor(B: LinearColor): LinearColor
     open fun NotEqual(B: LinearColor): Boolean
     open fun RGBtoHSVlinearcolor(): LinearColor
-    open fun RGBToHSV(H: Number = definedExternally, S: Number = definedExternally, V: Number = definedExternally, A: Number = definedExternally): `T$201`
-    open fun RGBtoHSV(HSV: LinearColor = definedExternally): `T$202`
+    open fun RGBToHSV(H: Number = definedExternally, S: Number = definedExternally, V: Number = definedExternally, A: Number = definedExternally): `T$23`
+    open fun RGBtoHSV(HSV: LinearColor = definedExternally): `T$24`
     open fun SelectColor(B: LinearColor, bPickA: Boolean): LinearColor
     open fun Subtract_LinearColorLinearColor(B: LinearColor): LinearColor
 
@@ -1171,13 +1183,13 @@ external open class LinearColor {
         fun ToText(InColor: LinearColor): String
         fun ToString(InColor: LinearColor): String
         fun Add_LinearColorLinearColor(A: LinearColor, B: LinearColor): LinearColor
-        fun BreakColor(InColor: LinearColor, R: Number = definedExternally, G: Number = definedExternally, B: Number = definedExternally, A: Number = definedExternally): `T$198`
+        fun BreakColor(InColor: LinearColor, R: Number = definedExternally, G: Number = definedExternally, B: Number = definedExternally, A: Number = definedExternally): `T$20`
         fun Interpolate(Current: LinearColor, Target: LinearColor, DeltaTime: Number, InterpSpeed: Number): LinearColor
         fun ToColor(InLinearColor: LinearColor, InUseSRGB: Boolean): Color
         fun ToVector(InLinearColor: LinearColor): Vector
         fun Divide_LinearColorLinearColor(A: LinearColor, B: LinearColor): LinearColor
         fun Equal(A: LinearColor, B: LinearColor): Boolean
-        fun HSVtoRGB(HSV: LinearColor, RGB: LinearColor = definedExternally): `T$199`
+        fun HSVtoRGB(HSV: LinearColor, RGB: LinearColor = definedExternally): `T$21`
         fun HSVtoRGBlinearcolor(HSV: LinearColor): LinearColor
         fun Desaturate(InColor: LinearColor, InDesaturation: Number): LinearColor
         fun Distance(C1: LinearColor, C2: LinearColor): Number
@@ -1187,13 +1199,13 @@ external open class LinearColor {
         fun NearEqual(A: LinearColor, B: LinearColor, Tolerance: Number): Boolean
         fun LinearColor_Quantize(InColor: LinearColor): Color
         fun LinearColor_QuantizeRound(InColor: LinearColor): Color
-        fun LinearColor_Set(InOutColor: LinearColor = definedExternally, InColor: LinearColor = definedExternally): `T$200`
-        fun LinearColor_SetFromHSV(InOutColor: LinearColor = definedExternally, H: Number = definedExternally, S: Number = definedExternally, V: Number = definedExternally, A: Number = definedExternally): `T$200`
-        fun LinearColor_SetFromPow22(InOutColor: LinearColor = definedExternally, InColor: Color = definedExternally): `T$200`
-        fun LinearColor_SetFromSRGB(InOutColor: LinearColor = definedExternally, InSRGB: Color = definedExternally): `T$200`
-        fun LinearColor_SetRandomHue(InOutColor: LinearColor = definedExternally): `T$200`
-        fun LinearColor_SetRGBA(InOutColor: LinearColor = definedExternally, R: Number = definedExternally, G: Number = definedExternally, B: Number = definedExternally, A: Number = definedExternally): `T$200`
-        fun LinearColor_SetTemperature(InOutColor: LinearColor = definedExternally, InTemperature: Number = definedExternally): `T$200`
+        fun LinearColor_Set(InOutColor: LinearColor = definedExternally, InColor: LinearColor = definedExternally): `T$22`
+        fun LinearColor_SetFromHSV(InOutColor: LinearColor = definedExternally, H: Number = definedExternally, S: Number = definedExternally, V: Number = definedExternally, A: Number = definedExternally): `T$22`
+        fun LinearColor_SetFromPow22(InOutColor: LinearColor = definedExternally, InColor: Color = definedExternally): `T$22`
+        fun LinearColor_SetFromSRGB(InOutColor: LinearColor = definedExternally, InSRGB: Color = definedExternally): `T$22`
+        fun LinearColor_SetRandomHue(InOutColor: LinearColor = definedExternally): `T$22`
+        fun LinearColor_SetRGBA(InOutColor: LinearColor = definedExternally, R: Number = definedExternally, G: Number = definedExternally, B: Number = definedExternally, A: Number = definedExternally): `T$22`
+        fun LinearColor_SetTemperature(InOutColor: LinearColor = definedExternally, InTemperature: Number = definedExternally): `T$22`
         fun NewOpacity(InColor: LinearColor, InOpacity: Number): LinearColor
         fun ToRGBE(InLinearColor: LinearColor): Color
         fun Lerp(A: LinearColor, B: LinearColor, Alpha: Number): LinearColor
@@ -1202,8 +1214,8 @@ external open class LinearColor {
         fun Multiply_LinearColorLinearColor(A: LinearColor, B: LinearColor): LinearColor
         fun NotEqual(A: LinearColor, B: LinearColor): Boolean
         fun RGBtoHSVlinearcolor(RGB: LinearColor): LinearColor
-        fun RGBToHSV(InColor: LinearColor, H: Number = definedExternally, S: Number = definedExternally, V: Number = definedExternally, A: Number = definedExternally): `T$201`
-        fun RGBtoHSV(RGB: LinearColor, HSV: LinearColor = definedExternally): `T$202`
+        fun RGBToHSV(InColor: LinearColor, H: Number = definedExternally, S: Number = definedExternally, V: Number = definedExternally, A: Number = definedExternally): `T$23`
+        fun RGBtoHSV(RGB: LinearColor, HSV: LinearColor = definedExternally): `T$24`
         fun SelectColor(A: LinearColor, B: LinearColor, bPickA: Boolean): LinearColor
         fun Subtract_LinearColorLinearColor(A: LinearColor, B: LinearColor): LinearColor
         fun ToLinearColor(InFloat: Number): LinearColor
@@ -1825,11 +1837,11 @@ external open class GeomSelection {
     }
 }
 
-external interface `T$203` {
+external interface `T$25` {
     var Surfaces: Array<Number>
 }
 
-external interface `T$204` {
+external interface `T$26` {
     var Surfaces: Array<Number>
 }
 
@@ -1847,7 +1859,7 @@ external open class Brush(InWorld: World, Location: Vector = definedExternally, 
     open var bInManipulation: Boolean
     open var SavedSelections: Array<GeomSelection>
     open fun csgAdd(PolyFlags: Number, BrushType: String /* "Brush_Default" | "Brush_Add" | "Brush_Subtract" | "Brush_MAX" */): Brush
-    open fun GetSurfaces(Surfaces: Array<Number> = definedExternally): `T$203`
+    open fun GetSurfaces(Surfaces: Array<Number> = definedExternally): `T$25`
 
     companion object {
         fun GetDefaultObject(): Brush
@@ -1855,7 +1867,7 @@ external open class Brush(InWorld: World, Location: Vector = definedExternally, 
         fun C(Other: UObject): Brush
         fun C(Other: Any): Brush
         fun csgAdd(DefaultBrush: Brush, PolyFlags: Number, BrushType: String /* "Brush_Default" | "Brush_Add" | "Brush_Subtract" | "Brush_MAX" */): Brush
-        fun GetSurfaces(Brush: Brush, Surfaces: Array<Number> = definedExternally): `T$204`
+        fun GetSurfaces(Brush: Brush, Surfaces: Array<Number> = definedExternally): `T$26`
     }
 }
 
@@ -1904,7 +1916,7 @@ external open class Vector_NetQuantizeNormal : Vector {
     }
 }
 
-external interface `T$205` {
+external interface `T$27` {
     var bBlockingHit: Boolean
     var bInitialOverlap: Boolean
     var Time: Number
@@ -1918,19 +1930,18 @@ external interface `T$205` {
     var HitComponent: PrimitiveComponent
     var HitBoneName: String
     var HitItem: Number
+    var ElementIndex: Number
     var FaceIndex: Number
     var TraceStart: Vector
     var TraceEnd: Vector
 }
 
-external interface `T$206` {
+external interface `T$28` {
     var UV: Vector2D
     var `$`: Boolean
 }
 
 external open class HitResult {
-    open var bBlockingHit: Boolean
-    open var bStartPenetrating: Boolean
     open var FaceIndex: Number
     open var Time: Number
     open var Distance: Number
@@ -1943,23 +1954,25 @@ external open class HitResult {
     open var PenetrationDepth: Number
     open var Item: Number
     open var ElementIndex: Number
+    open var bBlockingHit: Boolean
+    open var bStartPenetrating: Boolean
     open var PhysMaterial: Any
     open var Actor: Any
     open var Component: Any
     open var BoneName: String
     open var MyBoneName: String
     open fun clone(): HitResult
-    open fun BreakHitResult(bBlockingHit: Boolean = definedExternally, bInitialOverlap: Boolean = definedExternally, Time: Number = definedExternally, Distance: Number = definedExternally, Location: Vector = definedExternally, ImpactPoint: Vector = definedExternally, Normal: Vector = definedExternally, ImpactNormal: Vector = definedExternally, PhysMat: PhysicalMaterial = definedExternally, HitActor: Actor = definedExternally, HitComponent: PrimitiveComponent = definedExternally, HitBoneName: String = definedExternally, HitItem: Number = definedExternally, FaceIndex: Number = definedExternally, TraceStart: Vector = definedExternally, TraceEnd: Vector = definedExternally): `T$205`
-    open fun FindCollisionUV(UVChannel: Number, UV: Vector2D = definedExternally): `T$206`
+    open fun BreakHitResult(bBlockingHit: Boolean = definedExternally, bInitialOverlap: Boolean = definedExternally, Time: Number = definedExternally, Distance: Number = definedExternally, Location: Vector = definedExternally, ImpactPoint: Vector = definedExternally, Normal: Vector = definedExternally, ImpactNormal: Vector = definedExternally, PhysMat: PhysicalMaterial = definedExternally, HitActor: Actor = definedExternally, HitComponent: PrimitiveComponent = definedExternally, HitBoneName: String = definedExternally, HitItem: Number = definedExternally, ElementIndex: Number = definedExternally, FaceIndex: Number = definedExternally, TraceStart: Vector = definedExternally, TraceEnd: Vector = definedExternally): `T$27`
+    open fun FindCollisionUV(UVChannel: Number, UV: Vector2D = definedExternally): `T$28`
     open fun GetSurfaceType(): String /* "SurfaceType_Default" | "SurfaceType1" | "SurfaceType2" | "SurfaceType3" | "SurfaceType4" | "SurfaceType5" | "SurfaceType6" | "SurfaceType7" | "SurfaceType8" | "SurfaceType9" | "SurfaceType10" | "SurfaceType11" | "SurfaceType12" | "SurfaceType13" | "SurfaceType14" | "SurfaceType15" | "SurfaceType16" | "SurfaceType17" | "SurfaceType18" | "SurfaceType19" | "SurfaceType20" | "SurfaceType21" | "SurfaceType22" | "SurfaceType23" | "SurfaceType24" | "SurfaceType25" | "SurfaceType26" | "SurfaceType27" | "SurfaceType28" | "SurfaceType29" | "SurfaceType30" | "SurfaceType31" | "SurfaceType32" | "SurfaceType33" | "SurfaceType34" | "SurfaceType35" | "SurfaceType36" | "SurfaceType37" | "SurfaceType38" | "SurfaceType39" | "SurfaceType40" | "SurfaceType41" | "SurfaceType42" | "SurfaceType43" | "SurfaceType44" | "SurfaceType45" | "SurfaceType46" | "SurfaceType47" | "SurfaceType48" | "SurfaceType49" | "SurfaceType50" | "SurfaceType51" | "SurfaceType52" | "SurfaceType53" | "SurfaceType54" | "SurfaceType55" | "SurfaceType56" | "SurfaceType57" | "SurfaceType58" | "SurfaceType59" | "SurfaceType60" | "SurfaceType61" | "SurfaceType62" | "SurfaceType_Max" | "EPhysicalSurface_MAX" */
 
     companion object {
         fun C(Other: UObject): HitResult
         fun C(Other: Any): HitResult
-        fun BreakHitResult(Hit: HitResult, bBlockingHit: Boolean = definedExternally, bInitialOverlap: Boolean = definedExternally, Time: Number = definedExternally, Distance: Number = definedExternally, Location: Vector = definedExternally, ImpactPoint: Vector = definedExternally, Normal: Vector = definedExternally, ImpactNormal: Vector = definedExternally, PhysMat: PhysicalMaterial = definedExternally, HitActor: Actor = definedExternally, HitComponent: PrimitiveComponent = definedExternally, HitBoneName: String = definedExternally, HitItem: Number = definedExternally, FaceIndex: Number = definedExternally, TraceStart: Vector = definedExternally, TraceEnd: Vector = definedExternally): `T$205`
-        fun FindCollisionUV(Hit: HitResult, UVChannel: Number, UV: Vector2D = definedExternally): `T$206`
+        fun BreakHitResult(Hit: HitResult, bBlockingHit: Boolean = definedExternally, bInitialOverlap: Boolean = definedExternally, Time: Number = definedExternally, Distance: Number = definedExternally, Location: Vector = definedExternally, ImpactPoint: Vector = definedExternally, Normal: Vector = definedExternally, ImpactNormal: Vector = definedExternally, PhysMat: PhysicalMaterial = definedExternally, HitActor: Actor = definedExternally, HitComponent: PrimitiveComponent = definedExternally, HitBoneName: String = definedExternally, HitItem: Number = definedExternally, ElementIndex: Number = definedExternally, FaceIndex: Number = definedExternally, TraceStart: Vector = definedExternally, TraceEnd: Vector = definedExternally): `T$27`
+        fun FindCollisionUV(Hit: HitResult, UVChannel: Number, UV: Vector2D = definedExternally): `T$28`
         fun GetSurfaceType(Hit: HitResult): String /* "SurfaceType_Default" | "SurfaceType1" | "SurfaceType2" | "SurfaceType3" | "SurfaceType4" | "SurfaceType5" | "SurfaceType6" | "SurfaceType7" | "SurfaceType8" | "SurfaceType9" | "SurfaceType10" | "SurfaceType11" | "SurfaceType12" | "SurfaceType13" | "SurfaceType14" | "SurfaceType15" | "SurfaceType16" | "SurfaceType17" | "SurfaceType18" | "SurfaceType19" | "SurfaceType20" | "SurfaceType21" | "SurfaceType22" | "SurfaceType23" | "SurfaceType24" | "SurfaceType25" | "SurfaceType26" | "SurfaceType27" | "SurfaceType28" | "SurfaceType29" | "SurfaceType30" | "SurfaceType31" | "SurfaceType32" | "SurfaceType33" | "SurfaceType34" | "SurfaceType35" | "SurfaceType36" | "SurfaceType37" | "SurfaceType38" | "SurfaceType39" | "SurfaceType40" | "SurfaceType41" | "SurfaceType42" | "SurfaceType43" | "SurfaceType44" | "SurfaceType45" | "SurfaceType46" | "SurfaceType47" | "SurfaceType48" | "SurfaceType49" | "SurfaceType50" | "SurfaceType51" | "SurfaceType52" | "SurfaceType53" | "SurfaceType54" | "SurfaceType55" | "SurfaceType56" | "SurfaceType57" | "SurfaceType58" | "SurfaceType59" | "SurfaceType60" | "SurfaceType61" | "SurfaceType62" | "SurfaceType_Max" | "EPhysicalSurface_MAX" */
-        fun MakeHitResult(bBlockingHit: Boolean, bInitialOverlap: Boolean, Time: Number, Distance: Number, Location: Vector, ImpactPoint: Vector, Normal: Vector, ImpactNormal: Vector, PhysMat: PhysicalMaterial, HitActor: Actor, HitComponent: PrimitiveComponent, HitBoneName: String, HitItem: Number, FaceIndex: Number, TraceStart: Vector, TraceEnd: Vector): HitResult
+        fun MakeHitResult(bBlockingHit: Boolean, bInitialOverlap: Boolean, Time: Number, Distance: Number, Location: Vector, ImpactPoint: Vector, Normal: Vector, ImpactNormal: Vector, PhysMat: PhysicalMaterial, HitActor: Actor, HitComponent: PrimitiveComponent, HitBoneName: String, HitItem: Number, ElementIndex: Number, FaceIndex: Number, TraceStart: Vector, TraceEnd: Vector): HitResult
     }
 }
 
@@ -2044,16 +2057,22 @@ external open class ARPin : UObject {
     }
 }
 
-external interface `T$207` {
+external interface `T$29` {
     var SweepHitResult: HitResult
 }
 
-external interface `T$208` {
+external interface `T$30` {
     var Parents: Array<SceneComponent>
 }
 
-external interface `T$209` {
+external interface `T$31` {
     var Children: Array<SceneComponent>
+}
+
+external interface `T$32` {
+    var Origin: Vector
+    var BoxExtent: Vector
+    var SphereRadius: Number
 }
 
 external open class SceneComponent : ActorComponent {
@@ -2099,14 +2118,14 @@ external open class SceneComponent : ActorComponent {
     open fun OnRep_AttachSocketName()
     open fun OnRep_AttachParent()
     open fun OnRep_AttachChildren()
-    open fun SetWorldTransform(NewTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetWorldRotation(NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetWorldLocationAndRotation(NewLocation: Vector, NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetWorldLocation(NewLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetRelativeTransform(NewTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetRelativeRotation(NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetRelativeLocationAndRotation(NewLocation: Vector, NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetRelativeLocation(NewLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
+    open fun SetWorldTransform(NewTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetWorldRotation(NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetWorldLocationAndRotation(NewLocation: Vector, NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetWorldLocation(NewLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetRelativeTransform(NewTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetRelativeRotation(NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetRelativeLocationAndRotation(NewLocation: Vector, NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetRelativeLocation(NewLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
     open fun GetWorldTransform(): Transform
     open fun GetWorldScale(): Vector
     open fun GetWorldRotation(): Rotator
@@ -2114,15 +2133,15 @@ external open class SceneComponent : ActorComponent {
     open fun DetachFromComponent(LocationRule: String /* "KeepRelative" | "KeepWorld" | "EDetachmentRule_MAX" */, RotationRule: String /* "KeepRelative" | "KeepWorld" | "EDetachmentRule_MAX" */, ScaleRule: String /* "KeepRelative" | "KeepWorld" | "EDetachmentRule_MAX" */, bCallModify: Boolean)
     open fun AttachActorToComponent(Parent: SceneComponent, SocketName: String, LocationRule: String /* "KeepRelative" | "KeepWorld" | "SnapToTarget" | "EAttachmentRule_MAX" */, RotationRule: String /* "KeepRelative" | "KeepWorld" | "SnapToTarget" | "EAttachmentRule_MAX" */, ScaleRule: String /* "KeepRelative" | "KeepWorld" | "SnapToTarget" | "EAttachmentRule_MAX" */, bWeldSimulatedBodies: Boolean): Boolean
     open fun AttachTo(InParent: SceneComponent, InSocketName: String, AttachType: String /* "KeepRelativeOffset" | "KeepWorldPosition" | "SnapToTarget" | "SnapToTargetIncludingScale" | "EAttachLocation_MAX" */, bWeldSimulatedBodies: Boolean): Boolean
-    open fun AddWorldTransformKeepScale(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddWorldTransform(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddWorldRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddWorldOffset(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddRelativeRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddRelativeLocation(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddLocalTransform(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddLocalRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddLocalOffset(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
+    open fun AddWorldTransformKeepScale(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddWorldTransform(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddWorldRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddWorldOffset(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddRelativeRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddRelativeLocation(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddLocalTransform(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddLocalRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddLocalOffset(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
     open fun IsVisible(): Boolean
     open fun IsSimulatingPhysics(BoneName: String): Boolean
     open fun IsAnySimulatingPhysics(): Boolean
@@ -2135,11 +2154,11 @@ external open class SceneComponent : ActorComponent {
     open fun GetRightVector(): Vector
     open fun GetRelativeTransform(): Transform
     open fun GetPhysicsVolume(): PhysicsVolume
-    open fun GetParentComponents(Parents: Array<SceneComponent> = definedExternally): `T$208`
+    open fun GetParentComponents(Parents: Array<SceneComponent> = definedExternally): `T$30`
     open fun GetNumChildrenComponents(): Number
     open fun GetForwardVector(): Vector
     open fun GetComponentVelocity(): Vector
-    open fun GetChildrenComponents(bIncludeAllDescendants: Boolean, Children: Array<SceneComponent> = definedExternally): `T$209`
+    open fun GetChildrenComponents(bIncludeAllDescendants: Boolean, Children: Array<SceneComponent> = definedExternally): `T$31`
     open fun GetChildComponent(ChildIndex: Number): SceneComponent
     open fun GetAttachSocketName(): String
     open fun GetAttachParent(): SceneComponent
@@ -2148,7 +2167,7 @@ external open class SceneComponent : ActorComponent {
     open fun DetachFromParent(bMaintainWorldPosition: Boolean, bCallModify: Boolean)
     open fun SetTrackingReferenceComponent(): Boolean
     open fun SetMobile()
-    open fun GetComponentBounds(Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$50`
+    open fun GetComponentBounds(Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$32`
     open fun MoveComponentTo(TargetRelativeLocation: Vector, TargetRelativeRotation: Rotator, bEaseOut: Boolean, bEaseIn: Boolean, OverTime: Number, bForceShortestRotationPath: Boolean, MoveAction: String /* "Move" | "Stop" | "Return" | "EMoveComponentAction_MAX" */, LatentInfo: LatentActionInfo)
     open fun PinComponent(PinToWorldTransform: Transform, TrackedGeometry: ARTrackedGeometry, DebugName: String): ARPin
     open fun PinComponentToARPin(Pin: ARPin): Boolean
@@ -2165,7 +2184,7 @@ external open class SceneComponent : ActorComponent {
         fun SetTrackingReferenceComponent(Component: SceneComponent): Boolean
         fun SetMobile(SceneComponent: SceneComponent)
         fun SetMobility(SceneComponent: SceneComponent, Type: String /* "Static" | "Stationary" | "Movable" | "EComponentMobility_MAX" */)
-        fun GetComponentBounds(Component: SceneComponent, Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$50`
+        fun GetComponentBounds(Component: SceneComponent, Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$32`
         fun MoveComponentTo(Component: SceneComponent, TargetRelativeLocation: Vector, TargetRelativeRotation: Rotator, bEaseOut: Boolean, bEaseIn: Boolean, OverTime: Number, bForceShortestRotationPath: Boolean, MoveAction: String /* "Move" | "Stop" | "Return" | "EMoveComponentAction_MAX" */, LatentInfo: LatentActionInfo)
         fun PinComponent(ComponentToPin: SceneComponent, PinToWorldTransform: Transform, TrackedGeometry: ARTrackedGeometry, DebugName: String): ARPin
         fun PinComponentToARPin(ComponentToPin: SceneComponent, Pin: ARPin): Boolean
@@ -2496,16 +2515,16 @@ external object TextureCompressionSettings {
     var TC_HDR_Compressed: String /* "TC_HDR_Compressed" */
     var TC_BC7: String /* "TC_BC7" */
     var TC_HalfFloat: String /* "TC_HalfFloat" */
-    var TC_ReflectionCapture: String /* "TC_ReflectionCapture" */
+    var TC_EncodedReflectionCapture: String /* "TC_EncodedReflectionCapture" */
     var TC_MAX: String /* "TC_MAX" */
 }
 
 external open class TextureFormatSettings {
-    open var CompressionSettings: String /* "TC_Default" | "TC_Normalmap" | "TC_Masks" | "TC_Grayscale" | "TC_Displacementmap" | "TC_VectorDisplacementmap" | "TC_HDR" | "TC_EditorIcon" | "TC_Alpha" | "TC_DistanceFieldFont" | "TC_HDR_Compressed" | "TC_BC7" | "TC_HalfFloat" | "TC_ReflectionCapture" | "TC_MAX" */
+    open var CompressionSettings: String /* "TC_Default" | "TC_Normalmap" | "TC_Masks" | "TC_Grayscale" | "TC_Displacementmap" | "TC_VectorDisplacementmap" | "TC_HDR" | "TC_EditorIcon" | "TC_Alpha" | "TC_DistanceFieldFont" | "TC_HDR_Compressed" | "TC_BC7" | "TC_HalfFloat" | "TC_EncodedReflectionCapture" | "TC_MAX" */
     open var CompressionNoAlpha: Boolean
     open var CompressionNone: Boolean
     open var CompressionYCoCg: Boolean
-    open var SRGB: Boolean
+    open var sRGB: Boolean
     open fun clone(): TextureFormatSettings
 
     companion object {
@@ -2617,13 +2636,13 @@ external open class Texture : StreamableRenderAsset {
     open var CompositePower: Number
     open var LayerFormatSettings: Array<TextureFormatSettings>
     open var LODBias: Number
-    open var CompressionSettings: String /* "TC_Default" | "TC_Normalmap" | "TC_Masks" | "TC_Grayscale" | "TC_Displacementmap" | "TC_VectorDisplacementmap" | "TC_HDR" | "TC_EditorIcon" | "TC_Alpha" | "TC_DistanceFieldFont" | "TC_HDR_Compressed" | "TC_BC7" | "TC_HalfFloat" | "TC_ReflectionCapture" | "TC_MAX" */
+    open var CompressionSettings: String /* "TC_Default" | "TC_Normalmap" | "TC_Masks" | "TC_Grayscale" | "TC_Displacementmap" | "TC_VectorDisplacementmap" | "TC_HDR" | "TC_EditorIcon" | "TC_Alpha" | "TC_DistanceFieldFont" | "TC_HDR_Compressed" | "TC_BC7" | "TC_HalfFloat" | "TC_EncodedReflectionCapture" | "TC_MAX" */
     open var Filter: String /* "TF_Nearest" | "TF_Bilinear" | "TF_Trilinear" | "TF_Default" | "TF_MAX" */
     open var MipLoadOptions: String /* "Default" | "AllMips" | "OnlyFirstMip" | "ETextureMipLoadOptions_MAX" */
     open var LODGroup: String /* "TEXTUREGROUP_World" | "TEXTUREGROUP_WorldNormalMap" | "TEXTUREGROUP_WorldSpecular" | "TEXTUREGROUP_Character" | "TEXTUREGROUP_CharacterNormalMap" | "TEXTUREGROUP_CharacterSpecular" | "TEXTUREGROUP_Weapon" | "TEXTUREGROUP_WeaponNormalMap" | "TEXTUREGROUP_WeaponSpecular" | "TEXTUREGROUP_Vehicle" | "TEXTUREGROUP_VehicleNormalMap" | "TEXTUREGROUP_VehicleSpecular" | "TEXTUREGROUP_Cinematic" | "TEXTUREGROUP_Effects" | "TEXTUREGROUP_EffectsNotFiltered" | "TEXTUREGROUP_Skybox" | "TEXTUREGROUP_UI" | "TEXTUREGROUP_Lightmap" | "TEXTUREGROUP_RenderTarget" | "TEXTUREGROUP_MobileFlattened" | "TEXTUREGROUP_ProcBuilding_Face" | "TEXTUREGROUP_ProcBuilding_LightMap" | "TEXTUREGROUP_Shadowmap" | "TEXTUREGROUP_ColorLookupTable" | "TEXTUREGROUP_Terrain_Heightmap" | "TEXTUREGROUP_Terrain_Weightmap" | "TEXTUREGROUP_Bokeh" | "TEXTUREGROUP_IESLightProfile" | "TEXTUREGROUP_Pixels2D" | "TEXTUREGROUP_HierarchicalLOD" | "TEXTUREGROUP_Impostor" | "TEXTUREGROUP_ImpostorNormalDepth" | "TEXTUREGROUP_8BitData" | "TEXTUREGROUP_16BitData" | "TEXTUREGROUP_Project01" | "TEXTUREGROUP_Project02" | "TEXTUREGROUP_Project03" | "TEXTUREGROUP_Project04" | "TEXTUREGROUP_Project05" | "TEXTUREGROUP_Project06" | "TEXTUREGROUP_Project07" | "TEXTUREGROUP_Project08" | "TEXTUREGROUP_Project09" | "TEXTUREGROUP_Project10" | "TEXTUREGROUP_Project11" | "TEXTUREGROUP_Project12" | "TEXTUREGROUP_Project13" | "TEXTUREGROUP_Project14" | "TEXTUREGROUP_Project15" | "TEXTUREGROUP_MAX" */
     open var Downscale: PerPlatformFloat
     open var DownscaleOptions: String /* "Default" | "Unfiltered" | "SimpleAverage" | "Sharpen0" | "Sharpen1" | "Sharpen2" | "Sharpen3" | "Sharpen4" | "Sharpen5" | "Sharpen6" | "Sharpen7" | "Sharpen8" | "Sharpen9" | "Sharpen10" | "ETextureDownscaleOptions_MAX" */
-    open var SRGB: Boolean
+    open var sRGB: Boolean
     open var bUseLegacyGamma: Boolean
     open var bNoTiling: Boolean
     open var VirtualTextureStreaming: Boolean
@@ -2668,12 +2687,12 @@ external object EImportanceWeight {
     var EImportanceWeight_MAX: String /* "EImportanceWeight_MAX" */
 }
 
-external interface `T$210` {
+external interface `T$33` {
     var Texture: Texture2D
     var WeightingFunc: String /* "Luminance" | "Red" | "Green" | "Blue" | "Alpha" | "EImportanceWeight_MAX" */
 }
 
-external interface `T$211` {
+external interface `T$34` {
     var SamplePosition: Vector2D
     var SampleColor: LinearColor
     var SampleIntensity: Number
@@ -2689,14 +2708,14 @@ external open class ImportanceTexture {
     open var Texture: Any
     open var Weighting: String /* "Luminance" | "Red" | "Green" | "Blue" | "Alpha" | "EImportanceWeight_MAX" */
     open fun clone(): ImportanceTexture
-    open fun BreakImportanceTexture(Texture: Texture2D = definedExternally, WeightingFunc: String /* "Luminance" | "Red" | "Green" | "Blue" | "Alpha" | "EImportanceWeight_MAX" */ = definedExternally): `T$210`
-    open fun ImportanceSample(Rand: Vector2D, Samples: Number, Intensity: Number, SamplePosition: Vector2D = definedExternally, SampleColor: LinearColor = definedExternally, SampleIntensity: Number = definedExternally, SampleSize: Number = definedExternally): `T$211`
+    open fun BreakImportanceTexture(Texture: Texture2D = definedExternally, WeightingFunc: String /* "Luminance" | "Red" | "Green" | "Blue" | "Alpha" | "EImportanceWeight_MAX" */ = definedExternally): `T$33`
+    open fun ImportanceSample(Rand: Vector2D, Samples: Number, Intensity: Number, SamplePosition: Vector2D = definedExternally, SampleColor: LinearColor = definedExternally, SampleIntensity: Number = definedExternally, SampleSize: Number = definedExternally): `T$34`
 
     companion object {
         fun C(Other: UObject): ImportanceTexture
         fun C(Other: Any): ImportanceTexture
-        fun BreakImportanceTexture(ImportanceTexture: ImportanceTexture, Texture: Texture2D = definedExternally, WeightingFunc: String /* "Luminance" | "Red" | "Green" | "Blue" | "Alpha" | "EImportanceWeight_MAX" */ = definedExternally): `T$210`
-        fun ImportanceSample(Texture: ImportanceTexture, Rand: Vector2D, Samples: Number, Intensity: Number, SamplePosition: Vector2D = definedExternally, SampleColor: LinearColor = definedExternally, SampleIntensity: Number = definedExternally, SampleSize: Number = definedExternally): `T$211`
+        fun BreakImportanceTexture(ImportanceTexture: ImportanceTexture, Texture: Texture2D = definedExternally, WeightingFunc: String /* "Luminance" | "Red" | "Green" | "Blue" | "Alpha" | "EImportanceWeight_MAX" */ = definedExternally): `T$33`
+        fun ImportanceSample(Texture: ImportanceTexture, Rand: Vector2D, Samples: Number, Intensity: Number, SamplePosition: Vector2D = definedExternally, SampleColor: LinearColor = definedExternally, SampleIntensity: Number = definedExternally, SampleSize: Number = definedExternally): `T$34`
     }
 }
 
@@ -2823,7 +2842,7 @@ external open class LightmassMaterialInterfaceSettings {
     }
 }
 
-external interface `T$212` {
+external interface `T$35` {
     var PathString: String
 }
 
@@ -2831,13 +2850,13 @@ external open class SoftObjectPath {
     open var AssetPathName: String
     open var SubPathString: String
     open fun clone(): SoftObjectPath
-    open fun BreakSoftObjectPath(PathString: String = definedExternally): `T$212`
+    open fun BreakSoftObjectPath(PathString: String = definedExternally): `T$35`
     open fun ToSoftObjectReference(): UObject
 
     companion object {
         fun C(Other: UObject): SoftObjectPath
         fun C(Other: Any): SoftObjectPath
-        fun BreakSoftObjectPath(InSoftObjectPath: SoftObjectPath, PathString: String = definedExternally): `T$212`
+        fun BreakSoftObjectPath(InSoftObjectPath: SoftObjectPath, PathString: String = definedExternally): `T$35`
         fun ToSoftObjectReference(SoftObjectPath: SoftObjectPath): UObject
         fun MakeSoftObjectPath(PathString: String): SoftObjectPath
     }
@@ -3023,15 +3042,18 @@ external open class JavascriptEdGraphPin {
     open fun GetPinGUID(): Guid
     open fun GetPinIndex(): Number
     open fun GetPinName(): String
+    open fun GetPinRefObject(): UObject
     open fun GetPinType(): EdGraphPinType
     open fun GetSubPins(): Array<JavascriptEdGraphPin>
     open fun IsPinHidden(): Boolean
     open fun IsValid(): Boolean
     open fun MakeLinkTo(B: JavascriptEdGraphPin)
     open fun SetParentPin(Parent: JavascriptEdGraphPin)
+    open fun SetPinAdvancedView(bAdvancedView: Boolean)
     open fun SetPinContainerType(ContainerType: String /* "None" | "Array" | "Set" | "Map" | "EJavascriptPinContainerType_MAX" */)
     open fun SetPinHidden(bHidden: Boolean)
     open fun SetPinInfo(InPinName: String, InPinToolTip: String)
+    open fun SetPinRefObject(InObject: UObject)
     open fun SetPinType(PinType: EdGraphPinType)
 
     companion object {
@@ -3048,15 +3070,18 @@ external open class JavascriptEdGraphPin {
         fun GetPinGUID(A: JavascriptEdGraphPin): Guid
         fun GetPinIndex(A: JavascriptEdGraphPin): Number
         fun GetPinName(A: JavascriptEdGraphPin): String
+        fun GetPinRefObject(InPin: JavascriptEdGraphPin): UObject
         fun GetPinType(A: JavascriptEdGraphPin): EdGraphPinType
         fun GetSubPins(A: JavascriptEdGraphPin): Array<JavascriptEdGraphPin>
         fun IsPinHidden(A: JavascriptEdGraphPin): Boolean
         fun IsValid(A: JavascriptEdGraphPin): Boolean
         fun MakeLinkTo(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin)
         fun SetParentPin(A: JavascriptEdGraphPin, Parent: JavascriptEdGraphPin)
+        fun SetPinAdvancedView(A: JavascriptEdGraphPin, bAdvancedView: Boolean)
         fun SetPinContainerType(A: JavascriptEdGraphPin, ContainerType: String /* "None" | "Array" | "Set" | "Map" | "EJavascriptPinContainerType_MAX" */)
         fun SetPinHidden(A: JavascriptEdGraphPin, bHidden: Boolean)
         fun SetPinInfo(A: JavascriptEdGraphPin, InPinName: String, InPinToolTip: String)
+        fun SetPinRefObject(InPin: JavascriptEdGraphPin, InObject: UObject)
         fun SetPinType(Pin: JavascriptEdGraphPin, PinType: EdGraphPinType)
         fun GetDefaultObject(): JavascriptEdGraphPin
     }
@@ -3249,7 +3274,6 @@ external open class MaterialParameterInfo {
     open var Name: String
     open var Association: String /* "LayerParameter" | "BlendParameter" | "GlobalParameter" | "EMaterialParameterAssociation_MAX" */
     open var index: Number
-    open var ParameterLocation: SoftObjectPath
     open fun clone(): MaterialParameterInfo
 
     companion object {
@@ -3623,7 +3647,6 @@ external open class MaterialCachedParameterEntry {
     open var NameHashes: Array<Any>
     open var ParameterInfos: Array<MaterialParameterInfo>
     open var ExpressionGuids: Array<Guid>
-    open var Overrides: Array<Boolean>
     open fun clone(): MaterialCachedParameterEntry
 
     companion object {
@@ -3872,12 +3895,12 @@ external open class StaticComponentMaskValue {
     }
 }
 
-external interface `T$213` {
+external interface `T$36` {
     var MinValue: Number
     var MaxValue: Number
 }
 
-external interface `T$214` {
+external interface `T$37` {
     var MinTime: Number
     var MaxTime: Number
 }
@@ -3887,8 +3910,8 @@ external open class CurveBase : UObject {
     constructor(Outer: UObject)
     open var AssetImportData: AssetImportData
     open var ImportPath: String
-    open fun GetValueRange(MinValue: Number = definedExternally, MaxValue: Number = definedExternally): `T$213`
-    open fun GetTimeRange(MinTime: Number = definedExternally, MaxTime: Number = definedExternally): `T$214`
+    open fun GetValueRange(MinValue: Number = definedExternally, MaxValue: Number = definedExternally): `T$36`
+    open fun GetTimeRange(MinTime: Number = definedExternally, MaxTime: Number = definedExternally): `T$37`
 
     companion object {
         fun Load(ResourceName: String): CurveBase
@@ -4004,6 +4027,7 @@ external open class CurveLinearColor : CurveBase {
     open var AdjustVibrance: Number
     open var AdjustMinAlpha: Number
     open var AdjustMaxAlpha: Number
+    open fun GetUnadjustedLinearColorValue(InTime: Number): LinearColor
     open fun GetLinearColorValue(InTime: Number): LinearColor
     open fun GetClampedLinearColorValue(InTime: Number): LinearColor
 
@@ -4017,7 +4041,25 @@ external open class CurveLinearColor : CurveBase {
     }
 }
 
-external interface `T$215` {
+external open class CurveAtlasColorAdjustments {
+    open var bChromaKeyTexture: Boolean
+    open var AdjustBrightness: Number
+    open var AdjustBrightnessCurve: Number
+    open var AdjustVibrance: Number
+    open var AdjustSaturation: Number
+    open var AdjustRGBCurve: Number
+    open var AdjustHue: Number
+    open var AdjustMinAlpha: Number
+    open var AdjustMaxAlpha: Number
+    open fun clone(): CurveAtlasColorAdjustments
+
+    companion object {
+        fun C(Other: UObject): CurveAtlasColorAdjustments
+        fun C(Other: Any): CurveAtlasColorAdjustments
+    }
+}
+
+external interface `T$38` {
     var Position: Number
     var `$`: Boolean
 }
@@ -4027,8 +4069,13 @@ external open class CurveLinearColorAtlas : Texture2D {
     constructor(Outer: UObject)
     open var bIsDirty: Boolean
     open var TextureSize: Any
+    open var bSquareResolution: Boolean
+    open var TextureHeight: Any
     open var GradientCurves: Array<CurveLinearColor>
-    open fun GetCurvePosition(InCurve: CurveLinearColor, Position: Number = definedExternally): `T$215`
+    open var bDisableAllAdjustments: Boolean
+    open var bHasCachedColorAdjustments: Boolean
+    open var CachedColorAdjustments: CurveAtlasColorAdjustments
+    open fun GetCurvePosition(InCurve: CurveLinearColor, Position: Number = definedExternally): `T$38`
 
     companion object {
         fun Load(ResourceName: String): CurveLinearColorAtlas
@@ -4418,125 +4465,125 @@ external open class EdgeID : ElementID {
     }
 }
 
-external interface `T$216` {
+external interface `T$39` {
     var OutVertexInstanceIDs: Array<VertexInstanceID>
 }
 
-external interface `T$217` {
+external interface `T$40` {
     var OutConnectedTriangleIDs: Array<TriangleID>
 }
 
-external interface `T$218` {
+external interface `T$41` {
     var OutConnectedPolygonIDs: Array<PolygonID>
 }
 
-external interface `T$219` {
+external interface `T$42` {
     var OutConnectedTriangleIDs: Array<TriangleID>
 }
 
-external interface `T$220` {
+external interface `T$43` {
     var OutConnectedPolygonIDs: Array<PolygonID>
 }
 
-external interface `T$221` {
+external interface `T$44` {
     var OutEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$222` {
+external interface `T$45` {
     var OutAdjacentVertexIDs: Array<VertexID>
 }
 
-external interface `T$223` {
+external interface `T$46` {
     var OutVertexIDs: Array<VertexID>
 }
 
-external interface `T$224` {
+external interface `T$47` {
     var OutVertexInstanceIDs: Array<VertexInstanceID>
 }
 
-external interface `T$225` {
+external interface `T$48` {
     var OutEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$226` {
+external interface `T$49` {
     var OutTriangleIDs: Array<TriangleID>
 }
 
-external interface `T$227` {
+external interface `T$50` {
     var OutVertexIDs: Array<VertexID>
 }
 
-external interface `T$228` {
+external interface `T$51` {
     var OutVertexInstanceIDs: Array<VertexInstanceID>
 }
 
-external interface `T$229` {
+external interface `T$52` {
     var OutTriangleIDs: Array<TriangleID>
 }
 
-external interface `T$230` {
+external interface `T$53` {
     var OutEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$231` {
+external interface `T$54` {
     var OutEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$232` {
+external interface `T$55` {
     var OutPolygonIDs: Array<PolygonID>
 }
 
-external interface `T$233` {
+external interface `T$56` {
     var OutPolygonIDs: Array<PolygonID>
 }
 
-external interface `T$234` {
+external interface `T$57` {
     var OutVertexIDs: Array<VertexID>
 }
 
-external interface `T$235` {
+external interface `T$58` {
     var OutConnectedTriangleIDs: Array<TriangleID>
 }
 
-external interface `T$236` {
+external interface `T$59` {
     var OutConnectedPolygonIDs: Array<PolygonID>
 }
 
-external interface `T$237` {
+external interface `T$60` {
     var OrphanedVertices: Array<VertexID>
 }
 
-external interface `T$238` {
+external interface `T$61` {
     var OrphanedEdges: Array<EdgeID>
     var OrphanedVertexInstances: Array<VertexInstanceID>
     var OrphanedPolygonGroupsPtr: Array<PolygonGroupID>
 }
 
-external interface `T$239` {
+external interface `T$62` {
     var OrphanedEdges: Array<EdgeID>
     var OrphanedVertexInstances: Array<VertexInstanceID>
     var OrphanedPolygonGroups: Array<PolygonGroupID>
 }
 
-external interface `T$240` {
+external interface `T$63` {
     var OrphanedVertices: Array<VertexID>
 }
 
-external interface `T$241` {
+external interface `T$64` {
     var NewEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$242` {
+external interface `T$65` {
     var NewEdgeIDs: Array<EdgeID>
     var `$`: TriangleID
 }
 
-external interface `T$243` {
+external interface `T$66` {
     var VertexInstanceIDs: Array<VertexInstanceID>
     var NewEdgeIDs: Array<EdgeID>
 }
 
-external interface `T$244` {
+external interface `T$67` {
     var VertexInstanceIDs: Array<VertexInstanceID>
     var NewEdgeIDs: Array<EdgeID>
     var `$`: PolygonID
@@ -4566,34 +4613,34 @@ external open class MeshDescriptionBase : UObject {
     open fun IsEdgeValid(EdgeID: EdgeID): Boolean
     open fun IsEdgeInternalToPolygon(EdgeID: EdgeID, PolygonID: PolygonID): Boolean
     open fun IsEdgeInternal(EdgeID: EdgeID): Boolean
-    open fun GetVertexVertexInstances(VertexID: VertexID, OutVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$216`
+    open fun GetVertexVertexInstances(VertexID: VertexID, OutVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$39`
     open fun GetVertexPosition(VertexID: VertexID): Vector
     open fun GetVertexPairEdge(VertexID0: VertexID, VertexID1: VertexID): EdgeID
     open fun GetVertexInstanceVertex(VertexInstanceID: VertexInstanceID): VertexID
     open fun GetVertexInstancePairEdge(VertexInstanceID0: VertexInstanceID, VertexInstanceID1: VertexInstanceID): EdgeID
     open fun GetVertexInstanceForTriangleVertex(TriangleID: TriangleID, VertexID: VertexID): VertexInstanceID
     open fun GetVertexInstanceForPolygonVertex(PolygonID: PolygonID, VertexID: VertexID): VertexInstanceID
-    open fun GetVertexInstanceConnectedTriangles(VertexInstanceID: VertexInstanceID, OutConnectedTriangleIDs: Array<TriangleID> = definedExternally): `T$217`
-    open fun GetVertexInstanceConnectedPolygons(VertexInstanceID: VertexInstanceID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$218`
-    open fun GetVertexConnectedTriangles(VertexID: VertexID, OutConnectedTriangleIDs: Array<TriangleID> = definedExternally): `T$219`
-    open fun GetVertexConnectedPolygons(VertexID: VertexID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$220`
-    open fun GetVertexConnectedEdges(VertexID: VertexID, OutEdgeIDs: Array<EdgeID> = definedExternally): `T$221`
-    open fun GetVertexAdjacentVertices(VertexID: VertexID, OutAdjacentVertexIDs: Array<VertexID> = definedExternally): `T$222`
-    open fun GetTriangleVertices(TriangleID: TriangleID, OutVertexIDs: Array<VertexID> = definedExternally): `T$223`
-    open fun GetTriangleVertexInstances(TriangleID: TriangleID, OutVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$224`
+    open fun GetVertexInstanceConnectedTriangles(VertexInstanceID: VertexInstanceID, OutConnectedTriangleIDs: Array<TriangleID> = definedExternally): `T$40`
+    open fun GetVertexInstanceConnectedPolygons(VertexInstanceID: VertexInstanceID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$41`
+    open fun GetVertexConnectedTriangles(VertexID: VertexID, OutConnectedTriangleIDs: Array<TriangleID> = definedExternally): `T$42`
+    open fun GetVertexConnectedPolygons(VertexID: VertexID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$43`
+    open fun GetVertexConnectedEdges(VertexID: VertexID, OutEdgeIDs: Array<EdgeID> = definedExternally): `T$44`
+    open fun GetVertexAdjacentVertices(VertexID: VertexID, OutAdjacentVertexIDs: Array<VertexID> = definedExternally): `T$45`
+    open fun GetTriangleVertices(TriangleID: TriangleID, OutVertexIDs: Array<VertexID> = definedExternally): `T$46`
+    open fun GetTriangleVertexInstances(TriangleID: TriangleID, OutVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$47`
     open fun GetTriangleVertexInstance(TriangleID: TriangleID, index: Number): VertexInstanceID
     open fun GetTrianglePolygonGroup(TriangleID: TriangleID): PolygonGroupID
     open fun GetTrianglePolygon(TriangleID: TriangleID): PolygonID
-    open fun GetTriangleEdges(TriangleID: TriangleID, OutEdgeIDs: Array<EdgeID> = definedExternally): `T$225`
-    open fun GetTriangleAdjacentTriangles(TriangleID: TriangleID, OutTriangleIDs: Array<TriangleID> = definedExternally): `T$226`
-    open fun GetPolygonVertices(PolygonID: PolygonID, OutVertexIDs: Array<VertexID> = definedExternally): `T$227`
-    open fun GetPolygonVertexInstances(PolygonID: PolygonID, OutVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$228`
-    open fun GetPolygonTriangles(PolygonID: PolygonID, OutTriangleIDs: Array<TriangleID> = definedExternally): `T$229`
+    open fun GetTriangleEdges(TriangleID: TriangleID, OutEdgeIDs: Array<EdgeID> = definedExternally): `T$48`
+    open fun GetTriangleAdjacentTriangles(TriangleID: TriangleID, OutTriangleIDs: Array<TriangleID> = definedExternally): `T$49`
+    open fun GetPolygonVertices(PolygonID: PolygonID, OutVertexIDs: Array<VertexID> = definedExternally): `T$50`
+    open fun GetPolygonVertexInstances(PolygonID: PolygonID, OutVertexInstanceIDs: Array<VertexInstanceID> = definedExternally): `T$51`
+    open fun GetPolygonTriangles(PolygonID: PolygonID, OutTriangleIDs: Array<TriangleID> = definedExternally): `T$52`
     open fun GetPolygonPolygonGroup(PolygonID: PolygonID): PolygonGroupID
-    open fun GetPolygonPerimeterEdges(PolygonID: PolygonID, OutEdgeIDs: Array<EdgeID> = definedExternally): `T$230`
-    open fun GetPolygonInternalEdges(PolygonID: PolygonID, OutEdgeIDs: Array<EdgeID> = definedExternally): `T$231`
-    open fun GetPolygonGroupPolygons(PolygonGroupID: PolygonGroupID, OutPolygonIDs: Array<PolygonID> = definedExternally): `T$232`
-    open fun GetPolygonAdjacentPolygons(PolygonID: PolygonID, OutPolygonIDs: Array<PolygonID> = definedExternally): `T$233`
+    open fun GetPolygonPerimeterEdges(PolygonID: PolygonID, OutEdgeIDs: Array<EdgeID> = definedExternally): `T$53`
+    open fun GetPolygonInternalEdges(PolygonID: PolygonID, OutEdgeIDs: Array<EdgeID> = definedExternally): `T$54`
+    open fun GetPolygonGroupPolygons(PolygonGroupID: PolygonGroupID, OutPolygonIDs: Array<PolygonID> = definedExternally): `T$55`
+    open fun GetPolygonAdjacentPolygons(PolygonID: PolygonID, OutPolygonIDs: Array<PolygonID> = definedExternally): `T$56`
     open fun GetNumVertexVertexInstances(VertexID: VertexID): Number
     open fun GetNumVertexInstanceConnectedTriangles(VertexInstanceID: VertexInstanceID): Number
     open fun GetNumVertexInstanceConnectedPolygons(VertexInstanceID: VertexInstanceID): Number
@@ -4606,27 +4653,27 @@ external open class MeshDescriptionBase : UObject {
     open fun GetNumPolygonGroupPolygons(PolygonGroupID: PolygonGroupID): Number
     open fun GetNumEdgeConnectedTriangles(EdgeID: EdgeID): Number
     open fun GetNumEdgeConnectedPolygons(EdgeID: EdgeID): Number
-    open fun GetEdgeVertices(EdgeID: EdgeID, OutVertexIDs: Array<VertexID> = definedExternally): `T$234`
+    open fun GetEdgeVertices(EdgeID: EdgeID, OutVertexIDs: Array<VertexID> = definedExternally): `T$57`
     open fun GetEdgeVertex(EdgeID: EdgeID, VertexNumber: Number): VertexID
-    open fun GetEdgeConnectedTriangles(EdgeID: EdgeID, OutConnectedTriangleIDs: Array<TriangleID> = definedExternally): `T$235`
-    open fun GetEdgeConnectedPolygons(EdgeID: EdgeID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$236`
+    open fun GetEdgeConnectedTriangles(EdgeID: EdgeID, OutConnectedTriangleIDs: Array<TriangleID> = definedExternally): `T$58`
+    open fun GetEdgeConnectedPolygons(EdgeID: EdgeID, OutConnectedPolygonIDs: Array<PolygonID> = definedExternally): `T$59`
     open fun Empty()
-    open fun DeleteVertexInstance(VertexInstanceID: VertexInstanceID, OrphanedVertices: Array<VertexID> = definedExternally): `T$237`
+    open fun DeleteVertexInstance(VertexInstanceID: VertexInstanceID, OrphanedVertices: Array<VertexID> = definedExternally): `T$60`
     open fun DeleteVertex(VertexID: VertexID)
-    open fun DeleteTriangle(TriangleID: TriangleID, OrphanedEdges: Array<EdgeID> = definedExternally, OrphanedVertexInstances: Array<VertexInstanceID> = definedExternally, OrphanedPolygonGroupsPtr: Array<PolygonGroupID> = definedExternally): `T$238`
+    open fun DeleteTriangle(TriangleID: TriangleID, OrphanedEdges: Array<EdgeID> = definedExternally, OrphanedVertexInstances: Array<VertexInstanceID> = definedExternally, OrphanedPolygonGroupsPtr: Array<PolygonGroupID> = definedExternally): `T$61`
     open fun DeletePolygonGroup(PolygonGroupID: PolygonGroupID)
-    open fun DeletePolygon(PolygonID: PolygonID, OrphanedEdges: Array<EdgeID> = definedExternally, OrphanedVertexInstances: Array<VertexInstanceID> = definedExternally, OrphanedPolygonGroups: Array<PolygonGroupID> = definedExternally): `T$239`
-    open fun DeleteEdge(EdgeID: EdgeID, OrphanedVertices: Array<VertexID> = definedExternally): `T$240`
+    open fun DeletePolygon(PolygonID: PolygonID, OrphanedEdges: Array<EdgeID> = definedExternally, OrphanedVertexInstances: Array<VertexInstanceID> = definedExternally, OrphanedPolygonGroups: Array<PolygonGroupID> = definedExternally): `T$62`
+    open fun DeleteEdge(EdgeID: EdgeID, OrphanedVertices: Array<VertexID> = definedExternally): `T$63`
     open fun CreateVertexWithID(VertexID: VertexID)
     open fun CreateVertexInstanceWithID(VertexInstanceID: VertexInstanceID, VertexID: VertexID)
     open fun CreateVertexInstance(VertexID: VertexID): VertexInstanceID
     open fun CreateVertex(): VertexID
-    open fun CreateTriangleWithID(TriangleID: TriangleID, PolygonGroupID: PolygonGroupID, VertexInstanceIDs: Array<VertexInstanceID>, NewEdgeIDs: Array<EdgeID> = definedExternally): `T$241`
-    open fun CreateTriangle(PolygonGroupID: PolygonGroupID, VertexInstanceIDs: Array<VertexInstanceID>, NewEdgeIDs: Array<EdgeID> = definedExternally): `T$242`
-    open fun CreatePolygonWithID(PolygonID: PolygonID, PolygonGroupID: PolygonGroupID, VertexInstanceIDs: Array<VertexInstanceID> = definedExternally, NewEdgeIDs: Array<EdgeID> = definedExternally): `T$243`
+    open fun CreateTriangleWithID(TriangleID: TriangleID, PolygonGroupID: PolygonGroupID, VertexInstanceIDs: Array<VertexInstanceID>, NewEdgeIDs: Array<EdgeID> = definedExternally): `T$64`
+    open fun CreateTriangle(PolygonGroupID: PolygonGroupID, VertexInstanceIDs: Array<VertexInstanceID>, NewEdgeIDs: Array<EdgeID> = definedExternally): `T$65`
+    open fun CreatePolygonWithID(PolygonID: PolygonID, PolygonGroupID: PolygonGroupID, VertexInstanceIDs: Array<VertexInstanceID> = definedExternally, NewEdgeIDs: Array<EdgeID> = definedExternally): `T$66`
     open fun CreatePolygonGroupWithID(PolygonGroupID: PolygonGroupID)
     open fun CreatePolygonGroup(): PolygonGroupID
-    open fun CreatePolygon(PolygonGroupID: PolygonGroupID, VertexInstanceIDs: Array<VertexInstanceID> = definedExternally, NewEdgeIDs: Array<EdgeID> = definedExternally): `T$244`
+    open fun CreatePolygon(PolygonGroupID: PolygonGroupID, VertexInstanceIDs: Array<VertexInstanceID> = definedExternally, NewEdgeIDs: Array<EdgeID> = definedExternally): `T$67`
     open fun CreateEdgeWithID(EdgeID: EdgeID, VertexID0: VertexID, VertexID1: VertexID)
     open fun CreateEdge(VertexID0: VertexID, VertexID1: VertexID): EdgeID
     open fun ComputePolygonTriangulation(PolygonID: PolygonID)
@@ -4641,7 +4688,7 @@ external open class MeshDescriptionBase : UObject {
     }
 }
 
-external interface `T$245` {
+external interface `T$68` {
     var PolygonID_PlusX: PolygonID
     var PolygonID_MinusX: PolygonID
     var PolygonID_PlusY: PolygonID
@@ -4656,7 +4703,7 @@ external open class StaticMeshDescription : MeshDescriptionBase {
     open fun SetVertexInstanceUV(VertexInstanceID: VertexInstanceID, UV: Vector2D, UVIndex: Number)
     open fun SetPolygonGroupMaterialSlotName(PolygonGroupID: PolygonGroupID, SlotName: String)
     open fun GetVertexInstanceUV(VertexInstanceID: VertexInstanceID, UVIndex: Number): Vector2D
-    open fun CreateCube(Center: Vector, HalfExtents: Vector, PolygonGroup: PolygonGroupID, PolygonID_PlusX: PolygonID = definedExternally, PolygonID_MinusX: PolygonID = definedExternally, PolygonID_PlusY: PolygonID = definedExternally, PolygonID_MinusY: PolygonID = definedExternally, PolygonID_PlusZ: PolygonID = definedExternally, PolygonID_MinusZ: PolygonID = definedExternally): `T$245`
+    open fun CreateCube(Center: Vector, HalfExtents: Vector, PolygonGroup: PolygonGroupID, PolygonID_PlusX: PolygonID = definedExternally, PolygonID_MinusX: PolygonID = definedExternally, PolygonID_PlusY: PolygonID = definedExternally, PolygonID_MinusY: PolygonID = definedExternally, PolygonID_PlusZ: PolygonID = definedExternally, PolygonID_MinusZ: PolygonID = definedExternally): `T$68`
 
     companion object {
         fun Load(ResourceName: String): StaticMeshDescription
@@ -4682,6 +4729,10 @@ external open class MeshSectionInfo {
     }
 }
 
+external interface `T$69` {
+    var RawMesh: JavascriptRawMesh
+}
+
 external open class JavascriptRawMesh {
     open var FaceMaterialIndices: Array<Number>
     open var FaceSmoothingMasks: Array<Any>
@@ -4701,8 +4752,8 @@ external open class JavascriptRawMesh {
     open var WedgeColors: Array<Color>
     open var MaterialIndexToImportIndex: Array<Number>
     open fun clone(): JavascriptRawMesh
-    open fun CompactMaterialIndices(): `T$177`
-    open fun Empty(): `T$177`
+    open fun CompactMaterialIndices(): `T$69`
+    open fun Empty(): `T$69`
     open fun GetWedgePosition(WedgeIndex: Number): Vector
     open fun IsValid(): Boolean
     open fun IsValidOrFixable(): Boolean
@@ -4710,8 +4761,8 @@ external open class JavascriptRawMesh {
     companion object {
         fun C(Other: UObject): JavascriptRawMesh
         fun C(Other: Any): JavascriptRawMesh
-        fun CompactMaterialIndices(RawMesh: JavascriptRawMesh = definedExternally): `T$177`
-        fun Empty(RawMesh: JavascriptRawMesh = definedExternally): `T$177`
+        fun CompactMaterialIndices(RawMesh: JavascriptRawMesh = definedExternally): `T$69`
+        fun Empty(RawMesh: JavascriptRawMesh = definedExternally): `T$69`
         fun GetWedgePosition(RawMesh: JavascriptRawMesh, WedgeIndex: Number): Vector
         fun IsValid(RawMesh: JavascriptRawMesh): Boolean
         fun IsValidOrFixable(RawMesh: JavascriptRawMesh): Boolean
@@ -4729,11 +4780,19 @@ external open class ProcMeshTangent {
     }
 }
 
-external interface `T$246` {
+external interface `T$70` {
     var PlatformMinimumLODs: Any
 }
 
-external interface `T$247` {
+external interface `T$71` {
+    var OutMesh: JavascriptRawMesh
+}
+
+external interface `T$72` {
+    var InMesh: JavascriptRawMesh
+}
+
+external interface `T$73` {
     var Vertices: Array<Vector>
     var Triangles: Array<Number>
     var Normals: Array<Vector>
@@ -4741,7 +4800,7 @@ external interface `T$247` {
     var Tangents: Array<ProcMeshTangent>
 }
 
-external interface `T$248` {
+external interface `T$74` {
     var Vertices: Array<Vector>
     var Triangles: Array<Number>
     var Normals: Array<Vector>
@@ -4776,6 +4835,7 @@ external open class StaticMesh : StreamableRenderAsset {
     open var bHasNavigationData: Boolean
     open var bSupportUniformlyDistributedSampling: Boolean
     open var bSupportPhysicalMaterialMasks: Boolean
+    open var bSupportRayTracing: Boolean
     open var bIsBuiltAtRuntime: Boolean
     open var bAllowCPUAccess: Boolean
     open var bSupportGpuUniformlyDistributedSampling: Boolean
@@ -4795,13 +4855,14 @@ external open class StaticMesh : StreamableRenderAsset {
     open var EditableMesh: UObject
     open var ComplexCollisionMesh: StaticMesh
     open var NavCollision: NavCollisionBase
+    open fun SetStaticMaterials(InStaticMaterials: Array<StaticMaterial>)
     open fun SetNumSourceModels(Num: Number)
     open fun SetMaterial(MaterialIndex: Number, NewMaterial: MaterialInterface)
-    open fun SetLODGroup(NewGroup: String, bRebuildImmediately: Boolean)
     open fun RemoveSocket(Socket: StaticMeshSocket)
+    open fun GetStaticMaterials(): Array<StaticMaterial>
     open fun GetNumSections(InLOD: Number): Number
     open fun GetNumLODs(): Number
-    open fun GetMinimumLODForPlatforms(PlatformMinimumLODs: Any = definedExternally): `T$246`
+    open fun GetMinimumLODForPlatforms(PlatformMinimumLODs: Any = definedExternally): `T$70`
     open fun GetMinimumLODForPlatform(PlatformName: String): Number
     open fun GetMaterialIndex(MaterialSlotName: String): Number
     open fun GetMaterial(MaterialIndex: Number): MaterialInterface
@@ -4812,11 +4873,12 @@ external open class StaticMesh : StreamableRenderAsset {
     open fun AddSocket(Socket: StaticMeshSocket)
     open fun AddMaterial(Material: MaterialInterface): String
     open fun Build()
+    open fun GetPhysicsBodySetupFromStaticMesh(): BodySetup
     open fun GetSectionInfo(LODIndex: Number, SectionIndex: Number): MeshSectionInfo
-    open fun LoadRawMesh(SourceModelIndex: Number, OutMesh: JavascriptRawMesh = definedExternally): `T$176`
-    open fun SaveRawMesh(SourceModelIndex: Number, InMesh: JavascriptRawMesh = definedExternally): `T$175`
+    open fun LoadRawMesh(SourceModelIndex: Number, OutMesh: JavascriptRawMesh = definedExternally): `T$71`
+    open fun SaveRawMesh(SourceModelIndex: Number, InMesh: JavascriptRawMesh = definedExternally): `T$72`
     open fun SetSectionInfo(LODIndex: Number, SectionIndex: Number, Info: MeshSectionInfo)
-    open fun GetSectionFromStaticMesh(LODIndex: Number, SectionIndex: Number, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$247`
+    open fun GetSectionFromStaticMesh(LODIndex: Number, SectionIndex: Number, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$73`
 
     companion object {
         fun Load(ResourceName: String): StaticMesh
@@ -4827,11 +4889,12 @@ external open class StaticMesh : StreamableRenderAsset {
         fun C(Other: UObject): StaticMesh
         fun C(Other: Any): StaticMesh
         fun Build(StaticMesh: StaticMesh)
+        fun GetPhysicsBodySetupFromStaticMesh(InStaticMesh: StaticMesh): BodySetup
         fun GetSectionInfo(StaticMesh: StaticMesh, LODIndex: Number, SectionIndex: Number): MeshSectionInfo
-        fun LoadRawMesh(StaticMesh: StaticMesh, SourceModelIndex: Number, OutMesh: JavascriptRawMesh = definedExternally): `T$176`
-        fun SaveRawMesh(StaticMesh: StaticMesh, SourceModelIndex: Number, InMesh: JavascriptRawMesh = definedExternally): `T$175`
+        fun LoadRawMesh(StaticMesh: StaticMesh, SourceModelIndex: Number, OutMesh: JavascriptRawMesh = definedExternally): `T$71`
+        fun SaveRawMesh(StaticMesh: StaticMesh, SourceModelIndex: Number, InMesh: JavascriptRawMesh = definedExternally): `T$72`
         fun SetSectionInfo(StaticMesh: StaticMesh, LODIndex: Number, SectionIndex: Number, Info: MeshSectionInfo)
-        fun GetSectionFromStaticMesh(InMesh: StaticMesh, LODIndex: Number, SectionIndex: Number, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$248`
+        fun GetSectionFromStaticMesh(InMesh: StaticMesh, LODIndex: Number, SectionIndex: Number, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$74`
     }
 }
 
@@ -4946,7 +5009,7 @@ external object EMaterialUsage {
     var MATUSAGE_MAX: String /* "MATUSAGE_MAX" */
 }
 
-external interface `T$249` {
+external interface `T$75` {
     var bNeedsRecompile: Boolean
     var `$`: Boolean
 }
@@ -5044,6 +5107,7 @@ external open class Material : MaterialInterface {
     open var bUseAlphaToCoverage: Boolean
     open var bForwardRenderUsePreintegratedGFForSimpleIBL: Boolean
     open var bUseHQForwardReflections: Boolean
+    open var bForwardBlendsSkyLightCubemaps: Boolean
     open var bUsePlanarForwardReflections: Boolean
     open var bNormalCurvatureToRoughness: Boolean
     open var D3D11TessellationMode: String /* "MTM_NoTessellation" | "MTM_FlatTessellation" | "MTM_PNTriangles" | "MTM_MAX" */
@@ -5051,6 +5115,7 @@ external open class Material : MaterialInterface {
     open var bEnableAdaptiveTessellation: Boolean
     open var AllowTranslucentCustomDepthWrites: Boolean
     open var Wireframe: Boolean
+    open var WriteDepthToTranslucentMaterial: Boolean
     open var ShadingRate: String /* "MSR_1x1" | "MSR_2x1" | "MSR_1x2" | "MSR_2x2" | "MSR_4x2" | "MSR_2x4" | "MSR_4x4" | "MSR_Count" | "MSR_MAX" */
     open var EditorX: Number
     open var EditorY: Number
@@ -5101,7 +5166,7 @@ external open class Material : MaterialInterface {
     open fun HasMaterialUsage(Usage: String /* "MATUSAGE_SkeletalMesh" | "MATUSAGE_ParticleSprites" | "MATUSAGE_BeamTrails" | "MATUSAGE_MeshParticles" | "MATUSAGE_StaticLighting" | "MATUSAGE_MorphTargets" | "MATUSAGE_SplineMesh" | "MATUSAGE_InstancedStaticMeshes" | "MATUSAGE_GeometryCollections" | "MATUSAGE_Clothing" | "MATUSAGE_NiagaraSprites" | "MATUSAGE_NiagaraRibbons" | "MATUSAGE_NiagaraMeshParticles" | "MATUSAGE_GeometryCache" | "MATUSAGE_Water" | "MATUSAGE_HairStrands" | "MATUSAGE_LidarPointCloud" | "MATUSAGE_VirtualHeightfieldMesh" | "MATUSAGE_MAX" */): Boolean
     open fun LayoutMaterialExpressions()
     open fun RecompileMaterial()
-    open fun SetMaterialUsage(Usage: String /* "MATUSAGE_SkeletalMesh" | "MATUSAGE_ParticleSprites" | "MATUSAGE_BeamTrails" | "MATUSAGE_MeshParticles" | "MATUSAGE_StaticLighting" | "MATUSAGE_MorphTargets" | "MATUSAGE_SplineMesh" | "MATUSAGE_InstancedStaticMeshes" | "MATUSAGE_GeometryCollections" | "MATUSAGE_Clothing" | "MATUSAGE_NiagaraSprites" | "MATUSAGE_NiagaraRibbons" | "MATUSAGE_NiagaraMeshParticles" | "MATUSAGE_GeometryCache" | "MATUSAGE_Water" | "MATUSAGE_HairStrands" | "MATUSAGE_LidarPointCloud" | "MATUSAGE_VirtualHeightfieldMesh" | "MATUSAGE_MAX" */, bNeedsRecompile: Boolean = definedExternally): `T$249`
+    open fun SetMaterialUsage(Usage: String /* "MATUSAGE_SkeletalMesh" | "MATUSAGE_ParticleSprites" | "MATUSAGE_BeamTrails" | "MATUSAGE_MeshParticles" | "MATUSAGE_StaticLighting" | "MATUSAGE_MorphTargets" | "MATUSAGE_SplineMesh" | "MATUSAGE_InstancedStaticMeshes" | "MATUSAGE_GeometryCollections" | "MATUSAGE_Clothing" | "MATUSAGE_NiagaraSprites" | "MATUSAGE_NiagaraRibbons" | "MATUSAGE_NiagaraMeshParticles" | "MATUSAGE_GeometryCache" | "MATUSAGE_Water" | "MATUSAGE_HairStrands" | "MATUSAGE_LidarPointCloud" | "MATUSAGE_VirtualHeightfieldMesh" | "MATUSAGE_MAX" */, bNeedsRecompile: Boolean = definedExternally): `T$75`
 
     companion object {
         fun Load(ResourceName: String): Material
@@ -5125,7 +5190,7 @@ external open class Material : MaterialInterface {
         fun HasMaterialUsage(Material: Material, Usage: String /* "MATUSAGE_SkeletalMesh" | "MATUSAGE_ParticleSprites" | "MATUSAGE_BeamTrails" | "MATUSAGE_MeshParticles" | "MATUSAGE_StaticLighting" | "MATUSAGE_MorphTargets" | "MATUSAGE_SplineMesh" | "MATUSAGE_InstancedStaticMeshes" | "MATUSAGE_GeometryCollections" | "MATUSAGE_Clothing" | "MATUSAGE_NiagaraSprites" | "MATUSAGE_NiagaraRibbons" | "MATUSAGE_NiagaraMeshParticles" | "MATUSAGE_GeometryCache" | "MATUSAGE_Water" | "MATUSAGE_HairStrands" | "MATUSAGE_LidarPointCloud" | "MATUSAGE_VirtualHeightfieldMesh" | "MATUSAGE_MAX" */): Boolean
         fun LayoutMaterialExpressions(Material: Material)
         fun RecompileMaterial(Material: Material)
-        fun SetMaterialUsage(Material: Material, Usage: String /* "MATUSAGE_SkeletalMesh" | "MATUSAGE_ParticleSprites" | "MATUSAGE_BeamTrails" | "MATUSAGE_MeshParticles" | "MATUSAGE_StaticLighting" | "MATUSAGE_MorphTargets" | "MATUSAGE_SplineMesh" | "MATUSAGE_InstancedStaticMeshes" | "MATUSAGE_GeometryCollections" | "MATUSAGE_Clothing" | "MATUSAGE_NiagaraSprites" | "MATUSAGE_NiagaraRibbons" | "MATUSAGE_NiagaraMeshParticles" | "MATUSAGE_GeometryCache" | "MATUSAGE_Water" | "MATUSAGE_HairStrands" | "MATUSAGE_LidarPointCloud" | "MATUSAGE_VirtualHeightfieldMesh" | "MATUSAGE_MAX" */, bNeedsRecompile: Boolean = definedExternally): `T$249`
+        fun SetMaterialUsage(Material: Material, Usage: String /* "MATUSAGE_SkeletalMesh" | "MATUSAGE_ParticleSprites" | "MATUSAGE_BeamTrails" | "MATUSAGE_MeshParticles" | "MATUSAGE_StaticLighting" | "MATUSAGE_MorphTargets" | "MATUSAGE_SplineMesh" | "MATUSAGE_InstancedStaticMeshes" | "MATUSAGE_GeometryCollections" | "MATUSAGE_Clothing" | "MATUSAGE_NiagaraSprites" | "MATUSAGE_NiagaraRibbons" | "MATUSAGE_NiagaraMeshParticles" | "MATUSAGE_GeometryCache" | "MATUSAGE_Water" | "MATUSAGE_HairStrands" | "MATUSAGE_LidarPointCloud" | "MATUSAGE_VirtualHeightfieldMesh" | "MATUSAGE_MAX" */, bNeedsRecompile: Boolean = definedExternally): `T$75`
     }
 }
 
@@ -5453,48 +5518,65 @@ external open class AssetData {
     }
 }
 
-external interface `T$250` {
+external open class MaterialStatistics {
+    open var NumVertexShaderInstructions: Number
+    open var NumPixelShaderInstructions: Number
+    open var NumSamplers: Number
+    open var NumVertexTextureSamples: Number
+    open var NumPixelTextureSamples: Number
+    open var NumVirtualTextureSamples: Number
+    open var NumUVScalars: Number
+    open var NumInterpolatorScalars: Number
+    open fun clone(): MaterialStatistics
+
+    companion object {
+        fun C(Other: UObject): MaterialStatistics
+        fun C(Other: Any): MaterialStatistics
+    }
+}
+
+external interface `T$76` {
     var ChildInstances: Array<AssetData>
 }
 
-external interface `T$251` {
+external interface `T$77` {
     var ParameterNames: Array<String>
 }
 
-external interface `T$252` {
+external interface `T$78` {
     var ParameterSource: SoftObjectPath
     var `$`: Boolean
 }
 
-external interface `T$253` {
+external interface `T$79` {
     var ParameterNames: Array<String>
 }
 
-external interface `T$254` {
+external interface `T$80` {
     var ParameterNames: Array<String>
 }
 
-external interface `T$255` {
+external interface `T$81` {
     var ParameterNames: Array<String>
 }
 
-external interface `T$256` {
+external interface `T$82` {
     var ChildInstances: Array<AssetData>
 }
 
-external interface `T$257` {
+external interface `T$83` {
     var ParameterNames: Array<String>
 }
 
-external interface `T$258` {
+external interface `T$84` {
     var ParameterNames: Array<String>
 }
 
-external interface `T$259` {
+external interface `T$85` {
     var ParameterNames: Array<String>
 }
 
-external interface `T$260` {
+external interface `T$86` {
     var ParameterNames: Array<String>
 }
 
@@ -5522,15 +5604,16 @@ external open class MaterialInterface : UObject {
     open fun GetBaseMaterial(): Material
     open fun SpawnDecalAttached(DecalSize: Vector, AttachToComponent: SceneComponent, AttachPointName: String, Location: Vector, Rotation: Rotator, LocationType: String /* "KeepRelativeOffset" | "KeepWorldPosition" | "SnapToTarget" | "SnapToTargetIncludingScale" | "EAttachLocation_MAX" */, LifeSpan: Number): DecalComponent
     open fun MakeBrushFromMaterial(Width: Number, Height: Number): SlateBrush
-    open fun GetChildInstances(ChildInstances: Array<AssetData> = definedExternally): `T$250`
-    open fun GetScalarParameterNames(ParameterNames: Array<String> = definedExternally): `T$251`
-    open fun GetScalarParameterSource(ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$252`
-    open fun GetStaticSwitchParameterNames(ParameterNames: Array<String> = definedExternally): `T$253`
-    open fun GetStaticSwitchParameterSource(ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$252`
-    open fun GetTextureParameterNames(ParameterNames: Array<String> = definedExternally): `T$254`
-    open fun GetTextureParameterSource(ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$252`
-    open fun GetVectorParameterNames(ParameterNames: Array<String> = definedExternally): `T$255`
-    open fun GetVectorParameterSource(ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$252`
+    open fun GetChildInstances(ChildInstances: Array<AssetData> = definedExternally): `T$76`
+    open fun GetScalarParameterNames(ParameterNames: Array<String> = definedExternally): `T$77`
+    open fun GetScalarParameterSource(ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$78`
+    open fun GetStaticSwitchParameterNames(ParameterNames: Array<String> = definedExternally): `T$79`
+    open fun GetStaticSwitchParameterSource(ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$78`
+    open fun GetStatistics(): MaterialStatistics
+    open fun GetTextureParameterNames(ParameterNames: Array<String> = definedExternally): `T$80`
+    open fun GetTextureParameterSource(ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$78`
+    open fun GetVectorParameterNames(ParameterNames: Array<String> = definedExternally): `T$81`
+    open fun GetVectorParameterSource(ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$78`
 
     companion object {
         fun Load(ResourceName: String): MaterialInterface
@@ -5541,24 +5624,25 @@ external open class MaterialInterface : UObject {
         fun C(Other: Any): MaterialInterface
         fun SpawnDecalAttached(DecalMaterial: MaterialInterface, DecalSize: Vector, AttachToComponent: SceneComponent, AttachPointName: String, Location: Vector, Rotation: Rotator, LocationType: String /* "KeepRelativeOffset" | "KeepWorldPosition" | "SnapToTarget" | "SnapToTargetIncludingScale" | "EAttachLocation_MAX" */, LifeSpan: Number): DecalComponent
         fun MakeBrushFromMaterial(Material: MaterialInterface, Width: Number, Height: Number): SlateBrush
-        fun GetChildInstances(Parent: MaterialInterface, ChildInstances: Array<AssetData> = definedExternally): `T$256`
-        fun GetScalarParameterNames(Material: MaterialInterface, ParameterNames: Array<String> = definedExternally): `T$257`
-        fun GetScalarParameterSource(Material: MaterialInterface, ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$252`
-        fun GetStaticSwitchParameterNames(Material: MaterialInterface, ParameterNames: Array<String> = definedExternally): `T$258`
-        fun GetStaticSwitchParameterSource(Material: MaterialInterface, ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$252`
-        fun GetTextureParameterNames(Material: MaterialInterface, ParameterNames: Array<String> = definedExternally): `T$259`
-        fun GetTextureParameterSource(Material: MaterialInterface, ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$252`
-        fun GetVectorParameterNames(Material: MaterialInterface, ParameterNames: Array<String> = definedExternally): `T$260`
-        fun GetVectorParameterSource(Material: MaterialInterface, ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$252`
+        fun GetChildInstances(Parent: MaterialInterface, ChildInstances: Array<AssetData> = definedExternally): `T$82`
+        fun GetScalarParameterNames(Material: MaterialInterface, ParameterNames: Array<String> = definedExternally): `T$83`
+        fun GetScalarParameterSource(Material: MaterialInterface, ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$78`
+        fun GetStaticSwitchParameterNames(Material: MaterialInterface, ParameterNames: Array<String> = definedExternally): `T$84`
+        fun GetStaticSwitchParameterSource(Material: MaterialInterface, ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$78`
+        fun GetStatistics(Material: MaterialInterface): MaterialStatistics
+        fun GetTextureParameterNames(Material: MaterialInterface, ParameterNames: Array<String> = definedExternally): `T$85`
+        fun GetTextureParameterSource(Material: MaterialInterface, ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$78`
+        fun GetVectorParameterNames(Material: MaterialInterface, ParameterNames: Array<String> = definedExternally): `T$86`
+        fun GetVectorParameterSource(Material: MaterialInterface, ParameterName: String, ParameterSource: SoftObjectPath = definedExternally): `T$78`
     }
 }
 
-external interface `T$261` {
+external interface `T$87` {
     var Brush: SlateBrush
     var `$`: MaterialInstanceDynamic
 }
 
-external interface `T$262` {
+external interface `T$88` {
     var Brush: SlateBrush
 }
 
@@ -5580,9 +5664,9 @@ external open class SlateBrush {
     open fun GetBrushResource(): UObject
     open fun GetBrushResourceAsMaterial(): MaterialInterface
     open fun GetBrushResourceAsTexture2D(): Texture2D
-    open fun GetDynamicMaterial(): `T$261`
-    open fun SetBrushResourceToMaterial(Material: MaterialInterface = definedExternally): `T$262`
-    open fun SetBrushResourceToTexture(Texture: Texture2D = definedExternally): `T$262`
+    open fun GetDynamicMaterial(): `T$87`
+    open fun SetBrushResourceToMaterial(Material: MaterialInterface = definedExternally): `T$88`
+    open fun SetBrushResourceToTexture(Texture: Texture2D = definedExternally): `T$88`
     open fun Equal(B: SlateBrush): Boolean
 
     companion object {
@@ -5591,9 +5675,9 @@ external open class SlateBrush {
         fun GetBrushResource(Brush: SlateBrush): UObject
         fun GetBrushResourceAsMaterial(Brush: SlateBrush): MaterialInterface
         fun GetBrushResourceAsTexture2D(Brush: SlateBrush): Texture2D
-        fun GetDynamicMaterial(Brush: SlateBrush = definedExternally): `T$261`
-        fun SetBrushResourceToMaterial(Brush: SlateBrush = definedExternally, Material: MaterialInterface = definedExternally): `T$262`
-        fun SetBrushResourceToTexture(Brush: SlateBrush = definedExternally, Texture: Texture2D = definedExternally): `T$262`
+        fun GetDynamicMaterial(Brush: SlateBrush = definedExternally): `T$87`
+        fun SetBrushResourceToMaterial(Brush: SlateBrush = definedExternally, Material: MaterialInterface = definedExternally): `T$88`
+        fun SetBrushResourceToTexture(Brush: SlateBrush = definedExternally, Texture: Texture2D = definedExternally): `T$88`
         fun Equal(A: SlateBrush, B: SlateBrush): Boolean
         fun NoResourceBrush(): SlateBrush
     }
@@ -5690,6 +5774,36 @@ external object EUINavigationAction {
     var EUINavigationAction_MAX: String /* "EUINavigationAction_MAX" */
 }
 
+external object EControllerHand {
+    var Left: String /* "Left" */
+    var Right: String /* "Right" */
+    var AnyHand: String /* "AnyHand" */
+    var Pad: String /* "Pad" */
+    var ExternalCamera: String /* "ExternalCamera" */
+    var Gun: String /* "Gun" */
+    var Special_1: String /* "Special_1" */
+    var Special_2: String /* "Special_2" */
+    var Special_3: String /* "Special_3" */
+    var Special_4: String /* "Special_4" */
+    var Special_5: String /* "Special_5" */
+    var Special_6: String /* "Special_6" */
+    var Special_7: String /* "Special_7" */
+    var Special_8: String /* "Special_8" */
+    var Special_9: String /* "Special_9" */
+    var Special_10: String /* "Special_10" */
+    var Special_11: String /* "Special_11" */
+    var ControllerHand_Count: String /* "ControllerHand_Count" */
+    var EControllerHand_MAX: String /* "EControllerHand_MAX" */
+}
+
+external interface `T$89` {
+    var InteractionProfile: String
+    var hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */
+    var MotionSource: String
+    var Indentifier: String
+    var Component: String
+}
+
 external open class Key {
     open var KeyName: String
     open fun clone(): Key
@@ -5708,6 +5822,7 @@ external open class Key {
     open fun IsMouseButton(): Boolean
     open fun IsValid(): Boolean
     open fun IsVectorAxis(): Boolean
+    open fun BreakKey(InteractionProfile: String = definedExternally, hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */ = definedExternally, MotionSource: String = definedExternally, Indentifier: String = definedExternally, Component: String = definedExternally): `T$89`
 
     companion object {
         fun C(Other: UObject): Key
@@ -5727,6 +5842,7 @@ external open class Key {
         fun IsMouseButton(Key: Key): Boolean
         fun IsValid(Key: Key): Boolean
         fun IsVectorAxis(Key: Key): Boolean
+        fun BreakKey(InKey: Key, InteractionProfile: String = definedExternally, hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */ = definedExternally, MotionSource: String = definedExternally, Indentifier: String = definedExternally, Component: String = definedExternally): `T$89`
     }
 }
 
@@ -5873,6 +5989,7 @@ external open class PlayerState(InWorld: World, Location: Vector = definedExtern
     open fun OnRep_PlayerName()
     open fun OnRep_PlayerId()
     open fun OnRep_bIsInactive()
+    open fun IsOnlyASpectator(): Boolean
     open fun GetPlayerName(): String
 
     companion object {
@@ -6381,6 +6498,8 @@ external open class PoseAsset : AnimationAsset {
     open var bAdditivePose: Boolean
     open var BasePoseIndex: Number
     open var RetargetSource: String
+    open var RetargetSourceAsset: SkeletalMesh
+    open var RetargetSourceAssetReferencePose: Array<Transform>
     open var SourceAnimation: AnimSequence
 
     companion object {
@@ -7065,224 +7184,224 @@ external object ERawCurveTrackTypes {
     var RCT_MAX: String /* "RCT_MAX" */
 }
 
-external interface `T$263` {
+external interface `T$90` {
     var VirtualBoneName: String
 }
 
-external interface `T$264` {
+external interface `T$91` {
     var bExists: Boolean
 }
 
-external interface `T$265` {
+external interface `T$92` {
     var BonePath: Array<String>
 }
 
-external interface `T$266` {
+external interface `T$93` {
     var AdditiveAnimationType: String /* "AAT_None" | "AAT_LocalSpaceBase" | "AAT_RotationOffsetMeshSpace" | "AAT_MAX" */
 }
 
-external interface `T$267` {
+external interface `T$94` {
     var AdditiveBasePoseType: String /* "ABPT_None" | "ABPT_RefPose" | "ABPT_AnimScaled" | "ABPT_AnimFrame" | "ABPT_MAX" */
 }
 
-external interface `T$268` {
+external interface `T$95` {
     var CurveNames: Array<String>
 }
 
-external interface `T$269` {
+external interface `T$96` {
     var InterpolationType: String /* "Linear" | "Step" | "EAnimInterpolationType_MAX" */
 }
 
-external interface `T$270` {
+external interface `T$97` {
     var EventNames: Array<String>
 }
 
-external interface `T$271` {
+external interface `T$98` {
     var NotifyEvents: Array<AnimNotifyEvent>
 }
 
-external interface `T$272` {
+external interface `T$99` {
     var Events: Array<AnimNotifyEvent>
 }
 
-external interface `T$273` {
+external interface `T$100` {
     var TrackNames: Array<String>
 }
 
-external interface `T$274` {
+external interface `T$101` {
     var Markers: Array<AnimSyncMarker>
 }
 
-external interface `T$275` {
+external interface `T$102` {
     var Markers: Array<AnimSyncMarker>
 }
 
-external interface `T$276` {
+external interface `T$103` {
     var TrackNames: Array<String>
 }
 
-external interface `T$277` {
+external interface `T$104` {
     var CompressionSettings: AnimBoneCompressionSettings
 }
 
-external interface `T$278` {
+external interface `T$105` {
     var Pose: Transform
 }
 
-external interface `T$279` {
+external interface `T$106` {
     var Poses: Array<Transform>
 }
 
-external interface `T$280` {
+external interface `T$107` {
     var Poses: Array<Transform>
 }
 
-external interface `T$281` {
+external interface `T$108` {
     var CompressionSettings: AnimCurveCompressionSettings
 }
 
-external interface `T$282` {
+external interface `T$109` {
     var Times: Array<Number>
     var Values: Array<Number>
 }
 
-external interface `T$283` {
+external interface `T$110` {
     var Frame: Number
 }
 
-external interface `T$284` {
+external interface `T$111` {
     var NumFrames: Number
 }
 
-external interface `T$285` {
+external interface `T$112` {
     var RateScale: Number
 }
 
-external interface `T$286` {
+external interface `T$113` {
     var PositionKeys: Array<Vector>
     var RotationKeys: Array<Quat>
     var ScalingKeys: Array<Vector>
 }
 
-external interface `T$287` {
+external interface `T$114` {
     var PositionData: Array<Vector>
 }
 
-external interface `T$288` {
+external interface `T$115` {
     var RotationData: Array<Quat>
 }
 
-external interface `T$289` {
+external interface `T$116` {
     var ScaleData: Array<Vector>
 }
 
-external interface `T$290` {
+external interface `T$117` {
     var LockType: String /* "RefPose" | "AnimFirstFrame" | "Zero" | "ERootMotionRootLock_MAX" */
 }
 
-external interface `T$291` {
+external interface `T$118` {
     var Length: Number
 }
 
-external interface `T$292` {
+external interface `T$119` {
     var Time: Number
 }
 
-external interface `T$293` {
+external interface `T$120` {
     var Times: Array<Number>
     var Values: Array<Transform>
 }
 
-external interface `T$294` {
+external interface `T$121` {
     var MarkerNames: Array<String>
 }
 
-external interface `T$295` {
+external interface `T$122` {
     var Times: Array<Number>
     var Values: Array<Vector>
 }
 
-external interface `T$296` {
+external interface `T$123` {
     var IsValid: Boolean
 }
 
-external interface `T$297` {
+external interface `T$124` {
     var BonePath: Array<String>
 }
 
-external interface `T$298` {
+external interface `T$125` {
     var CurveNames: Array<String>
 }
 
-external interface `T$299` {
+external interface `T$126` {
     var EventNames: Array<String>
 }
 
-external interface `T$300` {
+external interface `T$127` {
     var NotifyEvents: Array<AnimNotifyEvent>
 }
 
-external interface `T$301` {
+external interface `T$128` {
     var Events: Array<AnimNotifyEvent>
 }
 
-external interface `T$302` {
+external interface `T$129` {
     var TrackNames: Array<String>
 }
 
-external interface `T$303` {
+external interface `T$130` {
     var Markers: Array<AnimSyncMarker>
 }
 
-external interface `T$304` {
+external interface `T$131` {
     var Markers: Array<AnimSyncMarker>
 }
 
-external interface `T$305` {
+external interface `T$132` {
     var TrackNames: Array<String>
 }
 
-external interface `T$306` {
+external interface `T$133` {
     var Poses: Array<Transform>
 }
 
-external interface `T$307` {
+external interface `T$134` {
     var Poses: Array<Transform>
 }
 
-external interface `T$308` {
+external interface `T$135` {
     var Times: Array<Number>
     var Values: Array<Number>
 }
 
-external interface `T$309` {
+external interface `T$136` {
     var PositionKeys: Array<Vector>
     var RotationKeys: Array<Quat>
     var ScalingKeys: Array<Vector>
 }
 
-external interface `T$310` {
+external interface `T$137` {
     var PositionData: Array<Vector>
 }
 
-external interface `T$311` {
+external interface `T$138` {
     var RotationData: Array<Quat>
 }
 
-external interface `T$312` {
+external interface `T$139` {
     var ScaleData: Array<Vector>
 }
 
-external interface `T$313` {
+external interface `T$140` {
     var Times: Array<Number>
     var Values: Array<Transform>
 }
 
-external interface `T$314` {
+external interface `T$141` {
     var MarkerNames: Array<String>
 }
 
-external interface `T$315` {
+external interface `T$142` {
     var Times: Array<Number>
     var Values: Array<Vector>
 }
@@ -7305,6 +7424,8 @@ external open class AnimSequence : AnimSequenceBase {
     open var RefPoseSeq: AnimSequence
     open var RefFrameIndex: Number
     open var RetargetSource: String
+    open var RetargetSourceAsset: SkeletalMesh
+    open var RetargetSourceAssetReferencePose: Array<Transform>
     open var Interpolation: String /* "Linear" | "Step" | "EAnimInterpolationType_MAX" */
     open var bEnableRootMotion: Boolean
     open var RootMotionRootLock: String /* "RefPose" | "AnimFirstFrame" | "Zero" | "ERootMotionRootLock_MAX" */
@@ -7343,52 +7464,52 @@ external open class AnimSequence : AnimSequenceBase {
     open fun AddTransformationCurveKeys(CurveName: String, Times: Array<Number>, Transforms: Array<Transform>)
     open fun AddVectorCurveKey(CurveName: String, Time: Number, Vector: Vector)
     open fun AddVectorCurveKeys(CurveName: String, Times: Array<Number>, Vectors: Array<Vector>)
-    open fun AddVirtualBone(SourceBoneName: String, TargetBoneName: String, VirtualBoneName: String = definedExternally): `T$263`
+    open fun AddVirtualBone(SourceBoneName: String, TargetBoneName: String, VirtualBoneName: String = definedExternally): `T$90`
     open fun ContainsMetaDataOfClass(MetaDataClass: UnrealEngineClass): Boolean
     open fun CopyAnimNotifiesFromSequence(DestAnimSequence: AnimSequence)
-    open fun DoesBoneNameExist(BoneName: String, bExists: Boolean = definedExternally): `T$264`
+    open fun DoesBoneNameExist(BoneName: String, bExists: Boolean = definedExternally): `T$91`
     open fun DoesCurveExist(CurveName: String, CurveType: String /* "RCT_Float" | "RCT_Vector" | "RCT_Transform" | "RCT_MAX" */): Boolean
     open fun FinalizeBoneAnimation()
-    open fun FindBonePathToRoot(BoneName: String, BonePath: Array<String> = definedExternally): `T$265`
-    open fun GetAdditiveAnimationType(AdditiveAnimationType: String /* "AAT_None" | "AAT_LocalSpaceBase" | "AAT_RotationOffsetMeshSpace" | "AAT_MAX" */ = definedExternally): `T$266`
-    open fun GetAdditiveBasePoseType(AdditiveBasePoseType: String /* "ABPT_None" | "ABPT_RefPose" | "ABPT_AnimScaled" | "ABPT_AnimFrame" | "ABPT_MAX" */ = definedExternally): `T$267`
-    open fun GetAnimationCurveNames(CurveType: String /* "RCT_Float" | "RCT_Vector" | "RCT_Transform" | "RCT_MAX" */, CurveNames: Array<String> = definedExternally): `T$268`
-    open fun GetAnimationInterpolationType(InterpolationType: String /* "Linear" | "Step" | "EAnimInterpolationType_MAX" */ = definedExternally): `T$269`
-    open fun GetAnimationNotifyEventNames(EventNames: Array<String> = definedExternally): `T$270`
-    open fun GetAnimationNotifyEvents(NotifyEvents: Array<AnimNotifyEvent> = definedExternally): `T$271`
-    open fun GetAnimationNotifyEventsForTrack(NotifyTrackName: String, Events: Array<AnimNotifyEvent> = definedExternally): `T$272`
-    open fun GetAnimationNotifyTrackNames(TrackNames: Array<String> = definedExternally): `T$273`
-    open fun GetAnimationSyncMarkers(Markers: Array<AnimSyncMarker> = definedExternally): `T$274`
-    open fun GetAnimationSyncMarkersForTrack(NotifyTrackName: String, Markers: Array<AnimSyncMarker> = definedExternally): `T$275`
-    open fun GetAnimationTrackNames(TrackNames: Array<String> = definedExternally): `T$276`
-    open fun GetBoneCompressionSettings(CompressionSettings: AnimBoneCompressionSettings = definedExternally): `T$277`
-    open fun GetBonePoseForFrame(BoneName: String, Frame: Number, bExtractRootMotion: Boolean, Pose: Transform = definedExternally): `T$278`
-    open fun GetBonePoseForTime(BoneName: String, Time: Number, bExtractRootMotion: Boolean, Pose: Transform = definedExternally): `T$278`
-    open fun GetBonePosesForFrame(BoneNames: Array<String>, Frame: Number, bExtractRootMotion: Boolean, Poses: Array<Transform> = definedExternally, PreviewMesh: SkeletalMesh = definedExternally): `T$279`
-    open fun GetBonePosesForTime(BoneNames: Array<String>, Time: Number, bExtractRootMotion: Boolean, Poses: Array<Transform> = definedExternally, PreviewMesh: SkeletalMesh = definedExternally): `T$280`
-    open fun GetCurveCompressionSettings(CompressionSettings: AnimCurveCompressionSettings = definedExternally): `T$281`
-    open fun GetFloatKeys(CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Number> = definedExternally): `T$282`
-    open fun GetFrameAtTime(Time: Number, Frame: Number = definedExternally): `T$283`
+    open fun FindBonePathToRoot(BoneName: String, BonePath: Array<String> = definedExternally): `T$92`
+    open fun GetAdditiveAnimationType(AdditiveAnimationType: String /* "AAT_None" | "AAT_LocalSpaceBase" | "AAT_RotationOffsetMeshSpace" | "AAT_MAX" */ = definedExternally): `T$93`
+    open fun GetAdditiveBasePoseType(AdditiveBasePoseType: String /* "ABPT_None" | "ABPT_RefPose" | "ABPT_AnimScaled" | "ABPT_AnimFrame" | "ABPT_MAX" */ = definedExternally): `T$94`
+    open fun GetAnimationCurveNames(CurveType: String /* "RCT_Float" | "RCT_Vector" | "RCT_Transform" | "RCT_MAX" */, CurveNames: Array<String> = definedExternally): `T$95`
+    open fun GetAnimationInterpolationType(InterpolationType: String /* "Linear" | "Step" | "EAnimInterpolationType_MAX" */ = definedExternally): `T$96`
+    open fun GetAnimationNotifyEventNames(EventNames: Array<String> = definedExternally): `T$97`
+    open fun GetAnimationNotifyEvents(NotifyEvents: Array<AnimNotifyEvent> = definedExternally): `T$98`
+    open fun GetAnimationNotifyEventsForTrack(NotifyTrackName: String, Events: Array<AnimNotifyEvent> = definedExternally): `T$99`
+    open fun GetAnimationNotifyTrackNames(TrackNames: Array<String> = definedExternally): `T$100`
+    open fun GetAnimationSyncMarkers(Markers: Array<AnimSyncMarker> = definedExternally): `T$101`
+    open fun GetAnimationSyncMarkersForTrack(NotifyTrackName: String, Markers: Array<AnimSyncMarker> = definedExternally): `T$102`
+    open fun GetAnimationTrackNames(TrackNames: Array<String> = definedExternally): `T$103`
+    open fun GetBoneCompressionSettings(CompressionSettings: AnimBoneCompressionSettings = definedExternally): `T$104`
+    open fun GetBonePoseForFrame(BoneName: String, Frame: Number, bExtractRootMotion: Boolean, Pose: Transform = definedExternally): `T$105`
+    open fun GetBonePoseForTime(BoneName: String, Time: Number, bExtractRootMotion: Boolean, Pose: Transform = definedExternally): `T$105`
+    open fun GetBonePosesForFrame(BoneNames: Array<String>, Frame: Number, bExtractRootMotion: Boolean, Poses: Array<Transform> = definedExternally, PreviewMesh: SkeletalMesh = definedExternally): `T$106`
+    open fun GetBonePosesForTime(BoneNames: Array<String>, Time: Number, bExtractRootMotion: Boolean, Poses: Array<Transform> = definedExternally, PreviewMesh: SkeletalMesh = definedExternally): `T$107`
+    open fun GetCurveCompressionSettings(CompressionSettings: AnimCurveCompressionSettings = definedExternally): `T$108`
+    open fun GetFloatKeys(CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Number> = definedExternally): `T$109`
+    open fun GetFrameAtTime(Time: Number, Frame: Number = definedExternally): `T$110`
     open fun GetMetaData(MetaData: Array<AnimMetaData>)
     open fun GetMetaDataOfClass(MetaDataClass: UnrealEngineClass, MetaDataOfClass: Array<AnimMetaData>)
-    open fun GetNumFrames(NumFrames: Number = definedExternally): `T$284`
-    open fun GetRateScale(RateScale: Number = definedExternally): `T$285`
-    open fun GetRawTrackData(TrackName: String, PositionKeys: Array<Vector> = definedExternally, RotationKeys: Array<Quat> = definedExternally, ScalingKeys: Array<Vector> = definedExternally): `T$286`
-    open fun GetRawTrackPositionData(TrackName: String, PositionData: Array<Vector> = definedExternally): `T$287`
-    open fun GetRawTrackRotationData(TrackName: String, RotationData: Array<Quat> = definedExternally): `T$288`
-    open fun GetRawTrackScaleData(TrackName: String, ScaleData: Array<Vector> = definedExternally): `T$289`
-    open fun GetRootMotionLockType(LockType: String /* "RefPose" | "AnimFirstFrame" | "Zero" | "ERootMotionRootLock_MAX" */ = definedExternally): `T$290`
-    open fun GetSequenceLength(Length: Number = definedExternally): `T$291`
-    open fun GetTimeAtFrame(Frame: Number, Time: Number = definedExternally): `T$292`
-    open fun GetTransformationKeys(CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Transform> = definedExternally): `T$293`
-    open fun GetUniqueMarkerNames(MarkerNames: Array<String> = definedExternally): `T$294`
-    open fun GetVectorKeys(CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Vector> = definedExternally): `T$295`
+    open fun GetNumFrames(NumFrames: Number = definedExternally): `T$111`
+    open fun GetRateScale(RateScale: Number = definedExternally): `T$112`
+    open fun GetRawTrackData(TrackName: String, PositionKeys: Array<Vector> = definedExternally, RotationKeys: Array<Quat> = definedExternally, ScalingKeys: Array<Vector> = definedExternally): `T$113`
+    open fun GetRawTrackPositionData(TrackName: String, PositionData: Array<Vector> = definedExternally): `T$114`
+    open fun GetRawTrackRotationData(TrackName: String, RotationData: Array<Quat> = definedExternally): `T$115`
+    open fun GetRawTrackScaleData(TrackName: String, ScaleData: Array<Vector> = definedExternally): `T$116`
+    open fun GetRootMotionLockType(LockType: String /* "RefPose" | "AnimFirstFrame" | "Zero" | "ERootMotionRootLock_MAX" */ = definedExternally): `T$117`
+    open fun GetSequenceLength(Length: Number = definedExternally): `T$118`
+    open fun GetTimeAtFrame(Frame: Number, Time: Number = definedExternally): `T$119`
+    open fun GetTransformationKeys(CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Transform> = definedExternally): `T$120`
+    open fun GetUniqueMarkerNames(MarkerNames: Array<String> = definedExternally): `T$121`
+    open fun GetVectorKeys(CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Vector> = definedExternally): `T$122`
     open fun IsRootMotionEnabled(): Boolean
     open fun IsRootMotionLockForced(): Boolean
     open fun IsValidAnimationSyncMarkerName(MarkerName: String): Boolean
     open fun IsValidAnimNotifyTrackName(NotifyTrackName: String): Boolean
     open fun IsValidRawAnimationTrackName(TrackName: String): Boolean
-    open fun IsValidTime(Time: Number, IsValid: Boolean = definedExternally): `T$296`
+    open fun IsValidTime(Time: Number, IsValid: Boolean = definedExternally): `T$123`
     open fun RemoveAllAnimationNotifyTracks()
     open fun RemoveAllAnimationSyncMarkers()
     open fun RemoveAllBoneAnimation()
@@ -7438,52 +7559,52 @@ external open class AnimSequence : AnimSequenceBase {
         fun AddTransformationCurveKeys(AnimationSequence: AnimSequence, CurveName: String, Times: Array<Number>, Transforms: Array<Transform>)
         fun AddVectorCurveKey(AnimationSequence: AnimSequence, CurveName: String, Time: Number, Vector: Vector)
         fun AddVectorCurveKeys(AnimationSequence: AnimSequence, CurveName: String, Times: Array<Number>, Vectors: Array<Vector>)
-        fun AddVirtualBone(AnimationSequence: AnimSequence, SourceBoneName: String, TargetBoneName: String, VirtualBoneName: String = definedExternally): `T$263`
+        fun AddVirtualBone(AnimationSequence: AnimSequence, SourceBoneName: String, TargetBoneName: String, VirtualBoneName: String = definedExternally): `T$90`
         fun ContainsMetaDataOfClass(AnimationSequence: AnimSequence, MetaDataClass: UnrealEngineClass): Boolean
         fun CopyAnimNotifiesFromSequence(SrcAnimSequence: AnimSequence, DestAnimSequence: AnimSequence)
-        fun DoesBoneNameExist(AnimationSequence: AnimSequence, BoneName: String, bExists: Boolean = definedExternally): `T$264`
+        fun DoesBoneNameExist(AnimationSequence: AnimSequence, BoneName: String, bExists: Boolean = definedExternally): `T$91`
         fun DoesCurveExist(AnimationSequence: AnimSequence, CurveName: String, CurveType: String /* "RCT_Float" | "RCT_Vector" | "RCT_Transform" | "RCT_MAX" */): Boolean
         fun FinalizeBoneAnimation(AnimationSequence: AnimSequence)
-        fun FindBonePathToRoot(AnimationSequence: AnimSequence, BoneName: String, BonePath: Array<String> = definedExternally): `T$297`
-        fun GetAdditiveAnimationType(AnimationSequence: AnimSequence, AdditiveAnimationType: String /* "AAT_None" | "AAT_LocalSpaceBase" | "AAT_RotationOffsetMeshSpace" | "AAT_MAX" */ = definedExternally): `T$266`
-        fun GetAdditiveBasePoseType(AnimationSequence: AnimSequence, AdditiveBasePoseType: String /* "ABPT_None" | "ABPT_RefPose" | "ABPT_AnimScaled" | "ABPT_AnimFrame" | "ABPT_MAX" */ = definedExternally): `T$267`
-        fun GetAnimationCurveNames(AnimationSequence: AnimSequence, CurveType: String /* "RCT_Float" | "RCT_Vector" | "RCT_Transform" | "RCT_MAX" */, CurveNames: Array<String> = definedExternally): `T$298`
-        fun GetAnimationInterpolationType(AnimationSequence: AnimSequence, InterpolationType: String /* "Linear" | "Step" | "EAnimInterpolationType_MAX" */ = definedExternally): `T$269`
-        fun GetAnimationNotifyEventNames(AnimationSequence: AnimSequence, EventNames: Array<String> = definedExternally): `T$299`
-        fun GetAnimationNotifyEvents(AnimationSequence: AnimSequence, NotifyEvents: Array<AnimNotifyEvent> = definedExternally): `T$300`
-        fun GetAnimationNotifyEventsForTrack(AnimationSequence: AnimSequence, NotifyTrackName: String, Events: Array<AnimNotifyEvent> = definedExternally): `T$301`
-        fun GetAnimationNotifyTrackNames(AnimationSequence: AnimSequence, TrackNames: Array<String> = definedExternally): `T$302`
-        fun GetAnimationSyncMarkers(AnimationSequence: AnimSequence, Markers: Array<AnimSyncMarker> = definedExternally): `T$303`
-        fun GetAnimationSyncMarkersForTrack(AnimationSequence: AnimSequence, NotifyTrackName: String, Markers: Array<AnimSyncMarker> = definedExternally): `T$304`
-        fun GetAnimationTrackNames(AnimationSequence: AnimSequence, TrackNames: Array<String> = definedExternally): `T$305`
-        fun GetBoneCompressionSettings(AnimationSequence: AnimSequence, CompressionSettings: AnimBoneCompressionSettings = definedExternally): `T$277`
-        fun GetBonePoseForFrame(AnimationSequence: AnimSequence, BoneName: String, Frame: Number, bExtractRootMotion: Boolean, Pose: Transform = definedExternally): `T$278`
-        fun GetBonePoseForTime(AnimationSequence: AnimSequence, BoneName: String, Time: Number, bExtractRootMotion: Boolean, Pose: Transform = definedExternally): `T$278`
-        fun GetBonePosesForFrame(AnimationSequence: AnimSequence, BoneNames: Array<String>, Frame: Number, bExtractRootMotion: Boolean, Poses: Array<Transform> = definedExternally, PreviewMesh: SkeletalMesh = definedExternally): `T$306`
-        fun GetBonePosesForTime(AnimationSequence: AnimSequence, BoneNames: Array<String>, Time: Number, bExtractRootMotion: Boolean, Poses: Array<Transform> = definedExternally, PreviewMesh: SkeletalMesh = definedExternally): `T$307`
-        fun GetCurveCompressionSettings(AnimationSequence: AnimSequence, CompressionSettings: AnimCurveCompressionSettings = definedExternally): `T$281`
-        fun GetFloatKeys(AnimationSequence: AnimSequence, CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Number> = definedExternally): `T$308`
-        fun GetFrameAtTime(AnimationSequence: AnimSequence, Time: Number, Frame: Number = definedExternally): `T$283`
+        fun FindBonePathToRoot(AnimationSequence: AnimSequence, BoneName: String, BonePath: Array<String> = definedExternally): `T$124`
+        fun GetAdditiveAnimationType(AnimationSequence: AnimSequence, AdditiveAnimationType: String /* "AAT_None" | "AAT_LocalSpaceBase" | "AAT_RotationOffsetMeshSpace" | "AAT_MAX" */ = definedExternally): `T$93`
+        fun GetAdditiveBasePoseType(AnimationSequence: AnimSequence, AdditiveBasePoseType: String /* "ABPT_None" | "ABPT_RefPose" | "ABPT_AnimScaled" | "ABPT_AnimFrame" | "ABPT_MAX" */ = definedExternally): `T$94`
+        fun GetAnimationCurveNames(AnimationSequence: AnimSequence, CurveType: String /* "RCT_Float" | "RCT_Vector" | "RCT_Transform" | "RCT_MAX" */, CurveNames: Array<String> = definedExternally): `T$125`
+        fun GetAnimationInterpolationType(AnimationSequence: AnimSequence, InterpolationType: String /* "Linear" | "Step" | "EAnimInterpolationType_MAX" */ = definedExternally): `T$96`
+        fun GetAnimationNotifyEventNames(AnimationSequence: AnimSequence, EventNames: Array<String> = definedExternally): `T$126`
+        fun GetAnimationNotifyEvents(AnimationSequence: AnimSequence, NotifyEvents: Array<AnimNotifyEvent> = definedExternally): `T$127`
+        fun GetAnimationNotifyEventsForTrack(AnimationSequence: AnimSequence, NotifyTrackName: String, Events: Array<AnimNotifyEvent> = definedExternally): `T$128`
+        fun GetAnimationNotifyTrackNames(AnimationSequence: AnimSequence, TrackNames: Array<String> = definedExternally): `T$129`
+        fun GetAnimationSyncMarkers(AnimationSequence: AnimSequence, Markers: Array<AnimSyncMarker> = definedExternally): `T$130`
+        fun GetAnimationSyncMarkersForTrack(AnimationSequence: AnimSequence, NotifyTrackName: String, Markers: Array<AnimSyncMarker> = definedExternally): `T$131`
+        fun GetAnimationTrackNames(AnimationSequence: AnimSequence, TrackNames: Array<String> = definedExternally): `T$132`
+        fun GetBoneCompressionSettings(AnimationSequence: AnimSequence, CompressionSettings: AnimBoneCompressionSettings = definedExternally): `T$104`
+        fun GetBonePoseForFrame(AnimationSequence: AnimSequence, BoneName: String, Frame: Number, bExtractRootMotion: Boolean, Pose: Transform = definedExternally): `T$105`
+        fun GetBonePoseForTime(AnimationSequence: AnimSequence, BoneName: String, Time: Number, bExtractRootMotion: Boolean, Pose: Transform = definedExternally): `T$105`
+        fun GetBonePosesForFrame(AnimationSequence: AnimSequence, BoneNames: Array<String>, Frame: Number, bExtractRootMotion: Boolean, Poses: Array<Transform> = definedExternally, PreviewMesh: SkeletalMesh = definedExternally): `T$133`
+        fun GetBonePosesForTime(AnimationSequence: AnimSequence, BoneNames: Array<String>, Time: Number, bExtractRootMotion: Boolean, Poses: Array<Transform> = definedExternally, PreviewMesh: SkeletalMesh = definedExternally): `T$134`
+        fun GetCurveCompressionSettings(AnimationSequence: AnimSequence, CompressionSettings: AnimCurveCompressionSettings = definedExternally): `T$108`
+        fun GetFloatKeys(AnimationSequence: AnimSequence, CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Number> = definedExternally): `T$135`
+        fun GetFrameAtTime(AnimationSequence: AnimSequence, Time: Number, Frame: Number = definedExternally): `T$110`
         fun GetMetaData(AnimationSequence: AnimSequence, MetaData: Array<AnimMetaData>)
         fun GetMetaDataOfClass(AnimationSequence: AnimSequence, MetaDataClass: UnrealEngineClass, MetaDataOfClass: Array<AnimMetaData>)
-        fun GetNumFrames(AnimationSequence: AnimSequence, NumFrames: Number = definedExternally): `T$284`
-        fun GetRateScale(AnimationSequence: AnimSequence, RateScale: Number = definedExternally): `T$285`
-        fun GetRawTrackData(AnimationSequence: AnimSequence, TrackName: String, PositionKeys: Array<Vector> = definedExternally, RotationKeys: Array<Quat> = definedExternally, ScalingKeys: Array<Vector> = definedExternally): `T$309`
-        fun GetRawTrackPositionData(AnimationSequence: AnimSequence, TrackName: String, PositionData: Array<Vector> = definedExternally): `T$310`
-        fun GetRawTrackRotationData(AnimationSequence: AnimSequence, TrackName: String, RotationData: Array<Quat> = definedExternally): `T$311`
-        fun GetRawTrackScaleData(AnimationSequence: AnimSequence, TrackName: String, ScaleData: Array<Vector> = definedExternally): `T$312`
-        fun GetRootMotionLockType(AnimationSequence: AnimSequence, LockType: String /* "RefPose" | "AnimFirstFrame" | "Zero" | "ERootMotionRootLock_MAX" */ = definedExternally): `T$290`
-        fun GetSequenceLength(AnimationSequence: AnimSequence, Length: Number = definedExternally): `T$291`
-        fun GetTimeAtFrame(AnimationSequence: AnimSequence, Frame: Number, Time: Number = definedExternally): `T$292`
-        fun GetTransformationKeys(AnimationSequence: AnimSequence, CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Transform> = definedExternally): `T$313`
-        fun GetUniqueMarkerNames(AnimationSequence: AnimSequence, MarkerNames: Array<String> = definedExternally): `T$314`
-        fun GetVectorKeys(AnimationSequence: AnimSequence, CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Vector> = definedExternally): `T$315`
+        fun GetNumFrames(AnimationSequence: AnimSequence, NumFrames: Number = definedExternally): `T$111`
+        fun GetRateScale(AnimationSequence: AnimSequence, RateScale: Number = definedExternally): `T$112`
+        fun GetRawTrackData(AnimationSequence: AnimSequence, TrackName: String, PositionKeys: Array<Vector> = definedExternally, RotationKeys: Array<Quat> = definedExternally, ScalingKeys: Array<Vector> = definedExternally): `T$136`
+        fun GetRawTrackPositionData(AnimationSequence: AnimSequence, TrackName: String, PositionData: Array<Vector> = definedExternally): `T$137`
+        fun GetRawTrackRotationData(AnimationSequence: AnimSequence, TrackName: String, RotationData: Array<Quat> = definedExternally): `T$138`
+        fun GetRawTrackScaleData(AnimationSequence: AnimSequence, TrackName: String, ScaleData: Array<Vector> = definedExternally): `T$139`
+        fun GetRootMotionLockType(AnimationSequence: AnimSequence, LockType: String /* "RefPose" | "AnimFirstFrame" | "Zero" | "ERootMotionRootLock_MAX" */ = definedExternally): `T$117`
+        fun GetSequenceLength(AnimationSequence: AnimSequence, Length: Number = definedExternally): `T$118`
+        fun GetTimeAtFrame(AnimationSequence: AnimSequence, Frame: Number, Time: Number = definedExternally): `T$119`
+        fun GetTransformationKeys(AnimationSequence: AnimSequence, CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Transform> = definedExternally): `T$140`
+        fun GetUniqueMarkerNames(AnimationSequence: AnimSequence, MarkerNames: Array<String> = definedExternally): `T$141`
+        fun GetVectorKeys(AnimationSequence: AnimSequence, CurveName: String, Times: Array<Number> = definedExternally, Values: Array<Vector> = definedExternally): `T$142`
         fun IsRootMotionEnabled(AnimationSequence: AnimSequence): Boolean
         fun IsRootMotionLockForced(AnimationSequence: AnimSequence): Boolean
         fun IsValidAnimationSyncMarkerName(AnimationSequence: AnimSequence, MarkerName: String): Boolean
         fun IsValidAnimNotifyTrackName(AnimationSequence: AnimSequence, NotifyTrackName: String): Boolean
         fun IsValidRawAnimationTrackName(AnimationSequence: AnimSequence, TrackName: String): Boolean
-        fun IsValidTime(AnimationSequence: AnimSequence, Time: Number, IsValid: Boolean = definedExternally): `T$296`
+        fun IsValidTime(AnimationSequence: AnimSequence, Time: Number, IsValid: Boolean = definedExternally): `T$123`
         fun RemoveAllAnimationNotifyTracks(AnimationSequence: AnimSequence)
         fun RemoveAllAnimationSyncMarkers(AnimationSequence: AnimSequence)
         fun RemoveAllBoneAnimation(AnimationSequence: AnimSequence)
@@ -7824,7 +7945,9 @@ external open class ConstraintProfileProperties {
     open var ProjectionLinearAlpha: Number
     open var ProjectionAngularAlpha: Number
     open var LinearBreakThreshold: Number
+    open var LinearPlasticityThreshold: Number
     open var AngularBreakThreshold: Number
+    open var AngularPlasticityThreshold: Number
     open var LinearLimit: LinearConstraint
     open var ConeLimit: ConeConstraint
     open var TwistLimit: TwistConstraint
@@ -7835,7 +7958,9 @@ external open class ConstraintProfileProperties {
     open var bEnableProjection: Boolean
     open var bEnableSoftProjection: Boolean
     open var bAngularBreakable: Boolean
+    open var bAngularPlasticity: Boolean
     open var bLinearBreakable: Boolean
+    open var bLinearPlasticity: Boolean
     open fun clone(): ConstraintProfileProperties
 
     companion object {
@@ -8000,6 +8125,12 @@ external open class SolverIterations {
     }
 }
 
+external object EPhysicsAssetSolverType {
+    var RBAN: String /* "RBAN" */
+    var World: String /* "World" */
+    var EPhysicsAssetSolverType_MAX: String /* "EPhysicsAssetSolverType_MAX" */
+}
+
 external open class PhysicsAsset : UObject {
     constructor()
     constructor(Outer: UObject)
@@ -8013,6 +8144,7 @@ external open class PhysicsAsset : UObject {
     open var SkeletalBodySetups: Array<SkeletalBodySetup>
     open var ConstraintSetup: Array<PhysicsConstraintTemplate>
     open var SolverIterations: SolverIterations
+    open var SolverType: String /* "RBAN" | "World" | "EPhysicsAssetSolverType_MAX" */
     open var bNotForDedicatedServer: Boolean
     open var ThumbnailInfo: ThumbnailInfo
     open var BodySetup: Array<BodySetup>
@@ -8197,11 +8329,11 @@ external open class EngineSubsystem : DynamicSubsystem {
     }
 }
 
-external interface `T$316` {
+external interface `T$143` {
     var OutPrimaryAssetIdList: Array<PrimaryAssetId>
 }
 
-external interface `T$317` {
+external interface `T$144` {
     var OutPrimaryAssetIdList: Array<PrimaryAssetId>
 }
 
@@ -8210,7 +8342,7 @@ external open class PrimaryAssetType {
     open fun clone(): PrimaryAssetType
     open fun ToString(): String
     open fun Equal(B: PrimaryAssetType): Boolean
-    open fun GetPrimaryAssetIdList(OutPrimaryAssetIdList: Array<PrimaryAssetId> = definedExternally): `T$316`
+    open fun GetPrimaryAssetIdList(OutPrimaryAssetIdList: Array<PrimaryAssetId> = definedExternally): `T$143`
     open fun IsValidPrimaryAssetType(): Boolean
     open fun NotEqual(B: PrimaryAssetType): Boolean
 
@@ -8219,18 +8351,18 @@ external open class PrimaryAssetType {
         fun C(Other: Any): PrimaryAssetType
         fun ToString(PrimaryAssetType: PrimaryAssetType): String
         fun Equal(A: PrimaryAssetType, B: PrimaryAssetType): Boolean
-        fun GetPrimaryAssetIdList(PrimaryAssetType: PrimaryAssetType, OutPrimaryAssetIdList: Array<PrimaryAssetId> = definedExternally): `T$317`
+        fun GetPrimaryAssetIdList(PrimaryAssetType: PrimaryAssetType, OutPrimaryAssetIdList: Array<PrimaryAssetId> = definedExternally): `T$144`
         fun IsValidPrimaryAssetType(PrimaryAssetType: PrimaryAssetType): Boolean
         fun NotEqual(A: PrimaryAssetType, B: PrimaryAssetType): Boolean
     }
 }
 
-external interface `T$318` {
+external interface `T$145` {
     var OutBundles: Array<String>
     var `$`: Boolean
 }
 
-external interface `T$319` {
+external interface `T$146` {
     var OutBundles: Array<String>
     var `$`: Boolean
 }
@@ -8242,7 +8374,7 @@ external open class PrimaryAssetId {
     open fun ToString(): String
     open fun Equal(B: PrimaryAssetId): Boolean
     open fun GetClassFromPrimaryAssetId(): UnrealEngineClass
-    open fun GetCurrentBundleState(bForceCurrentState: Boolean, OutBundles: Array<String> = definedExternally): `T$318`
+    open fun GetCurrentBundleState(bForceCurrentState: Boolean, OutBundles: Array<String> = definedExternally): `T$145`
     open fun GetObjectFromPrimaryAssetId(): UObject
     open fun GetSoftClassReferenceFromPrimaryAssetId(): Class
     open fun GetSoftObjectReferenceFromPrimaryAssetId(): UObject
@@ -8256,7 +8388,7 @@ external open class PrimaryAssetId {
         fun ToString(PrimaryAssetId: PrimaryAssetId): String
         fun Equal(A: PrimaryAssetId, B: PrimaryAssetId): Boolean
         fun GetClassFromPrimaryAssetId(PrimaryAssetId: PrimaryAssetId): UnrealEngineClass
-        fun GetCurrentBundleState(PrimaryAssetId: PrimaryAssetId, bForceCurrentState: Boolean, OutBundles: Array<String> = definedExternally): `T$319`
+        fun GetCurrentBundleState(PrimaryAssetId: PrimaryAssetId, bForceCurrentState: Boolean, OutBundles: Array<String> = definedExternally): `T$146`
         fun GetObjectFromPrimaryAssetId(PrimaryAssetId: PrimaryAssetId): UObject
         fun GetSoftClassReferenceFromPrimaryAssetId(PrimaryAssetId: PrimaryAssetId): Class
         fun GetSoftObjectReferenceFromPrimaryAssetId(PrimaryAssetId: PrimaryAssetId): UObject
@@ -8652,7 +8784,7 @@ external open class CanvasUVTri {
     }
 }
 
-external interface `T$320` {
+external interface `T$147` {
     var WorldOrigin: Vector
     var WorldDirection: Vector
 }
@@ -8686,7 +8818,7 @@ external open class Canvas : UObject {
     open fun DrawLine(ScreenPositionA: Vector2D, ScreenPositionB: Vector2D, Thickness: Number, RenderColor: LinearColor)
     open fun DrawBox(ScreenPosition: Vector2D, ScreenSize: Vector2D, Thickness: Number, RenderColor: LinearColor)
     open fun DrawBorder(BorderTexture: Texture, BackgroundTexture: Texture, LeftBorderTexture: Texture, RightBorderTexture: Texture, TopBorderTexture: Texture, BottomBorderTexture: Texture, ScreenPosition: Vector2D, ScreenSize: Vector2D, CoordinatePosition: Vector2D, CoordinateSize: Vector2D, RenderColor: LinearColor, BorderScale: Vector2D, BackgroundScale: Vector2D, Rotation: Number, PivotPoint: Vector2D, CornerSize: Vector2D)
-    open fun Deproject(ScreenPosition: Vector2D, WorldOrigin: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$320`
+    open fun Deproject(ScreenPosition: Vector2D, WorldOrigin: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$147`
 
     companion object {
         fun Load(ResourceName: String): Canvas
@@ -8720,16 +8852,16 @@ external open class DebugTextInfo {
     }
 }
 
-external interface `T$321` {
+external interface `T$148` {
     var OutWidth: Number
     var OutHeight: Number
 }
 
-external interface `T$322` {
+external interface `T$149` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$323` {
+external interface `T$150` {
     var WorldPosition: Vector
     var WorldDirection: Vector
 }
@@ -8765,10 +8897,10 @@ external open class HUD(InWorld: World, Location: Vector = definedExternally, Ro
     open fun Project(Location: Vector): Vector
     open fun PreviousDebugTarget()
     open fun NextDebugTarget()
-    open fun GetTextSize(text: String, OutWidth: Number = definedExternally, OutHeight: Number = definedExternally, Font: Font = definedExternally, Scale: Number = definedExternally): `T$321`
+    open fun GetTextSize(text: String, OutWidth: Number = definedExternally, OutHeight: Number = definedExternally, Font: Font = definedExternally, Scale: Number = definedExternally): `T$148`
     open fun GetOwningPlayerController(): PlayerController
     open fun GetOwningPawn(): Pawn
-    open fun GetActorsInSelectionRectangle(ClassFilter: UnrealEngineClass, FirstPoint: Vector2D, SecondPoint: Vector2D, OutActors: Array<Actor> = definedExternally, bIncludeNonCollidingComponents: Boolean = definedExternally, bActorMustBeFullyEnclosed: Boolean = definedExternally): `T$322`
+    open fun GetActorsInSelectionRectangle(ClassFilter: UnrealEngineClass, FirstPoint: Vector2D, SecondPoint: Vector2D, OutActors: Array<Actor> = definedExternally, bIncludeNonCollidingComponents: Boolean = definedExternally, bActorMustBeFullyEnclosed: Boolean = definedExternally): `T$149`
     open fun DrawTextureSimple(Texture: Texture, ScreenX: Number, ScreenY: Number, Scale: Number, bScalePosition: Boolean)
     open fun DrawTexture(Texture: Texture, ScreenX: Number, ScreenY: Number, ScreenW: Number, ScreenH: Number, TextureU: Number, TextureV: Number, TextureUWidth: Number, TextureVHeight: Number, TintColor: LinearColor, BlendMode: String /* "BLEND_Opaque" | "BLEND_Masked" | "BLEND_Translucent" | "BLEND_Additive" | "BLEND_Modulate" | "BLEND_AlphaComposite" | "BLEND_AlphaHoldout" | "BLEND_MAX" */, Scale: Number, bScalePosition: Boolean, Rotation: Number, RotPivot: Vector2D)
     open fun DrawString(text: String, TextColor: LinearColor, ScreenX: Number, ScreenY: Number, Font: Font, Scale: Number, bScalePosition: Boolean)
@@ -8777,7 +8909,7 @@ external open class HUD(InWorld: World, Location: Vector = definedExternally, Ro
     open fun DrawMaterialSimple(Material: MaterialInterface, ScreenX: Number, ScreenY: Number, ScreenW: Number, ScreenH: Number, Scale: Number, bScalePosition: Boolean)
     open fun DrawMaterial(Material: MaterialInterface, ScreenX: Number, ScreenY: Number, ScreenW: Number, ScreenH: Number, MaterialU: Number, MaterialV: Number, MaterialUWidth: Number, MaterialVHeight: Number, Scale: Number, bScalePosition: Boolean, Rotation: Number, RotPivot: Vector2D)
     open fun DrawLine(StartScreenX: Number, StartScreenY: Number, EndScreenX: Number, EndScreenY: Number, LineColor: LinearColor, LineThickness: Number)
-    open fun Deproject(ScreenX: Number, ScreenY: Number, WorldPosition: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$323`
+    open fun Deproject(ScreenX: Number, ScreenY: Number, WorldPosition: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$150`
     open fun AddHitBox(Position: Vector2D, Size: Vector2D, InName: String, bConsumesInput: Boolean, Priority: Number)
     open fun AddDebugText(DebugText: String, SrcActor: Actor, Duration: Number, Offset: Vector, DesiredOffset: Vector, TextColor: Color, bSkipOverwriteCheck: Boolean, bAbsoluteLocation: Boolean, bKeepAttachedToActor: Boolean, InFont: Font, FontScale: Number, bDrawShadow: Boolean)
 
@@ -8813,6 +8945,12 @@ external object EDepthOfFieldMethod {
     var DOFM_Gaussian: String /* "DOFM_Gaussian" */
     var DOFM_CircleDOF: String /* "DOFM_CircleDOF" */
     var DOFM_MAX: String /* "DOFM_MAX" */
+}
+
+external object ETemperatureMethod {
+    var TEMP_WhiteBalance: String /* "TEMP_WhiteBalance" */
+    var TEMP_ColorTemperature: String /* "TEMP_ColorTemperature" */
+    var TEMP_MAX: String /* "TEMP_MAX" */
 }
 
 external open class TextureCube : Texture {
@@ -8877,6 +9015,7 @@ external open class WeightedBlendables {
 }
 
 external open class PostProcessSettings {
+    open var bOverride_TemperatureType: Boolean
     open var bOverride_WhiteTemp: Boolean
     open var bOverride_WhiteTint: Boolean
     open var bOverride_ColorSaturation: Boolean
@@ -9058,10 +9197,15 @@ external open class PostProcessSettings {
     open var bOverride_RayTracingGISamplesPerPixel: Boolean
     open var bOverride_PathTracingMaxBounces: Boolean
     open var bOverride_PathTracingSamplesPerPixel: Boolean
+    open var bOverride_PathTracingFilterWidth: Boolean
+    open var bOverride_PathTracingEnableEmissive: Boolean
+    open var bOverride_PathTracingMaxPathExposure: Boolean
+    open var bOverride_PathTracingEnableDenoiser: Boolean
     open var bMobileHQGaussian: Boolean
     open var BloomMethod: String /* "BM_SOG" | "BM_FFT" | "BM_MAX" */
     open var AutoExposureMethod: String /* "AEM_Histogram" | "AEM_Basic" | "AEM_Manual" | "AEM_MAX" */
     open var DepthOfFieldMethod: String /* "DOFM_BokehDOF" | "DOFM_Gaussian" | "DOFM_CircleDOF" | "DOFM_MAX" */
+    open var TemperatureType: String /* "TEMP_WhiteBalance" | "TEMP_ColorTemperature" | "TEMP_MAX" */
     open var WhiteTemp: Number
     open var WhiteTint: Number
     open var ColorSaturation: Vector4
@@ -9240,6 +9384,10 @@ external open class PostProcessSettings {
     open var RayTracingTranslucencyRefraction: Boolean
     open var PathTracingMaxBounces: Number
     open var PathTracingSamplesPerPixel: Number
+    open var PathTracingFilterWidth: Number
+    open var PathTracingEnableEmissive: Boolean
+    open var PathTracingMaxPathExposure: Number
+    open var PathTracingEnableDenoiser: Boolean
     open var LPVFadeRange: Number
     open var LPVDirectionalOcclusionFadeRange: Number
     open var ScreenPercentage: Number
@@ -9253,7 +9401,7 @@ external open class PostProcessSettings {
     }
 }
 
-external interface `T$324` {
+external interface `T$151` {
     var ViewMatrix: Matrix
     var ProjectionMatrix: Matrix
     var ViewProjectionMatrix: Matrix
@@ -9275,12 +9423,12 @@ external open class MinimalViewInfo {
     open var PostProcessSettings: PostProcessSettings
     open var OffCenterProjectionOffset: Vector2D
     open fun clone(): MinimalViewInfo
-    open fun GetViewProjectionMatrix(ViewMatrix: Matrix = definedExternally, ProjectionMatrix: Matrix = definedExternally, ViewProjectionMatrix: Matrix = definedExternally): `T$324`
+    open fun GetViewProjectionMatrix(ViewMatrix: Matrix = definedExternally, ProjectionMatrix: Matrix = definedExternally, ViewProjectionMatrix: Matrix = definedExternally): `T$151`
 
     companion object {
         fun C(Other: UObject): MinimalViewInfo
         fun C(Other: Any): MinimalViewInfo
-        fun GetViewProjectionMatrix(DesiredView: MinimalViewInfo, ViewMatrix: Matrix = definedExternally, ProjectionMatrix: Matrix = definedExternally, ViewProjectionMatrix: Matrix = definedExternally): `T$324`
+        fun GetViewProjectionMatrix(DesiredView: MinimalViewInfo, ViewMatrix: Matrix = definedExternally, ProjectionMatrix: Matrix = definedExternally, ViewProjectionMatrix: Matrix = definedExternally): `T$151`
     }
 }
 
@@ -9307,12 +9455,12 @@ external open class TViewTarget {
     }
 }
 
-external interface `T$325` {
+external interface `T$152` {
     var PostProcessBlendWeight: Number
     var PostProcessSettings: PostProcessSettings
 }
 
-external interface `T$326` {
+external interface `T$153` {
     var NewViewLocation: Vector
     var NewViewRotation: Rotator
     var NewFOV: Number
@@ -9332,8 +9480,8 @@ external open class CameraModifier : UObject {
     open fun GetViewTarget(): Actor
     open fun EnableModifier()
     open fun DisableModifier(bImmediate: Boolean)
-    open fun BlueprintModifyPostProcess(DeltaTime: Number, PostProcessBlendWeight: Number = definedExternally, PostProcessSettings: PostProcessSettings = definedExternally): `T$325`
-    open fun BlueprintModifyCamera(DeltaTime: Number, ViewLocation: Vector, ViewRotation: Rotator, FOV: Number, NewViewLocation: Vector = definedExternally, NewViewRotation: Rotator = definedExternally, NewFOV: Number = definedExternally): `T$326`
+    open fun BlueprintModifyPostProcess(DeltaTime: Number, PostProcessBlendWeight: Number = definedExternally, PostProcessSettings: PostProcessSettings = definedExternally): `T$152`
+    open fun BlueprintModifyCamera(DeltaTime: Number, ViewLocation: Vector, ViewRotation: Rotator, FOV: Number, NewViewLocation: Vector = definedExternally, NewViewRotation: Rotator = definedExternally, NewFOV: Number = definedExternally): `T$153`
 
     companion object {
         fun Load(ResourceName: String): CameraModifier
@@ -10159,32 +10307,32 @@ external object ETrailWidthMode {
     var ETrailWidthMode_MAX: String /* "ETrailWidthMode_MAX" */
 }
 
-external interface `T$327` {
+external interface `T$154` {
     var OutTangentPoint: Vector
     var `$`: Boolean
 }
 
-external interface `T$328` {
+external interface `T$155` {
     var OutTargetStrength: Number
     var `$`: Boolean
 }
 
-external interface `T$329` {
+external interface `T$156` {
     var OutTargetPoint: Vector
     var `$`: Boolean
 }
 
-external interface `T$330` {
+external interface `T$157` {
     var OutSourceStrength: Number
     var `$`: Boolean
 }
 
-external interface `T$331` {
+external interface `T$158` {
     var OutSourcePoint: Vector
     var `$`: Boolean
 }
 
-external interface `T$332` {
+external interface `T$159` {
     var OutEndPoint: Vector
     var `$`: Boolean
 }
@@ -10241,13 +10389,13 @@ external open class ParticleSystemComponent : FXSystemComponent {
     open fun SetAutoAttachParams(Parent: SceneComponent, SocketName: String, LocationType: String /* "KeepRelativeOffset" | "KeepWorldPosition" | "SnapToTarget" | "SnapToTargetIncludingScale" | "EAttachLocation_MAX" */)
     open fun GetNumActiveParticles(): Number
     open fun GetNamedMaterial(InName: String): MaterialInterface
-    open fun GetBeamTargetTangent(EmitterIndex: Number, TargetIndex: Number, OutTangentPoint: Vector = definedExternally): `T$327`
-    open fun GetBeamTargetStrength(EmitterIndex: Number, TargetIndex: Number, OutTargetStrength: Number = definedExternally): `T$328`
-    open fun GetBeamTargetPoint(EmitterIndex: Number, TargetIndex: Number, OutTargetPoint: Vector = definedExternally): `T$329`
-    open fun GetBeamSourceTangent(EmitterIndex: Number, SourceIndex: Number, OutTangentPoint: Vector = definedExternally): `T$327`
-    open fun GetBeamSourceStrength(EmitterIndex: Number, SourceIndex: Number, OutSourceStrength: Number = definedExternally): `T$330`
-    open fun GetBeamSourcePoint(EmitterIndex: Number, SourceIndex: Number, OutSourcePoint: Vector = definedExternally): `T$331`
-    open fun GetBeamEndPoint(EmitterIndex: Number, OutEndPoint: Vector = definedExternally): `T$332`
+    open fun GetBeamTargetTangent(EmitterIndex: Number, TargetIndex: Number, OutTangentPoint: Vector = definedExternally): `T$154`
+    open fun GetBeamTargetStrength(EmitterIndex: Number, TargetIndex: Number, OutTargetStrength: Number = definedExternally): `T$155`
+    open fun GetBeamTargetPoint(EmitterIndex: Number, TargetIndex: Number, OutTargetPoint: Vector = definedExternally): `T$156`
+    open fun GetBeamSourceTangent(EmitterIndex: Number, SourceIndex: Number, OutTangentPoint: Vector = definedExternally): `T$154`
+    open fun GetBeamSourceStrength(EmitterIndex: Number, SourceIndex: Number, OutSourceStrength: Number = definedExternally): `T$157`
+    open fun GetBeamSourcePoint(EmitterIndex: Number, SourceIndex: Number, OutSourcePoint: Vector = definedExternally): `T$158`
+    open fun GetBeamEndPoint(EmitterIndex: Number, OutEndPoint: Vector = definedExternally): `T$159`
     open fun GenerateParticleEvent(InEventName: String, InEmitterTime: Number, InLocation: Vector, InDirection: Vector, InVelocity: Vector)
     open fun EndTrails()
     open fun CreateNamedDynamicMaterialInstance(InName: String, SourceMaterial: MaterialInterface): MaterialInstanceDynamic
@@ -10339,48 +10487,66 @@ external open class EmitterCameraLensEffectBase(InWorld: World, Location: Vector
     }
 }
 
-external open class CameraShakeBase : UObject {
+external open class CameraShakePattern : UObject {
     constructor()
     constructor(Outer: UObject)
-    open var bSingleInstance: Boolean
-    open var ShakeScale: Number
-    open var CameraManager: PlayerCameraManager
 
     companion object {
-        fun Load(ResourceName: String): CameraShakeBase
-        fun Find(Outer: UObject, ResourceName: String): CameraShakeBase
-        fun GetDefaultObject(): CameraShakeBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraShakeBase
-        fun C(Other: UObject): CameraShakeBase
-        fun C(Other: Any): CameraShakeBase
+        fun Load(ResourceName: String): CameraShakePattern
+        fun Find(Outer: UObject, ResourceName: String): CameraShakePattern
+        fun GetDefaultObject(): CameraShakePattern
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraShakePattern
+        fun C(Other: UObject): CameraShakePattern
+        fun C(Other: Any): CameraShakePattern
     }
 }
 
-external open class ActiveCameraShakeInfo {
-    open var ShakeInstance: CameraShakeBase
-    open var ShakeSource: Any
-    open fun clone(): ActiveCameraShakeInfo
+external object EInitialOscillatorOffset {
+    var EOO_OffsetRandom: String /* "EOO_OffsetRandom" */
+    var EOO_OffsetZero: String /* "EOO_OffsetZero" */
+    var EOO_MAX: String /* "EOO_MAX" */
+}
+
+external object EOscillatorWaveform {
+    var SineWave: String /* "SineWave" */
+    var PerlinNoise: String /* "PerlinNoise" */
+    var EOscillatorWaveform_MAX: String /* "EOscillatorWaveform_MAX" */
+}
+
+external open class FOscillator {
+    open var Amplitude: Number
+    open var Frequency: Number
+    open var InitialOffset: String /* "EOO_OffsetRandom" | "EOO_OffsetZero" | "EOO_MAX" */
+    open var Waveform: String /* "SineWave" | "PerlinNoise" | "EOscillatorWaveform_MAX" */
+    open fun clone(): FOscillator
 
     companion object {
-        fun C(Other: UObject): ActiveCameraShakeInfo
-        fun C(Other: Any): ActiveCameraShakeInfo
+        fun C(Other: UObject): FOscillator
+        fun C(Other: Any): FOscillator
     }
 }
 
-external open class CameraModifier_CameraShake : CameraModifier {
-    constructor()
-    constructor(Outer: UObject)
-    open var ActiveShakes: Array<ActiveCameraShakeInfo>
-    open var ExpiredPooledShakesMap: Any
-    open var SplitScreenShakeScale: Number
+external open class ROscillator {
+    open var Pitch: FOscillator
+    open var Yaw: FOscillator
+    open var Roll: FOscillator
+    open fun clone(): ROscillator
 
     companion object {
-        fun Load(ResourceName: String): CameraModifier_CameraShake
-        fun Find(Outer: UObject, ResourceName: String): CameraModifier_CameraShake
-        fun GetDefaultObject(): CameraModifier_CameraShake
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraModifier_CameraShake
-        fun C(Other: UObject): CameraModifier_CameraShake
-        fun C(Other: Any): CameraModifier_CameraShake
+        fun C(Other: UObject): ROscillator
+        fun C(Other: Any): ROscillator
+    }
+}
+
+external open class VOscillator {
+    open var X: FOscillator
+    open var Y: FOscillator
+    open var Z: FOscillator
+    open fun clone(): VOscillator
+
+    companion object {
+        fun C(Other: UObject): VOscillator
+        fun C(Other: Any): VOscillator
     }
 }
 
@@ -10488,6 +10654,965 @@ external open class CameraAnim : UObject {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraAnim
         fun C(Other: UObject): CameraAnim
         fun C(Other: Any): CameraAnim
+    }
+}
+
+external open class MovieSceneSignedObject : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Signature: Guid
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneSignedObject
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneSignedObject
+        fun GetDefaultObject(): MovieSceneSignedObject
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneSignedObject
+        fun C(Other: UObject): MovieSceneSignedObject
+        fun C(Other: Any): MovieSceneSignedObject
+    }
+}
+
+external open class MovieSceneEvaluationTemplateSerialNumber {
+    open var Value: Any
+    open fun clone(): MovieSceneEvaluationTemplateSerialNumber
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationTemplateSerialNumber
+        fun C(Other: Any): MovieSceneEvaluationTemplateSerialNumber
+    }
+}
+
+external open class MovieSceneTrackIdentifier {
+    open var Value: Any
+    open fun clone(): MovieSceneTrackIdentifier
+
+    companion object {
+        fun C(Other: UObject): MovieSceneTrackIdentifier
+        fun C(Other: Any): MovieSceneTrackIdentifier
+    }
+}
+
+external open class MovieSceneTemplateGenerationLedger {
+    open var LastTrackIdentifier: MovieSceneTrackIdentifier
+    open var TrackSignatureToTrackIdentifier: Any
+    open var SubSectionRanges: Any
+    open fun clone(): MovieSceneTemplateGenerationLedger
+
+    companion object {
+        fun C(Other: UObject): MovieSceneTemplateGenerationLedger
+        fun C(Other: Any): MovieSceneTemplateGenerationLedger
+    }
+}
+
+external open class MovieSceneEvaluationTemplate {
+    open var Tracks: Any
+    open var SequenceSignature: Guid
+    open var TemplateSerialNumber: MovieSceneEvaluationTemplateSerialNumber
+    open var TemplateLedger: MovieSceneTemplateGenerationLedger
+    open fun clone(): MovieSceneEvaluationTemplate
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationTemplate
+        fun C(Other: Any): MovieSceneEvaluationTemplate
+    }
+}
+
+external open class MovieSceneSequenceID {
+    open var Value: Any
+    open fun clone(): MovieSceneSequenceID
+
+    companion object {
+        fun C(Other: UObject): MovieSceneSequenceID
+        fun C(Other: Any): MovieSceneSequenceID
+    }
+}
+
+external open class MovieSceneSequenceHierarchyNode {
+    open var ParentID: MovieSceneSequenceID
+    open var Children: Array<MovieSceneSequenceID>
+    open fun clone(): MovieSceneSequenceHierarchyNode
+
+    companion object {
+        fun C(Other: UObject): MovieSceneSequenceHierarchyNode
+        fun C(Other: Any): MovieSceneSequenceHierarchyNode
+    }
+}
+
+external open class MovieSceneSubSequenceTree {
+    open fun clone(): MovieSceneSubSequenceTree
+
+    companion object {
+        fun C(Other: UObject): MovieSceneSubSequenceTree
+        fun C(Other: Any): MovieSceneSubSequenceTree
+    }
+}
+
+external open class MovieSceneSequenceHierarchy {
+    open var RootNode: MovieSceneSequenceHierarchyNode
+    open var Tree: MovieSceneSubSequenceTree
+    open var SubSequences: Any
+    open var Hierarchy: Any
+    open fun clone(): MovieSceneSequenceHierarchy
+
+    companion object {
+        fun C(Other: UObject): MovieSceneSequenceHierarchy
+        fun C(Other: Any): MovieSceneSequenceHierarchy
+    }
+}
+
+external open class MovieSceneEvaluationFieldEntityTree {
+    open fun clone(): MovieSceneEvaluationFieldEntityTree
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationFieldEntityTree
+        fun C(Other: Any): MovieSceneEvaluationFieldEntityTree
+    }
+}
+
+external open class MovieSceneEvaluationFieldEntityKey {
+    open var EntityOwner: Any
+    open var EntityID: Any
+    open fun clone(): MovieSceneEvaluationFieldEntityKey
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationFieldEntityKey
+        fun C(Other: Any): MovieSceneEvaluationFieldEntityKey
+    }
+}
+
+external open class MovieSceneEvaluationFieldEntity {
+    open var Key: MovieSceneEvaluationFieldEntityKey
+    open var SharedMetaDataIndex: Number
+    open fun clone(): MovieSceneEvaluationFieldEntity
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationFieldEntity
+        fun C(Other: Any): MovieSceneEvaluationFieldEntity
+    }
+}
+
+external interface `T$160` {
+    var Numerator: Number
+    var Denominator: Number
+}
+
+external open class FrameRate {
+    open var Numerator: Number
+    open var Denominator: Number
+    open fun clone(): FrameRate
+    open fun BreakFrameRate(Numerator: Number = definedExternally, Denominator: Number = definedExternally): `T$160`
+    open fun FrameRatetoSeconds(): Number
+    open fun IsValid(): Boolean
+    open fun IsMultipleOf(OtherFramerate: FrameRate): Boolean
+
+    companion object {
+        fun C(Other: UObject): FrameRate
+        fun C(Other: Any): FrameRate
+        fun BreakFrameRate(InFrameRate: FrameRate, Numerator: Number = definedExternally, Denominator: Number = definedExternally): `T$160`
+        fun FrameRatetoSeconds(InFrameRate: FrameRate): Number
+        fun IsValid(InFrameRate: FrameRate): Boolean
+        fun IsMultipleOf(InFrameRate: FrameRate, OtherFramerate: FrameRate): Boolean
+        fun MakeFrameRate(Numerator: Number, Denominator: Number): FrameRate
+        fun GetTimecodeFrameRate(): FrameRate
+    }
+}
+
+external open class FrameTime {
+    open var FrameNumber: FrameNumber
+    open var SubFrame: Number
+    open fun clone(): FrameTime
+    open fun SnapFrameTime(SourceRate: FrameRate, SnapToRate: FrameRate): FrameTime
+    open fun TransformFrameTime(SourceRate: FrameRate, DestinationRate: FrameRate): FrameTime
+
+    companion object {
+        fun C(Other: UObject): FrameTime
+        fun C(Other: Any): FrameTime
+        fun SnapFrameTime(SourceTime: FrameTime, SourceRate: FrameRate, SnapToRate: FrameRate): FrameTime
+        fun TransformFrameTime(SourceTime: FrameTime, SourceRate: FrameRate, DestinationRate: FrameRate): FrameTime
+        fun Multiply_SecondsFrameRate(TimeInSeconds: Number, FrameRate: FrameRate): FrameTime
+    }
+}
+
+external interface `T$161` {
+    var Frame: FrameNumber
+    var FrameRate: FrameRate
+    var SubFrame: Number
+}
+
+external open class QualifiedFrameTime {
+    open var Time: FrameTime
+    open var Rate: FrameRate
+    open fun clone(): QualifiedFrameTime
+    open fun BreakQualifiedFrameTime(Frame: FrameNumber = definedExternally, FrameRate: FrameRate = definedExternally, SubFrame: Number = definedExternally): `T$161`
+    open fun QualifiedFrameTimetoSeconds(): Number
+
+    companion object {
+        fun C(Other: UObject): QualifiedFrameTime
+        fun C(Other: Any): QualifiedFrameTime
+        fun BreakQualifiedFrameTime(InFrameTime: QualifiedFrameTime, Frame: FrameNumber = definedExternally, FrameRate: FrameRate = definedExternally, SubFrame: Number = definedExternally): `T$161`
+        fun QualifiedFrameTimetoSeconds(InFrameTime: QualifiedFrameTime): Number
+    }
+}
+
+external open class FrameNumber {
+    open var Value: Number
+    open fun clone(): FrameNumber
+    open fun MakeQualifiedFrameTime(FrameRate: FrameRate, SubFrame: Number): QualifiedFrameTime
+    open fun Add_FrameNumberFrameNumber(B: FrameNumber): FrameNumber
+    open fun Add_FrameNumberInteger(B: Number): FrameNumber
+    open fun FrameNumbertoInteger(): Number
+    open fun Divide_FrameNumberInteger(B: Number): FrameNumber
+    open fun Multiply_FrameNumberInteger(B: Number): FrameNumber
+    open fun Subtract_FrameNumberFrameNumber(B: FrameNumber): FrameNumber
+    open fun Subtract_FrameNumberInteger(B: Number): FrameNumber
+
+    companion object {
+        fun C(Other: UObject): FrameNumber
+        fun C(Other: Any): FrameNumber
+        fun MakeQualifiedFrameTime(Frame: FrameNumber, FrameRate: FrameRate, SubFrame: Number): QualifiedFrameTime
+        fun Add_FrameNumberFrameNumber(A: FrameNumber, B: FrameNumber): FrameNumber
+        fun Add_FrameNumberInteger(A: FrameNumber, B: Number): FrameNumber
+        fun FrameNumbertoInteger(InFrameNumber: FrameNumber): Number
+        fun Divide_FrameNumberInteger(A: FrameNumber, B: Number): FrameNumber
+        fun Multiply_FrameNumberInteger(A: FrameNumber, B: Number): FrameNumber
+        fun Subtract_FrameNumberFrameNumber(A: FrameNumber, B: FrameNumber): FrameNumber
+        fun Subtract_FrameNumberInteger(A: FrameNumber, B: Number): FrameNumber
+    }
+}
+
+external object ESectionEvaluationFlags {
+    var None: String /* "None" */
+    var PreRoll: String /* "PreRoll" */
+    var PostRoll: String /* "PostRoll" */
+    var ESectionEvaluationFlags_MAX: String /* "ESectionEvaluationFlags_MAX" */
+}
+
+external open class MovieSceneEvaluationFieldEntityMetaData {
+    open var OverrideBoundPropertyPath: String
+    open var ForcedTime: FrameNumber
+    open var Flags: String /* "None" | "PreRoll" | "PostRoll" | "ESectionEvaluationFlags_MAX" */
+    open var bEvaluateInSequencePreRoll: Boolean
+    open var bEvaluateInSequencePostRoll: Boolean
+    open fun clone(): MovieSceneEvaluationFieldEntityMetaData
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationFieldEntityMetaData
+        fun C(Other: Any): MovieSceneEvaluationFieldEntityMetaData
+    }
+}
+
+external open class MovieSceneEvaluationFieldSharedEntityMetaData {
+    open var ObjectBindingID: Guid
+    open fun clone(): MovieSceneEvaluationFieldSharedEntityMetaData
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationFieldSharedEntityMetaData
+        fun C(Other: Any): MovieSceneEvaluationFieldSharedEntityMetaData
+    }
+}
+
+external open class MovieSceneEntityComponentField {
+    open var PersistentEntityTree: MovieSceneEvaluationFieldEntityTree
+    open var OneShotEntityTree: MovieSceneEvaluationFieldEntityTree
+    open var Entities: Array<MovieSceneEvaluationFieldEntity>
+    open var EntityMetaData: Array<MovieSceneEvaluationFieldEntityMetaData>
+    open var SharedMetaData: Array<MovieSceneEvaluationFieldSharedEntityMetaData>
+    open fun clone(): MovieSceneEntityComponentField
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEntityComponentField
+        fun C(Other: Any): MovieSceneEntityComponentField
+    }
+}
+
+external open class MovieSceneFrameRange {
+    open fun clone(): MovieSceneFrameRange
+
+    companion object {
+        fun C(Other: UObject): MovieSceneFrameRange
+        fun C(Other: Any): MovieSceneFrameRange
+    }
+}
+
+external open class MovieSceneEvaluationGroupLUTIndex {
+    open var NumInitPtrs: Number
+    open var NumEvalPtrs: Number
+    open fun clone(): MovieSceneEvaluationGroupLUTIndex
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationGroupLUTIndex
+        fun C(Other: Any): MovieSceneEvaluationGroupLUTIndex
+    }
+}
+
+external open class MovieSceneEvaluationFieldTrackPtr {
+    open var SequenceID: MovieSceneSequenceID
+    open var TrackIdentifier: MovieSceneTrackIdentifier
+    open fun clone(): MovieSceneEvaluationFieldTrackPtr
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationFieldTrackPtr
+        fun C(Other: Any): MovieSceneEvaluationFieldTrackPtr
+    }
+}
+
+external open class MovieSceneFieldEntry_EvaluationTrack {
+    open var TrackPtr: MovieSceneEvaluationFieldTrackPtr
+    open var NumChildren: Any
+    open fun clone(): MovieSceneFieldEntry_EvaluationTrack
+
+    companion object {
+        fun C(Other: UObject): MovieSceneFieldEntry_EvaluationTrack
+        fun C(Other: Any): MovieSceneFieldEntry_EvaluationTrack
+    }
+}
+
+external open class MovieSceneFieldEntry_ChildTemplate {
+    open var ChildIndex: Any
+    open var Flags: String /* "None" | "PreRoll" | "PostRoll" | "ESectionEvaluationFlags_MAX" */
+    open var ForcedTime: FrameNumber
+    open fun clone(): MovieSceneFieldEntry_ChildTemplate
+
+    companion object {
+        fun C(Other: UObject): MovieSceneFieldEntry_ChildTemplate
+        fun C(Other: Any): MovieSceneFieldEntry_ChildTemplate
+    }
+}
+
+external open class MovieSceneEvaluationGroup {
+    open var LUTIndices: Array<MovieSceneEvaluationGroupLUTIndex>
+    open var TrackLUT: Array<MovieSceneFieldEntry_EvaluationTrack>
+    open var SectionLUT: Array<MovieSceneFieldEntry_ChildTemplate>
+    open fun clone(): MovieSceneEvaluationGroup
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationGroup
+        fun C(Other: Any): MovieSceneEvaluationGroup
+    }
+}
+
+external open class MovieSceneEvaluationKey {
+    open var SequenceID: MovieSceneSequenceID
+    open var TrackIdentifier: MovieSceneTrackIdentifier
+    open var SectionIndex: Any
+    open fun clone(): MovieSceneEvaluationKey
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationKey
+        fun C(Other: Any): MovieSceneEvaluationKey
+    }
+}
+
+external open class MovieSceneOrderedEvaluationKey {
+    open var Key: MovieSceneEvaluationKey
+    open var SetupIndex: Any
+    open var TearDownIndex: Any
+    open fun clone(): MovieSceneOrderedEvaluationKey
+
+    companion object {
+        fun C(Other: UObject): MovieSceneOrderedEvaluationKey
+        fun C(Other: Any): MovieSceneOrderedEvaluationKey
+    }
+}
+
+external open class MovieSceneEvaluationMetaData {
+    open var ActiveSequences: Array<MovieSceneSequenceID>
+    open var ActiveEntities: Array<MovieSceneOrderedEvaluationKey>
+    open fun clone(): MovieSceneEvaluationMetaData
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationMetaData
+        fun C(Other: Any): MovieSceneEvaluationMetaData
+    }
+}
+
+external open class MovieSceneEvaluationField {
+    open var Signature: Guid
+    open var Ranges: Array<MovieSceneFrameRange>
+    open var Groups: Array<MovieSceneEvaluationGroup>
+    open var MetaData: Array<MovieSceneEvaluationMetaData>
+    open fun clone(): MovieSceneEvaluationField
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEvaluationField
+        fun C(Other: Any): MovieSceneEvaluationField
+    }
+}
+
+external open class MovieSceneSequenceCompilerMaskStruct {
+    open var bHierarchy: Boolean
+    open var bEvaluationTemplate: Boolean
+    open var bEvaluationTemplateField: Boolean
+    open var bEntityComponentField: Boolean
+    open fun clone(): MovieSceneSequenceCompilerMaskStruct
+
+    companion object {
+        fun C(Other: UObject): MovieSceneSequenceCompilerMaskStruct
+        fun C(Other: Any): MovieSceneSequenceCompilerMaskStruct
+    }
+}
+
+external object EMovieSceneSequenceFlags {
+    var None: String /* "None" */
+    var Volatile: String /* "Volatile" */
+    var BlockingEvaluation: String /* "BlockingEvaluation" */
+    var InheritedFlags: String /* "InheritedFlags" */
+    var EMovieSceneSequenceFlags_MAX: String /* "EMovieSceneSequenceFlags_MAX" */
+}
+
+external open class MovieSceneCompiledData : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var EvaluationTemplate: MovieSceneEvaluationTemplate
+    open var Hierarchy: MovieSceneSequenceHierarchy
+    open var EntityComponentField: MovieSceneEntityComponentField
+    open var TrackTemplateField: MovieSceneEvaluationField
+    open var DeterminismFences: Array<FrameTime>
+    open var CompiledSignature: Guid
+    open var CompilerVersion: Guid
+    open var AccumulatedMask: MovieSceneSequenceCompilerMaskStruct
+    open var AllocatedMask: MovieSceneSequenceCompilerMaskStruct
+    open var AccumulatedFlags: String /* "None" | "Volatile" | "BlockingEvaluation" | "InheritedFlags" | "EMovieSceneSequenceFlags_MAX" */
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneCompiledData
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneCompiledData
+        fun GetDefaultObject(): MovieSceneCompiledData
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneCompiledData
+        fun C(Other: UObject): MovieSceneCompiledData
+        fun C(Other: Any): MovieSceneCompiledData
+    }
+}
+
+external object EMovieSceneCompletionMode {
+    var KeepState: String /* "KeepState" */
+    var RestoreState: String /* "RestoreState" */
+    var ProjectDefault: String /* "ProjectDefault" */
+    var EMovieSceneCompletionMode_MAX: String /* "EMovieSceneCompletionMode_MAX" */
+}
+
+external object EMovieSceneObjectBindingSpace {
+    var Local: String /* "Local" */
+    var Root: String /* "Root" */
+    var Unused: String /* "Unused" */
+    var EMovieSceneObjectBindingSpace_MAX: String /* "EMovieSceneObjectBindingSpace_MAX" */
+}
+
+external open class MovieSceneObjectBindingID {
+    open var Guid: Guid
+    open var SequenceID: Number
+    open var ResolveParentIndex: Number
+    open var Space: String /* "Local" | "Root" | "Unused" | "EMovieSceneObjectBindingSpace_MAX" */
+    open fun clone(): MovieSceneObjectBindingID
+
+    companion object {
+        fun C(Other: UObject): MovieSceneObjectBindingID
+        fun C(Other: Any): MovieSceneObjectBindingID
+    }
+}
+
+external open class MovieSceneSequence : MovieSceneSignedObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var CompiledData: MovieSceneCompiledData
+    open var DefaultCompletionMode: String /* "KeepState" | "RestoreState" | "ProjectDefault" | "EMovieSceneCompletionMode_MAX" */
+    open var bParentContextsAreSignificant: Boolean
+    open var bPlayableDirectly: Boolean
+    open var SequenceFlags: String /* "None" | "Volatile" | "BlockingEvaluation" | "InheritedFlags" | "EMovieSceneSequenceFlags_MAX" */
+    open fun FindBindingsByTag(InBindingName: String): Array<MovieSceneObjectBindingID>
+    open fun FindBindingByTag(InBindingName: String): MovieSceneObjectBindingID
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneSequence
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneSequence
+        fun GetDefaultObject(): MovieSceneSequence
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneSequence
+        fun C(Other: UObject): MovieSceneSequence
+        fun C(Other: Any): MovieSceneSequence
+    }
+}
+
+external open class Timecode {
+    open var Hours: Number
+    open var Minutes: Number
+    open var Seconds: Number
+    open var Frames: Number
+    open var bDropFrameFormat: Boolean
+    open fun clone(): Timecode
+    open fun TimecodetoString(bForceSignDisplay: Boolean): String
+
+    companion object {
+        fun C(Other: UObject): Timecode
+        fun C(Other: Any): Timecode
+        fun TimecodetoString(InTimecode: Timecode, bForceSignDisplay: Boolean): String
+        fun GetTimecode(): Timecode
+    }
+}
+
+external open class MovieSceneTimecodeSource {
+    open var Timecode: Timecode
+    open var DeltaFrame: FrameNumber
+    open fun clone(): MovieSceneTimecodeSource
+
+    companion object {
+        fun C(Other: UObject): MovieSceneTimecodeSource
+        fun C(Other: Any): MovieSceneTimecodeSource
+    }
+}
+
+external object ESpawnOwnership {
+    var InnerSequence: String /* "InnerSequence" */
+    var MasterSequence: String /* "MasterSequence" */
+    var External: String /* "External" */
+    var ESpawnOwnership_MAX: String /* "ESpawnOwnership_MAX" */
+}
+
+external open class MovieSceneSpawnable {
+    open var SpawnTransform: Transform
+    open var Tags: Array<String>
+    open var bContinuouslyRespawn: Boolean
+    open var bNetAddressableName: Boolean
+    open var bEvaluateTracksWhenNotSpawned: Boolean
+    open var Guid: Guid
+    open var Name: String
+    open var ObjectTemplate: UObject
+    open var ChildPossessables: Array<Guid>
+    open var Ownership: String /* "InnerSequence" | "MasterSequence" | "External" | "ESpawnOwnership_MAX" */
+    open var GeneratedClass: UnrealEngineClass
+    open var LevelName: String
+    open fun clone(): MovieSceneSpawnable
+
+    companion object {
+        fun C(Other: UObject): MovieSceneSpawnable
+        fun C(Other: Any): MovieSceneSpawnable
+    }
+}
+
+external open class MovieScenePossessable {
+    open var Tags: Array<String>
+    open var Guid: Guid
+    open var Name: String
+    open var PossessedObjectClass: UnrealEngineClass
+    open var ParentGuid: Guid
+    open fun clone(): MovieScenePossessable
+
+    companion object {
+        fun C(Other: UObject): MovieScenePossessable
+        fun C(Other: Any): MovieScenePossessable
+    }
+}
+
+external open class MovieSceneTrackEvalOptions {
+    open var bCanEvaluateNearestSection: Boolean
+    open var bEvalNearestSection: Boolean
+    open var bEvaluateInPreroll: Boolean
+    open var bEvaluateInPostroll: Boolean
+    open var bEvaluateNearestSection: Boolean
+    open fun clone(): MovieSceneTrackEvalOptions
+
+    companion object {
+        fun C(Other: UObject): MovieSceneTrackEvalOptions
+        fun C(Other: Any): MovieSceneTrackEvalOptions
+    }
+}
+
+external open class MovieSceneTrackDisplayOptions {
+    open var bShowVerticalFrames: Boolean
+    open fun clone(): MovieSceneTrackDisplayOptions
+
+    companion object {
+        fun C(Other: UObject): MovieSceneTrackDisplayOptions
+        fun C(Other: Any): MovieSceneTrackDisplayOptions
+    }
+}
+
+external open class MovieSceneSectionEvalOptions {
+    open var bCanEditCompletionMode: Boolean
+    open var CompletionMode: String /* "KeepState" | "RestoreState" | "ProjectDefault" | "EMovieSceneCompletionMode_MAX" */
+    open fun clone(): MovieSceneSectionEvalOptions
+
+    companion object {
+        fun C(Other: UObject): MovieSceneSectionEvalOptions
+        fun C(Other: Any): MovieSceneSectionEvalOptions
+    }
+}
+
+external open class MovieSceneEasingSettings {
+    open var AutoEaseInDuration: Number
+    open var AutoEaseOutDuration: Number
+    open var EaseIn: Any
+    open var bManualEaseIn: Boolean
+    open var ManualEaseInDuration: Number
+    open var EaseOut: Any
+    open var bManualEaseOut: Boolean
+    open var ManualEaseOutDuration: Number
+    open var AutoEaseInTime: Number
+    open var AutoEaseOutTime: Number
+    open var ManualEaseInTime: Number
+    open var ManualEaseOutTime: Number
+    open fun clone(): MovieSceneEasingSettings
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEasingSettings
+        fun C(Other: Any): MovieSceneEasingSettings
+    }
+}
+
+external object EMovieSceneBlendType {
+    var Invalid: String /* "Invalid" */
+    var Absolute: String /* "Absolute" */
+    var Additive: String /* "Additive" */
+    var Relative: String /* "Relative" */
+    var AdditiveFromBase: String /* "AdditiveFromBase" */
+    var EMovieSceneBlendType_MAX: String /* "EMovieSceneBlendType_MAX" */
+}
+
+external open class OptionalMovieSceneBlendType {
+    open var BlendType: String /* "Invalid" | "Absolute" | "Additive" | "Relative" | "AdditiveFromBase" | "EMovieSceneBlendType_MAX" */
+    open var bIsValid: Boolean
+    open fun clone(): OptionalMovieSceneBlendType
+
+    companion object {
+        fun C(Other: UObject): OptionalMovieSceneBlendType
+        fun C(Other: Any): OptionalMovieSceneBlendType
+    }
+}
+
+external open class MovieSceneSection : MovieSceneSignedObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var EvalOptions: MovieSceneSectionEvalOptions
+    open var Easing: MovieSceneEasingSettings
+    open var SectionRange: MovieSceneFrameRange
+    open var TimecodeSource: MovieSceneTimecodeSource
+    open var PreRollFrames: FrameNumber
+    open var PostRollFrames: FrameNumber
+    open var RowIndex: Number
+    open var OverlapPriority: Number
+    open var bIsActive: Boolean
+    open var bIsLocked: Boolean
+    open var StartTime: Number
+    open var EndTime: Number
+    open var PrerollTime: Number
+    open var PostrollTime: Number
+    open var bIsInfinite: Boolean
+    open var bSupportsInfiniteRange: Boolean
+    open var BlendType: OptionalMovieSceneBlendType
+    open fun SetRowIndex(NewRowIndex: Number)
+    open fun SetPreRollFrames(InPreRollFrames: Number)
+    open fun SetPostRollFrames(InPostRollFrames: Number)
+    open fun SetOverlapPriority(NewPriority: Number)
+    open fun SetIsLocked(bInIsLocked: Boolean)
+    open fun SetIsActive(bInIsActive: Boolean)
+    open fun SetCompletionMode(InCompletionMode: String /* "KeepState" | "RestoreState" | "ProjectDefault" | "EMovieSceneCompletionMode_MAX" */)
+    open fun SetBlendType(InBlendType: String /* "Invalid" | "Absolute" | "Additive" | "Relative" | "AdditiveFromBase" | "EMovieSceneBlendType_MAX" */)
+    open fun IsLocked(): Boolean
+    open fun IsActive(): Boolean
+    open fun GetRowIndex(): Number
+    open fun GetPreRollFrames(): Number
+    open fun GetPostRollFrames(): Number
+    open fun GetOverlapPriority(): Number
+    open fun GetCompletionMode(): String /* "KeepState" | "RestoreState" | "ProjectDefault" | "EMovieSceneCompletionMode_MAX" */
+    open fun GetBlendType(): OptionalMovieSceneBlendType
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneSection
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneSection
+        fun GetDefaultObject(): MovieSceneSection
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneSection
+        fun C(Other: UObject): MovieSceneSection
+        fun C(Other: Any): MovieSceneSection
+    }
+}
+
+external open class FrameNumberRangeBound {
+    open var Type: String /* "Exclusive" | "Inclusive" | "Open" | "ERangeBoundTypes_MAX" */
+    open var Value: FrameNumber
+    open fun clone(): FrameNumberRangeBound
+
+    companion object {
+        fun C(Other: UObject): FrameNumberRangeBound
+        fun C(Other: Any): FrameNumberRangeBound
+    }
+}
+
+external open class FrameNumberRange {
+    open var LowerBound: FrameNumberRangeBound
+    open var UpperBound: FrameNumberRangeBound
+    open fun clone(): FrameNumberRange
+
+    companion object {
+        fun C(Other: UObject): FrameNumberRange
+        fun C(Other: Any): FrameNumberRange
+    }
+}
+
+external open class MovieSceneTrackEvaluationFieldEntry {
+    open var Section: MovieSceneSection
+    open var Range: FrameNumberRange
+    open var ForcedTime: FrameNumber
+    open var Flags: String /* "None" | "PreRoll" | "PostRoll" | "ESectionEvaluationFlags_MAX" */
+    open var LegacySortOrder: Any
+    open fun clone(): MovieSceneTrackEvaluationFieldEntry
+
+    companion object {
+        fun C(Other: UObject): MovieSceneTrackEvaluationFieldEntry
+        fun C(Other: Any): MovieSceneTrackEvaluationFieldEntry
+    }
+}
+
+external open class MovieSceneTrackEvaluationField {
+    open var Entries: Array<MovieSceneTrackEvaluationFieldEntry>
+    open fun clone(): MovieSceneTrackEvaluationField
+
+    companion object {
+        fun C(Other: UObject): MovieSceneTrackEvaluationField
+        fun C(Other: Any): MovieSceneTrackEvaluationField
+    }
+}
+
+external open class MovieSceneTrack : MovieSceneSignedObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var EvalOptions: MovieSceneTrackEvalOptions
+    open var DisplayOptions: MovieSceneTrackDisplayOptions
+    open var bIsEvalDisabled: Boolean
+    open var RowsDisabled: Array<Number>
+    open var EvaluationFieldGuid: Guid
+    open var EvaluationFieldVersion: Any
+    open var EvaluationField: MovieSceneTrackEvaluationField
+    open var ObjectBindingID: Guid
+    open var TrackTint: Color
+    open var SortingOrder: Number
+    open var bSupportsDefaultSections: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneTrack
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneTrack
+        fun GetDefaultObject(): MovieSceneTrack
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTrack
+        fun C(Other: UObject): MovieSceneTrack
+        fun C(Other: Any): MovieSceneTrack
+    }
+}
+
+external open class MovieSceneBinding {
+    open var ObjectGuid: Guid
+    open var BindingName: String
+    open var Tracks: Array<MovieSceneTrack>
+    open var SortingOrder: Number
+    open fun clone(): MovieSceneBinding
+
+    companion object {
+        fun C(Other: UObject): MovieSceneBinding
+        fun C(Other: Any): MovieSceneBinding
+    }
+}
+
+external object EMovieSceneEvaluationType {
+    var FrameLocked: String /* "FrameLocked" */
+    var WithSubFrames: String /* "WithSubFrames" */
+    var EMovieSceneEvaluationType_MAX: String /* "EMovieSceneEvaluationType_MAX" */
+}
+
+external object EUpdateClockSource {
+    var Tick: String /* "Tick" */
+    var Platform: String /* "Platform" */
+    var Audio: String /* "Audio" */
+    var RelativeTimecode: String /* "RelativeTimecode" */
+    var Timecode: String /* "Timecode" */
+    var Custom: String /* "Custom" */
+    var EUpdateClockSource_MAX: String /* "EUpdateClockSource_MAX" */
+}
+
+external open class MovieSceneMarkedFrame {
+    open var FrameNumber: FrameNumber
+    open var Label: String
+    open var Color: LinearColor
+    open var bIsDeterminismFence: Boolean
+    open fun clone(): MovieSceneMarkedFrame
+
+    companion object {
+        fun C(Other: UObject): MovieSceneMarkedFrame
+        fun C(Other: Any): MovieSceneMarkedFrame
+    }
+}
+
+external open class FloatRangeBound {
+    open var Type: String /* "Exclusive" | "Inclusive" | "Open" | "ERangeBoundTypes_MAX" */
+    open var Value: Number
+    open fun clone(): FloatRangeBound
+
+    companion object {
+        fun C(Other: UObject): FloatRangeBound
+        fun C(Other: Any): FloatRangeBound
+    }
+}
+
+external open class FloatRange {
+    open var LowerBound: FloatRangeBound
+    open var UpperBound: FloatRangeBound
+    open fun clone(): FloatRange
+
+    companion object {
+        fun C(Other: UObject): FloatRange
+        fun C(Other: Any): FloatRange
+    }
+}
+
+external open class MovieSceneEditorData {
+    open var ExpansionStates: Any
+    open var PinnedNodes: Array<String>
+    open var ViewStart: Any
+    open var ViewEnd: Any
+    open var WorkStart: Any
+    open var WorkEnd: Any
+    open var MarkedFrames: Any
+    open var WorkingRange: FloatRange
+    open var ViewRange: FloatRange
+    open fun clone(): MovieSceneEditorData
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEditorData
+        fun C(Other: Any): MovieSceneEditorData
+    }
+}
+
+external open class MovieSceneFolder : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var FolderName: String
+    open var ChildFolders: Array<MovieSceneFolder>
+    open var ChildMasterTracks: Array<MovieSceneTrack>
+    open var ChildObjectBindingStrings: Array<String>
+    open var FolderColor: Color
+    open var SortingOrder: Number
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneFolder
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneFolder
+        fun GetDefaultObject(): MovieSceneFolder
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneFolder
+        fun C(Other: UObject): MovieSceneFolder
+        fun C(Other: Any): MovieSceneFolder
+    }
+}
+
+external open class MovieSceneSectionGroup {
+    open var Sections: Array<Any>
+    open fun clone(): MovieSceneSectionGroup
+
+    companion object {
+        fun C(Other: UObject): MovieSceneSectionGroup
+        fun C(Other: Any): MovieSceneSectionGroup
+    }
+}
+
+external open class MovieSceneNodeGroup : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var Name: String
+    open var Nodes: Array<String>
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneNodeGroup
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneNodeGroup
+        fun GetDefaultObject(): MovieSceneNodeGroup
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneNodeGroup
+        fun C(Other: UObject): MovieSceneNodeGroup
+        fun C(Other: Any): MovieSceneNodeGroup
+    }
+}
+
+external open class MovieSceneNodeGroupCollection : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var NodeGroups: Array<MovieSceneNodeGroup>
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneNodeGroupCollection
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneNodeGroupCollection
+        fun GetDefaultObject(): MovieSceneNodeGroupCollection
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneNodeGroupCollection
+        fun C(Other: UObject): MovieSceneNodeGroupCollection
+        fun C(Other: Any): MovieSceneNodeGroupCollection
+    }
+}
+
+external open class MovieScene : MovieSceneSignedObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var TimecodeSource: MovieSceneTimecodeSource
+    open var Spawnables: Array<MovieSceneSpawnable>
+    open var Possessables: Array<MovieScenePossessable>
+    open var ObjectBindings: Array<MovieSceneBinding>
+    open var BindingGroups: Any
+    open var MasterTracks: Array<MovieSceneTrack>
+    open var CameraCutTrack: MovieSceneTrack
+    open var SelectionRange: MovieSceneFrameRange
+    open var PlaybackRange: MovieSceneFrameRange
+    open var TickResolution: FrameRate
+    open var DisplayRate: FrameRate
+    open var EvaluationType: String /* "FrameLocked" | "WithSubFrames" | "EMovieSceneEvaluationType_MAX" */
+    open var ClockSource: String /* "Tick" | "Platform" | "Audio" | "RelativeTimecode" | "Timecode" | "Custom" | "EUpdateClockSource_MAX" */
+    open var CustomClockSourcePath: SoftObjectPath
+    open var MarkedFrames: Array<MovieSceneMarkedFrame>
+    open var bReadOnly: Boolean
+    open var bPlaybackRangeLocked: Boolean
+    open var ObjectsToDisplayNames: Any
+    open var ObjectsToLabels: Any
+    open var EditorData: MovieSceneEditorData
+    open var RootFolders: Array<MovieSceneFolder>
+    open var SoloNodes: Array<String>
+    open var MuteNodes: Array<String>
+    open var SectionGroups: Array<MovieSceneSectionGroup>
+    open var NodeGroupCollection: MovieSceneNodeGroupCollection
+    open var InTime: Number
+    open var OutTime: Number
+    open var StartTime: Number
+    open var EndTime: Number
+    open var bForceFixedFrameIntervalPlayback: Boolean
+    open var FixedFrameInterval: Number
+
+    companion object {
+        fun Load(ResourceName: String): MovieScene
+        fun Find(Outer: UObject, ResourceName: String): MovieScene
+        fun GetDefaultObject(): MovieScene
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieScene
+        fun C(Other: UObject): MovieScene
+        fun C(Other: Any): MovieScene
+    }
+}
+
+external open class TemplateSequence : MovieSceneSequence {
+    constructor()
+    constructor(Outer: UObject)
+    open var MovieScene: MovieScene
+    open var BoundActorClass: Class
+    open var BoundPreviewActor: Actor
+    open var BoundActorComponents: Any
+
+    companion object {
+        fun Load(ResourceName: String): TemplateSequence
+        fun Find(Outer: UObject, ResourceName: String): TemplateSequence
+        fun GetDefaultObject(): TemplateSequence
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TemplateSequence
+        fun C(Other: UObject): TemplateSequence
+        fun C(Other: Any): TemplateSequence
+    }
+}
+
+external open class CameraAnimationSequence : TemplateSequence {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): CameraAnimationSequence
+        fun Find(Outer: UObject, ResourceName: String): CameraAnimationSequence
+        fun GetDefaultObject(): CameraAnimationSequence
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraAnimationSequence
+        fun C(Other: UObject): CameraAnimationSequence
+        fun C(Other: Any): CameraAnimationSequence
     }
 }
 
@@ -10645,69 +11770,197 @@ external open class CameraAnimInst : UObject {
     }
 }
 
-external interface `T$333` {
-    var DesiredView: MinimalViewInfo
-}
-
-external open class CameraComponent : SceneComponent {
+external open class MovieSceneCompiledDataManager : UObject {
     constructor()
     constructor(Outer: UObject)
-    open var FieldOfView: Number
-    open var OrthoWidth: Number
-    open var OrthoNearClipPlane: Number
-    open var OrthoFarClipPlane: Number
-    open var AspectRatio: Number
-    open var bConstrainAspectRatio: Boolean
-    open var bUseFieldOfViewForLOD: Boolean
-    open var bCameraMeshHiddenInGame: Boolean
-    open var bLockToHmd: Boolean
-    open var bUsePawnControlRotation: Boolean
-    open var ProjectionMode: String /* "Perspective" | "Orthographic" | "ECameraProjectionMode_MAX" */
-    open var CameraMesh: StaticMesh
-    open var PostProcessBlendWeight: Number
-    open var PostProcessSettings: PostProcessSettings
-    open var bUseControllerViewRotation: Boolean
-    open fun SetUseFieldOfViewForLOD(bInUseFieldOfViewForLOD: Boolean)
-    open fun SetProjectionMode(InProjectionMode: String /* "Perspective" | "Orthographic" | "ECameraProjectionMode_MAX" */)
-    open fun SetPostProcessBlendWeight(InPostProcessBlendWeight: Number)
-    open fun SetOrthoWidth(InOrthoWidth: Number)
-    open fun SetOrthoNearClipPlane(InOrthoNearClipPlane: Number)
-    open fun SetOrthoFarClipPlane(InOrthoFarClipPlane: Number)
-    open fun SetFieldOfView(InFieldOfView: Number)
-    open fun SetConstraintAspectRatio(bInConstrainAspectRatio: Boolean)
-    open fun SetAspectRatio(InAspectRatio: Number)
-    open fun OnCameraMeshHiddenChanged()
-    open fun GetFilmbackText(): String
-    open fun GetCameraView(DeltaTime: Number, DesiredView: MinimalViewInfo = definedExternally): `T$333`
+    open var Hierarchies: Any
+    open var TrackTemplates: Any
+    open var TrackTemplateFields: Any
+    open var EntityComponentFields: Any
 
     companion object {
-        fun Load(ResourceName: String): CameraComponent
-        fun Find(Outer: UObject, ResourceName: String): CameraComponent
-        fun GetDefaultObject(): CameraComponent
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraComponent
-        fun C(Other: UObject): CameraComponent
-        fun C(Other: Any): CameraComponent
+        fun Load(ResourceName: String): MovieSceneCompiledDataManager
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneCompiledDataManager
+        fun GetDefaultObject(): MovieSceneCompiledDataManager
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneCompiledDataManager
+        fun C(Other: UObject): MovieSceneCompiledDataManager
+        fun C(Other: Any): MovieSceneCompiledDataManager
     }
 }
 
-external open class CameraActor(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : Actor {
-    open var AutoActivateForPlayer: String /* "Disabled" | "Player0" | "Player1" | "Player2" | "Player3" | "Player4" | "Player5" | "Player6" | "Player7" | "EAutoReceiveInput_MAX" */
-    open var CameraComponent: CameraComponent
-    open var SceneComponent: SceneComponent
-    open var bConstrainAspectRatio: Boolean
-    open var AspectRatio: Number
-    open var FOVAngle: Number
-    open var PostProcessBlendWeight: Number
-    open var PostProcessSettings: PostProcessSettings
-    open fun GetAutoActivatePlayerIndex(): Number
-    open fun DrawDebugCamera(CameraColor: LinearColor, Duration: Number)
+external open class MovieSceneEntitySystemGraphNodes {
+    open fun clone(): MovieSceneEntitySystemGraphNodes
 
     companion object {
-        fun GetDefaultObject(): CameraActor
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraActor
-        fun C(Other: UObject): CameraActor
-        fun C(Other: Any): CameraActor
-        fun DrawDebugCamera(CameraActor: CameraActor, CameraColor: LinearColor, Duration: Number)
+        fun C(Other: UObject): MovieSceneEntitySystemGraphNodes
+        fun C(Other: Any): MovieSceneEntitySystemGraphNodes
+    }
+}
+
+external open class MovieSceneEntitySystemGraph {
+    open var Nodes: MovieSceneEntitySystemGraphNodes
+    open fun clone(): MovieSceneEntitySystemGraph
+
+    companion object {
+        fun C(Other: UObject): MovieSceneEntitySystemGraph
+        fun C(Other: Any): MovieSceneEntitySystemGraph
+    }
+}
+
+external open class MovieSceneEntitySystemLinker : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var SystemGraph: MovieSceneEntitySystemGraph
+
+    companion object {
+        fun Load(ResourceName: String): MovieSceneEntitySystemLinker
+        fun Find(Outer: UObject, ResourceName: String): MovieSceneEntitySystemLinker
+        fun GetDefaultObject(): MovieSceneEntitySystemLinker
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneEntitySystemLinker
+        fun C(Other: UObject): MovieSceneEntitySystemLinker
+        fun C(Other: Any): MovieSceneEntitySystemLinker
+    }
+}
+
+external open class MovieSceneRootEvaluationTemplateInstance {
+    open var WeakRootSequence: Any
+    open var CompiledDataManager: MovieSceneCompiledDataManager
+    open var EntitySystemLinker: MovieSceneEntitySystemLinker
+    open var DirectorInstances: Any
+    open fun clone(): MovieSceneRootEvaluationTemplateInstance
+
+    companion object {
+        fun C(Other: UObject): MovieSceneRootEvaluationTemplateInstance
+        fun C(Other: Any): MovieSceneRootEvaluationTemplateInstance
+    }
+}
+
+external open class SequenceCameraShakeSequencePlayer : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var BoundObjectOverride: UObject
+    open var Sequence: MovieSceneSequence
+    open var RootTemplateInstance: MovieSceneRootEvaluationTemplateInstance
+
+    companion object {
+        fun Load(ResourceName: String): SequenceCameraShakeSequencePlayer
+        fun Find(Outer: UObject, ResourceName: String): SequenceCameraShakeSequencePlayer
+        fun GetDefaultObject(): SequenceCameraShakeSequencePlayer
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SequenceCameraShakeSequencePlayer
+        fun C(Other: UObject): SequenceCameraShakeSequencePlayer
+        fun C(Other: Any): SequenceCameraShakeSequencePlayer
+    }
+}
+
+external open class CameraFilmbackSettings {
+    open var SensorWidth: Number
+    open var SensorHeight: Number
+    open var SensorAspectRatio: Number
+    open fun clone(): CameraFilmbackSettings
+
+    companion object {
+        fun C(Other: UObject): CameraFilmbackSettings
+        fun C(Other: Any): CameraFilmbackSettings
+    }
+}
+
+external open class CameraLensSettings {
+    open var MinFocalLength: Number
+    open var MaxFocalLength: Number
+    open var MinFStop: Number
+    open var MaxFStop: Number
+    open var MinimumFocusDistance: Number
+    open var DiaphragmBladeCount: Number
+    open fun clone(): CameraLensSettings
+
+    companion object {
+        fun C(Other: UObject): CameraLensSettings
+        fun C(Other: Any): CameraLensSettings
+    }
+}
+
+external object ECameraFocusMethod {
+    var DoNotOverride: String /* "DoNotOverride" */
+    var Manual: String /* "Manual" */
+    var Tracking: String /* "Tracking" */
+    var Disable: String /* "Disable" */
+    var MAX: String /* "MAX" */
+}
+
+external open class CameraTrackingFocusSettings {
+    open var ActorToTrack: Actor
+    open var RelativeOffset: Vector
+    open var bDrawDebugTrackingFocusPoint: Boolean
+    open fun clone(): CameraTrackingFocusSettings
+
+    companion object {
+        fun C(Other: UObject): CameraTrackingFocusSettings
+        fun C(Other: Any): CameraTrackingFocusSettings
+    }
+}
+
+external open class CameraFocusSettings {
+    open var FocusMethod: String /* "DoNotOverride" | "Manual" | "Tracking" | "Disable" | "MAX" */
+    open var ManualFocusDistance: Number
+    open var TrackingFocusSettings: CameraTrackingFocusSettings
+    open var bDrawDebugFocusPlane: Boolean
+    open var DebugFocusPlaneColor: Color
+    open var bSmoothFocusChanges: Boolean
+    open var FocusSmoothingInterpSpeed: Number
+    open var FocusOffset: Number
+    open fun clone(): CameraFocusSettings
+
+    companion object {
+        fun C(Other: UObject): CameraFocusSettings
+        fun C(Other: Any): CameraFocusSettings
+    }
+}
+
+external open class SequenceCameraShakeCameraStandIn : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var FieldOfView: Number
+    open var bConstrainAspectRatio: Boolean
+    open var AspectRatio: Number
+    open var PostProcessSettings: PostProcessSettings
+    open var PostProcessBlendWeight: Number
+    open var Filmback: CameraFilmbackSettings
+    open var LensSettings: CameraLensSettings
+    open var FocusSettings: CameraFocusSettings
+    open var CurrentFocalLength: Number
+    open var CurrentAperture: Number
+    open var CurrentFocusDistance: Number
+
+    companion object {
+        fun Load(ResourceName: String): SequenceCameraShakeCameraStandIn
+        fun Find(Outer: UObject, ResourceName: String): SequenceCameraShakeCameraStandIn
+        fun GetDefaultObject(): SequenceCameraShakeCameraStandIn
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SequenceCameraShakeCameraStandIn
+        fun C(Other: UObject): SequenceCameraShakeCameraStandIn
+        fun C(Other: Any): SequenceCameraShakeCameraStandIn
+    }
+}
+
+external open class SequenceCameraShakePattern : CameraShakePattern {
+    constructor()
+    constructor(Outer: UObject)
+    open var Sequence: CameraAnimationSequence
+    open var PlayRate: Number
+    open var Scale: Number
+    open var BlendInTime: Number
+    open var BlendOutTime: Number
+    open var RandomSegmentDuration: Number
+    open var bRandomSegment: Boolean
+    open var Player: SequenceCameraShakeSequencePlayer
+    open var CameraStandIn: SequenceCameraShakeCameraStandIn
+
+    companion object {
+        fun Load(ResourceName: String): SequenceCameraShakePattern
+        fun Find(Outer: UObject, ResourceName: String): SequenceCameraShakePattern
+        fun GetDefaultObject(): SequenceCameraShakePattern
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SequenceCameraShakePattern
+        fun C(Other: UObject): SequenceCameraShakePattern
+        fun C(Other: Any): SequenceCameraShakePattern
     }
 }
 
@@ -10743,56 +11996,7 @@ external open class CameraShakeSourceComponent : SceneComponent {
     }
 }
 
-external object EInitialOscillatorOffset {
-    var EOO_OffsetRandom: String /* "EOO_OffsetRandom" */
-    var EOO_OffsetZero: String /* "EOO_OffsetZero" */
-    var EOO_MAX: String /* "EOO_MAX" */
-}
-
-external object EOscillatorWaveform {
-    var SineWave: String /* "SineWave" */
-    var PerlinNoise: String /* "PerlinNoise" */
-    var EOscillatorWaveform_MAX: String /* "EOscillatorWaveform_MAX" */
-}
-
-external open class FOscillator {
-    open var Amplitude: Number
-    open var Frequency: Number
-    open var InitialOffset: String /* "EOO_OffsetRandom" | "EOO_OffsetZero" | "EOO_MAX" */
-    open var Waveform: String /* "SineWave" | "PerlinNoise" | "EOscillatorWaveform_MAX" */
-    open fun clone(): FOscillator
-
-    companion object {
-        fun C(Other: UObject): FOscillator
-        fun C(Other: Any): FOscillator
-    }
-}
-
-external open class ROscillator {
-    open var Pitch: FOscillator
-    open var Yaw: FOscillator
-    open var Roll: FOscillator
-    open fun clone(): ROscillator
-
-    companion object {
-        fun C(Other: UObject): ROscillator
-        fun C(Other: Any): ROscillator
-    }
-}
-
-external open class VOscillator {
-    open var X: FOscillator
-    open var Y: FOscillator
-    open var Z: FOscillator
-    open fun clone(): VOscillator
-
-    companion object {
-        fun C(Other: UObject): VOscillator
-        fun C(Other: Any): VOscillator
-    }
-}
-
-external interface `T$334` {
+external interface `T$162` {
     var ModifiedPOV: MinimalViewInfo
 }
 
@@ -10811,29 +12015,150 @@ external open class MatineeCameraShake : CameraShakeBase {
     open var AnimBlendOutTime: Number
     open var RandomAnimSegmentDuration: Number
     open var Anim: CameraAnim
+    open var AnimSequence: CameraAnimationSequence
     open var bRandomAnimSegment: Boolean
     open var OscillatorTimeRemaining: Number
     open var AnimInst: CameraAnimInst
+    open var SequenceShakePattern: SequenceCameraShakePattern
     open fun ReceiveStopShake(bImmediately: Boolean)
     open fun ReceivePlayShake(Scale: Number)
     open fun ReceiveIsFinished(): Boolean
-    open fun BlueprintUpdateCameraShake(DeltaTime: Number, Alpha: Number, POV: MinimalViewInfo, ModifiedPOV: MinimalViewInfo = definedExternally): `T$334`
+    open fun BlueprintUpdateCameraShake(DeltaTime: Number, Alpha: Number, POV: MinimalViewInfo, ModifiedPOV: MinimalViewInfo = definedExternally): `T$162`
 
     companion object {
         fun Load(ResourceName: String): MatineeCameraShake
         fun Find(Outer: UObject, ResourceName: String): MatineeCameraShake
         fun GetDefaultObject(): MatineeCameraShake
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MatineeCameraShake
+        fun StartMatineeCameraShakeFromSource(PlayerCameraManager: PlayerCameraManager, ShakeClass: UnrealEngineClass, SourceComponent: CameraShakeSourceComponent, Scale: Number, PlaySpace: String /* "CameraLocal" | "World" | "UserDefined" | "ECameraShakePlaySpace_MAX" */, UserPlaySpaceRot: Rotator): MatineeCameraShake
+        fun StartMatineeCameraShake(PlayerCameraManager: PlayerCameraManager, ShakeClass: UnrealEngineClass, Scale: Number, PlaySpace: String /* "CameraLocal" | "World" | "UserDefined" | "ECameraShakePlaySpace_MAX" */, UserPlaySpaceRot: Rotator): MatineeCameraShake
         fun C(Other: UObject): MatineeCameraShake
         fun C(Other: Any): MatineeCameraShake
     }
 }
 
-external interface `T$335` {
+external open class CameraShakeBase : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var bSingleInstance: Boolean
+    open var ShakeScale: Number
+    open var RootShakePattern: CameraShakePattern
+    open var CameraManager: PlayerCameraManager
+    open fun SetRootShakePattern(InPattern: CameraShakePattern)
+    open fun GetRootShakePattern(): CameraShakePattern
+    open fun Conv_MatineeCameraShake(): MatineeCameraShake
+
+    companion object {
+        fun Load(ResourceName: String): CameraShakeBase
+        fun Find(Outer: UObject, ResourceName: String): CameraShakeBase
+        fun GetDefaultObject(): CameraShakeBase
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraShakeBase
+        fun C(Other: UObject): CameraShakeBase
+        fun C(Other: Any): CameraShakeBase
+        fun Conv_MatineeCameraShake(CameraShake: CameraShakeBase): MatineeCameraShake
+    }
+}
+
+external open class ActiveCameraShakeInfo {
+    open var ShakeInstance: CameraShakeBase
+    open var ShakeSource: Any
+    open var bIsCustomInitialized: Boolean
+    open fun clone(): ActiveCameraShakeInfo
+
+    companion object {
+        fun C(Other: UObject): ActiveCameraShakeInfo
+        fun C(Other: Any): ActiveCameraShakeInfo
+    }
+}
+
+external open class CameraModifier_CameraShake : CameraModifier {
+    constructor()
+    constructor(Outer: UObject)
+    open var ActiveShakes: Array<ActiveCameraShakeInfo>
+    open var ExpiredPooledShakesMap: Any
+    open var SplitScreenShakeScale: Number
+
+    companion object {
+        fun Load(ResourceName: String): CameraModifier_CameraShake
+        fun Find(Outer: UObject, ResourceName: String): CameraModifier_CameraShake
+        fun GetDefaultObject(): CameraModifier_CameraShake
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraModifier_CameraShake
+        fun C(Other: UObject): CameraModifier_CameraShake
+        fun C(Other: Any): CameraModifier_CameraShake
+    }
+}
+
+external interface `T$163` {
+    var DesiredView: MinimalViewInfo
+}
+
+external open class CameraComponent : SceneComponent {
+    constructor()
+    constructor(Outer: UObject)
+    open var FieldOfView: Number
+    open var OrthoWidth: Number
+    open var OrthoNearClipPlane: Number
+    open var OrthoFarClipPlane: Number
+    open var AspectRatio: Number
+    open var bConstrainAspectRatio: Boolean
+    open var bUseFieldOfViewForLOD: Boolean
+    open var bCameraMeshHiddenInGame: Boolean
+    open var bLockToHmd: Boolean
+    open var bUsePawnControlRotation: Boolean
+    open var ProjectionMode: String /* "Perspective" | "Orthographic" | "ECameraProjectionMode_MAX" */
+    open var CameraMesh: StaticMesh
+    open var PostProcessBlendWeight: Number
+    open var PostProcessSettings: PostProcessSettings
+    open var bUseControllerViewRotation: Boolean
+    open fun SetUseFieldOfViewForLOD(bInUseFieldOfViewForLOD: Boolean)
+    open fun SetProjectionMode(InProjectionMode: String /* "Perspective" | "Orthographic" | "ECameraProjectionMode_MAX" */)
+    open fun SetPostProcessBlendWeight(InPostProcessBlendWeight: Number)
+    open fun SetOrthoWidth(InOrthoWidth: Number)
+    open fun SetOrthoNearClipPlane(InOrthoNearClipPlane: Number)
+    open fun SetOrthoFarClipPlane(InOrthoFarClipPlane: Number)
+    open fun SetFieldOfView(InFieldOfView: Number)
+    open fun SetConstraintAspectRatio(bInConstrainAspectRatio: Boolean)
+    open fun SetAspectRatio(InAspectRatio: Number)
+    open fun OnCameraMeshHiddenChanged()
+    open fun GetFilmbackText(): String
+    open fun GetCameraView(DeltaTime: Number, DesiredView: MinimalViewInfo = definedExternally): `T$163`
+
+    companion object {
+        fun Load(ResourceName: String): CameraComponent
+        fun Find(Outer: UObject, ResourceName: String): CameraComponent
+        fun GetDefaultObject(): CameraComponent
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraComponent
+        fun C(Other: UObject): CameraComponent
+        fun C(Other: Any): CameraComponent
+    }
+}
+
+external open class CameraActor(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : Actor {
+    open var AutoActivateForPlayer: String /* "Disabled" | "Player0" | "Player1" | "Player2" | "Player3" | "Player4" | "Player5" | "Player6" | "Player7" | "EAutoReceiveInput_MAX" */
+    open var CameraComponent: CameraComponent
+    open var SceneComponent: SceneComponent
+    open var bConstrainAspectRatio: Boolean
+    open var AspectRatio: Number
+    open var FOVAngle: Number
+    open var PostProcessBlendWeight: Number
+    open var PostProcessSettings: PostProcessSettings
+    open fun GetAutoActivatePlayerIndex(): Number
+    open fun DrawDebugCamera(CameraColor: LinearColor, Duration: Number)
+
+    companion object {
+        fun GetDefaultObject(): CameraActor
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CameraActor
+        fun C(Other: UObject): CameraActor
+        fun C(Other: Any): CameraActor
+        fun DrawDebugCamera(CameraActor: CameraActor, CameraColor: LinearColor, Duration: Number)
+    }
+}
+
+external interface `T$164` {
     var ResultCameraLocation: Vector
 }
 
-external interface `T$336` {
+external interface `T$165` {
     var NewCameraLocation: Vector
     var NewCameraRotation: Rotator
     var NewCameraFOV: Number
@@ -10887,8 +12212,6 @@ external open class PlayerCameraManager(InWorld: World, Location: Vector = defin
     open fun StopAllCameraShakesFromSource(SourceComponent: CameraShakeSourceComponent, bImmediately: Boolean)
     open fun StopAllCameraShakes(bImmediately: Boolean)
     open fun StopAllCameraAnims(bImmediate: Boolean)
-    open fun StartMatineeCameraShakeFromSource(ShakeClass: UnrealEngineClass, SourceComponent: CameraShakeSourceComponent, Scale: Number, PlaySpace: String /* "CameraLocal" | "World" | "UserDefined" | "ECameraShakePlaySpace_MAX" */, UserPlaySpaceRot: Rotator): MatineeCameraShake
-    open fun StartMatineeCameraShake(ShakeClass: UnrealEngineClass, Scale: Number, PlaySpace: String /* "CameraLocal" | "World" | "UserDefined" | "ECameraShakePlaySpace_MAX" */, UserPlaySpaceRot: Rotator): MatineeCameraShake
     open fun StartCameraShakeFromSource(ShakeClass: UnrealEngineClass, SourceComponent: CameraShakeSourceComponent, Scale: Number, PlaySpace: String /* "CameraLocal" | "World" | "UserDefined" | "ECameraShakePlaySpace_MAX" */, UserPlaySpaceRot: Rotator): CameraShakeBase
     open fun StartCameraShake(ShakeClass: UnrealEngineClass, Scale: Number, PlaySpace: String /* "CameraLocal" | "World" | "UserDefined" | "ECameraShakePlaySpace_MAX" */, UserPlaySpaceRot: Rotator): CameraShakeBase
     open fun StartCameraFade(FromAlpha: Number, ToAlpha: Number, Duration: Number, Color: LinearColor, bShouldFadeAudio: Boolean, bHoldWhenFinished: Boolean)
@@ -10897,7 +12220,7 @@ external open class PlayerCameraManager(InWorld: World, Location: Vector = defin
     open fun RemoveCameraModifier(ModifierToRemove: CameraModifier): Boolean
     open fun RemoveCameraLensEffect(Emitter: EmitterCameraLensEffectBase)
     open fun PlayCameraAnim(Anim: CameraAnim, Rate: Number, Scale: Number, BlendInTime: Number, BlendOutTime: Number, bLoop: Boolean, bRandomStartTime: Boolean, Duration: Number, PlaySpace: String /* "CameraLocal" | "World" | "UserDefined" | "ECameraShakePlaySpace_MAX" */, UserPlaySpaceRot: Rotator): CameraAnimInst
-    open fun PhotographyCameraModify(NewCameraLocation: Vector, PreviousCameraLocation: Vector, OriginalCameraLocation: Vector, ResultCameraLocation: Vector = definedExternally): `T$335`
+    open fun PhotographyCameraModify(NewCameraLocation: Vector, PreviousCameraLocation: Vector, OriginalCameraLocation: Vector, ResultCameraLocation: Vector = definedExternally): `T$164`
     open fun OnPhotographySessionStart()
     open fun OnPhotographySessionEnd()
     open fun OnPhotographyMultiPartCaptureStart()
@@ -10908,7 +12231,7 @@ external open class PlayerCameraManager(InWorld: World, Location: Vector = defin
     open fun GetCameraLocation(): Vector
     open fun FindCameraModifierByClass(ModifierClass: UnrealEngineClass): CameraModifier
     open fun ClearCameraLensEffects()
-    open fun BlueprintUpdateCamera(CameraTarget: Actor, NewCameraLocation: Vector = definedExternally, NewCameraRotation: Rotator = definedExternally, NewCameraFOV: Number = definedExternally): `T$336`
+    open fun BlueprintUpdateCamera(CameraTarget: Actor, NewCameraLocation: Vector = definedExternally, NewCameraRotation: Rotator = definedExternally, NewCameraFOV: Number = definedExternally): `T$165`
     open fun AddNewCameraModifier(ModifierClass: UnrealEngineClass): CameraModifier
     open fun AddCameraLensEffect(LensEffectEmitterClass: UnrealEngineClass): EmitterCameraLensEffectBase
 
@@ -10975,7 +12298,21 @@ external open class DebugCameraController(InWorld: World, Location: Vector = def
     }
 }
 
-external interface `T$337` {
+external open class CheatManagerExtension : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): CheatManagerExtension
+        fun Find(Outer: UObject, ResourceName: String): CheatManagerExtension
+        fun GetDefaultObject(): CheatManagerExtension
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): CheatManagerExtension
+        fun C(Other: UObject): CheatManagerExtension
+        fun C(Other: Any): CheatManagerExtension
+    }
+}
+
+external interface `T$166` {
     var GoString: String
     var LocString: String
 }
@@ -10985,6 +12322,7 @@ external open class CheatManager : UObject {
     constructor(Outer: UObject)
     open var DebugCameraControllerRef: DebugCameraController
     open var DebugCameraControllerClass: UnrealEngineClass
+    open var CheatManagerExtensions: Array<CheatManagerExtension>
     open fun Walk()
     open fun ViewSelf()
     open fun ViewPlayer(S: String)
@@ -11037,7 +12375,7 @@ external open class CheatManager : UObject {
     open fun DamageTarget(DamageAmount: Number)
     open fun CheatScript(ScriptName: String)
     open fun ChangeSize(F: Number)
-    open fun BugItStringCreator(ViewLocation: Vector, ViewRotation: Rotator, GoString: String = definedExternally, LocString: String = definedExternally): `T$337`
+    open fun BugItStringCreator(ViewLocation: Vector, ViewRotation: Rotator, GoString: String = definedExternally, LocString: String = definedExternally): `T$166`
     open fun BugItGo(X: Number, Y: Number, Z: Number, Pitch: Number, Yaw: Number, Roll: Number)
     open fun BugIt(ScreenShotDescription: String)
 
@@ -11183,7 +12521,7 @@ external open class ForceFeedbackAttenuation : UObject {
     }
 }
 
-external interface `T$338` {
+external interface `T$167` {
     var OutAttenuationSettings: ForceFeedbackAttenuationSettings
     var `$`: Boolean
 }
@@ -11205,7 +12543,7 @@ external open class ForceFeedbackComponent : SceneComponent {
     open fun SetIntensityMultiplier(NewIntensityMultiplier: Number)
     open fun SetForceFeedbackEffect(NewForceFeedbackEffect: ForceFeedbackEffect)
     open fun Play(StartTime: Number)
-    open fun GetAttenuationSettingsToApply(OutAttenuationSettings: ForceFeedbackAttenuationSettings = definedExternally): `T$338`
+    open fun GetAttenuationSettingsToApply(OutAttenuationSettings: ForceFeedbackAttenuationSettings = definedExternally): `T$167`
     open fun AdjustAttenuation(InAttenuationSettings: ForceFeedbackAttenuationSettings)
 
     companion object {
@@ -11409,18 +12747,18 @@ external object EControllerAnalogStick {
     var CAS_MAX: String /* "CAS_MAX" */
 }
 
-external interface `T$339` {
+external interface `T$168` {
     var LocationX: Number
     var LocationY: Number
     var bIsCurrentlyPressed: Boolean
 }
 
-external interface `T$340` {
+external interface `T$169` {
     var DeltaX: Number
     var DeltaY: Number
 }
 
-external interface `T$341` {
+external interface `T$170` {
     var StickX: Number
     var StickY: Number
 }
@@ -11432,11 +12770,11 @@ external open class InputComponent : ActorComponent {
     open fun WasControllerKeyJustReleased(Key: Key): Boolean
     open fun WasControllerKeyJustPressed(Key: Key): Boolean
     open fun IsControllerKeyDown(Key: Key): Boolean
-    open fun GetTouchState(FingerIndex: Number, LocationX: Number = definedExternally, LocationY: Number = definedExternally, bIsCurrentlyPressed: Boolean = definedExternally): `T$339`
+    open fun GetTouchState(FingerIndex: Number, LocationX: Number = definedExternally, LocationY: Number = definedExternally, bIsCurrentlyPressed: Boolean = definedExternally): `T$168`
     open fun GetControllerVectorKeyState(Key: Key): Vector
-    open fun GetControllerMouseDelta(DeltaX: Number = definedExternally, DeltaY: Number = definedExternally): `T$340`
+    open fun GetControllerMouseDelta(DeltaX: Number = definedExternally, DeltaY: Number = definedExternally): `T$169`
     open fun GetControllerKeyTimeDown(Key: Key): Number
-    open fun GetControllerAnalogStickState(WhichStick: String /* "CAS_LeftStick" | "CAS_RightStick" | "CAS_MAX" */, StickX: Number = definedExternally, StickY: Number = definedExternally): `T$341`
+    open fun GetControllerAnalogStickState(WhichStick: String /* "CAS_LeftStick" | "CAS_RightStick" | "CAS_MAX" */, StickX: Number = definedExternally, StickY: Number = definedExternally): `T$170`
     open fun GetControllerAnalogKeyState(Key: Key): Number
 
     companion object {
@@ -11498,6 +12836,11 @@ external object EPlaneConstraintAxisSetting {
     var EPlaneConstraintAxisSetting_MAX: String /* "EPlaneConstraintAxisSetting_MAX" */
 }
 
+external interface `T$171` {
+    var OutHit: HitResult
+    var `$`: Boolean
+}
+
 external open class MovementComponent : ActorComponent {
     constructor()
     constructor(Outer: UObject)
@@ -11524,7 +12867,7 @@ external open class MovementComponent : ActorComponent {
     open fun SetPlaneConstraintEnabled(bEnabled: Boolean)
     open fun SetPlaneConstraintAxisSetting(NewAxisSetting: String /* "Custom" | "X" | "Y" | "Z" | "UseGlobalPhysicsSetting" | "EPlaneConstraintAxisSetting_MAX" */)
     open fun PhysicsVolumeChanged(NewVolume: PhysicsVolume)
-    open fun MoveUpdatedComponent(Delta: Vector, NewRotation: Rotator, OutHit: HitResult = definedExternally, bSweep: Boolean = definedExternally, bTeleport: Boolean = definedExternally): `T$89`
+    open fun MoveUpdatedComponent(Delta: Vector, NewRotation: Rotator, OutHit: HitResult = definedExternally, bSweep: Boolean = definedExternally, bTeleport: Boolean = definedExternally): `T$171`
     open fun GetModifiedMaxSpeed(): Number
     open fun GetMaxSpeedModifier(): Number
     open fun IsExceedingMaxSpeed(MaxSpeed: Number): Boolean
@@ -11756,7 +13099,7 @@ external object EProcMeshSliceCapOption {
     var EProcMeshSliceCapOption_MAX: String /* "EProcMeshSliceCapOption_MAX" */
 }
 
-external interface `T$342` {
+external interface `T$172` {
     var Vertices: Array<Vector>
     var Triangles: Array<Number>
     var Normals: Array<Vector>
@@ -11764,11 +13107,11 @@ external interface `T$342` {
     var Tangents: Array<ProcMeshTangent>
 }
 
-external interface `T$343` {
+external interface `T$173` {
     var OutOtherHalfProcMesh: ProceduralMeshComponent
 }
 
-external interface `T$344` {
+external interface `T$174` {
     var Vertices: Array<Vector>
     var Triangles: Array<Number>
     var Normals: Array<Vector>
@@ -11797,8 +13140,8 @@ external open class ProceduralMeshComponent : MeshComponent {
     open fun ClearCollisionConvexMeshes()
     open fun ClearAllMeshSections()
     open fun AddCollisionConvexMesh(ConvexVerts: Array<Vector>)
-    open fun GetSectionFromProceduralMesh(SectionIndex: Number, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$342`
-    open fun SliceProceduralMesh(PlanePosition: Vector, PlaneNormal: Vector, bCreateOtherHalf: Boolean, OutOtherHalfProcMesh: ProceduralMeshComponent = definedExternally, CapOption: String /* "NoCap" | "CreateNewSectionForCap" | "UseLastSectionForCap" | "EProcMeshSliceCapOption_MAX" */ = definedExternally, CapMaterial: MaterialInterface = definedExternally): `T$343`
+    open fun GetSectionFromProceduralMesh(SectionIndex: Number, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$172`
+    open fun SliceProceduralMesh(PlanePosition: Vector, PlaneNormal: Vector, bCreateOtherHalf: Boolean, OutOtherHalfProcMesh: ProceduralMeshComponent = definedExternally, CapOption: String /* "NoCap" | "CreateNewSectionForCap" | "UseLastSectionForCap" | "EProcMeshSliceCapOption_MAX" */ = definedExternally, CapMaterial: MaterialInterface = definedExternally): `T$173`
 
     companion object {
         fun Load(ResourceName: String): ProceduralMeshComponent
@@ -11807,8 +13150,8 @@ external open class ProceduralMeshComponent : MeshComponent {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ProceduralMeshComponent
         fun C(Other: UObject): ProceduralMeshComponent
         fun C(Other: Any): ProceduralMeshComponent
-        fun GetSectionFromProceduralMesh(InProcMesh: ProceduralMeshComponent, SectionIndex: Number, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$344`
-        fun SliceProceduralMesh(InProcMesh: ProceduralMeshComponent, PlanePosition: Vector, PlaneNormal: Vector, bCreateOtherHalf: Boolean, OutOtherHalfProcMesh: ProceduralMeshComponent = definedExternally, CapOption: String /* "NoCap" | "CreateNewSectionForCap" | "UseLastSectionForCap" | "EProcMeshSliceCapOption_MAX" */ = definedExternally, CapMaterial: MaterialInterface = definedExternally): `T$343`
+        fun GetSectionFromProceduralMesh(InProcMesh: ProceduralMeshComponent, SectionIndex: Number, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$174`
+        fun SliceProceduralMesh(InProcMesh: ProceduralMeshComponent, PlanePosition: Vector, PlaneNormal: Vector, bCreateOtherHalf: Boolean, OutOtherHalfProcMesh: ProceduralMeshComponent = definedExternally, CapOption: String /* "NoCap" | "CreateNewSectionForCap" | "UseLastSectionForCap" | "EProcMeshSliceCapOption_MAX" */ = definedExternally, CapMaterial: MaterialInterface = definedExternally): `T$173`
     }
 }
 
@@ -11819,7 +13162,7 @@ external object EVertexPaintAxis {
     var EVertexPaintAxis_MAX: String /* "EVertexPaintAxis_MAX" */
 }
 
-external interface `T$345` {
+external interface `T$175` {
     var Min: Vector
     var Max: Vector
 }
@@ -11870,7 +13213,8 @@ external open class StaticMeshComponent : MeshComponent {
     open fun SetEvaluateWorldPositionOffsetInRayTracing(NewValue: Boolean)
     open fun SetDistanceFieldSelfShadowBias(NewValue: Number)
     open fun OnRep_StaticMesh(OldStaticMesh: StaticMesh)
-    open fun GetLocalBounds(Min: Vector = definedExternally, Max: Vector = definedExternally): `T$345`
+    open fun GetLocalBounds(Min: Vector = definedExternally, Max: Vector = definedExternally): `T$175`
+    open fun GetPhysicsBodySetupFromStaticMeshComponent(): BodySetup
     open fun CopyProceduralMeshFromStaticMeshComponent(LODIndex: Number, ProcMeshComponent: ProceduralMeshComponent, bCreateCollision: Boolean)
     open fun PaintVerticesLerpAlongAxis(StartColor: LinearColor, EndColor: LinearColor, Axis: String /* "X" | "Y" | "Z" | "EVertexPaintAxis_MAX" */, bConvertToSRGB: Boolean)
     open fun PaintVerticesSingleColor(FillColor: LinearColor, bConvertToSRGB: Boolean)
@@ -11883,6 +13227,7 @@ external open class StaticMeshComponent : MeshComponent {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): StaticMeshComponent
         fun C(Other: UObject): StaticMeshComponent
         fun C(Other: Any): StaticMeshComponent
+        fun GetPhysicsBodySetupFromStaticMeshComponent(InStaticMeshComp: StaticMeshComponent): BodySetup
         fun CopyProceduralMeshFromStaticMeshComponent(StaticMeshComponent: StaticMeshComponent, LODIndex: Number, ProcMeshComponent: ProceduralMeshComponent, bCreateCollision: Boolean)
         fun PaintVerticesLerpAlongAxis(StaticMeshComponent: StaticMeshComponent, StartColor: LinearColor, EndColor: LinearColor, Axis: String /* "X" | "Y" | "Z" | "EVertexPaintAxis_MAX" */, bConvertToSRGB: Boolean)
         fun PaintVerticesSingleColor(StaticMeshComponent: StaticMeshComponent, FillColor: LinearColor, bConvertToSRGB: Boolean)
@@ -11920,956 +13265,14 @@ external open class SpectatorPawn(InWorld: World, Location: Vector = definedExte
     }
 }
 
-external object EControllerHand {
-    var Left: String /* "Left" */
-    var Right: String /* "Right" */
-    var AnyHand: String /* "AnyHand" */
-    var Pad: String /* "Pad" */
-    var ExternalCamera: String /* "ExternalCamera" */
-    var Gun: String /* "Gun" */
-    var Special_1: String /* "Special_1" */
-    var Special_2: String /* "Special_2" */
-    var Special_3: String /* "Special_3" */
-    var Special_4: String /* "Special_4" */
-    var Special_5: String /* "Special_5" */
-    var Special_6: String /* "Special_6" */
-    var Special_7: String /* "Special_7" */
-    var Special_8: String /* "Special_8" */
-    var Special_9: String /* "Special_9" */
-    var Special_10: String /* "Special_10" */
-    var Special_11: String /* "Special_11" */
-    var ControllerHand_Count: String /* "ControllerHand_Count" */
-    var EControllerHand_MAX: String /* "EControllerHand_MAX" */
-}
-
 external object EViewTargetBlendFunction {
     var VTBlend_Linear: String /* "VTBlend_Linear" */
     var VTBlend_Cubic: String /* "VTBlend_Cubic" */
     var VTBlend_EaseIn: String /* "VTBlend_EaseIn" */
     var VTBlend_EaseOut: String /* "VTBlend_EaseOut" */
     var VTBlend_EaseInOut: String /* "VTBlend_EaseInOut" */
+    var VTBlend_PreBlended: String /* "VTBlend_PreBlended" */
     var VTBlend_MAX: String /* "VTBlend_MAX" */
-}
-
-external open class MovieSceneSignedObject : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Signature: Guid
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneSignedObject
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneSignedObject
-        fun GetDefaultObject(): MovieSceneSignedObject
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneSignedObject
-        fun C(Other: UObject): MovieSceneSignedObject
-        fun C(Other: Any): MovieSceneSignedObject
-    }
-}
-
-external open class MovieSceneEvaluationTemplateSerialNumber {
-    open var Value: Any
-    open fun clone(): MovieSceneEvaluationTemplateSerialNumber
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationTemplateSerialNumber
-        fun C(Other: Any): MovieSceneEvaluationTemplateSerialNumber
-    }
-}
-
-external open class MovieSceneTrackIdentifier {
-    open var Value: Any
-    open fun clone(): MovieSceneTrackIdentifier
-
-    companion object {
-        fun C(Other: UObject): MovieSceneTrackIdentifier
-        fun C(Other: Any): MovieSceneTrackIdentifier
-    }
-}
-
-external open class MovieSceneTemplateGenerationLedger {
-    open var LastTrackIdentifier: MovieSceneTrackIdentifier
-    open var TrackSignatureToTrackIdentifier: Any
-    open var SubSectionRanges: Any
-    open fun clone(): MovieSceneTemplateGenerationLedger
-
-    companion object {
-        fun C(Other: UObject): MovieSceneTemplateGenerationLedger
-        fun C(Other: Any): MovieSceneTemplateGenerationLedger
-    }
-}
-
-external open class MovieSceneEvaluationTemplate {
-    open var Tracks: Any
-    open var SequenceSignature: Guid
-    open var TemplateSerialNumber: MovieSceneEvaluationTemplateSerialNumber
-    open var TemplateLedger: MovieSceneTemplateGenerationLedger
-    open fun clone(): MovieSceneEvaluationTemplate
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationTemplate
-        fun C(Other: Any): MovieSceneEvaluationTemplate
-    }
-}
-
-external open class MovieSceneSequenceID {
-    open var Value: Any
-    open fun clone(): MovieSceneSequenceID
-
-    companion object {
-        fun C(Other: UObject): MovieSceneSequenceID
-        fun C(Other: Any): MovieSceneSequenceID
-    }
-}
-
-external open class MovieSceneSequenceHierarchyNode {
-    open var ParentID: MovieSceneSequenceID
-    open var Children: Array<MovieSceneSequenceID>
-    open fun clone(): MovieSceneSequenceHierarchyNode
-
-    companion object {
-        fun C(Other: UObject): MovieSceneSequenceHierarchyNode
-        fun C(Other: Any): MovieSceneSequenceHierarchyNode
-    }
-}
-
-external open class MovieSceneSubSequenceTree {
-    open fun clone(): MovieSceneSubSequenceTree
-
-    companion object {
-        fun C(Other: UObject): MovieSceneSubSequenceTree
-        fun C(Other: Any): MovieSceneSubSequenceTree
-    }
-}
-
-external open class MovieSceneSequenceHierarchy {
-    open var RootNode: MovieSceneSequenceHierarchyNode
-    open var Tree: MovieSceneSubSequenceTree
-    open var SubSequences: Any
-    open var Hierarchy: Any
-    open fun clone(): MovieSceneSequenceHierarchy
-
-    companion object {
-        fun C(Other: UObject): MovieSceneSequenceHierarchy
-        fun C(Other: Any): MovieSceneSequenceHierarchy
-    }
-}
-
-external open class MovieSceneEvaluationFieldEntityTree {
-    open fun clone(): MovieSceneEvaluationFieldEntityTree
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationFieldEntityTree
-        fun C(Other: Any): MovieSceneEvaluationFieldEntityTree
-    }
-}
-
-external open class MovieSceneEvaluationFieldEntityKey {
-    open var EntityOwner: Any
-    open var EntityID: Any
-    open fun clone(): MovieSceneEvaluationFieldEntityKey
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationFieldEntityKey
-        fun C(Other: Any): MovieSceneEvaluationFieldEntityKey
-    }
-}
-
-external open class MovieSceneEvaluationFieldEntity {
-    open var Key: MovieSceneEvaluationFieldEntityKey
-    open var SharedMetaDataIndex: Number
-    open fun clone(): MovieSceneEvaluationFieldEntity
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationFieldEntity
-        fun C(Other: Any): MovieSceneEvaluationFieldEntity
-    }
-}
-
-external interface `T$346` {
-    var Numerator: Number
-    var Denominator: Number
-}
-
-external open class FrameRate {
-    open var Numerator: Number
-    open var Denominator: Number
-    open fun clone(): FrameRate
-    open fun BreakFrameRate(Numerator: Number = definedExternally, Denominator: Number = definedExternally): `T$346`
-    open fun FrameRatetoSeconds(): Number
-    open fun IsValid(): Boolean
-    open fun IsMultipleOf(OtherFramerate: FrameRate): Boolean
-
-    companion object {
-        fun C(Other: UObject): FrameRate
-        fun C(Other: Any): FrameRate
-        fun BreakFrameRate(InFrameRate: FrameRate, Numerator: Number = definedExternally, Denominator: Number = definedExternally): `T$346`
-        fun FrameRatetoSeconds(InFrameRate: FrameRate): Number
-        fun IsValid(InFrameRate: FrameRate): Boolean
-        fun IsMultipleOf(InFrameRate: FrameRate, OtherFramerate: FrameRate): Boolean
-        fun MakeFrameRate(Numerator: Number, Denominator: Number): FrameRate
-        fun GetTimecodeFrameRate(): FrameRate
-    }
-}
-
-external open class FrameTime {
-    open var FrameNumber: FrameNumber
-    open var SubFrame: Number
-    open fun clone(): FrameTime
-    open fun SnapFrameTime(SourceRate: FrameRate, SnapToRate: FrameRate): FrameTime
-    open fun TransformFrameTime(SourceRate: FrameRate, DestinationRate: FrameRate): FrameTime
-
-    companion object {
-        fun C(Other: UObject): FrameTime
-        fun C(Other: Any): FrameTime
-        fun SnapFrameTime(SourceTime: FrameTime, SourceRate: FrameRate, SnapToRate: FrameRate): FrameTime
-        fun TransformFrameTime(SourceTime: FrameTime, SourceRate: FrameRate, DestinationRate: FrameRate): FrameTime
-        fun Multiply_SecondsFrameRate(TimeInSeconds: Number, FrameRate: FrameRate): FrameTime
-    }
-}
-
-external interface `T$347` {
-    var Frame: FrameNumber
-    var FrameRate: FrameRate
-    var SubFrame: Number
-}
-
-external open class QualifiedFrameTime {
-    open var Time: FrameTime
-    open var Rate: FrameRate
-    open fun clone(): QualifiedFrameTime
-    open fun BreakQualifiedFrameTime(Frame: FrameNumber = definedExternally, FrameRate: FrameRate = definedExternally, SubFrame: Number = definedExternally): `T$347`
-    open fun QualifiedFrameTimetoSeconds(): Number
-
-    companion object {
-        fun C(Other: UObject): QualifiedFrameTime
-        fun C(Other: Any): QualifiedFrameTime
-        fun BreakQualifiedFrameTime(InFrameTime: QualifiedFrameTime, Frame: FrameNumber = definedExternally, FrameRate: FrameRate = definedExternally, SubFrame: Number = definedExternally): `T$347`
-        fun QualifiedFrameTimetoSeconds(InFrameTime: QualifiedFrameTime): Number
-    }
-}
-
-external open class FrameNumber {
-    open var Value: Number
-    open fun clone(): FrameNumber
-    open fun MakeQualifiedFrameTime(FrameRate: FrameRate, SubFrame: Number): QualifiedFrameTime
-    open fun Add_FrameNumberFrameNumber(B: FrameNumber): FrameNumber
-    open fun Add_FrameNumberInteger(B: Number): FrameNumber
-    open fun FrameNumbertoInteger(): Number
-    open fun Divide_FrameNumberInteger(B: Number): FrameNumber
-    open fun Multiply_FrameNumberInteger(B: Number): FrameNumber
-    open fun Subtract_FrameNumberFrameNumber(B: FrameNumber): FrameNumber
-    open fun Subtract_FrameNumberInteger(B: Number): FrameNumber
-
-    companion object {
-        fun C(Other: UObject): FrameNumber
-        fun C(Other: Any): FrameNumber
-        fun MakeQualifiedFrameTime(Frame: FrameNumber, FrameRate: FrameRate, SubFrame: Number): QualifiedFrameTime
-        fun Add_FrameNumberFrameNumber(A: FrameNumber, B: FrameNumber): FrameNumber
-        fun Add_FrameNumberInteger(A: FrameNumber, B: Number): FrameNumber
-        fun FrameNumbertoInteger(InFrameNumber: FrameNumber): Number
-        fun Divide_FrameNumberInteger(A: FrameNumber, B: Number): FrameNumber
-        fun Multiply_FrameNumberInteger(A: FrameNumber, B: Number): FrameNumber
-        fun Subtract_FrameNumberFrameNumber(A: FrameNumber, B: FrameNumber): FrameNumber
-        fun Subtract_FrameNumberInteger(A: FrameNumber, B: Number): FrameNumber
-    }
-}
-
-external object ESectionEvaluationFlags {
-    var None: String /* "None" */
-    var PreRoll: String /* "PreRoll" */
-    var PostRoll: String /* "PostRoll" */
-    var ESectionEvaluationFlags_MAX: String /* "ESectionEvaluationFlags_MAX" */
-}
-
-external open class MovieSceneEvaluationFieldEntityMetaData {
-    open var ForcedTime: FrameNumber
-    open var Flags: String /* "None" | "PreRoll" | "PostRoll" | "ESectionEvaluationFlags_MAX" */
-    open var bEvaluateInSequencePreRoll: Boolean
-    open var bEvaluateInSequencePostRoll: Boolean
-    open fun clone(): MovieSceneEvaluationFieldEntityMetaData
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationFieldEntityMetaData
-        fun C(Other: Any): MovieSceneEvaluationFieldEntityMetaData
-    }
-}
-
-external open class MovieSceneEvaluationFieldSharedEntityMetaData {
-    open var ObjectBindingID: Guid
-    open fun clone(): MovieSceneEvaluationFieldSharedEntityMetaData
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationFieldSharedEntityMetaData
-        fun C(Other: Any): MovieSceneEvaluationFieldSharedEntityMetaData
-    }
-}
-
-external open class MovieSceneEntityComponentField {
-    open var PersistentEntityTree: MovieSceneEvaluationFieldEntityTree
-    open var OneShotEntityTree: MovieSceneEvaluationFieldEntityTree
-    open var Entities: Array<MovieSceneEvaluationFieldEntity>
-    open var EntityMetaData: Array<MovieSceneEvaluationFieldEntityMetaData>
-    open var SharedMetaData: Array<MovieSceneEvaluationFieldSharedEntityMetaData>
-    open fun clone(): MovieSceneEntityComponentField
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEntityComponentField
-        fun C(Other: Any): MovieSceneEntityComponentField
-    }
-}
-
-external open class MovieSceneFrameRange {
-    open fun clone(): MovieSceneFrameRange
-
-    companion object {
-        fun C(Other: UObject): MovieSceneFrameRange
-        fun C(Other: Any): MovieSceneFrameRange
-    }
-}
-
-external open class MovieSceneEvaluationGroupLUTIndex {
-    open var NumInitPtrs: Number
-    open var NumEvalPtrs: Number
-    open fun clone(): MovieSceneEvaluationGroupLUTIndex
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationGroupLUTIndex
-        fun C(Other: Any): MovieSceneEvaluationGroupLUTIndex
-    }
-}
-
-external open class MovieSceneEvaluationFieldTrackPtr {
-    open var SequenceID: MovieSceneSequenceID
-    open var TrackIdentifier: MovieSceneTrackIdentifier
-    open fun clone(): MovieSceneEvaluationFieldTrackPtr
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationFieldTrackPtr
-        fun C(Other: Any): MovieSceneEvaluationFieldTrackPtr
-    }
-}
-
-external open class MovieSceneFieldEntry_EvaluationTrack {
-    open var TrackPtr: MovieSceneEvaluationFieldTrackPtr
-    open var NumChildren: Any
-    open fun clone(): MovieSceneFieldEntry_EvaluationTrack
-
-    companion object {
-        fun C(Other: UObject): MovieSceneFieldEntry_EvaluationTrack
-        fun C(Other: Any): MovieSceneFieldEntry_EvaluationTrack
-    }
-}
-
-external open class MovieSceneFieldEntry_ChildTemplate {
-    open var ChildIndex: Any
-    open var Flags: String /* "None" | "PreRoll" | "PostRoll" | "ESectionEvaluationFlags_MAX" */
-    open var ForcedTime: FrameNumber
-    open fun clone(): MovieSceneFieldEntry_ChildTemplate
-
-    companion object {
-        fun C(Other: UObject): MovieSceneFieldEntry_ChildTemplate
-        fun C(Other: Any): MovieSceneFieldEntry_ChildTemplate
-    }
-}
-
-external open class MovieSceneEvaluationGroup {
-    open var LUTIndices: Array<MovieSceneEvaluationGroupLUTIndex>
-    open var TrackLUT: Array<MovieSceneFieldEntry_EvaluationTrack>
-    open var SectionLUT: Array<MovieSceneFieldEntry_ChildTemplate>
-    open fun clone(): MovieSceneEvaluationGroup
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationGroup
-        fun C(Other: Any): MovieSceneEvaluationGroup
-    }
-}
-
-external open class MovieSceneEvaluationKey {
-    open var SequenceID: MovieSceneSequenceID
-    open var TrackIdentifier: MovieSceneTrackIdentifier
-    open var SectionIndex: Any
-    open fun clone(): MovieSceneEvaluationKey
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationKey
-        fun C(Other: Any): MovieSceneEvaluationKey
-    }
-}
-
-external open class MovieSceneOrderedEvaluationKey {
-    open var Key: MovieSceneEvaluationKey
-    open var SetupIndex: Any
-    open var TearDownIndex: Any
-    open fun clone(): MovieSceneOrderedEvaluationKey
-
-    companion object {
-        fun C(Other: UObject): MovieSceneOrderedEvaluationKey
-        fun C(Other: Any): MovieSceneOrderedEvaluationKey
-    }
-}
-
-external open class MovieSceneEvaluationMetaData {
-    open var ActiveSequences: Array<MovieSceneSequenceID>
-    open var ActiveEntities: Array<MovieSceneOrderedEvaluationKey>
-    open fun clone(): MovieSceneEvaluationMetaData
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationMetaData
-        fun C(Other: Any): MovieSceneEvaluationMetaData
-    }
-}
-
-external open class MovieSceneEvaluationField {
-    open var Signature: Guid
-    open var Ranges: Array<MovieSceneFrameRange>
-    open var Groups: Array<MovieSceneEvaluationGroup>
-    open var MetaData: Array<MovieSceneEvaluationMetaData>
-    open fun clone(): MovieSceneEvaluationField
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEvaluationField
-        fun C(Other: Any): MovieSceneEvaluationField
-    }
-}
-
-external open class MovieSceneSequenceCompilerMaskStruct {
-    open var bHierarchy: Boolean
-    open var bEvaluationTemplate: Boolean
-    open var bEvaluationTemplateField: Boolean
-    open var bEntityComponentField: Boolean
-    open fun clone(): MovieSceneSequenceCompilerMaskStruct
-
-    companion object {
-        fun C(Other: UObject): MovieSceneSequenceCompilerMaskStruct
-        fun C(Other: Any): MovieSceneSequenceCompilerMaskStruct
-    }
-}
-
-external object EMovieSceneSequenceFlags {
-    var None: String /* "None" */
-    var Volatile: String /* "Volatile" */
-    var BlockingEvaluation: String /* "BlockingEvaluation" */
-    var InheritedFlags: String /* "InheritedFlags" */
-    var EMovieSceneSequenceFlags_MAX: String /* "EMovieSceneSequenceFlags_MAX" */
-}
-
-external open class MovieSceneCompiledData : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var EvaluationTemplate: MovieSceneEvaluationTemplate
-    open var Hierarchy: MovieSceneSequenceHierarchy
-    open var EntityComponentField: MovieSceneEntityComponentField
-    open var TrackTemplateField: MovieSceneEvaluationField
-    open var DeterminismFences: Array<FrameTime>
-    open var CompiledSignature: Guid
-    open var CompilerVersion: Guid
-    open var AccumulatedMask: MovieSceneSequenceCompilerMaskStruct
-    open var AllocatedMask: MovieSceneSequenceCompilerMaskStruct
-    open var AccumulatedFlags: String /* "None" | "Volatile" | "BlockingEvaluation" | "InheritedFlags" | "EMovieSceneSequenceFlags_MAX" */
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneCompiledData
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneCompiledData
-        fun GetDefaultObject(): MovieSceneCompiledData
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneCompiledData
-        fun C(Other: UObject): MovieSceneCompiledData
-        fun C(Other: Any): MovieSceneCompiledData
-    }
-}
-
-external object EMovieSceneCompletionMode {
-    var KeepState: String /* "KeepState" */
-    var RestoreState: String /* "RestoreState" */
-    var ProjectDefault: String /* "ProjectDefault" */
-    var EMovieSceneCompletionMode_MAX: String /* "EMovieSceneCompletionMode_MAX" */
-}
-
-external object EMovieSceneObjectBindingSpace {
-    var Local: String /* "Local" */
-    var Root: String /* "Root" */
-    var EMovieSceneObjectBindingSpace_MAX: String /* "EMovieSceneObjectBindingSpace_MAX" */
-}
-
-external open class MovieSceneObjectBindingID {
-    open var SequenceID: Number
-    open var Space: String /* "Local" | "Root" | "EMovieSceneObjectBindingSpace_MAX" */
-    open var Guid: Guid
-    open fun clone(): MovieSceneObjectBindingID
-
-    companion object {
-        fun C(Other: UObject): MovieSceneObjectBindingID
-        fun C(Other: Any): MovieSceneObjectBindingID
-    }
-}
-
-external open class MovieSceneSequence : MovieSceneSignedObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var CompiledData: MovieSceneCompiledData
-    open var DefaultCompletionMode: String /* "KeepState" | "RestoreState" | "ProjectDefault" | "EMovieSceneCompletionMode_MAX" */
-    open var bParentContextsAreSignificant: Boolean
-    open var bPlayableDirectly: Boolean
-    open var SequenceFlags: String /* "None" | "Volatile" | "BlockingEvaluation" | "InheritedFlags" | "EMovieSceneSequenceFlags_MAX" */
-    open fun FindBindingsByTag(InBindingName: String): Array<MovieSceneObjectBindingID>
-    open fun FindBindingByTag(InBindingName: String): MovieSceneObjectBindingID
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneSequence
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneSequence
-        fun GetDefaultObject(): MovieSceneSequence
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneSequence
-        fun C(Other: UObject): MovieSceneSequence
-        fun C(Other: Any): MovieSceneSequence
-    }
-}
-
-external open class Timecode {
-    open var Hours: Number
-    open var Minutes: Number
-    open var Seconds: Number
-    open var Frames: Number
-    open var bDropFrameFormat: Boolean
-    open fun clone(): Timecode
-    open fun TimecodetoString(bForceSignDisplay: Boolean): String
-
-    companion object {
-        fun C(Other: UObject): Timecode
-        fun C(Other: Any): Timecode
-        fun TimecodetoString(InTimecode: Timecode, bForceSignDisplay: Boolean): String
-        fun GetTimecode(): Timecode
-    }
-}
-
-external open class MovieSceneTimecodeSource {
-    open var Timecode: Timecode
-    open var DeltaFrame: FrameNumber
-    open fun clone(): MovieSceneTimecodeSource
-
-    companion object {
-        fun C(Other: UObject): MovieSceneTimecodeSource
-        fun C(Other: Any): MovieSceneTimecodeSource
-    }
-}
-
-external object ESpawnOwnership {
-    var InnerSequence: String /* "InnerSequence" */
-    var MasterSequence: String /* "MasterSequence" */
-    var External: String /* "External" */
-    var ESpawnOwnership_MAX: String /* "ESpawnOwnership_MAX" */
-}
-
-external open class MovieSceneSpawnable {
-    open var SpawnTransform: Transform
-    open var Tags: Array<String>
-    open var bContinuouslyRespawn: Boolean
-    open var bEvaluateTracksWhenNotSpawned: Boolean
-    open var Guid: Guid
-    open var Name: String
-    open var ObjectTemplate: UObject
-    open var ChildPossessables: Array<Guid>
-    open var Ownership: String /* "InnerSequence" | "MasterSequence" | "External" | "ESpawnOwnership_MAX" */
-    open var GeneratedClass: UnrealEngineClass
-    open var LevelName: String
-    open fun clone(): MovieSceneSpawnable
-
-    companion object {
-        fun C(Other: UObject): MovieSceneSpawnable
-        fun C(Other: Any): MovieSceneSpawnable
-    }
-}
-
-external open class MovieScenePossessable {
-    open var Tags: Array<String>
-    open var Guid: Guid
-    open var Name: String
-    open var PossessedObjectClass: UnrealEngineClass
-    open var ParentGuid: Guid
-    open fun clone(): MovieScenePossessable
-
-    companion object {
-        fun C(Other: UObject): MovieScenePossessable
-        fun C(Other: Any): MovieScenePossessable
-    }
-}
-
-external open class MovieSceneTrackEvalOptions {
-    open var bCanEvaluateNearestSection: Boolean
-    open var bEvalNearestSection: Boolean
-    open var bEvaluateInPreroll: Boolean
-    open var bEvaluateInPostroll: Boolean
-    open var bEvaluateNearestSection: Boolean
-    open fun clone(): MovieSceneTrackEvalOptions
-
-    companion object {
-        fun C(Other: UObject): MovieSceneTrackEvalOptions
-        fun C(Other: Any): MovieSceneTrackEvalOptions
-    }
-}
-
-external open class MovieSceneTrackDisplayOptions {
-    open var bShowVerticalFrames: Boolean
-    open fun clone(): MovieSceneTrackDisplayOptions
-
-    companion object {
-        fun C(Other: UObject): MovieSceneTrackDisplayOptions
-        fun C(Other: Any): MovieSceneTrackDisplayOptions
-    }
-}
-
-external open class MovieSceneSectionEvalOptions {
-    open var bCanEditCompletionMode: Boolean
-    open var CompletionMode: String /* "KeepState" | "RestoreState" | "ProjectDefault" | "EMovieSceneCompletionMode_MAX" */
-    open fun clone(): MovieSceneSectionEvalOptions
-
-    companion object {
-        fun C(Other: UObject): MovieSceneSectionEvalOptions
-        fun C(Other: Any): MovieSceneSectionEvalOptions
-    }
-}
-
-external open class MovieSceneEasingSettings {
-    open var AutoEaseInDuration: Number
-    open var AutoEaseOutDuration: Number
-    open var EaseIn: Any
-    open var bManualEaseIn: Boolean
-    open var ManualEaseInDuration: Number
-    open var EaseOut: Any
-    open var bManualEaseOut: Boolean
-    open var ManualEaseOutDuration: Number
-    open var AutoEaseInTime: Number
-    open var AutoEaseOutTime: Number
-    open var ManualEaseInTime: Number
-    open var ManualEaseOutTime: Number
-    open fun clone(): MovieSceneEasingSettings
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEasingSettings
-        fun C(Other: Any): MovieSceneEasingSettings
-    }
-}
-
-external object EMovieSceneBlendType {
-    var Invalid: String /* "Invalid" */
-    var Absolute: String /* "Absolute" */
-    var Additive: String /* "Additive" */
-    var Relative: String /* "Relative" */
-    var AdditiveFromBase: String /* "AdditiveFromBase" */
-    var EMovieSceneBlendType_MAX: String /* "EMovieSceneBlendType_MAX" */
-}
-
-external open class OptionalMovieSceneBlendType {
-    open var BlendType: String /* "Invalid" | "Absolute" | "Additive" | "Relative" | "AdditiveFromBase" | "EMovieSceneBlendType_MAX" */
-    open var bIsValid: Boolean
-    open fun clone(): OptionalMovieSceneBlendType
-
-    companion object {
-        fun C(Other: UObject): OptionalMovieSceneBlendType
-        fun C(Other: Any): OptionalMovieSceneBlendType
-    }
-}
-
-external open class MovieSceneSection : MovieSceneSignedObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var EvalOptions: MovieSceneSectionEvalOptions
-    open var Easing: MovieSceneEasingSettings
-    open var SectionRange: MovieSceneFrameRange
-    open var TimecodeSource: MovieSceneTimecodeSource
-    open var PreRollFrames: FrameNumber
-    open var PostRollFrames: FrameNumber
-    open var RowIndex: Number
-    open var OverlapPriority: Number
-    open var bIsActive: Boolean
-    open var bIsLocked: Boolean
-    open var StartTime: Number
-    open var EndTime: Number
-    open var PrerollTime: Number
-    open var PostrollTime: Number
-    open var bIsInfinite: Boolean
-    open var bSupportsInfiniteRange: Boolean
-    open var BlendType: OptionalMovieSceneBlendType
-    open fun SetRowIndex(NewRowIndex: Number)
-    open fun SetPreRollFrames(InPreRollFrames: Number)
-    open fun SetPostRollFrames(InPostRollFrames: Number)
-    open fun SetOverlapPriority(NewPriority: Number)
-    open fun SetIsLocked(bInIsLocked: Boolean)
-    open fun SetIsActive(bInIsActive: Boolean)
-    open fun SetCompletionMode(InCompletionMode: String /* "KeepState" | "RestoreState" | "ProjectDefault" | "EMovieSceneCompletionMode_MAX" */)
-    open fun SetBlendType(InBlendType: String /* "Invalid" | "Absolute" | "Additive" | "Relative" | "AdditiveFromBase" | "EMovieSceneBlendType_MAX" */)
-    open fun IsLocked(): Boolean
-    open fun IsActive(): Boolean
-    open fun GetRowIndex(): Number
-    open fun GetPreRollFrames(): Number
-    open fun GetPostRollFrames(): Number
-    open fun GetOverlapPriority(): Number
-    open fun GetCompletionMode(): String /* "KeepState" | "RestoreState" | "ProjectDefault" | "EMovieSceneCompletionMode_MAX" */
-    open fun GetBlendType(): OptionalMovieSceneBlendType
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneSection
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneSection
-        fun GetDefaultObject(): MovieSceneSection
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneSection
-        fun C(Other: UObject): MovieSceneSection
-        fun C(Other: Any): MovieSceneSection
-    }
-}
-
-external open class FrameNumberRangeBound {
-    open var Type: String /* "Exclusive" | "Inclusive" | "Open" | "ERangeBoundTypes_MAX" */
-    open var Value: FrameNumber
-    open fun clone(): FrameNumberRangeBound
-
-    companion object {
-        fun C(Other: UObject): FrameNumberRangeBound
-        fun C(Other: Any): FrameNumberRangeBound
-    }
-}
-
-external open class FrameNumberRange {
-    open var LowerBound: FrameNumberRangeBound
-    open var UpperBound: FrameNumberRangeBound
-    open fun clone(): FrameNumberRange
-
-    companion object {
-        fun C(Other: UObject): FrameNumberRange
-        fun C(Other: Any): FrameNumberRange
-    }
-}
-
-external open class MovieSceneTrackEvaluationFieldEntry {
-    open var Section: MovieSceneSection
-    open var Range: FrameNumberRange
-    open var ForcedTime: FrameNumber
-    open var Flags: String /* "None" | "PreRoll" | "PostRoll" | "ESectionEvaluationFlags_MAX" */
-    open var LegacySortOrder: Any
-    open fun clone(): MovieSceneTrackEvaluationFieldEntry
-
-    companion object {
-        fun C(Other: UObject): MovieSceneTrackEvaluationFieldEntry
-        fun C(Other: Any): MovieSceneTrackEvaluationFieldEntry
-    }
-}
-
-external open class MovieSceneTrackEvaluationField {
-    open var Entries: Array<MovieSceneTrackEvaluationFieldEntry>
-    open fun clone(): MovieSceneTrackEvaluationField
-
-    companion object {
-        fun C(Other: UObject): MovieSceneTrackEvaluationField
-        fun C(Other: Any): MovieSceneTrackEvaluationField
-    }
-}
-
-external open class MovieSceneTrack : MovieSceneSignedObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var EvalOptions: MovieSceneTrackEvalOptions
-    open var DisplayOptions: MovieSceneTrackDisplayOptions
-    open var bIsEvalDisabled: Boolean
-    open var EvaluationFieldGuid: Guid
-    open var EvaluationFieldVersion: Any
-    open var EvaluationField: MovieSceneTrackEvaluationField
-    open var ObjectBindingID: Guid
-    open var TrackTint: Color
-    open var SortingOrder: Number
-    open var bSupportsDefaultSections: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneTrack
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneTrack
-        fun GetDefaultObject(): MovieSceneTrack
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneTrack
-        fun C(Other: UObject): MovieSceneTrack
-        fun C(Other: Any): MovieSceneTrack
-    }
-}
-
-external open class MovieSceneBinding {
-    open var ObjectGuid: Guid
-    open var BindingName: String
-    open var Tracks: Array<MovieSceneTrack>
-    open var SortingOrder: Number
-    open fun clone(): MovieSceneBinding
-
-    companion object {
-        fun C(Other: UObject): MovieSceneBinding
-        fun C(Other: Any): MovieSceneBinding
-    }
-}
-
-external object EMovieSceneEvaluationType {
-    var FrameLocked: String /* "FrameLocked" */
-    var WithSubFrames: String /* "WithSubFrames" */
-    var EMovieSceneEvaluationType_MAX: String /* "EMovieSceneEvaluationType_MAX" */
-}
-
-external object EUpdateClockSource {
-    var Tick: String /* "Tick" */
-    var Platform: String /* "Platform" */
-    var Audio: String /* "Audio" */
-    var RelativeTimecode: String /* "RelativeTimecode" */
-    var Timecode: String /* "Timecode" */
-    var Custom: String /* "Custom" */
-    var EUpdateClockSource_MAX: String /* "EUpdateClockSource_MAX" */
-}
-
-external open class MovieSceneMarkedFrame {
-    open var FrameNumber: FrameNumber
-    open var Label: String
-    open var Color: LinearColor
-    open fun clone(): MovieSceneMarkedFrame
-
-    companion object {
-        fun C(Other: UObject): MovieSceneMarkedFrame
-        fun C(Other: Any): MovieSceneMarkedFrame
-    }
-}
-
-external open class FloatRangeBound {
-    open var Type: String /* "Exclusive" | "Inclusive" | "Open" | "ERangeBoundTypes_MAX" */
-    open var Value: Number
-    open fun clone(): FloatRangeBound
-
-    companion object {
-        fun C(Other: UObject): FloatRangeBound
-        fun C(Other: Any): FloatRangeBound
-    }
-}
-
-external open class FloatRange {
-    open var LowerBound: FloatRangeBound
-    open var UpperBound: FloatRangeBound
-    open fun clone(): FloatRange
-
-    companion object {
-        fun C(Other: UObject): FloatRange
-        fun C(Other: Any): FloatRange
-    }
-}
-
-external open class MovieSceneEditorData {
-    open var ExpansionStates: Any
-    open var PinnedNodes: Array<String>
-    open var ViewStart: Any
-    open var ViewEnd: Any
-    open var WorkStart: Any
-    open var WorkEnd: Any
-    open var MarkedFrames: Any
-    open var WorkingRange: FloatRange
-    open var ViewRange: FloatRange
-    open fun clone(): MovieSceneEditorData
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEditorData
-        fun C(Other: Any): MovieSceneEditorData
-    }
-}
-
-external open class MovieSceneFolder : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var FolderName: String
-    open var ChildFolders: Array<MovieSceneFolder>
-    open var ChildMasterTracks: Array<MovieSceneTrack>
-    open var ChildObjectBindingStrings: Array<String>
-    open var FolderColor: Color
-    open var SortingOrder: Number
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneFolder
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneFolder
-        fun GetDefaultObject(): MovieSceneFolder
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneFolder
-        fun C(Other: UObject): MovieSceneFolder
-        fun C(Other: Any): MovieSceneFolder
-    }
-}
-
-external open class MovieSceneSectionGroup {
-    open var Sections: Array<Any>
-    open fun clone(): MovieSceneSectionGroup
-
-    companion object {
-        fun C(Other: UObject): MovieSceneSectionGroup
-        fun C(Other: Any): MovieSceneSectionGroup
-    }
-}
-
-external open class MovieSceneNodeGroup : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Name: String
-    open var Nodes: Array<String>
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneNodeGroup
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneNodeGroup
-        fun GetDefaultObject(): MovieSceneNodeGroup
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneNodeGroup
-        fun C(Other: UObject): MovieSceneNodeGroup
-        fun C(Other: Any): MovieSceneNodeGroup
-    }
-}
-
-external open class MovieSceneNodeGroupCollection : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var NodeGroups: Array<MovieSceneNodeGroup>
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneNodeGroupCollection
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneNodeGroupCollection
-        fun GetDefaultObject(): MovieSceneNodeGroupCollection
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneNodeGroupCollection
-        fun C(Other: UObject): MovieSceneNodeGroupCollection
-        fun C(Other: Any): MovieSceneNodeGroupCollection
-    }
-}
-
-external open class MovieScene : MovieSceneSignedObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var TimecodeSource: MovieSceneTimecodeSource
-    open var Spawnables: Array<MovieSceneSpawnable>
-    open var Possessables: Array<MovieScenePossessable>
-    open var ObjectBindings: Array<MovieSceneBinding>
-    open var BindingGroups: Any
-    open var MasterTracks: Array<MovieSceneTrack>
-    open var CameraCutTrack: MovieSceneTrack
-    open var SelectionRange: MovieSceneFrameRange
-    open var PlaybackRange: MovieSceneFrameRange
-    open var TickResolution: FrameRate
-    open var DisplayRate: FrameRate
-    open var EvaluationType: String /* "FrameLocked" | "WithSubFrames" | "EMovieSceneEvaluationType_MAX" */
-    open var ClockSource: String /* "Tick" | "Platform" | "Audio" | "RelativeTimecode" | "Timecode" | "Custom" | "EUpdateClockSource_MAX" */
-    open var CustomClockSourcePath: SoftObjectPath
-    open var MarkedFrames: Array<MovieSceneMarkedFrame>
-    open var bReadOnly: Boolean
-    open var bPlaybackRangeLocked: Boolean
-    open var ObjectsToDisplayNames: Any
-    open var ObjectsToLabels: Any
-    open var EditorData: MovieSceneEditorData
-    open var RootFolders: Array<MovieSceneFolder>
-    open var SoloNodes: Array<String>
-    open var MuteNodes: Array<String>
-    open var SectionGroups: Array<MovieSceneSectionGroup>
-    open var NodeGroupCollection: MovieSceneNodeGroupCollection
-    open var InTime: Number
-    open var OutTime: Number
-    open var StartTime: Number
-    open var EndTime: Number
-    open var bForceFixedFrameIntervalPlayback: Boolean
-    open var FixedFrameInterval: Number
-
-    companion object {
-        fun Load(ResourceName: String): MovieScene
-        fun Find(Outer: UObject, ResourceName: String): MovieScene
-        fun GetDefaultObject(): MovieScene
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieScene
-        fun C(Other: UObject): MovieScene
-        fun C(Other: Any): MovieScene
-    }
 }
 
 external open class WidgetAnimationBinding {
@@ -12906,71 +13309,6 @@ external open class WidgetAnimation : MovieSceneSequence {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): WidgetAnimation
         fun C(Other: UObject): WidgetAnimation
         fun C(Other: Any): WidgetAnimation
-    }
-}
-
-external open class MovieSceneCompiledDataManager : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Hierarchies: Any
-    open var TrackTemplates: Any
-    open var TrackTemplateFields: Any
-    open var EntityComponentFields: Any
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneCompiledDataManager
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneCompiledDataManager
-        fun GetDefaultObject(): MovieSceneCompiledDataManager
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneCompiledDataManager
-        fun C(Other: UObject): MovieSceneCompiledDataManager
-        fun C(Other: Any): MovieSceneCompiledDataManager
-    }
-}
-
-external open class MovieSceneEntitySystemGraphNodes {
-    open fun clone(): MovieSceneEntitySystemGraphNodes
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEntitySystemGraphNodes
-        fun C(Other: Any): MovieSceneEntitySystemGraphNodes
-    }
-}
-
-external open class MovieSceneEntitySystemGraph {
-    open var Nodes: MovieSceneEntitySystemGraphNodes
-    open fun clone(): MovieSceneEntitySystemGraph
-
-    companion object {
-        fun C(Other: UObject): MovieSceneEntitySystemGraph
-        fun C(Other: Any): MovieSceneEntitySystemGraph
-    }
-}
-
-external open class MovieSceneEntitySystemLinker : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var SystemGraph: MovieSceneEntitySystemGraph
-
-    companion object {
-        fun Load(ResourceName: String): MovieSceneEntitySystemLinker
-        fun Find(Outer: UObject, ResourceName: String): MovieSceneEntitySystemLinker
-        fun GetDefaultObject(): MovieSceneEntitySystemLinker
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MovieSceneEntitySystemLinker
-        fun C(Other: UObject): MovieSceneEntitySystemLinker
-        fun C(Other: Any): MovieSceneEntitySystemLinker
-    }
-}
-
-external open class MovieSceneRootEvaluationTemplateInstance {
-    open var WeakRootSequence: Any
-    open var CompiledDataManager: MovieSceneCompiledDataManager
-    open var EntitySystemLinker: MovieSceneEntitySystemLinker
-    open var DirectorInstances: Any
-    open fun clone(): MovieSceneRootEvaluationTemplateInstance
-
-    companion object {
-        fun C(Other: UObject): MovieSceneRootEvaluationTemplateInstance
-        fun C(Other: Any): MovieSceneRootEvaluationTemplateInstance
     }
 }
 
@@ -13304,6 +13642,26 @@ external object ESoundWaveFFTSize {
     var ESoundWaveFFTSize_MAX: String /* "ESoundWaveFFTSize_MAX" */
 }
 
+external object EModulationRouting {
+    var Disable: String /* "Disable" */
+    var Inherit: String /* "Inherit" */
+    var Override: String /* "Override" */
+    var EModulationRouting_MAX: String /* "EModulationRouting_MAX" */
+}
+
+external open class SoundModulationDefaultRoutingSettings : SoundModulationDefaultSettings {
+    open var VolumeRouting: String /* "Disable" | "Inherit" | "Override" | "EModulationRouting_MAX" */
+    open var PitchRouting: String /* "Disable" | "Inherit" | "Override" | "EModulationRouting_MAX" */
+    open var HighpassRouting: String /* "Disable" | "Inherit" | "Override" | "EModulationRouting_MAX" */
+    open var LowpassRouting: String /* "Disable" | "Inherit" | "Override" | "EModulationRouting_MAX" */
+    override fun clone(): SoundModulationDefaultRoutingSettings
+
+    companion object {
+        fun C(Other: UObject): SoundModulationDefaultRoutingSettings
+        fun C(Other: Any): SoundModulationDefaultRoutingSettings
+    }
+}
+
 external open class SoundWaveSpectralDataEntry {
     open var Magnitude: Number
     open var NormalizedMagnitude: Number
@@ -13354,7 +13712,7 @@ external object EEvaluateCurveTableResult {
     var EEvaluateCurveTableResult_MAX: String /* "EEvaluateCurveTableResult_MAX" */
 }
 
-external interface `T$348` {
+external interface `T$176` {
     var OutResult: String /* "RowFound" | "RowNotFound" | "EEvaluateCurveTableResult_MAX" */
     var OutXY: Number
 }
@@ -13366,7 +13724,7 @@ external open class CurveTable : UObject {
     open var ImportPath: String
     open fun AddRichCurve(Key: String, InCurve: RichCurve)
     open fun NotifyUpdateCurveTable()
-    open fun EvaluateCurveTableRow(RowName: String, InXY: Number, OutResult: String /* "RowFound" | "RowNotFound" | "EEvaluateCurveTableResult_MAX" */ = definedExternally, OutXY: Number = definedExternally, ContextString: String = definedExternally): `T$348`
+    open fun EvaluateCurveTableRow(RowName: String, InXY: Number, OutResult: String /* "RowFound" | "RowNotFound" | "EEvaluateCurveTableResult_MAX" */ = definedExternally, OutXY: Number = definedExternally, ContextString: String = definedExternally): `T$176`
 
     companion object {
         fun Load(ResourceName: String): CurveTable
@@ -13377,7 +13735,7 @@ external open class CurveTable : UObject {
         fun C(Other: Any): CurveTable
         fun AddRichCurve(InCurveTable: CurveTable, Key: String, InCurve: RichCurve)
         fun NotifyUpdateCurveTable(InCurveTable: CurveTable)
-        fun EvaluateCurveTableRow(CurveTable: CurveTable, RowName: String, InXY: Number, OutResult: String /* "RowFound" | "RowNotFound" | "EEvaluateCurveTableResult_MAX" */ = definedExternally, OutXY: Number = definedExternally, ContextString: String = definedExternally): `T$348`
+        fun EvaluateCurveTableRow(CurveTable: CurveTable, RowName: String, InXY: Number, OutResult: String /* "RowFound" | "RowNotFound" | "EEvaluateCurveTableResult_MAX" */ = definedExternally, OutXY: Number = definedExternally, ContextString: String = definedExternally): `T$176`
     }
 }
 
@@ -13408,6 +13766,7 @@ external open class SoundWave : SoundBase {
     open var EnvelopeFollowerFrameSize: Number
     open var EnvelopeFollowerAttackTime: Number
     open var EnvelopeFollowerReleaseTime: Number
+    open var ModulationSettings: SoundModulationDefaultRoutingSettings
     open var FrequenciesToAnalyze: Array<Number>
     open var CookedSpectralTimeData: Array<SoundWaveSpectralTimeData>
     open var CookedEnvelopeTimeData: Array<SoundWaveEnvelopeTimeData>
@@ -13495,6 +13854,9 @@ external open class SoundSubmix : SoundSubmixWithParentBase {
     open var OutputVolumeDB: Number
     open var WetLevelDB: Number
     open var DryLevelDB: Number
+    open var OutputVolumeModulation: SoundModulationDestinationSettings
+    open var WetLevelModulation: SoundModulationDestinationSettings
+    open var DryLevelModulation: SoundModulationDestinationSettings
     open var OnSubmixRecordedFileDone: UnrealEngineMulticastDelegate<(ResultingSoundWave: SoundWave) -> Unit>
     open fun StopSpectralAnalysis(WorldContextObject: UObject)
     open fun FinishRecordingOutput(WorldContextObject: UObject, ExportType: String /* "SoundWave" | "WavFile" | "EAudioRecordingExportType_MAX" */, Name: String, Path: String, ExistingSoundWaveToOverwrite: SoundWave)
@@ -13519,7 +13881,6 @@ external open class SoundClassProperties {
     open var Pitch: Number
     open var LowPassFilterFrequency: Number
     open var AttenuationDistanceScale: Number
-    open var StereoBleed: Number
     open var LFEBleed: Number
     open var VoiceCenterChannelVolume: Number
     open var RadioFilterVolume: Number
@@ -13631,6 +13992,8 @@ external open class SoundClass : UObject {
     open var ChildClasses: Array<SoundClass>
     open var PassiveSoundMixModifiers: Array<PassiveSoundMixModifier>
     open var ParentClass: SoundClass
+    open fun PrimeAllSoundsInSoundClass()
+    open fun UnRetainAllSoundsInSoundClass()
 
     companion object {
         fun Load(ResourceName: String): SoundClass
@@ -13639,6 +14002,8 @@ external open class SoundClass : UObject {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SoundClass
         fun C(Other: UObject): SoundClass
         fun C(Other: Any): SoundClass
+        fun PrimeAllSoundsInSoundClass(InSoundClass: SoundClass)
+        fun UnRetainAllSoundsInSoundClass(InSoundClass: SoundClass)
     }
 }
 
@@ -13899,26 +14264,6 @@ external open class SoundAttenuation : UObject {
     }
 }
 
-external object EModulationRouting {
-    var Disable: String /* "Disable" */
-    var Inherit: String /* "Inherit" */
-    var Override: String /* "Override" */
-    var EModulationRouting_MAX: String /* "EModulationRouting_MAX" */
-}
-
-external open class SoundModulationDefaultRoutingSettings : SoundModulationDefaultSettings {
-    open var VolumeRouting: String /* "Disable" | "Inherit" | "Override" | "EModulationRouting_MAX" */
-    open var PitchRouting: String /* "Disable" | "Inherit" | "Override" | "EModulationRouting_MAX" */
-    open var HighpassRouting: String /* "Disable" | "Inherit" | "Override" | "EModulationRouting_MAX" */
-    open var LowpassRouting: String /* "Disable" | "Inherit" | "Override" | "EModulationRouting_MAX" */
-    override fun clone(): SoundModulationDefaultRoutingSettings
-
-    companion object {
-        fun C(Other: UObject): SoundModulationDefaultRoutingSettings
-        fun C(Other: Any): SoundModulationDefaultRoutingSettings
-    }
-}
-
 external object ESendLevelControlMethod {
     var Linear: String /* "Linear" */
     var CustomCurve: String /* "CustomCurve" */
@@ -14014,7 +14359,6 @@ external open class AudioBus : UObject {
     constructor()
     constructor(Outer: UObject)
     open var AudioBusChannels: String /* "Mono" | "Stereo" | "EAudioBusChannels_MAX" */
-    open var bIsAutomatic: Boolean
 
     companion object {
         fun Load(ResourceName: String): AudioBus
@@ -14131,27 +14475,27 @@ external object EAudioFaderCurve {
     var EAudioFaderCurve_MAX: String /* "EAudioFaderCurve_MAX" */
 }
 
-external interface `T$349` {
+external interface `T$177` {
     var OutSoundWaveSpectralData: Array<SoundWaveSpectralDataPerSound>
     var `$`: Boolean
 }
 
-external interface `T$350` {
+external interface `T$178` {
     var OutSoundWaveSpectralData: Array<SoundWaveSpectralData>
     var `$`: Boolean
 }
 
-external interface `T$351` {
+external interface `T$179` {
     var OutEnvelopeData: Array<SoundWaveEnvelopeDataPerSound>
     var `$`: Boolean
 }
 
-external interface `T$352` {
+external interface `T$180` {
     var OutEnvelopeData: Number
     var `$`: Boolean
 }
 
-external interface `T$353` {
+external interface `T$181` {
     var OutAttenuationSettings: SoundAttenuationSettings
     var `$`: Boolean
 }
@@ -14216,26 +14560,27 @@ external open class AudioComponent : SceneComponent {
     open fun SetSound(NewSound: SoundBase)
     open fun SetPitchMultiplier(NewPitchMultiplier: Number)
     open fun SetPaused(bPause: Boolean)
+    open fun SetOutputToBusOnly(bInOutputToBusOnly: Boolean)
     open fun SetLowPassFilterFrequency(InLowPassFilterFrequency: Number)
     open fun SetLowPassFilterEnabled(InLowPassFilterEnabled: Boolean)
     open fun SetIntParameter(InName: String, inInt: Number)
     open fun SetFloatParameter(InName: String, InFloat: Number)
     open fun SetBoolParameter(InName: String, InBool: Boolean)
     open fun SetAudioBusSendPreEffect(AudioBus: AudioBus, AudioBusSendLevel: Number)
-    open fun SetAudioBusSendPostEffect(AudioBus: AudioBus, SourceBusSendLevel: Number)
+    open fun SetAudioBusSendPostEffect(AudioBus: AudioBus, AudioBusSendLevel: Number)
     open fun Play(StartTime: Number)
     open fun IsVirtualized(): Boolean
     open fun IsPlaying(): Boolean
     open fun HasCookedFFTData(): Boolean
     open fun HasCookedAmplitudeEnvelopeData(): Boolean
     open fun GetPlayState(): String /* "Playing" | "Stopped" | "Paused" | "FadingIn" | "FadingOut" | "Count" | "EAudioComponentPlayState_MAX" */
-    open fun GetCookedFFTDataForAllPlayingSounds(OutSoundWaveSpectralData: Array<SoundWaveSpectralDataPerSound> = definedExternally): `T$349`
-    open fun GetCookedFFTData(FrequenciesToGet: Array<Number>, OutSoundWaveSpectralData: Array<SoundWaveSpectralData> = definedExternally): `T$350`
-    open fun GetCookedEnvelopeDataForAllPlayingSounds(OutEnvelopeData: Array<SoundWaveEnvelopeDataPerSound> = definedExternally): `T$351`
-    open fun GetCookedEnvelopeData(OutEnvelopeData: Number = definedExternally): `T$352`
+    open fun GetCookedFFTDataForAllPlayingSounds(OutSoundWaveSpectralData: Array<SoundWaveSpectralDataPerSound> = definedExternally): `T$177`
+    open fun GetCookedFFTData(FrequenciesToGet: Array<Number>, OutSoundWaveSpectralData: Array<SoundWaveSpectralData> = definedExternally): `T$178`
+    open fun GetCookedEnvelopeDataForAllPlayingSounds(OutEnvelopeData: Array<SoundWaveEnvelopeDataPerSound> = definedExternally): `T$179`
+    open fun GetCookedEnvelopeData(OutEnvelopeData: Number = definedExternally): `T$180`
     open fun FadeOut(FadeOutDuration: Number, FadeVolumeLevel: Number, FadeCurve: String /* "Linear" | "Logarithmic" | "SCurve" | "Sin" | "Count" | "EAudioFaderCurve_MAX" */)
     open fun FadeIn(FadeInDuration: Number, FadeVolumeLevel: Number, StartTime: Number, FadeCurve: String /* "Linear" | "Logarithmic" | "SCurve" | "Sin" | "Count" | "EAudioFaderCurve_MAX" */)
-    open fun GetAttenuationSettingsToApply(OutAttenuationSettings: SoundAttenuationSettings = definedExternally): `T$353`
+    open fun GetAttenuationSettingsToApply(OutAttenuationSettings: SoundAttenuationSettings = definedExternally): `T$181`
     open fun AdjustVolume(AdjustVolumeDuration: Number, AdjustVolumeLevel: Number, FadeCurve: String /* "Linear" | "Logarithmic" | "SCurve" | "Sin" | "Count" | "EAudioFaderCurve_MAX" */)
     open fun AdjustAttenuation(InAttenuationSettings: SoundAttenuationSettings)
 
@@ -14256,6 +14601,9 @@ external open class SoundBase : UObject {
     open var bDebug: Boolean
     open var bOverrideConcurrency: Boolean
     open var bOutputToBusOnly: Boolean
+    open var bEnableBusSends: Boolean
+    open var bEnableBaseSubmix: Boolean
+    open var bEnableSubmixSends: Boolean
     open var bHasDelayNode: Boolean
     open var bHasConcatenatorNode: Boolean
     open var bHasVirtualizeWhenSilent: Boolean
@@ -14271,7 +14619,6 @@ external open class SoundBase : UObject {
     open var TotalSamples: Number
     open var Priority: Number
     open var AttenuationSettings: SoundAttenuation
-    open var ModulationSettings: SoundModulationDefaultRoutingSettings
     open var SoundSubmixObject: SoundSubmixBase
     open var SoundSubmixSends: Array<SoundSubmixSendInfo>
     open var SourceEffectChain: SoundEffectSourcePresetChain
@@ -14345,39 +14692,39 @@ external object ESlateGesture {
     var ESlateGesture_MAX: String /* "ESlateGesture_MAX" */
 }
 
-external interface `T$354` {
+external interface `T$182` {
     var Reply: EventReply
     var `$`: EventReply
 }
 
 external open class EventReply {
     open fun clone(): EventReply
-    open fun CaptureJoystick(CapturingWidget: Widget = definedExternally, bInAllJoysticks: Boolean = definedExternally): `T$354`
-    open fun CaptureMouse(CapturingWidget: Widget = definedExternally): `T$354`
-    open fun ClearUserFocus(bInAllUsers: Boolean = definedExternally): `T$354`
-    open fun DetectDrag(WidgetDetectingDrag: Widget = definedExternally, DragKey: Key = definedExternally): `T$354`
-    open fun EndDragDrop(): `T$354`
-    open fun LockMouse(CapturingWidget: Widget = definedExternally): `T$354`
-    open fun ReleaseJoystickCapture(bInAllJoysticks: Boolean = definedExternally): `T$354`
-    open fun ReleaseMouseCapture(): `T$354`
-    open fun SetMousePosition(NewMousePosition: Vector2D = definedExternally): `T$354`
-    open fun SetUserFocus(FocusWidget: Widget = definedExternally, bInAllUsers: Boolean = definedExternally): `T$354`
-    open fun UnlockMouse(): `T$354`
+    open fun CaptureJoystick(CapturingWidget: Widget = definedExternally, bInAllJoysticks: Boolean = definedExternally): `T$182`
+    open fun CaptureMouse(CapturingWidget: Widget = definedExternally): `T$182`
+    open fun ClearUserFocus(bInAllUsers: Boolean = definedExternally): `T$182`
+    open fun DetectDrag(WidgetDetectingDrag: Widget = definedExternally, DragKey: Key = definedExternally): `T$182`
+    open fun EndDragDrop(): `T$182`
+    open fun LockMouse(CapturingWidget: Widget = definedExternally): `T$182`
+    open fun ReleaseJoystickCapture(bInAllJoysticks: Boolean = definedExternally): `T$182`
+    open fun ReleaseMouseCapture(): `T$182`
+    open fun SetMousePosition(NewMousePosition: Vector2D = definedExternally): `T$182`
+    open fun SetUserFocus(FocusWidget: Widget = definedExternally, bInAllUsers: Boolean = definedExternally): `T$182`
+    open fun UnlockMouse(): `T$182`
 
     companion object {
         fun C(Other: UObject): EventReply
         fun C(Other: Any): EventReply
-        fun CaptureJoystick(Reply: EventReply = definedExternally, CapturingWidget: Widget = definedExternally, bInAllJoysticks: Boolean = definedExternally): `T$354`
-        fun CaptureMouse(Reply: EventReply = definedExternally, CapturingWidget: Widget = definedExternally): `T$354`
-        fun ClearUserFocus(Reply: EventReply = definedExternally, bInAllUsers: Boolean = definedExternally): `T$354`
-        fun DetectDrag(Reply: EventReply = definedExternally, WidgetDetectingDrag: Widget = definedExternally, DragKey: Key = definedExternally): `T$354`
-        fun EndDragDrop(Reply: EventReply = definedExternally): `T$354`
-        fun LockMouse(Reply: EventReply = definedExternally, CapturingWidget: Widget = definedExternally): `T$354`
-        fun ReleaseJoystickCapture(Reply: EventReply = definedExternally, bInAllJoysticks: Boolean = definedExternally): `T$354`
-        fun ReleaseMouseCapture(Reply: EventReply = definedExternally): `T$354`
-        fun SetMousePosition(Reply: EventReply = definedExternally, NewMousePosition: Vector2D = definedExternally): `T$354`
-        fun SetUserFocus(Reply: EventReply = definedExternally, FocusWidget: Widget = definedExternally, bInAllUsers: Boolean = definedExternally): `T$354`
-        fun UnlockMouse(Reply: EventReply = definedExternally): `T$354`
+        fun CaptureJoystick(Reply: EventReply = definedExternally, CapturingWidget: Widget = definedExternally, bInAllJoysticks: Boolean = definedExternally): `T$182`
+        fun CaptureMouse(Reply: EventReply = definedExternally, CapturingWidget: Widget = definedExternally): `T$182`
+        fun ClearUserFocus(Reply: EventReply = definedExternally, bInAllUsers: Boolean = definedExternally): `T$182`
+        fun DetectDrag(Reply: EventReply = definedExternally, WidgetDetectingDrag: Widget = definedExternally, DragKey: Key = definedExternally): `T$182`
+        fun EndDragDrop(Reply: EventReply = definedExternally): `T$182`
+        fun LockMouse(Reply: EventReply = definedExternally, CapturingWidget: Widget = definedExternally): `T$182`
+        fun ReleaseJoystickCapture(Reply: EventReply = definedExternally, bInAllJoysticks: Boolean = definedExternally): `T$182`
+        fun ReleaseMouseCapture(Reply: EventReply = definedExternally): `T$182`
+        fun SetMousePosition(Reply: EventReply = definedExternally, NewMousePosition: Vector2D = definedExternally): `T$182`
+        fun SetUserFocus(Reply: EventReply = definedExternally, FocusWidget: Widget = definedExternally, bInAllUsers: Boolean = definedExternally): `T$182`
+        fun UnlockMouse(Reply: EventReply = definedExternally): `T$182`
         fun Handled(): EventReply
         fun Unhandled(): EventReply
     }
@@ -14473,24 +14820,28 @@ external open class SlateBrushAsset : UObject {
     }
 }
 
+external interface `T$183` {
+    var Context: PaintContext
+}
+
 external open class PaintContext {
     open fun clone(): PaintContext
-    open fun DrawSpaceSpline(InStart: Vector2D = definedExternally, InStartDir: Vector2D = definedExternally, InEnd: Vector2D = definedExternally, InEndDir: Vector2D = definedExternally, InThickness: Number = definedExternally, InTint: LinearColor = definedExternally): `T$85`
-    open fun DrawBox(Position: Vector2D = definedExternally, Size: Vector2D = definedExternally, Brush: SlateBrushAsset = definedExternally, Tint: LinearColor = definedExternally): `T$85`
-    open fun DrawLine(PositionA: Vector2D = definedExternally, PositionB: Vector2D = definedExternally, Tint: LinearColor = definedExternally, bAntiAlias: Boolean = definedExternally, Thickness: Number = definedExternally): `T$85`
-    open fun DrawLines(Points: Array<Vector2D> = definedExternally, Tint: LinearColor = definedExternally, bAntiAlias: Boolean = definedExternally, Thickness: Number = definedExternally): `T$85`
-    open fun DrawString(inString: String = definedExternally, Position: Vector2D = definedExternally, Tint: LinearColor = definedExternally): `T$85`
-    open fun DrawText(text: String = definedExternally, Position: Vector2D = definedExternally, Font: Font = definedExternally, FontSize: Number = definedExternally, FontTypeFace: String = definedExternally, Tint: LinearColor = definedExternally): `T$85`
+    open fun DrawSpaceSpline(InStart: Vector2D = definedExternally, InStartDir: Vector2D = definedExternally, InEnd: Vector2D = definedExternally, InEndDir: Vector2D = definedExternally, InThickness: Number = definedExternally, InTint: LinearColor = definedExternally): `T$183`
+    open fun DrawBox(Position: Vector2D = definedExternally, Size: Vector2D = definedExternally, Brush: SlateBrushAsset = definedExternally, Tint: LinearColor = definedExternally): `T$183`
+    open fun DrawLine(PositionA: Vector2D = definedExternally, PositionB: Vector2D = definedExternally, Tint: LinearColor = definedExternally, bAntiAlias: Boolean = definedExternally, Thickness: Number = definedExternally): `T$183`
+    open fun DrawLines(Points: Array<Vector2D> = definedExternally, Tint: LinearColor = definedExternally, bAntiAlias: Boolean = definedExternally, Thickness: Number = definedExternally): `T$183`
+    open fun DrawString(inString: String = definedExternally, Position: Vector2D = definedExternally, Tint: LinearColor = definedExternally): `T$183`
+    open fun DrawText(text: String = definedExternally, Position: Vector2D = definedExternally, Font: Font = definedExternally, FontSize: Number = definedExternally, FontTypeFace: String = definedExternally, Tint: LinearColor = definedExternally): `T$183`
 
     companion object {
         fun C(Other: UObject): PaintContext
         fun C(Other: Any): PaintContext
-        fun DrawSpaceSpline(Context: PaintContext = definedExternally, InStart: Vector2D = definedExternally, InStartDir: Vector2D = definedExternally, InEnd: Vector2D = definedExternally, InEndDir: Vector2D = definedExternally, InThickness: Number = definedExternally, InTint: LinearColor = definedExternally): `T$85`
-        fun DrawBox(Context: PaintContext = definedExternally, Position: Vector2D = definedExternally, Size: Vector2D = definedExternally, Brush: SlateBrushAsset = definedExternally, Tint: LinearColor = definedExternally): `T$85`
-        fun DrawLine(Context: PaintContext = definedExternally, PositionA: Vector2D = definedExternally, PositionB: Vector2D = definedExternally, Tint: LinearColor = definedExternally, bAntiAlias: Boolean = definedExternally, Thickness: Number = definedExternally): `T$85`
-        fun DrawLines(Context: PaintContext = definedExternally, Points: Array<Vector2D> = definedExternally, Tint: LinearColor = definedExternally, bAntiAlias: Boolean = definedExternally, Thickness: Number = definedExternally): `T$85`
-        fun DrawText(Context: PaintContext = definedExternally, inString: String = definedExternally, Position: Vector2D = definedExternally, Tint: LinearColor = definedExternally): `T$85`
-        fun DrawText(Context: PaintContext = definedExternally, text: String = definedExternally, Position: Vector2D = definedExternally, Font: Font = definedExternally, FontSize: Number = definedExternally, FontTypeFace: String = definedExternally, Tint: LinearColor = definedExternally): `T$85`
+        fun DrawSpaceSpline(Context: PaintContext = definedExternally, InStart: Vector2D = definedExternally, InStartDir: Vector2D = definedExternally, InEnd: Vector2D = definedExternally, InEndDir: Vector2D = definedExternally, InThickness: Number = definedExternally, InTint: LinearColor = definedExternally): `T$183`
+        fun DrawBox(Context: PaintContext = definedExternally, Position: Vector2D = definedExternally, Size: Vector2D = definedExternally, Brush: SlateBrushAsset = definedExternally, Tint: LinearColor = definedExternally): `T$183`
+        fun DrawLine(Context: PaintContext = definedExternally, PositionA: Vector2D = definedExternally, PositionB: Vector2D = definedExternally, Tint: LinearColor = definedExternally, bAntiAlias: Boolean = definedExternally, Thickness: Number = definedExternally): `T$183`
+        fun DrawLines(Context: PaintContext = definedExternally, Points: Array<Vector2D> = definedExternally, Tint: LinearColor = definedExternally, bAntiAlias: Boolean = definedExternally, Thickness: Number = definedExternally): `T$183`
+        fun DrawText(Context: PaintContext = definedExternally, inString: String = definedExternally, Position: Vector2D = definedExternally, Tint: LinearColor = definedExternally): `T$183`
+        fun DrawText(Context: PaintContext = definedExternally, text: String = definedExternally, Position: Vector2D = definedExternally, Font: Font = definedExternally, FontSize: Number = definedExternally, FontTypeFace: String = definedExternally, Tint: LinearColor = definedExternally): `T$183`
     }
 }
 
@@ -14529,7 +14880,7 @@ external open class AnalogInputEvent : KeyEvent {
     }
 }
 
-external interface `T$355` {
+external interface `T$184` {
     var Operation: DragDropOperation
 }
 
@@ -14600,7 +14951,7 @@ external open class UserWidget : Widget {
     open fun OnRemovedFromFocusPath(InFocusEvent: UFocusEvent)
     open fun OnPreviewMouseButtonDown(MyGeometry: Geometry, MouseEvent: UPointerEvent): EventReply
     open fun OnPreviewKeyDown(MyGeometry: Geometry, InKeyEvent: KeyEvent): EventReply
-    open fun OnPaint(Context: PaintContext = definedExternally): `T$85`
+    open fun OnPaint(Context: PaintContext = definedExternally): `T$183`
     open fun OnMouseWheel(MyGeometry: Geometry, MouseEvent: UPointerEvent): EventReply
     open fun OnMouseMove(MyGeometry: Geometry, MouseEvent: UPointerEvent): EventReply
     open fun OnMouseLeave(MouseEvent: UPointerEvent)
@@ -14620,7 +14971,7 @@ external open class UserWidget : Widget {
     open fun OnDragOver(MyGeometry: Geometry, UPointerEvent: UPointerEvent, Operation: DragDropOperation): Boolean
     open fun OnDragLeave(UPointerEvent: UPointerEvent, Operation: DragDropOperation)
     open fun OnDragEnter(MyGeometry: Geometry, UPointerEvent: UPointerEvent, Operation: DragDropOperation)
-    open fun OnDragDetected(MyGeometry: Geometry, UPointerEvent: UPointerEvent, Operation: DragDropOperation = definedExternally): `T$355`
+    open fun OnDragDetected(MyGeometry: Geometry, UPointerEvent: UPointerEvent, Operation: DragDropOperation = definedExternally): `T$184`
     open fun OnDragCancelled(UPointerEvent: UPointerEvent, Operation: DragDropOperation)
     open fun OnAnimationStarted(Animation: WidgetAnimation)
     open fun OnAnimationFinished(Animation: WidgetAnimation)
@@ -14658,7 +15009,7 @@ external open class UserWidget : Widget {
 
 external open class ViewTargetTransitionParams {
     open var BlendTime: Number
-    open var BlendFunction: String /* "VTBlend_Linear" | "VTBlend_Cubic" | "VTBlend_EaseIn" | "VTBlend_EaseOut" | "VTBlend_EaseInOut" | "VTBlend_MAX" */
+    open var BlendFunction: String /* "VTBlend_Linear" | "VTBlend_Cubic" | "VTBlend_EaseIn" | "VTBlend_EaseOut" | "VTBlend_EaseInOut" | "VTBlend_PreBlended" | "VTBlend_MAX" */
     open var BlendExp: Number
     open var bLockOutgoing: Boolean
     open fun clone(): ViewTargetTransitionParams
@@ -14832,47 +15183,47 @@ external object EMouseLockMode {
     var EMouseLockMode_MAX: String /* "EMouseLockMode_MAX" */
 }
 
-external interface `T$356` {
+external interface `T$185` {
     var ScreenLocation: Vector2D
     var `$`: Boolean
 }
 
-external interface `T$357` {
+external interface `T$186` {
     var SizeX: Number
     var SizeY: Number
 }
 
-external interface `T$358` {
+external interface `T$187` {
     var LocationX: Number
     var LocationY: Number
     var `$`: Boolean
 }
 
-external interface `T$359` {
+external interface `T$188` {
     var Tilt: Vector
     var RotationRate: Vector
     var Gravity: Vector
     var Acceleration: Vector
 }
 
-external interface `T$360` {
+external interface `T$189` {
     var HitResult: HitResult
     var `$`: Boolean
 }
 
-external interface `T$361` {
+external interface `T$190` {
     var WorldLocation: Vector
     var WorldDirection: Vector
     var `$`: Boolean
 }
 
-external interface `T$362` {
+external interface `T$191` {
     var WorldPosition: Vector
     var WorldDirection: Vector
     var `$`: Boolean
 }
 
-external interface `T$363` {
+external interface `T$192` {
     var ScreenPosition: Vector2D
     var `$`: Boolean
 }
@@ -14933,7 +15284,7 @@ external open class PlayerController(InWorld: World, Location: Vector = definedE
     open fun StopHapticEffect(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */)
     open fun StartFire(FireModeNum: Number)
     open fun SetVirtualJoystickVisibility(bVisible: Boolean)
-    open fun SetViewTargetWithBlend(NewViewTarget: Actor, BlendTime: Number, BlendFunc: String /* "VTBlend_Linear" | "VTBlend_Cubic" | "VTBlend_EaseIn" | "VTBlend_EaseOut" | "VTBlend_EaseInOut" | "VTBlend_MAX" */, BlendExp: Number, bLockOutgoing: Boolean)
+    open fun SetViewTargetWithBlend(NewViewTarget: Actor, BlendTime: Number, BlendFunc: String /* "VTBlend_Linear" | "VTBlend_Cubic" | "VTBlend_EaseIn" | "VTBlend_EaseOut" | "VTBlend_EaseInOut" | "VTBlend_PreBlended" | "VTBlend_MAX" */, BlendExp: Number, bLockOutgoing: Boolean)
     open fun SetName(S: String)
     open fun SetMousePosition(X: Number, Y: Number)
     open fun SetMouseCursorWidget(Cursor: String /* "None" | "Default" | "TextEditBeam" | "ResizeLeftRight" | "ResizeUpDown" | "ResizeSouthEast" | "ResizeSouthWest" | "CardinalCross" | "Crosshairs" | "Hand" | "GrabHand" | "GrabHandClosed" | "SlashedCircle" | "EyeDropper" | "EMouseCursor_MAX" */, CursorWidget: UserWidget)
@@ -14969,7 +15320,7 @@ external open class PlayerController(InWorld: World, Location: Vector = definedE
     open fun SendToConsole(Command: String)
     open fun RestartLevel()
     open fun ResetControllerLightColor()
-    open fun ConvertWorldLocationToScreenLocation(WorldLocation: Vector, ScreenLocation: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$356`
+    open fun ConvertWorldLocationToScreenLocation(WorldLocation: Vector, ScreenLocation: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$185`
     open fun PlayHapticEffect(HapticEffect: HapticFeedbackEffect_Base, hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, Scale: Number, bLoop: Boolean)
     open fun PlayDynamicForceFeedback(Intensity: Number, Duration: Number, bAffectsLeftLarge: Boolean, bAffectsLeftSmall: Boolean, bAffectsRightLarge: Boolean, bAffectsRightSmall: Boolean, Action: String /* "Start" | "Update" | "Stop" | "EDynamicForceFeedbackAction_MAX" */, LatentInfo: LatentActionInfo)
     open fun Pause()
@@ -14977,28 +15328,28 @@ external open class PlayerController(InWorld: World, Location: Vector = definedE
     open fun LocalTravel(URL: String)
     open fun ClientPlayForceFeedback(ForceFeedbackEffect: ForceFeedbackEffect, Tag: String, bLooping: Boolean, bIgnoreTimeDilation: Boolean, bPlayWhilePaused: Boolean)
     open fun IsInputKeyDown(Key: Key): Boolean
-    open fun GetViewportSize(SizeX: Number = definedExternally, SizeY: Number = definedExternally): `T$357`
+    open fun GetViewportSize(SizeX: Number = definedExternally, SizeY: Number = definedExternally): `T$186`
     open fun GetSpectatorPawn(): SpectatorPawn
-    open fun GetMousePosition(LocationX: Number = definedExternally, LocationY: Number = definedExternally): `T$358`
+    open fun GetMousePosition(LocationX: Number = definedExternally, LocationY: Number = definedExternally): `T$187`
     open fun GetInputVectorKeyState(Key: Key): Vector
-    open fun GetInputTouchState(FingerIndex: String /* "Touch1" | "Touch2" | "Touch3" | "Touch4" | "Touch5" | "Touch6" | "Touch7" | "Touch8" | "Touch9" | "Touch10" | "CursorPointerIndex" | "MAX_TOUCHES" | "ETouchIndex_MAX" */, LocationX: Number = definedExternally, LocationY: Number = definedExternally, bIsCurrentlyPressed: Boolean = definedExternally): `T$339`
-    open fun GetInputMouseDelta(DeltaX: Number = definedExternally, DeltaY: Number = definedExternally): `T$340`
-    open fun GetInputMotionState(Tilt: Vector = definedExternally, RotationRate: Vector = definedExternally, Gravity: Vector = definedExternally, Acceleration: Vector = definedExternally): `T$359`
+    open fun GetInputTouchState(FingerIndex: String /* "Touch1" | "Touch2" | "Touch3" | "Touch4" | "Touch5" | "Touch6" | "Touch7" | "Touch8" | "Touch9" | "Touch10" | "CursorPointerIndex" | "MAX_TOUCHES" | "ETouchIndex_MAX" */, LocationX: Number = definedExternally, LocationY: Number = definedExternally, bIsCurrentlyPressed: Boolean = definedExternally): `T$168`
+    open fun GetInputMouseDelta(DeltaX: Number = definedExternally, DeltaY: Number = definedExternally): `T$169`
+    open fun GetInputMotionState(Tilt: Vector = definedExternally, RotationRate: Vector = definedExternally, Gravity: Vector = definedExternally, Acceleration: Vector = definedExternally): `T$188`
     open fun GetInputKeyTimeDown(Key: Key): Number
-    open fun GetInputAnalogStickState(WhichStick: String /* "CAS_LeftStick" | "CAS_RightStick" | "CAS_MAX" */, StickX: Number = definedExternally, StickY: Number = definedExternally): `T$341`
+    open fun GetInputAnalogStickState(WhichStick: String /* "CAS_LeftStick" | "CAS_RightStick" | "CAS_MAX" */, StickX: Number = definedExternally, StickY: Number = definedExternally): `T$170`
     open fun GetInputAnalogKeyState(Key: Key): Number
     open fun GetHUD(): HUD
-    open fun GetHitResultUnderFingerForObjects(FingerIndex: String /* "Touch1" | "Touch2" | "Touch3" | "Touch4" | "Touch5" | "Touch6" | "Touch7" | "Touch8" | "Touch9" | "Touch10" | "CursorPointerIndex" | "MAX_TOUCHES" | "ETouchIndex_MAX" */, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$360`
-    open fun GetHitResultUnderFingerByChannel(FingerIndex: String /* "Touch1" | "Touch2" | "Touch3" | "Touch4" | "Touch5" | "Touch6" | "Touch7" | "Touch8" | "Touch9" | "Touch10" | "CursorPointerIndex" | "MAX_TOUCHES" | "ETouchIndex_MAX" */, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$360`
-    open fun GetHitResultUnderFinger(FingerIndex: String /* "Touch1" | "Touch2" | "Touch3" | "Touch4" | "Touch5" | "Touch6" | "Touch7" | "Touch8" | "Touch9" | "Touch10" | "CursorPointerIndex" | "MAX_TOUCHES" | "ETouchIndex_MAX" */, TraceChannel: String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$360`
-    open fun GetHitResultUnderCursorForObjects(ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$360`
-    open fun GetHitResultUnderCursorByChannel(TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$360`
-    open fun GetHitResultUnderCursor(TraceChannel: String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$360`
+    open fun GetHitResultUnderFingerForObjects(FingerIndex: String /* "Touch1" | "Touch2" | "Touch3" | "Touch4" | "Touch5" | "Touch6" | "Touch7" | "Touch8" | "Touch9" | "Touch10" | "CursorPointerIndex" | "MAX_TOUCHES" | "ETouchIndex_MAX" */, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$189`
+    open fun GetHitResultUnderFingerByChannel(FingerIndex: String /* "Touch1" | "Touch2" | "Touch3" | "Touch4" | "Touch5" | "Touch6" | "Touch7" | "Touch8" | "Touch9" | "Touch10" | "CursorPointerIndex" | "MAX_TOUCHES" | "ETouchIndex_MAX" */, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$189`
+    open fun GetHitResultUnderFinger(FingerIndex: String /* "Touch1" | "Touch2" | "Touch3" | "Touch4" | "Touch5" | "Touch6" | "Touch7" | "Touch8" | "Touch9" | "Touch10" | "CursorPointerIndex" | "MAX_TOUCHES" | "ETouchIndex_MAX" */, TraceChannel: String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$189`
+    open fun GetHitResultUnderCursorForObjects(ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$189`
+    open fun GetHitResultUnderCursorByChannel(TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$189`
+    open fun GetHitResultUnderCursor(TraceChannel: String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */, bTraceComplex: Boolean, HitResult: HitResult = definedExternally): `T$189`
     open fun GetFocalLocation(): Vector
     open fun FOV(NewFOV: Number)
     open fun EnableCheats()
-    open fun ConvertScreenLocationToWorldSpace(ScreenX: Number, ScreenY: Number, WorldLocation: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$361`
-    open fun ConvertMouseLocationToWorldSpace(WorldLocation: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$361`
+    open fun ConvertScreenLocationToWorldSpace(ScreenX: Number, ScreenY: Number, WorldLocation: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$190`
+    open fun ConvertMouseLocationToWorldSpace(WorldLocation: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$190`
     open fun ConsoleKey(Key: Key)
     open fun ClientWasKicked(KickReason: String)
     open fun ClientVoiceHandshakeComplete()
@@ -15030,7 +15381,7 @@ external open class PlayerController(InWorld: World, Location: Vector = definedE
     open fun ClientRestart(NewPawn: Pawn)
     open fun ClientReset()
     open fun ClientRepObjRef(UObject: UObject)
-    open fun ClientReceiveLocalizedMessage(Message: UnrealEngineClass, Switch: Number, RelatedPlayerState_1: PlayerState, RelatedPlayerState_2: PlayerState, OptionalObject: UObject)
+    open fun ClientReceiveLocalizedMessage(Message: UnrealEngineClass, SWITCH: Number, RelatedPlayerState_1: PlayerState, RelatedPlayerState_2: PlayerState, OptionalObject: UObject)
     open fun ClientPrestreamTextures(ForcedActor: Actor, ForceDuration: Number, bEnableStreaming: Boolean, CinematicTextureGroups: Number)
     open fun ClientPrepareMapChange(LevelName: String, bFirst: Boolean, bLast: Boolean)
     open fun ClientPlaySoundAtLocation(Sound: SoundBase, Location: Vector, VolumeMultiplier: Number, PitchMultiplier: Number)
@@ -15065,14 +15416,14 @@ external open class PlayerController(InWorld: World, Location: Vector = definedE
     open fun GetLocalPlayerSubSystemFromPlayerController(Class: UnrealEngineClass): LocalPlayerSubsystem
     open fun IsLoggedIn(): Boolean
     open fun ShowPlatformSpecificAchievementsScreen()
-    open fun DeprojectScreenToWorld(ScreenPosition: Vector2D, WorldPosition: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$362`
+    open fun DeprojectScreenToWorld(ScreenPosition: Vector2D, WorldPosition: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$191`
     open fun GetPlayerControllerID(): Number
-    open fun ProjectWorldToScreen(WorldPosition: Vector, ScreenPosition: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$363`
+    open fun ProjectWorldToScreen(WorldPosition: Vector, ScreenPosition: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$192`
     open fun RemovePlayer(bDestroyPawn: Boolean)
     open fun SetPlayerControllerID(ControllerId: Number)
-    open fun GetMousePositionScaledByDPI(LocationX: Number = definedExternally, LocationY: Number = definedExternally): `T$358`
+    open fun GetMousePositionScaledByDPI(LocationX: Number = definedExternally, LocationY: Number = definedExternally): `T$187`
     open fun GetPlayerScreenWidgetGeometry(): Geometry
-    open fun ProjectWorldLocationToWidgetPosition(WorldLocation: Vector, ScreenPosition: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$363`
+    open fun ProjectWorldLocationToWidgetPosition(WorldLocation: Vector, ScreenPosition: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$192`
     open fun SetInputModeGameAndUI(InWidgetToFocus: Widget, bLockMouseToViewport: Boolean, bHideCursorDuringCapture: Boolean)
     open fun SetInputModeGameAndUI(InWidgetToFocus: Widget, InMouseLockMode: String /* "DoNotLock" | "LockOnCapture" | "LockAlways" | "LockInFullscreen" | "EMouseLockMode_MAX" */, bHideCursorDuringCapture: Boolean)
     open fun SetInputMode_GameOnly()
@@ -15089,14 +15440,14 @@ external open class PlayerController(InWorld: World, Location: Vector = definedE
         fun GetLocalPlayerSubSystemFromPlayerController(PlayerController: PlayerController, Class: UnrealEngineClass): LocalPlayerSubsystem
         fun IsLoggedIn(SpecificPlayer: PlayerController): Boolean
         fun ShowPlatformSpecificAchievementsScreen(SpecificPlayer: PlayerController)
-        fun DeprojectScreenToWorld(Player: PlayerController, ScreenPosition: Vector2D, WorldPosition: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$362`
+        fun DeprojectScreenToWorld(Player: PlayerController, ScreenPosition: Vector2D, WorldPosition: Vector = definedExternally, WorldDirection: Vector = definedExternally): `T$191`
         fun GetPlayerControllerID(Player: PlayerController): Number
-        fun ProjectWorldToScreen(Player: PlayerController, WorldPosition: Vector, ScreenPosition: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$363`
+        fun ProjectWorldToScreen(Player: PlayerController, WorldPosition: Vector, ScreenPosition: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$192`
         fun RemovePlayer(Player: PlayerController, bDestroyPawn: Boolean)
         fun SetPlayerControllerID(Player: PlayerController, ControllerId: Number)
-        fun GetMousePositionScaledByDPI(Player: PlayerController, LocationX: Number = definedExternally, LocationY: Number = definedExternally): `T$358`
+        fun GetMousePositionScaledByDPI(Player: PlayerController, LocationX: Number = definedExternally, LocationY: Number = definedExternally): `T$187`
         fun GetPlayerScreenWidgetGeometry(PlayerController: PlayerController): Geometry
-        fun ProjectWorldLocationToWidgetPosition(PlayerController: PlayerController, WorldLocation: Vector, ScreenPosition: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$363`
+        fun ProjectWorldLocationToWidgetPosition(PlayerController: PlayerController, WorldLocation: Vector, ScreenPosition: Vector2D = definedExternally, bPlayerViewportRelative: Boolean = definedExternally): `T$192`
         fun SetInputModeGameAndUI(Target: PlayerController, InWidgetToFocus: Widget, bLockMouseToViewport: Boolean, bHideCursorDuringCapture: Boolean)
         fun SetInputModeGameAndUI(PlayerController: PlayerController, InWidgetToFocus: Widget, InMouseLockMode: String /* "DoNotLock" | "LockOnCapture" | "LockAlways" | "LockInFullscreen" | "EMouseLockMode_MAX" */, bHideCursorDuringCapture: Boolean)
         fun SetInputMode_GameOnly(PlayerController: PlayerController)
@@ -15244,6 +15595,37 @@ external open class LocalPlayer : Player {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LocalPlayer
         fun C(Other: UObject): LocalPlayer
         fun C(Other: Any): LocalPlayer
+    }
+}
+
+external open class JavascriptStubStruct {
+    open fun clone(): JavascriptStubStruct
+
+    companion object {
+        fun C(Other: UObject): JavascriptStubStruct
+        fun C(Other: Any): JavascriptStubStruct
+    }
+}
+
+external open class JavascriptFunction {
+    open fun clone(): JavascriptFunction
+    open fun CallJS(CustomStruct: JavascriptStubStruct)
+
+    companion object {
+        fun C(Other: UObject): JavascriptFunction
+        fun C(Other: Any): JavascriptFunction
+        fun CallJS(UFunction: JavascriptFunction, CustomStruct: JavascriptStubStruct)
+    }
+}
+
+external open class JavascriptPopup {
+    open fun clone(): JavascriptPopup
+    open fun ClosePopupWindow()
+
+    companion object {
+        fun C(Other: UObject): JavascriptPopup
+        fun C(Other: Any): JavascriptPopup
+        fun ClosePopupWindow(Handle: JavascriptPopup)
     }
 }
 
@@ -15701,7 +16083,7 @@ external open class Widget : Visual {
     open fun GetAccessibleSummaryText(): String
     open fun ForceVolatile(bForce: Boolean)
     open fun ForceLayoutPrepass()
-    open fun OpenPopupWindow(PopupDesiredSize: Vector2D, HeadingText: String)
+    open fun OpenPopupWindow(PopupPosition: Vector2D, HeadingText: String, UFunction: JavascriptFunction): JavascriptPopup
     open fun TakeWidget(): JavascriptSlateWidget
     open fun SlotAsBorderSlot(): BorderSlot
     open fun SlotAsCanvasSlot(): CanvasPanelSlot
@@ -15725,7 +16107,7 @@ external open class Widget : Visual {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): Widget
         fun C(Other: UObject): Widget
         fun C(Other: Any): Widget
-        fun OpenPopupWindow(Widget: Widget, PopupDesiredSize: Vector2D, HeadingText: String)
+        fun OpenPopupWindow(Widget: Widget, PopupPosition: Vector2D, HeadingText: String, UFunction: JavascriptFunction): JavascriptPopup
         fun TakeWidget(Widget: Widget): JavascriptSlateWidget
         fun SlotAsBorderSlot(Widget: Widget): BorderSlot
         fun SlotAsCanvasSlot(Widget: Widget): CanvasPanelSlot
@@ -15783,27 +16165,27 @@ external open class DragDropOperation : UObject {
     }
 }
 
-external interface `T$364` {
+external interface `T$193` {
     var Results: Array<UnrealEngineClass>
 }
 
-external interface `T$365` {
+external interface `T$194` {
     var Results: Array<UObject>
 }
 
-external interface `T$366` {
+external interface `T$195` {
     var OutUserData: Array<DatasmithAssetUserData>
 }
 
-external interface `T$367` {
+external interface `T$196` {
     var Results: Array<UnrealEngineClass>
 }
 
-external interface `T$368` {
+external interface `T$197` {
     var Results: Array<UObject>
 }
 
-external interface `T$369` {
+external interface `T$198` {
     var OutUserData: Array<DatasmithAssetUserData>
 }
 
@@ -15812,18 +16194,16 @@ external open class Class : Struct {
     constructor(Outer: UObject)
     open fun AddDynamicBinding(BindingObject: DynamicBlueprintBinding)
     open fun GetClassPathName(): String
-    open fun GetDerivedClasses(Results: Array<UnrealEngineClass> = definedExternally, bRecursive: Boolean = definedExternally): `T$364`
+    open fun GetDerivedClasses(Results: Array<UnrealEngineClass> = definedExternally, bRecursive: Boolean = definedExternally): `T$193`
     open fun GetDynamicBinding(BindingObjectClass: UnrealEngineClass): DynamicBlueprintBinding
-    open fun GetObjectsOfClass(Results: Array<UObject> = definedExternally, bIncludeDerivedClasses: Boolean = definedExternally, ExcludeFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$365`
+    open fun GetObjectsOfClass(Results: Array<UObject> = definedExternally, bIncludeDerivedClasses: Boolean = definedExternally, ExcludeFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$194`
     open fun GetSuperClasses(): Array<UnrealEngineClass>
     open fun IsGeneratedByBlueprint(): Boolean
-    open fun GetAllDatasmithUserData(OutUserData: Array<DatasmithAssetUserData> = definedExternally): `T$366`
+    open fun GetAllDatasmithUserData(OutUserData: Array<DatasmithAssetUserData> = definedExternally): `T$195`
     open fun GetEngineSubsystem(): EngineSubsystem
     open fun Conv_ClassToSoftClassReference(): Class
     open fun Conv_SoftClassReferenceToClass(): UnrealEngineClass
-    override fun ToString(): String
     open fun Equal(B: Class): Boolean
-    override fun GetDisplayName(): String
     open fun GetPrimaryAssetIdFromClass(): PrimaryAssetId
     open fun GetPrimaryAssetIdFromSoftClassReference(): PrimaryAssetId
     open fun IsValidClass(): Boolean
@@ -15849,12 +16229,12 @@ external open class Class : Struct {
         fun C(Other: Any): Class
         fun AddDynamicBinding(Outer: UnrealEngineClass, BindingObject: DynamicBlueprintBinding)
         fun GetClassPathName(Class: UnrealEngineClass): String
-        fun GetDerivedClasses(ClassToLookFor: UnrealEngineClass, Results: Array<UnrealEngineClass> = definedExternally, bRecursive: Boolean = definedExternally): `T$367`
+        fun GetDerivedClasses(ClassToLookFor: UnrealEngineClass, Results: Array<UnrealEngineClass> = definedExternally, bRecursive: Boolean = definedExternally): `T$196`
         fun GetDynamicBinding(Outer: UnrealEngineClass, BindingObjectClass: UnrealEngineClass): DynamicBlueprintBinding
-        fun GetObjectsOfClass(ClassToLookFor: UnrealEngineClass, Results: Array<UObject> = definedExternally, bIncludeDerivedClasses: Boolean = definedExternally, ExcludeFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$368`
+        fun GetObjectsOfClass(ClassToLookFor: UnrealEngineClass, Results: Array<UObject> = definedExternally, bIncludeDerivedClasses: Boolean = definedExternally, ExcludeFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$197`
         fun GetSuperClasses(InClass: UnrealEngineClass): Array<UnrealEngineClass>
         fun IsGeneratedByBlueprint(InClass: UnrealEngineClass): Boolean
-        fun GetAllDatasmithUserData(ObjectClass: UnrealEngineClass, OutUserData: Array<DatasmithAssetUserData> = definedExternally): `T$369`
+        fun GetAllDatasmithUserData(ObjectClass: UnrealEngineClass, OutUserData: Array<DatasmithAssetUserData> = definedExternally): `T$198`
         fun GetEngineSubsystem(Class: UnrealEngineClass): EngineSubsystem
         fun Conv_ClassToSoftClassReference(Class: UnrealEngineClass): Class
         fun Conv_SoftClassReferenceToClass(softclass: Class): UnrealEngineClass
@@ -15881,13 +16261,13 @@ external open class Class : Struct {
 
 external open class SoftClassPath : SoftObjectPath {
     override fun clone(): SoftClassPath
-    open fun BreakSoftClassPath(PathString: String = definedExternally): `T$212`
+    open fun BreakSoftClassPath(PathString: String = definedExternally): `T$35`
     open fun ToSoftClassReference(): Class
 
     companion object {
         fun C(Other: UObject): SoftClassPath
         fun C(Other: Any): SoftClassPath
-        fun BreakSoftClassPath(InSoftClassPath: SoftClassPath, PathString: String = definedExternally): `T$212`
+        fun BreakSoftClassPath(InSoftClassPath: SoftClassPath, PathString: String = definedExternally): `T$35`
         fun ToSoftClassReference(SoftClassPath: SoftClassPath): Class
         fun MakeSoftClassPath(PathString: String): SoftClassPath
     }
@@ -15961,28 +16341,28 @@ external object EAnimCurveType {
     var EAnimCurveType_MAX: String /* "EAnimCurveType_MAX" */
 }
 
-external interface `T$370` {
+external interface `T$199` {
     var Snapshot: PoseSnapshot
 }
 
-external interface `T$371` {
+external interface `T$200` {
     var OutMarkerTime: Number
     var `$`: Boolean
 }
 
-external interface `T$372` {
+external interface `T$201` {
     var OutLinkedInstances: Array<AnimInstance>
 }
 
-external interface `T$373` {
+external interface `T$202` {
     var OutLinkedInstances: Array<AnimInstance>
 }
 
-external interface `T$374` {
+external interface `T$203` {
     var OutNames: Array<String>
 }
 
-external interface `T$375` {
+external interface `T$204` {
     var OutNames: Array<String>
 }
 
@@ -16011,7 +16391,7 @@ external open class AnimInstance : UObject {
     open fun UnlinkAnimClassLayers(InClass: UnrealEngineClass)
     open fun TryGetPawnOwner(): Pawn
     open fun StopSlotAnimation(InBlendOutTime: Number, SlotNodeName: String)
-    open fun SnapshotPose(Snapshot: PoseSnapshot = definedExternally): `T$370`
+    open fun SnapshotPose(Snapshot: PoseSnapshot = definedExternally): `T$199`
     open fun SetRootMotionMode(Value: String /* "NoRootMotionExtraction" | "IgnoreRootMotion" | "RootMotionFromEverything" | "RootMotionFromMontagesOnly" | "ERootMotionMode_MAX" */)
     open fun SetReceiveNotifiesFromLinkedInstances(bSet: Boolean)
     open fun SetPropagateNotifiesToLinkedInstances(bSet: Boolean)
@@ -16044,7 +16424,7 @@ external open class AnimInstance : UObject {
     open fun IsPlayingSlotAnimation(Asset: AnimSequenceBase, SlotNodeName: String): Boolean
     open fun IsAnyMontagePlaying(): Boolean
     open fun HasMarkerBeenHitThisFrame(SyncGroup: String, MarkerName: String): Boolean
-    open fun GetTimeToClosestMarker(SyncGroup: String, MarkerName: String, OutMarkerTime: Number = definedExternally): `T$371`
+    open fun GetTimeToClosestMarker(SyncGroup: String, MarkerName: String, OutMarkerTime: Number = definedExternally): `T$200`
     open fun GetSyncGroupPosition(InSyncGroupName: String): MarkerSyncAnimPosition
     open fun GetRelevantAnimTimeRemainingFraction(MachineIndex: Number, StateIndex: Number): Number
     open fun GetRelevantAnimTimeRemaining(MachineIndex: Number, StateIndex: Number): Number
@@ -16055,11 +16435,11 @@ external open class AnimInstance : UObject {
     open fun GetPropagateNotifiesToLinkedInstances(): Boolean
     open fun GetOwningComponent(): SkeletalMeshComponent
     open fun GetOwningActor(): Actor
-    open fun GetLinkedAnimLayerInstancesByGroup(InGroup: String, OutLinkedInstances: Array<AnimInstance> = definedExternally): `T$372`
+    open fun GetLinkedAnimLayerInstancesByGroup(InGroup: String, OutLinkedInstances: Array<AnimInstance> = definedExternally): `T$201`
     open fun GetLinkedAnimLayerInstanceByGroupAndClass(InGroup: String, InClass: UnrealEngineClass): AnimInstance
     open fun GetLinkedAnimLayerInstanceByGroup(InGroup: String): AnimInstance
     open fun GetLinkedAnimLayerInstanceByClass(InClass: UnrealEngineClass): AnimInstance
-    open fun GetLinkedAnimGraphInstancesByTag(InTag: String, OutLinkedInstances: Array<AnimInstance> = definedExternally): `T$373`
+    open fun GetLinkedAnimGraphInstancesByTag(InTag: String, OutLinkedInstances: Array<AnimInstance> = definedExternally): `T$202`
     open fun GetLinkedAnimGraphInstanceByTag(InTag: String): AnimInstance
     open fun GetTransitionTimeElapsed(MachineIndex: Number, TransitionIndex: Number): Number
     open fun GetTransitionCrossfadeDuration(MachineIndex: Number, TransitionIndex: Number): Number
@@ -16072,8 +16452,8 @@ external open class AnimInstance : UObject {
     open fun GetCurveValue(CurveName: String): Number
     open fun GetCurrentStateName(MachineIndex: Number): String
     open fun GetCurrentActiveMontage(): AnimMontage
-    open fun GetAllCurveNames(OutNames: Array<String> = definedExternally): `T$374`
-    open fun GetActiveCurveNames(CurveType: String /* "AttributeCurve" | "MaterialCurve" | "MorphTargetCurve" | "MaxAnimCurveType" | "EAnimCurveType_MAX" */, OutNames: Array<String> = definedExternally): `T$375`
+    open fun GetAllCurveNames(OutNames: Array<String> = definedExternally): `T$203`
+    open fun GetActiveCurveNames(CurveType: String /* "AttributeCurve" | "MaterialCurve" | "MorphTargetCurve" | "MaxAnimCurveType" | "EAnimCurveType_MAX" */, OutNames: Array<String> = definedExternally): `T$204`
     open fun ClearMorphTargets()
     open fun CalculateDirection(Velocity: Vector, BaseRotation: Rotator): Number
     open fun BlueprintUpdateAnimation(DeltaTimeX: Number)
@@ -16339,7 +16719,7 @@ external open class EdGraphSchema : UObject {
     constructor()
     constructor(Outer: UObject)
     open fun SetNodeMetaData(UNode: EdGraphNode, KeyValue: String): Boolean
-    open fun TryConnection(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin)
+    open fun TryConnection(A: JavascriptEdGraphPin, B: JavascriptEdGraphPin): Boolean
 
     companion object {
         fun Load(ResourceName: String): EdGraphSchema
@@ -16349,7 +16729,7 @@ external open class EdGraphSchema : UObject {
         fun C(Other: UObject): EdGraphSchema
         fun C(Other: Any): EdGraphSchema
         fun SetNodeMetaData(Schema: EdGraphSchema, UNode: EdGraphNode, KeyValue: String): Boolean
-        fun TryConnection(Schema: EdGraphSchema, A: JavascriptEdGraphPin, B: JavascriptEdGraphPin)
+        fun TryConnection(Schema: EdGraphSchema, A: JavascriptEdGraphPin, B: JavascriptEdGraphPin): Boolean
     }
 }
 
@@ -16487,6 +16867,7 @@ external open class TimelineTemplate : UObject {
     open var LinearColorTracks: Array<TTLinearColorTrack>
     open var MetaDataArray: Array<BPVariableMetaDataEntry>
     open var TimelineGuid: Guid
+    open var TimelineTickGroup: String /* "TG_PrePhysics" | "TG_StartPhysics" | "TG_DuringPhysics" | "TG_EndPhysics" | "TG_PostPhysics" | "TG_PostUpdateWork" | "TG_LastDemotable" | "TG_NewlySpawned" | "TG_MAX" */
     open var VariableName: String
     open var DirectionPropertyName: String
     open var UpdateFunctionName: String
@@ -16765,14 +17146,14 @@ external open class Blueprint : BlueprintCore {
     }
 }
 
-external interface `T$376` {
+external interface `T$205` {
     var OutTransform: Transform
     var OutBoneIndex: Number
     var OutIndex: Number
     var `$`: SkeletalMeshSocket
 }
 
-external interface `T$377` {
+external interface `T$206` {
     var OutIndex: Number
     var `$`: SkeletalMeshSocket
 }
@@ -16819,6 +17200,7 @@ external open class SkeletalMesh : StreamableRenderAsset {
     open var DefaultEditorCameraLookAt: Vector
     open var DefaultEditorCameraOrthoZoom: Number
     open var PreviewAttachedAssetContainer: PreviewAssetAttachContainer
+    open var bSupportRayTracing: Boolean
     open var MorphTargets: Array<MorphTarget>
     open var FloorOffset: Number
     open var RetargetBasePose: Array<Transform>
@@ -16829,19 +17211,31 @@ external open class SkeletalMesh : StreamableRenderAsset {
     open var AssetUserData: Array<AssetUserData>
     open var Sockets: Array<SkeletalMeshSocket>
     open var SkinWeightProfiles: Array<SkinWeightProfileInfo>
+    open fun SetMorphTargets(InMorphTargets: Array<MorphTarget>)
+    open fun SetMeshClothingAssets(InMeshClothingAssets: Array<ClothingAssetBase>)
+    open fun SetMaterials(InMaterials: Array<SkeletalMaterial>)
     open fun SetLODSettings(InLODSettings: SkeletalMeshLODSettings)
     open fun SetDefaultAnimatingRig(InAnimatingRig: UObject)
     open fun NumSockets(): Number
     open fun GetAllMorphTargetNames(): Array<String>
     open fun IsSectionUsingCloth(InSectionIndex: Number, bCheckCorrespondingSections: Boolean): Boolean
     open fun GetSocketByIndex(index: Number): SkeletalMeshSocket
+    open fun GetSkeleton(): Skeleton
+    open fun GetShadowPhysicsAsset(): PhysicsAsset
+    open fun GetPhysicsAsset(): PhysicsAsset
+    open fun GetNodeMappingData(): Array<NodeMappingContainer>
     open fun GetNodeMappingContainer(SourceAsset: Blueprint): NodeMappingContainer
+    open fun GetMorphTargets(): Array<MorphTarget>
+    open fun GetMeshClothingAssets(): Array<ClothingAssetBase>
+    open fun GetMaterials(): Array<SkeletalMaterial>
+    open fun GetLODSettings(): SkeletalMeshLODSettings
     open fun GetImportedBounds(): BoxSphereBounds
     open fun GetDefaultAnimatingRig(): UObject
     open fun GetBounds(): BoxSphereBounds
-    open fun FindSocketInfo(InSocketName: String, OutTransform: Transform = definedExternally, OutBoneIndex: Number = definedExternally, OutIndex: Number = definedExternally): `T$376`
-    open fun FindSocketAndIndex(InSocketName: String, OutIndex: Number = definedExternally): `T$377`
+    open fun FindSocketInfo(InSocketName: String, OutTransform: Transform = definedExternally, OutBoneIndex: Number = definedExternally, OutIndex: Number = definedExternally): `T$205`
+    open fun FindSocketAndIndex(InSocketName: String, OutIndex: Number = definedExternally): `T$206`
     open fun FindSocket(InSocketName: String): SkeletalMeshSocket
+    open fun GetPhysicsBodySetupFromMesh(InName: String): BodySetup
     open fun GetHandSkeletalMesh(SkeletonType: String /* "None" | "HandLeft" | "HandRight" | "EOculusHandType_MAX" */, MeshType: String /* "None" | "HandLeft" | "HandRight" | "EOculusHandType_MAX" */, WorldToMeters: Number): Boolean
 
     companion object {
@@ -16851,6 +17245,7 @@ external open class SkeletalMesh : StreamableRenderAsset {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SkeletalMesh
         fun C(Other: UObject): SkeletalMesh
         fun C(Other: Any): SkeletalMesh
+        fun GetPhysicsBodySetupFromMesh(InSkeletalMesh: SkeletalMesh, InName: String): BodySetup
         fun GetHandSkeletalMesh(HandSkeletalMesh: SkeletalMesh, SkeletonType: String /* "None" | "HandLeft" | "HandRight" | "EOculusHandType_MAX" */, MeshType: String /* "None" | "HandLeft" | "HandRight" | "EOculusHandType_MAX" */, WorldToMeters: Number): Boolean
     }
 }
@@ -16883,7 +17278,7 @@ external object EVisibilityBasedAnimTickOption {
     var EVisibilityBasedAnimTickOption_MAX: String /* "EVisibilityBasedAnimTickOption_MAX" */
 }
 
-external interface `T$378` {
+external interface `T$207` {
     var Bone0: Number
     var Weight0: Number
     var Bone1: Number
@@ -16898,12 +17293,12 @@ external open class SkelMeshSkinWeightInfo {
     open var Bones: Number
     open var Weights: Number
     open fun clone(): SkelMeshSkinWeightInfo
-    open fun BreakSkinWeightInfo(Bone0: Number = definedExternally, Weight0: Number = definedExternally, Bone1: Number = definedExternally, Weight1: Number = definedExternally, Bone2: Number = definedExternally, Weight2: Number = definedExternally, Bone3: Number = definedExternally, Weight3: Number = definedExternally): `T$378`
+    open fun BreakSkinWeightInfo(Bone0: Number = definedExternally, Weight0: Number = definedExternally, Bone1: Number = definedExternally, Weight1: Number = definedExternally, Bone2: Number = definedExternally, Weight2: Number = definedExternally, Bone3: Number = definedExternally, Weight3: Number = definedExternally): `T$207`
 
     companion object {
         fun C(Other: UObject): SkelMeshSkinWeightInfo
         fun C(Other: Any): SkelMeshSkinWeightInfo
-        fun BreakSkinWeightInfo(InWeight: SkelMeshSkinWeightInfo, Bone0: Number = definedExternally, Weight0: Number = definedExternally, Bone1: Number = definedExternally, Weight1: Number = definedExternally, Bone2: Number = definedExternally, Weight2: Number = definedExternally, Bone3: Number = definedExternally, Weight3: Number = definedExternally): `T$378`
+        fun BreakSkinWeightInfo(InWeight: SkelMeshSkinWeightInfo, Bone0: Number = definedExternally, Weight0: Number = definedExternally, Bone1: Number = definedExternally, Weight1: Number = definedExternally, Bone2: Number = definedExternally, Weight2: Number = definedExternally, Bone3: Number = definedExternally, Weight3: Number = definedExternally): `T$207`
         fun MakeSkinWeightInfo(Bone0: Number, Weight0: Number, Bone1: Number, Weight1: Number, Bone2: Number, Weight2: Number, Bone3: Number, Weight3: Number): SkelMeshSkinWeightInfo
     }
 }
@@ -16914,18 +17309,18 @@ external object EPhysBodyOp {
     var PBO_MAX: String /* "PBO_MAX" */
 }
 
-external interface `T$379` {
+external interface `T$208` {
     var OutPosition: Vector
     var OutRotation: Rotator
 }
 
-external interface `T$380` {
+external interface `T$209` {
     var OutTwistAngle: Number
     var OutSwingAngle: Number
     var `$`: Boolean
 }
 
-external interface `T$381` {
+external interface `T$210` {
     var BoneLocation: Vector
     var `$`: String
 }
@@ -16970,8 +17365,8 @@ external open class SkinnedMeshComponent : MeshComponent {
     open var CachedWorldToLocalTransform: Matrix
     open fun UnloadSkinWeightProfile(InProfileName: String)
     open fun UnHideBoneByName(BoneName: String)
-    open fun TransformToBoneSpace(BoneName: String, InPosition: Vector, InRotation: Rotator, OutPosition: Vector = definedExternally, OutRotation: Rotator = definedExternally): `T$379`
-    open fun TransformFromBoneSpace(BoneName: String, InPosition: Vector, InRotation: Rotator, OutPosition: Vector = definedExternally, OutRotation: Rotator = definedExternally): `T$379`
+    open fun TransformToBoneSpace(BoneName: String, InPosition: Vector, InRotation: Rotator, OutPosition: Vector = definedExternally, OutRotation: Rotator = definedExternally): `T$208`
+    open fun TransformFromBoneSpace(BoneName: String, InPosition: Vector, InRotation: Rotator, OutPosition: Vector = definedExternally, OutRotation: Rotator = definedExternally): `T$208`
     open fun ShowMaterialSection(MaterialID: Number, SectionIndex: Number, bShow: Boolean, LODIndex: Number)
     open fun ShowAllMaterialSections(LODIndex: Number)
     open fun SetVertexOffsetUsage(LODIndex: Number, Usage: Number)
@@ -16994,7 +17389,7 @@ external open class SkinnedMeshComponent : MeshComponent {
     open fun IsBoneHiddenByName(BoneName: String): Boolean
     open fun HideBoneByName(BoneName: String, PhysBodyOption: String /* "PBO_None" | "PBO_Term" | "PBO_MAX" */)
     open fun GetVertexOffsetUsage(LODIndex: Number): Number
-    open fun GetTwistAndSwingAngleOfDeltaRotationFromRefPose(BoneName: String, OutTwistAngle: Number = definedExternally, OutSwingAngle: Number = definedExternally): `T$380`
+    open fun GetTwistAndSwingAngleOfDeltaRotationFromRefPose(BoneName: String, OutTwistAngle: Number = definedExternally, OutSwingAngle: Number = definedExternally): `T$209`
     open fun GetSocketBoneName(InSocketName: String): String
     open fun GetRefPosePosition(BoneIndex: Number): Vector
     open fun GetParentBone(BoneName: String): String
@@ -17005,7 +17400,7 @@ external open class SkinnedMeshComponent : MeshComponent {
     open fun GetCurrentSkinWeightProfileName(): String
     open fun GetBoneName(BoneIndex: Number): String
     open fun GetBoneIndex(BoneName: String): Number
-    open fun FindClosestBone(TestLocation: Vector, BoneLocation: Vector = definedExternally, IgnoreScale: Number = definedExternally, bRequirePhysicsAsset: Boolean = definedExternally): `T$381`
+    open fun FindClosestBone(TestLocation: Vector, BoneLocation: Vector = definedExternally, IgnoreScale: Number = definedExternally, bRequirePhysicsAsset: Boolean = definedExternally): `T$210`
     open fun ClearVertexColorOverride(LODIndex: Number)
     open fun ClearSkinWeightProfile()
     open fun ClearSkinWeightOverride(LODIndex: Number)
@@ -17122,14 +17517,6 @@ external object EAnimationMode {
     var EAnimationMode_MAX: String /* "EAnimationMode_MAX" */
 }
 
-external object EClothMassMode {
-    var UniformMass: String /* "UniformMass" */
-    var TotalMass: String /* "TotalMass" */
-    var Density: String /* "Density" */
-    var MaxClothMassMode: String /* "MaxClothMassMode" */
-    var EClothMassMode_MAX: String /* "EClothMassMode_MAX" */
-}
-
 external open class ClothingSimulationFactory : UObject {
     constructor()
     constructor(Outer: UObject)
@@ -17144,9 +17531,26 @@ external open class ClothingSimulationFactory : UObject {
     }
 }
 
+external open class ClothingInteractor : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): ClothingInteractor
+        fun Find(Outer: UObject, ResourceName: String): ClothingInteractor
+        fun GetDefaultObject(): ClothingInteractor
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ClothingInteractor
+        fun C(Other: UObject): ClothingInteractor
+        fun C(Other: Any): ClothingInteractor
+    }
+}
+
 external open class ClothingSimulationInteractor : UObject {
     constructor()
     constructor(Outer: UObject)
+    open var ClothingInteractors: Any
+    open fun SetNumSubsteps(NumSubsteps: Number)
+    open fun SetNumIterations(NumIterations: Number)
     open fun SetAnimDriveSpringStiffness(InStiffness: Number)
     open fun PhysicsAssetUpdated()
     open fun GetSimulationTime(): Number
@@ -17155,6 +17559,7 @@ external open class ClothingSimulationInteractor : UObject {
     open fun GetNumIterations(): Number
     open fun GetNumDynamicParticles(): Number
     open fun GetNumCloths(): Number
+    open fun GetClothingInteractor(ClothingAssetName: String): ClothingInteractor
     open fun EnableGravityOverride(InVector: Vector)
     open fun DisableGravityOverride()
     open fun ClothConfigUpdated()
@@ -17176,7 +17581,7 @@ external object ECustomBoneAttributeLookup {
     var ECustomBoneAttributeLookup_MAX: String /* "ECustomBoneAttributeLookup_MAX" */
 }
 
-external interface `T$382` {
+external interface `T$211` {
     var ClosestWorldPosition: Vector
     var Normal: Vector
     var BoneName: String
@@ -17184,16 +17589,21 @@ external interface `T$382` {
     var `$`: Boolean
 }
 
-external interface `T$383` {
+external interface `T$212` {
+    var OutValue: String
+    var `$`: Boolean
+}
+
+external interface `T$213` {
     var OutLinkedInstances: Array<AnimInstance>
 }
 
-external interface `T$384` {
+external interface `T$214` {
     var OutValue: Number
     var `$`: Boolean
 }
 
-external interface `T$385` {
+external interface `T$215` {
     var Swing1Angle: Number
     var TwistAngle: Number
     var Swing2Angle: Number
@@ -17246,11 +17656,6 @@ external open class SkeletalMeshComponent : SkinnedMeshComponent {
     open var bAnimTreeInitialised: Boolean
     open var bIncludeComponentLocationIntoBounds: Boolean
     open var bEnableLineCheckWithBounds: Boolean
-    open var bUseBendingElements: Boolean
-    open var bUseTetrahedralConstraints: Boolean
-    open var bUseThinShellVolumeConstraints: Boolean
-    open var bUseSelfCollisions: Boolean
-    open var bUseContinuousCollisionDetection: Boolean
     open var bPropagateCurvesToSlaves: Boolean
     open var bSkipKinematicUpdateWhenInterpolating: Boolean
     open var bSkipBoundsUpdateWhenInterpolating: Boolean
@@ -17258,18 +17663,7 @@ external open class SkeletalMeshComponent : SkinnedMeshComponent {
     open var bUpdateClothInEditor: Boolean
     open var bNeedsQueuedAnimEventsDispatched: Boolean
     open var CachedAnimCurveUidVersion: Any
-    open var MassMode: String /* "UniformMass" | "TotalMass" | "Density" | "MaxClothMassMode" | "EClothMassMode_MAX" */
-    open var UniformMass: Number
-    open var TotalMass: Number
-    open var Density: Number
-    open var MinPerParticleMass: Number
     open var ClothBlendWeight: Number
-    open var EdgeStiffness: Number
-    open var BendingStiffness: Number
-    open var AreaStiffness: Number
-    open var VolumeStiffness: Number
-    open var StrainLimitingStiffness: Number
-    open var ShapeTargetStiffness: Number
     open var bWaitForParallelClothTask: Boolean
     open var DisallowedAnimCurves: Array<String>
     open var BodySetup: BodySetup
@@ -17292,7 +17686,7 @@ external open class SkeletalMeshComponent : SkinnedMeshComponent {
     open fun TermBodiesBelow(ParentBoneName: String)
     open fun SuspendClothingSimulation()
     open fun Stop()
-    open fun SnapshotPose(Snapshot: PoseSnapshot = definedExternally): `T$370`
+    open fun SnapshotPose(Snapshot: PoseSnapshot = definedExternally): `T$199`
     open fun SetUpdateClothInEditor(NewUpdateState: Boolean)
     open fun SetUpdateAnimationInEditor(NewUpdateState: Boolean)
     open fun SetTeleportRotationThreshold(Threshold: Number)
@@ -17335,15 +17729,15 @@ external open class SkeletalMeshComponent : SkinnedMeshComponent {
     open fun OverrideAnimationData(InAnimToPlay: AnimationAsset, bIsLooping: Boolean, bIsPlaying: Boolean, Position: Number, PlayRate: Number)
     open fun LinkAnimGraphByTag(InTag: String, InClass: UnrealEngineClass)
     open fun LinkAnimClassLayers(InClass: UnrealEngineClass)
-    open fun GetClosestPointOnPhysicsAsset(WorldPosition: Vector, ClosestWorldPosition: Vector = definedExternally, Normal: Vector = definedExternally, BoneName: String = definedExternally, Distance: Number = definedExternally): `T$382`
+    open fun GetClosestPointOnPhysicsAsset(WorldPosition: Vector, ClosestWorldPosition: Vector = definedExternally, Normal: Vector = definedExternally, BoneName: String = definedExternally, Distance: Number = definedExternally): `T$211`
     open fun IsPlaying(): Boolean
     open fun IsClothingSimulationSuspended(): Boolean
     open fun IsBodyGravityEnabled(BoneName: String): Boolean
     open fun HasValidAnimationInstance(): Boolean
     open fun GetTeleportRotationThreshold(): Number
     open fun GetTeleportDistanceThreshold(): Number
-    open fun GetStringAttribute_Ref(BoneName: String, AttributeName: String, OutValue: String = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$148`
-    open fun GetStringAttribute(BoneName: String, AttributeName: String, DefaultValue: String, OutValue: String = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$148`
+    open fun GetStringAttribute_Ref(BoneName: String, AttributeName: String, OutValue: String = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$212`
+    open fun GetStringAttribute(BoneName: String, AttributeName: String, DefaultValue: String, OutValue: String = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$212`
     open fun GetSkeletalCenterOfMass(): Vector
     open fun GetPostProcessInstance(): AnimInstance
     open fun GetPosition(): Number
@@ -17351,15 +17745,15 @@ external open class SkeletalMeshComponent : SkinnedMeshComponent {
     open fun GetMorphTarget(MorphTargetName: String): Number
     open fun GetLinkedAnimLayerInstanceByGroup(InGroup: String): AnimInstance
     open fun GetLinkedAnimLayerInstanceByClass(InClass: UnrealEngineClass): AnimInstance
-    open fun GetLinkedAnimGraphInstancesByTag(InTag: String, OutLinkedInstances: Array<AnimInstance> = definedExternally): `T$383`
+    open fun GetLinkedAnimGraphInstancesByTag(InTag: String, OutLinkedInstances: Array<AnimInstance> = definedExternally): `T$213`
     open fun GetLinkedAnimGraphInstanceByTag(InTag: String): AnimInstance
-    open fun GetIntegerAttribute_Ref(BoneName: String, AttributeName: String, OutValue: Number = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$384`
-    open fun GetIntegerAttribute(BoneName: String, AttributeName: String, DefaultValue: Number, OutValue: Number = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$384`
-    open fun GetFloatAttribute_Ref(BoneName: String, AttributeName: String, OutValue: Number = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$384`
-    open fun GetFloatAttribute(BoneName: String, AttributeName: String, DefaultValue: Number, OutValue: Number = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$384`
+    open fun GetIntegerAttribute_Ref(BoneName: String, AttributeName: String, OutValue: Number = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$214`
+    open fun GetIntegerAttribute(BoneName: String, AttributeName: String, DefaultValue: Number, OutValue: Number = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$214`
+    open fun GetFloatAttribute_Ref(BoneName: String, AttributeName: String, OutValue: Number = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$214`
+    open fun GetFloatAttribute(BoneName: String, AttributeName: String, DefaultValue: Number, OutValue: Number = definedExternally, LookupType: String /* "BoneOnly" | "ImmediateParent" | "ParentHierarchy" | "ECustomBoneAttributeLookup_MAX" */ = definedExternally): `T$214`
     open fun GetDisablePostProcessBlueprint(): Boolean
     open fun GetDisableAnimCurves(): Boolean
-    open fun GetCurrentJointAngles(InBoneName: String, Swing1Angle: Number = definedExternally, TwistAngle: Number = definedExternally, Swing2Angle: Number = definedExternally): `T$385`
+    open fun GetCurrentJointAngles(InBoneName: String, Swing1Angle: Number = definedExternally, TwistAngle: Number = definedExternally, Swing2Angle: Number = definedExternally): `T$215`
     open fun GetClothMaxDistanceScale(): Number
     open fun GetClothingSimulationInteractor(): ClothingSimulationInteractor
     open fun GetBoneMass(BoneName: String, bScaleMass: Boolean): Number
@@ -17378,6 +17772,7 @@ external open class SkeletalMeshComponent : SkinnedMeshComponent {
     open fun AddImpulseToAllBodiesBelow(Impulse: Vector, BoneName: String, bVelChange: Boolean, bIncludeSelf: Boolean)
     open fun AddForceToAllBodiesBelow(Force: Vector, BoneName: String, bAccelChange: Boolean, bIncludeSelf: Boolean)
     open fun AccumulateAllBodiesBelowPhysicsBlendWeight(InBoneName: String, AddPhysicsBlendWeight: Number, bSkipCustomPhysicsType: Boolean)
+    open fun GetPhysicsBodySetup(InName: String): BodySetup
     open fun GetDirectionBetweenSockets(SocketOrBoneNameFrom: String, SocketOrBoneNameTo: String): Vector
     open fun GetDistanceBetweenTwoSockets(SocketOrBoneNameA: String, SocketSpaceA: String /* "RTS_World" | "RTS_Actor" | "RTS_Component" | "RTS_ParentBoneSpace" | "RTS_MAX" */, SocketOrBoneNameB: String, SocketSpaceB: String /* "RTS_World" | "RTS_Actor" | "RTS_Component" | "RTS_ParentBoneSpace" | "RTS_MAX" */, bRemapRange: Boolean, InRangeMin: Number, InRangeMax: Number, OutRangeMin: Number, OutRangeMax: Number): Number
 
@@ -17388,6 +17783,7 @@ external open class SkeletalMeshComponent : SkinnedMeshComponent {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SkeletalMeshComponent
         fun C(Other: UObject): SkeletalMeshComponent
         fun C(Other: Any): SkeletalMeshComponent
+        fun GetPhysicsBodySetup(InSkeletalMeshComp: SkeletalMeshComponent, InName: String): BodySetup
         fun GetDirectionBetweenSockets(Component: SkeletalMeshComponent, SocketOrBoneNameFrom: String, SocketOrBoneNameTo: String): Vector
         fun GetDistanceBetweenTwoSockets(Component: SkeletalMeshComponent, SocketOrBoneNameA: String, SocketSpaceA: String /* "RTS_World" | "RTS_Actor" | "RTS_Component" | "RTS_ParentBoneSpace" | "RTS_MAX" */, SocketOrBoneNameB: String, SocketSpaceB: String /* "RTS_World" | "RTS_Actor" | "RTS_Component" | "RTS_ParentBoneSpace" | "RTS_MAX" */, bRemapRange: Boolean, InRangeMin: Number, InRangeMax: Number, OutRangeMin: Number, OutRangeMax: Number): Number
     }
@@ -17523,7 +17919,7 @@ external open class RootMotionMovementParams {
     }
 }
 
-external interface `T$386` {
+external interface `T$216` {
     var FloorResult: FindFloorResult
 }
 
@@ -17698,8 +18094,8 @@ external open class CharacterMovementComponent : PawnMovementComponent {
     open fun GetWalkableFloorZ(): Number
     open fun GetWalkableFloorAngle(): Number
     open fun GetModifiedMaxAcceleration(): Number
-    open fun FindFloor(CapsuleLocation: Vector, FloorResult: FindFloorResult = definedExternally): `T$386`
-    open fun ComputeFloorDistance(CapsuleLocation: Vector, LineDistance: Number, SweepDistance: Number, SweepRadius: Number, FloorResult: FindFloorResult = definedExternally): `T$386`
+    open fun FindFloor(CapsuleLocation: Vector, FloorResult: FindFloorResult = definedExternally): `T$216`
+    open fun ComputeFloorDistance(CapsuleLocation: Vector, LineDistance: Number, SweepDistance: Number, SweepRadius: Number, FloorResult: FindFloorResult = definedExternally): `T$216`
     open fun IsWalking(): Boolean
     open fun IsWalkable(Hit: HitResult): Boolean
     open fun GetValidPerchRadius(): Number
@@ -17734,12 +18130,12 @@ external open class CharacterMovementComponent : PawnMovementComponent {
     }
 }
 
-external interface `T$387` {
+external interface `T$217` {
     var OutRadius: Number
     var OutHalfHeightWithoutHemisphere: Number
 }
 
-external interface `T$388` {
+external interface `T$218` {
     var OutRadius: Number
     var OutHalfHeight: Number
 }
@@ -17753,14 +18149,14 @@ external open class CapsuleComponent : ShapeComponent {
     open fun SetCapsuleSize(InRadius: Number, InHalfHeight: Number, bUpdateOverlaps: Boolean)
     open fun SetCapsuleRadius(Radius: Number, bUpdateOverlaps: Boolean)
     open fun SetCapsuleHalfHeight(HalfHeight: Number, bUpdateOverlaps: Boolean)
-    open fun GetUnscaledCapsuleSize_WithoutHemisphere(OutRadius: Number = definedExternally, OutHalfHeightWithoutHemisphere: Number = definedExternally): `T$387`
-    open fun GetUnscaledCapsuleSize(OutRadius: Number = definedExternally, OutHalfHeight: Number = definedExternally): `T$388`
+    open fun GetUnscaledCapsuleSize_WithoutHemisphere(OutRadius: Number = definedExternally, OutHalfHeightWithoutHemisphere: Number = definedExternally): `T$217`
+    open fun GetUnscaledCapsuleSize(OutRadius: Number = definedExternally, OutHalfHeight: Number = definedExternally): `T$218`
     open fun GetUnscaledCapsuleRadius(): Number
     open fun GetUnscaledCapsuleHalfHeight_WithoutHemisphere(): Number
     open fun GetUnscaledCapsuleHalfHeight(): Number
     open fun GetShapeScale(): Number
-    open fun GetScaledCapsuleSize_WithoutHemisphere(OutRadius: Number = definedExternally, OutHalfHeightWithoutHemisphere: Number = definedExternally): `T$387`
-    open fun GetScaledCapsuleSize(OutRadius: Number = definedExternally, OutHalfHeight: Number = definedExternally): `T$388`
+    open fun GetScaledCapsuleSize_WithoutHemisphere(OutRadius: Number = definedExternally, OutHalfHeightWithoutHemisphere: Number = definedExternally): `T$217`
+    open fun GetScaledCapsuleSize(OutRadius: Number = definedExternally, OutHalfHeight: Number = definedExternally): `T$218`
     open fun GetScaledCapsuleRadius(): Number
     open fun GetScaledCapsuleHalfHeight_WithoutHemisphere(): Number
     open fun GetScaledCapsuleHalfHeight(): Number
@@ -18118,7 +18514,7 @@ external object ERadialImpulseFalloff {
     var RIF_MAX: String /* "RIF_MAX" */
 }
 
-external interface `T$389` {
+external interface `T$219` {
     var HitLocation: Vector
     var HitNormal: Vector
     var BoneName: String
@@ -18126,40 +18522,40 @@ external interface `T$389` {
     var `$`: Boolean
 }
 
-external interface `T$390` {
+external interface `T$220` {
     var OutOverlappingComponents: Array<PrimitiveComponent>
 }
 
-external interface `T$391` {
+external interface `T$221` {
     var OverlappingActors: Array<Actor>
 }
 
-external interface `T$392` {
+external interface `T$222` {
     var SectionIndex: Number
     var `$`: MaterialInterface
 }
 
-external interface `T$393` {
+external interface `T$223` {
     var OutPointOnBody: Vector
     var `$`: Number
 }
 
-external interface `T$394` {
+external interface `T$224` {
     var OutActors: Array<Actor>
     var `$`: Boolean
 }
 
-external interface `T$395` {
+external interface `T$225` {
     var OutComponents: Array<PrimitiveComponent>
     var `$`: Boolean
 }
 
-external interface `T$396` {
+external interface `T$226` {
     var OutActors: Array<Actor>
     var `$`: Boolean
 }
 
-external interface `T$397` {
+external interface `T$227` {
     var OutComponents: Array<PrimitiveComponent>
     var `$`: Boolean
 }
@@ -18227,6 +18623,8 @@ external open class PrimitiveComponent : SceneComponent {
     open var AlwaysLoadOnServer: Boolean
     open var bUseEditorCompositing: Boolean
     open var bRenderCustomDepth: Boolean
+    open var bVisibleInSceneCaptureOnly: Boolean
+    open var bHiddenInSceneCapture: Boolean
     open var bHasCustomNavigableGeometry: String /* "No" | "Yes" | "EvenIfNotCollidable" | "DontExport" | "EHasCustomNavigableGeometry_MAX" */
     open var HitProxyPriority: String /* "HPP_World" | "HPP_Wireframe" | "HPP_Foreground" | "HPP_UI" | "HPP_MAX" */
     open var CanBeCharacterBase: String /* "ECB_No" | "ECB_Yes" | "ECB_Owner" | "ECB_MAX" */
@@ -18237,6 +18635,7 @@ external open class PrimitiveComponent : SceneComponent {
     open var CustomPrimitiveData: CustomPrimitiveData
     open var CustomPrimitiveDataInternal: CustomPrimitiveData
     open var TranslucencySortPriority: Number
+    open var TranslucencySortDistanceOffset: Number
     open var VisibilityId: Number
     open var RuntimeVirtualTextures: Array<RuntimeVirtualTexture>
     open var VirtualTextureLodBias: Any
@@ -18266,8 +18665,10 @@ external open class PrimitiveComponent : SceneComponent {
     open fun WakeRigidBody(BoneName: String)
     open fun WakeAllRigidBodies()
     open fun SetWalkableSlopeOverride(NewOverride: WalkableSlopeOverride)
+    open fun SetVisibleInSceneCaptureOnly(bValue: Boolean)
     open fun SetUseCCD(InUseCCD: Boolean, BoneName: String)
     open fun SetTranslucentSortPriority(NewTranslucentSortPriority: Number)
+    open fun SetTranslucencySortDistanceOffset(NewTranslucencySortDistanceOffset: Number)
     open fun SetSingleSampleShadowFromStationaryLights(bNewSingleSampleShadowFromStationaryLights: Boolean)
     open fun SetSimulatePhysics(bSimulate: Boolean)
     open fun SetRenderInMainPass(bValue: Boolean)
@@ -18291,6 +18692,7 @@ external open class PrimitiveComponent : SceneComponent {
     open fun SetLinearDamping(InDamping: Number)
     open fun SetLightingChannels(bChannel0: Boolean, bChannel1: Boolean, bChannel2: Boolean)
     open fun SetLightAttachmentsAsGroup(bInLightAttachmentsAsGroup: Boolean)
+    open fun SetHiddenInSceneCapture(bValue: Boolean)
     open fun SetGenerateOverlapEvents(bInGenerateOverlapEvents: Boolean)
     open fun SetExcludeFromLightAttachmentGroup(bInExcludeFromLightAttachmentGroup: Boolean)
     open fun SetEnableGravity(bGravityEnabled: Boolean)
@@ -18314,6 +18716,7 @@ external open class PrimitiveComponent : SceneComponent {
     open fun SetCenterOfMass(CenterOfMassOffset: Vector, BoneName: String)
     open fun SetCastShadow(NewCastShadow: Boolean)
     open fun SetCastInsetShadow(bInCastInsetShadow: Boolean)
+    open fun SetCastHiddenShadow(NewCastHiddenShadow: Boolean)
     open fun SetBoundsScale(NewBoundsScale: Number)
     open fun SetAngularDamping(InDamping: Number)
     open fun SetAllUseCCD(InUseCCD: Boolean)
@@ -18323,13 +18726,13 @@ external open class PrimitiveComponent : SceneComponent {
     open fun SetAllMassScale(InMassScale: Number)
     open fun ScaleByMomentOfInertia(InputVector: Vector, BoneName: String): Vector
     open fun PutRigidBodyToSleep(BoneName: String)
-    open fun SphereTraceComponent(TraceStart: Vector, TraceEnd: Vector, SphereRadius: Number, bTraceComplex: Boolean, bShowTrace: Boolean, bPersistentShowTrace: Boolean, HitLocation: Vector = definedExternally, HitNormal: Vector = definedExternally, BoneName: String = definedExternally, OutHit: HitResult = definedExternally): `T$389`
-    open fun SphereOverlapComponent(InSphereCentre: Vector, InSphereRadius: Number, bTraceComplex: Boolean, bShowTrace: Boolean, bPersistentShowTrace: Boolean, HitLocation: Vector = definedExternally, HitNormal: Vector = definedExternally, BoneName: String = definedExternally, OutHit: HitResult = definedExternally): `T$389`
-    open fun LineTraceComponent(TraceStart: Vector, TraceEnd: Vector, bTraceComplex: Boolean, bShowTrace: Boolean, bPersistentShowTrace: Boolean, HitLocation: Vector = definedExternally, HitNormal: Vector = definedExternally, BoneName: String = definedExternally, OutHit: HitResult = definedExternally): `T$389`
+    open fun SphereTraceComponent(TraceStart: Vector, TraceEnd: Vector, SphereRadius: Number, bTraceComplex: Boolean, bShowTrace: Boolean, bPersistentShowTrace: Boolean, HitLocation: Vector = definedExternally, HitNormal: Vector = definedExternally, BoneName: String = definedExternally, OutHit: HitResult = definedExternally): `T$219`
+    open fun SphereOverlapComponent(InSphereCentre: Vector, InSphereRadius: Number, bTraceComplex: Boolean, bShowTrace: Boolean, bPersistentShowTrace: Boolean, HitLocation: Vector = definedExternally, HitNormal: Vector = definedExternally, BoneName: String = definedExternally, OutHit: HitResult = definedExternally): `T$219`
+    open fun LineTraceComponent(TraceStart: Vector, TraceEnd: Vector, bTraceComplex: Boolean, bShowTrace: Boolean, bPersistentShowTrace: Boolean, HitLocation: Vector = definedExternally, HitNormal: Vector = definedExternally, BoneName: String = definedExternally, OutHit: HitResult = definedExternally): `T$219`
     open fun IsQueryCollisionEnabled(): Boolean
     open fun IsPhysicsCollisionEnabled(): Boolean
     open fun IsCollisionEnabled(): Boolean
-    open fun BoxOverlapComponent(InBoxCentre: Vector, InBox: Box, bTraceComplex: Boolean, bShowTrace: Boolean, bPersistentShowTrace: Boolean, HitLocation: Vector = definedExternally, HitNormal: Vector = definedExternally, BoneName: String = definedExternally, OutHit: HitResult = definedExternally): `T$389`
+    open fun BoxOverlapComponent(InBoxCentre: Vector, InBox: Box, bTraceComplex: Boolean, bShowTrace: Boolean, bPersistentShowTrace: Boolean, HitLocation: Vector = definedExternally, HitNormal: Vector = definedExternally, BoneName: String = definedExternally, OutHit: HitResult = definedExternally): `T$219`
     open fun IsOverlappingComponent(OtherComp: PrimitiveComponent): Boolean
     open fun IsOverlappingActor(Other: Actor): Boolean
     open fun IsGravityEnabled(): Boolean
@@ -18342,10 +18745,10 @@ external open class PrimitiveComponent : SceneComponent {
     open fun GetPhysicsAngularVelocityInRadians(BoneName: String): Vector
     open fun GetPhysicsAngularVelocityInDegrees(BoneName: String): Vector
     open fun GetPhysicsAngularVelocity(BoneName: String): Vector
-    open fun GetOverlappingComponents(OutOverlappingComponents: Array<PrimitiveComponent> = definedExternally): `T$390`
-    open fun GetOverlappingActors(OverlappingActors: Array<Actor> = definedExternally, ClassFilter: UnrealEngineClass = definedExternally): `T$391`
+    open fun GetOverlappingComponents(OutOverlappingComponents: Array<PrimitiveComponent> = definedExternally): `T$220`
+    open fun GetOverlappingActors(OverlappingActors: Array<Actor> = definedExternally, ClassFilter: UnrealEngineClass = definedExternally): `T$221`
     open fun GetNumMaterials(): Number
-    open fun GetMaterialFromCollisionFaceIndex(FaceIndex: Number, SectionIndex: Number = definedExternally): `T$392`
+    open fun GetMaterialFromCollisionFaceIndex(FaceIndex: Number, SectionIndex: Number = definedExternally): `T$222`
     open fun GetMaterial(ElementIndex: Number): MaterialInterface
     open fun GetMassScale(BoneName: String): Number
     open fun GetMass(): Number
@@ -18356,7 +18759,7 @@ external open class PrimitiveComponent : SceneComponent {
     open fun GetCollisionProfileName(): String
     open fun GetCollisionObjectType(): String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */
     open fun GetCollisionEnabled(): String /* "NoCollision" | "QueryOnly" | "PhysicsOnly" | "QueryAndPhysics" | "ECollisionEnabled_MAX" */
-    open fun GetClosestPointOnCollision(Point: Vector, OutPointOnBody: Vector = definedExternally, BoneName: String = definedExternally): `T$393`
+    open fun GetClosestPointOnCollision(Point: Vector, OutPointOnBody: Vector = definedExternally, BoneName: String = definedExternally): `T$223`
     open fun GetCenterOfMass(BoneName: String): Vector
     open fun GetAngularDamping(): Number
     open fun CreateDynamicMaterialInstance(ElementIndex: Number, SourceMaterial: MaterialInterface, OptionalName: String): MaterialInstanceDynamic
@@ -18380,8 +18783,8 @@ external open class PrimitiveComponent : SceneComponent {
     open fun AddAngularImpulseInRadians(Impulse: Vector, BoneName: String, bVelChange: Boolean)
     open fun AddAngularImpulseInDegrees(Impulse: Vector, BoneName: String, bVelChange: Boolean)
     open fun AddAngularImpulse(Impulse: Vector, BoneName: String, bVelChange: Boolean)
-    open fun ComponentOverlapActors(ComponentTransform: Transform, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$394`
-    open fun ComponentOverlapComponents(ComponentTransform: Transform, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$395`
+    open fun ComponentOverlapActors(ComponentTransform: Transform, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$224`
+    open fun ComponentOverlapComponents(ComponentTransform: Transform, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$225`
     open fun SetCastInsetShadowForAllAttachments(bCastInsetShadow: Boolean, bLightAttachmentsAsGroup: Boolean)
 
     companion object {
@@ -18391,8 +18794,8 @@ external open class PrimitiveComponent : SceneComponent {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PrimitiveComponent
         fun C(Other: UObject): PrimitiveComponent
         fun C(Other: Any): PrimitiveComponent
-        fun ComponentOverlapActors(Component: PrimitiveComponent, ComponentTransform: Transform, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$396`
-        fun ComponentOverlapComponents(Component: PrimitiveComponent, ComponentTransform: Transform, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$397`
+        fun ComponentOverlapActors(Component: PrimitiveComponent, ComponentTransform: Transform, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$226`
+        fun ComponentOverlapComponents(Component: PrimitiveComponent, ComponentTransform: Transform, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$227`
         fun SetCastInsetShadowForAllAttachments(PrimitiveComponent: PrimitiveComponent, bCastInsetShadow: Boolean, bLightAttachmentsAsGroup: Boolean)
     }
 }
@@ -18450,6 +18853,13 @@ external object EARObjectClassification {
     var EARObjectClassification_MAX: String /* "EARObjectClassification_MAX" */
 }
 
+external object EARSpatialMeshUsageFlags {
+    var NotApplicable: String /* "NotApplicable" */
+    var Visible: String /* "Visible" */
+    var Collision: String /* "Collision" */
+    var EARSpatialMeshUsageFlags_MAX: String /* "EARSpatialMeshUsageFlags_MAX" */
+}
+
 external open class ARTrackedGeometry : UObject {
     constructor()
     constructor(Outer: UObject)
@@ -18459,9 +18869,11 @@ external open class ARTrackedGeometry : UObject {
     open var TrackingState: String /* "Unknown" | "Tracking" | "NotTracking" | "StoppedTracking" | "EARTrackingState_MAX" */
     open var UnderlyingMesh: MRMeshComponent
     open var ObjectClassification: String /* "NotApplicable" | "Unknown" | "Wall" | "Ceiling" | "Floor" | "Table" | "Seat" | "Face" | "Image" | "World" | "SceneObject" | "HandMesh" | "Door" | "Window" | "EARObjectClassification_MAX" */
+    open var SpatialMeshUsageFlags: String /* "NotApplicable" | "Visible" | "Collision" | "EARSpatialMeshUsageFlags_MAX" */
     open var LastUpdateFrameNumber: Number
     open var DebugName: String
     open fun IsTracked(): Boolean
+    open fun HasSpatialMeshUsageFlag(InFlag: String /* "NotApplicable" | "Visible" | "Collision" | "EARSpatialMeshUsageFlags_MAX" */): Boolean
     open fun GetUnderlyingMesh(): MRMeshComponent
     open fun GetTrackingState(): String /* "Unknown" | "Tracking" | "NotTracking" | "StoppedTracking" | "EARTrackingState_MAX" */
     open fun GetObjectClassification(): String /* "NotApplicable" | "Unknown" | "Wall" | "Ceiling" | "Floor" | "Table" | "Seat" | "Face" | "Image" | "World" | "SceneObject" | "HandMesh" | "Door" | "Window" | "EARObjectClassification_MAX" */
@@ -18509,16 +18921,23 @@ external open class ARTraceResult {
     }
 }
 
-external interface `T$398` {
+external object EHMDTrackingOrigin {
+    var Floor: String /* "Floor" */
+    var Eye: String /* "Eye" */
+    var Stage: String /* "Stage" */
+    var EHMDTrackingOrigin_MAX: String /* "EHMDTrackingOrigin_MAX" */
+}
+
+external interface `T$228` {
     var X: Number
     var Y: Number
 }
 
-external interface `T$399` {
+external interface `T$229` {
     var A: Vector2D
 }
 
-external interface `T$400` {
+external interface `T$230` {
     var OutDir: Vector2D
     var OutLength: Number
 }
@@ -18531,7 +18950,7 @@ external open class Vector2D {
     open fun ToString(): String
     open fun Add_Vector2DFloat(B: Number): Vector2D
     open fun Add_Vector2DVector2D(B: Vector2D): Vector2D
-    open fun BreakVector2D(X: Number = definedExternally, Y: Number = definedExternally): `T$398`
+    open fun BreakVector2D(X: Number = definedExternally, Y: Number = definedExternally): `T$228`
     open fun ClampAxes2D(MinAxisVal: Number, MaxAxisVal: Number): Vector2D
     open fun ToIntPoint(): IntPoint
     open fun ToVector(Z: Number): Vector
@@ -18555,15 +18974,15 @@ external open class Vector2D {
     open fun Multiply_Vector2DVector2D(B: Vector2D): Vector2D
     open fun Negated2D(): Vector2D
     open fun Normalize2D(): Vector2D
-    open fun NormalizeInPlace(Tolerance: Number = definedExternally): `T$399`
+    open fun NormalizeInPlace(Tolerance: Number = definedExternally): `T$229`
     open fun NormalSafe(Tolerance: Number): Vector2D
     open fun NotEqual(B: Vector2D, ErrorTolerance: Number): Boolean
     open fun NotEqualExactly(B: Vector2D): Boolean
-    open fun Set2D(X: Number = definedExternally, Y: Number = definedExternally): `T$399`
+    open fun Set2D(X: Number = definedExternally, Y: Number = definedExternally): `T$229`
     open fun Spherical2DToUnitCartesian(): Vector
     open fun Subtract_Vector2DFloat(B: Number): Vector2D
     open fun Subtract_Vector2DVector2D(B: Vector2D): Vector2D
-    open fun ToDirectionAndLength(OutDir: Vector2D = definedExternally, OutLength: Number = definedExternally): `T$400`
+    open fun ToDirectionAndLength(OutDir: Vector2D = definedExternally, OutLength: Number = definedExternally): `T$230`
     open fun ToRounded(): Vector2D
     open fun Tosign(): Vector2D
     open fun Vector2DInterpTo(Target: Vector2D, DeltaTime: Number, InterpSpeed: Number): Vector2D
@@ -18580,7 +18999,7 @@ external open class Vector2D {
         fun ToString(InVec: Vector2D): String
         fun Add_Vector2DFloat(A: Vector2D, B: Number): Vector2D
         fun Add_Vector2DVector2D(A: Vector2D, B: Vector2D): Vector2D
-        fun BreakVector2D(InVec: Vector2D, X: Number = definedExternally, Y: Number = definedExternally): `T$398`
+        fun BreakVector2D(InVec: Vector2D, X: Number = definedExternally, Y: Number = definedExternally): `T$228`
         fun ClampAxes2D(A: Vector2D, MinAxisVal: Number, MaxAxisVal: Number): Vector2D
         fun ToIntPoint(InVector2D: Vector2D): IntPoint
         fun ToVector(InVector2D: Vector2D, Z: Number): Vector
@@ -18604,15 +19023,15 @@ external open class Vector2D {
         fun Multiply_Vector2DVector2D(A: Vector2D, B: Vector2D): Vector2D
         fun Negated2D(A: Vector2D): Vector2D
         fun Normalize2D(A: Vector2D): Vector2D
-        fun NormalizeInPlace(A: Vector2D = definedExternally, Tolerance: Number = definedExternally): `T$399`
+        fun NormalizeInPlace(A: Vector2D = definedExternally, Tolerance: Number = definedExternally): `T$229`
         fun NormalSafe(A: Vector2D, Tolerance: Number): Vector2D
         fun NotEqual(A: Vector2D, B: Vector2D, ErrorTolerance: Number): Boolean
         fun NotEqualExactly(A: Vector2D, B: Vector2D): Boolean
-        fun Set2D(A: Vector2D = definedExternally, X: Number = definedExternally, Y: Number = definedExternally): `T$399`
+        fun Set2D(A: Vector2D = definedExternally, X: Number = definedExternally, Y: Number = definedExternally): `T$229`
         fun Spherical2DToUnitCartesian(A: Vector2D): Vector
         fun Subtract_Vector2DFloat(A: Vector2D, B: Number): Vector2D
         fun Subtract_Vector2DVector2D(A: Vector2D, B: Vector2D): Vector2D
-        fun ToDirectionAndLength(A: Vector2D, OutDir: Vector2D = definedExternally, OutLength: Number = definedExternally): `T$400`
+        fun ToDirectionAndLength(A: Vector2D, OutDir: Vector2D = definedExternally, OutLength: Number = definedExternally): `T$230`
         fun ToRounded(A: Vector2D): Vector2D
         fun Tosign(A: Vector2D): Vector2D
         fun Vector2DInterpTo(Current: Vector2D, Target: Vector2D, DeltaTime: Number, InterpSpeed: Number): Vector2D
@@ -18629,6 +19048,7 @@ external open class Vector2D {
         fun NextSobolCell2D(index: Number, NumCells: Number, PreviousValue: Vector2D): Vector2D
         fun RandomSobolCell2D(index: Number, NumCells: Number, Cell: Vector2D, Seed: Vector2D): Vector2D
         fun GetMousePositionOnPlatform(): Vector2D
+        fun GetPlayAreaBounds(Origin: String /* "Floor" | "Eye" | "Stage" | "EHMDTrackingOrigin_MAX" */): Vector2D
     }
 }
 
@@ -18698,35 +19118,45 @@ external open class IntVector {
     }
 }
 
-external interface `T$401` {
+external interface `T$231` {
     var SpringState: VectorSpringState
 }
 
 external open class VectorSpringState {
     open fun clone(): VectorSpringState
-    open fun ResetVectorSpringState(): `T$401`
+    open fun ResetVectorSpringState(): `T$231`
 
     companion object {
         fun C(Other: UObject): VectorSpringState
         fun C(Other: Any): VectorSpringState
-        fun ResetVectorSpringState(SpringState: VectorSpringState = definedExternally): `T$401`
+        fun ResetVectorSpringState(SpringState: VectorSpringState = definedExternally): `T$231`
     }
 }
 
-external interface `T$402` {
+external interface `T$232` {
+    var IntersectionPoint: Vector
+    var `$`: Boolean
+}
+
+external interface `T$233` {
+    var PinId: Guid
+    var `$`: String /* "None" | "LowMapQuality" | "UnableToLocalize" | "Unavailable" | "PrivilegeDenied" | "InvalidParam" | "UnspecifiedFailure" | "PrivilegeRequestPending" | "StartupPending" | "SharedWorldNotEnabled" | "NotImplemented" | "PinNotFound" | "EMagicLeapPassableWorldError_MAX" */
+}
+
+external interface `T$234` {
     var Position: Vector
     var Orientation: Rotator
     var AngularVelocity: Vector
     var Velocity: Vector
 }
 
-external interface `T$403` {
+external interface `T$235` {
     var Position: Vector
     var Orientation: Rotator
     var `$`: Boolean
 }
 
-external interface `T$404` {
+external interface `T$236` {
     var Vertices: Array<Vector>
     var Triangles: Array<Number>
     var Normals: Array<Vector>
@@ -18734,7 +19164,7 @@ external interface `T$404` {
     var Tangents: Array<ProcMeshTangent>
 }
 
-external interface `T$405` {
+external interface `T$237` {
     var AngularAcceleration: Vector
     var LinearAcceleration: Vector
     var AngularVelocity: Vector
@@ -18742,53 +19172,58 @@ external interface `T$405` {
     var TimeInSeconds: Number
 }
 
-external interface `T$406` {
+external interface `T$238` {
     var X: Number
     var Y: Number
     var Z: Number
 }
 
-external interface `T$407` {
+external interface `T$239` {
     var Segment1Point: Vector
     var Segment2Point: Vector
 }
 
-external interface `T$408` {
+external interface `T$240` {
     var Azimuth: Number
     var Elevation: Number
 }
 
-external interface `T$409` {
+external interface `T$241` {
     var OutSlopePitchDegreeAngle: Number
     var OutSlopeRollDegreeAngle: Number
 }
 
-external interface `T$410` {
+external interface `T$242` {
     var Yaw: Number
     var Pitch: Number
 }
 
-external interface `T$411` {
+external interface `T$243` {
     var T: Number
     var Intersection: Vector
     var `$`: Boolean
 }
 
-external interface `T$412` {
+external interface `T$244` {
     var A: Vector
 }
 
-external interface `T$413` {
+external interface `T$245` {
     var SpringState: VectorSpringState
     var `$`: Vector
 }
 
-external interface `T$414` {
+external interface `T$246` {
+    var Distance: Number
+    var `$`: Actor
+}
+
+external interface `T$247` {
     var OutJointPos: Vector
     var OutEndPos: Vector
 }
 
-external interface `T$415` {
+external interface `T$248` {
     var CameraOrigin: Vector
     var CameraRotation: Rotator
     var HFOV: Number
@@ -18798,7 +19233,7 @@ external interface `T$415` {
     var FarPlane: Number
 }
 
-external interface `T$416` {
+external interface `T$249` {
     var Origin: Vector
     var Rotation: Rotator
     var LeftFOV: Number
@@ -18811,13 +19246,13 @@ external interface `T$416` {
     var IsActive: Boolean
 }
 
-external interface `T$417` {
+external interface `T$250` {
     var OutClassification: String /* "NotApplicable" | "Unknown" | "Wall" | "Ceiling" | "Floor" | "Table" | "Seat" | "Face" | "Image" | "World" | "SceneObject" | "HandMesh" | "Door" | "Window" | "EARObjectClassification_MAX" */
     var OutClassificationLocation: Vector
     var `$`: Boolean
 }
 
-external interface `T$418` {
+external interface `T$251` {
     var Vertices: Array<Vector>
     var Triangles: Array<Number>
     var Normals: Array<Vector>
@@ -18830,15 +19265,15 @@ external open class Vector {
     open var Y: Number
     open var Z: Number
     open fun clone(): Vector
-    open fun SegmentIntersection2D(SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$68`
-    open fun GetSelectionBounds(BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$50`
-    open fun GetClosestARPin(PinId: Guid = definedExternally): `T$18`
-    open fun GetLeftHandPoseData(Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$402`
-    open fun GetRightHandPoseData(Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$402`
-    open fun GetSteamVR_HandPoseRelativeToNow(Orientation: Rotator = definedExternally, hand: String /* "VR_Left" | "VR_Right" | "VR_MAX" */ = definedExternally, PredictedSecondsFromNow: Number = definedExternally): `T$403`
-    open fun GenerateBoxMesh(Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$404`
+    open fun SegmentIntersection2D(SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$232`
+    open fun GetClosestARPin(PinId: Guid = definedExternally): `T$233`
+    open fun GetSelectionBounds(BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$32`
+    open fun GetLeftHandPoseData(Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$234`
+    open fun GetRightHandPoseData(Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$234`
+    open fun GetSteamVR_HandPoseRelativeToNow(Orientation: Rotator = definedExternally, hand: String /* "VR_Left" | "VR_Right" | "VR_MAX" */ = definedExternally, PredictedSecondsFromNow: Number = definedExternally): `T$235`
+    open fun GenerateBoxMesh(Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$236`
     open fun GetPointGuardianIntersection(BoundaryType: String /* "Boundary_Outer" | "Boundary_PlayArea" | "Boundary_MAX" */): GuardianTestResult
-    open fun GetRawSensorData(LinearAcceleration: Vector = definedExternally, AngularVelocity: Vector = definedExternally, LinearVelocity: Vector = definedExternally, TimeInSeconds: Number = definedExternally, DeviceType: String /* "None" | "HMD" | "LTouch" | "RTouch" | "Touch" | "DeviceObjectZero" | "All" | "ETrackedDeviceType_MAX" */ = definedExternally): `T$405`
+    open fun GetRawSensorData(LinearAcceleration: Vector = definedExternally, AngularVelocity: Vector = definedExternally, LinearVelocity: Vector = definedExternally, TimeInSeconds: Number = definedExternally, DeviceType: String /* "None" | "HMD" | "LTouch" | "RTouch" | "Touch" | "DeviceObjectZero" | "All" | "ETrackedDeviceType_MAX" */ = definedExternally): `T$237`
     open fun SetPositionScale3D()
     open fun MakeRaycastQueryParams(Direction: Vector, UpVector: Vector, Width: Number, Height: Number, HorizontalFovDegrees: Number, CollideWithUnobserved: Boolean, UserData: Number): MagicLeapRaycastQueryParams
     open fun SetBasePosition()
@@ -18849,7 +19284,7 @@ external open class Vector {
     open fun Add_VectorFloat(B: Number): Vector
     open fun Add_VectorInt(B: Number): Vector
     open fun Add_VectorVector(B: Vector): Vector
-    open fun BreakVector(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally): `T$406`
+    open fun BreakVector(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally): `T$238`
     open fun ClampVectorSize(Min: Number, Max: Number): Vector
     open fun ToLinearColor(): LinearColor
     open fun ToQuaternion(): Quat
@@ -18867,23 +19302,23 @@ external open class Vector {
     open fun FindClosestPointOnLine(LineOrigin: Vector, LineDirection: Vector): Vector
     open fun FindClosestPointOnSegment(SegmentStart: Vector, SegmentEnd: Vector): Vector
     open fun FindLookAtRotation(Target: Vector): Rotator
-    open fun FindNearestPointsOnLineSegments(Segment1End: Vector, Segment2Start: Vector, Segment2End: Vector, Segment1Point: Vector = definedExternally, Segment2Point: Vector = definedExternally): `T$407`
+    open fun FindNearestPointsOnLineSegments(Segment1End: Vector, Segment2Start: Vector, Segment2End: Vector, Segment1Point: Vector = definedExternally, Segment2Point: Vector = definedExternally): `T$239`
     open fun Truncate(): IntVector
-    open fun GetAzimuthAndElevation(ReferenceFrame: Transform, Azimuth: Number = definedExternally, Elevation: Number = definedExternally): `T$408`
+    open fun GetAzimuthAndElevation(ReferenceFrame: Transform, Azimuth: Number = definedExternally, Elevation: Number = definedExternally): `T$240`
     open fun GetUnitDirection(To: Vector): Vector
     open fun GetMaxElement(): Number
     open fun GetMinElement(): Number
     open fun GetPointDistanceToLine(LineOrigin: Vector, LineDirection: Vector): Number
     open fun GetPointDistanceToSegment(SegmentStart: Vector, SegmentEnd: Vector): Number
     open fun GetReflectionVector(SurfaceNormal: Vector): Vector
-    open fun GetSlopeDegreeAngles(FloorNormal: Vector, UpVector: Vector, OutSlopePitchDegreeAngle: Number = definedExternally, OutSlopeRollDegreeAngle: Number = definedExternally): `T$409`
-    open fun GetYawPitchFromVector(Yaw: Number = definedExternally, Pitch: Number = definedExternally): `T$410`
+    open fun GetSlopeDegreeAngles(FloorNormal: Vector, UpVector: Vector, OutSlopePitchDegreeAngle: Number = definedExternally, OutSlopeRollDegreeAngle: Number = definedExternally): `T$241`
+    open fun GetYawPitchFromVector(Yaw: Number = definedExternally, Pitch: Number = definedExternally): `T$242`
     open fun RotateVector(B: Rotator): Vector
     open fun IsPointInBox(BoxOrigin: Vector, BoxExtent: Vector): Boolean
     open fun IsPointInBoxWithTransform(BoxWorldTransform: Transform, BoxExtent: Vector): Boolean
     open fun UnrotateVector(B: Rotator): Vector
-    open fun LinePlaneIntersection(LineEnd: Vector, APlane: Plane, T: Number = definedExternally, Intersection: Vector = definedExternally): `T$411`
-    open fun LinePlaneIntersection(LineEnd: Vector, PlaneOrigin: Vector, PlaneNormal: Vector, T: Number = definedExternally, Intersection: Vector = definedExternally): `T$411`
+    open fun LinePlaneIntersection(LineEnd: Vector, APlane: Plane, T: Number = definedExternally, Intersection: Vector = definedExternally): `T$243`
+    open fun LinePlaneIntersection(LineEnd: Vector, PlaneOrigin: Vector, PlaneNormal: Vector, T: Number = definedExternally, Intersection: Vector = definedExternally): `T$243`
     open fun MakeBox(Max: Vector): Box
     open fun MakePlaneFromPointAndNormal(Normal: Vector): Plane
     open fun MakeRotationFromAxes(Right: Vector, Up: Vector): Rotator
@@ -18925,8 +19360,8 @@ external open class Vector {
     open fun Subtract_VectorInt(B: Number): Vector
     open fun Subtract_VectorVector(B: Vector): Vector
     open fun Ease(B: Vector, Alpha: Number, EasingFunc: String /* "Linear" | "Step" | "SinusoidalIn" | "SinusoidalOut" | "SinusoidalInOut" | "EaseIn" | "EaseOut" | "EaseInOut" | "ExpoIn" | "ExpoOut" | "ExpoInOut" | "CircularIn" | "CircularOut" | "CircularInOut" | "EEasingFunc_MAX" */, BlendExp: Number, Steps: Number): Vector
-    open fun Vector_AddBounded(InAddVect: Vector = definedExternally, InRadius: Number = definedExternally): `T$412`
-    open fun Vector_Assign(InVector: Vector = definedExternally): `T$412`
+    open fun Vector_AddBounded(InAddVect: Vector = definedExternally, InRadius: Number = definedExternally): `T$244`
+    open fun Vector_Assign(InVector: Vector = definedExternally): `T$244`
     open fun Vector_BoundedToBox(InBoxMin: Vector, InBoxMax: Vector): Vector
     open fun Vector_BoundedToCube(InRadius: Number): Vector
     open fun Vector_ClampSize2D(Min: Number, Max: Number): Vector
@@ -18953,17 +19388,17 @@ external open class Vector {
     open fun Vector_IsZero(): Boolean
     open fun Vector_MirrorByPlane(InPlane: Plane): Vector
     open fun Normalize2D(Tolerance: Number): Vector
-    open fun NormalizeInPlace(Tolerance: Number = definedExternally): `T$412`
+    open fun NormalizeInPlace(Tolerance: Number = definedExternally): `T$244`
     open fun Normalunsafe(): Vector
     open fun Vector_ProjectOnToNormal(InNormal: Vector): Vector
     open fun Reciprocal(): Vector
-    open fun Vector_Set(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally): `T$412`
+    open fun Vector_Set(X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally): `T$244`
     open fun Vector_SnappedToGrid(InGridSize: Number): Vector
     open fun Vector_ToDegrees(): Vector
     open fun Vector_ToRadians(): Vector
     open fun Vector_UnitCartesianToSpherical(): Vector2D
-    open fun Vector_UnwindEuler(): `T$412`
-    open fun VectorSpringInterp(Target: Vector, SpringState: VectorSpringState = definedExternally, Stiffness: Number = definedExternally, CriticalDampingFactor: Number = definedExternally, DeltaTime: Number = definedExternally, Mass: Number = definedExternally): `T$413`
+    open fun Vector_UnwindEuler(): `T$244`
+    open fun VectorSpringInterp(Target: Vector, SpringState: VectorSpringState = definedExternally, Stiffness: Number = definedExternally, CriticalDampingFactor: Number = definedExternally, DeltaTime: Number = definedExternally, Mass: Number = definedExternally): `T$245`
     open fun VInterpTo(Target: Vector, DeltaTime: Number, InterpSpeed: Number): Vector
     open fun VInterpTo_Constant(Target: Vector, DeltaTime: Number, InterpSpeed: Number): Vector
     open fun Lerp(B: Vector, Alpha: Number): Vector
@@ -18972,26 +19407,27 @@ external open class Vector {
     open fun VectorLengthXY(): Number
     open fun VectorLengthXYSquared(): Number
     open fun WeightedMovingAverageVector(PreviousSample: Vector, Weight: Number): Vector
-    open fun TwoBoneIKFunction(JointPos: Vector, EndPos: Vector, JointTarget: Vector, Effector: Vector, OutJointPos: Vector = definedExternally, OutEndPos: Vector = definedExternally, bAllowStretching: Boolean = definedExternally, StartStretchRatio: Number = definedExternally, MaxStretchScale: Number = definedExternally): `T$414`
-    open fun GetPositionalTrackingCameraParameters(CameraRotation: Rotator = definedExternally, HFOV: Number = definedExternally, VFOV: Number = definedExternally, CameraDistance: Number = definedExternally, NearPlane: Number = definedExternally, FarPlane: Number = definedExternally): `T$415`
-    open fun GetTrackingSensorParameters(Rotation: Rotator = definedExternally, LeftFOV: Number = definedExternally, RightFOV: Number = definedExternally, TopFOV: Number = definedExternally, BottomFOV: Number = definedExternally, Distance: Number = definedExternally, NearPlane: Number = definedExternally, FarPlane: Number = definedExternally, IsActive: Boolean = definedExternally, index: Number = definedExternally): `T$416`
+    open fun FindNearestActor(ActorsToCheck: Array<Actor>, Distance: Number = definedExternally): `T$246`
+    open fun TwoBoneIKFunction(JointPos: Vector, EndPos: Vector, JointTarget: Vector, Effector: Vector, OutJointPos: Vector = definedExternally, OutEndPos: Vector = definedExternally, bAllowStretching: Boolean = definedExternally, StartStretchRatio: Number = definedExternally, MaxStretchScale: Number = definedExternally): `T$247`
+    open fun GetPositionalTrackingCameraParameters(CameraRotation: Rotator = definedExternally, HFOV: Number = definedExternally, VFOV: Number = definedExternally, CameraDistance: Number = definedExternally, NearPlane: Number = definedExternally, FarPlane: Number = definedExternally): `T$248`
+    open fun GetTrackingSensorParameters(Rotation: Rotator = definedExternally, LeftFOV: Number = definedExternally, RightFOV: Number = definedExternally, TopFOV: Number = definedExternally, BottomFOV: Number = definedExternally, Distance: Number = definedExternally, NearPlane: Number = definedExternally, FarPlane: Number = definedExternally, IsActive: Boolean = definedExternally, index: Number = definedExternally): `T$249`
     open fun AddAREnvironmentProbe(Extent: Vector): Boolean
-    open fun GetObjectClassificationAtLocation(OutClassification: String /* "NotApplicable" | "Unknown" | "Wall" | "Ceiling" | "Floor" | "Table" | "Seat" | "Face" | "Image" | "World" | "SceneObject" | "HandMesh" | "Door" | "Window" | "EARObjectClassification_MAX" */ = definedExternally, OutClassificationLocation: Vector = definedExternally, MaxLocationDiff: Number = definedExternally): `T$417`
+    open fun GetObjectClassificationAtLocation(OutClassification: String /* "NotApplicable" | "Unknown" | "Wall" | "Ceiling" | "Floor" | "Table" | "Seat" | "Face" | "Image" | "World" | "SceneObject" | "HandMesh" | "Door" | "Window" | "EARObjectClassification_MAX" */ = definedExternally, OutClassificationLocation: Vector = definedExternally, MaxLocationDiff: Number = definedExternally): `T$250`
     open fun LineTraceTrackedObjects3D(End: Vector, bTestFeaturePoints: Boolean, bTestGroundPlane: Boolean, bTestPlaneExtents: Boolean, bTestPlaneBoundaryPolygon: Boolean): Array<ARTraceResult>
     open fun SetARWorldOriginLocationAndRotation(OriginRotation: Rotator, bIsTransformInWorldSpace: Boolean, bMaintainUpDirection: Boolean)
 
     companion object {
         fun C(Other: UObject): Vector
         fun C(Other: Any): Vector
-        fun SegmentIntersection2D(SegmentStartA: Vector, SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$68`
-        fun GetSelectionBounds(Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$50`
-        fun GetClosestARPin(SearchPoint: Vector, PinId: Guid = definedExternally): `T$18`
-        fun GetLeftHandPoseData(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$402`
-        fun GetRightHandPoseData(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$402`
-        fun GetSteamVR_HandPoseRelativeToNow(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, hand: String /* "VR_Left" | "VR_Right" | "VR_MAX" */ = definedExternally, PredictedSecondsFromNow: Number = definedExternally): `T$403`
-        fun GenerateBoxMesh(BoxRadius: Vector, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$418`
+        fun SegmentIntersection2D(SegmentStartA: Vector, SegmentEndA: Vector, SegmentStartB: Vector, SegmentEndB: Vector, IntersectionPoint: Vector = definedExternally): `T$232`
+        fun GetClosestARPin(SearchPoint: Vector, PinId: Guid = definedExternally): `T$233`
+        fun GetSelectionBounds(Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, SphereRadius: Number = definedExternally): `T$32`
+        fun GetLeftHandPoseData(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$234`
+        fun GetRightHandPoseData(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, AngularVelocity: Vector = definedExternally, Velocity: Vector = definedExternally): `T$234`
+        fun GetSteamVR_HandPoseRelativeToNow(Position: Vector = definedExternally, Orientation: Rotator = definedExternally, hand: String /* "VR_Left" | "VR_Right" | "VR_MAX" */ = definedExternally, PredictedSecondsFromNow: Number = definedExternally): `T$235`
+        fun GenerateBoxMesh(BoxRadius: Vector, Vertices: Array<Vector> = definedExternally, Triangles: Array<Number> = definedExternally, Normals: Array<Vector> = definedExternally, UVs: Array<Vector2D> = definedExternally, Tangents: Array<ProcMeshTangent> = definedExternally): `T$251`
         fun GetPointGuardianIntersection(Point: Vector, BoundaryType: String /* "Boundary_Outer" | "Boundary_PlayArea" | "Boundary_MAX" */): GuardianTestResult
-        fun GetRawSensorData(AngularAcceleration: Vector = definedExternally, LinearAcceleration: Vector = definedExternally, AngularVelocity: Vector = definedExternally, LinearVelocity: Vector = definedExternally, TimeInSeconds: Number = definedExternally, DeviceType: String /* "None" | "HMD" | "LTouch" | "RTouch" | "Touch" | "DeviceObjectZero" | "All" | "ETrackedDeviceType_MAX" */ = definedExternally): `T$405`
+        fun GetRawSensorData(AngularAcceleration: Vector = definedExternally, LinearAcceleration: Vector = definedExternally, AngularVelocity: Vector = definedExternally, LinearVelocity: Vector = definedExternally, TimeInSeconds: Number = definedExternally, DeviceType: String /* "None" | "HMD" | "LTouch" | "RTouch" | "Touch" | "DeviceObjectZero" | "All" | "ETrackedDeviceType_MAX" */ = definedExternally): `T$237`
         fun SetPositionScale3D(PosScale3D: Vector)
         fun MakeRaycastQueryParams(Position: Vector, Direction: Vector, UpVector: Vector, Width: Number, Height: Number, HorizontalFovDegrees: Number, CollideWithUnobserved: Boolean, UserData: Number): MagicLeapRaycastQueryParams
         fun SetBasePosition(InBasePosition: Vector)
@@ -19002,7 +19438,7 @@ external open class Vector {
         fun Add_VectorFloat(A: Vector, B: Number): Vector
         fun Add_VectorInt(A: Vector, B: Number): Vector
         fun Add_VectorVector(A: Vector, B: Vector): Vector
-        fun BreakVector(InVec: Vector, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally): `T$406`
+        fun BreakVector(InVec: Vector, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally): `T$238`
         fun ClampVectorSize(A: Vector, Min: Number, Max: Number): Vector
         fun ToLinearColor(InVec: Vector): LinearColor
         fun ToQuaternion(InVec: Vector): Quat
@@ -19020,23 +19456,23 @@ external open class Vector {
         fun FindClosestPointOnLine(Point: Vector, LineOrigin: Vector, LineDirection: Vector): Vector
         fun FindClosestPointOnSegment(Point: Vector, SegmentStart: Vector, SegmentEnd: Vector): Vector
         fun FindLookAtRotation(Start: Vector, Target: Vector): Rotator
-        fun FindNearestPointsOnLineSegments(Segment1Start: Vector, Segment1End: Vector, Segment2Start: Vector, Segment2End: Vector, Segment1Point: Vector = definedExternally, Segment2Point: Vector = definedExternally): `T$407`
+        fun FindNearestPointsOnLineSegments(Segment1Start: Vector, Segment1End: Vector, Segment2Start: Vector, Segment2End: Vector, Segment1Point: Vector = definedExternally, Segment2Point: Vector = definedExternally): `T$239`
         fun Truncate(InVector: Vector): IntVector
-        fun GetAzimuthAndElevation(InDirection: Vector, ReferenceFrame: Transform, Azimuth: Number = definedExternally, Elevation: Number = definedExternally): `T$408`
+        fun GetAzimuthAndElevation(InDirection: Vector, ReferenceFrame: Transform, Azimuth: Number = definedExternally, Elevation: Number = definedExternally): `T$240`
         fun GetUnitDirection(From: Vector, To: Vector): Vector
         fun GetMaxElement(A: Vector): Number
         fun GetMinElement(A: Vector): Number
         fun GetPointDistanceToLine(Point: Vector, LineOrigin: Vector, LineDirection: Vector): Number
         fun GetPointDistanceToSegment(Point: Vector, SegmentStart: Vector, SegmentEnd: Vector): Number
         fun GetReflectionVector(Direction: Vector, SurfaceNormal: Vector): Vector
-        fun GetSlopeDegreeAngles(MyRightYAxis: Vector, FloorNormal: Vector, UpVector: Vector, OutSlopePitchDegreeAngle: Number = definedExternally, OutSlopeRollDegreeAngle: Number = definedExternally): `T$409`
-        fun GetYawPitchFromVector(InVec: Vector, Yaw: Number = definedExternally, Pitch: Number = definedExternally): `T$410`
+        fun GetSlopeDegreeAngles(MyRightYAxis: Vector, FloorNormal: Vector, UpVector: Vector, OutSlopePitchDegreeAngle: Number = definedExternally, OutSlopeRollDegreeAngle: Number = definedExternally): `T$241`
+        fun GetYawPitchFromVector(InVec: Vector, Yaw: Number = definedExternally, Pitch: Number = definedExternally): `T$242`
         fun RotateVector(A: Vector, B: Rotator): Vector
         fun IsPointInBox(Point: Vector, BoxOrigin: Vector, BoxExtent: Vector): Boolean
         fun IsPointInBoxWithTransform(Point: Vector, BoxWorldTransform: Transform, BoxExtent: Vector): Boolean
         fun UnrotateVector(A: Vector, B: Rotator): Vector
-        fun LinePlaneIntersection(LineStart: Vector, LineEnd: Vector, APlane: Plane, T: Number = definedExternally, Intersection: Vector = definedExternally): `T$411`
-        fun LinePlaneIntersection(LineStart: Vector, LineEnd: Vector, PlaneOrigin: Vector, PlaneNormal: Vector, T: Number = definedExternally, Intersection: Vector = definedExternally): `T$411`
+        fun LinePlaneIntersection(LineStart: Vector, LineEnd: Vector, APlane: Plane, T: Number = definedExternally, Intersection: Vector = definedExternally): `T$243`
+        fun LinePlaneIntersection(LineStart: Vector, LineEnd: Vector, PlaneOrigin: Vector, PlaneNormal: Vector, T: Number = definedExternally, Intersection: Vector = definedExternally): `T$243`
         fun MakeBox(Min: Vector, Max: Vector): Box
         fun MakePlaneFromPointAndNormal(Point: Vector, Normal: Vector): Plane
         fun MakeRotationFromAxes(Forward: Vector, Right: Vector, Up: Vector): Rotator
@@ -19078,8 +19514,8 @@ external open class Vector {
         fun Subtract_VectorInt(A: Vector, B: Number): Vector
         fun Subtract_VectorVector(A: Vector, B: Vector): Vector
         fun Ease(A: Vector, B: Vector, Alpha: Number, EasingFunc: String /* "Linear" | "Step" | "SinusoidalIn" | "SinusoidalOut" | "SinusoidalInOut" | "EaseIn" | "EaseOut" | "EaseInOut" | "ExpoIn" | "ExpoOut" | "ExpoInOut" | "CircularIn" | "CircularOut" | "CircularInOut" | "EEasingFunc_MAX" */, BlendExp: Number, Steps: Number): Vector
-        fun Vector_AddBounded(A: Vector = definedExternally, InAddVect: Vector = definedExternally, InRadius: Number = definedExternally): `T$412`
-        fun Vector_Assign(A: Vector = definedExternally, InVector: Vector = definedExternally): `T$412`
+        fun Vector_AddBounded(A: Vector = definedExternally, InAddVect: Vector = definedExternally, InRadius: Number = definedExternally): `T$244`
+        fun Vector_Assign(A: Vector = definedExternally, InVector: Vector = definedExternally): `T$244`
         fun Vector_BoundedToBox(InVect: Vector, InBoxMin: Vector, InBoxMax: Vector): Vector
         fun Vector_BoundedToCube(InVect: Vector, InRadius: Number): Vector
         fun Vector_ClampSize2D(A: Vector, Min: Number, Max: Number): Vector
@@ -19106,17 +19542,17 @@ external open class Vector {
         fun Vector_IsZero(A: Vector): Boolean
         fun Vector_MirrorByPlane(A: Vector, InPlane: Plane): Vector
         fun Normalize2D(A: Vector, Tolerance: Number): Vector
-        fun NormalizeInPlace(A: Vector = definedExternally, Tolerance: Number = definedExternally): `T$412`
+        fun NormalizeInPlace(A: Vector = definedExternally, Tolerance: Number = definedExternally): `T$244`
         fun Normalunsafe(A: Vector): Vector
         fun Vector_ProjectOnToNormal(V: Vector, InNormal: Vector): Vector
         fun Reciprocal(A: Vector): Vector
-        fun Vector_Set(A: Vector = definedExternally, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally): `T$412`
+        fun Vector_Set(A: Vector = definedExternally, X: Number = definedExternally, Y: Number = definedExternally, Z: Number = definedExternally): `T$244`
         fun Vector_SnappedToGrid(InVect: Vector, InGridSize: Number): Vector
         fun Vector_ToDegrees(A: Vector): Vector
         fun Vector_ToRadians(A: Vector): Vector
         fun Vector_UnitCartesianToSpherical(A: Vector): Vector2D
-        fun Vector_UnwindEuler(A: Vector = definedExternally): `T$412`
-        fun VectorSpringInterp(Current: Vector, Target: Vector, SpringState: VectorSpringState = definedExternally, Stiffness: Number = definedExternally, CriticalDampingFactor: Number = definedExternally, DeltaTime: Number = definedExternally, Mass: Number = definedExternally): `T$413`
+        fun Vector_UnwindEuler(A: Vector = definedExternally): `T$244`
+        fun VectorSpringInterp(Current: Vector, Target: Vector, SpringState: VectorSpringState = definedExternally, Stiffness: Number = definedExternally, CriticalDampingFactor: Number = definedExternally, DeltaTime: Number = definedExternally, Mass: Number = definedExternally): `T$245`
         fun VInterpTo(Current: Vector, Target: Vector, DeltaTime: Number, InterpSpeed: Number): Vector
         fun VInterpTo_Constant(Current: Vector, Target: Vector, DeltaTime: Number, InterpSpeed: Number): Vector
         fun Lerp(A: Vector, B: Vector, Alpha: Number): Vector
@@ -19125,11 +19561,12 @@ external open class Vector {
         fun VectorLengthXY(A: Vector): Number
         fun VectorLengthXYSquared(A: Vector): Number
         fun WeightedMovingAverageVector(CurrentSample: Vector, PreviousSample: Vector, Weight: Number): Vector
-        fun TwoBoneIKFunction(RootPos: Vector, JointPos: Vector, EndPos: Vector, JointTarget: Vector, Effector: Vector, OutJointPos: Vector = definedExternally, OutEndPos: Vector = definedExternally, bAllowStretching: Boolean = definedExternally, StartStretchRatio: Number = definedExternally, MaxStretchScale: Number = definedExternally): `T$414`
-        fun GetPositionalTrackingCameraParameters(CameraOrigin: Vector = definedExternally, CameraRotation: Rotator = definedExternally, HFOV: Number = definedExternally, VFOV: Number = definedExternally, CameraDistance: Number = definedExternally, NearPlane: Number = definedExternally, FarPlane: Number = definedExternally): `T$415`
-        fun GetTrackingSensorParameters(Origin: Vector = definedExternally, Rotation: Rotator = definedExternally, LeftFOV: Number = definedExternally, RightFOV: Number = definedExternally, TopFOV: Number = definedExternally, BottomFOV: Number = definedExternally, Distance: Number = definedExternally, NearPlane: Number = definedExternally, FarPlane: Number = definedExternally, IsActive: Boolean = definedExternally, index: Number = definedExternally): `T$416`
+        fun FindNearestActor(Origin: Vector, ActorsToCheck: Array<Actor>, Distance: Number = definedExternally): `T$246`
+        fun TwoBoneIKFunction(RootPos: Vector, JointPos: Vector, EndPos: Vector, JointTarget: Vector, Effector: Vector, OutJointPos: Vector = definedExternally, OutEndPos: Vector = definedExternally, bAllowStretching: Boolean = definedExternally, StartStretchRatio: Number = definedExternally, MaxStretchScale: Number = definedExternally): `T$247`
+        fun GetPositionalTrackingCameraParameters(CameraOrigin: Vector = definedExternally, CameraRotation: Rotator = definedExternally, HFOV: Number = definedExternally, VFOV: Number = definedExternally, CameraDistance: Number = definedExternally, NearPlane: Number = definedExternally, FarPlane: Number = definedExternally): `T$248`
+        fun GetTrackingSensorParameters(Origin: Vector = definedExternally, Rotation: Rotator = definedExternally, LeftFOV: Number = definedExternally, RightFOV: Number = definedExternally, TopFOV: Number = definedExternally, BottomFOV: Number = definedExternally, Distance: Number = definedExternally, NearPlane: Number = definedExternally, FarPlane: Number = definedExternally, IsActive: Boolean = definedExternally, index: Number = definedExternally): `T$249`
         fun AddAREnvironmentProbe(Location: Vector, Extent: Vector): Boolean
-        fun GetObjectClassificationAtLocation(InWorldLocation: Vector, OutClassification: String /* "NotApplicable" | "Unknown" | "Wall" | "Ceiling" | "Floor" | "Table" | "Seat" | "Face" | "Image" | "World" | "SceneObject" | "HandMesh" | "Door" | "Window" | "EARObjectClassification_MAX" */ = definedExternally, OutClassificationLocation: Vector = definedExternally, MaxLocationDiff: Number = definedExternally): `T$417`
+        fun GetObjectClassificationAtLocation(InWorldLocation: Vector, OutClassification: String /* "NotApplicable" | "Unknown" | "Wall" | "Ceiling" | "Floor" | "Table" | "Seat" | "Face" | "Image" | "World" | "SceneObject" | "HandMesh" | "Door" | "Window" | "EARObjectClassification_MAX" */ = definedExternally, OutClassificationLocation: Vector = definedExternally, MaxLocationDiff: Number = definedExternally): `T$250`
         fun LineTraceTrackedObjects3D(Start: Vector, End: Vector, bTestFeaturePoints: Boolean, bTestGroundPlane: Boolean, bTestPlaneExtents: Boolean, bTestPlaneBoundaryPolygon: Boolean): Array<ARTraceResult>
         fun SetARWorldOriginLocationAndRotation(OriginLocation: Vector, OriginRotation: Rotator, bIsTransformInWorldSpace: Boolean, bMaintainUpDirection: Boolean)
         fun GetGuardianDimensions(BoundaryType: String /* "Boundary_Outer" | "Boundary_PlayArea" | "Boundary_MAX" */): Vector
@@ -19758,6 +20195,10 @@ external open class ServerStatReplicator(InWorld: World, Location: Vector = defi
     }
 }
 
+external interface `T$252` {
+    var C: Controller
+}
+
 external open class GameModeBase(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : Info {
     open var OptionsString: String
     open var GameSessionClass: UnrealEngineClass
@@ -19804,14 +20245,14 @@ external open class GameModeBase(InWorld: World, Location: Vector = definedExter
     open fun ChoosePlayerStart(Player: Controller): Actor
     open fun ChangeName(Controller: Controller, NewName: String, bNameChange: Boolean)
     open fun CanSpectate(Viewer: PlayerController, ViewTarget: PlayerState): Boolean
-    open fun HandleSeamlessTravelPlayer(C: Controller = definedExternally): `T$71`
+    open fun HandleSeamlessTravelPlayer(C: Controller = definedExternally): `T$252`
 
     companion object {
         fun GetDefaultObject(): GameModeBase
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): GameModeBase
         fun C(Other: UObject): GameModeBase
         fun C(Other: Any): GameModeBase
-        fun HandleSeamlessTravelPlayer(GameMode: GameModeBase, C: Controller = definedExternally): `T$71`
+        fun HandleSeamlessTravelPlayer(GameMode: GameModeBase, C: Controller = definedExternally): `T$252`
     }
 }
 
@@ -20219,7 +20660,6 @@ external open class WorldSettings(InWorld: World, Location: Vector = definedExte
     open var LightmassSettings: LightmassWorldInfoSettings
     open var DefaultReverbSettings: ReverbSettings
     open var DefaultAmbientZoneSettings: InteriorSettings
-    open var MonoCullingDistance: Number
     open var DefaultBaseSoundMix: SoundMix
     open var bEnableHierarchicalLODSystem: Boolean
     open var HLODSetupAsset: Class
@@ -20227,6 +20667,7 @@ external open class WorldSettings(InWorld: World, Location: Vector = definedExte
     open var HierarchicalLODSetup: Array<HierarchicalSimplification>
     open var NumHLODLevels: Number
     open var bGenerateSingleClusterForLevel: Boolean
+    open var HLODBakingTransform: Transform
     open var Bookmarks: BookMark
     open var TimeDilation: Number
     open var MatineeTimeDilation: Number
@@ -20444,6 +20885,7 @@ external open class BlackboardKeyType : UObject {
 external open class BlackboardEntry {
     open var EntryName: String
     open var EntryDescription: String
+    open var EntryCategory: String
     open var KeyType: BlackboardKeyType
     open var bInstanceSynced: Boolean
     open fun clone(): BlackboardEntry
@@ -20472,12 +20914,12 @@ external open class BlackboardData : DataAsset {
     }
 }
 
-external interface `T$419` {
+external interface `T$253` {
     var ResultRotation: Rotator
     var `$`: Boolean
 }
 
-external interface `T$420` {
+external interface `T$254` {
     var ResultLocation: Vector
     var `$`: Boolean
 }
@@ -20510,8 +20952,8 @@ external open class BlackboardComponent : ActorComponent {
     open fun GetValueAsEnum(KeyName: String): Number
     open fun GetValueAsClass(KeyName: String): UnrealEngineClass
     open fun GetValueAsBool(KeyName: String): Boolean
-    open fun GetRotationFromEntry(KeyName: String, ResultRotation: Rotator = definedExternally): `T$419`
-    open fun GetLocationFromEntry(KeyName: String, ResultLocation: Vector = definedExternally): `T$420`
+    open fun GetRotationFromEntry(KeyName: String, ResultRotation: Rotator = definedExternally): `T$253`
+    open fun GetLocationFromEntry(KeyName: String, ResultLocation: Vector = definedExternally): `T$254`
     open fun ClearValue(KeyName: String)
 
     companion object {
@@ -20617,24 +21059,24 @@ external open class GameplayTagQuery {
     }
 }
 
-external interface `T$421` {
+external interface `T$255` {
     var TagContainer: GameplayTagContainer
 }
 
-external interface `T$422` {
+external interface `T$256` {
     var InOutTagContainer: GameplayTagContainer
 }
 
-external interface `T$423` {
+external interface `T$257` {
     var GameplayTags: Array<GameplayTag>
 }
 
-external interface `T$424` {
+external interface `T$258` {
     var TagContainer: GameplayTagContainer
     var `$`: Boolean
 }
 
-external interface `T$425` {
+external interface `T$259` {
     var GameplayTags: Array<GameplayTag>
 }
 
@@ -20642,9 +21084,9 @@ external open class GameplayTagContainer {
     open var GameplayTags: Array<GameplayTag>
     open var ParentTags: Array<GameplayTag>
     open fun clone(): GameplayTagContainer
-    open fun AddGameplayTag(Tag: GameplayTag = definedExternally): `T$421`
-    open fun AppendGameplayTagContainers(InTagContainer: GameplayTagContainer = definedExternally): `T$422`
-    open fun BreakGameplayTagContainer(GameplayTags: Array<GameplayTag> = definedExternally): `T$423`
+    open fun AddGameplayTag(Tag: GameplayTag = definedExternally): `T$255`
+    open fun AppendGameplayTagContainers(InTagContainer: GameplayTagContainer = definedExternally): `T$256`
+    open fun BreakGameplayTagContainer(GameplayTags: Array<GameplayTag> = definedExternally): `T$257`
     open fun DoesContainerMatchTagQuery(TagQuery: GameplayTagQuery): Boolean
     open fun Equal(B: GameplayTagContainer): Boolean
     open fun GetDebugStringFromGameplayTagContainer(): String
@@ -20655,14 +21097,14 @@ external open class GameplayTagContainer {
     open fun MakeLiteralGameplayTagContainer(): GameplayTagContainer
     open fun NotEqual(B: GameplayTagContainer): Boolean
     open fun NotEqual_TagContainerTagContainer(B: String): Boolean
-    open fun RemoveGameplayTag(Tag: GameplayTag = definedExternally): `T$424`
+    open fun RemoveGameplayTag(Tag: GameplayTag = definedExternally): `T$258`
 
     companion object {
         fun C(Other: UObject): GameplayTagContainer
         fun C(Other: Any): GameplayTagContainer
-        fun AddGameplayTag(TagContainer: GameplayTagContainer = definedExternally, Tag: GameplayTag = definedExternally): `T$421`
-        fun AppendGameplayTagContainers(InOutTagContainer: GameplayTagContainer = definedExternally, InTagContainer: GameplayTagContainer = definedExternally): `T$422`
-        fun BreakGameplayTagContainer(GameplayTagContainer: GameplayTagContainer, GameplayTags: Array<GameplayTag> = definedExternally): `T$425`
+        fun AddGameplayTag(TagContainer: GameplayTagContainer = definedExternally, Tag: GameplayTag = definedExternally): `T$255`
+        fun AppendGameplayTagContainers(InOutTagContainer: GameplayTagContainer = definedExternally, InTagContainer: GameplayTagContainer = definedExternally): `T$256`
+        fun BreakGameplayTagContainer(GameplayTagContainer: GameplayTagContainer, GameplayTags: Array<GameplayTag> = definedExternally): `T$259`
         fun DoesContainerMatchTagQuery(TagContainer: GameplayTagContainer, TagQuery: GameplayTagQuery): Boolean
         fun Equal(A: GameplayTagContainer, B: GameplayTagContainer): Boolean
         fun GetDebugStringFromGameplayTagContainer(TagContainer: GameplayTagContainer): String
@@ -20673,7 +21115,7 @@ external open class GameplayTagContainer {
         fun MakeLiteralGameplayTagContainer(Value: GameplayTagContainer): GameplayTagContainer
         fun NotEqual(A: GameplayTagContainer, B: GameplayTagContainer): Boolean
         fun NotEqual_TagContainerTagContainer(A: GameplayTagContainer, B: String): Boolean
-        fun RemoveGameplayTag(TagContainer: GameplayTagContainer = definedExternally, Tag: GameplayTag = definedExternally): `T$424`
+        fun RemoveGameplayTag(TagContainer: GameplayTagContainer = definedExternally, Tag: GameplayTag = definedExternally): `T$258`
         fun MakeGameplayTagContainerFromArray(GameplayTags: Array<GameplayTag>): GameplayTagContainer
     }
 }
@@ -21220,12 +21662,12 @@ external object EEnvQueryStatus {
     var EEnvQueryStatus_MAX: String /* "EEnvQueryStatus_MAX" */
 }
 
-external interface `T$426` {
+external interface `T$260` {
     var ResultLocations: Array<Vector>
     var `$`: Boolean
 }
 
-external interface `T$427` {
+external interface `T$261` {
     var ResultActors: Array<Actor>
     var `$`: Boolean
 }
@@ -21240,8 +21682,8 @@ external open class EnvQueryInstanceBlueprintWrapper : UObject {
     open fun SetNamedParam(ParamName: String, Value: Number)
     open fun GetResultsAsLocations(): Array<Vector>
     open fun GetResultsAsActors(): Array<Actor>
-    open fun GetQueryResultsAsLocations(ResultLocations: Array<Vector> = definedExternally): `T$426`
-    open fun GetQueryResultsAsActors(ResultActors: Array<Actor> = definedExternally): `T$427`
+    open fun GetQueryResultsAsLocations(ResultLocations: Array<Vector> = definedExternally): `T$260`
+    open fun GetQueryResultsAsActors(ResultActors: Array<Actor> = definedExternally): `T$261`
     open fun GetItemScore(ItemIndex: Number): Number
 
     companion object {
@@ -21335,7 +21777,7 @@ external open class AIHotSpotManager : UObject {
     }
 }
 
-external interface `T$428` {
+external interface `T$262` {
     var PathPoints: Array<Vector>
     var `$`: Boolean
 }
@@ -21351,7 +21793,7 @@ external open class NavLocalGridManager : UObject {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): NavLocalGridManager
         fun SetLocalNavigationGridDensity(WorldContextObject: UObject, CellSize: Number): Boolean
         fun RemoveLocalNavigationGrid(WorldContextObject: UObject, GridId: Number, bRebuildGrids: Boolean)
-        fun FindLocalNavigationGridPath(WorldContextObject: UObject, Start: Vector, End: Vector, PathPoints: Array<Vector> = definedExternally): `T$428`
+        fun FindLocalNavigationGridPath(WorldContextObject: UObject, Start: Vector, End: Vector, PathPoints: Array<Vector> = definedExternally): `T$262`
         fun AddLocalNavigationGridForPoints(WorldContextObject: UObject, Locations: Array<Vector>, Radius2D: Number, Height: Number, bRebuildGrids: Boolean): Number
         fun AddLocalNavigationGridForPoint(WorldContextObject: UObject, Location: Vector, Radius2D: Number, Height: Number, bRebuildGrids: Boolean): Number
         fun AddLocalNavigationGridForCapsule(WorldContextObject: UObject, Location: Vector, CapsuleRadius: Number, CapsuleHalfHeight: Number, Radius2D: Number, Height: Number, bRebuildGrids: Boolean): Number
@@ -21506,27 +21948,27 @@ external open class ActorPerceptionBlueprintInfo {
     }
 }
 
-external interface `T$429` {
+external interface `T$263` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$430` {
+external interface `T$264` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$431` {
+external interface `T$265` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$432` {
+external interface `T$266` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$433` {
+external interface `T$267` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$434` {
+external interface `T$268` {
     var Info: ActorPerceptionBlueprintInfo
     var `$`: Boolean
 }
@@ -21543,12 +21985,12 @@ external open class AIPerceptionComponent : ActorComponent {
     open fun SetSenseEnabled(SenseClass: UnrealEngineClass, bEnable: Boolean)
     open fun RequestStimuliListenerUpdate()
     open fun OnOwnerEndPlay(Actor: Actor, EndPlayReason: String /* "Destroyed" | "LevelTransition" | "EndPlayInEditor" | "RemovedFromWorld" | "Quit" | "EEndPlayReason_MAX" */)
-    open fun GetPerceivedHostileActorsBySense(SenseToUse: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$429`
-    open fun GetPerceivedHostileActors(OutActors: Array<Actor> = definedExternally): `T$430`
-    open fun GetPerceivedActors(SenseToUse: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$431`
-    open fun GetKnownPerceivedActors(SenseToUse: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$432`
-    open fun GetCurrentlyPerceivedActors(SenseToUse: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$433`
-    open fun GetActorsPerception(Actor: Actor, Info: ActorPerceptionBlueprintInfo = definedExternally): `T$434`
+    open fun GetPerceivedHostileActorsBySense(SenseToUse: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$263`
+    open fun GetPerceivedHostileActors(OutActors: Array<Actor> = definedExternally): `T$264`
+    open fun GetPerceivedActors(SenseToUse: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$265`
+    open fun GetKnownPerceivedActors(SenseToUse: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$266`
+    open fun GetCurrentlyPerceivedActors(SenseToUse: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$267`
+    open fun GetActorsPerception(Actor: Actor, Info: ActorPerceptionBlueprintInfo = definedExternally): `T$268`
     open fun ForgetAll()
 
     companion object {
@@ -21834,7 +22276,7 @@ external object EPathFollowingStatus {
     var EPathFollowingStatus_MAX: String /* "EPathFollowingStatus_MAX" */
 }
 
-external interface `T$435` {
+external interface `T$269` {
     var BlackboardComponent: BlackboardComponent
     var `$`: Boolean
 }
@@ -21855,7 +22297,7 @@ external open class AIController(InWorld: World, Location: Vector = definedExter
     open var CachedGameplayTasksComponent: GameplayTasksComponent
     open var DefaultNavigationFilterClass: UnrealEngineClass
     open var ReceiveMoveCompleted: UnrealEngineMulticastDelegate<(RequestID: AIRequestID, Result: String /* "Success" | "Blocked" | "OffPath" | "Aborted" | "Skipped_DEPRECATED" | "Invalid" | "EPathFollowingResult_MAX" */) -> Unit>
-    open fun UseBlackboard(BlackboardAsset: BlackboardData, BlackboardComponent: BlackboardComponent = definedExternally): `T$435`
+    open fun UseBlackboard(BlackboardAsset: BlackboardData, BlackboardComponent: BlackboardComponent = definedExternally): `T$269`
     open fun UnclaimTaskResource(ResourceClass: UnrealEngineClass)
     open fun SetPathFollowingComponent(NewPFComponent: PathFollowingComponent)
     open fun SetMoveBlockDetection(bEnable: Boolean)
@@ -21885,7 +22327,7 @@ external open class AIController(InWorld: World, Location: Vector = definedExter
     }
 }
 
-external interface `T$436` {
+external interface `T$270` {
     var bIsTracked: Boolean
     var Orientation: Rotator
     var bHasPositionalTracking: Boolean
@@ -21896,44 +22338,49 @@ external open class XRDeviceId {
     open var SystemName: String
     open var DeviceID: Number
     open fun clone(): XRDeviceId
-    open fun GetDevicePose(bIsTracked: Boolean = definedExternally, Orientation: Rotator = definedExternally, bHasPositionalTracking: Boolean = definedExternally, Position: Vector = definedExternally): `T$436`
+    open fun GetDevicePose(bIsTracked: Boolean = definedExternally, Orientation: Rotator = definedExternally, bHasPositionalTracking: Boolean = definedExternally, Position: Vector = definedExternally): `T$270`
     open fun IsDeviceTracking(): Boolean
 
     companion object {
         fun C(Other: UObject): XRDeviceId
         fun C(Other: Any): XRDeviceId
-        fun GetDevicePose(XRDeviceId: XRDeviceId, bIsTracked: Boolean = definedExternally, Orientation: Rotator = definedExternally, bHasPositionalTracking: Boolean = definedExternally, Position: Vector = definedExternally): `T$436`
+        fun GetDevicePose(XRDeviceId: XRDeviceId, bIsTracked: Boolean = definedExternally, Orientation: Rotator = definedExternally, bHasPositionalTracking: Boolean = definedExternally, Position: Vector = definedExternally): `T$270`
         fun IsDeviceTracking(XRDeviceId: XRDeviceId): Boolean
     }
 }
 
-external interface `T$437` {
+external interface `T$271` {
+    var SweepHitResult: HitResult
+    var `$`: Boolean
+}
+
+external interface `T$272` {
     var OverlappingComponents: Array<PrimitiveComponent>
 }
 
-external interface `T$438` {
+external interface `T$273` {
     var OverlappingActors: Array<Actor>
 }
 
-external interface `T$439` {
+external interface `T$274` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$440` {
+external interface `T$275` {
     var ChildActors: Array<Actor>
 }
 
-external interface `T$441` {
+external interface `T$276` {
     var OutLocation: Vector
     var OutRotation: Rotator
 }
 
-external interface `T$442` {
+external interface `T$277` {
     var Origin: Vector
     var BoxExtent: Vector
 }
 
-external interface `T$443` {
+external interface `T$278` {
     var XRDeviceId: XRDeviceId
     var `$`: PrimitiveComponent
 }
@@ -21947,6 +22394,7 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open var bReplicateMovement: Boolean
     open var bHidden: Boolean
     open var bTearOff: Boolean
+    open var bForceNetAddressable: Boolean
     open var bExchangedRoles: Boolean
     open var bNetLoadOnClient: Boolean
     open var bNetUseOwnerRelevancy: Boolean
@@ -22082,13 +22530,13 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open fun MakeNoise(Loudness: Number, NoiseInstigator: Pawn, NoiseLocation: Vector, MaxRange: Number, Tag: String)
     open fun MakeMIDForMaterial(Parent: MaterialInterface): MaterialInstanceDynamic
     open fun Teleport(DestLocation: Vector, DestRotation: Rotator): Boolean
-    open fun SetActorTransform(NewTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$154`
+    open fun SetActorTransform(NewTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$271`
     open fun SetActorRotation(NewRotation: Rotator, bTeleportPhysics: Boolean): Boolean
-    open fun SetActorRelativeTransform(NewRelativeTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetActorRelativeRotation(NewRelativeRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetActorRelativeLocation(NewRelativeLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun SetActorLocationAndRotation(NewLocation: Vector, NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$154`
-    open fun SetActorLocation(NewLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$154`
+    open fun SetActorRelativeTransform(NewRelativeTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetActorRelativeRotation(NewRelativeRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetActorRelativeLocation(NewRelativeLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun SetActorLocationAndRotation(NewLocation: Vector, NewRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$271`
+    open fun SetActorLocation(NewLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$271`
     open fun OnReset()
     open fun OnEndViewTarget(PC: PlayerController)
     open fun OnBecomeViewTarget(PC: PlayerController)
@@ -22103,13 +22551,13 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open fun AttachActorToActor(ParentActor: Actor, SocketName: String, LocationRule: String /* "KeepRelative" | "KeepWorld" | "SnapToTarget" | "EAttachmentRule_MAX" */, RotationRule: String /* "KeepRelative" | "KeepWorld" | "SnapToTarget" | "EAttachmentRule_MAX" */, ScaleRule: String /* "KeepRelative" | "KeepWorld" | "SnapToTarget" | "EAttachmentRule_MAX" */, bWeldSimulatedBodies: Boolean)
     open fun AttachRootComponentToActor(InParentActor: Actor, InSocketName: String, AttachLocationType: String /* "KeepRelativeOffset" | "KeepWorldPosition" | "SnapToTarget" | "SnapToTargetIncludingScale" | "EAttachLocation_MAX" */, bWeldSimulatedBodies: Boolean)
     open fun AttachRootComponentTo(InParent: SceneComponent, InSocketName: String, AttachLocationType: String /* "KeepRelativeOffset" | "KeepWorldPosition" | "SnapToTarget" | "SnapToTargetIncludingScale" | "EAttachLocation_MAX" */, bWeldSimulatedBodies: Boolean)
-    open fun AddActorWorldTransformKeepScale(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddActorWorldTransform(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddActorWorldRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddActorWorldOffset(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddActorLocalTransform(NewTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddActorLocalRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
-    open fun AddActorLocalOffset(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$207`
+    open fun AddActorWorldTransformKeepScale(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddActorWorldTransform(DeltaTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddActorWorldRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddActorWorldOffset(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddActorLocalTransform(NewTransform: Transform, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddActorLocalRotation(DeltaRotation: Rotator, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
+    open fun AddActorLocalOffset(DeltaLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$29`
     open fun IsTemporarilyHiddenInEditor(bIncludeParent: Boolean): Boolean
     open fun IsSelectable(): Boolean
     open fun IsOverlappingActor(Other: Actor): Boolean
@@ -22124,13 +22572,14 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open fun GetVelocity(): Vector
     open fun GetActorTransform(): Transform
     open fun GetTickableWhenPaused(): Boolean
+    open fun GetSquaredHorizontalDistanceTo(OtherActor: Actor): Number
     open fun GetSquaredDistanceTo(OtherActor: Actor): Number
     open fun GetRemoteRole(): String /* "ROLE_None" | "ROLE_SimulatedProxy" | "ROLE_AutonomousProxy" | "ROLE_Authority" | "ROLE_MAX" */
     open fun GetParentComponent(): ChildActorComponent
     open fun GetParentActor(): Actor
     open fun GetOwner(): Actor
-    open fun GetOverlappingComponents(OverlappingComponents: Array<PrimitiveComponent> = definedExternally): `T$437`
-    open fun GetOverlappingActors(OverlappingActors: Array<Actor> = definedExternally, ClassFilter: UnrealEngineClass = definedExternally): `T$438`
+    open fun GetOverlappingComponents(OverlappingComponents: Array<PrimitiveComponent> = definedExternally): `T$272`
+    open fun GetOverlappingActors(OverlappingActors: Array<Actor> = definedExternally, ClassFilter: UnrealEngineClass = definedExternally): `T$273`
     open fun GetLocalRole(): String /* "ROLE_None" | "ROLE_SimulatedProxy" | "ROLE_AutonomousProxy" | "ROLE_Authority" | "ROLE_MAX" */
     open fun GetLifeSpan(): Number
     open fun GetInstigatorController(): Controller
@@ -22149,8 +22598,8 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open fun GetComponentByClass(ComponentClass: UnrealEngineClass): ActorComponent
     open fun GetAttachParentSocketName(): String
     open fun GetAttachParentActor(): Actor
-    open fun GetAttachedActors(OutActors: Array<Actor> = definedExternally, bResetArray: Boolean = definedExternally): `T$439`
-    open fun GetAllChildActors(ChildActors: Array<Actor> = definedExternally, bIncludeDescendants: Boolean = definedExternally): `T$440`
+    open fun GetAttachedActors(OutActors: Array<Actor> = definedExternally, bResetArray: Boolean = definedExternally): `T$274`
+    open fun GetAllChildActors(ChildActors: Array<Actor> = definedExternally, bIncludeDescendants: Boolean = definedExternally): `T$275`
     open fun GetActorUpVector(): Vector
     open fun GetActorTimeDilation(): Number
     open fun GetActorTickInterval(): Number
@@ -22159,12 +22608,12 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open fun GetActorRelativeScale3D(): Vector
     open fun GetActorLabel(): String
     open fun GetActorForwardVector(): Vector
-    open fun GetActorEyesViewPoint(OutLocation: Vector = definedExternally, OutRotation: Rotator = definedExternally): `T$441`
+    open fun GetActorEyesViewPoint(OutLocation: Vector = definedExternally, OutRotation: Rotator = definedExternally): `T$276`
     open fun GetActorEnableCollision(): Boolean
-    open fun GetActorBounds(bOnlyCollidingComponents: Boolean, Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, bIncludeFromChildActors: Boolean = definedExternally): `T$442`
-    open fun GetActorBounds(bOnlyCollidingComponents: Boolean): `T$442`
-    open fun GetActorBounds(bOnlyCollidingComponents: Boolean, Origin: Vector = definedExternally): `T$442`
-    open fun GetActorBounds(bOnlyCollidingComponents: Boolean, Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally): `T$442`
+    open fun GetActorBounds(bOnlyCollidingComponents: Boolean, Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally, bIncludeFromChildActors: Boolean = definedExternally): `T$277`
+    open fun GetActorBounds(bOnlyCollidingComponents: Boolean): `T$277`
+    open fun GetActorBounds(bOnlyCollidingComponents: Boolean, Origin: Vector = definedExternally): `T$277`
+    open fun GetActorBounds(bOnlyCollidingComponents: Boolean, Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally): `T$277`
     open fun ForceNetUpdate()
     open fun FlushNetDormancy()
     open fun FinishAddComponent(Component: ActorComponent, bManualAttachment: Boolean, RelativeTransform: Transform)
@@ -22194,14 +22643,14 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
     open fun SetStabilizationDepthActor(bSetFocusActor: Boolean)
     open fun GetAIController(): AIController
     open fun GetBlackboard(): BlackboardComponent
-    open fun GetActorBounds(Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally): `T$442`
-    open fun GetActorBounds(): `T$442`
-    open fun GetActorBounds(Origin: Vector = definedExternally): `T$442`
+    open fun GetActorBounds(Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally): `T$277`
+    open fun GetActorBounds(): `T$277`
+    open fun GetActorBounds(Origin: Vector = definedExternally): `T$277`
     open fun ApplyDamage(BaseDamage: Number, EventInstigator: Controller, DamageCauser: Actor, DamageTypeClass: UnrealEngineClass): Number
     open fun ApplyPointDamage(BaseDamage: Number, HitFromDirection: Vector, HitInfo: HitResult, EventInstigator: Controller, DamageCauser: Actor, DamageTypeClass: UnrealEngineClass): Number
     open fun FinishSpawningActor(SpawnTransform: Transform): Actor
     open fun AddDeviceVisualizationComponentBlocking(XRDeviceId: XRDeviceId, bManualAttachment: Boolean, RelativeTransform: Transform): PrimitiveComponent
-    open fun AddNamedDeviceVisualizationComponentBlocking(SystemName: String, DeviceName: String, bManualAttachment: Boolean, RelativeTransform: Transform, XRDeviceId: XRDeviceId = definedExternally): `T$443`
+    open fun AddNamedDeviceVisualizationComponentBlocking(SystemName: String, DeviceName: String, bManualAttachment: Boolean, RelativeTransform: Transform, XRDeviceId: XRDeviceId = definedExternally): `T$278`
 
     companion object {
         fun GetDefaultObject(): Actor
@@ -22216,7 +22665,7 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
         fun IsActorLabelEditable(Actor: Actor): Boolean
         fun SetActorLabel(Actor: Actor, NewActorLabel: String, bMarkDirty: Boolean)
         fun SetActorLabelUnique(Actor: Actor, NewActorLabel: String, InExistingActorLabels: Array<String>)
-        fun SetActorLocation(Actor: Actor, NewLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$154`
+        fun SetActorLocation(Actor: Actor, NewLocation: Vector, bSweep: Boolean, SweepHitResult: HitResult = definedExternally, bTeleport: Boolean = definedExternally): `T$271`
         fun SetFolderPath(Actor: Actor, NewFolderPath: String)
         fun SetFolderPath_Recursively(Actor: Actor, NewFolderPath: String)
         fun SetIsTemporarilyHiddenInEditor(Actor: Actor, bIsHidden: Boolean)
@@ -22235,12 +22684,12 @@ external open class Actor(InWorld: World, Location: Vector = definedExternally, 
         fun SetStabilizationDepthActor(InStabilizationDepthActor: Actor, bSetFocusActor: Boolean)
         fun GetAIController(ControlledActor: Actor): AIController
         fun GetBlackboard(Target: Actor): BlackboardComponent
-        fun GetActorBounds(Actor: Actor, Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally): `T$442`
+        fun GetActorBounds(Actor: Actor, Origin: Vector = definedExternally, BoxExtent: Vector = definedExternally): `T$277`
         fun ApplyDamage(DamagedActor: Actor, BaseDamage: Number, EventInstigator: Controller, DamageCauser: Actor, DamageTypeClass: UnrealEngineClass): Number
         fun ApplyPointDamage(DamagedActor: Actor, BaseDamage: Number, HitFromDirection: Vector, HitInfo: HitResult, EventInstigator: Controller, DamageCauser: Actor, DamageTypeClass: UnrealEngineClass): Number
         fun FinishSpawningActor(Actor: Actor, SpawnTransform: Transform): Actor
         fun AddDeviceVisualizationComponentBlocking(Target: Actor, XRDeviceId: XRDeviceId, bManualAttachment: Boolean, RelativeTransform: Transform): PrimitiveComponent
-        fun AddNamedDeviceVisualizationComponentBlocking(Target: Actor, SystemName: String, DeviceName: String, bManualAttachment: Boolean, RelativeTransform: Transform, XRDeviceId: XRDeviceId = definedExternally): `T$443`
+        fun AddNamedDeviceVisualizationComponentBlocking(Target: Actor, SystemName: String, DeviceName: String, bManualAttachment: Boolean, RelativeTransform: Transform, XRDeviceId: XRDeviceId = definedExternally): `T$278`
     }
 }
 
@@ -22468,6 +22917,20 @@ external open class LevelViewportInfo {
     }
 }
 
+external open class PhysicsFieldComponent : SceneComponent {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): PhysicsFieldComponent
+        fun Find(Outer: UObject, ResourceName: String): PhysicsFieldComponent
+        fun GetDefaultObject(): PhysicsFieldComponent
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PhysicsFieldComponent
+        fun C(Other: UObject): PhysicsFieldComponent
+        fun C(Other: Any): PhysicsFieldComponent
+    }
+}
+
 external open class WorldComposition : UObject {
     constructor()
     constructor(Outer: UObject)
@@ -22532,6 +22995,7 @@ external open class RecastNavMesh(InWorld: World, Location: Vector = definedExte
     open var bDrawTileLabels: Boolean
     open var bDrawPolygonLabels: Boolean
     open var bDrawDefaultPolygonCost: Boolean
+    open var bDrawPolygonFlags: Boolean
     open var bDrawLabelsOnPathNodes: Boolean
     open var bDrawNavLinks: Boolean
     open var bDrawFailedNavLinks: Boolean
@@ -23465,6 +23929,7 @@ external open class NiagaraParameterStore {
     open var DataInterfaces: Array<NiagaraDataInterface>
     open var UObjects: Array<UObject>
     open var DebugName: String
+    open var ParameterGuidMapping: Any
     open fun clone(): NiagaraParameterStore
 
     companion object {
@@ -23525,6 +23990,13 @@ external open class NiagaraParameterCollection : UObject {
     }
 }
 
+external object ENiagaraScriptTemplateSpecification {
+    var None: String /* "None" */
+    var Template: String /* "Template" */
+    var Behavior: String /* "Behavior" */
+    var ENiagaraScriptTemplateSpecification_MAX: String /* "ENiagaraScriptTemplateSpecification_MAX" */
+}
+
 external open class NiagaraScriptBase : UObject {
     constructor()
     constructor(Outer: UObject)
@@ -23554,6 +24026,19 @@ external object ENiagaraScriptUsage {
     var SystemSpawnScript: String /* "SystemSpawnScript" */
     var SystemUpdateScript: String /* "SystemUpdateScript" */
     var ENiagaraScriptUsage_MAX: String /* "ENiagaraScriptUsage_MAX" */
+}
+
+external open class NiagaraAssetVersion {
+    open var MajorVersion: Number
+    open var MinorVersion: Number
+    open var VersionGuid: Guid
+    open var bIsVisibleInVersionSelector: Boolean
+    open fun clone(): NiagaraAssetVersion
+
+    companion object {
+        fun C(Other: UObject): NiagaraAssetVersion
+        fun C(Other: Any): NiagaraAssetVersion
+    }
 }
 
 external object ENiagaraModuleDependencyType {
@@ -23622,6 +24107,131 @@ external open class NiagaraScriptHighlight {
     }
 }
 
+external open class NiagaraCompileHash {
+    open var DataHash: Array<Number>
+    open fun clone(): NiagaraCompileHash
+
+    companion object {
+        fun C(Other: UObject): NiagaraCompileHash
+        fun C(Other: Any): NiagaraCompileHash
+    }
+}
+
+external open class NiagaraVMExecutableDataId {
+    open var CompilerVersionID: Guid
+    open var ScriptUsageType: String /* "Function" | "Module" | "DynamicInput" | "ParticleSpawnScript" | "ParticleSpawnScriptInterpolated" | "ParticleUpdateScript" | "ParticleEventScript" | "ParticleSimulationStageScript" | "ParticleGPUComputeScript" | "EmitterSpawnScript" | "EmitterUpdateScript" | "SystemSpawnScript" | "SystemUpdateScript" | "ENiagaraScriptUsage_MAX" */
+    open var ScriptUsageTypeID: Guid
+    open var AdditionalDefines: Array<String>
+    open var AdditionalVariables: Array<NiagaraVariableBase>
+    open var bUsesRapidIterationParams: Boolean
+    open var bInterpolatedSpawn: Boolean
+    open var bRequiresPersistentIDs: Boolean
+    open var BaseScriptID: Guid
+    open var BaseScriptCompileHash: NiagaraCompileHash
+    open var ReferencedCompileHashes: Array<NiagaraCompileHash>
+    open var ScriptVersionID: Guid
+    open fun clone(): NiagaraVMExecutableDataId
+
+    companion object {
+        fun C(Other: UObject): NiagaraVMExecutableDataId
+        fun C(Other: Any): NiagaraVMExecutableDataId
+    }
+}
+
+external object ENiagaraPythonUpdateScriptReference {
+    var None: String /* "None" */
+    var ScriptAsset: String /* "ScriptAsset" */
+    var DirectTextEntry: String /* "DirectTextEntry" */
+    var ENiagaraPythonUpdateScriptReference_MAX: String /* "ENiagaraPythonUpdateScriptReference_MAX" */
+}
+
+external open class FilePath {
+    open var FilePath: String
+    open fun clone(): FilePath
+
+    companion object {
+        fun C(Other: UObject): FilePath
+        fun C(Other: Any): FilePath
+    }
+}
+
+external open class NiagaraParameterDefinitionsBase : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var UniqueId: Guid
+
+    companion object {
+        fun Load(ResourceName: String): NiagaraParameterDefinitionsBase
+        fun Find(Outer: UObject, ResourceName: String): NiagaraParameterDefinitionsBase
+        fun GetDefaultObject(): NiagaraParameterDefinitionsBase
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): NiagaraParameterDefinitionsBase
+        fun C(Other: UObject): NiagaraParameterDefinitionsBase
+        fun C(Other: Any): NiagaraParameterDefinitionsBase
+    }
+}
+
+external open class ParameterDefinitionsSubscription {
+    open var ParameterDefinitions: NiagaraParameterDefinitionsBase
+    open var DefinitionsId: Guid
+    open var CachedChangeIdHash: Number
+    open fun clone(): ParameterDefinitionsSubscription
+
+    companion object {
+        fun C(Other: UObject): ParameterDefinitionsSubscription
+        fun C(Other: Any): ParameterDefinitionsSubscription
+    }
+}
+
+external open class NiagaraScriptSourceBase : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): NiagaraScriptSourceBase
+        fun Find(Outer: UObject, ResourceName: String): NiagaraScriptSourceBase
+        fun GetDefaultObject(): NiagaraScriptSourceBase
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): NiagaraScriptSourceBase
+        fun C(Other: UObject): NiagaraScriptSourceBase
+        fun C(Other: Any): NiagaraScriptSourceBase
+    }
+}
+
+external open class VersionedNiagaraScriptData {
+    open var Version: NiagaraAssetVersion
+    open var VersionChangeDescription: String
+    open var ModuleUsageBitmask: Number
+    open var Category: String
+    open var bSuggested: Boolean
+    open var ProvidedDependencies: Array<String>
+    open var RequiredDependencies: Array<NiagaraModuleDependency>
+    open var bDeprecated: Boolean
+    open var DeprecationMessage: String
+    open var DeprecationRecommendation: NiagaraScript
+    open var ConversionUtility: UnrealEngineClass
+    open var bExperimental: Boolean
+    open var ExperimentalMessage: String
+    open var NoteMessage: String
+    open var LibraryVisibility: String /* "Invalid" | "Unexposed" | "Library" | "Hidden" | "ENiagaraScriptLibraryVisibility_MAX" */
+    open var NumericOutputTypeSelectionMode: String /* "None" | "Largest" | "Smallest" | "Scalar" | "ENiagaraNumericOutputTypeSelectionMode_MAX" */
+    open var Description: String
+    open var Keywords: String
+    open var CollapsedViewFormat: String
+    open var Highlights: Array<NiagaraScriptHighlight>
+    open var ScriptMetaData: Any
+    open var LastGeneratedVMId: NiagaraVMExecutableDataId
+    open var UpdateScriptExecution: String /* "None" | "ScriptAsset" | "DirectTextEntry" | "ENiagaraPythonUpdateScriptReference_MAX" */
+    open var PythonUpdateScript: String
+    open var ScriptAsset: FilePath
+    open var ParameterDefinitionsSubscriptions: Array<ParameterDefinitionsSubscription>
+    open var Source: NiagaraScriptSourceBase
+    open fun clone(): VersionedNiagaraScriptData
+
+    companion object {
+        fun C(Other: UObject): VersionedNiagaraScriptData
+        fun C(Other: Any): VersionedNiagaraScriptData
+    }
+}
+
 external open class NiagaraScriptExecutionPaddingInfo {
     open var SrcOffset: Any
     open var DestOffset: Any
@@ -23660,49 +24270,6 @@ external open class NiagaraBoundParameter {
     }
 }
 
-external open class NiagaraScriptSourceBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): NiagaraScriptSourceBase
-        fun Find(Outer: UObject, ResourceName: String): NiagaraScriptSourceBase
-        fun GetDefaultObject(): NiagaraScriptSourceBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): NiagaraScriptSourceBase
-        fun C(Other: UObject): NiagaraScriptSourceBase
-        fun C(Other: Any): NiagaraScriptSourceBase
-    }
-}
-
-external open class NiagaraCompileHash {
-    open var DataHash: Array<Number>
-    open fun clone(): NiagaraCompileHash
-
-    companion object {
-        fun C(Other: UObject): NiagaraCompileHash
-        fun C(Other: Any): NiagaraCompileHash
-    }
-}
-
-external open class NiagaraVMExecutableDataId {
-    open var CompilerVersionID: Guid
-    open var ScriptUsageType: String /* "Function" | "Module" | "DynamicInput" | "ParticleSpawnScript" | "ParticleSpawnScriptInterpolated" | "ParticleUpdateScript" | "ParticleEventScript" | "ParticleSimulationStageScript" | "ParticleGPUComputeScript" | "EmitterSpawnScript" | "EmitterUpdateScript" | "SystemSpawnScript" | "SystemUpdateScript" | "ENiagaraScriptUsage_MAX" */
-    open var ScriptUsageTypeID: Guid
-    open var AdditionalDefines: Array<String>
-    open var bUsesRapidIterationParams: Boolean
-    open var bInterpolatedSpawn: Boolean
-    open var bRequiresPersistentIDs: Boolean
-    open var BaseScriptID: Guid
-    open var BaseScriptCompileHash: NiagaraCompileHash
-    open var ReferencedCompileHashes: Array<NiagaraCompileHash>
-    open fun clone(): NiagaraVMExecutableDataId
-
-    companion object {
-        fun C(Other: UObject): NiagaraVMExecutableDataId
-        fun C(Other: Any): NiagaraVMExecutableDataId
-    }
-}
-
 external open class NiagaraParameters {
     open var Parameters: Array<NiagaraVariable>
     open fun clone(): NiagaraParameters
@@ -23710,6 +24277,31 @@ external open class NiagaraParameters {
     companion object {
         fun C(Other: UObject): NiagaraParameters
         fun C(Other: Any): NiagaraParameters
+    }
+}
+
+external open class NiagaraCompileDependency {
+    open var LinkerErrorMessage: String
+    open var NodeGuid: Guid
+    open var PinGuid: Guid
+    open var StackGuids: Array<Guid>
+    open var DependentVariable: NiagaraVariableBase
+    open fun clone(): NiagaraCompileDependency
+
+    companion object {
+        fun C(Other: UObject): NiagaraCompileDependency
+        fun C(Other: Any): NiagaraCompileDependency
+    }
+}
+
+external open class NiagaraCompilerTag {
+    open var Variable: NiagaraVariable
+    open var StringValue: String
+    open fun clone(): NiagaraCompilerTag
+
+    companion object {
+        fun C(Other: UObject): NiagaraCompilerTag
+        fun C(Other: Any): NiagaraCompilerTag
     }
 }
 
@@ -23738,11 +24330,15 @@ external open class NiagaraFunctionSignature {
     open var bSupportsGPU: Boolean
     open var bWriteFunction: Boolean
     open var bSoftDeprecatedFunction: Boolean
+    open var bIsCompileTagGenerator: Boolean
+    open var bHidden: Boolean
     open var ModuleUsageBitmask: Number
     open var ContextStageMinIndex: Number
     open var ContextStageMaxIndex: Number
     open var FunctionSpecifiers: Any
     open var Description: String
+    open var InputDescriptions: Any
+    open var OutputDescriptions: Any
     open fun clone(): NiagaraFunctionSignature
 
     companion object {
@@ -23892,6 +24488,8 @@ external object FNiagaraCompileEventSeverity {
 external open class NiagaraCompileEvent {
     open var Severity: String /* "Log" | "Warning" | "Error" | "FNiagaraCompileEventSeverity_MAX" */
     open var Message: String
+    open var ShortDescription: String
+    open var bDismissable: Boolean
     open var NodeGuid: Guid
     open var PinGuid: Guid
     open var StackGuids: Array<Guid>
@@ -23910,6 +24508,8 @@ external open class NiagaraVMExecutableData {
     open var NumUserPtrs: Number
     open var Parameters: NiagaraParameters
     open var InternalParameters: NiagaraParameters
+    open var ExternalDependencies: Array<NiagaraCompileDependency>
+    open var CompileTags: Array<NiagaraCompilerTag>
     open var ScriptLiterals: Array<Number>
     open var Attributes: Array<NiagaraVariable>
     open var DataUsage: NiagaraScriptDataUsageInfo
@@ -23929,10 +24529,12 @@ external open class NiagaraVMExecutableData {
     open var LastCompileStatus: String /* "NCS_Unknown" | "NCS_Dirty" | "NCS_Error" | "NCS_UpToDate" | "NCS_BeingCreated" | "NCS_UpToDateWithWarnings" | "NCS_ComputeUpToDateWithWarnings" | "NCS_MAX" */
     open var SimulationStageMetaData: Array<SimulationStageMetaData>
     open var bReadsAttributeData: Boolean
+    open var AttributesWritten: Array<NiagaraVariableBase>
     open var ErrorMsg: String
     open var CompileTime: Number
     open var LastCompileEvents: Array<NiagaraCompileEvent>
     open var bReadsSignificanceIndex: Boolean
+    open var bNeedsGPUContextInit: Boolean
     open fun clone(): NiagaraVMExecutableData
 
     companion object {
@@ -23960,8 +24562,13 @@ external open class NiagaraScript : NiagaraScriptBase {
     constructor()
     constructor(Outer: UObject)
     open var Usage: String /* "Function" | "Module" | "DynamicInput" | "ParticleSpawnScript" | "ParticleSpawnScriptInterpolated" | "ParticleUpdateScript" | "ParticleEventScript" | "ParticleSimulationStageScript" | "ParticleGPUComputeScript" | "EmitterSpawnScript" | "EmitterUpdateScript" | "SystemSpawnScript" | "SystemUpdateScript" | "ENiagaraScriptUsage_MAX" */
-    open var UsageIndex: Number
     open var UsageId: Guid
+    open var ExposedVersion: Guid
+    open var bVersioningEnabled: Boolean
+    open var VersionData: Array<VersionedNiagaraScriptData>
+    open var RapidIterationParameters: NiagaraParameterStore
+    open var VersionToOpenInEditor: Guid
+    open var UsageIndex: Number
     open var ModuleUsageBitmask: Number
     open var Category: String
     open var ProvidedDependencies: Array<String>
@@ -23972,22 +24579,21 @@ external open class NiagaraScript : NiagaraScriptBase {
     open var ConversionUtility: UnrealEngineClass
     open var bExperimental: Boolean
     open var ExperimentalMessage: String
+    open var NoteMessage: String
     open var bExposeToLibrary: Boolean
     open var LibraryVisibility: String /* "Invalid" | "Unexposed" | "Library" | "Hidden" | "ENiagaraScriptLibraryVisibility_MAX" */
-    open var RapidIterationParameters: NiagaraParameterStore
     open var NumericOutputTypeSelectionMode: String /* "None" | "Largest" | "Smallest" | "Scalar" | "ENiagaraNumericOutputTypeSelectionMode_MAX" */
     open var Description: String
     open var Keywords: String
     open var CollapsedViewFormat: String
     open var Highlights: Array<NiagaraScriptHighlight>
     open var ScriptMetaData: Any
+    open var Source: NiagaraScriptSourceBase
     open var ScriptExecutionParamStoreCPU: NiagaraScriptExecutionParameterStore
     open var ScriptExecutionParamStoreGPU: NiagaraScriptExecutionParameterStore
     open var ScriptExecutionParamStore: NiagaraScriptExecutionParameterStore
     open var ScriptExecutionBoundParameters: Array<NiagaraBoundParameter>
-    open var Source: NiagaraScriptSourceBase
     open var CachedScriptVMId: NiagaraVMExecutableDataId
-    open var LastGeneratedVMId: NiagaraVMExecutableDataId
     open var ActiveCompileRoots: Array<UObject>
     open var CachedScriptVM: NiagaraVMExecutableData
     open var CachedParameterCollectionReferences: Array<NiagaraParameterCollection>
@@ -24065,11 +24671,20 @@ external open class NiagaraPlatformSet {
     }
 }
 
+external object ENiagaraRendererMotionVectorSetting {
+    var AutoDetect: String /* "AutoDetect" */
+    var Precise: String /* "Precise" */
+    var Approximate: String /* "Approximate" */
+    var Disable: String /* "Disable" */
+    var ENiagaraRendererMotionVectorSetting_MAX: String /* "ENiagaraRendererMotionVectorSetting_MAX" */
+}
+
 external open class NiagaraRendererProperties : NiagaraMergeable {
     constructor()
     constructor(Outer: UObject)
     open var Platforms: NiagaraPlatformSet
     open var SortOrderHint: Number
+    open var MotionVectorSetting: String /* "AutoDetect" | "Precise" | "Approximate" | "Disable" | "ENiagaraRendererMotionVectorSetting_MAX" */
     open var bIsEnabled: Boolean
     open var bMotionBlurEnabled: Boolean
 
@@ -24117,6 +24732,24 @@ external object ENiagaraAgeUpdateMode {
     var ENiagaraAgeUpdateMode_MAX: String /* "ENiagaraAgeUpdateMode_MAX" */
 }
 
+external open class Texture2DArray : Texture {
+    constructor()
+    constructor(Outer: UObject)
+    open var AddressX: String /* "TA_Wrap" | "TA_Clamp" | "TA_Mirror" | "TA_MAX" */
+    open var AddressY: String /* "TA_Wrap" | "TA_Clamp" | "TA_Mirror" | "TA_MAX" */
+    open var AddressZ: String /* "TA_Wrap" | "TA_Clamp" | "TA_Mirror" | "TA_MAX" */
+    open var SourceTextures: Array<Texture2D>
+
+    companion object {
+        fun Load(ResourceName: String): Texture2DArray
+        fun Find(Outer: UObject, ResourceName: String): Texture2DArray
+        fun GetDefaultObject(): Texture2DArray
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): Texture2DArray
+        fun C(Other: UObject): Texture2DArray
+        fun C(Other: Any): Texture2DArray
+    }
+}
+
 external open class VolumeTexture : Texture {
     constructor()
     constructor(Outer: UObject)
@@ -24140,6 +24773,7 @@ external open class NiagaraComponent : FXSystemComponent {
     constructor(Outer: UObject)
     open var Asset: NiagaraSystem
     open var TickBehavior: String /* "UsePrereqs" | "UseComponentTickGroup" | "ForceTickFirst" | "ForceTickLast" | "ENiagaraTickBehavior_MAX" */
+    open var RandomSeedOffset: Number
     open var OverrideParameters: NiagaraUserRedirectionParameterStore
     open var EditorOverridesValue: Any
     open var TemplateParameterOverrides: Any
@@ -24173,6 +24807,7 @@ external open class NiagaraComponent : FXSystemComponent {
     open fun SetTickBehavior(NewTickBehavior: String /* "UsePrereqs" | "UseComponentTickGroup" | "ForceTickFirst" | "ForceTickLast" | "ENiagaraTickBehavior_MAX" */)
     open fun SetDesiredAgeSeekDelta(InSeekDelta: Number)
     open fun SetRenderingEnabled(bInRenderingEnabled: Boolean)
+    open fun SetRandomSeedOffset(NewRandomSeedOffset: Number)
     open fun SetPreviewLODDistance(bEnablePreviewLODDistance: Boolean, PreviewLODDistance: Number)
     open fun SetPaused(bInPaused: Boolean)
     open fun SetNiagaraVariableByString(InVariableName: String, InValue: Vector4)
@@ -24185,30 +24820,34 @@ external open class NiagaraComponent : FXSystemComponent {
     open fun SetNiagaraVariableByString(InVariableName: String, InValue: Boolean)
     open fun SetNiagaraVariableByString(InVariableName: String, Actor: Actor)
     open fun SetMaxDesiredAgeTickDelta(InMaxTime: Number)
+    open fun SetLockDesiredAgeDeltaTimeToSeekDelta(bLock: Boolean)
     open fun SetGpuComputeDebug(bEnableDebug: Boolean)
     open fun SetForcedSoloMode(bInForceSolo: Boolean)
     open fun SetDesiredAge(InDesiredAge: Number)
     open fun SetCanRenderWhileSeeking(bInCanRenderWhileSeeking: Boolean)
     open fun SetAutoDestroy(bInAutoDestroy: Boolean)
-    open fun SetNiagaraSystemAsset(InAsset: NiagaraSystem)
+    open fun SetNiagaraSystemAsset(InAsset: NiagaraSystem, bResetExistingOverrideParameters: Boolean)
     open fun SetAllowScalability(bAllow: Boolean)
     open fun SetAgeUpdateMode(InAgeUpdateMode: String /* "TickDeltaTime" | "DesiredAge" | "DesiredAgeNoSeek" | "ENiagaraAgeUpdateMode_MAX" */)
     open fun SeekToDesiredAge(InDesiredAge: Number)
     open fun ResetSystem()
     open fun ReinitializeSystem()
     open fun IsPaused(): Boolean
+    open fun InitForPerformanceBaseline()
     open fun GetTickBehavior(): String /* "UsePrereqs" | "UseComponentTickGroup" | "ForceTickFirst" | "ForceTickLast" | "ENiagaraTickBehavior_MAX" */
     open fun GetDesiredAgeSeekDelta(): Number
+    open fun GetRandomSeedOffset(): Number
     open fun GetPreviewLODDistanceEnabled(): Boolean
     open fun GetPreviewLODDistance(): Number
     open fun GetNiagaraEmitterVec3Attrib(InEmitterName: String, InValueName: String): Array<Vector>
     open fun GetNiagaraEmitterFloatAttrib(InEmitterName: String, InValueName: String): Array<Number>
     open fun GetNiagaraEmitterPositions(InEmitterName: String): Array<Vector>
     open fun GetMaxDesiredAgeTickDelta(): Number
+    open fun GetLockDesiredAgeDeltaTimeToSeekDelta(): Boolean
     open fun IsInForcedSoloMode(): Boolean
     open fun GetDesiredAge(): Number
     open fun GetDataInterface(Name: String): NiagaraDataInterface
-    open fun GetAsset(): NiagaraSystem
+    open fun GetNiagaraSystemAsset(): NiagaraSystem
     open fun GetAgeUpdateMode(): String /* "TickDeltaTime" | "DesiredAge" | "DesiredAgeNoSeek" | "ENiagaraAgeUpdateMode_MAX" */
     open fun AdvanceSimulationByTime(SimulateTime: Number, TickDeltaSeconds: Number)
     open fun AdvanceSimulation(TickCount: Number, TickDeltaSeconds: Number)
@@ -24216,24 +24855,41 @@ external open class NiagaraComponent : FXSystemComponent {
     open fun SetNiagaraStaticMeshDirectly(OverrideName: String, StaticMesh: StaticMesh)
     open fun SetNiagaraStaticMeshComponent(OverrideName: String, StaticMeshComponent: StaticMeshComponent)
     open fun SetSkeletalMeshDataInterfaceSamplingRegions(OverrideName: String, SamplingRegions: Array<String>)
+    open fun SetTexture2DArrayObject(OverrideName: String, Texture: Texture2DArray)
     open fun SetTextureObject(OverrideName: String, Texture: Texture)
     open fun SetVolumeTextureObject(OverrideName: String, Texture: VolumeTexture)
     open fun NiagaraGetBoolArray(OverrideName: String): Array<Boolean>
+    open fun NiagaraGetBoolArrayValue(OverrideName: String, index: Number): Boolean
     open fun NiagaraGetColorArray(OverrideName: String): Array<LinearColor>
+    open fun NiagaraGetColorArrayValue(OverrideName: String, index: Number): LinearColor
     open fun NiagaraGetFloatArray(OverrideName: String): Array<Number>
+    open fun NiagaraGetFloatArrayValue(OverrideName: String, index: Number): Number
     open fun NiagaraGetInt32Array(OverrideName: String): Array<Number>
+    open fun NiagaraGetInt32ArrayValue(OverrideName: String, index: Number): Number
     open fun NiagaraGetQuaternionArray(OverrideName: String): Array<Quat>
+    open fun NiagaraGetQuaternionArrayValue(OverrideName: String, index: Number): Quat
     open fun NiagaraGetVectorArray(OverrideName: String): Array<Vector>
     open fun NiagaraGetVector2DArray(OverrideName: String): Array<Vector2D>
+    open fun NiagaraGetVector2DArrayValue(OverrideName: String, index: Number): Vector2D
     open fun NiagaraGetVector4Array(OverrideName: String): Array<Vector4>
+    open fun NiagaraGetVector4ArrayValue(OverrideName: String, index: Number): Vector4
+    open fun NiagaraGetVectorArrayValue(OverrideName: String, index: Number): Vector
     open fun NiagaraSetBoolArray(OverrideName: String, ArrayData: Array<Boolean>)
+    open fun NiagaraSetBoolArrayValue(OverrideName: String, index: Number, Value: Boolean, bSizeToFit: Boolean)
     open fun NiagaraSetColorArray(OverrideName: String, ArrayData: Array<LinearColor>)
+    open fun NiagaraSetColorArrayValue(OverrideName: String, index: Number, Value: LinearColor, bSizeToFit: Boolean)
     open fun NiagaraSetFloatArray(OverrideName: String, ArrayData: Array<Number>)
+    open fun NiagaraSetFloatArrayValue(OverrideName: String, index: Number, Value: Number, bSizeToFit: Boolean)
     open fun NiagaraSetInt32Array(OverrideName: String, ArrayData: Array<Number>)
+    open fun NiagaraSetInt32ArrayValue(OverrideName: String, index: Number, Value: Number, bSizeToFit: Boolean)
     open fun NiagaraSetQuaternionArray(OverrideName: String, ArrayData: Array<Quat>)
+    open fun NiagaraSetQuaternionArrayValue(OverrideName: String, index: Number, Value: Quat, bSizeToFit: Boolean)
     open fun NiagaraSetVectorArray(OverrideName: String, ArrayData: Array<Vector>)
     open fun NiagaraSetVector2DArray(OverrideName: String, ArrayData: Array<Vector2D>)
+    open fun NiagaraSetVector2DArrayValue(OverrideName: String, index: Number, Value: Vector2D, bSizeToFit: Boolean)
     open fun NiagaraSetVector4Array(OverrideName: String, ArrayData: Array<Vector4>)
+    open fun NiagaraSetVector4ArrayValue(OverrideName: String, index: Number, Value: Vector4, bSizeToFit: Boolean)
+    open fun NiagaraSetVectorArrayValue(OverrideName: String, index: Number, Value: Vector, bSizeToFit: Boolean)
 
     companion object {
         fun Load(ResourceName: String): NiagaraComponent
@@ -24246,24 +24902,41 @@ external open class NiagaraComponent : FXSystemComponent {
         fun SetNiagaraStaticMeshDirectly(NiagaraSystem: NiagaraComponent, OverrideName: String, StaticMesh: StaticMesh)
         fun SetNiagaraStaticMeshComponent(NiagaraSystem: NiagaraComponent, OverrideName: String, StaticMeshComponent: StaticMeshComponent)
         fun SetSkeletalMeshDataInterfaceSamplingRegions(NiagaraSystem: NiagaraComponent, OverrideName: String, SamplingRegions: Array<String>)
+        fun SetTexture2DArrayObject(NiagaraSystem: NiagaraComponent, OverrideName: String, Texture: Texture2DArray)
         fun SetTextureObject(NiagaraSystem: NiagaraComponent, OverrideName: String, Texture: Texture)
         fun SetVolumeTextureObject(NiagaraSystem: NiagaraComponent, OverrideName: String, Texture: VolumeTexture)
         fun NiagaraGetBoolArray(NiagaraSystem: NiagaraComponent, OverrideName: String): Array<Boolean>
+        fun NiagaraGetBoolArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number): Boolean
         fun NiagaraGetColorArray(NiagaraSystem: NiagaraComponent, OverrideName: String): Array<LinearColor>
+        fun NiagaraGetColorArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number): LinearColor
         fun NiagaraGetFloatArray(NiagaraSystem: NiagaraComponent, OverrideName: String): Array<Number>
+        fun NiagaraGetFloatArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number): Number
         fun NiagaraGetInt32Array(NiagaraSystem: NiagaraComponent, OverrideName: String): Array<Number>
+        fun NiagaraGetInt32ArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number): Number
         fun NiagaraGetQuaternionArray(NiagaraSystem: NiagaraComponent, OverrideName: String): Array<Quat>
+        fun NiagaraGetQuaternionArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number): Quat
         fun NiagaraGetVectorArray(NiagaraSystem: NiagaraComponent, OverrideName: String): Array<Vector>
         fun NiagaraGetVector2DArray(NiagaraSystem: NiagaraComponent, OverrideName: String): Array<Vector2D>
+        fun NiagaraGetVector2DArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number): Vector2D
         fun NiagaraGetVector4Array(NiagaraSystem: NiagaraComponent, OverrideName: String): Array<Vector4>
+        fun NiagaraGetVector4ArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number): Vector4
+        fun NiagaraGetVectorArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number): Vector
         fun NiagaraSetBoolArray(NiagaraSystem: NiagaraComponent, OverrideName: String, ArrayData: Array<Boolean>)
+        fun NiagaraSetBoolArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number, Value: Boolean, bSizeToFit: Boolean)
         fun NiagaraSetColorArray(NiagaraSystem: NiagaraComponent, OverrideName: String, ArrayData: Array<LinearColor>)
+        fun NiagaraSetColorArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number, Value: LinearColor, bSizeToFit: Boolean)
         fun NiagaraSetFloatArray(NiagaraSystem: NiagaraComponent, OverrideName: String, ArrayData: Array<Number>)
+        fun NiagaraSetFloatArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number, Value: Number, bSizeToFit: Boolean)
         fun NiagaraSetInt32Array(NiagaraSystem: NiagaraComponent, OverrideName: String, ArrayData: Array<Number>)
+        fun NiagaraSetInt32ArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number, Value: Number, bSizeToFit: Boolean)
         fun NiagaraSetQuaternionArray(NiagaraSystem: NiagaraComponent, OverrideName: String, ArrayData: Array<Quat>)
+        fun NiagaraSetQuaternionArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number, Value: Quat, bSizeToFit: Boolean)
         fun NiagaraSetVectorArray(NiagaraSystem: NiagaraComponent, OverrideName: String, ArrayData: Array<Vector>)
         fun NiagaraSetVector2DArray(NiagaraSystem: NiagaraComponent, OverrideName: String, ArrayData: Array<Vector2D>)
+        fun NiagaraSetVector2DArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number, Value: Vector2D, bSizeToFit: Boolean)
         fun NiagaraSetVector4Array(NiagaraSystem: NiagaraComponent, OverrideName: String, ArrayData: Array<Vector4>)
+        fun NiagaraSetVector4ArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number, Value: Vector4, bSizeToFit: Boolean)
+        fun NiagaraSetVectorArrayValue(NiagaraSystem: NiagaraComponent, OverrideName: String, index: Number, Value: Vector, bSizeToFit: Boolean)
     }
 }
 
@@ -24317,10 +24990,12 @@ external open class NiagaraSystemScalabilitySettings {
     open var bCullMaxInstanceCount: Boolean
     open var bCullPerSystemMaxInstanceCount: Boolean
     open var bCullByMaxTimeWithoutRender: Boolean
+    open var bCullByGlobalBudget: Boolean
     open var MaxDistance: Number
     open var MaxInstances: Number
     open var MaxSystemInstances: Number
     open var MaxTimeWithoutRender: Number
+    open var MaxGlobalBudgetUsage: Number
     open fun clone(): NiagaraSystemScalabilitySettings
 
     companion object {
@@ -24361,6 +25036,109 @@ external open class NiagaraEmitterScalabilitySettingsArray {
     }
 }
 
+external object EHorizTextAligment {
+    var EHTA_Left: String /* "EHTA_Left" */
+    var EHTA_Center: String /* "EHTA_Center" */
+    var EHTA_Right: String /* "EHTA_Right" */
+    var EHTA_MAX: String /* "EHTA_MAX" */
+}
+
+external object EVerticalTextAligment {
+    var EVRTA_TextTop: String /* "EVRTA_TextTop" */
+    var EVRTA_TextCenter: String /* "EVRTA_TextCenter" */
+    var EVRTA_TextBottom: String /* "EVRTA_TextBottom" */
+    var EVRTA_QuadTop: String /* "EVRTA_QuadTop" */
+    var EVRTA_MAX: String /* "EVRTA_MAX" */
+}
+
+external open class TextRenderComponent : PrimitiveComponent {
+    constructor()
+    constructor(Outer: UObject)
+    open var text: String
+    open var TextMaterial: MaterialInterface
+    open var Font: Font
+    open var HorizontalAlignment: String /* "EHTA_Left" | "EHTA_Center" | "EHTA_Right" | "EHTA_MAX" */
+    open var VerticalAlignment: String /* "EVRTA_TextTop" | "EVRTA_TextCenter" | "EVRTA_TextBottom" | "EVRTA_QuadTop" | "EVRTA_MAX" */
+    open var TextRenderColor: Color
+    open var XScale: Number
+    open var YScale: Number
+    open var WorldSize: Number
+    open var InvDefaultSize: Number
+    open var HorizSpacingAdjust: Number
+    open var VertSpacingAdjust: Number
+    open var bAlwaysRenderAsText: Boolean
+    open fun SetYScale(Value: Number)
+    open fun SetXScale(Value: Number)
+    open fun SetWorldSize(Value: Number)
+    open fun SetVertSpacingAdjust(Value: Number)
+    open fun SetVerticalAlignment(Value: String /* "EVRTA_TextTop" | "EVRTA_TextCenter" | "EVRTA_TextBottom" | "EVRTA_QuadTop" | "EVRTA_MAX" */)
+    open fun SetTextRenderColor(Value: Color)
+    open fun SetTextMaterial(Material: MaterialInterface)
+    open fun SetText(Value: String)
+    open fun SetHorizSpacingAdjust(Value: Number)
+    open fun SetHorizontalAlignment(Value: String /* "EHTA_Left" | "EHTA_Center" | "EHTA_Right" | "EHTA_MAX" */)
+    open fun SetFont(Value: Font)
+    open fun GetTextWorldSize(): Vector
+    open fun GetTextLocalSize(): Vector
+
+    companion object {
+        fun Load(ResourceName: String): TextRenderComponent
+        fun Find(Outer: UObject, ResourceName: String): TextRenderComponent
+        fun GetDefaultObject(): TextRenderComponent
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): TextRenderComponent
+        fun C(Other: UObject): TextRenderComponent
+        fun C(Other: Any): TextRenderComponent
+    }
+}
+
+external open class NiagaraPerfBaselineActor(InWorld: World, Location: Vector = definedExternally, Rotation: Rotator = definedExternally) : Actor {
+    open var Controller: NiagaraBaselineController
+    open var Label: TextRenderComponent
+
+    companion object {
+        fun GetDefaultObject(): NiagaraPerfBaselineActor
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): NiagaraPerfBaselineActor
+        fun C(Other: UObject): NiagaraPerfBaselineActor
+        fun C(Other: Any): NiagaraPerfBaselineActor
+    }
+}
+
+external open class NiagaraPerfBaselineStats {
+    open var PerInstanceAvg_GT: Number
+    open var PerInstanceAvg_RT: Number
+    open var PerInstanceMax_GT: Number
+    open var PerInstanceMax_RT: Number
+    open fun clone(): NiagaraPerfBaselineStats
+
+    companion object {
+        fun C(Other: UObject): NiagaraPerfBaselineStats
+        fun C(Other: Any): NiagaraPerfBaselineStats
+    }
+}
+
+external open class NiagaraBaselineController : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var TestDuration: Number
+    open var EffectType: NiagaraEffectType
+    open var Owner: NiagaraPerfBaselineActor
+    open var System: NiagaraSystem
+    open fun OnTickTest(): Boolean
+    open fun OnOwnerTick(DeltaTime: Number)
+    open fun OnEndTest(Stats: NiagaraPerfBaselineStats)
+    open fun OnBeginTest()
+    open fun GetSystem(): NiagaraSystem
+
+    companion object {
+        fun Load(ResourceName: String): NiagaraBaselineController
+        fun Find(Outer: UObject, ResourceName: String): NiagaraBaselineController
+        fun GetDefaultObject(): NiagaraBaselineController
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): NiagaraBaselineController
+        fun C(Other: UObject): NiagaraBaselineController
+        fun C(Other: Any): NiagaraBaselineController
+    }
+}
+
 external open class NiagaraEffectType : UObject {
     constructor()
     constructor(Outer: UObject)
@@ -24370,6 +25148,9 @@ external open class NiagaraEffectType : UObject {
     open var DetailLevelScalabilitySettings: Array<NiagaraSystemScalabilitySettings>
     open var SystemScalabilitySettings: NiagaraSystemScalabilitySettingsArray
     open var EmitterScalabilitySettings: NiagaraEmitterScalabilitySettingsArray
+    open var PerformanceBaselineController: NiagaraBaselineController
+    open var PerfBaselineStats: NiagaraPerfBaselineStats
+    open var PerfBaselineVersion: Guid
 
     companion object {
         fun Load(ResourceName: String): NiagaraEffectType
@@ -24386,6 +25167,7 @@ external open class NiagaraSystemScalabilityOverride : NiagaraSystemScalabilityS
     open var bOverrideInstanceCountSettings: Boolean
     open var bOverridePerSystemInstanceCountSettings: Boolean
     open var bOverrideTimeSinceRendererSettings: Boolean
+    open var bOverrideGlobalBudgetCullingSettings: Boolean
     override fun clone(): NiagaraSystemScalabilityOverride
 
     companion object {
@@ -24545,6 +25327,20 @@ external open class NiagaraEditorDataBase : UObject {
     }
 }
 
+external open class NiagaraEditorParametersAdapterBase : UObject {
+    constructor()
+    constructor(Outer: UObject)
+
+    companion object {
+        fun Load(ResourceName: String): NiagaraEditorParametersAdapterBase
+        fun Find(Outer: UObject, ResourceName: String): NiagaraEditorParametersAdapterBase
+        fun GetDefaultObject(): NiagaraEditorParametersAdapterBase
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): NiagaraEditorParametersAdapterBase
+        fun C(Other: UObject): NiagaraEditorParametersAdapterBase
+        fun C(Other: Any): NiagaraEditorParametersAdapterBase
+    }
+}
+
 external object EScriptExecutionMode {
     var EveryParticle: String /* "EveryParticle" */
     var SpawnedParticles: String /* "SpawnedParticles" */
@@ -24625,11 +25421,14 @@ external open class NiagaraEmitter : UObject {
     open var ThumbnailImageOutOfDate: Boolean
     open var bExposeToLibrary: Boolean
     open var bIsTemplateAsset: Boolean
+    open var TemplateSpecification: String /* "None" | "Template" | "Behavior" | "ENiagaraScriptTemplateSpecification_MAX" */
     open var TemplateAssetDescription: String
+    open var Category: String
     open var ScratchPadScripts: Array<NiagaraScript>
     open var ParentScratchPadScripts: Array<NiagaraScript>
     open var ChangeId: Guid
     open var EditorData: NiagaraEditorDataBase
+    open var EditorParameters: NiagaraEditorParametersAdapterBase
     open var UniqueEmitterName: String
     open var RendererProperties: Array<NiagaraRendererProperties>
     open var EventHandlerScriptProps: Array<NiagaraEventScriptProperties>
@@ -24638,6 +25437,7 @@ external open class NiagaraEmitter : UObject {
     open var SharedEventGeneratorIds: Array<String>
     open var Parent: NiagaraEmitter
     open var ParentAtLastMerge: NiagaraEmitter
+    open var ParameterDefinitionsSubscriptions: Array<ParameterDefinitionsSubscription>
     open var MessageKeyToMessageMap: Any
 
     companion object {
@@ -24657,6 +25457,7 @@ external open class NiagaraEmitterHandle {
     open var Name: String
     open var Source: NiagaraEmitter
     open var LastMergedSource: NiagaraEmitter
+    open var bIsolated: Boolean
     open var Instance: NiagaraEmitter
     open fun clone(): NiagaraEmitterHandle
 
@@ -24719,6 +25520,72 @@ external open class NiagaraSystemCompiledData {
     }
 }
 
+external open class NiagaraBakerTextureSource {
+    open var SourceName: String
+    open fun clone(): NiagaraBakerTextureSource
+
+    companion object {
+        fun C(Other: UObject): NiagaraBakerTextureSource
+        fun C(Other: Any): NiagaraBakerTextureSource
+    }
+}
+
+external open class NiagaraBakerTextureSettings {
+    open var OutputName: String
+    open var SourceBinding: NiagaraBakerTextureSource
+    open var bUseFrameSize: Boolean
+    open var FrameSize: IntPoint
+    open var TextureSize: IntPoint
+    open var GeneratedTexture: Texture2D
+    open fun clone(): NiagaraBakerTextureSettings
+
+    companion object {
+        fun C(Other: UObject): NiagaraBakerTextureSettings
+        fun C(Other: Any): NiagaraBakerTextureSettings
+    }
+}
+
+external object ENiagaraBakerViewMode {
+    var Perspective: String /* "Perspective" */
+    var OrthoFront: String /* "OrthoFront" */
+    var OrthoBack: String /* "OrthoBack" */
+    var OrthoLeft: String /* "OrthoLeft" */
+    var OrthoRight: String /* "OrthoRight" */
+    var OrthoTop: String /* "OrthoTop" */
+    var OrthoBottom: String /* "OrthoBottom" */
+    var Num: String /* "Num" */
+    var ENiagaraBakerViewMode_MAX: String /* "ENiagaraBakerViewMode_MAX" */
+}
+
+external open class NiagaraBakerSettings : UObject {
+    constructor()
+    constructor(Outer: UObject)
+    open var StartSeconds: Number
+    open var DurationSeconds: Number
+    open var FramesPerSecond: Number
+    open var bPreviewLooping: Boolean
+    open var FramesPerDimension: IntPoint
+    open var OutputTextures: Array<NiagaraBakerTextureSettings>
+    open var CameraViewportMode: String /* "Perspective" | "OrthoFront" | "OrthoBack" | "OrthoLeft" | "OrthoRight" | "OrthoTop" | "OrthoBottom" | "Num" | "ENiagaraBakerViewMode_MAX" */
+    open var CameraViewportLocation: Vector
+    open var CameraViewportRotation: Rotator
+    open var CameraOrbitDistance: Number
+    open var CameraFOV: Number
+    open var CameraOrthoWidth: Number
+    open var bUseCameraAspectRatio: Boolean
+    open var CameraAspectRatio: Number
+    open var bRenderComponentOnly: Boolean
+
+    companion object {
+        fun Load(ResourceName: String): NiagaraBakerSettings
+        fun Find(Outer: UObject, ResourceName: String): NiagaraBakerSettings
+        fun GetDefaultObject(): NiagaraBakerSettings
+        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): NiagaraBakerSettings
+        fun C(Other: UObject): NiagaraBakerSettings
+        fun C(Other: Any): NiagaraBakerSettings
+    }
+}
+
 external object ENCPoolMethod {
     var None: String /* "None" */
     var AutoRelease: String /* "AutoRelease" */
@@ -24735,6 +25602,7 @@ external open class NiagaraSystem : FXSystemAsset {
     open var ThumbnailImageOutOfDate: Boolean
     open var bExposeToLibrary: Boolean
     open var bIsTemplateAsset: Boolean
+    open var TemplateSpecification: String /* "None" | "Template" | "Behavior" | "ENiagaraScriptTemplateSpecification_MAX" */
     open var TemplateAssetDescription: String
     open var ScratchPadScripts: Array<NiagaraScript>
     open var EditorOnlyAddedParameters: NiagaraParameterStore
@@ -24744,6 +25612,8 @@ external open class NiagaraSystem : FXSystemAsset {
     open var bCompressAttributes: Boolean
     open var bTrimAttributes: Boolean
     open var bTrimAttributesOnCook: Boolean
+    open var bDisableAllDebugSwitches: Boolean
+    open var ParameterDefinitionsSubscriptions: Array<ParameterDefinitionsSubscription>
     open var bDumpDebugSystemInfo: Boolean
     open var bDumpDebugEmitterInfo: Boolean
     open var bRequireCurrentFrameData: Boolean
@@ -24760,12 +25630,16 @@ external open class NiagaraSystem : FXSystemAsset {
     open var SystemCompiledData: NiagaraSystemCompiledData
     open var ExposedParameters: NiagaraUserRedirectionParameterStore
     open var EditorData: NiagaraEditorDataBase
+    open var EditorParameters: NiagaraEditorParametersAdapterBase
     open var FixedBounds: Box
     open var bAutoDeactivate: Boolean
     open var WarmupTime: Number
     open var WarmupTickCount: Number
     open var WarmupTickDelta: Number
+    open var BakerSettings: NiagaraBakerSettings
+    open var BakerGeneratedSettings: NiagaraBakerSettings
     open var bHasSystemScriptDIsWithPerInstanceData: Boolean
+    open var bNeedsGPUContextInitForDataInterfaces: Boolean
     open var UserDINamesReadInSystemScripts: Array<String>
     open var MessageKeyToMessageMap: Any
     open fun SpawnSystemAttached(AttachToComponent: SceneComponent, AttachPointName: String, Location: Vector, Rotation: Rotator, LocationType: String /* "KeepRelativeOffset" | "KeepWorldPosition" | "SnapToTarget" | "SnapToTargetIncludingScale" | "EAttachLocation_MAX" */, bAutoDestroy: Boolean, bAutoActivate: Boolean, PoolingMethod: String /* "None" | "AutoRelease" | "ManualRelease" | "ManualRelease_OnComplete" | "FreeInPool" | "ENCPoolMethod_MAX" */, bPreCullCheck: Boolean): NiagaraComponent
@@ -24852,7 +25726,6 @@ external open class TraceQueryTestResults : UObject {
     open var ObjectResults: TraceQueryTestResultsInner
     open var ProfileResults: TraceQueryTestResultsInner
     open var BatchOptions: TraceChannelTestBatchOptions
-    override fun ToString(): String
 
     companion object {
         fun Load(ResourceName: String): TraceQueryTestResults
@@ -24961,7 +25834,7 @@ external open class DebugFloatHistory {
     }
 }
 
-external interface `T$444` {
+external interface `T$279` {
     var Handle: TimerHandle
     var `$`: TimerHandle
 }
@@ -24969,13 +25842,13 @@ external interface `T$444` {
 external open class TimerHandle {
     open var Handle: Any
     open fun clone(): TimerHandle
-    open fun Invalidate(): `T$444`
+    open fun Invalidate(): `T$279`
     open fun IsValid(): Boolean
 
     companion object {
         fun C(Other: UObject): TimerHandle
         fun C(Other: Any): TimerHandle
-        fun Invalidate(Handle: TimerHandle = definedExternally): `T$444`
+        fun Invalidate(Handle: TimerHandle = definedExternally): `T$279`
         fun IsValid(Handle: TimerHandle): Boolean
         fun K2_SetTimerDelegate(delegate: UnrealEngineDelegate<() -> Unit>, Time: Number, bLooping: Boolean, InitialStartDelay: Number, InitialStartDelayVariance: Number): TimerHandle
     }
@@ -25095,7 +25968,7 @@ external open class TextureRenderTarget2D : TextureRenderTarget {
     open var MipsAddressV: String /* "TA_Wrap" | "TA_Clamp" | "TA_Mirror" | "TA_MAX" */
     open var OverrideFormat: String /* "PF_Unknown" | "PF_A32B32G32R32F" | "PF_B8G8R8A8" | "PF_G8" | "PF_G16" | "PF_DXT1" | "PF_DXT3" | "PF_DXT5" | "PF_UYVY" | "PF_FloatRGB" | "PF_FloatRGBA" | "PF_DepthStencil" | "PF_ShadowDepth" | "PF_R32_FLOAT" | "PF_G16R16" | "PF_G16R16F" | "PF_G16R16F_FILTER" | "PF_G32R32F" | "PF_A2B10G10R10" | "PF_A16B16G16R16" | "PF_D24" | "PF_R16F" | "PF_R16F_FILTER" | "PF_BC5" | "PF_V8U8" | "PF_A1" | "PF_FloatR11G11B10" | "PF_A8" | "PF_R32_UINT" | "PF_R32_SINT" | "PF_PVRTC2" | "PF_PVRTC4" | "PF_R16_UINT" | "PF_R16_SINT" | "PF_R16G16B16A16_UINT" | "PF_R16G16B16A16_SINT" | "PF_R5G6B5_UNORM" | "PF_R8G8B8A8" | "PF_A8R8G8B8" | "PF_BC4" | "PF_R8G8" | "PF_ATC_RGB" | "PF_ATC_RGBA_E" | "PF_ATC_RGBA_I" | "PF_X24_G8" | "PF_ETC1" | "PF_ETC2_RGB" | "PF_ETC2_RGBA" | "PF_R32G32B32A32_UINT" | "PF_R16G16_UINT" | "PF_ASTC_4x4" | "PF_ASTC_6x6" | "PF_ASTC_8x8" | "PF_ASTC_10x10" | "PF_ASTC_12x12" | "PF_BC6H" | "PF_BC7" | "PF_R8_UINT" | "PF_L8" | "PF_XGXR8" | "PF_R8G8B8A8_UINT" | "PF_R8G8B8A8_SNORM" | "PF_R16G16B16A16_UNORM" | "PF_R16G16B16A16_SNORM" | "PF_PLATFORM_HDR_0" | "PF_PLATFORM_HDR_1" | "PF_PLATFORM_HDR_2" | "PF_NV12" | "PF_R32G32_UINT" | "PF_ETC2_R11_EAC" | "PF_ETC2_RG11_EAC" | "PF_MAX" */
     open fun ReleaseRenderTarget2D()
-    open fun RenderTargetCreateStaticTextureEditorOnly(Name: String, CompressionSettings: String /* "TC_Default" | "TC_Normalmap" | "TC_Masks" | "TC_Grayscale" | "TC_Displacementmap" | "TC_VectorDisplacementmap" | "TC_HDR" | "TC_EditorIcon" | "TC_Alpha" | "TC_DistanceFieldFont" | "TC_HDR_Compressed" | "TC_BC7" | "TC_HalfFloat" | "TC_ReflectionCapture" | "TC_MAX" */, MipSettings: String /* "TMGS_FromTextureGroup" | "TMGS_SimpleAverage" | "TMGS_Sharpen0" | "TMGS_Sharpen1" | "TMGS_Sharpen2" | "TMGS_Sharpen3" | "TMGS_Sharpen4" | "TMGS_Sharpen5" | "TMGS_Sharpen6" | "TMGS_Sharpen7" | "TMGS_Sharpen8" | "TMGS_Sharpen9" | "TMGS_Sharpen10" | "TMGS_NoMipmaps" | "TMGS_LeaveExistingMips" | "TMGS_Blur1" | "TMGS_Blur2" | "TMGS_Blur3" | "TMGS_Blur4" | "TMGS_Blur5" | "TMGS_Unfiltered" | "TMGS_MAX" */): Texture2D
+    open fun RenderTargetCreateStaticTextureEditorOnly(Name: String, CompressionSettings: String /* "TC_Default" | "TC_Normalmap" | "TC_Masks" | "TC_Grayscale" | "TC_Displacementmap" | "TC_VectorDisplacementmap" | "TC_HDR" | "TC_EditorIcon" | "TC_Alpha" | "TC_DistanceFieldFont" | "TC_HDR_Compressed" | "TC_BC7" | "TC_HalfFloat" | "TC_EncodedReflectionCapture" | "TC_MAX" */, MipSettings: String /* "TMGS_FromTextureGroup" | "TMGS_SimpleAverage" | "TMGS_Sharpen0" | "TMGS_Sharpen1" | "TMGS_Sharpen2" | "TMGS_Sharpen3" | "TMGS_Sharpen4" | "TMGS_Sharpen5" | "TMGS_Sharpen6" | "TMGS_Sharpen7" | "TMGS_Sharpen8" | "TMGS_Sharpen9" | "TMGS_Sharpen10" | "TMGS_NoMipmaps" | "TMGS_LeaveExistingMips" | "TMGS_Blur1" | "TMGS_Blur2" | "TMGS_Blur3" | "TMGS_Blur4" | "TMGS_Blur5" | "TMGS_Unfiltered" | "TMGS_MAX" */): Texture2D
 
     companion object {
         fun Load(ResourceName: String): TextureRenderTarget2D
@@ -25105,7 +25978,7 @@ external open class TextureRenderTarget2D : TextureRenderTarget {
         fun C(Other: UObject): TextureRenderTarget2D
         fun C(Other: Any): TextureRenderTarget2D
         fun ReleaseRenderTarget2D(TextureRenderTarget: TextureRenderTarget2D)
-        fun RenderTargetCreateStaticTextureEditorOnly(RenderTarget: TextureRenderTarget2D, Name: String, CompressionSettings: String /* "TC_Default" | "TC_Normalmap" | "TC_Masks" | "TC_Grayscale" | "TC_Displacementmap" | "TC_VectorDisplacementmap" | "TC_HDR" | "TC_EditorIcon" | "TC_Alpha" | "TC_DistanceFieldFont" | "TC_HDR_Compressed" | "TC_BC7" | "TC_HalfFloat" | "TC_ReflectionCapture" | "TC_MAX" */, MipSettings: String /* "TMGS_FromTextureGroup" | "TMGS_SimpleAverage" | "TMGS_Sharpen0" | "TMGS_Sharpen1" | "TMGS_Sharpen2" | "TMGS_Sharpen3" | "TMGS_Sharpen4" | "TMGS_Sharpen5" | "TMGS_Sharpen6" | "TMGS_Sharpen7" | "TMGS_Sharpen8" | "TMGS_Sharpen9" | "TMGS_Sharpen10" | "TMGS_NoMipmaps" | "TMGS_LeaveExistingMips" | "TMGS_Blur1" | "TMGS_Blur2" | "TMGS_Blur3" | "TMGS_Blur4" | "TMGS_Blur5" | "TMGS_Unfiltered" | "TMGS_MAX" */): Texture2D
+        fun RenderTargetCreateStaticTextureEditorOnly(RenderTarget: TextureRenderTarget2D, Name: String, CompressionSettings: String /* "TC_Default" | "TC_Normalmap" | "TC_Masks" | "TC_Grayscale" | "TC_Displacementmap" | "TC_VectorDisplacementmap" | "TC_HDR" | "TC_EditorIcon" | "TC_Alpha" | "TC_DistanceFieldFont" | "TC_HDR_Compressed" | "TC_BC7" | "TC_HalfFloat" | "TC_EncodedReflectionCapture" | "TC_MAX" */, MipSettings: String /* "TMGS_FromTextureGroup" | "TMGS_SimpleAverage" | "TMGS_Sharpen0" | "TMGS_Sharpen1" | "TMGS_Sharpen2" | "TMGS_Sharpen3" | "TMGS_Sharpen4" | "TMGS_Sharpen5" | "TMGS_Sharpen6" | "TMGS_Sharpen7" | "TMGS_Sharpen8" | "TMGS_Sharpen9" | "TMGS_Sharpen10" | "TMGS_NoMipmaps" | "TMGS_LeaveExistingMips" | "TMGS_Blur1" | "TMGS_Blur2" | "TMGS_Blur3" | "TMGS_Blur4" | "TMGS_Blur5" | "TMGS_Unfiltered" | "TMGS_MAX" */): Texture2D
     }
 }
 
@@ -25322,7 +26195,7 @@ external open class DialogueWave : UObject {
     }
 }
 
-external interface `T$445` {
+external interface `T$280` {
     var Days: Number
     var Hours: Number
     var Minutes: Number
@@ -25330,7 +26203,7 @@ external interface `T$445` {
     var Milliseconds: Number
 }
 
-external interface `T$446` {
+external interface `T$281` {
     var Days: Number
     var Hours: Number
     var Minutes: Number
@@ -25342,8 +26215,8 @@ external open class Timespan {
     open fun clone(): Timespan
     open fun AsTimespan(): String
     open fun Add_TimespanTimespan(B: Timespan): Timespan
-    open fun BreakTimespan(Days: Number = definedExternally, Hours: Number = definedExternally, Minutes: Number = definedExternally, Seconds: Number = definedExternally, Milliseconds: Number = definedExternally): `T$445`
-    open fun BreakTimespan2(Days: Number = definedExternally, Hours: Number = definedExternally, Minutes: Number = definedExternally, Seconds: Number = definedExternally, FractionNano: Number = definedExternally): `T$446`
+    open fun BreakTimespan(Days: Number = definedExternally, Hours: Number = definedExternally, Minutes: Number = definedExternally, Seconds: Number = definedExternally, Milliseconds: Number = definedExternally): `T$280`
+    open fun BreakTimespan2(Days: Number = definedExternally, Hours: Number = definedExternally, Minutes: Number = definedExternally, Seconds: Number = definedExternally, FractionNano: Number = definedExternally): `T$281`
     open fun Divide_TimespanFloat(Scalar: Number): Timespan
     open fun Equal(B: Timespan): Boolean
     open fun GetDays(): Number
@@ -25371,8 +26244,8 @@ external open class Timespan {
         fun C(Other: Any): Timespan
         fun AsTimespan(InTimespan: Timespan): String
         fun Add_TimespanTimespan(A: Timespan, B: Timespan): Timespan
-        fun BreakTimespan(InTimespan: Timespan, Days: Number = definedExternally, Hours: Number = definedExternally, Minutes: Number = definedExternally, Seconds: Number = definedExternally, Milliseconds: Number = definedExternally): `T$445`
-        fun BreakTimespan2(InTimespan: Timespan, Days: Number = definedExternally, Hours: Number = definedExternally, Minutes: Number = definedExternally, Seconds: Number = definedExternally, FractionNano: Number = definedExternally): `T$446`
+        fun BreakTimespan(InTimespan: Timespan, Days: Number = definedExternally, Hours: Number = definedExternally, Minutes: Number = definedExternally, Seconds: Number = definedExternally, Milliseconds: Number = definedExternally): `T$280`
+        fun BreakTimespan2(InTimespan: Timespan, Days: Number = definedExternally, Hours: Number = definedExternally, Minutes: Number = definedExternally, Seconds: Number = definedExternally, FractionNano: Number = definedExternally): `T$281`
         fun Divide_TimespanFloat(A: Timespan, Scalar: Number): Timespan
         fun Equal(A: Timespan, B: Timespan): Boolean
         fun GetDays(A: Timespan): Number
@@ -25458,32 +26331,32 @@ external open class XRMotionControllerData {
     }
 }
 
-external interface `T$447` {
+external interface `T$282` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$448` {
+external interface `T$283` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$449` {
+external interface `T$284` {
     var OutHitResults: Array<ARTraceResult>
     var `$`: Boolean
 }
 
-external interface `T$450` {
+external interface `T$285` {
     var bIsMyTurn: Boolean
 }
 
-external interface `T$451` {
+external interface `T$286` {
     var PlayerIndex: Number
 }
 
-external interface `T$452` {
+external interface `T$287` {
     var PlayerDisplayName: String
 }
 
-external interface `T$453` {
+external interface `T$288` {
     var bFoundID: Boolean
     var Title: String
     var LockedDescription: String
@@ -25491,213 +26364,208 @@ external interface `T$453` {
     var bHidden: Boolean
 }
 
-external interface `T$454` {
+external interface `T$289` {
     var bFoundID: Boolean
     var Progress: Number
 }
 
-external interface `T$455` {
+external interface `T$290` {
     var OutActors: Array<Actor>
     var `$`: Boolean
 }
 
-external interface `T$456` {
+external interface `T$291` {
     var OutComponents: Array<PrimitiveComponent>
     var `$`: Boolean
 }
 
-external interface `T$457` {
+external interface `T$292` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$458` {
+external interface `T$293` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$459` {
+external interface `T$294` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$460` {
+external interface `T$295` {
     var OutActors: Array<Actor>
     var `$`: Boolean
 }
 
-external interface `T$461` {
+external interface `T$296` {
     var OutComponents: Array<PrimitiveComponent>
     var `$`: Boolean
 }
 
-external interface `T$462` {
+external interface `T$297` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$463` {
+external interface `T$298` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$464` {
+external interface `T$299` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$465` {
+external interface `T$300` {
     var Handle: TimerHandle
 }
 
-external interface `T$466` {
+external interface `T$301` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$467` {
+external interface `T$302` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$468` {
+external interface `T$303` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$469` {
+external interface `T$304` {
     var OutActors: Array<Actor>
     var `$`: Boolean
 }
 
-external interface `T$470` {
+external interface `T$305` {
     var OutComponents: Array<PrimitiveComponent>
     var `$`: Boolean
 }
 
-external interface `T$471` {
+external interface `T$306` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$472` {
+external interface `T$307` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$473` {
+external interface `T$308` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$474` {
+external interface `T$309` {
     var Canvas: Canvas
     var Size: Vector2D
     var Context: DrawToRenderTargetContext
 }
 
-external interface `T$475` {
+external interface `T$310` {
     var OutRectCenter: Vector
     var OutRectRotation: Rotator
     var OutSideLengthX: Number
     var OutSideLengthY: Number
 }
 
-external interface `T$476` {
+external interface `T$311` {
     var PredictResult: PredictProjectilePathResult
     var `$`: Boolean
 }
 
-external interface `T$477` {
+external interface `T$312` {
     var OutHit: HitResult
     var OutPathPositions: Array<Vector>
     var OutLastTraceDestination: Vector
     var `$`: Boolean
 }
 
-external interface `T$478` {
+external interface `T$313` {
     var OutHit: HitResult
     var OutPathPositions: Array<Vector>
     var OutLastTraceDestination: Vector
     var `$`: Boolean
 }
 
-external interface `T$479` {
+external interface `T$314` {
     var TossVelocity: Vector
     var `$`: Boolean
 }
 
-external interface `T$480` {
-    var Seconds: Number
-    var PartialSeconds: Number
-}
-
-external interface `T$481` {
+external interface `T$315` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$482` {
+external interface `T$316` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$483` {
+external interface `T$317` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$484` {
+external interface `T$318` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$485` {
+external interface `T$319` {
     var ListenerPosition: Vector
     var `$`: Boolean
 }
 
-external interface `T$486` {
+external interface `T$320` {
     var OutLaunchVelocity: Vector
     var `$`: Boolean
 }
 
-external interface `T$487` {
+external interface `T$321` {
     var Magnitudes: Array<Number>
 }
 
-external interface `T$488` {
+external interface `T$322` {
     var Phases: Array<Number>
 }
 
-external interface `T$489` {
+external interface `T$323` {
     var FoundWidgets: Array<UserWidget>
 }
 
-external interface `T$490` {
+external interface `T$324` {
     var FoundWidgets: Array<UserWidget>
 }
 
-external interface `T$491` {
+external interface `T$325` {
     var SafePadding: Vector4
     var SafePaddingScale: Vector2D
     var SpillOverPadding: Vector4
 }
 
-external interface `T$492` {
+external interface `T$326` {
     var PixelPosition: Vector2D
     var ViewportPosition: Vector2D
 }
 
-external interface `T$493` {
+external interface `T$327` {
     var ViewportPosition: Vector2D
 }
 
-external interface `T$494` {
+external interface `T$328` {
     var AbsoluteCoordinate: Vector2D
 }
 
-external interface `T$495` {
+external interface `T$329` {
     var LocalCoordinate: Vector2D
 }
 
-external interface `T$496` {
+external interface `T$330` {
     var bTimeWasUsed: Boolean
     var Orientation: Rotator
     var Position: Vector
@@ -25708,168 +26576,168 @@ external interface `T$496` {
     var `$`: Boolean
 }
 
-external interface `T$497` {
+external interface `T$331` {
     var HMDData: XRHMDData
 }
 
-external interface `T$498` {
+external interface `T$332` {
     var MotionControllerData: XRMotionControllerData
 }
 
-external interface `T$499` {
+external interface `T$333` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$500` {
+external interface `T$334` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$501` {
+external interface `T$335` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$502` {
+external interface `T$336` {
     var OutHitResults: Array<ARTraceResult>
     var `$`: Boolean
 }
 
-external interface `T$503` {
+external interface `T$337` {
     var OutActors: Array<Actor>
     var `$`: Boolean
 }
 
-external interface `T$504` {
+external interface `T$338` {
     var OutComponents: Array<PrimitiveComponent>
     var `$`: Boolean
 }
 
-external interface `T$505` {
+external interface `T$339` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$506` {
+external interface `T$340` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$507` {
+external interface `T$341` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$508` {
+external interface `T$342` {
     var OutActors: Array<Actor>
     var `$`: Boolean
 }
 
-external interface `T$509` {
+external interface `T$343` {
     var OutComponents: Array<PrimitiveComponent>
     var `$`: Boolean
 }
 
-external interface `T$510` {
+external interface `T$344` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$511` {
+external interface `T$345` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$512` {
+external interface `T$346` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$513` {
+external interface `T$347` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$514` {
+external interface `T$348` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$515` {
+external interface `T$349` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$516` {
+external interface `T$350` {
     var OutActors: Array<Actor>
     var `$`: Boolean
 }
 
-external interface `T$517` {
+external interface `T$351` {
     var OutComponents: Array<PrimitiveComponent>
     var `$`: Boolean
 }
 
-external interface `T$518` {
+external interface `T$352` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$519` {
+external interface `T$353` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$520` {
+external interface `T$354` {
     var OutHits: Array<HitResult>
     var `$`: Boolean
 }
 
-external interface `T$521` {
+external interface `T$355` {
     var OutHit: HitResult
     var OutPathPositions: Array<Vector>
     var OutLastTraceDestination: Vector
     var `$`: Boolean
 }
 
-external interface `T$522` {
+external interface `T$356` {
     var OutHit: HitResult
     var OutPathPositions: Array<Vector>
     var OutLastTraceDestination: Vector
     var `$`: Boolean
 }
 
-external interface `T$523` {
+external interface `T$357` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$524` {
+external interface `T$358` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$525` {
+external interface `T$359` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$526` {
+external interface `T$360` {
     var OutActors: Array<Actor>
 }
 
-external interface `T$527` {
+external interface `T$361` {
     var Magnitudes: Array<Number>
 }
 
-external interface `T$528` {
+external interface `T$362` {
     var Phases: Array<Number>
 }
 
-external interface `T$529` {
+external interface `T$363` {
     var FoundWidgets: Array<UserWidget>
 }
 
-external interface `T$530` {
+external interface `T$364` {
     var FoundWidgets: Array<UserWidget>
 }
 
-external interface `T$531` {
+external interface `T$365` {
     var OutActors: Array<Actor>
 }
 
@@ -25910,6 +26778,7 @@ external open class World : UObject {
     open var CanvasForRenderingToTarget: Canvas
     open var CanvasForDrawMaterialToRenderTarget: Canvas
     open var EditorViews: Array<LevelViewportInfo>
+    open var PhysicsField: PhysicsFieldComponent
     open var ComponentsThatNeedPreEndOfFrameSync: Any
     open var ComponentsThatNeedEndOfFrameUpdate: Array<ActorComponent>
     open var ComponentsThatNeedEndOfFrameUpdate_OnGameThread: Array<ActorComponent>
@@ -25919,6 +26788,7 @@ external open class World : UObject {
     open fun GetWorldSettings(): WorldSettings
     open fun HandleTimelineScrubbed()
     open fun EditorDestroyActor(Actor: Actor, bShouldModifyLevel: Boolean): Boolean
+    open fun EditorExec(Cmd: String): Boolean
     open fun ExportNavigation(Path: String): String
     open fun GetDefaultBrush(): Brush
     open fun InvalidateModelGeometry(InLevel: Level)
@@ -25928,15 +26798,15 @@ external open class World : UObject {
     open fun DestroyWorld()
     open fun InitializeActorsForPlay(URL: URL)
     open fun GenerateNavigation(NavData: RecastNavMesh)
-    open fun GetAllActorsOfClassAndTags(ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$447`
-    open fun GetAllActorsOfClassAndTagsInCurrentLevel(ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$448`
+    open fun GetAllActorsOfClassAndTags(ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$282`
+    open fun GetAllActorsOfClassAndTagsInCurrentLevel(ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$283`
     open fun GetLevels(): Array<Level>
     open fun GetModel(): Model
     open fun GetWorldBounds(): Box
     open fun IsGameWorld(): Boolean
     open fun IsPlayInEditor(): Boolean
     open fun IsPlayInPreview(): Boolean
-    open fun LuminARLineTrace(ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$449`
+    open fun LuminARLineTrace(ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$284`
     open fun StartLuminARSession(LatentInfo: LatentActionInfo, Configuration: LuminARSessionConfig)
     open fun GetNiagaraParameterCollection(Collection: NiagaraParameterCollection): NiagaraParameterCollectionInstance
     open fun SpawnSystemAtLocation(SystemTemplate: NiagaraSystem, Location: Vector, Rotation: Rotator, Scale: Vector, bAutoDestroy: Boolean, bAutoActivate: Boolean, PoolingMethod: String /* "None" | "AutoRelease" | "ManualRelease" | "ManualRelease_OnComplete" | "FreeInPool" | "ENCPoolMethod_MAX" */, bPreCullCheck: Boolean): NiagaraComponent
@@ -25951,34 +26821,34 @@ external open class World : UObject {
     open fun TakeAutomationScreenshot(LatentInfo: LatentActionInfo, Name: String, Notes: String, Options: AutomationScreenshotOptions)
     open fun TakeAutomationScreenshotAtCamera(LatentInfo: LatentActionInfo, Camera: CameraActor, NameOverride: String, Notes: String, Options: AutomationScreenshotOptions)
     open fun TakeAutomationScreenshotOfUI(LatentInfo: LatentActionInfo, Name: String, Options: AutomationScreenshotOptions)
-    open fun GetIsMyTurn(PlayerController: PlayerController, MatchID: String, bIsMyTurn: Boolean = definedExternally): `T$450`
-    open fun GetMyPlayerIndex(PlayerController: PlayerController, MatchID: String, PlayerIndex: Number = definedExternally): `T$451`
-    open fun GetPlayerDisplayName(PlayerController: PlayerController, MatchID: String, PlayerIndex: Number, PlayerDisplayName: String = definedExternally): `T$452`
+    open fun GetIsMyTurn(PlayerController: PlayerController, MatchID: String, bIsMyTurn: Boolean = definedExternally): `T$285`
+    open fun GetMyPlayerIndex(PlayerController: PlayerController, MatchID: String, PlayerIndex: Number = definedExternally): `T$286`
+    open fun GetPlayerDisplayName(PlayerController: PlayerController, MatchID: String, PlayerIndex: Number, PlayerDisplayName: String = definedExternally): `T$287`
     open fun RegisterTurnBasedMatchInterfaceObject(PlayerController: PlayerController, UObject: UObject)
-    open fun GetCachedAchievementDescription(PlayerController: PlayerController, AchievementID: String, bFoundID: Boolean = definedExternally, Title: String = definedExternally, LockedDescription: String = definedExternally, UnlockedDescription: String = definedExternally, bHidden: Boolean = definedExternally): `T$453`
-    open fun GetCachedAchievementProgress(PlayerController: PlayerController, AchievementID: String, bFoundID: Boolean = definedExternally, Progress: Number = definedExternally): `T$454`
+    open fun GetCachedAchievementDescription(PlayerController: PlayerController, AchievementID: String, bFoundID: Boolean = definedExternally, Title: String = definedExternally, LockedDescription: String = definedExternally, UnlockedDescription: String = definedExternally, bHidden: Boolean = definedExternally): `T$288`
+    open fun GetCachedAchievementProgress(PlayerController: PlayerController, AchievementID: String, bFoundID: Boolean = definedExternally, Progress: Number = definedExternally): `T$289`
     open fun CreateMoveToProxyObject(Pawn: Pawn, Destination: Vector, TargetActor: Actor, AcceptanceRadius: Number, bStopOnOverlap: Boolean): AIAsyncTaskBlueprintProxy
     open fun SpawnAIFromClass(PawnClass: UnrealEngineClass, BehaviorTree: BehaviorTree, Location: Vector, Rotation: Rotator, bNoCollisionFail: Boolean, Owner: Actor): Pawn
     open fun VisLogBoxShape(BoxShape: Box, text: String, ObjectColor: LinearColor, LogCategory: String, bAddToMessageLog: Boolean)
     open fun VisLogLocation(Location: Vector, text: String, ObjectColor: LinearColor, Radius: Number, LogCategory: String, bAddToMessageLog: Boolean)
     open fun VisLogSegment(SegmentStart: Vector, SegmentEnd: Vector, text: String, ObjectColor: LinearColor, Thickness: Number, CategoryName: String, bAddToMessageLog: Boolean)
     open fun VisLogText(text: String, LogCategory: String, bAddToMessageLog: Boolean)
-    open fun BoxOverlapActors(BoxPos: Vector, BoxExtent: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$455`
-    open fun BoxOverlapComponents(BoxPos: Vector, Extent: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$456`
-    open fun MultiBoxTraceByChannel(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$457`
-    open fun MultiBoxTraceByProfile(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$458`
-    open fun MultiBoxTraceForObjects(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$459`
-    open fun BoxTraceByChannel(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun BoxTraceByProfile(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun BoxTraceForObjects(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun CapsuleOverlapActors(CapsulePos: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$460`
-    open fun CapsuleOverlapComponents(CapsulePos: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$461`
-    open fun MultiCapsuleTraceByChannel(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$462`
-    open fun MultiCapsuleTraceByProfile(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$463`
-    open fun MultiCapsuleTraceForObjects(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$464`
-    open fun CapsuleTraceByChannel(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun CapsuleTraceByProfile(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun CapsuleTraceForObjects(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
+    open fun BoxOverlapActors(BoxPos: Vector, BoxExtent: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$290`
+    open fun BoxOverlapComponents(BoxPos: Vector, Extent: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$291`
+    open fun MultiBoxTraceByChannel(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$292`
+    open fun MultiBoxTraceByProfile(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$293`
+    open fun MultiBoxTraceForObjects(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$294`
+    open fun BoxTraceByChannel(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun BoxTraceByProfile(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun BoxTraceForObjects(Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun CapsuleOverlapActors(CapsulePos: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$295`
+    open fun CapsuleOverlapComponents(CapsulePos: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$296`
+    open fun MultiCapsuleTraceByChannel(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$297`
+    open fun MultiCapsuleTraceByProfile(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$298`
+    open fun MultiCapsuleTraceForObjects(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$299`
+    open fun CapsuleTraceByChannel(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun CapsuleTraceByProfile(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun CapsuleTraceForObjects(Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
     open fun Delay(Duration: Number, LatentInfo: LatentActionInfo)
     open fun DrawDebugArrow(LineStart: Vector, LineEnd: Vector, ArrowSize: Number, LineColor: LinearColor, Duration: Number, Thickness: Number)
     open fun DrawDebugBox(Center: Vector, Extent: Vector, LineColor: LinearColor, Rotation: Rotator, Duration: Number, Thickness: Number)
@@ -26003,7 +26873,7 @@ external open class World : UObject {
     open fun IsServer(): Boolean
     open fun IsSplitScreen(): Boolean
     open fun IsStandalone(): Boolean
-    open fun ClearandInvalidateTimerbyHandle(Handle: TimerHandle = definedExternally): `T$465`
+    open fun ClearandInvalidateTimerbyHandle(Handle: TimerHandle = definedExternally): `T$300`
     open fun ClearTimerbyHandle(Handle: TimerHandle)
     open fun GetTimerElapsedTimebyHandle(Handle: TimerHandle): Number
     open fun GetTimerRemainingTimebyHandle(Handle: TimerHandle): Number
@@ -26012,12 +26882,12 @@ external open class World : UObject {
     open fun PauseTimerbyHandle(Handle: TimerHandle)
     open fun DoesTimerExistbyHandle(Handle: TimerHandle): Boolean
     open fun UnpauseTimerbyHandle(Handle: TimerHandle)
-    open fun MultiLineTraceByChannel(Start: Vector, End: Vector, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$466`
-    open fun MultiLineTraceByProfile(Start: Vector, End: Vector, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$467`
-    open fun MultiLineTraceForObjects(Start: Vector, End: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$468`
-    open fun LineTraceByChannel(Start: Vector, End: Vector, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun LineTraceByProfile(Start: Vector, End: Vector, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun LineTraceForObjects(Start: Vector, End: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
+    open fun MultiLineTraceByChannel(Start: Vector, End: Vector, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$301`
+    open fun MultiLineTraceByProfile(Start: Vector, End: Vector, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$302`
+    open fun MultiLineTraceForObjects(Start: Vector, End: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$303`
+    open fun LineTraceByChannel(Start: Vector, End: Vector, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun LineTraceByProfile(Start: Vector, End: Vector, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun LineTraceForObjects(Start: Vector, End: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
     open fun LoadAsset(Asset: UObject, OnLoaded: UnrealEngineDelegate<(Loaded: UObject) -> Unit>, LatentInfo: LatentActionInfo)
     open fun LoadAssetClass(AssetClass: Class, OnLoaded: UnrealEngineDelegate<(Loaded: UnrealEngineClass) -> Unit>, LatentInfo: LatentActionInfo)
     open fun PrintString(inString: String, bPrintToScreen: Boolean, bPrintToLog: Boolean, TextColor: LinearColor, Duration: Number)
@@ -26025,15 +26895,15 @@ external open class World : UObject {
     open fun QuitGame(SpecificPlayer: PlayerController, QuitPreference: String /* "Quit" | "Background" | "EQuitPreference_MAX" */, bIgnorePlatformRestrictions: Boolean)
     open fun RetriggerableDelay(Duration: Number, LatentInfo: LatentActionInfo)
     open fun SetSuppressViewportTransitionMessage(bState: Boolean)
-    open fun SphereOverlapActors(SpherePos: Vector, SphereRadius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$469`
-    open fun SphereOverlapComponents(SpherePos: Vector, SphereRadius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$470`
-    open fun MultiSphereTraceByChannel(Start: Vector, End: Vector, Radius: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$471`
-    open fun MultiSphereTraceByProfile(Start: Vector, End: Vector, Radius: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$472`
-    open fun MultiSphereTraceForObjects(Start: Vector, End: Vector, Radius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$473`
-    open fun SphereTraceByChannel(Start: Vector, End: Vector, Radius: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun SphereTraceByProfile(Start: Vector, End: Vector, Radius: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun SphereTraceForObjects(Start: Vector, End: Vector, Radius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-    open fun BeginDrawCanvasToRenderTarget(TextureRenderTarget: TextureRenderTarget2D, Canvas: Canvas = definedExternally, Size: Vector2D = definedExternally, Context: DrawToRenderTargetContext = definedExternally): `T$474`
+    open fun SphereOverlapActors(SpherePos: Vector, SphereRadius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$304`
+    open fun SphereOverlapComponents(SpherePos: Vector, SphereRadius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$305`
+    open fun MultiSphereTraceByChannel(Start: Vector, End: Vector, Radius: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$306`
+    open fun MultiSphereTraceByProfile(Start: Vector, End: Vector, Radius: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$307`
+    open fun MultiSphereTraceForObjects(Start: Vector, End: Vector, Radius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$308`
+    open fun SphereTraceByChannel(Start: Vector, End: Vector, Radius: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun SphereTraceByProfile(Start: Vector, End: Vector, Radius: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun SphereTraceForObjects(Start: Vector, End: Vector, Radius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+    open fun BeginDrawCanvasToRenderTarget(TextureRenderTarget: TextureRenderTarget2D, Canvas: Canvas = definedExternally, Size: Vector2D = definedExternally, Context: DrawToRenderTargetContext = definedExternally): `T$309`
     open fun ClearRenderTarget2D(TextureRenderTarget: TextureRenderTarget2D, ClearColor: LinearColor)
     open fun ConvertRenderTargetToTexture2DEditorOnly(RenderTarget: TextureRenderTarget2D, Texture: Texture2D)
     open fun CreateRenderTarget2D(Width: Number, Height: Number, Format: String /* "RTF_R8" | "RTF_RG8" | "RTF_RGBA8" | "RTF_RGBA8_SRGB" | "RTF_R16f" | "RTF_RG16f" | "RTF_RGBA16f" | "RTF_R32f" | "RTF_RG32f" | "RTF_RGBA32f" | "RTF_RGB10A2" | "RTF_MAX" */, ClearColor: LinearColor, bAutoGenerateMipMaps: Boolean): TextureRenderTarget2D
@@ -26049,7 +26919,7 @@ external open class World : UObject {
     open fun ReadRenderTargetRawPixel(TextureRenderTarget: TextureRenderTarget2D, X: Number, Y: Number): LinearColor
     open fun ReadRenderTargetRawUV(TextureRenderTarget: TextureRenderTarget2D, U: Number, V: Number): LinearColor
     open fun ReadRenderTargetUV(TextureRenderTarget: TextureRenderTarget2D, U: Number, V: Number): Color
-    open fun MinimumAreaRectangle(InVerts: Array<Vector>, SampleSurfaceNormal: Vector, OutRectCenter: Vector = definedExternally, OutRectRotation: Rotator = definedExternally, OutSideLengthX: Number = definedExternally, OutSideLengthY: Number = definedExternally, bDebugDraw: Boolean = definedExternally): `T$475`
+    open fun MinimumAreaRectangle(InVerts: Array<Vector>, SampleSurfaceNormal: Vector, OutRectCenter: Vector = definedExternally, OutRectRotation: Rotator = definedExternally, OutSideLengthX: Number = definedExternally, OutSideLengthY: Number = definedExternally, bDebugDraw: Boolean = definedExternally): `T$310`
     open fun CreateDynamicMaterialInstance(Parent: MaterialInterface, OptionalName: String, CreationFlags: String /* "None" | "Transient" | "EMIDCreationFlags_MAX" */): MaterialInstanceDynamic
     open fun GetScalarParameterValue(Collection: MaterialParameterCollection, ParameterName: String): Number
     open fun GetVectorParameterValue(Collection: MaterialParameterCollection, ParameterName: String): LinearColor
@@ -26062,24 +26932,23 @@ external open class World : UObject {
     open fun BeginDeferredActorSpawnFromClass(ActorClass: UnrealEngineClass, SpawnTransform: Transform, CollisionHandlingOverride: String /* "Undefined" | "AlwaysSpawn" | "AdjustIfPossibleButAlwaysSpawn" | "AdjustIfPossibleButDontSpawnIfColliding" | "DontSpawnIfColliding" | "ESpawnActorCollisionHandlingMethod_MAX" */, Owner: Actor): Actor
     open fun BeginSpawningActorFromBlueprint(Blueprint: Blueprint, SpawnTransform: Transform, bNoCollisionFail: Boolean): Actor
     open fun BeginSpawningActorFromClass(ActorClass: UnrealEngineClass, SpawnTransform: Transform, bNoCollisionFail: Boolean, Owner: Actor): Actor
-    open fun PredictProjectilePath(PredictParams: PredictProjectilePathParams, PredictResult: PredictProjectilePathResult = definedExternally): `T$476`
-    open fun PredictProjectilePathByObjectType(OutHit: HitResult = definedExternally, OutPathPositions: Array<Vector> = definedExternally, OutLastTraceDestination: Vector = definedExternally, StartPos: Vector = definedExternally, LaunchVelocity: Vector = definedExternally, bTracePath: Boolean = definedExternally, ProjectileRadius: Number = definedExternally, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */> = definedExternally, bTraceComplex: Boolean = definedExternally, ActorsToIgnore: Array<Actor> = definedExternally, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */ = definedExternally, DrawDebugTime: Number = definedExternally, SimFrequency: Number = definedExternally, MaxSimTime: Number = definedExternally, OverrideGravityZ: Number = definedExternally): `T$477`
-    open fun PredictProjectilePathByTraceChannel(OutHit: HitResult = definedExternally, OutPathPositions: Array<Vector> = definedExternally, OutLastTraceDestination: Vector = definedExternally, StartPos: Vector = definedExternally, LaunchVelocity: Vector = definedExternally, bTracePath: Boolean = definedExternally, ProjectileRadius: Number = definedExternally, TraceChannel: String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */ = definedExternally, bTraceComplex: Boolean = definedExternally, ActorsToIgnore: Array<Actor> = definedExternally, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */ = definedExternally, DrawDebugTime: Number = definedExternally, SimFrequency: Number = definedExternally, MaxSimTime: Number = definedExternally, OverrideGravityZ: Number = definedExternally): `T$478`
-    open fun SuggestProjectileVelocity(TossVelocity: Vector = definedExternally, StartLocation: Vector = definedExternally, EndLocation: Vector = definedExternally, LaunchSpeed: Number = definedExternally, OverrideGravityZ: Number = definedExternally, TraceOption: String /* "DoNotTrace" | "TraceFullPath" | "OnlyTraceWhileAscending" | "ESuggestProjVelocityTraceOption_MAX" */ = definedExternally, CollisionRadius: Number = definedExternally, bFavorHighArc: Boolean = definedExternally, bDrawDebug: Boolean = definedExternally): `T$479`
+    open fun PredictProjectilePath(PredictParams: PredictProjectilePathParams, PredictResult: PredictProjectilePathResult = definedExternally): `T$311`
+    open fun PredictProjectilePathByObjectType(OutHit: HitResult = definedExternally, OutPathPositions: Array<Vector> = definedExternally, OutLastTraceDestination: Vector = definedExternally, StartPos: Vector = definedExternally, LaunchVelocity: Vector = definedExternally, bTracePath: Boolean = definedExternally, ProjectileRadius: Number = definedExternally, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */> = definedExternally, bTraceComplex: Boolean = definedExternally, ActorsToIgnore: Array<Actor> = definedExternally, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */ = definedExternally, DrawDebugTime: Number = definedExternally, SimFrequency: Number = definedExternally, MaxSimTime: Number = definedExternally, OverrideGravityZ: Number = definedExternally): `T$312`
+    open fun PredictProjectilePathByTraceChannel(OutHit: HitResult = definedExternally, OutPathPositions: Array<Vector> = definedExternally, OutLastTraceDestination: Vector = definedExternally, StartPos: Vector = definedExternally, LaunchVelocity: Vector = definedExternally, bTracePath: Boolean = definedExternally, ProjectileRadius: Number = definedExternally, TraceChannel: String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */ = definedExternally, bTraceComplex: Boolean = definedExternally, ActorsToIgnore: Array<Actor> = definedExternally, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */ = definedExternally, DrawDebugTime: Number = definedExternally, SimFrequency: Number = definedExternally, MaxSimTime: Number = definedExternally, OverrideGravityZ: Number = definedExternally): `T$313`
+    open fun SuggestProjectileVelocity(TossVelocity: Vector = definedExternally, StartLocation: Vector = definedExternally, EndLocation: Vector = definedExternally, LaunchSpeed: Number = definedExternally, OverrideGravityZ: Number = definedExternally, TraceOption: String /* "DoNotTrace" | "TraceFullPath" | "OnlyTraceWhileAscending" | "ESuggestProjVelocityTraceOption_MAX" */ = definedExternally, CollisionRadius: Number = definedExternally, bFavorHighArc: Boolean = definedExternally, bDrawDebug: Boolean = definedExternally): `T$314`
     open fun ClearSoundMixClassOverride(InSoundMixModifier: SoundMix, InSoundClass: SoundClass, FadeOutTime: Number)
     open fun ClearSoundMixModifiers()
     open fun CreatePlayer(ControllerId: Number, bSpawnPlayerController: Boolean): PlayerController
     open fun CreateSound2D(Sound: SoundBase, VolumeMultiplier: Number, PitchMultiplier: Number, StartTime: Number, ConcurrencySettings: SoundConcurrency, bPersistAcrossLevelTransition: Boolean, bAutoDestroy: Boolean): AudioComponent
     open fun DeactivateReverbEffect(TagName: String)
     open fun FlushLevelStreaming()
-    open fun GetAccurateRealTime(Seconds: Number = definedExternally, PartialSeconds: Number = definedExternally): `T$480`
     open fun GetActorOfClass(ActorClass: UnrealEngineClass): Actor
-    open fun GetAllActorsOfClass(ActorClass: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$481`
-    open fun GetAllActorsOfClassWithTag(ActorClass: UnrealEngineClass, Tag: String, OutActors: Array<Actor> = definedExternally): `T$482`
-    open fun GetAllActorsWithInterface(Interface: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$483`
-    open fun GetAllActorsWithTag(Tag: String, OutActors: Array<Actor> = definedExternally): `T$484`
+    open fun GetAllActorsOfClass(ActorClass: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$315`
+    open fun GetAllActorsOfClassWithTag(ActorClass: UnrealEngineClass, Tag: String, OutActors: Array<Actor> = definedExternally): `T$316`
+    open fun GetAllActorsWithInterface(Interface: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$317`
+    open fun GetAllActorsWithTag(Tag: String, OutActors: Array<Actor> = definedExternally): `T$318`
     open fun GetAudioTimeSeconds(): Number
-    open fun GetClosestListenerLocation(Location: Vector, MaximumRange: Number, bAllowAttenuationOverride: Boolean, ListenerPosition: Vector = definedExternally): `T$485`
+    open fun GetClosestListenerLocation(Location: Vector, MaximumRange: Number, bAllowAttenuationOverride: Boolean, ListenerPosition: Vector = definedExternally): `T$319`
     open fun GetCurrentLevelName(bRemovePrefixString: Boolean): String
     open fun GetCurrentReverbEffect(): ReverbEffect
     open fun GetEnableWorldRendering(): Boolean
@@ -26135,7 +27004,7 @@ external open class World : UObject {
     open fun SpawnForceFeedbackAtLocation(ForceFeedbackEffect: ForceFeedbackEffect, Location: Vector, Rotation: Rotator, bLooping: Boolean, IntensityMultiplier: Number, StartTime: Number, AttenuationSettings: ForceFeedbackAttenuation, bAutoDestroy: Boolean): ForceFeedbackComponent
     open fun SpawnSound2D(Sound: SoundBase, VolumeMultiplier: Number, PitchMultiplier: Number, StartTime: Number, ConcurrencySettings: SoundConcurrency, bPersistAcrossLevelTransition: Boolean, bAutoDestroy: Boolean): AudioComponent
     open fun SpawnSoundAtLocation(Sound: SoundBase, Location: Vector, Rotation: Rotator, VolumeMultiplier: Number, PitchMultiplier: Number, StartTime: Number, AttenuationSettings: SoundAttenuation, ConcurrencySettings: SoundConcurrency, bAutoDestroy: Boolean): AudioComponent
-    open fun SuggestProjectileVelocityCustomArc(OutLaunchVelocity: Vector = definedExternally, StartPos: Vector = definedExternally, EndPos: Vector = definedExternally, OverrideGravityZ: Number = definedExternally, ArcParam: Number = definedExternally): `T$486`
+    open fun SuggestProjectileVelocityCustomArc(OutLaunchVelocity: Vector = definedExternally, StartPos: Vector = definedExternally, EndPos: Vector = definedExternally, OverrideGravityZ: Number = definedExternally, ArcParam: Number = definedExternally): `T$320`
     open fun UnloadStreamLevel(LevelName: String, LatentInfo: LatentActionInfo, bShouldBlockOnUnload: Boolean)
     open fun UnloadStreamLevel(Level: World, LatentInfo: LatentActionInfo, bShouldBlockOnUnload: Boolean)
     open fun FoliageOverlappingBoxCount(StaticMesh: StaticMesh, Box: Box): Number
@@ -26146,16 +27015,19 @@ external open class World : UObject {
     open fun ClearMasterSubmixEffects()
     open fun ClearSubmixEffectChainOverride(SoundSubmix: SoundSubmix, FadeTimeSec: Number)
     open fun ClearSubmixEffects(SoundSubmix: SoundSubmix)
-    open fun GetMagnitudeForFrequencies(Frequencies: Array<Number>, Magnitudes: Array<Number> = definedExternally, SubmixToAnalyze: SoundSubmix = definedExternally): `T$487`
+    open fun GetMagnitudeForFrequencies(Frequencies: Array<Number>, Magnitudes: Array<Number> = definedExternally, SubmixToAnalyze: SoundSubmix = definedExternally): `T$321`
     open fun GetNumberOfEntriesInSourceEffectChain(PresetChain: SoundEffectSourcePresetChain): Number
-    open fun GetPhaseForFrequencies(Frequencies: Array<Number>, Phases: Array<Number> = definedExternally, SubmixToAnalyze: SoundSubmix = definedExternally): `T$488`
+    open fun GetPhaseForFrequencies(Frequencies: Array<Number>, Phases: Array<Number> = definedExternally, SubmixToAnalyze: SoundSubmix = definedExternally): `T$322`
     open fun IsAudioBusActive(AudioBus: AudioBus): Boolean
     open fun PauseRecordingOutput(SubmixToPause: SoundSubmix)
     open fun RemoveMasterSubmixEffect(SubmixEffectPreset: SoundEffectSubmixPreset)
     open fun RemoveSourceEffectFromPresetChain(PresetChain: SoundEffectSourcePresetChain, EntryIndex: Number)
+    open fun RemoveSubmixEffect(SoundSubmix: SoundSubmix, SubmixEffectPreset: SoundEffectSubmixPreset)
+    open fun RemoveSubmixEffectAtIndex(SoundSubmix: SoundSubmix, SubmixChainIndex: Number)
     open fun RemoveSubmixEffectPreset(SoundSubmix: SoundSubmix, SubmixEffectPreset: SoundEffectSubmixPreset)
     open fun RemoveSubmixEffectPresetAtIndex(SoundSubmix: SoundSubmix, SubmixChainIndex: Number)
     open fun ReplaceSoundEffectSubmix(InSoundSubmix: SoundSubmix, SubmixChainIndex: Number, SubmixEffectPreset: SoundEffectSubmixPreset)
+    open fun ReplaceSubmixEffect(InSoundSubmix: SoundSubmix, SubmixChainIndex: Number, SubmixEffectPreset: SoundEffectSubmixPreset)
     open fun ResumeRecordingOutput(SubmixToPause: SoundSubmix)
     open fun SetBypassSourceEffectChainEntry(PresetChain: SoundEffectSourcePresetChain, EntryIndex: Number, bBypassed: Boolean)
     open fun SetSubmixEffectChainOverride(SoundSubmix: SoundSubmix, SubmixEffectPresetChain: Array<SoundEffectSubmixPreset>, FadeTimeSec: Number)
@@ -26171,23 +27043,23 @@ external open class World : UObject {
     open fun GetViewportWidgetGeometry(): Geometry
     open fun RemoveAllWidgets()
     open fun Create(WidgetType: UnrealEngineClass, OwningPlayer: PlayerController): UserWidget
-    open fun GetAllWidgetsOfClass(FoundWidgets: Array<UserWidget> = definedExternally, WidgetClass: UnrealEngineClass = definedExternally, TopLevelOnly: Boolean = definedExternally): `T$489`
-    open fun GetAllWidgetsWithInterface(FoundWidgets: Array<UserWidget> = definedExternally, Interface: UnrealEngineClass = definedExternally, TopLevelOnly: Boolean = definedExternally): `T$490`
-    open fun GetSafeZonePadding(SafePadding: Vector4 = definedExternally, SafePaddingScale: Vector2D = definedExternally, SpillOverPadding: Vector4 = definedExternally): `T$491`
+    open fun GetAllWidgetsOfClass(FoundWidgets: Array<UserWidget> = definedExternally, WidgetClass: UnrealEngineClass = definedExternally, TopLevelOnly: Boolean = definedExternally): `T$323`
+    open fun GetAllWidgetsWithInterface(FoundWidgets: Array<UserWidget> = definedExternally, Interface: UnrealEngineClass = definedExternally, TopLevelOnly: Boolean = definedExternally): `T$324`
+    open fun GetSafeZonePadding(SafePadding: Vector4 = definedExternally, SafePaddingScale: Vector2D = definedExternally, SpillOverPadding: Vector4 = definedExternally): `T$325`
     open fun SetHardwareCursor(CursorShape: String /* "None" | "Default" | "TextEditBeam" | "ResizeLeftRight" | "ResizeUpDown" | "ResizeSouthEast" | "ResizeSouthWest" | "CardinalCross" | "Crosshairs" | "Hand" | "GrabHand" | "GrabHandClosed" | "SlashedCircle" | "EyeDropper" | "EMouseCursor_MAX" */, CursorName: String, HotSpot: Vector2D): Boolean
-    open fun AbsoluteToViewport(AbsoluteDesktopCoordinate: Vector2D, PixelPosition: Vector2D = definedExternally, ViewportPosition: Vector2D = definedExternally): `T$492`
-    open fun LocalToViewport(Geometry: Geometry, LocalCoordinate: Vector2D, PixelPosition: Vector2D = definedExternally, ViewportPosition: Vector2D = definedExternally): `T$492`
-    open fun ScreenToViewport(ScreenPosition: Vector2D, ViewportPosition: Vector2D = definedExternally): `T$493`
-    open fun ScreenToAbsolute(ScreenPosition: Vector2D, AbsoluteCoordinate: Vector2D = definedExternally, bIncludeWindowPosition: Boolean = definedExternally): `T$494`
-    open fun ScreenToLocal(Geometry: Geometry, ScreenPosition: Vector2D, LocalCoordinate: Vector2D = definedExternally, bIncludeWindowPosition: Boolean = definedExternally): `T$495`
-    open fun GetControllerTransformForTime(ControllerIndex: Number, MotionSource: String, Time: Timespan, bTimeWasUsed: Boolean = definedExternally, Orientation: Rotator = definedExternally, Position: Vector = definedExternally, bProvidedLinearVelocity: Boolean = definedExternally, LinearVelocity: Vector = definedExternally, bProvidedAngularVelocity: Boolean = definedExternally, AngularVelocityRadPerSec: Vector = definedExternally): `T$496`
-    open fun GetDeviceWorldPose(XRDeviceId: XRDeviceId, bIsTracked: Boolean = definedExternally, Orientation: Rotator = definedExternally, bHasPositionalTracking: Boolean = definedExternally, Position: Vector = definedExternally): `T$436`
-    open fun GetHMDData(HMDData: XRHMDData = definedExternally): `T$497`
-    open fun GetMotionControllerData(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, MotionControllerData: XRMotionControllerData = definedExternally): `T$498`
+    open fun AbsoluteToViewport(AbsoluteDesktopCoordinate: Vector2D, PixelPosition: Vector2D = definedExternally, ViewportPosition: Vector2D = definedExternally): `T$326`
+    open fun LocalToViewport(Geometry: Geometry, LocalCoordinate: Vector2D, PixelPosition: Vector2D = definedExternally, ViewportPosition: Vector2D = definedExternally): `T$326`
+    open fun ScreenToViewport(ScreenPosition: Vector2D, ViewportPosition: Vector2D = definedExternally): `T$327`
+    open fun ScreenToAbsolute(ScreenPosition: Vector2D, AbsoluteCoordinate: Vector2D = definedExternally, bIncludeWindowPosition: Boolean = definedExternally): `T$328`
+    open fun ScreenToLocal(Geometry: Geometry, ScreenPosition: Vector2D, LocalCoordinate: Vector2D = definedExternally, bIncludeWindowPosition: Boolean = definedExternally): `T$329`
+    open fun GetControllerTransformForTime(ControllerIndex: Number, MotionSource: String, Time: Timespan, bTimeWasUsed: Boolean = definedExternally, Orientation: Rotator = definedExternally, Position: Vector = definedExternally, bProvidedLinearVelocity: Boolean = definedExternally, LinearVelocity: Vector = definedExternally, bProvidedAngularVelocity: Boolean = definedExternally, AngularVelocityRadPerSec: Vector = definedExternally): `T$330`
+    open fun GetDeviceWorldPose(XRDeviceId: XRDeviceId, bIsTracked: Boolean = definedExternally, Orientation: Rotator = definedExternally, bHasPositionalTracking: Boolean = definedExternally, Position: Vector = definedExternally): `T$270`
+    open fun GetHMDData(HMDData: XRHMDData = definedExternally): `T$331`
+    open fun GetMotionControllerData(hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, MotionControllerData: XRMotionControllerData = definedExternally): `T$332`
     open fun GetTrackingToWorldTransform(): Transform
     open fun GetWorldToMetersScale(): Number
     open fun SetWorldToMetersScale(NewScale: Number)
-    open fun GetAllActorsOfClassMatchingTagQuery(ActorClass: UnrealEngineClass, GameplayTagQuery: GameplayTagQuery, OutActors: Array<Actor> = definedExternally): `T$499`
+    open fun GetAllActorsOfClassMatchingTagQuery(ActorClass: UnrealEngineClass, GameplayTagQuery: GameplayTagQuery, OutActors: Array<Actor> = definedExternally): `T$333`
 
     companion object {
         fun Load(ResourceName: String): World
@@ -26197,6 +27069,7 @@ external open class World : UObject {
         fun C(Other: UObject): World
         fun C(Other: Any): World
         fun EditorDestroyActor(World: World, Actor: Actor, bShouldModifyLevel: Boolean): Boolean
+        fun EditorExec(World: World, Cmd: String): Boolean
         fun ExportNavigation(InWorld: World, Path: String): String
         fun GetDefaultBrush(World: World): Brush
         fun InvalidateModelGeometry(World: World, InLevel: Level)
@@ -26206,15 +27079,15 @@ external open class World : UObject {
         fun DestroyWorld(World: World)
         fun InitializeActorsForPlay(World: World, URL: URL)
         fun GenerateNavigation(InWorld: World, NavData: RecastNavMesh)
-        fun GetAllActorsOfClassAndTags(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$500`
-        fun GetAllActorsOfClassAndTagsInCurrentLevel(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$501`
+        fun GetAllActorsOfClassAndTags(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$334`
+        fun GetAllActorsOfClassAndTagsInCurrentLevel(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tags_Accept: Array<String>, Tags_Deny: Array<String>, OutActors: Array<Actor> = definedExternally): `T$335`
         fun GetLevels(World: World): Array<Level>
         fun GetModel(World: World): Model
         fun GetWorldBounds(InWorld: World): Box
         fun IsGameWorld(World: World): Boolean
         fun IsPlayInEditor(World: World): Boolean
         fun IsPlayInPreview(World: World): Boolean
-        fun LuminARLineTrace(WorldContextObject: UObject, ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$502`
+        fun LuminARLineTrace(WorldContextObject: UObject, ScreenPosition: Vector2D, TraceChannels: Any, OutHitResults: Array<ARTraceResult> = definedExternally): `T$336`
         fun StartLuminARSession(WorldContextObject: UObject, LatentInfo: LatentActionInfo, Configuration: LuminARSessionConfig)
         fun GetNiagaraParameterCollection(WorldContextObject: UObject, Collection: NiagaraParameterCollection): NiagaraParameterCollectionInstance
         fun SpawnSystemAtLocation(WorldContextObject: UObject, SystemTemplate: NiagaraSystem, Location: Vector, Rotation: Rotator, Scale: Vector, bAutoDestroy: Boolean, bAutoActivate: Boolean, PoolingMethod: String /* "None" | "AutoRelease" | "ManualRelease" | "ManualRelease_OnComplete" | "FreeInPool" | "ENCPoolMethod_MAX" */, bPreCullCheck: Boolean): NiagaraComponent
@@ -26229,34 +27102,34 @@ external open class World : UObject {
         fun TakeAutomationScreenshot(WorldContextObject: UObject, LatentInfo: LatentActionInfo, Name: String, Notes: String, Options: AutomationScreenshotOptions)
         fun TakeAutomationScreenshotAtCamera(WorldContextObject: UObject, LatentInfo: LatentActionInfo, Camera: CameraActor, NameOverride: String, Notes: String, Options: AutomationScreenshotOptions)
         fun TakeAutomationScreenshotOfUI(WorldContextObject: UObject, LatentInfo: LatentActionInfo, Name: String, Options: AutomationScreenshotOptions)
-        fun GetIsMyTurn(WorldContextObject: UObject, PlayerController: PlayerController, MatchID: String, bIsMyTurn: Boolean = definedExternally): `T$450`
-        fun GetMyPlayerIndex(WorldContextObject: UObject, PlayerController: PlayerController, MatchID: String, PlayerIndex: Number = definedExternally): `T$451`
-        fun GetPlayerDisplayName(WorldContextObject: UObject, PlayerController: PlayerController, MatchID: String, PlayerIndex: Number, PlayerDisplayName: String = definedExternally): `T$452`
+        fun GetIsMyTurn(WorldContextObject: UObject, PlayerController: PlayerController, MatchID: String, bIsMyTurn: Boolean = definedExternally): `T$285`
+        fun GetMyPlayerIndex(WorldContextObject: UObject, PlayerController: PlayerController, MatchID: String, PlayerIndex: Number = definedExternally): `T$286`
+        fun GetPlayerDisplayName(WorldContextObject: UObject, PlayerController: PlayerController, MatchID: String, PlayerIndex: Number, PlayerDisplayName: String = definedExternally): `T$287`
         fun RegisterTurnBasedMatchInterfaceObject(WorldContextObject: UObject, PlayerController: PlayerController, UObject: UObject)
-        fun GetCachedAchievementDescription(WorldContextObject: UObject, PlayerController: PlayerController, AchievementID: String, bFoundID: Boolean = definedExternally, Title: String = definedExternally, LockedDescription: String = definedExternally, UnlockedDescription: String = definedExternally, bHidden: Boolean = definedExternally): `T$453`
-        fun GetCachedAchievementProgress(WorldContextObject: UObject, PlayerController: PlayerController, AchievementID: String, bFoundID: Boolean = definedExternally, Progress: Number = definedExternally): `T$454`
+        fun GetCachedAchievementDescription(WorldContextObject: UObject, PlayerController: PlayerController, AchievementID: String, bFoundID: Boolean = definedExternally, Title: String = definedExternally, LockedDescription: String = definedExternally, UnlockedDescription: String = definedExternally, bHidden: Boolean = definedExternally): `T$288`
+        fun GetCachedAchievementProgress(WorldContextObject: UObject, PlayerController: PlayerController, AchievementID: String, bFoundID: Boolean = definedExternally, Progress: Number = definedExternally): `T$289`
         fun CreateMoveToProxyObject(WorldContextObject: UObject, Pawn: Pawn, Destination: Vector, TargetActor: Actor, AcceptanceRadius: Number, bStopOnOverlap: Boolean): AIAsyncTaskBlueprintProxy
         fun SpawnAIFromClass(WorldContextObject: UObject, PawnClass: UnrealEngineClass, BehaviorTree: BehaviorTree, Location: Vector, Rotation: Rotator, bNoCollisionFail: Boolean, Owner: Actor): Pawn
         fun VisLogBoxShape(WorldContextObject: UObject, BoxShape: Box, text: String, ObjectColor: LinearColor, LogCategory: String, bAddToMessageLog: Boolean)
         fun VisLogLocation(WorldContextObject: UObject, Location: Vector, text: String, ObjectColor: LinearColor, Radius: Number, LogCategory: String, bAddToMessageLog: Boolean)
         fun VisLogSegment(WorldContextObject: UObject, SegmentStart: Vector, SegmentEnd: Vector, text: String, ObjectColor: LinearColor, Thickness: Number, CategoryName: String, bAddToMessageLog: Boolean)
         fun VisLogText(WorldContextObject: UObject, text: String, LogCategory: String, bAddToMessageLog: Boolean)
-        fun BoxOverlapActors(WorldContextObject: UObject, BoxPos: Vector, BoxExtent: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$503`
-        fun BoxOverlapComponents(WorldContextObject: UObject, BoxPos: Vector, Extent: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$504`
-        fun MultiBoxTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$505`
-        fun MultiBoxTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$506`
-        fun MultiBoxTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$507`
-        fun BoxTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun BoxTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun BoxTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun CapsuleOverlapActors(WorldContextObject: UObject, CapsulePos: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$508`
-        fun CapsuleOverlapComponents(WorldContextObject: UObject, CapsulePos: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$509`
-        fun MultiCapsuleTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$510`
-        fun MultiCapsuleTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$511`
-        fun MultiCapsuleTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$512`
-        fun CapsuleTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun CapsuleTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun CapsuleTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
+        fun BoxOverlapActors(WorldContextObject: UObject, BoxPos: Vector, BoxExtent: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$337`
+        fun BoxOverlapComponents(WorldContextObject: UObject, BoxPos: Vector, Extent: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$338`
+        fun MultiBoxTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$339`
+        fun MultiBoxTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$340`
+        fun MultiBoxTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$341`
+        fun BoxTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun BoxTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun BoxTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, HalfSize: Vector, Orientation: Rotator, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun CapsuleOverlapActors(WorldContextObject: UObject, CapsulePos: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$342`
+        fun CapsuleOverlapComponents(WorldContextObject: UObject, CapsulePos: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$343`
+        fun MultiCapsuleTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$344`
+        fun MultiCapsuleTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$345`
+        fun MultiCapsuleTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$346`
+        fun CapsuleTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun CapsuleTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun CapsuleTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, HalfHeight: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
         fun Delay(WorldContextObject: UObject, Duration: Number, LatentInfo: LatentActionInfo)
         fun DrawDebugArrow(WorldContextObject: UObject, LineStart: Vector, LineEnd: Vector, ArrowSize: Number, LineColor: LinearColor, Duration: Number, Thickness: Number)
         fun DrawDebugBox(WorldContextObject: UObject, Center: Vector, Extent: Vector, LineColor: LinearColor, Rotation: Rotator, Duration: Number, Thickness: Number)
@@ -26281,7 +27154,7 @@ external open class World : UObject {
         fun IsServer(WorldContextObject: UObject): Boolean
         fun IsSplitScreen(WorldContextObject: UObject): Boolean
         fun IsStandalone(WorldContextObject: UObject): Boolean
-        fun ClearandInvalidateTimerbyHandle(WorldContextObject: UObject, Handle: TimerHandle = definedExternally): `T$465`
+        fun ClearandInvalidateTimerbyHandle(WorldContextObject: UObject, Handle: TimerHandle = definedExternally): `T$300`
         fun ClearTimerbyHandle(WorldContextObject: UObject, Handle: TimerHandle)
         fun GetTimerElapsedTimebyHandle(WorldContextObject: UObject, Handle: TimerHandle): Number
         fun GetTimerRemainingTimebyHandle(WorldContextObject: UObject, Handle: TimerHandle): Number
@@ -26290,12 +27163,12 @@ external open class World : UObject {
         fun PauseTimerbyHandle(WorldContextObject: UObject, Handle: TimerHandle)
         fun DoesTimerExistbyHandle(WorldContextObject: UObject, Handle: TimerHandle): Boolean
         fun UnpauseTimerbyHandle(WorldContextObject: UObject, Handle: TimerHandle)
-        fun MultiLineTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$513`
-        fun MultiLineTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$514`
-        fun MultiLineTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$515`
-        fun LineTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun LineTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun LineTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
+        fun MultiLineTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$347`
+        fun MultiLineTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$348`
+        fun MultiLineTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$349`
+        fun LineTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun LineTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun LineTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
         fun LoadAsset(WorldContextObject: UObject, Asset: UObject, OnLoaded: UnrealEngineDelegate<(Loaded: UObject) -> Unit>, LatentInfo: LatentActionInfo)
         fun LoadAssetClass(WorldContextObject: UObject, AssetClass: Class, OnLoaded: UnrealEngineDelegate<(Loaded: UnrealEngineClass) -> Unit>, LatentInfo: LatentActionInfo)
         fun PrintString(WorldContextObject: UObject, inString: String, bPrintToScreen: Boolean, bPrintToLog: Boolean, TextColor: LinearColor, Duration: Number)
@@ -26303,15 +27176,15 @@ external open class World : UObject {
         fun QuitGame(WorldContextObject: UObject, SpecificPlayer: PlayerController, QuitPreference: String /* "Quit" | "Background" | "EQuitPreference_MAX" */, bIgnorePlatformRestrictions: Boolean)
         fun RetriggerableDelay(WorldContextObject: UObject, Duration: Number, LatentInfo: LatentActionInfo)
         fun SetSuppressViewportTransitionMessage(WorldContextObject: UObject, bState: Boolean)
-        fun SphereOverlapActors(WorldContextObject: UObject, SpherePos: Vector, SphereRadius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$516`
-        fun SphereOverlapComponents(WorldContextObject: UObject, SpherePos: Vector, SphereRadius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$517`
-        fun MultiSphereTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$518`
-        fun MultiSphereTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$519`
-        fun MultiSphereTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$520`
-        fun SphereTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun SphereTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun SphereTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$89`
-        fun BeginDrawCanvasToRenderTarget(WorldContextObject: UObject, TextureRenderTarget: TextureRenderTarget2D, Canvas: Canvas = definedExternally, Size: Vector2D = definedExternally, Context: DrawToRenderTargetContext = definedExternally): `T$474`
+        fun SphereOverlapActors(WorldContextObject: UObject, SpherePos: Vector, SphereRadius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ActorClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutActors: Array<Actor> = definedExternally): `T$350`
+        fun SphereOverlapComponents(WorldContextObject: UObject, SpherePos: Vector, SphereRadius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, ComponentClassFilter: UnrealEngineClass, ActorsToIgnore: Array<Actor>, OutComponents: Array<PrimitiveComponent> = definedExternally): `T$351`
+        fun MultiSphereTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$352`
+        fun MultiSphereTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$353`
+        fun MultiSphereTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHits: Array<HitResult> = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$354`
+        fun SphereTraceByChannel(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, TraceChannel: String /* "TraceTypeQuery1" | "TraceTypeQuery2" | "TraceTypeQuery3" | "TraceTypeQuery4" | "TraceTypeQuery5" | "TraceTypeQuery6" | "TraceTypeQuery7" | "TraceTypeQuery8" | "TraceTypeQuery9" | "TraceTypeQuery10" | "TraceTypeQuery11" | "TraceTypeQuery12" | "TraceTypeQuery13" | "TraceTypeQuery14" | "TraceTypeQuery15" | "TraceTypeQuery16" | "TraceTypeQuery17" | "TraceTypeQuery18" | "TraceTypeQuery19" | "TraceTypeQuery20" | "TraceTypeQuery21" | "TraceTypeQuery22" | "TraceTypeQuery23" | "TraceTypeQuery24" | "TraceTypeQuery25" | "TraceTypeQuery26" | "TraceTypeQuery27" | "TraceTypeQuery28" | "TraceTypeQuery29" | "TraceTypeQuery30" | "TraceTypeQuery31" | "TraceTypeQuery32" | "TraceTypeQuery_MAX" | "ETraceTypeQuery_MAX" */, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun SphereTraceByProfile(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, ProfileName: String, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun SphereTraceForObjects(WorldContextObject: UObject, Start: Vector, End: Vector, Radius: Number, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */>, bTraceComplex: Boolean, ActorsToIgnore: Array<Actor>, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */, OutHit: HitResult = definedExternally, bIgnoreSelf: Boolean = definedExternally, TraceColor: LinearColor = definedExternally, TraceHitColor: LinearColor = definedExternally, DrawTime: Number = definedExternally): `T$171`
+        fun BeginDrawCanvasToRenderTarget(WorldContextObject: UObject, TextureRenderTarget: TextureRenderTarget2D, Canvas: Canvas = definedExternally, Size: Vector2D = definedExternally, Context: DrawToRenderTargetContext = definedExternally): `T$309`
         fun ClearRenderTarget2D(WorldContextObject: UObject, TextureRenderTarget: TextureRenderTarget2D, ClearColor: LinearColor)
         fun ConvertRenderTargetToTexture2DEditorOnly(WorldContextObject: UObject, RenderTarget: TextureRenderTarget2D, Texture: Texture2D)
         fun CreateRenderTarget2D(WorldContextObject: UObject, Width: Number, Height: Number, Format: String /* "RTF_R8" | "RTF_RG8" | "RTF_RGBA8" | "RTF_RGBA8_SRGB" | "RTF_R16f" | "RTF_RG16f" | "RTF_RGBA16f" | "RTF_R32f" | "RTF_RG32f" | "RTF_RGBA32f" | "RTF_RGB10A2" | "RTF_MAX" */, ClearColor: LinearColor, bAutoGenerateMipMaps: Boolean): TextureRenderTarget2D
@@ -26327,7 +27200,7 @@ external open class World : UObject {
         fun ReadRenderTargetRawPixel(WorldContextObject: UObject, TextureRenderTarget: TextureRenderTarget2D, X: Number, Y: Number): LinearColor
         fun ReadRenderTargetRawUV(WorldContextObject: UObject, TextureRenderTarget: TextureRenderTarget2D, U: Number, V: Number): LinearColor
         fun ReadRenderTargetUV(WorldContextObject: UObject, TextureRenderTarget: TextureRenderTarget2D, U: Number, V: Number): Color
-        fun MinimumAreaRectangle(WorldContextObject: UObject, InVerts: Array<Vector>, SampleSurfaceNormal: Vector, OutRectCenter: Vector = definedExternally, OutRectRotation: Rotator = definedExternally, OutSideLengthX: Number = definedExternally, OutSideLengthY: Number = definedExternally, bDebugDraw: Boolean = definedExternally): `T$475`
+        fun MinimumAreaRectangle(WorldContextObject: UObject, InVerts: Array<Vector>, SampleSurfaceNormal: Vector, OutRectCenter: Vector = definedExternally, OutRectRotation: Rotator = definedExternally, OutSideLengthX: Number = definedExternally, OutSideLengthY: Number = definedExternally, bDebugDraw: Boolean = definedExternally): `T$310`
         fun CreateDynamicMaterialInstance(WorldContextObject: UObject, Parent: MaterialInterface, OptionalName: String, CreationFlags: String /* "None" | "Transient" | "EMIDCreationFlags_MAX" */): MaterialInstanceDynamic
         fun GetScalarParameterValue(WorldContextObject: UObject, Collection: MaterialParameterCollection, ParameterName: String): Number
         fun GetVectorParameterValue(WorldContextObject: UObject, Collection: MaterialParameterCollection, ParameterName: String): LinearColor
@@ -26340,24 +27213,23 @@ external open class World : UObject {
         fun BeginDeferredActorSpawnFromClass(WorldContextObject: UObject, ActorClass: UnrealEngineClass, SpawnTransform: Transform, CollisionHandlingOverride: String /* "Undefined" | "AlwaysSpawn" | "AdjustIfPossibleButAlwaysSpawn" | "AdjustIfPossibleButDontSpawnIfColliding" | "DontSpawnIfColliding" | "ESpawnActorCollisionHandlingMethod_MAX" */, Owner: Actor): Actor
         fun BeginSpawningActorFromBlueprint(WorldContextObject: UObject, Blueprint: Blueprint, SpawnTransform: Transform, bNoCollisionFail: Boolean): Actor
         fun BeginSpawningActorFromClass(WorldContextObject: UObject, ActorClass: UnrealEngineClass, SpawnTransform: Transform, bNoCollisionFail: Boolean, Owner: Actor): Actor
-        fun PredictProjectilePath(WorldContextObject: UObject, PredictParams: PredictProjectilePathParams, PredictResult: PredictProjectilePathResult = definedExternally): `T$476`
-        fun PredictProjectilePathByObjectType(WorldContextObject: UObject, OutHit: HitResult = definedExternally, OutPathPositions: Array<Vector> = definedExternally, OutLastTraceDestination: Vector = definedExternally, StartPos: Vector = definedExternally, LaunchVelocity: Vector = definedExternally, bTracePath: Boolean = definedExternally, ProjectileRadius: Number = definedExternally, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */> = definedExternally, bTraceComplex: Boolean = definedExternally, ActorsToIgnore: Array<Actor> = definedExternally, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */ = definedExternally, DrawDebugTime: Number = definedExternally, SimFrequency: Number = definedExternally, MaxSimTime: Number = definedExternally, OverrideGravityZ: Number = definedExternally): `T$521`
-        fun PredictProjectilePathByTraceChannel(WorldContextObject: UObject, OutHit: HitResult = definedExternally, OutPathPositions: Array<Vector> = definedExternally, OutLastTraceDestination: Vector = definedExternally, StartPos: Vector = definedExternally, LaunchVelocity: Vector = definedExternally, bTracePath: Boolean = definedExternally, ProjectileRadius: Number = definedExternally, TraceChannel: String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */ = definedExternally, bTraceComplex: Boolean = definedExternally, ActorsToIgnore: Array<Actor> = definedExternally, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */ = definedExternally, DrawDebugTime: Number = definedExternally, SimFrequency: Number = definedExternally, MaxSimTime: Number = definedExternally, OverrideGravityZ: Number = definedExternally): `T$522`
-        fun SuggestProjectileVelocity(WorldContextObject: UObject, TossVelocity: Vector = definedExternally, StartLocation: Vector = definedExternally, EndLocation: Vector = definedExternally, LaunchSpeed: Number = definedExternally, OverrideGravityZ: Number = definedExternally, TraceOption: String /* "DoNotTrace" | "TraceFullPath" | "OnlyTraceWhileAscending" | "ESuggestProjVelocityTraceOption_MAX" */ = definedExternally, CollisionRadius: Number = definedExternally, bFavorHighArc: Boolean = definedExternally, bDrawDebug: Boolean = definedExternally): `T$479`
+        fun PredictProjectilePath(WorldContextObject: UObject, PredictParams: PredictProjectilePathParams, PredictResult: PredictProjectilePathResult = definedExternally): `T$311`
+        fun PredictProjectilePathByObjectType(WorldContextObject: UObject, OutHit: HitResult = definedExternally, OutPathPositions: Array<Vector> = definedExternally, OutLastTraceDestination: Vector = definedExternally, StartPos: Vector = definedExternally, LaunchVelocity: Vector = definedExternally, bTracePath: Boolean = definedExternally, ProjectileRadius: Number = definedExternally, ObjectTypes: Array<String /* "ObjectTypeQuery1" | "ObjectTypeQuery2" | "ObjectTypeQuery3" | "ObjectTypeQuery4" | "ObjectTypeQuery5" | "ObjectTypeQuery6" | "ObjectTypeQuery7" | "ObjectTypeQuery8" | "ObjectTypeQuery9" | "ObjectTypeQuery10" | "ObjectTypeQuery11" | "ObjectTypeQuery12" | "ObjectTypeQuery13" | "ObjectTypeQuery14" | "ObjectTypeQuery15" | "ObjectTypeQuery16" | "ObjectTypeQuery17" | "ObjectTypeQuery18" | "ObjectTypeQuery19" | "ObjectTypeQuery20" | "ObjectTypeQuery21" | "ObjectTypeQuery22" | "ObjectTypeQuery23" | "ObjectTypeQuery24" | "ObjectTypeQuery25" | "ObjectTypeQuery26" | "ObjectTypeQuery27" | "ObjectTypeQuery28" | "ObjectTypeQuery29" | "ObjectTypeQuery30" | "ObjectTypeQuery31" | "ObjectTypeQuery32" | "ObjectTypeQuery_MAX" | "EObjectTypeQuery_MAX" */> = definedExternally, bTraceComplex: Boolean = definedExternally, ActorsToIgnore: Array<Actor> = definedExternally, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */ = definedExternally, DrawDebugTime: Number = definedExternally, SimFrequency: Number = definedExternally, MaxSimTime: Number = definedExternally, OverrideGravityZ: Number = definedExternally): `T$355`
+        fun PredictProjectilePathByTraceChannel(WorldContextObject: UObject, OutHit: HitResult = definedExternally, OutPathPositions: Array<Vector> = definedExternally, OutLastTraceDestination: Vector = definedExternally, StartPos: Vector = definedExternally, LaunchVelocity: Vector = definedExternally, bTracePath: Boolean = definedExternally, ProjectileRadius: Number = definedExternally, TraceChannel: String /* "ECC_WorldStatic" | "ECC_WorldDynamic" | "ECC_Pawn" | "ECC_Visibility" | "ECC_Camera" | "ECC_PhysicsBody" | "ECC_Vehicle" | "ECC_Destructible" | "ECC_EngineTraceChannel1" | "ECC_EngineTraceChannel2" | "ECC_EngineTraceChannel3" | "ECC_EngineTraceChannel4" | "ECC_EngineTraceChannel5" | "ECC_EngineTraceChannel6" | "ECC_GameTraceChannel1" | "ECC_GameTraceChannel2" | "ECC_GameTraceChannel3" | "ECC_GameTraceChannel4" | "ECC_GameTraceChannel5" | "ECC_GameTraceChannel6" | "ECC_GameTraceChannel7" | "ECC_GameTraceChannel8" | "ECC_GameTraceChannel9" | "ECC_GameTraceChannel10" | "ECC_GameTraceChannel11" | "ECC_GameTraceChannel12" | "ECC_GameTraceChannel13" | "ECC_GameTraceChannel14" | "ECC_GameTraceChannel15" | "ECC_GameTraceChannel16" | "ECC_GameTraceChannel17" | "ECC_GameTraceChannel18" | "ECC_OverlapAll_Deprecated" | "ECC_MAX" */ = definedExternally, bTraceComplex: Boolean = definedExternally, ActorsToIgnore: Array<Actor> = definedExternally, DrawDebugType: String /* "None" | "ForOneFrame" | "ForDuration" | "Persistent" | "EDrawDebugTrace_MAX" */ = definedExternally, DrawDebugTime: Number = definedExternally, SimFrequency: Number = definedExternally, MaxSimTime: Number = definedExternally, OverrideGravityZ: Number = definedExternally): `T$356`
+        fun SuggestProjectileVelocity(WorldContextObject: UObject, TossVelocity: Vector = definedExternally, StartLocation: Vector = definedExternally, EndLocation: Vector = definedExternally, LaunchSpeed: Number = definedExternally, OverrideGravityZ: Number = definedExternally, TraceOption: String /* "DoNotTrace" | "TraceFullPath" | "OnlyTraceWhileAscending" | "ESuggestProjVelocityTraceOption_MAX" */ = definedExternally, CollisionRadius: Number = definedExternally, bFavorHighArc: Boolean = definedExternally, bDrawDebug: Boolean = definedExternally): `T$314`
         fun ClearSoundMixClassOverride(WorldContextObject: UObject, InSoundMixModifier: SoundMix, InSoundClass: SoundClass, FadeOutTime: Number)
         fun ClearSoundMixModifiers(WorldContextObject: UObject)
         fun CreatePlayer(WorldContextObject: UObject, ControllerId: Number, bSpawnPlayerController: Boolean): PlayerController
         fun CreateSound2D(WorldContextObject: UObject, Sound: SoundBase, VolumeMultiplier: Number, PitchMultiplier: Number, StartTime: Number, ConcurrencySettings: SoundConcurrency, bPersistAcrossLevelTransition: Boolean, bAutoDestroy: Boolean): AudioComponent
         fun DeactivateReverbEffect(WorldContextObject: UObject, TagName: String)
         fun FlushLevelStreaming(WorldContextObject: UObject)
-        fun GetAccurateRealTime(WorldContextObject: UObject, Seconds: Number = definedExternally, PartialSeconds: Number = definedExternally): `T$480`
         fun GetActorOfClass(WorldContextObject: UObject, ActorClass: UnrealEngineClass): Actor
-        fun GetAllActorsOfClass(WorldContextObject: UObject, ActorClass: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$523`
-        fun GetAllActorsOfClassWithTag(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tag: String, OutActors: Array<Actor> = definedExternally): `T$524`
-        fun GetAllActorsWithInterface(WorldContextObject: UObject, Interface: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$525`
-        fun GetAllActorsWithTag(WorldContextObject: UObject, Tag: String, OutActors: Array<Actor> = definedExternally): `T$526`
+        fun GetAllActorsOfClass(WorldContextObject: UObject, ActorClass: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$357`
+        fun GetAllActorsOfClassWithTag(WorldContextObject: UObject, ActorClass: UnrealEngineClass, Tag: String, OutActors: Array<Actor> = definedExternally): `T$358`
+        fun GetAllActorsWithInterface(WorldContextObject: UObject, Interface: UnrealEngineClass, OutActors: Array<Actor> = definedExternally): `T$359`
+        fun GetAllActorsWithTag(WorldContextObject: UObject, Tag: String, OutActors: Array<Actor> = definedExternally): `T$360`
         fun GetAudioTimeSeconds(WorldContextObject: UObject): Number
-        fun GetClosestListenerLocation(WorldContextObject: UObject, Location: Vector, MaximumRange: Number, bAllowAttenuationOverride: Boolean, ListenerPosition: Vector = definedExternally): `T$485`
+        fun GetClosestListenerLocation(WorldContextObject: UObject, Location: Vector, MaximumRange: Number, bAllowAttenuationOverride: Boolean, ListenerPosition: Vector = definedExternally): `T$319`
         fun GetCurrentLevelName(WorldContextObject: UObject, bRemovePrefixString: Boolean): String
         fun GetCurrentReverbEffect(WorldContextObject: UObject): ReverbEffect
         fun GetEnableWorldRendering(WorldContextObject: UObject): Boolean
@@ -26413,7 +27285,7 @@ external open class World : UObject {
         fun SpawnForceFeedbackAtLocation(WorldContextObject: UObject, ForceFeedbackEffect: ForceFeedbackEffect, Location: Vector, Rotation: Rotator, bLooping: Boolean, IntensityMultiplier: Number, StartTime: Number, AttenuationSettings: ForceFeedbackAttenuation, bAutoDestroy: Boolean): ForceFeedbackComponent
         fun SpawnSound2D(WorldContextObject: UObject, Sound: SoundBase, VolumeMultiplier: Number, PitchMultiplier: Number, StartTime: Number, ConcurrencySettings: SoundConcurrency, bPersistAcrossLevelTransition: Boolean, bAutoDestroy: Boolean): AudioComponent
         fun SpawnSoundAtLocation(WorldContextObject: UObject, Sound: SoundBase, Location: Vector, Rotation: Rotator, VolumeMultiplier: Number, PitchMultiplier: Number, StartTime: Number, AttenuationSettings: SoundAttenuation, ConcurrencySettings: SoundConcurrency, bAutoDestroy: Boolean): AudioComponent
-        fun SuggestProjectileVelocityCustomArc(WorldContextObject: UObject, OutLaunchVelocity: Vector = definedExternally, StartPos: Vector = definedExternally, EndPos: Vector = definedExternally, OverrideGravityZ: Number = definedExternally, ArcParam: Number = definedExternally): `T$486`
+        fun SuggestProjectileVelocityCustomArc(WorldContextObject: UObject, OutLaunchVelocity: Vector = definedExternally, StartPos: Vector = definedExternally, EndPos: Vector = definedExternally, OverrideGravityZ: Number = definedExternally, ArcParam: Number = definedExternally): `T$320`
         fun UnloadStreamLevel(WorldContextObject: UObject, LevelName: String, LatentInfo: LatentActionInfo, bShouldBlockOnUnload: Boolean)
         fun UnloadStreamLevel(WorldContextObject: UObject, Level: World, LatentInfo: LatentActionInfo, bShouldBlockOnUnload: Boolean)
         fun FoliageOverlappingBoxCount(WorldContextObject: UObject, StaticMesh: StaticMesh, Box: Box): Number
@@ -26424,16 +27296,19 @@ external open class World : UObject {
         fun ClearMasterSubmixEffects(WorldContextObject: UObject)
         fun ClearSubmixEffectChainOverride(WorldContextObject: UObject, SoundSubmix: SoundSubmix, FadeTimeSec: Number)
         fun ClearSubmixEffects(WorldContextObject: UObject, SoundSubmix: SoundSubmix)
-        fun GetMagnitudeForFrequencies(WorldContextObject: UObject, Frequencies: Array<Number>, Magnitudes: Array<Number> = definedExternally, SubmixToAnalyze: SoundSubmix = definedExternally): `T$527`
+        fun GetMagnitudeForFrequencies(WorldContextObject: UObject, Frequencies: Array<Number>, Magnitudes: Array<Number> = definedExternally, SubmixToAnalyze: SoundSubmix = definedExternally): `T$361`
         fun GetNumberOfEntriesInSourceEffectChain(WorldContextObject: UObject, PresetChain: SoundEffectSourcePresetChain): Number
-        fun GetPhaseForFrequencies(WorldContextObject: UObject, Frequencies: Array<Number>, Phases: Array<Number> = definedExternally, SubmixToAnalyze: SoundSubmix = definedExternally): `T$528`
+        fun GetPhaseForFrequencies(WorldContextObject: UObject, Frequencies: Array<Number>, Phases: Array<Number> = definedExternally, SubmixToAnalyze: SoundSubmix = definedExternally): `T$362`
         fun IsAudioBusActive(WorldContextObject: UObject, AudioBus: AudioBus): Boolean
         fun PauseRecordingOutput(WorldContextObject: UObject, SubmixToPause: SoundSubmix)
         fun RemoveMasterSubmixEffect(WorldContextObject: UObject, SubmixEffectPreset: SoundEffectSubmixPreset)
         fun RemoveSourceEffectFromPresetChain(WorldContextObject: UObject, PresetChain: SoundEffectSourcePresetChain, EntryIndex: Number)
+        fun RemoveSubmixEffect(WorldContextObject: UObject, SoundSubmix: SoundSubmix, SubmixEffectPreset: SoundEffectSubmixPreset)
+        fun RemoveSubmixEffectAtIndex(WorldContextObject: UObject, SoundSubmix: SoundSubmix, SubmixChainIndex: Number)
         fun RemoveSubmixEffectPreset(WorldContextObject: UObject, SoundSubmix: SoundSubmix, SubmixEffectPreset: SoundEffectSubmixPreset)
         fun RemoveSubmixEffectPresetAtIndex(WorldContextObject: UObject, SoundSubmix: SoundSubmix, SubmixChainIndex: Number)
         fun ReplaceSoundEffectSubmix(WorldContextObject: UObject, InSoundSubmix: SoundSubmix, SubmixChainIndex: Number, SubmixEffectPreset: SoundEffectSubmixPreset)
+        fun ReplaceSubmixEffect(WorldContextObject: UObject, InSoundSubmix: SoundSubmix, SubmixChainIndex: Number, SubmixEffectPreset: SoundEffectSubmixPreset)
         fun ResumeRecordingOutput(WorldContextObject: UObject, SubmixToPause: SoundSubmix)
         fun SetBypassSourceEffectChainEntry(WorldContextObject: UObject, PresetChain: SoundEffectSourcePresetChain, EntryIndex: Number, bBypassed: Boolean)
         fun SetSubmixEffectChainOverride(WorldContextObject: UObject, SoundSubmix: SoundSubmix, SubmixEffectPresetChain: Array<SoundEffectSubmixPreset>, FadeTimeSec: Number)
@@ -26448,24 +27323,24 @@ external open class World : UObject {
         fun GetViewportSize(WorldContextObject: UObject): Vector2D
         fun GetViewportWidgetGeometry(WorldContextObject: UObject): Geometry
         fun RemoveAllWidgets(WorldContextObject: UObject)
-        fun Create(WorldContextObject: UObject, WidgetType: UnrealEngineClass, OwningPlayer: PlayerController): UserWidget
-        fun GetAllWidgetsOfClass(WorldContextObject: UObject, FoundWidgets: Array<UserWidget> = definedExternally, WidgetClass: UnrealEngineClass = definedExternally, TopLevelOnly: Boolean = definedExternally): `T$529`
-        fun GetAllWidgetsWithInterface(WorldContextObject: UObject, FoundWidgets: Array<UserWidget> = definedExternally, Interface: UnrealEngineClass = definedExternally, TopLevelOnly: Boolean = definedExternally): `T$530`
-        fun GetSafeZonePadding(WorldContextObject: UObject, SafePadding: Vector4 = definedExternally, SafePaddingScale: Vector2D = definedExternally, SpillOverPadding: Vector4 = definedExternally): `T$491`
+        fun CreateWidget(WorldContextObject: UObject, WidgetType: UnrealEngineClass, OwningPlayer: PlayerController): UserWidget
+        fun GetAllWidgetsOfClass(WorldContextObject: UObject, FoundWidgets: Array<UserWidget> = definedExternally, WidgetClass: UnrealEngineClass = definedExternally, TopLevelOnly: Boolean = definedExternally): `T$363`
+        fun GetAllWidgetsWithInterface(WorldContextObject: UObject, FoundWidgets: Array<UserWidget> = definedExternally, Interface: UnrealEngineClass = definedExternally, TopLevelOnly: Boolean = definedExternally): `T$364`
+        fun GetSafeZonePadding(WorldContextObject: UObject, SafePadding: Vector4 = definedExternally, SafePaddingScale: Vector2D = definedExternally, SpillOverPadding: Vector4 = definedExternally): `T$325`
         fun SetHardwareCursor(WorldContextObject: UObject, CursorShape: String /* "None" | "Default" | "TextEditBeam" | "ResizeLeftRight" | "ResizeUpDown" | "ResizeSouthEast" | "ResizeSouthWest" | "CardinalCross" | "Crosshairs" | "Hand" | "GrabHand" | "GrabHandClosed" | "SlashedCircle" | "EyeDropper" | "EMouseCursor_MAX" */, CursorName: String, HotSpot: Vector2D): Boolean
-        fun AbsoluteToViewport(WorldContextObject: UObject, AbsoluteDesktopCoordinate: Vector2D, PixelPosition: Vector2D = definedExternally, ViewportPosition: Vector2D = definedExternally): `T$492`
-        fun LocalToViewport(WorldContextObject: UObject, Geometry: Geometry, LocalCoordinate: Vector2D, PixelPosition: Vector2D = definedExternally, ViewportPosition: Vector2D = definedExternally): `T$492`
-        fun ScreenToViewport(WorldContextObject: UObject, ScreenPosition: Vector2D, ViewportPosition: Vector2D = definedExternally): `T$493`
-        fun ScreenToAbsolute(WorldContextObject: UObject, ScreenPosition: Vector2D, AbsoluteCoordinate: Vector2D = definedExternally, bIncludeWindowPosition: Boolean = definedExternally): `T$494`
-        fun ScreenToLocal(WorldContextObject: UObject, Geometry: Geometry, ScreenPosition: Vector2D, LocalCoordinate: Vector2D = definedExternally, bIncludeWindowPosition: Boolean = definedExternally): `T$495`
-        fun GetControllerTransformForTime(WorldContext: UObject, ControllerIndex: Number, MotionSource: String, Time: Timespan, bTimeWasUsed: Boolean = definedExternally, Orientation: Rotator = definedExternally, Position: Vector = definedExternally, bProvidedLinearVelocity: Boolean = definedExternally, LinearVelocity: Vector = definedExternally, bProvidedAngularVelocity: Boolean = definedExternally, AngularVelocityRadPerSec: Vector = definedExternally): `T$496`
-        fun GetDeviceWorldPose(WorldContext: UObject, XRDeviceId: XRDeviceId, bIsTracked: Boolean = definedExternally, Orientation: Rotator = definedExternally, bHasPositionalTracking: Boolean = definedExternally, Position: Vector = definedExternally): `T$436`
-        fun GetHMDData(WorldContext: UObject, HMDData: XRHMDData = definedExternally): `T$497`
-        fun GetMotionControllerData(WorldContext: UObject, hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, MotionControllerData: XRMotionControllerData = definedExternally): `T$498`
+        fun AbsoluteToViewport(WorldContextObject: UObject, AbsoluteDesktopCoordinate: Vector2D, PixelPosition: Vector2D = definedExternally, ViewportPosition: Vector2D = definedExternally): `T$326`
+        fun LocalToViewport(WorldContextObject: UObject, Geometry: Geometry, LocalCoordinate: Vector2D, PixelPosition: Vector2D = definedExternally, ViewportPosition: Vector2D = definedExternally): `T$326`
+        fun ScreenToViewport(WorldContextObject: UObject, ScreenPosition: Vector2D, ViewportPosition: Vector2D = definedExternally): `T$327`
+        fun ScreenToAbsolute(WorldContextObject: UObject, ScreenPosition: Vector2D, AbsoluteCoordinate: Vector2D = definedExternally, bIncludeWindowPosition: Boolean = definedExternally): `T$328`
+        fun ScreenToLocal(WorldContextObject: UObject, Geometry: Geometry, ScreenPosition: Vector2D, LocalCoordinate: Vector2D = definedExternally, bIncludeWindowPosition: Boolean = definedExternally): `T$329`
+        fun GetControllerTransformForTime(WorldContext: UObject, ControllerIndex: Number, MotionSource: String, Time: Timespan, bTimeWasUsed: Boolean = definedExternally, Orientation: Rotator = definedExternally, Position: Vector = definedExternally, bProvidedLinearVelocity: Boolean = definedExternally, LinearVelocity: Vector = definedExternally, bProvidedAngularVelocity: Boolean = definedExternally, AngularVelocityRadPerSec: Vector = definedExternally): `T$330`
+        fun GetDeviceWorldPose(WorldContext: UObject, XRDeviceId: XRDeviceId, bIsTracked: Boolean = definedExternally, Orientation: Rotator = definedExternally, bHasPositionalTracking: Boolean = definedExternally, Position: Vector = definedExternally): `T$270`
+        fun GetHMDData(WorldContext: UObject, HMDData: XRHMDData = definedExternally): `T$331`
+        fun GetMotionControllerData(WorldContext: UObject, hand: String /* "Left" | "Right" | "AnyHand" | "Pad" | "ExternalCamera" | "Gun" | "Special_1" | "Special_2" | "Special_3" | "Special_4" | "Special_5" | "Special_6" | "Special_7" | "Special_8" | "Special_9" | "Special_10" | "Special_11" | "ControllerHand_Count" | "EControllerHand_MAX" */, MotionControllerData: XRMotionControllerData = definedExternally): `T$332`
         fun GetTrackingToWorldTransform(WorldContext: UObject): Transform
         fun GetWorldToMetersScale(WorldContext: UObject): Number
         fun SetWorldToMetersScale(WorldContext: UObject, NewScale: Number)
-        fun GetAllActorsOfClassMatchingTagQuery(WorldContextObject: UObject, ActorClass: UnrealEngineClass, GameplayTagQuery: GameplayTagQuery, OutActors: Array<Actor> = definedExternally): `T$531`
+        fun GetAllActorsOfClassMatchingTagQuery(WorldContextObject: UObject, ActorClass: UnrealEngineClass, GameplayTagQuery: GameplayTagQuery, OutActors: Array<Actor> = definedExternally): `T$365`
     }
 }
 
@@ -26506,24 +27381,13 @@ external open class DirectoryItem {
     }
 }
 
-external open class JavascriptStubStruct {
-    open fun clone(): JavascriptStubStruct
-
-    companion object {
-        fun C(Other: UObject): JavascriptStubStruct
-        fun C(Other: Any): JavascriptStubStruct
-    }
-}
-
-external open class JavascriptFunction {
-    open fun clone(): JavascriptFunction
-    open fun CallJS(CustomStruct: JavascriptStubStruct)
-
-    companion object {
-        fun C(Other: UObject): JavascriptFunction
-        fun C(Other: Any): JavascriptFunction
-        fun CallJS(UFunction: JavascriptFunction, CustomStruct: JavascriptStubStruct)
-    }
+external object EFileRead_JS {
+    var FILEREAD_None: String /* "FILEREAD_None" */
+    var FILEREAD_NoFail: String /* "FILEREAD_NoFail" */
+    var FILEREAD_Silent: String /* "FILEREAD_Silent" */
+    var FILEREAD_NotUsedDummy: String /* "FILEREAD_NotUsedDummy" */
+    var FILEREAD_AllowWrite: String /* "FILEREAD_AllowWrite" */
+    var FILEREAD_MAX: String /* "FILEREAD_MAX" */
 }
 
 external open class ReadStringFromFileHandle {
@@ -26599,35 +27463,35 @@ external open class GenericStruct {
     }
 }
 
-external interface `T$532` {
+external interface `T$366` {
     var Results: Array<UObject>
 }
 
-external interface `T$533` {
+external interface `T$367` {
     var OutItems: Array<DirectoryItem>
     var `$`: Boolean
 }
 
-external interface `T$534` {
+external interface `T$368` {
     var OutKeys: Array<String>
     var OutValues: Array<String>
 }
 
-external interface `T$535` {
+external interface `T$369` {
     var PropertyValue: Number
     var `$`: Boolean
 }
 
-external interface `T$536` {
+external interface `T$370` {
     var Results: Array<UObject>
 }
 
-external interface `T$537` {
+external interface `T$371` {
     var OutItems: Array<DirectoryItem>
     var `$`: Boolean
 }
 
-external interface `T$538` {
+external interface `T$372` {
     var OutKeys: Array<String>
     var OutValues: Array<String>
 }
@@ -26656,20 +27520,20 @@ external open class UObject {
     open fun GetFields(bIncludeSuper: Boolean): Array<Field>
     open fun GetFileSize(Filename: String): Number
     open fun GetName(): String
-    open fun GetObjectsWithOuter(Results: Array<UObject> = definedExternally, bIncludeNestedObjects: Boolean = definedExternally, ExclusionFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$532`
+    open fun GetObjectsWithOuter(Results: Array<UObject> = definedExternally, bIncludeNestedObjects: Boolean = definedExternally, ExclusionFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$366`
     open fun GetOuter(): UObject
     open fun GetOutermost(): UObject
     open fun HasAnyFlags(Flags: Number): Boolean
-    open fun ReadDirectory(Directory: String, OutItems: Array<DirectoryItem> = definedExternally): `T$533`
+    open fun ReadDirectory(Directory: String, OutItems: Array<DirectoryItem> = definedExternally): `T$367`
     open fun ReadFile(Filename: String): Boolean
-    open fun ReadStringFromFile(Filename: String): String
+    open fun ReadStringFromFile(Filename: String, ReadFlags: String /* "FILEREAD_None" | "FILEREAD_NoFail" | "FILEREAD_Silent" | "FILEREAD_NotUsedDummy" | "FILEREAD_AllowWrite" | "FILEREAD_MAX" */): String
     open fun ReadStringFromFileAsync(Filename: String, UFunction: JavascriptFunction): ReadStringFromFileHandle
     open fun SetObjectFlags(Flags: Number)
     open fun WriteFile(Filename: String): Boolean
     open fun WriteStringToFile(Filename: String, Data: String, EncodingOptions: String /* "AutoDetect" | "ForceAnsi" | "ForceUnicode" | "ForceUTF8" | "ForceUTF8WithoutBOM" | "EJavascriptEncodingOptions_MAX" */): Boolean
     open fun RenameAsset(NewName: String)
     open fun GetDatasmithUserData(): DatasmithAssetUserData
-    open fun GetDatasmithUserDataKeysAndValuesForValue(StringToMatch: String, OutKeys: Array<String> = definedExternally, OutValues: Array<String> = definedExternally): `T$534`
+    open fun GetDatasmithUserDataKeysAndValuesForValue(StringToMatch: String, OutKeys: Array<String> = definedExternally, OutValues: Array<String> = definedExternally): `T$368`
     open fun GetDatasmithUserDataValueForKey(Key: String): String
     open fun RedirectVislog(DestinationOwner: UObject)
     open fun GetGameInstanceSubsystem(Class: UnrealEngineClass): GameInstanceSubsystem
@@ -26685,7 +27549,7 @@ external open class UObject {
     open fun DoesImplementInterface(Interface: UnrealEngineClass): Boolean
     open fun Equal(B: UObject): Boolean
     open fun GetDisplayName(): String
-    open fun GetEditorProperty(PropertyName: String, PropertyValue: Number = definedExternally): `T$535`
+    open fun GetEditorProperty(PropertyName: String, PropertyValue: Number = definedExternally): `T$369`
     open fun GetObjectName(): String
     open fun GetOuterObject(): UObject
     open fun GetPathName(): String
@@ -26766,20 +27630,20 @@ external open class UObject {
         fun GetFields(UObject: UObject, bIncludeSuper: Boolean): Array<Field>
         fun GetFileSize(UObject: UObject, Filename: String): Number
         fun GetName(UObject: UObject): String
-        fun GetObjectsWithOuter(Outer: UObject, Results: Array<UObject> = definedExternally, bIncludeNestedObjects: Boolean = definedExternally, ExclusionFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$536`
+        fun GetObjectsWithOuter(Outer: UObject, Results: Array<UObject> = definedExternally, bIncludeNestedObjects: Boolean = definedExternally, ExclusionFlags: Number = definedExternally, ExclusionInternalFlags: Number = definedExternally): `T$370`
         fun GetOuter(UObject: UObject): UObject
         fun GetOutermost(UObject: UObject): UObject
         fun HasAnyFlags(UObject: UObject, Flags: Number): Boolean
-        fun ReadDirectory(UObject: UObject, Directory: String, OutItems: Array<DirectoryItem> = definedExternally): `T$537`
+        fun ReadDirectory(UObject: UObject, Directory: String, OutItems: Array<DirectoryItem> = definedExternally): `T$371`
         fun ReadFile(UObject: UObject, Filename: String): Boolean
-        fun ReadStringFromFile(UObject: UObject, Filename: String): String
+        fun ReadStringFromFile(UObject: UObject, Filename: String, ReadFlags: String /* "FILEREAD_None" | "FILEREAD_NoFail" | "FILEREAD_Silent" | "FILEREAD_NotUsedDummy" | "FILEREAD_AllowWrite" | "FILEREAD_MAX" */): String
         fun ReadStringFromFileAsync(UObject: UObject, Filename: String, UFunction: JavascriptFunction): ReadStringFromFileHandle
         fun SetObjectFlags(Obj: UObject, Flags: Number)
         fun WriteFile(UObject: UObject, Filename: String): Boolean
         fun WriteStringToFile(UObject: UObject, Filename: String, Data: String, EncodingOptions: String /* "AutoDetect" | "ForceAnsi" | "ForceUnicode" | "ForceUTF8" | "ForceUTF8WithoutBOM" | "EJavascriptEncodingOptions_MAX" */): Boolean
         fun RenameAsset(Asset: UObject, NewName: String)
         fun GetDatasmithUserData(UObject: UObject): DatasmithAssetUserData
-        fun GetDatasmithUserDataKeysAndValuesForValue(UObject: UObject, StringToMatch: String, OutKeys: Array<String> = definedExternally, OutValues: Array<String> = definedExternally): `T$538`
+        fun GetDatasmithUserDataKeysAndValuesForValue(UObject: UObject, StringToMatch: String, OutKeys: Array<String> = definedExternally, OutValues: Array<String> = definedExternally): `T$372`
         fun GetDatasmithUserDataValueForKey(UObject: UObject, Key: String): String
         fun RedirectVislog(SourceOwner: UObject, DestinationOwner: UObject)
         fun GetGameInstanceSubsystem(ContextObject: UObject, Class: UnrealEngineClass): GameInstanceSubsystem
@@ -26795,7 +27659,7 @@ external open class UObject {
         fun DoesImplementInterface(TestObject: UObject, Interface: UnrealEngineClass): Boolean
         fun Equal(A: UObject, B: UObject): Boolean
         fun GetDisplayName(UObject: UObject): String
-        fun GetEditorProperty(UObject: UObject, PropertyName: String, PropertyValue: Number = definedExternally): `T$535`
+        fun GetEditorProperty(UObject: UObject, PropertyName: String, PropertyValue: Number = definedExternally): `T$369`
         fun GetObjectName(UObject: UObject): String
         fun GetOuterObject(UObject: UObject): UObject
         fun GetPathName(UObject: UObject): String
@@ -28263,7 +29127,7 @@ external open class TagAndValue {
     }
 }
 
-external interface `T$539` {
+external interface `T$373` {
     var OutTagValue: String
     var `$`: Boolean
 }
@@ -28283,7 +29147,7 @@ external open class AssetRegistryHelpers : UObject {
         fun IsUAsset(InAssetData: AssetData): Boolean
         fun IsRedirector(InAssetData: AssetData): Boolean
         fun IsAssetLoaded(InAssetData: AssetData): Boolean
-        fun GetTagValue(InAssetData: AssetData, InTagName: String, OutTagValue: String = definedExternally): `T$539`
+        fun GetTagValue(InAssetData: AssetData, InTagName: String, OutTagValue: String = definedExternally): `T$373`
         fun GetFullName(InAssetData: AssetData): String
         fun GetExportTextName(InAssetData: AssetData): String
         fun GetClass(InAssetData: AssetData): UnrealEngineClass
@@ -28308,53 +29172,53 @@ external open class AssetRegistryDependencyOptions {
     }
 }
 
-external interface `T$540` {
+external interface `T$374` {
     var AssetDataList: Array<AssetData>
 }
 
-external interface `T$541` {
+external interface `T$375` {
     var AssetDataList: Array<AssetData>
 }
 
-external interface `T$542` {
+external interface `T$376` {
     var OutReferencers: Array<String>
     var `$`: Boolean
 }
 
-external interface `T$543` {
+external interface `T$377` {
     var OutDependencies: Array<String>
     var `$`: Boolean
 }
 
-external interface `T$544` {
+external interface `T$378` {
     var OutPathList: Array<String>
 }
 
-external interface `T$545` {
+external interface `T$379` {
     var OutAssetData: Array<AssetData>
     var `$`: Boolean
 }
 
-external interface `T$546` {
+external interface `T$380` {
     var OutAssetData: Array<AssetData>
     var `$`: Boolean
 }
 
-external interface `T$547` {
+external interface `T$381` {
     var OutAssetData: Array<AssetData>
     var `$`: Boolean
 }
 
-external interface `T$548` {
+external interface `T$382` {
     var OutAssetData: Array<AssetData>
     var `$`: Boolean
 }
 
-external interface `T$549` {
+external interface `T$383` {
     var OutPathList: Array<String>
 }
 
-external interface `T$550` {
+external interface `T$384` {
     var OutAssetData: Array<AssetData>
     var `$`: Boolean
 }
@@ -28363,25 +29227,25 @@ external open class AssetRegistry : Interface {
     constructor()
     constructor(Outer: UObject)
     open fun WaitForCompletion()
-    open fun UseFilterToExcludeAssets(AssetDataList: Array<AssetData> = definedExternally, Filter: ARFilter = definedExternally): `T$540`
+    open fun UseFilterToExcludeAssets(AssetDataList: Array<AssetData> = definedExternally, Filter: ARFilter = definedExternally): `T$374`
     open fun SearchAllAssets(bSynchronousSearch: Boolean)
     open fun ScanPathsSynchronous(InPaths: Array<String>, bForceRescan: Boolean)
     open fun ScanModifiedAssetFiles(InFilePaths: Array<String>)
     open fun ScanFilesSynchronous(InFilePaths: Array<String>, bForceRescan: Boolean)
-    open fun RunAssetsThroughFilter(AssetDataList: Array<AssetData> = definedExternally, Filter: ARFilter = definedExternally): `T$541`
+    open fun RunAssetsThroughFilter(AssetDataList: Array<AssetData> = definedExternally, Filter: ARFilter = definedExternally): `T$375`
     open fun PrioritizeSearchPath(PathToPrioritize: String)
-    open fun GetReferencers(PackageName: String, ReferenceOptions: AssetRegistryDependencyOptions, OutReferencers: Array<String> = definedExternally): `T$542`
-    open fun GetDependencies(PackageName: String, DependencyOptions: AssetRegistryDependencyOptions, OutDependencies: Array<String> = definedExternally): `T$543`
+    open fun GetReferencers(PackageName: String, ReferenceOptions: AssetRegistryDependencyOptions, OutReferencers: Array<String> = definedExternally): `T$376`
+    open fun GetDependencies(PackageName: String, DependencyOptions: AssetRegistryDependencyOptions, OutDependencies: Array<String> = definedExternally): `T$377`
     open fun IsLoadingAssets(): Boolean
     open fun HasAssets(PackagePath: String, bRecursive: Boolean): Boolean
-    open fun GetSubPaths(InBasePath: String, OutPathList: Array<String> = definedExternally, bInRecurse: Boolean = definedExternally): `T$544`
-    open fun GetAssetsByPath(PackagePath: String, OutAssetData: Array<AssetData> = definedExternally, bRecursive: Boolean = definedExternally, bIncludeOnlyOnDiskAssets: Boolean = definedExternally): `T$545`
-    open fun GetAssetsByPackageName(PackageName: String, OutAssetData: Array<AssetData> = definedExternally, bIncludeOnlyOnDiskAssets: Boolean = definedExternally): `T$546`
-    open fun GetAssetsByClass(ClassName: String, OutAssetData: Array<AssetData> = definedExternally, bSearchSubClasses: Boolean = definedExternally): `T$547`
-    open fun GetAssets(Filter: ARFilter, OutAssetData: Array<AssetData> = definedExternally): `T$548`
+    open fun GetSubPaths(InBasePath: String, OutPathList: Array<String> = definedExternally, bInRecurse: Boolean = definedExternally): `T$378`
+    open fun GetAssetsByPath(PackagePath: String, OutAssetData: Array<AssetData> = definedExternally, bRecursive: Boolean = definedExternally, bIncludeOnlyOnDiskAssets: Boolean = definedExternally): `T$379`
+    open fun GetAssetsByPackageName(PackageName: String, OutAssetData: Array<AssetData> = definedExternally, bIncludeOnlyOnDiskAssets: Boolean = definedExternally): `T$380`
+    open fun GetAssetsByClass(ClassName: String, OutAssetData: Array<AssetData> = definedExternally, bSearchSubClasses: Boolean = definedExternally): `T$381`
+    open fun GetAssets(Filter: ARFilter, OutAssetData: Array<AssetData> = definedExternally): `T$382`
     open fun GetAssetByObjectPath(ObjectPath: String, bIncludeOnlyOnDiskAssets: Boolean): AssetData
-    open fun GetAllCachedPaths(OutPathList: Array<String> = definedExternally): `T$549`
-    open fun GetAllAssets(OutAssetData: Array<AssetData> = definedExternally, bIncludeOnlyOnDiskAssets: Boolean = definedExternally): `T$550`
+    open fun GetAllCachedPaths(OutPathList: Array<String> = definedExternally): `T$383`
+    open fun GetAllAssets(OutAssetData: Array<AssetData> = definedExternally, bIncludeOnlyOnDiskAssets: Boolean = definedExternally): `T$384`
 
     companion object {
         fun Load(ResourceName: String): AssetRegistry
@@ -28532,974 +29396,5 @@ external open class GameSessionSettings : UObject {
         fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): GameSessionSettings
         fun C(Other: UObject): GameSessionSettings
         fun C(Other: Any): GameSessionSettings
-    }
-}
-
-external open class GeneralEngineSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): GeneralEngineSettings
-        fun Find(Outer: UObject, ResourceName: String): GeneralEngineSettings
-        fun GetDefaultObject(): GeneralEngineSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): GeneralEngineSettings
-        fun C(Other: UObject): GeneralEngineSettings
-        fun C(Other: Any): GeneralEngineSettings
-    }
-}
-
-external open class GeneralProjectSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var CompanyName: String
-    open var CompanyDistinguishedName: String
-    open var CopyrightNotice: String
-    open var Description: String
-    open var Homepage: String
-    open var LicensingTerms: String
-    open var PrivacyPolicy: String
-    open var ProjectID: Guid
-    open var ProjectName: String
-    open var ProjectVersion: String
-    open var SupportContact: String
-    open var ProjectDisplayedTitle: String
-    open var ProjectDebugTitleInfo: String
-    open var bShouldWindowPreserveAspectRatio: Boolean
-    open var bUseBorderlessWindow: Boolean
-    open var bStartInVR: Boolean
-    open var bAllowWindowResize: Boolean
-    open var bAllowClose: Boolean
-    open var bAllowMaximize: Boolean
-    open var bAllowMinimize: Boolean
-
-    companion object {
-        fun Load(ResourceName: String): GeneralProjectSettings
-        fun Find(Outer: UObject, ResourceName: String): GeneralProjectSettings
-        fun GetDefaultObject(): GeneralProjectSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): GeneralProjectSettings
-        fun C(Other: UObject): GeneralProjectSettings
-        fun C(Other: Any): GeneralProjectSettings
-    }
-}
-
-external open class HudSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var bShowHUD: Boolean
-    open var DebugDisplay: Array<String>
-
-    companion object {
-        fun Load(ResourceName: String): HudSettings
-        fun Find(Outer: UObject, ResourceName: String): HudSettings
-        fun GetDefaultObject(): HudSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): HudSettings
-        fun C(Other: UObject): HudSettings
-        fun C(Other: Any): HudSettings
-    }
-}
-
-external open class HandlerComponentFactory : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): HandlerComponentFactory
-        fun Find(Outer: UObject, ResourceName: String): HandlerComponentFactory
-        fun GetDefaultObject(): HandlerComponentFactory
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): HandlerComponentFactory
-        fun C(Other: UObject): HandlerComponentFactory
-        fun C(Other: Any): HandlerComponentFactory
-    }
-}
-
-external open class PacketHandlerProfileConfig : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Components: Array<String>
-
-    companion object {
-        fun Load(ResourceName: String): PacketHandlerProfileConfig
-        fun Find(Outer: UObject, ResourceName: String): PacketHandlerProfileConfig
-        fun GetDefaultObject(): PacketHandlerProfileConfig
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PacketHandlerProfileConfig
-        fun C(Other: UObject): PacketHandlerProfileConfig
-        fun C(Other: Any): PacketHandlerProfileConfig
-    }
-}
-
-external open class MeshDescription : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): MeshDescription
-        fun Find(Outer: UObject, ResourceName: String): MeshDescription
-        fun GetDefaultObject(): MeshDescription
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): MeshDescription
-        fun C(Other: UObject): MeshDescription
-        fun C(Other: Any): MeshDescription
-    }
-}
-
-external open class DeveloperSettings : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): DeveloperSettings
-        fun Find(Outer: UObject, ResourceName: String): DeveloperSettings
-        fun GetDefaultObject(): DeveloperSettings
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): DeveloperSettings
-        fun C(Other: UObject): DeveloperSettings
-        fun C(Other: Any): DeveloperSettings
-    }
-}
-
-external open class ChaosPhysicalMaterial : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Friction: Number
-    open var StaticFriction: Number
-    open var Restitution: Number
-    open var LinearEtherDrag: Number
-    open var AngularEtherDrag: Number
-    open var SleepingLinearVelocityThreshold: Number
-    open var SleepingAngularVelocityThreshold: Number
-
-    companion object {
-        fun Load(ResourceName: String): ChaosPhysicalMaterial
-        fun Find(Outer: UObject, ResourceName: String): ChaosPhysicalMaterial
-        fun GetDefaultObject(): ChaosPhysicalMaterial
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ChaosPhysicalMaterial
-        fun C(Other: UObject): ChaosPhysicalMaterial
-        fun C(Other: Any): ChaosPhysicalMaterial
-    }
-}
-
-external object EClusterUnionMethod {
-    var PointImplicit: String /* "PointImplicit" */
-    var DelaunayTriangulation: String /* "DelaunayTriangulation" */
-    var MinimalSpanningSubsetDelaunayTriangulation: String /* "MinimalSpanningSubsetDelaunayTriangulation" */
-    var PointImplicitAugmentedWithMinimalDelaunay: String /* "PointImplicitAugmentedWithMinimalDelaunay" */
-    var None: String /* "None" */
-    var EClusterUnionMethod_MAX: String /* "EClusterUnionMethod_MAX" */
-}
-
-external open class SolverCollisionFilterSettings {
-    open var FilterEnabled: Boolean
-    open var MinMass: Number
-    open var MinSpeed: Number
-    open var MinImpulse: Number
-    open fun clone(): SolverCollisionFilterSettings
-
-    companion object {
-        fun C(Other: UObject): SolverCollisionFilterSettings
-        fun C(Other: Any): SolverCollisionFilterSettings
-    }
-}
-
-external open class SolverBreakingFilterSettings {
-    open var FilterEnabled: Boolean
-    open var MinMass: Number
-    open var MinSpeed: Number
-    open var MinVolume: Number
-    open fun clone(): SolverBreakingFilterSettings
-
-    companion object {
-        fun C(Other: UObject): SolverBreakingFilterSettings
-        fun C(Other: Any): SolverBreakingFilterSettings
-    }
-}
-
-external open class SolverTrailingFilterSettings {
-    open var FilterEnabled: Boolean
-    open var MinMass: Number
-    open var MinSpeed: Number
-    open var MinVolume: Number
-    open fun clone(): SolverTrailingFilterSettings
-
-    companion object {
-        fun C(Other: UObject): SolverTrailingFilterSettings
-        fun C(Other: Any): SolverTrailingFilterSettings
-    }
-}
-
-external open class ChaosSolverConfiguration {
-    open var Iterations: Number
-    open var CollisionPairIterations: Number
-    open var PushOutIterations: Number
-    open var CollisionPushOutPairIterations: Number
-    open var CollisionMarginFraction: Number
-    open var CollisionMarginMax: Number
-    open var CollisionCullDistance: Number
-    open var JointPairIterations: Number
-    open var JointPushOutPairIterations: Number
-    open var ClusterConnectionFactor: Number
-    open var ClusterUnionConnectionType: String /* "PointImplicit" | "DelaunayTriangulation" | "MinimalSpanningSubsetDelaunayTriangulation" | "PointImplicitAugmentedWithMinimalDelaunay" | "None" | "EClusterUnionMethod_MAX" */
-    open var bGenerateCollisionData: Boolean
-    open var CollisionFilterSettings: SolverCollisionFilterSettings
-    open var bGenerateBreakData: Boolean
-    open var BreakingFilterSettings: SolverBreakingFilterSettings
-    open var bGenerateTrailingData: Boolean
-    open var TrailingFilterSettings: SolverTrailingFilterSettings
-    open var bGenerateContactGraph: Boolean
-    open fun clone(): ChaosSolverConfiguration
-
-    companion object {
-        fun C(Other: UObject): ChaosSolverConfiguration
-        fun C(Other: Any): ChaosSolverConfiguration
-    }
-}
-
-external open class PhysicsSettingsCore : DeveloperSettings {
-    constructor()
-    constructor(Outer: UObject)
-    open var DefaultGravityZ: Number
-    open var DefaultTerminalVelocity: Number
-    open var DefaultFluidFriction: Number
-    open var SimulateScratchMemorySize: Number
-    open var RagdollAggregateThreshold: Number
-    open var TriangleMeshTriangleMinAreaThreshold: Number
-    open var bEnableShapeSharing: Boolean
-    open var bEnablePCM: Boolean
-    open var bEnableStabilization: Boolean
-    open var bWarnMissingLocks: Boolean
-    open var bEnable2DPhysics: Boolean
-    open var bDefaultHasComplexCollision: Boolean
-    open var BounceThresholdVelocity: Number
-    open var FrictionCombineMode: String /* "Average" | "Min" | "Multiply" | "Max" | "EFrictionCombineMode_MAX" */
-    open var RestitutionCombineMode: String /* "Average" | "Min" | "Multiply" | "Max" | "EFrictionCombineMode_MAX" */
-    open var MaxAngularVelocity: Number
-    open var MaxDepenetrationVelocity: Number
-    open var ContactOffsetMultiplier: Number
-    open var MinContactOffset: Number
-    open var MaxContactOffset: Number
-    open var bSimulateSkeletalMeshOnDedicatedServer: Boolean
-    open var DefaultShapeComplexity: String /* "CTF_UseDefault" | "CTF_UseSimpleAndComplex" | "CTF_UseSimpleAsComplex" | "CTF_UseComplexAsSimple" | "CTF_MAX" */
-    open var SolverOptions: ChaosSolverConfiguration
-
-    companion object {
-        fun Load(ResourceName: String): PhysicsSettingsCore
-        fun Find(Outer: UObject, ResourceName: String): PhysicsSettingsCore
-        fun GetDefaultObject(): PhysicsSettingsCore
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PhysicsSettingsCore
-        fun C(Other: UObject): PhysicsSettingsCore
-        fun C(Other: Any): PhysicsSettingsCore
-    }
-}
-
-external open class AudioEndpointSettingsBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): AudioEndpointSettingsBase
-        fun Find(Outer: UObject, ResourceName: String): AudioEndpointSettingsBase
-        fun GetDefaultObject(): AudioEndpointSettingsBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): AudioEndpointSettingsBase
-        fun C(Other: UObject): AudioEndpointSettingsBase
-        fun C(Other: Any): AudioEndpointSettingsBase
-    }
-}
-
-external open class SoundfieldEndpointSettingsBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): SoundfieldEndpointSettingsBase
-        fun Find(Outer: UObject, ResourceName: String): SoundfieldEndpointSettingsBase
-        fun GetDefaultObject(): SoundfieldEndpointSettingsBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SoundfieldEndpointSettingsBase
-        fun C(Other: UObject): SoundfieldEndpointSettingsBase
-        fun C(Other: Any): SoundfieldEndpointSettingsBase
-    }
-}
-
-external open class SoundfieldEffectSettingsBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): SoundfieldEffectSettingsBase
-        fun Find(Outer: UObject, ResourceName: String): SoundfieldEffectSettingsBase
-        fun GetDefaultObject(): SoundfieldEffectSettingsBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SoundfieldEffectSettingsBase
-        fun C(Other: UObject): SoundfieldEffectSettingsBase
-        fun C(Other: Any): SoundfieldEffectSettingsBase
-    }
-}
-
-external open class SoundfieldEffectBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Settings: SoundfieldEffectSettingsBase
-
-    companion object {
-        fun Load(ResourceName: String): SoundfieldEffectBase
-        fun Find(Outer: UObject, ResourceName: String): SoundfieldEffectBase
-        fun GetDefaultObject(): SoundfieldEffectBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SoundfieldEffectBase
-        fun C(Other: UObject): SoundfieldEffectBase
-        fun C(Other: Any): SoundfieldEffectBase
-    }
-}
-
-external open class PropertyAccess : Interface {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): PropertyAccess
-        fun Find(Outer: UObject, ResourceName: String): PropertyAccess
-        fun GetDefaultObject(): PropertyAccess
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PropertyAccess
-        fun C(Other: UObject): PropertyAccess
-        fun C(Other: Any): PropertyAccess
-    }
-}
-
-external open class PropertyEventBroadcaster : Interface {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): PropertyEventBroadcaster
-        fun Find(Outer: UObject, ResourceName: String): PropertyEventBroadcaster
-        fun GetDefaultObject(): PropertyEventBroadcaster
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PropertyEventBroadcaster
-        fun C(Other: UObject): PropertyEventBroadcaster
-        fun C(Other: Any): PropertyEventBroadcaster
-    }
-}
-
-external open class PropertyEventSubscriber : Interface {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): PropertyEventSubscriber
-        fun Find(Outer: UObject, ResourceName: String): PropertyEventSubscriber
-        fun GetDefaultObject(): PropertyEventSubscriber
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): PropertyEventSubscriber
-        fun C(Other: UObject): PropertyEventSubscriber
-        fun C(Other: Any): PropertyEventSubscriber
-    }
-}
-
-external open class ClothConfigBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ClothConfigBase
-        fun Find(Outer: UObject, ResourceName: String): ClothConfigBase
-        fun GetDefaultObject(): ClothConfigBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ClothConfigBase
-        fun C(Other: UObject): ClothConfigBase
-        fun C(Other: Any): ClothConfigBase
-    }
-}
-
-external open class ClothSharedSimConfigBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ClothSharedSimConfigBase
-        fun Find(Outer: UObject, ResourceName: String): ClothSharedSimConfigBase
-        fun GetDefaultObject(): ClothSharedSimConfigBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ClothSharedSimConfigBase
-        fun C(Other: UObject): ClothSharedSimConfigBase
-        fun C(Other: Any): ClothSharedSimConfigBase
-    }
-}
-
-external open class ClothVertBoneData {
-    open var NumInfluences: Number
-    open var BoneIndices: Any
-    open var BoneWeights: Number
-    open fun clone(): ClothVertBoneData
-
-    companion object {
-        fun C(Other: UObject): ClothVertBoneData
-        fun C(Other: Any): ClothVertBoneData
-    }
-}
-
-external open class ClothPhysicalMeshDataBase_Legacy : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Vertices: Array<Vector>
-    open var Normals: Array<Vector>
-    open var VertexColors: Array<Color>
-    open var Indices: Array<Any>
-    open var InverseMasses: Array<Number>
-    open var BoneData: Array<ClothVertBoneData>
-    open var NumFixedVerts: Number
-    open var MaxBoneWeights: Number
-    open var SelfCollisionIndices: Array<Any>
-
-    companion object {
-        fun Load(ResourceName: String): ClothPhysicalMeshDataBase_Legacy
-        fun Find(Outer: UObject, ResourceName: String): ClothPhysicalMeshDataBase_Legacy
-        fun GetDefaultObject(): ClothPhysicalMeshDataBase_Legacy
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ClothPhysicalMeshDataBase_Legacy
-        fun C(Other: UObject): ClothPhysicalMeshDataBase_Legacy
-        fun C(Other: Any): ClothPhysicalMeshDataBase_Legacy
-    }
-}
-
-external open class JsonUtilitiesDummyObject : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): JsonUtilitiesDummyObject
-        fun Find(Outer: UObject, ResourceName: String): JsonUtilitiesDummyObject
-        fun GetDefaultObject(): JsonUtilitiesDummyObject
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): JsonUtilitiesDummyObject
-        fun C(Other: UObject): JsonUtilitiesDummyObject
-        fun C(Other: Any): JsonUtilitiesDummyObject
-    }
-}
-
-external object EMultiBoxType {
-    var MenuBar: String /* "MenuBar" */
-    var ToolBar: String /* "ToolBar" */
-    var VerticalToolBar: String /* "VerticalToolBar" */
-    var UniformToolBar: String /* "UniformToolBar" */
-    var Menu: String /* "Menu" */
-    var ButtonRow: String /* "ButtonRow" */
-    var EMultiBoxType_MAX: String /* "EMultiBoxType_MAX" */
-}
-
-external open class ToolMenuOwner {
-    open fun clone(): ToolMenuOwner
-
-    companion object {
-        fun C(Other: UObject): ToolMenuOwner
-        fun C(Other: Any): ToolMenuOwner
-    }
-}
-
-external open class ToolMenuContext {
-    open var ContextObjects: Array<UObject>
-    open fun clone(): ToolMenuContext
-
-    companion object {
-        fun C(Other: UObject): ToolMenuContext
-        fun C(Other: Any): ToolMenuContext
-    }
-}
-
-external object EMultiBlockType {
-    var None: String /* "None" */
-    var ButtonRow: String /* "ButtonRow" */
-    var EditableText: String /* "EditableText" */
-    var Heading: String /* "Heading" */
-    var MenuEntry: String /* "MenuEntry" */
-    var Separator: String /* "Separator" */
-    var ToolBarButton: String /* "ToolBarButton" */
-    var ToolBarComboButton: String /* "ToolBarComboButton" */
-    var Widget: String /* "Widget" */
-    var EMultiBlockType_MAX: String /* "EMultiBlockType_MAX" */
-}
-
-external object EUserInterfaceActionType {
-    var None: String /* "None" */
-    var Button: String /* "Button" */
-    var ToggleButton: String /* "ToggleButton" */
-    var RadioButton: String /* "RadioButton" */
-    var Check: String /* "Check" */
-    var CollapsedButton: String /* "CollapsedButton" */
-    var EUserInterfaceActionType_MAX: String /* "EUserInterfaceActionType_MAX" */
-}
-
-external object EToolMenuInsertType {
-    var Default: String /* "Default" */
-    var Before: String /* "Before" */
-    var After: String /* "After" */
-    var First: String /* "First" */
-    var EToolMenuInsertType_MAX: String /* "EToolMenuInsertType_MAX" */
-}
-
-external open class ToolMenuInsert {
-    open var Name: String
-    open var Position: String /* "Default" | "Before" | "After" | "First" | "EToolMenuInsertType_MAX" */
-    open fun clone(): ToolMenuInsert
-
-    companion object {
-        fun C(Other: UObject): ToolMenuInsert
-        fun C(Other: Any): ToolMenuInsert
-    }
-}
-
-external open class ScriptSlateIcon {
-    open var StyleSetName: String
-    open var StyleName: String
-    open var SmallStyleName: String
-    open fun clone(): ScriptSlateIcon
-
-    companion object {
-        fun C(Other: UObject): ScriptSlateIcon
-        fun C(Other: Any): ScriptSlateIcon
-    }
-}
-
-external open class ToolMenuEntryScriptDataAdvanced {
-    open var TutorialHighlight: String
-    open var EntryType: String /* "None" | "ButtonRow" | "EditableText" | "Heading" | "MenuEntry" | "Separator" | "ToolBarButton" | "ToolBarComboButton" | "Widget" | "EMultiBlockType_MAX" */
-    open var UserInterfaceActionType: String /* "None" | "Button" | "ToggleButton" | "RadioButton" | "Check" | "CollapsedButton" | "EUserInterfaceActionType_MAX" */
-    open var bIsSubMenu: Boolean
-    open var bOpenSubMenuOnClick: Boolean
-    open var bShouldCloseWindowAfterMenuSelection: Boolean
-    open var bSimpleComboBox: Boolean
-    open fun clone(): ToolMenuEntryScriptDataAdvanced
-
-    companion object {
-        fun C(Other: UObject): ToolMenuEntryScriptDataAdvanced
-        fun C(Other: Any): ToolMenuEntryScriptDataAdvanced
-    }
-}
-
-external open class ToolMenuEntryScriptData {
-    open var Menu: String
-    open var Section: String
-    open var Name: String
-    open var Label: String
-    open var Tooltip: String
-    open var Icon: ScriptSlateIcon
-    open var OwnerName: String
-    open var InsertPosition: ToolMenuInsert
-    open var Advanced: ToolMenuEntryScriptDataAdvanced
-    open fun clone(): ToolMenuEntryScriptData
-
-    companion object {
-        fun C(Other: UObject): ToolMenuEntryScriptData
-        fun C(Other: Any): ToolMenuEntryScriptData
-    }
-}
-
-external object ECheckBoxState {
-    var Unchecked: String /* "Unchecked" */
-    var Checked: String /* "Checked" */
-    var Undetermined: String /* "Undetermined" */
-    var ECheckBoxState_MAX: String /* "ECheckBoxState_MAX" */
-}
-
-external open class ToolMenuEntryScript : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var Data: ToolMenuEntryScriptData
-    open fun RegisterMenuEntry()
-    open fun IsVisible(Context: ToolMenuContext): Boolean
-    open fun InitEntry(OwnerName: String, Menu: String, Section: String, Name: String, Label: String, Tooltip: String)
-    open fun GetToolTip(Context: ToolMenuContext): String
-    open fun GetLabel(Context: ToolMenuContext): String
-    open fun GetIcon(Context: ToolMenuContext): ScriptSlateIcon
-    open fun GetCheckState(Context: ToolMenuContext): String /* "Unchecked" | "Checked" | "Undetermined" | "ECheckBoxState_MAX" */
-    open fun Execute(Context: ToolMenuContext)
-    open fun ConstructMenuEntry(Menu: ToolMenu, SectionName: String, Context: ToolMenuContext)
-    open fun CanExecute(Context: ToolMenuContext): Boolean
-
-    companion object {
-        fun Load(ResourceName: String): ToolMenuEntryScript
-        fun Find(Outer: UObject, ResourceName: String): ToolMenuEntryScript
-        fun GetDefaultObject(): ToolMenuEntryScript
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ToolMenuEntryScript
-        fun C(Other: UObject): ToolMenuEntryScript
-        fun C(Other: Any): ToolMenuEntryScript
-    }
-}
-
-external open class ToolMenuEntry {
-    open var Name: String
-    open var Owner: ToolMenuOwner
-    open var Type: String /* "None" | "ButtonRow" | "EditableText" | "Heading" | "MenuEntry" | "Separator" | "ToolBarButton" | "ToolBarComboButton" | "Widget" | "EMultiBlockType_MAX" */
-    open var UserInterfaceActionType: String /* "None" | "Button" | "ToggleButton" | "RadioButton" | "Check" | "CollapsedButton" | "EUserInterfaceActionType_MAX" */
-    open var TutorialHighlightName: String
-    open var InsertPosition: ToolMenuInsert
-    open var bShouldCloseWindowAfterMenuSelection: Boolean
-    open var ScriptObject: ToolMenuEntryScript
-    open fun clone(): ToolMenuEntry
-
-    companion object {
-        fun C(Other: UObject): ToolMenuEntry
-        fun C(Other: Any): ToolMenuEntry
-    }
-}
-
-external open class ToolMenuSectionDynamic : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open fun ConstructSections(Menu: ToolMenu, Context: ToolMenuContext)
-
-    companion object {
-        fun Load(ResourceName: String): ToolMenuSectionDynamic
-        fun Find(Outer: UObject, ResourceName: String): ToolMenuSectionDynamic
-        fun GetDefaultObject(): ToolMenuSectionDynamic
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ToolMenuSectionDynamic
-        fun C(Other: UObject): ToolMenuSectionDynamic
-        fun C(Other: Any): ToolMenuSectionDynamic
-    }
-}
-
-external open class ToolMenuSection {
-    open var Name: String
-    open var Owner: ToolMenuOwner
-    open var Blocks: Array<ToolMenuEntry>
-    open var InsertPosition: ToolMenuInsert
-    open var Context: ToolMenuContext
-    open var ToolMenuSectionDynamic: ToolMenuSectionDynamic
-    open fun clone(): ToolMenuSection
-
-    companion object {
-        fun C(Other: UObject): ToolMenuSection
-        fun C(Other: Any): ToolMenuSection
-    }
-}
-
-external open class ToolMenu : ToolMenuBase {
-    constructor()
-    constructor(Outer: UObject)
-    open var MenuName: String
-    open var MenuParent: String
-    open var StyleName: String
-    open var TutorialHighlightName: String
-    open var MenuType: String /* "MenuBar" | "ToolBar" | "VerticalToolBar" | "UniformToolBar" | "Menu" | "ButtonRow" | "EMultiBoxType_MAX" */
-    open var bShouldCloseWindowAfterMenuSelection: Boolean
-    open var bCloseSelfOnly: Boolean
-    open var bSearchable: Boolean
-    open var bToolBarIsFocusable: Boolean
-    open var bToolBarForceSmallIcons: Boolean
-    open var bPreventCustomization: Boolean
-    open var MenuOwner: ToolMenuOwner
-    open var Context: ToolMenuContext
-    open var Sections: Array<ToolMenuSection>
-    open var SubMenuParent: ToolMenu
-    open var SubMenuSourceEntryName: String
-    open fun InitMenu(Owner: ToolMenuOwner, Name: String, Parent: String, Type: String /* "MenuBar" | "ToolBar" | "VerticalToolBar" | "UniformToolBar" | "Menu" | "ButtonRow" | "EMultiBoxType_MAX" */)
-    open fun AddSubMenuScript(Owner: String, SectionName: String, Name: String, Label: String, Tooltip: String): ToolMenu
-    open fun AddSection(SectionName: String, Label: String, InsertName: String, InsertType: String /* "Default" | "Before" | "After" | "First" | "EToolMenuInsertType_MAX" */)
-    open fun AddMenuEntryObject(InObject: ToolMenuEntryScript)
-    open fun AddMenuEntry(SectionName: String, Args: ToolMenuEntry)
-    open fun AddDynamicSection(SectionName: String, UObject: ToolMenuSectionDynamic)
-
-    companion object {
-        fun Load(ResourceName: String): ToolMenu
-        fun Find(Outer: UObject, ResourceName: String): ToolMenu
-        fun GetDefaultObject(): ToolMenu
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ToolMenu
-        fun C(Other: UObject): ToolMenu
-        fun C(Other: Any): ToolMenu
-    }
-}
-
-external open class ToolMenuContextBase : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ToolMenuContextBase
-        fun Find(Outer: UObject, ResourceName: String): ToolMenuContextBase
-        fun GetDefaultObject(): ToolMenuContextBase
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ToolMenuContextBase
-        fun C(Other: UObject): ToolMenuContextBase
-        fun C(Other: Any): ToolMenuContextBase
-    }
-}
-
-external open class SlateTabManagerContext : ToolMenuContextBase {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): SlateTabManagerContext
-        fun Find(Outer: UObject, ResourceName: String): SlateTabManagerContext
-        fun GetDefaultObject(): SlateTabManagerContext
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): SlateTabManagerContext
-        fun C(Other: UObject): SlateTabManagerContext
-        fun C(Other: Any): SlateTabManagerContext
-    }
-}
-
-external open class CustomizedToolMenu {
-    open var Name: String
-    open var Entries: Any
-    open var Sections: Any
-    open var EntryOrder: Any
-    open var SectionOrder: Array<String>
-    open fun clone(): CustomizedToolMenu
-
-    companion object {
-        fun C(Other: UObject): CustomizedToolMenu
-        fun C(Other: Any): CustomizedToolMenu
-    }
-}
-
-external open class ToolMenus : UObject {
-    constructor()
-    constructor(Outer: UObject)
-    open var CustomizedMenus: Array<CustomizedToolMenu>
-    open var MenuSubstitutionsDuringGenerate: Any
-    open var Menus: Any
-    open fun UnregisterOwnerByName(InOwnerName: String)
-    open fun SetSectionPosition(MenuName: String, SectionName: String, OtherSectionName: String, PositionType: String /* "Default" | "Before" | "After" | "First" | "EToolMenuInsertType_MAX" */)
-    open fun SetSectionLabel(MenuName: String, SectionName: String, Label: String)
-    open fun RemoveSection(MenuName: String, Section: String)
-    open fun RemoveMenu(MenuName: String)
-    open fun RemoveEntry(MenuName: String, Section: String, Name: String)
-    open fun RegisterMenu(Name: String, Parent: String, Type: String /* "MenuBar" | "ToolBar" | "VerticalToolBar" | "UniformToolBar" | "Menu" | "ButtonRow" | "EMultiBoxType_MAX" */, bWarnIfAlreadyRegistered: Boolean): ToolMenu
-    open fun RefreshMenuWidget(Name: String): Boolean
-    open fun RefreshAllWidgets()
-    open fun IsMenuRegistered(Name: String): Boolean
-    open fun FindMenu(Name: String): ToolMenu
-    open fun ExtendMenu(Name: String): ToolMenu
-
-    companion object {
-        fun Load(ResourceName: String): ToolMenus
-        fun Find(Outer: UObject, ResourceName: String): ToolMenus
-        fun GetDefaultObject(): ToolMenus
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ToolMenus
-        fun GetActorGroupingUtils(): ToolMenus
-        fun FindContext(InContext: ToolMenuContext, InClass: UnrealEngineClass): UObject
-        fun AddMenuEntryObject(MenuEntryObject: ToolMenuEntryScript): Boolean
-        fun C(Other: UObject): ToolMenus
-        fun C(Other: Any): ToolMenus
-    }
-}
-
-external open class ToolMenuContextExtensions : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ToolMenuContextExtensions
-        fun Find(Outer: UObject, ResourceName: String): ToolMenuContextExtensions
-        fun GetDefaultObject(): ToolMenuContextExtensions
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ToolMenuContextExtensions
-        fun FindByClass(Context: ToolMenuContext, InClass: UnrealEngineClass): UObject
-        fun C(Other: UObject): ToolMenuContextExtensions
-        fun C(Other: Any): ToolMenuContextExtensions
-    }
-}
-
-external object EToolMenuStringCommandType {
-    var Command: String /* "Command" */
-    var Python: String /* "Python" */
-    var Custom: String /* "Custom" */
-    var EToolMenuStringCommandType_MAX: String /* "EToolMenuStringCommandType_MAX" */
-}
-
-external open class ToolMenuStringCommand {
-    open var Type: String /* "Command" | "Python" | "Custom" | "EToolMenuStringCommandType_MAX" */
-    open var CustomType: String
-    open var string: String
-    open fun clone(): ToolMenuStringCommand
-
-    companion object {
-        fun C(Other: UObject): ToolMenuStringCommand
-        fun C(Other: Any): ToolMenuStringCommand
-    }
-}
-
-external interface `T$551` {
-    var Target: ToolMenuEntry
-}
-
-external interface `T$552` {
-    var Name: String
-}
-
-external interface `T$553` {
-    var Type: String /* "Command" | "Python" | "Custom" | "EToolMenuStringCommandType_MAX" */
-    var CustomType: String
-    var string: String
-}
-
-external interface `T$554` {
-    var StyleSetName: String
-    var StyleName: String
-    var SmallStyleName: String
-}
-
-external open class ToolMenuEntryExtensions : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ToolMenuEntryExtensions
-        fun Find(Outer: UObject, ResourceName: String): ToolMenuEntryExtensions
-        fun GetDefaultObject(): ToolMenuEntryExtensions
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ToolMenuEntryExtensions
-        fun SetToolTip(Target: ToolMenuEntry = definedExternally, Tooltip: String = definedExternally): `T$551`
-        fun SetStringCommand(Target: ToolMenuEntry = definedExternally, Type: String /* "Command" | "Python" | "Custom" | "EToolMenuStringCommandType_MAX" */ = definedExternally, CustomType: String = definedExternally, string: String = definedExternally): `T$551`
-        fun SetLabel(Target: ToolMenuEntry = definedExternally, Label: String = definedExternally): `T$551`
-        fun SetIcon(Target: ToolMenuEntry = definedExternally, StyleSetName: String = definedExternally, StyleName: String = definedExternally, SmallStyleName: String = definedExternally): `T$551`
-        fun MakeToolMenuOwner(Name: String): ToolMenuOwner
-        fun MakeStringCommand(Type: String /* "Command" | "Python" | "Custom" | "EToolMenuStringCommandType_MAX" */, CustomType: String, string: String): ToolMenuStringCommand
-        fun MakeScriptSlateIcon(StyleSetName: String, StyleName: String, SmallStyleName: String): ScriptSlateIcon
-        fun InitMenuEntry(InOwner: String, InName: String, InLabel: String, InToolTip: String, CommandType: String /* "Command" | "Python" | "Custom" | "EToolMenuStringCommandType_MAX" */, CustomCommandType: String, CommandString: String): ToolMenuEntry
-        fun GetToolTip(Target: ToolMenuEntry): String
-        fun GetLabel(Target: ToolMenuEntry): String
-        fun BreakToolMenuOwner(InValue: ToolMenuOwner, Name: String = definedExternally): `T$552`
-        fun BreakStringCommand(InValue: ToolMenuStringCommand, Type: String /* "Command" | "Python" | "Custom" | "EToolMenuStringCommandType_MAX" */ = definedExternally, CustomType: String = definedExternally, string: String = definedExternally): `T$553`
-        fun BreakScriptSlateIcon(InValue: ScriptSlateIcon, StyleSetName: String = definedExternally, StyleName: String = definedExternally, SmallStyleName: String = definedExternally): `T$554`
-        fun C(Other: UObject): ToolMenuEntryExtensions
-        fun C(Other: Any): ToolMenuEntryExtensions
-    }
-}
-
-external interface `T$555` {
-    var Section: ToolMenuSection
-}
-
-external open class ToolMenuSectionExtensions : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): ToolMenuSectionExtensions
-        fun Find(Outer: UObject, ResourceName: String): ToolMenuSectionExtensions
-        fun GetDefaultObject(): ToolMenuSectionExtensions
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): ToolMenuSectionExtensions
-        fun SetLabel(Section: ToolMenuSection = definedExternally, Label: String = definedExternally): `T$555`
-        fun GetLabel(Section: ToolMenuSection): String
-        fun AddEntryObject(Section: ToolMenuSection = definedExternally, InObject: ToolMenuEntryScript = definedExternally): `T$555`
-        fun AddEntry(Section: ToolMenuSection = definedExternally, Args: ToolMenuEntry = definedExternally): `T$555`
-        fun C(Other: UObject): ToolMenuSectionExtensions
-        fun C(Other: Any): ToolMenuSectionExtensions
-    }
-}
-
-external open class LiveLinkRole : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkRole
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkRole
-        fun GetDefaultObject(): LiveLinkRole
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkRole
-        fun C(Other: UObject): LiveLinkRole
-        fun C(Other: Any): LiveLinkRole
-    }
-}
-
-external open class LiveLinkBasicRole : LiveLinkRole {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkBasicRole
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkBasicRole
-        fun GetDefaultObject(): LiveLinkBasicRole
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkBasicRole
-        fun C(Other: UObject): LiveLinkBasicRole
-        fun C(Other: Any): LiveLinkBasicRole
-    }
-}
-
-external open class LiveLinkAnimationRole : LiveLinkBasicRole {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkAnimationRole
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkAnimationRole
-        fun GetDefaultObject(): LiveLinkAnimationRole
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkAnimationRole
-        fun C(Other: UObject): LiveLinkAnimationRole
-        fun C(Other: Any): LiveLinkAnimationRole
-    }
-}
-
-external open class LiveLinkTransformRole : LiveLinkBasicRole {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkTransformRole
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkTransformRole
-        fun GetDefaultObject(): LiveLinkTransformRole
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkTransformRole
-        fun C(Other: UObject): LiveLinkTransformRole
-        fun C(Other: Any): LiveLinkTransformRole
-    }
-}
-
-external open class LiveLinkCameraRole : LiveLinkTransformRole {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkCameraRole
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkCameraRole
-        fun GetDefaultObject(): LiveLinkCameraRole
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkCameraRole
-        fun C(Other: UObject): LiveLinkCameraRole
-        fun C(Other: Any): LiveLinkCameraRole
-    }
-}
-
-external open class LiveLinkController : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkController
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkController
-        fun GetDefaultObject(): LiveLinkController
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkController
-        fun C(Other: UObject): LiveLinkController
-        fun C(Other: Any): LiveLinkController
-    }
-}
-
-external object ELiveLinkSourceMode {
-    var Latest: String /* "Latest" */
-    var EngineTime: String /* "EngineTime" */
-    var Timecode: String /* "Timecode" */
-    var ELiveLinkSourceMode_MAX: String /* "ELiveLinkSourceMode_MAX" */
-}
-
-external open class LiveLinkSourceBufferManagementSettings {
-    open var bValidEngineTimeEnabled: Boolean
-    open var ValidEngineTime: Number
-    open var EngineTimeOffset: Number
-    open var EngineTimeClockOffset: Any
-    open var TimecodeFrameRate: FrameRate
-    open var bGenerateSubFrame: Boolean
-    open var DetectedFrameRate: FrameRate
-    open var bUseTimecodeSmoothLatest: Boolean
-    open var SourceTimecodeFrameRate: FrameRate
-    open var bValidTimecodeFrameEnabled: Boolean
-    open var ValidTimecodeFrame: Number
-    open var TimecodeFrameOffset: Number
-    open var TimecodeClockOffset: Any
-    open var LatestOffset: Number
-    open var MaxNumberOfFrameToBuffered: Number
-    open var bKeepAtLeastOneFrame: Boolean
-    open fun clone(): LiveLinkSourceBufferManagementSettings
-
-    companion object {
-        fun C(Other: UObject): LiveLinkSourceBufferManagementSettings
-        fun C(Other: Any): LiveLinkSourceBufferManagementSettings
-    }
-}
-
-external open class LiveLinkSourceFactory : UObject {
-    constructor()
-    constructor(Outer: UObject)
-
-    companion object {
-        fun Load(ResourceName: String): LiveLinkSourceFactory
-        fun Find(Outer: UObject, ResourceName: String): LiveLinkSourceFactory
-        fun GetDefaultObject(): LiveLinkSourceFactory
-        fun CreateDefaultSubobject(Name: String, Transient: Boolean = definedExternally, Required: Boolean = definedExternally, Abstract: Boolean = definedExternally): LiveLinkSourceFactory
-        fun C(Other: UObject): LiveLinkSourceFactory
-        fun C(Other: Any): LiveLinkSourceFactory
     }
 }

@@ -1,10 +1,7 @@
 (function (_, Kotlin, $module$kotlinx_coroutines_core) {
   'use strict';
-  var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
-  var println = Kotlin.kotlin.io.println_s8jyv4$;
-  var Kind_CLASS = Kotlin.Kind.CLASS;
-  var Math_0 = Math;
   var numberToDouble = Kotlin.numberToDouble;
+  var Kind_CLASS = Kotlin.Kind.CLASS;
   var Unit = Kotlin.kotlin.Unit;
   var COROUTINE_SUSPENDED = Kotlin.kotlin.coroutines.intrinsics.COROUTINE_SUSPENDED;
   var CoroutineImpl = Kotlin.kotlin.coroutines.CoroutineImpl;
@@ -20,6 +17,7 @@
   var L16 = Kotlin.Long.fromInt(16);
   var delay = $module$kotlinx_coroutines_core.kotlinx.coroutines.delay_s8cxhz$;
   var L2000 = Kotlin.Long.fromInt(2000);
+  var println = Kotlin.kotlin.io.println_s8jyv4$;
   var Random = Kotlin.kotlin.random.Random;
   var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var ensureNotNull = Kotlin.ensureNotNull;
@@ -27,12 +25,11 @@
   var contains = Kotlin.kotlin.text.contains_li3zpu$;
   var getCallableRef = Kotlin.getCallableRef;
   var listOf = Kotlin.kotlin.collections.listOf_i5x0yv$;
+  var JsMath = Math;
   var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
   var defineInlineFunction = Kotlin.defineInlineFunction;
   var wrapFunction = Kotlin.wrapFunction;
   var first = Kotlin.kotlin.collections.first_2p1efm$;
-  CubeTutorial.prototype = Object.create(KotlinObject.prototype);
-  CubeTutorial.prototype.constructor = CubeTutorial;
   AdventureCharacter.prototype = Object.create(KotlinObject.prototype);
   AdventureCharacter.prototype.constructor = AdventureCharacter;
   InteractiveObjectBase.prototype = Object.create(KotlinObject.prototype);
@@ -73,34 +70,10 @@
   KeyboardInput.prototype.constructor = KeyboardInput;
   SceneLights.prototype = Object.create(KotlinObject.prototype);
   SceneLights.prototype.constructor = SceneLights;
-  Coin.prototype = Object.create(KotlinObject.prototype);
-  Coin.prototype.constructor = Coin;
-  Sonic.prototype = Object.create(KotlinObject.prototype);
-  Sonic.prototype.constructor = Sonic;
   ThirdPerson.prototype = Object.create(KotlinObject.prototype);
   ThirdPerson.prototype.constructor = ThirdPerson;
   HelloTutorial.prototype = Object.create(KotlinObject.prototype);
   HelloTutorial.prototype.constructor = HelloTutorial;
-  function CubeTutorial() {
-    KotlinObject.call(this);
-    this.accumulatedDeltaTime = 0.0;
-  }
-  CubeTutorial.prototype.Tick = function (deltaTime) {
-    var actor = GetOwner(this);
-    this.accumulatedDeltaTime += deltaTime;
-    var x = this.accumulatedDeltaTime;
-    actor.Yaw = 45.0 * Math_0.cos(x);
-    actor.SetActorRotation(Rotator_0(void 0, void 0, actor.Yaw), false);
-  };
-  CubeTutorial.prototype.BeginOverlap = function (other) {
-    println("I've been changed! Collided with " + other + '!');
-    return '';
-  };
-  CubeTutorial.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'CubeTutorial',
-    interfaces: []
-  };
   function AdventureCharacter() {
     KotlinObject.call(this);
     this.keyLeft = new KeyListener('A');
@@ -127,15 +100,20 @@
   AdventureCharacter.prototype.Tick = function (deltaTime) {
     if (this.keyLeft.down()) {
       this.MoveRight_14dthe$(-1.0);
-    }if (this.keyRight.down()) {
+    }
+    if (this.keyRight.down()) {
       this.MoveRight_14dthe$(1.0);
-    }if (this.keyUp.down()) {
+    }
+    if (this.keyUp.down()) {
       this.MoveForward_14dthe$(1.0);
-    }if (this.keyDown.down()) {
+    }
+    if (this.keyDown.down()) {
       this.MoveForward_14dthe$(-1.0);
-    }if (this.keyInteract.pressed()) {
+    }
+    if (this.keyInteract.pressed()) {
       InteractionManager_getInstance().interact();
-    }this.Turn_14dthe$(this.axisTurn());
+    }
+    this.Turn_14dthe$(this.axisTurn());
     this.LookUp_14dthe$(this.axisLookUp());
   };
   AdventureCharacter.prototype.Turn_14dthe$ = function (value) {
@@ -214,7 +192,8 @@
             var $receiver = this.local$closure$interactiveObject;
             $receiver.highlight_6taknv$(true);
             return tmp$.selected = $receiver, Unit;
-          default:this.state_0 = 1;
+          default:
+            this.state_0 = 1;
             throw new Error('State Machine Unreachable execution');
         }
       } catch (e) {
@@ -277,7 +256,8 @@
 
           case 3:
             return Unit;
-          default:this.state_0 = 1;
+          default:
+            this.state_0 = 1;
             throw new Error('State Machine Unreachable execution');
         }
       } catch (e) {
@@ -330,7 +310,8 @@
             throw this.exception_0;
           case 2:
             return this.result_0;
-          default:this.state_0 = 1;
+          default:
+            this.state_0 = 1;
             throw new Error('State Machine Unreachable execution');
         }
       } catch (e) {
@@ -379,7 +360,8 @@
   function InteractionManager_getInstance() {
     if (InteractionManager_instance === null) {
       new InteractionManager();
-    }return InteractionManager_instance;
+    }
+    return InteractionManager_instance;
   }
   function InteractiveObject() {
   }
@@ -420,6 +402,7 @@
               this.$this.sequencePlayed = true;
               this.$this.playSequence_0(this.$this.actor.Sequence);
             }
+
             this.local$tmp$ = (this.$this.opened ? new IntRange(-110, 0) : downTo(0, -110)).iterator();
             this.state_0 = 2;
             continue;
@@ -430,6 +413,7 @@
               this.state_0 = 4;
               continue;
             }
+
             var element = this.local$tmp$.next();
             this.$this.actor.Top.SetRelativeRotation(Rotator_0(0, element, 0), false);
             this.state_0 = 3;
@@ -443,7 +427,8 @@
           case 4:
             this.$this.opened = !this.$this.opened;
             return;
-          default:this.state_0 = 1;
+          default:
+            this.state_0 = 1;
             throw new Error('State Machine Unreachable execution');
         }
       } catch (e) {
@@ -521,6 +506,7 @@
               this.state_0 = 5;
               continue;
             }
+
             var element = this.local$$receiver[this.local$tmp$];
             this.local$widget.SetText(element);
             this.state_0 = 3;
@@ -539,7 +525,8 @@
             this.local$widget.RemoveFromViewport();
             this.local$widget.DestroyUObject();
             return;
-          default:this.state_0 = 1;
+          default:
+            this.state_0 = 1;
             throw new Error('State Machine Unreachable execution');
         }
       } catch (e) {
@@ -684,7 +671,8 @@
   function Bunny$Companion_getInstance() {
     if (Bunny$Companion_instance === null) {
       new Bunny$Companion();
-    }return Bunny$Companion_instance;
+    }
+    return Bunny$Companion_instance;
   }
   Bunny.prototype.Tick = function (deltaTime) {
     this.xf += this.speedXf;
@@ -696,15 +684,18 @@
     } else if (this.xf < Bunny$Companion_getInstance().minX) {
       this.speedXf *= -1;
       this.xf = Bunny$Companion_getInstance().minX;
-    }if (this.zf < Bunny$Companion_getInstance().minY) {
+    }
+    if (this.zf < Bunny$Companion_getInstance().minY) {
       this.speedYf *= -0.85;
       this.zf = Bunny$Companion_getInstance().minY;
       if (Random.Default.nextFloat() > 0.5) {
         this.speedYf -= Random.Default.nextFloat() * 6;
-      }} else if (this.zf > Bunny$Companion_getInstance().maxY) {
+      }
+    } else if (this.zf > Bunny$Companion_getInstance().maxY) {
       this.speedYf = 0.0;
       this.zf = Bunny$Companion_getInstance().maxY;
-    }this.pos.X = this.xf;
+    }
+    this.pos.X = this.xf;
     this.pos.Y = this.yf;
     this.pos.Z = this.zf;
     this.actor.SetActorLocation(this.pos, false);
@@ -740,11 +731,14 @@
   BunnyMark.prototype.Tick = function (deltaTime) {
     if (this.keySpawnKoltinBunny.pressed()) {
       this.spawnBunnies_btcm9r$(this.owner.KotlinBunny);
-    }if (this.keySpawnBlueprintBunny.pressed()) {
+    }
+    if (this.keySpawnBlueprintBunny.pressed()) {
       this.spawnBunnies_btcm9r$(this.owner.BlueprintBunny);
-    }if (this.keySpawnKotlinOptimizedBunny.pressed()) {
+    }
+    if (this.keySpawnKotlinOptimizedBunny.pressed()) {
       this.spawnOptimizedBunnies_btcm9r$(this.owner.KotlinOptimizedBunny);
-    }var tmp$;
+    }
+    var tmp$;
     tmp$ = this.actorList.iterator();
     while (tmp$.hasNext()) {
       var element = tmp$.next();
@@ -786,7 +780,8 @@
   function OptimizedBunny$Companion_getInstance() {
     if (OptimizedBunny$Companion_instance === null) {
       new OptimizedBunny$Companion();
-    }return OptimizedBunny$Companion_instance;
+    }
+    return OptimizedBunny$Companion_instance;
   }
   OptimizedBunny.prototype.Tick_mx4ult$ = function (deltaTime) {
     this.xf += this.speedXf;
@@ -798,15 +793,18 @@
     } else if (this.xf < OptimizedBunny$Companion_getInstance().minX) {
       this.speedXf *= -1;
       this.xf = OptimizedBunny$Companion_getInstance().minX;
-    }if (this.zf < OptimizedBunny$Companion_getInstance().minY) {
+    }
+    if (this.zf < OptimizedBunny$Companion_getInstance().minY) {
       this.speedYf *= -0.85;
       this.zf = OptimizedBunny$Companion_getInstance().minY;
       if (Random.Default.nextFloat() > 0.5) {
         this.speedYf -= Random.Default.nextFloat() * 6;
-      }} else if (this.zf > OptimizedBunny$Companion_getInstance().maxY) {
+      }
+    } else if (this.zf > OptimizedBunny$Companion_getInstance().maxY) {
       this.speedYf = 0.0;
       this.zf = OptimizedBunny$Companion_getInstance().maxY;
-    }this.pos.X = this.xf;
+    }
+    this.pos.X = this.xf;
     this.pos.Y = this.yf;
     this.pos.Z = this.zf;
     this.actor.SetActorLocation(this.pos, false);
@@ -824,12 +822,14 @@
     var actor = GetOwner(this);
     if (actor.actorToCopy != null) {
       actor.SetActorRotation(Rotator_0(void 0, void 0, ensureNotNull(actor.actorToCopy).Yaw), false);
-    }};
+    }
+  };
   RedRotatingCube.prototype.BeginOverlap = function (other) {
     this.touched = this.touched + 1 | 0;
     if (this.touched > 30) {
       return 'die';
-    }return 'touched ' + this.touched + ' times by ' + other.GetName();
+    }
+    return 'touched ' + this.touched + ' times by ' + other.GetName();
   };
   RedRotatingCube.prototype.OnDestroyed = function () {
     println('OnDestroyed');
@@ -923,19 +923,26 @@
   FirstPerson.prototype.Tick = function (deltaTime) {
     if (this.keyLeft.down()) {
       this.MoveRight_14dthe$(-1.0);
-    }if (this.keyRight.down()) {
+    }
+    if (this.keyRight.down()) {
       this.MoveRight_14dthe$(1.0);
-    }if (this.keyUp.down()) {
+    }
+    if (this.keyUp.down()) {
       this.MoveForward_14dthe$(1.0);
-    }if (this.keyDown.down()) {
+    }
+    if (this.keyDown.down()) {
       this.MoveForward_14dthe$(-1.0);
-    }if (this.keyJump.pressed()) {
+    }
+    if (this.keyJump.pressed()) {
       this.startJump();
-    }if (this.keyJump.released()) {
+    }
+    if (this.keyJump.released()) {
       this.stopJump();
-    }if (this.keyFire.pressed()) {
+    }
+    if (this.keyFire.pressed()) {
       this.onFire();
-    }this.Turn_14dthe$(this.axisTurn());
+    }
+    this.Turn_14dthe$(this.axisTurn());
     this.LookUp_14dthe$(this.axisLookUp());
   };
   FirstPerson.prototype.Turn_14dthe$ = function (value) {
@@ -981,7 +988,8 @@
     if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
       var tempImpulseVector = tempForwardDirection.Multiply_VectorFloat(this.weaponDamage);
       damageComponent.AddImpulseAtLocation(tempImpulseVector, tempHitResult.ImpactPoint, '');
-    }};
+    }
+  };
   FirstPerson.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
     this.actor.DestroyActor();
@@ -1066,19 +1074,26 @@
   Game.prototype.Tick = function (deltaTime) {
     if (this.keyLeft.down()) {
       this.MoveRight_14dthe$(-1.0);
-    }if (this.keyRight.down()) {
+    }
+    if (this.keyRight.down()) {
       this.MoveRight_14dthe$(1.0);
-    }if (this.keyUp.down()) {
+    }
+    if (this.keyUp.down()) {
       this.MoveForward_14dthe$(1.0);
-    }if (this.keyDown.down()) {
+    }
+    if (this.keyDown.down()) {
       this.MoveForward_14dthe$(-1.0);
-    }if (this.keyJump.pressed()) {
+    }
+    if (this.keyJump.pressed()) {
       this.startJump();
-    }if (this.keyJump.released()) {
+    }
+    if (this.keyJump.released()) {
       this.stopJump();
-    }if (this.keyFire.pressed()) {
+    }
+    if (this.keyFire.pressed()) {
       this.onFire();
-    }this.Turn_14dthe$(this.axisTurn());
+    }
+    this.Turn_14dthe$(this.axisTurn());
     this.LookUp_14dthe$(this.axisLookUp());
   };
   Game.prototype.Turn_14dthe$ = function (value) {
@@ -1130,10 +1145,13 @@
         var movementController = aiActor.GetMovementComponent();
         movementController.StopMovementImmediately();
         damageComponent.SetSimulatePhysics(true);
-      }}if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
+      }
+    }
+    if (damageActor != null && damageComponent != null && damageComponent.IsSimulatingPhysics('')) {
       var tempImpulseVector = tempForwardDirection.Multiply_VectorFloat(this.weaponDamage);
       damageComponent.AddImpulseAtLocation(tempImpulseVector, tempHitResult.ImpactPoint, '');
-    }};
+    }
+  };
   Game.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
     this.actor.DestroyActor();
@@ -1217,7 +1235,8 @@
   function Pickup$Companion_getInstance() {
     if (Pickup$Companion_instance === null) {
       new Pickup$Companion();
-    }return Pickup$Companion_instance;
+    }
+    return Pickup$Companion_instance;
   }
   Pickup.$metadata$ = {
     kind: Kind_CLASS,
@@ -1353,13 +1372,17 @@
     this.actor.SetActorRotation(Rotator_0(void 0, void 0, this.yaw), false);
     if (this.keyLeft.down()) {
       this.actor.AddActorWorldOffset(Vector_0(void 0, -1), false);
-    }if (this.keyRight.down()) {
+    }
+    if (this.keyRight.down()) {
       this.actor.AddActorWorldOffset(Vector_0(void 0, 1), false);
-    }if (this.keyUp.down()) {
+    }
+    if (this.keyUp.down()) {
       this.actor.AddActorWorldOffset(Vector_0(1), false);
-    }if (this.keyDown.down()) {
+    }
+    if (this.keyDown.down()) {
       this.actor.AddActorWorldOffset(Vector_0(-1), false);
-    }};
+    }
+  };
   KeyboardInput.prototype.cleanup = function () {
     console.log('<<<cleanup>>>');
     this.actor.DestroyActor();
@@ -1432,9 +1455,10 @@
         var time = numberToDouble(GWorld.GetTimeSeconds());
         var rad = time * (typeof (tmp$ = closure$opts.k) === 'number' ? tmp$ : throwCCE());
         var r = closure$opts.r;
-        var p = Vector_0(void 0, Math_0.cos(rad) * r, Math_0.sin(rad) * r).Add_VectorVector(closure$opts.p);
+        var p = Vector_0(void 0, JsMath.cos(rad) * r, JsMath.sin(rad) * r).Add_VectorVector(closure$opts.p);
         closure$actor.SetActorLocation(p, false);
-      }};
+      }
+    };
   }
   SceneLights.prototype.rotate_ot2g50$ = function (actor, opts) {
     var tick = SceneLights$rotate$tick(actor, opts);
@@ -1490,104 +1514,6 @@
     simpleName: 'SceneLights',
     interfaces: []
   };
-  function Coin() {
-    KotlinObject.call(this);
-    this.actor = GetOwner(this);
-  }
-  Coin.prototype.Tick = function (deltaTime) {
-    this.actor.AddActorLocalRotation(Rotator_0(void 0, void 0, 150 * deltaTime), false);
-  };
-  Coin.prototype.BeginOverlap = function (other) {
-    this.actor.DestroyActor();
-    return '';
-  };
-  Coin.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'Coin',
-    interfaces: []
-  };
-  function Sonic() {
-    KotlinObject.call(this);
-    this.MIN_JUMP_Z_VELOCITY = 200.0;
-    this.keyLeft = new KeyListener('A');
-    this.keyRight = new KeyListener('D');
-    this.keyUp = new KeyListener('W');
-    this.keyDown = new KeyListener('S');
-    this.keyJump = new KeyListener('SpaceBar');
-    this.actor = GetOwner(this);
-    this.movementComponent = this.actor.GetMovementComponent();
-    var myPlayerController = GWorld.GetPlayerController(0);
-    myPlayerController.Possess(this.actor);
-    this.actor.bUseControllerRotationPitch = false;
-    this.actor.bUseControllerRotationRoll = false;
-    this.actor.bUseControllerRotationYaw = false;
-    this.actor.CharacterMovement.bOrientRotationToMovement = true;
-    this.actor.CharacterMovement.RotationRate = Rotator.MakeRotator(0, 0, 540);
-    this.actor.CharacterMovement.JumpZVelocity = 650;
-    this.actor.CharacterMovement.AirControl = 0.8;
-  }
-  Sonic.prototype.Tick = function (deltaTime) {
-    if (this.keyLeft.down()) {
-      this.MoveRight_14dthe$(-1.0);
-    }if (this.keyRight.down()) {
-      this.MoveRight_14dthe$(1.0);
-    }if (this.keyUp.down()) {
-      this.MoveForward_14dthe$(1.0);
-    }if (this.keyDown.down()) {
-      this.MoveForward_14dthe$(-1.0);
-    }if (this.keyJump.pressed()) {
-      this.startJump();
-    }if (this.keyJump.released()) {
-      var velocity = this.movementComponent.Velocity;
-      if (numberToDouble(velocity.Z) > this.MIN_JUMP_Z_VELOCITY) {
-        var tmp$ = this.movementComponent;
-        var Z = this.MIN_JUMP_Z_VELOCITY;
-        tmp$.Velocity = Vector_0(velocity.X, velocity.Y, Z);
-      }this.stopJump();
-    }this.Turn_14dthe$(this.axisTurn());
-    this.LookUp_14dthe$(this.axisLookUp());
-  };
-  Sonic.prototype.Turn_14dthe$ = function (value) {
-    this.actor.AddControllerYawInput(value);
-  };
-  Sonic.prototype.LookUp_14dthe$ = function (value) {
-    this.actor.AddControllerPitchInput(value);
-  };
-  Sonic.prototype.MoveForward_14dthe$ = function (value) {
-    var tPawnRotator = this.actor.GetControlRotation();
-    tPawnRotator.Pitch = 0;
-    tPawnRotator.Roll = 0;
-    var tForwardVector = tPawnRotator.GetForwardVector();
-    this.actor.AddMovementInput(tForwardVector, value, false);
-  };
-  Sonic.prototype.MoveRight_14dthe$ = function (value) {
-    var tPawnRotator = this.actor.GetControlRotation();
-    tPawnRotator.Pitch = 0;
-    tPawnRotator.Roll = 0;
-    var tRightVector = tPawnRotator.GetRightVector();
-    this.actor.AddMovementInput(tRightVector, value, false);
-  };
-  Sonic.prototype.startJump = function () {
-    this.actor.Jump();
-  };
-  Sonic.prototype.stopJump = function () {
-    this.actor.StopJumping();
-  };
-  Sonic.prototype.cleanup = function () {
-    console.log('<<<cleanup>>>');
-    this.actor.DestroyActor();
-  };
-  Sonic.prototype.axisTurn = function () {
-    return numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaX);
-  };
-  Sonic.prototype.axisLookUp = function () {
-    return -numberToDouble(GWorld.GetPlayerController(0).GetInputMouseDelta().DeltaY);
-  };
-  Sonic.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'Sonic',
-    interfaces: []
-  };
   function ThirdPerson() {
     KotlinObject.call(this);
     this.actor = null;
@@ -1618,17 +1544,23 @@
   ThirdPerson.prototype.Tick = function (deltaTime) {
     if (this.keyLeft.down()) {
       this.MoveRight_14dthe$(-1.0);
-    }if (this.keyRight.down()) {
+    }
+    if (this.keyRight.down()) {
       this.MoveRight_14dthe$(1.0);
-    }if (this.keyUp.down()) {
+    }
+    if (this.keyUp.down()) {
       this.MoveForward_14dthe$(1.0);
-    }if (this.keyDown.down()) {
+    }
+    if (this.keyDown.down()) {
       this.MoveForward_14dthe$(-1.0);
-    }if (this.keyJump.pressed()) {
+    }
+    if (this.keyJump.pressed()) {
       this.startJump();
-    }if (this.keyJump.released()) {
+    }
+    if (this.keyJump.released()) {
       this.stopJump();
-    }this.Turn_14dthe$(this.axisTurn());
+    }
+    this.Turn_14dthe$(this.axisTurn());
     this.LookUp_14dthe$(this.axisLookUp());
   };
   ThirdPerson.prototype.Turn_14dthe$ = function (value) {
@@ -1706,7 +1638,8 @@
   function KotlinUnrealClassCache_getInstance() {
     if (KotlinUnrealClassCache_instance === null) {
       new KotlinUnrealClassCache();
-    }return KotlinUnrealClassCache_instance;
+    }
+    return KotlinUnrealClassCache_instance;
   }
   function unrealProxyClass(global, klass, className) {
     var tmp$;
@@ -1900,7 +1833,6 @@
     simpleName: 'KeyListener',
     interfaces: []
   };
-  _.CubeTutorial = CubeTutorial;
   _.AdventureCharacter = AdventureCharacter;
   var package$examples = _.examples || (_.examples = {});
   var package$adventure = package$examples.adventure || (package$examples.adventure = {});
@@ -1939,9 +1871,6 @@
   _.ICylinder = ICylinder;
   _.KeyboardInput = KeyboardInput;
   _.SceneLights = SceneLights;
-  _.Coin = Coin;
-  $$importsForInline$$['kotlin-examples'] = _;
-  _.Sonic = Sonic;
   _.ThirdPerson = ThirdPerson;
   _.HelloTutorial = HelloTutorial;
   _.init = init;
