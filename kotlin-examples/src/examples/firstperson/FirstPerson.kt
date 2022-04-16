@@ -223,7 +223,9 @@ class FirstPerson:KotlinObject() {
         //console.log("hitresult = ", tempHitResult.bBlockingHit)
 
         //store hit actor and component from HitResult
-        val damageActor = tempHitResult.Actor
+        //val damageActor = tempHitResult.Actor //Actor is null on Unreal 5?
+        val damageActor = tempHitResult.Component.GetOwner()
+
         val damageComponent:PrimitiveComponent? = tempHitResult.Component.asDynamic()
 
         //if actor&component is valid while simulating physic then apply physic impulse
