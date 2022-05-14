@@ -19,7 +19,7 @@ IntelliJ IDEA Community: https://www.jetbrains.com/idea/download/
 - Install Unreal.js plugin in your engine. The easiest way is finding it on the Unreal Marketplace:
 https://www.unrealengine.com/marketplace/en-US/product/unrealjs
 
-If you can find it in the Unreal Marketplace, you can install it manually following this instructions:
+If you can't find it in the Unreal Marketplace, you can install it manually following this instructions:
 https://github.com/ncsoft/Unreal.js/
 
 - Clone or download this repository.
