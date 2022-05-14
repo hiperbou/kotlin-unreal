@@ -10,7 +10,7 @@ Uses Unreal.js wich is a Javascript runtime built for **UE4** and **UE5**
 - Customizable Hot Reload: Apply code updates to everything or to the actors you're interested in, while in play mode.
 
 ## Prerequisites
-Unreal 4.26.1 - 4.27.2 or **Unreal 5.0.0 - 5.0.1** and Kotlin 1.4.31, but may work with other versions too.
+Unreal 4.26.1 - 4.27.2 or **Unreal 5.0.0 - 5.0.1**, but may work with other versions too.
 
 IntelliJ IDEA Community: https://www.jetbrains.com/idea/download/
 
