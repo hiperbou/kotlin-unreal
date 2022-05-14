@@ -5,7 +5,7 @@
 #include "IV8.h"
 #include "KotlinGameInstance.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "Regex.h"
+//#include "Regex.h"
 #include "KotlinObject.h"
 
 UKotlinComponent::UKotlinComponent()
