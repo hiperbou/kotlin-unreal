@@ -42,11 +42,19 @@ inline fun Rotator.withRoll(Roll:Number = 0.0) = Rotator(Roll, Pitch, Yaw)
 inline fun Rotator.withPitch(Pitch:Number = 0.0) = Rotator(Roll, Pitch, Yaw)
 inline fun Rotator.withYaw(Yaw:Number = 0.0) = Rotator(Roll, Pitch, Yaw)
 
+fun SpawnSound2D(WorldContextObject:UObject, Sound:SoundBase)= GameplayStatics.SpawnSound2D(
+        WorldContextObject, Sound,
+        1, 1, 0, undefined.asDynamic(),
+        false, true)
+
+
+
 fun <T>Actor.GetComponentByName(ComponentClass:Any, Name:String):T
 {
     val nameToCheck = Name.toLowerCase()
-    val component = GetComponentsByClass(ComponentClass).filter { it.GetName().toLowerCase()==nameToCheck }
-    return component.first().asDynamic()
+    val components = GetComponentsByClass(ComponentClass).filter { it.GetName().toLowerCase()==nameToCheck }
+    if (components.isEmpty()) return null as T
+    return components.first().asDynamic()
 }
 
 fun <T>Actor.GetComponentByClass(ComponentClass: Any):T{

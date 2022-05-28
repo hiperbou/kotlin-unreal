@@ -226,7 +226,7 @@ class Game:KotlinObject() {
 
         //store hit actor and component from HitResult
         //val damageActor:Actor = tempHitResult.Actor.asDynamic() //Actor is null on Unreal 5?
-        val damageActor:Actor = tempHitResult.Component.GetOwner()
+        val damageActor = tempHitResult.HitObjectHandle.Actor
         val damageComponent:PrimitiveComponent? = tempHitResult.Component.asDynamic()
 
         if(damageActor != null && damageActor.GetName().contains("AI")){

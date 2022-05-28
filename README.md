@@ -1,7 +1,7 @@
 # kotlin-unreal
-kotlin-unreal: Use the amazing [Kotlin](https://kotlinlang.org/) language with UnrealEngine 4
+kotlin-unreal: Use the amazing [Kotlin](https://kotlinlang.org/) language with UnrealEngine 4 and UnrealEngine 5
 
-Uses Unreal.js wich is a Javascript runtime built for UE4
+Uses Unreal.js wich is a Javascript runtime built for **UE4** and **UE5**
 
 ## Features
 - Access to all Blueprint functions and classes
@@ -10,7 +10,7 @@ Uses Unreal.js wich is a Javascript runtime built for UE4
 - Customizable Hot Reload: Apply code updates to everything or to the actors you're interested in, while in play mode.
 
 ## Prerequisites
-Unreal 4.26.1 - 4.27.2 and Kotlin 1.4.31, but may work with other versions too.
+Unreal 4.26.1 - 4.27.2 or **Unreal 5.0.0 - 5.0.1** and Kotlin 1.4.31, but may work with other versions too.
 
 IntelliJ IDEA Community: https://www.jetbrains.com/idea/download/
 
@@ -18,7 +18,26 @@ IntelliJ IDEA Community: https://www.jetbrains.com/idea/download/
 
 - Install Unreal.js plugin in your engine. The easiest way is finding it on the Unreal Marketplace:
 https://www.unrealengine.com/marketplace/en-US/product/unrealjs
-- Clone or download this repository
+
+If you can't find it in the Unreal Marketplace, you can install it manually following this instructions:
+https://github.com/ncsoft/Unreal.js/
+
+- Clone or download this repository.
+
+  Optionally change to a branch matching your engine version:
+  
+  [master](https://github.com/hiperbou/kotlin-unreal) branch will always be updated with the latest Unreal Engine version
+  
+  **Unreal Engine 5**
+  
+  [UE5.0.1](https://github.com/hiperbou/kotlin-unreal/tree/UE5.0.1-Kotlin1.4.31)
+  
+  **Unreal Engine 4**
+  
+  [UE4.27.2](https://github.com/hiperbou/kotlin-unreal/tree/UE4.27.2-Kotlin1.4.31), 
+  [UE4.27.1](https://github.com/hiperbou/kotlin-unreal/tree/UE4.27.1-Kotlin1.4.31), 
+  [UE4.26.1](https://github.com/hiperbou/kotlin-unreal/tree/UE4.26.1-Kotlin1.4.31)
+  
 - You should be able to right click the file "KotlinUnreal.uproject" and select "Launch Game"
 - You might be asked to recompile or update the project to your engine version and after that you should be seeing the First Person Game example.
 
