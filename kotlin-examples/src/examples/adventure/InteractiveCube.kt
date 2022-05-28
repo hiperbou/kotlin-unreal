@@ -14,7 +14,7 @@ class InteractiveCube:InteractiveObjectBase() {
     val actor = GetOwner<InteractiveCubeBlueprint>()
 
     override suspend fun doAction() {
-        val widget:SubtitlesWidget = GWorld.Create(actor.Widget, GWorld.GetPlayerController(0)).asDynamic()
+        val widget:SubtitlesWidget = GWorld.CreateWidget(actor.Widget, GWorld.GetPlayerController(0)).asDynamic()
         with(widget) {
             AddToViewport(0)
             actor.Texts.forEach {
