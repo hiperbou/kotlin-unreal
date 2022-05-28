@@ -223,8 +223,8 @@ class FirstPerson:KotlinObject() {
         //console.log("hitresult = ", tempHitResult.bBlockingHit)
 
         //store hit actor and component from HitResult
-        //val damageActor = tempHitResult.Actor //Actor is null on Unreal 5?
-        val damageActor = tempHitResult.Component.GetOwner()
+        //val damageActor = tempHitResult.Actor //Actor is null in Unreal 5.0.0?
+        val damageActor = tempHitResult.HitObjectHandle.Actor
 
         val damageComponent:PrimitiveComponent? = tempHitResult.Component.asDynamic()
 
