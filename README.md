@@ -12,6 +12,8 @@ Uses Unreal.js wich is a Javascript runtime built for **UE4** and **UE5**
 ## Prerequisites
 Unreal 4.26.1 - 4.27.2 or **Unreal 5.0.0 - 5.0.1**, but may work with other versions too.
 
+Being able to build and run a Unreal C++ project and having all its dependencies installed.
+
 IntelliJ IDEA Community: https://www.jetbrains.com/idea/download/
 
 ## Installation
