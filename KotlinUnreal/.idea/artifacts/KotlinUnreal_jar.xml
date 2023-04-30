@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="KotlinUnreal:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/KotlinUnreal_jar</output-path>
-    <root id="archive" name="KotlinUnreal.jar">
-      <element id="module-output" name="KotlinUnreal" />
-    </root>
-  </artifact>
-</component>

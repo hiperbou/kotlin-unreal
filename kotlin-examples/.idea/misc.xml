@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_4" default="true" project-jdk-name="Kotlin SDK" project-jdk-type="KotlinSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
-  <component name="SuppressKotlinCodeStyleNotification">
-    <option name="disableForAll" value="true" />
-  </component>
-</project>

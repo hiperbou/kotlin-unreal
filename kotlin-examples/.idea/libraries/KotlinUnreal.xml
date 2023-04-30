@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="KotlinUnreal" type="kotlin.js">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../KotlinUnreal/out/artifacts/KotlinUnreal_jar/KotlinUnreal.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
