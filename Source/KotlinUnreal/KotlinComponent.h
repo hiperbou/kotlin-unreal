@@ -5,7 +5,7 @@
 #include "Templates/SubclassOf.h"
 #include "Components/ActorComponent.h"
 #include "JavascriptContext.h"
-
+#include "UObject/SoftObjectPath.h"
 
 
 #include "KotlinComponent.generated.h"
@@ -21,7 +21,7 @@ struct KOTLINUNREAL_API FKotlinAsset
 	FName Name;
 
 	UPROPERTY(EditAnywhere, Category = "Kotlin")
-	FStringAssetReference Asset;
+	FSoftObjectPath  Asset;
 };
 
 USTRUCT()
