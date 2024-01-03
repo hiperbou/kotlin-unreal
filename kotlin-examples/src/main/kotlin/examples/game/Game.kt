@@ -87,8 +87,8 @@ class Game:KotlinObject() {
         fireAnimation = owner.FirstPersonFire_Montage //AnimMontage.Load("/Game/FirstPerson/Animations/FirstPersonFire_Montage.FirstPersonFire_Montage")
 
         //set loaded assets into class mesh
-        myFPMesh.SetSkeletalMesh(FP_mesh, false)
-        myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false)
+        myFPMesh.SetSkinnedAssetAndUpdate(FP_mesh, false)
+        myFPGunMesh.SetSkinnedAssetAndUpdate(FPGun_mesh, false)
 
         //set loaded animation blueprint into class
         myFPMesh.SetAnimInstanceClass(ANI_AnimationBP)

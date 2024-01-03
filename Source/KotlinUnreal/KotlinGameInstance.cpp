@@ -59,12 +59,10 @@ void UKotlinGameInstance::LoadJSFile()
 
 void UKotlinGameInstance::Shutdown()
 {
-	Isolate->RemoveFromRoot();
-}
-
-UJavascriptIsolate* UKotlinGameInstance::GetIsolate()
-{
-	return Isolate;
+	Super::Shutdown();
+	if (Isolate) Isolate->RemoveFromRoot();
+	JavascriptContext = nullptr;
+	Isolate = nullptr;
 }
 
 UJavascriptContext* UKotlinGameInstance::GetContext()

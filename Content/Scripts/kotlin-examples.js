@@ -909,8 +909,8 @@
     var ANI_AnimationBP = owner.FirstPerson_AnimBP.GeneratedClass;
     this.fireSound = owner.FirstPersonTemplateWeaponFire02;
     this.fireAnimation = owner.FirstPersonFire_Montage;
-    this.myFPMesh.SetSkeletalMesh(FP_mesh, false);
-    this.myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false);
+    this.myFPMesh.SetSkinnedAssetAndUpdate(FP_mesh, false);
+    this.myFPGunMesh.SetSkinnedAssetAndUpdate(FPGun_mesh, false);
     this.myFPMesh.SetAnimInstanceClass(ANI_AnimationBP);
     this.weaponRange = 5000.0;
     this.weaponDamage = 500000.0;
@@ -1061,8 +1061,8 @@
     var ANI_AnimationBP = this.owner.FirstPerson_AnimBP;
     this.fireSound = this.owner.FirstPersonTemplateWeaponFire02;
     this.fireAnimation = this.owner.FirstPersonFire_Montage;
-    this.myFPMesh.SetSkeletalMesh(FP_mesh, false);
-    this.myFPGunMesh.SetSkeletalMesh(FPGun_mesh, false);
+    this.myFPMesh.SetSkinnedAssetAndUpdate(FP_mesh, false);
+    this.myFPGunMesh.SetSkinnedAssetAndUpdate(FPGun_mesh, false);
     this.myFPMesh.SetAnimInstanceClass(ANI_AnimationBP);
     this.weaponRange = 5000.0;
     this.weaponDamage = 500000.0;
@@ -1444,7 +1444,7 @@
   SceneLights.prototype.skel_atrclb$ = function (p) {
     var resource = SkeletalMesh.Load('/Game/Mannequin/Character/Mesh/SK_Mannequin');
     var actor = new SkeletalMeshActor(GWorld, p.Add_VectorVector(Vector_0(void 0, void 0, 50)));
-    actor.SkeletalMeshComponent.SetSkeletalMesh(resource, false);
+    actor.SkeletalMeshComponent.SetSkinnedAssetAndUpdate(resource, false);
     actor.SetActorRotation(Rotator_0(void 0, void 0, 90), false);
   };
   function SceneLights$rotate$tick(closure$actor, closure$opts) {

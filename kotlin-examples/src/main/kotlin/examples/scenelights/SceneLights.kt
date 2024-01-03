@@ -64,7 +64,7 @@ class SceneLights:KotlinObject() {
     fun skel(p:Vector) {
         val resource = SkeletalMesh.Load("/Game/Mannequin/Character/Mesh/SK_Mannequin")
         val actor = SkeletalMeshActor(GWorld, p.Add_VectorVector(Vector( Z= 50 )))
-        actor.SkeletalMeshComponent.SetSkeletalMesh(resource, false)
+        actor.SkeletalMeshComponent.SetSkinnedAssetAndUpdate(resource, false)
         actor.SetActorRotation(Rotator( Yaw = 90 ),false)
     }
 

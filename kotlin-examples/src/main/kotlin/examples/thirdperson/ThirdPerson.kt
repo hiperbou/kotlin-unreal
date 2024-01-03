@@ -64,7 +64,7 @@ class ThirdPerson:KotlinObject() {
         val ANI_AnimationBP = AnimBlueprint.Load("/Game/Mannequin/Animations/ThirdPerson_AnimBP.ThirdPerson_AnimBP").GeneratedClass
 
         //set character mesh to the SK_Mannequin
-        //actor.Mesh.SetSkeletalMesh(SK_mesh, false)
+        //actor.Mesh.SetSkinnedAssetAndUpdate(SK_mesh, false)
 
         //set animation class to ThirdPerson_AnimBP
         actor.Mesh.SetAnimInstanceClass(ANI_AnimationBP)
