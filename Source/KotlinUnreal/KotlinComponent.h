@@ -21,7 +21,7 @@ struct KOTLINUNREAL_API FKotlinAsset
 	FName Name;
 
 	UPROPERTY(EditAnywhere, Category = "Kotlin")
-	FSoftObjectPath  Asset;
+	FSoftObjectPath Asset;
 };
 
 USTRUCT()

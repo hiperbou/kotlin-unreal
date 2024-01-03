@@ -46,6 +46,7 @@ void UKotlinComponent::OnDestroyed()
 	UE_LOG(LogTemp, Warning, TEXT("Begin destroy %s"), *(GetOwner()->GetName()));
 	if (KotlinObject != nullptr) {
 		KotlinObject->OnDestroyed();
+		KotlinObject = nullptr;
 	}
 }
 
